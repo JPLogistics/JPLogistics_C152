@@ -1,15 +1,15 @@
 # MSFS_C152
 
-Inital upload;
+## Inital upload;
 
-Corrected alternator charge - Battery now recharges correctly
+- Corrected alternator charge - Battery now recharges correctly
 
-Radio Stack "initial" values changed for Buttons & Freq.
+- Radio Stack "initial" values changed for Buttons & Freq.
 
-Initial work for upcoming changes (TBA)
+- Initial work for upcoming changes (TBA)
 
 
-Credits to TheFrett & DRF30q for some of the changes made!
+## Credits to TheFrett & DRF30q for some of the changes made!
 
 Below are the performance changes made by TheFrett
 
