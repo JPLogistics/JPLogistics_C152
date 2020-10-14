@@ -9,9 +9,9 @@
 - Initial work for upcoming changes (TBA)
 
 
-## Credits to TheFrett & DRF30q for some of the changes made!
+### Credits to TheFrett & DRF30q for some of the changes made!
 
-Below are the performance changes made by TheFrett
+#### Below are the performance changes made by TheFrett
 
 Glide performance: you can now correctly do ~16 nm from 10000 feet with a windmilling prop (was 12 nm)
 
@@ -23,7 +23,7 @@ Engine slightly more efficient at lower rpm (a bit less power needed during appr
 
 Corrected idle RPM
 
-Below are the changes by DRF30q
+#### Below are the changes by DRF30q
 
 0.17
 
