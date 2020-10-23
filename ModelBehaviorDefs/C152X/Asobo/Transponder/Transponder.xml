@@ -59,13 +59,6 @@
 			</UseTemplate>
 		</Component>
 		
-		<Component ID="State_Light" Node="TRANSPONDER_Light_Active">
-			<UseTemplate Name="ASOBO_GT_Emissive_Gauge">
-				<EMISSIVE_CODE>(A:TRANSPONDER STATE:1, Enum) 0 &gt;</EMISSIVE_CODE>
-				<FAILURE>(A:CIRCUIT AVIONICS ON, Bool)</FAILURE>
-			</UseTemplate>
-		</Component>
-		
 		<Component ID="TRANSPONDER_Push_IDT" Node="#NODE_ID_IDT#">
 			<UseTemplate Name="ASOBO_GT_Push_Button">
 				<ANIM_NAME>#ANIM_NAME_IDT#</ANIM_NAME>
