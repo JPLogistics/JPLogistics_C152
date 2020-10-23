@@ -127,8 +127,8 @@
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/Cessna152_interior.XML",
-      "size": 24176,
-      "date": 132477802591101524
+      "size": 24306,
+      "date": 132479694033776944
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/panel/PANEL.CFG",
@@ -169,6 +169,11 @@
       "path": "ModelBehaviorDefs/C152X/Asobo/NAVCOM/NavComSystem.xml",
       "size": 18423,
       "date": 132477802591041688
+    },
+    {
+      "path": "ModelBehaviorDefs/C152X/Asobo/Transponder/Transponder.xml",
+      "size": 4375,
+      "date": 132479692757663912
     }
   ]
 }

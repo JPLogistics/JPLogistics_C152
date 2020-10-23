@@ -16,10 +16,11 @@
 <ModelBehaviors>
 
 	<Include Path="Asobo\Common.xml"/>
-	<Include Path="Asobo\Transponder\\Transponder.xml"/>
+	<Include Path="Asobo\Transponder\Transponder.xml"/>
 	<Include Path="Asobo\NAVCOM\NavComSystem.xml"/>
-	<Include Path="Asobo\NAVCOM\ADF.xml"/>  
-  
+	<Include Path="Asobo\NAVCOM\ADF.xml"/>
+
+  <Include Path="C152X\Asobo\Transponder\Transponder.xml"/>
 	<Include Path="C152X\Asobo\Common.xml"/>
 	<Include Path="C152X\Asobo\NAVCOM\NavComSystem.xml"/>
 	<Include Path="C152X\Asobo\NAVCOM\ADF.xml"/>
@@ -449,6 +450,7 @@
 				<ID>1</ID>				
 				<BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
 				<DONT_APPEND_ID>True</DONT_APPEND_ID>
+        <CIRCUIT_ID>18</CIRCUIT_ID>
 				<FAILURE>(A:COM VOLUME:1,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>		
 				<!--USE_SEPARATE_ON_OFF_ANIM>True</USE_SEPARATE_ON_OFF_ANIM-->				
 			</UseTemplate>
@@ -456,6 +458,7 @@
 				<ID>2</ID>
 				<BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
 				<DONT_APPEND_ID>True</DONT_APPEND_ID>
+        <CIRCUIT_ID>20</CIRCUIT_ID>
 				<FAILURE>(A:COM VOLUME:2,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
 				<!--USE_SEPARATE_ON_OFF_ANIM>True</USE_SEPARATE_ON_OFF_ANIM-->
 			</UseTemplate>
@@ -564,7 +567,7 @@
 	</Component>
 	
 	<Component ID="TRANSPONDER">
-		<UseTemplate Name="ASOBO_5Knobs_Transponder_Template">			
+		<UseTemplate Name="C152X_5Knobs_Transponder_Template">			
 			<DONT_APPEND_ID>True</DONT_APPEND_ID>
 			<ANIM_LAG>500</ANIM_LAG>
 		</UseTemplate>
