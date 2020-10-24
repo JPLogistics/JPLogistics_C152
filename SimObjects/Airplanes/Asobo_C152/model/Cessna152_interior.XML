@@ -20,7 +20,7 @@
 	<Include Path="Asobo\NAVCOM\NavComSystem.xml"/>
 	<Include Path="Asobo\NAVCOM\ADF.xml"/>
 
-  <Include Path="C152X\Asobo\Transponder\Transponder.xml"/>
+	<Include Path="C152X\Asobo\Transponder\Transponder.xml"/>
 	<Include Path="C152X\Asobo\Common.xml"/>
 	<Include Path="C152X\Asobo\NAVCOM\NavComSystem.xml"/>
 	<Include Path="C152X\Asobo\NAVCOM\ADF.xml"/>
@@ -450,7 +450,8 @@
 				<ID>1</ID>				
 				<BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
 				<DONT_APPEND_ID>True</DONT_APPEND_ID>
-        <CIRCUIT_ID>18</CIRCUIT_ID>
+				<NAV_CIRCUIT_ID>17</NAV_CIRCUIT_ID>
+				<CIRCUIT_ID>18</CIRCUIT_ID>
 				<FAILURE>(A:COM VOLUME:1,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>		
 				<!--USE_SEPARATE_ON_OFF_ANIM>True</USE_SEPARATE_ON_OFF_ANIM-->				
 			</UseTemplate>
@@ -458,7 +459,8 @@
 				<ID>2</ID>
 				<BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
 				<DONT_APPEND_ID>True</DONT_APPEND_ID>
-        <CIRCUIT_ID>20</CIRCUIT_ID>
+				<NAV_CIRCUIT_ID>19</NAV_CIRCUIT_ID>
+				<CIRCUIT_ID>20</CIRCUIT_ID>
 				<FAILURE>(A:COM VOLUME:2,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
 				<!--USE_SEPARATE_ON_OFF_ANIM>True</USE_SEPARATE_ON_OFF_ANIM-->
 			</UseTemplate>
@@ -510,12 +512,14 @@
 				<ID>1</ID>					
 				<NODE_ID>AUDIO_Push_NAV_1</NODE_ID>
 				<ANIM_NAME>AUDIO_Push_NAV_1</ANIM_NAME>
+				<CIRCUIT_ID>17</CIRCUIT_ID>
 			</UseTemplate>			
 			<!-- NAV2 Button -->
 			<UseTemplate Name="C152X_NAVCOM_Switch_NAV_Sound_Template">
 				<ID>2</ID>					
 				<NODE_ID>AUDIO_Push_NAV_2</NODE_ID>
 				<ANIM_NAME>AUDIO_Push_NAV_2</ANIM_NAME>
+				<CIRCUIT_ID>19</CIRCUIT_ID>
 			</UseTemplate>
 			
 			<!-- ADF (AOE wtf?) Button -->
