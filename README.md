@@ -1,6 +1,6 @@
 # JPLogistics MSFS_C152
 
-##V0.8.1
+## V0.8.1
 Same as V0.8 but added:
 
 - Corrected NAV1/NAV2 behaviour
