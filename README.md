@@ -1,15 +1,25 @@
 # MSFS_C152
 
-## Inital upload;
+## V0.18;
 
-- Corrected alternator charge - Battery now recharges correctly
+- Corrected COM1/COM2 behaviour
+  - Radio now shuts down correctly (Not just turn off the screen) when the volume knob is switched to OFF
+  - Works with vPilot correctly (Turning COM1 off will now terminate any Tx/Rx over vPilot)
+
+- Added 2 x Cargo areas
+  - Forward (Max 120lb)
+  - Rear (Max 40lb)
+  - Note: Combined payload weight should _not_ exceed 120lb!
+
+- Corrected alternator charge - Battery now recharges correctly!
+  - Also corrected Max Output to fit real world!
 
 - Radio Stack "initial" values changed for Buttons & Freq.
 
 - Initial work for upcoming changes (TBA)
 
 
-### Credits to TheFrett & DRF30q for some of the changes made!
+### Credits to [@TheFrett](https://github.com/TheFrett) & [@DRF30q](https://github.com/DRF30q) for some of the changes made!
 
 #### Below are the performance changes made by TheFrett
 
