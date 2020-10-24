@@ -5,7 +5,11 @@
 - Corrected COM1/COM2 behaviour
   - Radio now shuts down correctly (Not just turn off the screen) when the volume knob is switched to OFF
   - Works with vPilot correctly (Turning COM1 off will now terminate any Tx/Rx over vPilot)
-
+  
+- Corrected NAV1/NAV2 behaviour
+  - Nav Ball 1/2 will disconnect when corresponding radio stack is turned off
+  - Nav Identify Audio will no longer be played if corresponding radio stack is turned off
+  
 - Added 2 x Cargo areas
   - Forward (Max 120lb)
   - Rear (Max 40lb)
