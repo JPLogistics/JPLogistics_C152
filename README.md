@@ -1,6 +1,6 @@
 # MSFS_C152
 
-## V0.18;
+## V0.8;
 
 - Corrected COM1/COM2 behaviour
   - Radio now shuts down correctly (Not just turn off the screen) when the volume knob is switched to OFF
