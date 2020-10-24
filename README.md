@@ -4,8 +4,12 @@
 
 # JPLogistics MSFS_C152
 
-## V0.8.1
-Same as V0.8 but added:
+## V0.8.2
+
+- Fixed an issue when using Saitek Switch Panel
+     - Unable to start using panel key
+
+### V0.8.1
 
 - Corrected NAV1/NAV2 behaviour
      - Nav Ball 1/2 will disconnect when corresponding radio stack is turned off
@@ -16,10 +20,6 @@ Same as V0.8 but added:
 - Corrected COM1/COM2 behaviour
   - Radio now shuts down correctly (Not just turn off the screen) when the volume knob is switched to OFF
   - Works with vPilot correctly (Turning COM1 off will now terminate any Tx/Rx over vPilot)
-  
-- Corrected NAV1/NAV2 behaviour
-  - Nav Ball 1/2 will disconnect when corresponding radio stack is turned off
-  - Nav Identify Audio will no longer be played if corresponding radio stack is turned off
   
 - Added 2 x Cargo areas
   - Forward (Max 120lb)
