@@ -45,31 +45,13 @@
 					(A:#RADIO_TYPE# VOLUME:#ID#, Percent) 0 &gt;
 					(A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Boolean) ! and if{
 						#CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+						#NAV_CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
 					}
 				</CIRCUIT_CODE_ON>
 				<CIRCUIT_CODE_OFF>
 					(A:#RADIO_TYPE# VOLUME:#ID#, Percent) 0 ==
 					(A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Boolean) and if{
 						#CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-					}
-				</CIRCUIT_CODE_OFF>
-			</True>
-			<False>
-				<CIRCUIT_CODE_ON/>
-				<CIRCUIT_CODE_OFF/>
-			</False>
-		</Condition>	
-		<Condition Valid="NAV_CIRCUIT_ID">
-			<True>
-        <CIRCUIT_CODE_ON>
-          #CIRCUIT_CODE_ON#
-            (A:CIRCUIT SWITCH ON:#NAV_CIRCUIT_ID#, Boolean) ! and if{
-                #NAV_CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-            }
-        </CIRCUIT_CODE_ON>
-				<CIRCUIT_CODE_OFF>
-          #CIRCUIT_CODE_OFF#
-					(A:CIRCUIT SWITCH ON:#NAV_CIRCUIT_ID#, Boolean) and if{
 						#NAV_CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
 					}
 				</CIRCUIT_CODE_OFF>
@@ -78,7 +60,7 @@
 				<CIRCUIT_CODE_ON/>
 				<CIRCUIT_CODE_OFF/>
 			</False>
-		</Condition>			
+		</Condition>				
 		<NODE_ID>#RADIO_TYPE#_Knob_OnOff_#ID##SUFFIX_ID#</NODE_ID>
 		<ANIM_SIMVAR_UNITS_SWITCH>Bool</ANIM_SIMVAR_UNITS_SWITCH>
 		<ANIM_SIMVAR_SCALE_SWITCH>100</ANIM_SIMVAR_SCALE_SWITCH>
@@ -463,7 +445,7 @@
 							<FREQUENCY>5</FREQUENCY>
 							<UPDATE_CODE>
 								(* Set NAVCOM ident. AUDIO panel NAV button and NAVCOM ident both selected *)
-								(L:XMLVAR_AUDIO_NAV_#ID#_SEL, Bool) (L:XMLVAR_NAVCOM_NAV_#ID#_IDENT, Bool) (A:CIRCUIT SWITCH ON:17, Bool) and and if{									
+								(L:XMLVAR_AUDIO_NAV_#ID#_SEL, Bool) (L:XMLVAR_NAVCOM_NAV_#ID#_IDENT, Bool) (A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Bool) and and if{									
 									1 (&gt;K:RADIO_VOR#ID#_IDENT_SET)
 								} els{
 									0 (&gt;K:RADIO_VOR#ID#_IDENT_SET)
