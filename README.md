@@ -1,7 +1,11 @@
 # JPLogistics MSFS_C152
 
-## V0.8.1
-Same as V0.8 but added:
+## V0.8.2
+
+- Fixed an issue when using Saitek Switch Panel
+     - Unable to start using panel key
+
+### V0.8.1
 
 - Corrected NAV1/NAV2 behaviour
      - Nav Ball 1/2 will disconnect when corresponding radio stack is turned off
