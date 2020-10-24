@@ -61,17 +61,17 @@
 		</Condition>	
 		<Condition Valid="NAV_CIRCUIT_ID">
 			<True>
-				<CIRCUIT_CODE_ON>
-					(A:CIRCUIT SWITCH ON:#NAV_CIRCUIT_ID#, Boolean) ! and if{
-						#CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-					}
-					#CIRCUIT_CODE_ON#
-				</CIRCUIT_CODE_ON>
+        <CIRCUIT_CODE_ON>
+          #CIRCUIT_CODE_ON#
+            (A:CIRCUIT SWITCH ON:#NAV_CIRCUIT_ID#, Boolean) ! and if{
+                #NAV_CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+            }
+        </CIRCUIT_CODE_ON>
 				<CIRCUIT_CODE_OFF>
+          #CIRCUIT_CODE_OFF#
 					(A:CIRCUIT SWITCH ON:#NAV_CIRCUIT_ID#, Boolean) and if{
 						#NAV_CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
 					}
-					#CIRCUIT_CODE_OFF#
 				</CIRCUIT_CODE_OFF>
 			</True>
 			<False>
