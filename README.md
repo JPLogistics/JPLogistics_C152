@@ -1,6 +1,13 @@
 # JPLogistics MSFS_C152
 
-## V0.8;
+##V0.8.1
+Same as V0.8 but added:
+
+- Corrected NAV1/NAV2 behaviour
+     - Nav Ball 1/2 will disconnect when corresponding radio stack is turned off
+     - Nav Identify Audio will no longer be played if corresponding radio stack is turned off
+     
+### V0.8;
 
 - Corrected COM1/COM2 behaviour
   - Radio now shuts down correctly (Not just turn off the screen) when the volume knob is switched to OFF
