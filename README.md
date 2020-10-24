@@ -1,4 +1,4 @@
-# MSFS_C152
+# JPLogistics MSFS_C152
 
 ## V0.8;
 
