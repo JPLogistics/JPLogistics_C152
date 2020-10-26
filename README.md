@@ -1,5 +1,9 @@
 # JPLogistics MSFS_C152
 
+## V0.8.3
+- Balanced the default W&B values to prevent strong left turn in level flight due to weight
+- Increased speed of dome light knob
+
 ## V0.8.2
 
 - Fixed an issue when using Saitek Switch Panel
