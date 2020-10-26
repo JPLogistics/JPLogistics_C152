@@ -1,6 +1,10 @@
 on:
   project_card:
     types: [created]
+
+name: Project Card Event
+
+jobs:
   triage:
     name: Auto card labeler
     runs-on: ubuntu-latest
