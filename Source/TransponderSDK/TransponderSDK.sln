@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TransponderSDK", "TransponderSDK.vcxproj", "{A5468B35-BBBD-4C55-97ED-81BFE343B0E4}"
 EndProject
+<<<<<<< HEAD
+=======
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WASMExamples", "..\WASMExamples\WASMExamples.vcxproj", "{6F4967FD-AC14-4599-A584-8CE0AF610950}"
+EndProject
+>>>>>>> e27a2b8075372cc21d874fd8aa6f705e12a89410
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|MSFS = Debug|MSFS
@@ -15,6 +20,13 @@ Global
 		{A5468B35-BBBD-4C55-97ED-81BFE343B0E4}.Debug|MSFS.Build.0 = Debug|MSFS
 		{A5468B35-BBBD-4C55-97ED-81BFE343B0E4}.Release|MSFS.ActiveCfg = Release|MSFS
 		{A5468B35-BBBD-4C55-97ED-81BFE343B0E4}.Release|MSFS.Build.0 = Release|MSFS
+<<<<<<< HEAD
+=======
+		{6F4967FD-AC14-4599-A584-8CE0AF610950}.Debug|MSFS.ActiveCfg = Debug|MSFS
+		{6F4967FD-AC14-4599-A584-8CE0AF610950}.Debug|MSFS.Build.0 = Debug|MSFS
+		{6F4967FD-AC14-4599-A584-8CE0AF610950}.Release|MSFS.ActiveCfg = Release|MSFS
+		{6F4967FD-AC14-4599-A584-8CE0AF610950}.Release|MSFS.Build.0 = Release|MSFS
+>>>>>>> e27a2b8075372cc21d874fd8aa6f705e12a89410
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
