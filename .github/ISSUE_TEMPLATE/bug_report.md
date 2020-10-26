@@ -7,6 +7,10 @@ assignees: ''
 
 ---
 
+**Current version:**
+ - Current mod version: [EG: V0.8.1]
+ - Current MSFS version: [EG: 1.9.5.0]
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
@@ -22,9 +26,6 @@ A clear and concise description of what you expected to happen.
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
-
-**Current version:**
- - Current mod version: [EG: V0.8.1]
 
 **Additional context**
 Add any other context about the problem here.
