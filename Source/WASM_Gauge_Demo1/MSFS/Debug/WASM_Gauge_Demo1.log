@@ -1,0 +1,43 @@
+﻿  Attitude.cpp
+  In file included from Attitude.cpp:6:
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6695,10): warning : __declspec attribute 'dllexport' is not supported [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(33,36): message : expanded from macro 'DECLSPEC_EXPORT'
+Attitude.cpp(39,23): warning : unused variable 'p_install_data' [-Wunused-variable]
+  In file included from Attitude.cpp:6:
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6700,19): warning : unused function 'query_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6705,19): warning : unused function 'install_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6710,19): warning : unused function 'initialize_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6715,19): warning : unused function 'update_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6720,19): warning : unused function 'generate_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6725,19): warning : unused function 'draw_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6730,19): warning : unused function 'kill_routine_610' [-Wunused-function]
+  Compass.cpp
+  In file included from Compass.cpp:6:
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6695,10): warning : __declspec attribute 'dllexport' is not supported [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(33,36): message : expanded from macro 'DECLSPEC_EXPORT'
+Compass.cpp(38,23): warning : unused variable 'p_install_data' [-Wunused-variable]
+  In file included from Compass.cpp:6:
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6700,19): warning : unused function 'query_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6705,19): warning : unused function 'install_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6710,19): warning : unused function 'initialize_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6715,19): warning : unused function 'update_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6720,19): warning : unused function 'generate_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6725,19): warning : unused function 'draw_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6730,19): warning : unused function 'kill_routine_610' [-Wunused-function]
+  nanovg.cpp
+  Demo.cpp
+  In file included from Demo.cpp:6:
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6695,10): warning : __declspec attribute 'dllexport' is not supported [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(33,36): message : expanded from macro 'DECLSPEC_EXPORT'
+Demo.cpp(1277,23): warning : unused variable 'p_install_data' [-Wunused-variable]
+  In file included from Demo.cpp:6:
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6700,19): warning : unused function 'query_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6705,19): warning : unused function 'install_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6710,19): warning : unused function 'initialize_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6715,19): warning : unused function 'update_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6720,19): warning : unused function 'generate_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6725,19): warning : unused function 'draw_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS\Legacy\gauges.h(6730,19): warning : unused function 'kill_routine_610' [-Wunused-function]
+Demo.cpp(1022,13): warning : unused function 'unpremultiplyAlpha' [-Wunused-function]
+Demo.cpp(1081,13): warning : unused function 'setAlpha' [-Wunused-function]
+Demo.cpp(1091,13): warning : unused function 'flipHorizontal' [-Wunused-function]
