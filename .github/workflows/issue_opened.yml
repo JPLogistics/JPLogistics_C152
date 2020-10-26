@@ -15,6 +15,6 @@ jobs:
   triage:
     name: Auto card labeler
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 1
     steps:
       - uses: technote-space/auto-card-labeler@gh-actions
