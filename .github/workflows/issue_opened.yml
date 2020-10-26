@@ -12,3 +12,4 @@ jobs:
         with:
           PROJECT: V1.0.0 Roadmap
           COLUMN: Investigating
+      - uses: technote-space/auto-card-labeler@gh-actions
