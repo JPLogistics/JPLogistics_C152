@@ -2,7 +2,7 @@ on:
   project_card:
     types: [created]
 
-name: Project Card Event
+name: Project Card Event Create
 
 jobs:
   triage:
