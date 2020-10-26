@@ -12,9 +12,13 @@ jobs:
         with:
           PROJECT: V1.0.0 Roadmap
           COLUMN: Investigating
-  triage:
-    name: Auto card labeler
-    runs-on: ubuntu-latest
-    timeout-minutes: 1
-    steps:
-      - uses: technote-space/auto-card-labeler@gh-actions
+      - uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['Status: Investigating']
+            })
