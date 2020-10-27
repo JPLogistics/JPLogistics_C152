@@ -1,6 +1,12 @@
 # JPLogistics MSFS_C152
 
-## V0.8.3
+## V0.9.0 (Work in Progress)
+- Volumetric Lighting!
+     - Credit to "Uwajimaya" for this!
+- Avionics Switch fix (WIP)
+- Updated Checklists (WIP)
+
+### V0.8.3
 - Balanced the default W&B values to prevent strong left turn in level flight due to weight
 - Increased speed of dome light knob
 
