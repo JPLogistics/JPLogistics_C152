@@ -41,6 +41,111 @@
       "date": 132481471929937838
     },
     {
+      "path": "effects/LIGHT_C152_BeaconTop.fx",
+      "size": 1220,
+      "date": 132461014955905188
+    },
+    {
+      "path": "effects/LIGHT_C152_Landing.fx",
+      "size": 1159,
+      "date": 132462645868252134
+    },
+    {
+      "path": "effects/LIGHT_C152_NavigationGreen.fx",
+      "size": 1158,
+      "date": 132461014955965030
+    },
+    {
+      "path": "effects/LIGHT_C152_NavigationRed.fx",
+      "size": 1155,
+      "date": 132461014955994946
+    },
+    {
+      "path": "effects/LIGHT_C152_NavigationWhite.fx",
+      "size": 1353,
+      "date": 132461769230083964
+    },
+    {
+      "path": "effects/LIGHT_C152_StrobeSimple.fx",
+      "size": 4445,
+      "date": 132463431355631292
+    },
+    {
+      "path": "effects/LIGHT_C152_Taxi.fx",
+      "size": 1206,
+      "date": 132462645868302000
+    },
+    {
+      "path": "effects/LIGHT_C152_vLanding.fx",
+      "size": 1158,
+      "date": 132481296907647674
+    },
+    {
+      "path": "effects/LIGHT_C152_vTaxi.fx",
+      "size": 1206,
+      "date": 132481296691956530
+    },
+    {
+      "path": "effects/texture/FX_ulm01.PNG.dds",
+      "size": 87556,
+      "date": 132456699569509612
+    },
+    {
+      "path": "effects/texture/fx_ulm01.png.DDS.FLAGS",
+      "size": 21,
+      "date": 132447569545285976
+    },
+    {
+      "path": "effects/texture/FX_ulm01.PNG.DDS.json",
+      "size": 144,
+      "date": 132447569545285976
+    },
+    {
+      "path": "effects/texture/FX_ulm02.PNG.dds",
+      "size": 87556,
+      "date": 132455783006451888
+    },
+    {
+      "path": "effects/texture/fx_ulm02.png.DDS.FLAGS",
+      "size": 21,
+      "date": 132447569545285976
+    },
+    {
+      "path": "effects/texture/FX_ulm02.PNG.DDS.json",
+      "size": 144,
+      "date": 132447569545285976
+    },
+    {
+      "path": "effects/texture/FX_ulm03.PNG.dds",
+      "size": 87556,
+      "date": 132461719108903892
+    },
+    {
+      "path": "effects/texture/fx_ulm03.png.DDS.FLAGS",
+      "size": 21,
+      "date": 132447569545285976
+    },
+    {
+      "path": "effects/texture/FX_ulm03.PNG.DDS.json",
+      "size": 144,
+      "date": 132447569545285976
+    },
+    {
+      "path": "effects/texture/FX_ulm04.PNG.DDS",
+      "size": 87556,
+      "date": 132458776466613442
+    },
+    {
+      "path": "effects/texture/fx_ulm04.png.DDS.FLAGS",
+      "size": 21,
+      "date": 132447569545285976
+    },
+    {
+      "path": "effects/texture/FX_ulm04.PNG.DDS.json",
+      "size": 144,
+      "date": 132447569545285976
+    },
+    {
       "path": "SimObjects/Airplanes/Asobo_C152/aircraft.cfg",
       "size": 3065,
       "date": 132481471931104990
@@ -82,8 +187,8 @@
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/flight_model.cfg",
-      "size": 19184,
-      "date": 132481471930785844
+      "size": 19186,
+      "date": 132481775099942098
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/hangar.flt",
@@ -97,8 +202,8 @@
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/systems.cfg",
-      "size": 9447,
-      "date": 132481471930396606
+      "size": 9693,
+      "date": 132482817937498126
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/target_performance.cfg",
@@ -123,7 +228,7 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/Cessna152_interior.XML",
       "size": 24446,
-      "date": 132481471930616300
+      "date": 132482818397650406
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/panel/PANEL.CFG",
