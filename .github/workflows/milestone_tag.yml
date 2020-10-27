@@ -7,14 +7,14 @@ jobs:
     steps:
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
       with:
-        action-token: "${{ secrets.MY_TOKEN }}"
+        action-token: "${{ secrets.KEY }}"
         project-url: "https://github.com/JPLogistics/MSFS_C152/projects/1"
         column-name: "Scheduled"
         milestone-name: "V1.0.0"
         columns-to-ignore: "In progress,Review in progress,Reviewer approved,Done"
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
       with:
-        action-token: "${{ secrets.MY_TOKEN }}"
+        action-token: "${{ secrets.KEY }}"
         project-url: "https://github.com/JPLogistics/MSFS_C152/projects/1"
         column-name: "Scheduled"
         milestone-name: "V0.9.0"
