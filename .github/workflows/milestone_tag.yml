@@ -1,19 +1,13 @@
 on:
   issues:
     types: [milestoned]
-name: Issue milestoned
 jobs:
-  assign:
-    name: Assign issues label based on Milestone
+  Move_Milestoned_Issue_On_Project_Board:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v3
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            github.issues.addLabels({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: ['Target: ' + ${selectedMilestone}]
-            })
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.MY_TOKEN }}"
+        project-url: "https://github.com/orgs/github/projects/1"
+        column-name: "Scheduled"
+        columns-to-ignore: "In progress,Review in progress,Reviewer approved,Done"
