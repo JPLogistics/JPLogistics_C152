@@ -1,0 +1,19 @@
+on:
+  issues:
+    types: [milestoned]
+name: Issue milestoned
+jobs:
+  assign:
+    name: Assign issues label based on Milestone
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['Target: ' + ${selectedMilestone}]
+            })
