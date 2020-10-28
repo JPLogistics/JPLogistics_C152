@@ -1,5 +1,9 @@
 # JPLogistics MSFS_C152
+- **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
 
+- **Primary Download (Latest Release): [V0.9.0](https://github.com/JPLogistics/MSFS_C152/releases/) - NOT YET RELEASED!**
+
+- **Alternative Download Site: [V0.9.0](https://flightsim.to/file/2246/msfs-c152-community) - NOT YET RELEASED!**
 ## V0.9.0 (Work in Progress - COMING SOON)
 - Volumetric Lighting!
      - Credit to "Uwajimaya" for this - Looks incredible!
