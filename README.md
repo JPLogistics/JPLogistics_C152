@@ -1,10 +1,12 @@
 # JPLogistics MSFS_C152
 
-## V0.9.0 (Work in Progress)
+## V0.9.0 (Work in Progress - COMING SOON)
 - Volumetric Lighting!
-     - Credit to "Uwajimaya" for this!
-- Avionics Switch fix (WIP)
-- Updated Checklists (WIP)
+     - Credit to "Uwajimaya" for this - Looks incredible!
+- Avionics Switch fix
+     - Logbook should now work normally again. If possible make sure flight starts from a parked area!
+- Updated Checklists
+     - All 'Normal Operation' checklists have been checked and updated to reflect real world!
 
 ### V0.8.3
 - Balanced the default W&B values to prevent strong left turn in level flight due to weight
