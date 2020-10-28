@@ -1,4 +1,9 @@
 # JPLogistics MSFS_C152
+- **Official Forum Post:** [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)
+
+- **Primary Download (Latest Release):** [V0.8.3](https://github.com/JPLogistics/MSFS_C152/releases/)
+
+- **Alternative Download Site:** [V0.8.3](https://flightsim.to/file/2246/msfs-c152-community)
 
 ## V0.8.3
 - Balanced the default W&B values to prevent strong left turn in level flight due to weight
