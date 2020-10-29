@@ -41,7 +41,7 @@
 		<PART_ID>INSTRUMENT_Needle_OAT</PART_ID>
 		<ID>1</ID>
 	</DefaultTemplateParameters>
-	<UseTemplate Name="ASOBO_GT_Needle_Code">
+	<UseTemplate Name="ASOBO_GT_Needle_OAT">
 		<SIMVAR>AMBIENT TEMPERATURE</SIMVAR>
 	</UseTemplate>
 </Template>

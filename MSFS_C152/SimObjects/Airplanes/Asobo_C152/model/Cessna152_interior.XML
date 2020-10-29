@@ -24,6 +24,7 @@
 	<Include Path="C152X\Asobo\Common.xml"/>
 	<Include Path="C152X\Asobo\NAVCOM\NavComSystem.xml"/>
 	<Include Path="C152X\Asobo\NAVCOM\ADF.xml"/>
+	<Include Path="C152X\Asobo\Generic\Complex\Misc.xml"/>
 	
 	
 	<!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank and the 20 in the formula is a scaling factor for the amount of yaw induced variation in the tank indication. The first value is the current tank quantity in liters. 	The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
@@ -373,8 +374,8 @@
 				<DONT_APPEND_ID>True</DONT_APPEND_ID>
 			</UseTemplate>
 			<UseTemplate Name="C152X_INSTRUMENT_Needle_OAT_Template">
-				<MIN_VALUE>-60</MIN_VALUE>
-				<MAX_VALUE>80</MAX_VALUE>
+				<MIN_VALUE>-85</MIN_VALUE>
+				<MAX_VALUE>230</MAX_VALUE>
 				<!--previously dependent on master switch....-->
 				<ANIM_NEVER_FAILS/>
 			</UseTemplate>
