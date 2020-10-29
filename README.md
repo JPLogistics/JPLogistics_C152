@@ -1,43 +1,49 @@
-# JPLogistics MSFS_C152
-- **Official Forum Post:** [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)
+# JPLogistics MSFS_C152 :small_airplane:
+- **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
 
-- **Primary Download (Latest Release):** [V0.8.3](https://github.com/JPLogistics/MSFS_C152/releases/)
+- **Primary Download (Latest Release): [V0.9.0](https://github.com/JPLogistics/MSFS_C152/releases/)**
 
-- **Alternative Download Site:** [V0.8.3](https://flightsim.to/file/2246/msfs-c152-community)
+- **Alternative Download Site: [V0.9.0](https://flightsim.to/file/2246/msfs-c152-community)**
+## V0.9.0
+- Volumetric Lighting!
+     - Credit to "Uwajimaya" for this - It is absolutely incredible!
+     - Check out the lighting when it's raining/foggy!
+- Avionics Switch fix
+     - Logbook should now work normally again. If possible make sure flight starts from a parked area!
+     - The Master Battery switch now properly controls the Avionics!
+          - Prevents the "Ghost Avionics Switch" taking control, as they do not exist IRL but do within MSFS Systems!
+- VOR Heading Select Knob now reads "Select VOR Radial ([selected degrees]°)!
+- VOR Needle Animation smoothed!
 
-## V0.8.3
+### Known Issue
+- Translations may be incorrect for some Tooltips, this is mainly because I only speak English!
+  - If you are able to assist in the translations, please feel free to help us!
+
+### V0.8.3
 - Balanced the default W&B values to prevent strong left turn in level flight due to weight
 - Increased speed of dome light knob
 
 ### V0.8.2
-
 - Fixed an issue when using Saitek Switch Panel
      - Unable to start using panel key
 
 ### V0.8.1
-
 - Corrected NAV1/NAV2 behaviour
      - Nav Ball 1/2 will disconnect when corresponding radio stack is turned off
      - Nav Identify Audio will no longer be played if corresponding radio stack is turned off
      
 ### V0.8;
-
 - Corrected COM1/COM2 behaviour
   - Radio now shuts down correctly (Not just turn off the screen) when the volume knob is switched to OFF
   - Works with vPilot correctly (Turning COM1 off will now terminate any Tx/Rx over vPilot)
-  
 - Added 2 x Cargo areas
   - Forward (Max 120lb)
   - Rear (Max 40lb)
   - Note: Combined payload weight should _not_ exceed 120lb!
-
 - Corrected alternator charge - Battery now recharges correctly!
   - Also corrected Max Output to fit real world!
-
 - Radio Stack "initial" values changed for Buttons & Freq.
-
 - Initial work for upcoming changes (TBA)
-
 
 ### Credits to [@TheFrett](https://github.com/TheFrett) & [@DRF30q](https://github.com/DRF30q) for some of the changes made!
 

@@ -75,7 +75,7 @@
 			<!-- This battery switch also controls avionics -->
 			<ON_TOGGLE_MASTER_BATTERY>
 				(A:ELECTRICAL MASTER BATTERY:1, Bool) (A:AVIONICS MASTER SWITCH, Bool) != if{
-					(&gt;K:TOGGLE_AVIONICS_MASTER)
+					(A:ELECTRICAL MASTER BATTERY:1, Bool) (&gt;K:AVIONICS_MASTER_SET, Bool)
 				}
 			</ON_TOGGLE_MASTER_BATTERY>
 		</UseTemplate>
@@ -83,7 +83,7 @@
 			<FREQUENCY>5</FREQUENCY>
 			<UPDATE_CODE>
 				(A:ELECTRICAL MASTER BATTERY:1, Bool) (A:AVIONICS MASTER SWITCH, Bool) != if{
-					(&gt;K:TOGGLE_AVIONICS_MASTER)
+					(A:ELECTRICAL MASTER BATTERY:1, Bool) (&gt;K:AVIONICS_MASTER_SET, Bool)
 				}
 			</UPDATE_CODE>
 		</UseTemplate>
@@ -373,6 +373,7 @@
 				<DONT_APPEND_ID>True</DONT_APPEND_ID>
 			</UseTemplate>
 			<UseTemplate Name="ASOBO_INSTRUMENT_Needle_OAT_Template">
+				<!--<ANIMATION_OFFSET_CODE>10</ANIMATION_OFFSET_CODE>-->
 				<MIN_VALUE>-60</MIN_VALUE>
 				<MAX_VALUE>80</MAX_VALUE>
 				<!--previously dependent on master switch....-->
