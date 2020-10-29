@@ -1,4 +1,4 @@
-# JPLogistics MSFS_C152
+# JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
 
 - **Primary Download (Latest Release): [V0.9.0](https://github.com/JPLogistics/MSFS_C152/releases/) - NOT YET RELEASED!**
@@ -11,6 +11,7 @@
 - Avionics Switch fix
      - Logbook should now work normally again. If possible make sure flight starts from a parked area!
      - The Master Battery switch now properly controls the Avionics!
+          - Prevents the "Ghost Avionics Switch" taking control, as they do not exist IRL but do within MSFS Systems!
 - Updated Checklists
      - All 'Normal Operation' checklists have been checked and updated to reflect real world!
 - OAT Gauge fixed
