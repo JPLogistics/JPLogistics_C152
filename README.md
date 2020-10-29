@@ -12,8 +12,6 @@
      - Logbook should now work normally again. If possible make sure flight starts from a parked area!
      - The Master Battery switch now properly controls the Avionics!
           - Prevents the "Ghost Avionics Switch" taking control, as they do not exist IRL but do within MSFS Systems!
-- Updated Checklists
-     - All 'Normal Operation' checklists have been checked and updated to reflect real world!
 - OAT Gauge fixed
      - Dial now faces the right way up! (Bug exists - Need to investigate further!)
 - VOR Heading Select Knob now reads "Select VOR Radial ([selected degrees]°)!
