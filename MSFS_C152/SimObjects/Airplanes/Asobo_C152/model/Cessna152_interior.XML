@@ -373,9 +373,14 @@
 				<DONT_APPEND_ID>True</DONT_APPEND_ID>
 			</UseTemplate>
 			<UseTemplate Name="C152X_INSTRUMENT_Needle_OAT_Template">
+<<<<<<< HEAD
 				<ANIMATION_OFFSET_CODE>+10</ANIMATION_OFFSET_CODE>
 				<MIN_VALUE>-85</MIN_VALUE>
 				<MAX_VALUE>230</MAX_VALUE>
+=======
+				<MIN_VALUE>-60</MIN_VALUE>
+				<MAX_VALUE>80</MAX_VALUE>
+>>>>>>> parent of 3a17421... OAT Test
 				<!--previously dependent on master switch....-->
 				<ANIM_NEVER_FAILS/>
 			</UseTemplate>
