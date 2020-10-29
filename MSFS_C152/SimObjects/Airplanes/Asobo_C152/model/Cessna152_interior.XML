@@ -372,7 +372,7 @@
 				<FAILURE_CODE>0</FAILURE_CODE>
 				<DONT_APPEND_ID>True</DONT_APPEND_ID>
 			</UseTemplate>
-			<UseTemplate Name="ASOBO_INSTRUMENT_Needle_OAT_Template">
+			<UseTemplate Name="C152X_INSTRUMENT_Needle_OAT_Template">
 				<MIN_VALUE>-60</MIN_VALUE>
 				<MAX_VALUE>80</MAX_VALUE>
 				<!--previously dependent on master switch....-->
