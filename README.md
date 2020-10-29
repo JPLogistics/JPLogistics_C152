@@ -4,13 +4,17 @@
 - **Primary Download (Latest Release): [V0.9.0](https://github.com/JPLogistics/MSFS_C152/releases/) - NOT YET RELEASED!**
 
 - **Alternative Download Site: [V0.9.0](https://flightsim.to/file/2246/msfs-c152-community) - NOT YET RELEASED!**
-## V0.9.0 (Work in Progress - COMING SOON)
+## V0.9.0 (Work in Progress - COMING SOON - UNSTABLE)
 - Volumetric Lighting!
      - Credit to "Uwajimaya" for this - Looks incredible!
 - Avionics Switch fix
      - Logbook should now work normally again. If possible make sure flight starts from a parked area!
 - Updated Checklists
      - All 'Normal Operation' checklists have been checked and updated to reflect real world!
+- OAT Gauge fixed
+     - Dial now faces the right way up!
+- VOR Heading Selector now displays degree's selected!
+- VOR Needle Animation smoothed!
 
 ### V0.8.3
 - Balanced the default W&B values to prevent strong left turn in level flight due to weight

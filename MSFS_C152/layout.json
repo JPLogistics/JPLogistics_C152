@@ -217,8 +217,8 @@
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/Checklist/Cessna152_Checklist.xml",
-      "size": 6889,
-      "date": 132481471931264298
+      "size": 6815,
+      "date": 132483218422694330
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/Checklist/Library.xml",
@@ -227,8 +227,8 @@
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/Cessna152_interior.XML",
-      "size": 24446,
-      "date": 132482818397650406
+      "size": 24528,
+      "date": 132484017288817646
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/panel/PANEL.CFG",
@@ -239,6 +239,21 @@
       "path": "SimObjects/Airplanes/Asobo_C152/panel/panel.xml",
       "size": 318,
       "date": 132481471930546202
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/texture/CESSNA_152_COCKPIT_GAUGES_ALBD.PNG.DDS",
+      "size": 5592560,
+      "date": 132484065743358976
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/texture/CESSNA_152_COCKPIT_GAUGES_ALBD.PNG.DDS.FLAGS",
+      "size": 18,
+      "date": 132463380219871316
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/texture/CESSNA_152_COCKPIT_GAUGES_ALBD.PNG.DDS.json",
+      "size": 102,
+      "date": 132463380219890974
     },
     {
       "path": "ModelBehaviorDefs/C152X/Asobo/Common.xml",
@@ -253,12 +268,12 @@
     {
       "path": "ModelBehaviorDefs/C152X/Asobo/Common/Instrument.xml",
       "size": 1077,
-      "date": 132481471931663526
+      "date": 132484050807729352
     },
     {
       "path": "ModelBehaviorDefs/C152X/Asobo/Common/Subtemplates/Instrument_Subtemplates.xml",
-      "size": 22988,
-      "date": 132481471931533794
+      "size": 23191,
+      "date": 132484051519026080
     },
     {
       "path": "ModelBehaviorDefs/C152X/Asobo/NAVCOM/ADF.xml",
@@ -267,8 +282,8 @@
     },
     {
       "path": "ModelBehaviorDefs/C152X/Asobo/NAVCOM/NavComSystem.xml",
-      "size": 18586,
-      "date": 132481471931364284
+      "size": 18588,
+      "date": 132484012938317934
     },
     {
       "path": "ModelBehaviorDefs/C152X/Asobo/Transponder/Transponder.xml",
