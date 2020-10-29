@@ -4,7 +4,7 @@
 - **Primary Download (Latest Release): [V0.9.0](https://github.com/JPLogistics/MSFS_C152/releases/) - NOT YET RELEASED!**
 
 - **Alternative Download Site: [V0.9.0](https://flightsim.to/file/2246/msfs-c152-community) - NOT YET RELEASED!**
-## V0.9.0 (Work in Progress - COMING SOON - UNSTABLE)
+## V0.9.0
 - Volumetric Lighting!
      - Credit to "Uwajimaya" for this - It is absolutely incredible!
      - Check out the lighting when it's raining/foggy!
@@ -16,7 +16,7 @@
 - VOR Needle Animation smoothed!
 
 ### Known Issue
-- Translations are incorrect for some Tooltips, this is mainly because I only speak English!
+- Translations may be incorrect for some Tooltips, this is mainly because I only speak English!
   - If you are able to assist in the translations, please feel free to help us!
 
 ### V0.8.3
