@@ -373,7 +373,7 @@
 				<DONT_APPEND_ID>True</DONT_APPEND_ID>
 			</UseTemplate>
 			<UseTemplate Name="ASOBO_INSTRUMENT_Needle_OAT_Template">
-				<ANIMATION_OFFSET_CODE>+10</ANIMATION_OFFSET_CODE>
+				<ANIMATION_OFFSET_CODE>10</ANIMATION_OFFSET_CODE>
 				<MIN_VALUE>-85</MIN_VALUE>
 				<MAX_VALUE>230</MAX_VALUE>
 				<!--previously dependent on master switch....-->
