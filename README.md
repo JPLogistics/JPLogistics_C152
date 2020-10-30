@@ -15,9 +15,12 @@
 - VOR Heading Select Knob now reads "Select VOR Radial ([selected degrees]°)!
 - VOR Needle Animation smoothed!
 
-### Known Issue
+### Known Issues
 - Translations may be incorrect for some Tooltips, this is mainly because I only speak English!
   - If you are able to assist in the translations, please feel free to help us!
+- Logbook not logging after doing Circuits
+  - I have been made aware of this, it is due to how Asobo decides what stage of the flight you are in, I will be looking to improve this in V1.0.0 (if not sooner)
+  - The logbook should still work as expected when doing a full Airport-Airport flight!
 
 ### V0.8.3
 - Balanced the default W&B values to prevent strong left turn in level flight due to weight
