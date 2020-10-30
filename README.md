@@ -12,6 +12,7 @@
      - Logbook should now work normally again. If possible make sure flight starts from a parked area!
      - The Master Battery switch now properly controls the Avionics!
           - Prevents the "Ghost Avionics Switch" taking control, as they do not exist IRL but do within MSFS Systems!
+     - Saitek Switch Panel users (or Honeycomb) should leave the Avionics Switch in the "OFF" position!
 - VOR Heading Select Knob now reads "Select VOR Radial ([selected degrees]°)!
 - VOR Needle Animation smoothed!
 
