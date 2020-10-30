@@ -22,6 +22,8 @@
 - Logbook not logging after doing Circuits
   - I have been made aware of this, it is due to how Asobo decides what stage of the flight you are in, I will be looking to improve this in V1.0.0 (if not sooner)
   - The logbook should still work as expected when doing a full Airport-Airport flight!
+### SAITEK SWITCH PANEL USERS
+- As a work-around, for now due to a bug, please leave the Saitek Switch Panel - Avionics Master Switch in the ON position!
 
 ### V0.8.3
 - Balanced the default W&B values to prevent strong left turn in level flight due to weight
