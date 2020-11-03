@@ -6,10 +6,10 @@
 		<!-- minimum display size in % (should be bounding sphere vertical screen size, sphere will often be slightly larger than you expect) -->
 		<!-- default minSize is 0 -->
 		<LOD minSize="100" ModelFile="C152_cockpit_LOD00.gltf"/>
-		<LOD minSize="30" ModelFile="C152_cockpit_LOD01.gltf"/>
-		<LOD minSize="15" ModelFile="C152_cockpit_LOD02.gltf"/>
-		<LOD minSize="5" ModelFile="C152_cockpit_LOD03.gltf"/>
-		<LOD minSize="1" ModelFile="C152_cockpit_LOD04.gltf"/>
+		<LOD minSize="50" ModelFile="C152_cockpit_LOD01.gltf"/>
+		<LOD minSize="25" ModelFile="C152_cockpit_LOD02.gltf"/>
+		<LOD minSize="20" ModelFile="C152_cockpit_LOD03.gltf"/>
+		<LOD minSize="10" ModelFile="C152_cockpit_LOD04.gltf"/>
 	</LODS>
 </ModelInfo>
 
@@ -402,7 +402,7 @@
 		<UseTemplate Name="ASOBO_LIGHTING_Knob_Glareshield_Template">
 			<NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
 			<ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
-			<KNOB_TURN_SPEED>4.5</KNOB_TURN_SPEED>						
+			<KNOB_TURN_SPEED>4.0</KNOB_TURN_SPEED>						
 		</UseTemplate>
 		
 		<UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Cabin_Template">		
