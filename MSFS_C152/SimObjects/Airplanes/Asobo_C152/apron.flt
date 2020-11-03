@@ -80,7 +80,7 @@ FoldingWingsState=0, 0
 ;Note these settings may override standard config settings
 ;-------------------------------------------- 
 ;C152X Cessna 300 ADF
-XMLVAR_ADF_MODE_SEL=0	;2='ADF' Mode
+XMLVAR_ADF_MODE_SEL=2	;2='ADF' Mode
 XMLVAR_ADF_VOLUME=0		;0=OFF, 100=FULL
 ;--------------------------------------------
 ;C152X KX155 DUAL NAVCOM
