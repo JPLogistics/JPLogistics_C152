@@ -4,10 +4,10 @@
 		<!-- Highest LOD -->
 		<!-- minimum display size in % (should be bounding sphere vertical screen size, sphere will often be slightly larger than you expect) -->
 		<!-- default minSize is 0 -->
-		<LOD minSize="25" ModelFile="C152_LOD00.gltf"/>
-		<LOD minSize="15" ModelFile="C152_LOD01.gltf"/>
+		<LOD minSize="1" ModelFile="C152_LOD00.gltf"/>
+		<!-- <LOD minSize="15" ModelFile="C152_LOD01.gltf"/>
 		<LOD minSize="5" ModelFile="C152_LOD02.gltf"/>
-		<LOD minSize="1" ModelFile="C152_LOD03.gltf"/>
+		<LOD minSize="1" ModelFile="C152_LOD03.gltf"/> -->
 	</LODS>
 	<Behaviors>
 		<!-- Includes ###################################### -->
