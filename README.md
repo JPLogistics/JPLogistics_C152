@@ -1,3 +1,5 @@
+![C152](https://img.shields.io/badge/Aircraft-Cessna%20152-blue) ![Game](https://img.shields.io/badge/Software-Microsoft%20Flight%20Simulator-blue)
+![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?label=downloads%40github&logo=downloads%40github&color=blue)
 # JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
 
