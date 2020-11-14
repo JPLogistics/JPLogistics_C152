@@ -2,14 +2,24 @@
 
 ![Version](https://img.shields.io/badge/Version-V0.9.1-blue)
 
-![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?label=Downloads%40github&logo=Downloads%40github&color=blue) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-1'348-blue)
+![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?label=Downloads%40github&logo=Downloads%40github&color=blue) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-1'482-blue)
 # JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
 
 - **Primary Download (Latest Release): [V0.9.1](https://github.com/JPLogistics/MSFS_C152/releases/)**
 
 - **Alternative Download Site: [V0.9.1](https://flightsim.to/file/2246/msfs-c152-community)**
-## V0.9.0
+
+## V0.9.1
+- New Flight Model
+   - Let us know your opinions about this one!
+- Edited some internal files to improve "Quality of Life"
+- Removed "Checklists"
+   - This is so you can use 3rd Party Checklist addons until our custom ones are complete!
+
+#### Apologies for the delay - I was moving house!
+
+### V0.9.0
 - Volumetric Lighting!
      - Credit to "Uwajimaya" for this - It is absolutely incredible!
      - Check out the lighting when it's raining/foggy!
