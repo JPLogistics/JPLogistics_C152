@@ -10,7 +10,22 @@
 
 - **Alternative Download Site: [V0.9.1](https://flightsim.to/file/2246/msfs-c152-community)**
 
-## V0.9.1
+##V0.9.2 - Mistakes were made!
+Basically,
+
+It’s been decided by our amazing supporters that the previous flight model was actually better than the one we tried out!
+
+So, here we go!
+
+Changelog;
+- Revert Flight Model to previous version
+- Confirmed compatibility with latest MSFS update
+
+Nothing else has been changed in this version, however we do have some things up our sleeve!
+
+Standby for more news!
+
+### V0.9.1
 - New Flight Model
    - Let us know your opinions about this one!
 - Edited some internal files to improve "Quality of Life"
