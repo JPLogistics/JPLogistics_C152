@@ -1,4 +1,4 @@
-# DEVELOPER!
+# DEVELOPER BUILD - Use at your own risk!
 ![C152](https://img.shields.io/badge/Aircraft-Cessna%20152-blue) ![Game](https://img.shields.io/badge/Software-Microsoft%20Flight%20Simulator-blue)
 
 ![Version](https://img.shields.io/badge/Version-V0.9.2-blue)
