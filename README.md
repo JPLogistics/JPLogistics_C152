@@ -1,16 +1,34 @@
 ![C152](https://img.shields.io/badge/Aircraft-Cessna%20152-blue) ![Game](https://img.shields.io/badge/Software-Microsoft%20Flight%20Simulator-blue)
 
-![Version](https://img.shields.io/badge/Version-V0.9.1-blue)
+![Version](https://img.shields.io/badge/Version-V0.9.2-blue)
 
 ![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?label=Downloads%40github&logo=Downloads%40github&color=blue) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-1'482-blue)
 # JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
 
-- **Primary Download (Latest Release): [V0.9.1](https://github.com/JPLogistics/MSFS_C152/releases/)**
+- **Primary Download (Latest Release): [V0.9.2](https://github.com/JPLogistics/MSFS_C152/releases/)**
 
-- **Alternative Download Site: [V0.9.1](https://flightsim.to/file/2246/msfs-c152-community)**
+- **Alternative Download Site: [V0.9.2](https://flightsim.to/file/2246/msfs-c152-community)**
 
-## V0.9.1
+## V0.9.3
+- Spanish translations corrected! Thanks 'danderio'
+
+### V0.9.2 - Mistakes were made!
+Basically,
+
+It’s been decided by our amazing supporters that the previous flight model was actually better than the one we tried out!
+
+So, here we go!
+
+Changelog;
+- Revert Flight Model to previous version
+- Confirmed compatibility with latest MSFS update
+
+Nothing else has been changed in this version, however we do have some things up our sleeve!
+
+Standby for more news!
+
+### V0.9.1
 - New Flight Model
    - Let us know your opinions about this one!
 - Edited some internal files to improve "Quality of Life"
