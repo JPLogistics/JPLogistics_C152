@@ -11,7 +11,7 @@
 
 - **Alternative Download Site: [V0.9.2](https://flightsim.to/file/2246/msfs-c152-community)**
 
-## V0.9.3
+## V0.9.3 - Work In Progress!
 - Spanish translations corrected! Thanks 'danderio'
 
 ### V0.9.2 - Mistakes were made!
