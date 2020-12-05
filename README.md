@@ -6,7 +6,7 @@
 ![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?label=Downloads%40github&logo=Downloads%40github&color=blue) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-1'482-blue)
 # JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
-
+- **Download BETA: [MSFS_C152_BETA](https://github.com/JPLogistics/MSFS_C152/raw/Developer/MSFS_C152_BETA.zip)**
 - **Primary Download (Latest Release): [V0.9.2](https://github.com/JPLogistics/MSFS_C152/releases/)**
 
 - **Alternative Download Site: [V0.9.2](https://flightsim.to/file/2246/msfs-c152-community)**
