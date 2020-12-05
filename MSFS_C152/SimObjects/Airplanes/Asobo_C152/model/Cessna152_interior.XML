@@ -160,7 +160,8 @@
 		<UseTemplate Name="ASOBO_HANDLING_Indicator_Flaps_Template">
 		</UseTemplate>
 		
-		<UseTemplate Name="ASOBO_HANDLING_Wheel_ElevatorTrim_Template">
+		<UseTemplate Name="C152_HANDLING_Wheel_ElevatorTrim_Template">
+			<INFINITE>false</INFINITE>
 		</UseTemplate>
 		
 		<UseTemplate Name="ASOBO_HANDLING_Indicator_ElevatorTrim_Template">

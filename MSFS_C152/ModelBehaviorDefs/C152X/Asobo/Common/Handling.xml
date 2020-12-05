@@ -1,0 +1,129 @@
+<ModelBehaviors>
+
+<Template Name="C152_HANDLING_Wheel_ElevatorTrim_Template">
+	<DefaultTemplateParameters>
+		<TOOLTIPID>TT:COCKPIT.TOOLTIPS.WHEEL_PITCH_TRIM (%((A:ELEVATOR TRIM POSITION, degrees) -3.15 &lt;)%{if} TT:COCKPIT.TOOLTIPS.PITCH_TRIM_NOSE_DN%{else}%((A:ELEVATOR TRIM POSITION, degrees) 3.15 &lt;) %{if} TT:COCKPIT.TOOLTIPS.PITCH_TRIM_NEUTRAL%{else}TT:COCKPIT.TOOLTIPS.PITCH_TRIM_NOSE_UP%{end} %{end})</TOOLTIPID>
+		<ANIM_NAME>HANDLING_Wheel_ElevatorTrim</ANIM_NAME>
+		<NODE_ID>HANDLING_Wheel_ElevatorTrim</NODE_ID>
+		<PART_ID>HANDLING_Wheel_ElevatorTrim</PART_ID>
+		<Condition Check="INFINITE">
+			<True>
+				<DRAG_SPEED>4</DRAG_SPEED>
+				<EVENT_SPEED>128</EVENT_SPEED>
+			</True>
+			<False>
+				<DRAG_MIN_VALUE>-16384</DRAG_MIN_VALUE>
+			</False>
+		</Condition>
+		<Condition Check="DOUBLE_WHEEL">
+			<NODE_ID2>HANDLING_Wheel_ElevatorTrim_Pitch_2</NODE_ID2>
+		</Condition>
+		<Condition Check="LOCK">
+			<LOCK_NODE_ID>HANDLING_Wheel_ElevatorTrim_Lock</LOCK_NODE_ID>
+			<LOCK_ANIM_NAME>HANDLING_Wheel_ElevatorTrim_Lock</LOCK_ANIM_NAME>
+			<DELTA_MIN>0.00025</DELTA_MIN>
+			<EVENT_SPEED>256</EVENT_SPEED>
+			<DRAG_EVENT_SPEED>-32</DRAG_EVENT_SPEED>
+		</Condition>
+		<DRAG_AXIS_SCALE>100</DRAG_AXIS_SCALE>
+		<WWISE_EVENT_1>elevator_trim_lock_on</WWISE_EVENT_1>
+		<WWISE_EVENT_2>elevator_trim_lock_off</WWISE_EVENT_2>
+	</DefaultTemplateParameters>
+	
+	<Condition Check="LOCK">
+		<True>
+			<Component ID="#LOCK_NODE_ID#" Node="#LOCK_NODE_ID#">
+				<UseTemplate Name="ASOBO_GT_Lever_DraggingWheelLeftDrag_Axis">
+					<AXIS>Y</AXIS>
+					<POSITIVE_AXIS_CODE>(A:ELEVATOR TRIM PCT, position 16k) #EVENT_SPEED# - -16384 max (&gt;K:ELEVATOR_TRIM_SET)</POSITIVE_AXIS_CODE>
+					<NEGATIVE_AXIS_CODE>(A:ELEVATOR TRIM PCT, position 16k) #EVENT_SPEED# + 16384 min (&gt;K:ELEVATOR_TRIM_SET)</NEGATIVE_AXIS_CODE>
+					<Condition Valid="WHEEL_USE_TRAJECTORY_DRAG_MODE">
+						<True>
+							<USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
+							<DRAG_ANIM_NAME>#ANIM_NAME#</DRAG_ANIM_NAME>
+							<DRAG_NODE_ID>#NODE_ID#</DRAG_NODE_ID>
+							<DRAG_CODE>
+								(M:DragPercent) (&gt;O:Position_)
+								(M:DragPercent) 32768 * 16384 - (&gt;K:ELEVATOR_TRIM_SET)
+							</DRAG_CODE>
+						</True>
+						<False>
+							<DRAG_CODE>
+								(A:ELEVATOR TRIM PCT, position 16k) #DRAG_EVENT_SPEED# (O:DragScale) * + 16384 min -16384 max (&gt;K:ELEVATOR_TRIM_SET)
+							</DRAG_CODE>
+						</False>
+					</Condition>
+						<DOWN_CODE>1 (&gt;O:InteractingWithElevatorTrim)</DOWN_CODE>
+						<RELEASE_CODE>0 (&gt;O:InteractingWithElevatorTrim)</RELEASE_CODE>
+					<!-- Former tooltip w/ accurate simvar  <TOOLTIPID>TT:COCKPIT.TOOLTIPS.WHEEL_PITCH_TRIM(%((A:ELEVATOR TRIM POSITION, degrees))%!4.1f!°)</TOOLTIPID> --> 
+					<ANIM_NAME>#LOCK_ANIM_NAME#</ANIM_NAME>
+					<ANIM_LAG>512</ANIM_LAG>
+						<ANIM_CODE>(O:InteractingWithElevatorTrim) 100 *</ANIM_CODE>
+					<NO_ARROWS/>
+					<CURSOR>Grab</CURSOR>
+				</UseTemplate>
+				<UseTemplate Name = "ASOBO_GT_Anim">
+					<ANIM_LENGTH>200</ANIM_LENGTH>
+					<ANIM_SIMVAR>ELEVATOR TRIM PCT</ANIM_SIMVAR>
+					<ANIM_SIMVAR_UNITS>percent</ANIM_SIMVAR_UNITS>
+					<!-- [-100, 100] -->
+					<ANIM_SIMVAR_BIAS>100</ANIM_SIMVAR_BIAS>
+				</UseTemplate>
+			</Component>
+		</True>
+		<False>
+			<Component ID="#NODE_ID#" Node="#NODE_ID#">
+				<Condition Check="INFINITE">
+					<True>
+						<UseTemplate Name="ASOBO_GT_Lever_DraggingYAxis_Code">
+							<UP_CODE>(A:ELEVATOR TRIM PCT, position 16k) #EVENT_SPEED# - -16384 max (&gt;K:ELEVATOR_TRIM_SET)</UP_CODE>
+							<DOWN_CODE>(A:ELEVATOR TRIM PCT, position 16k) #EVENT_SPEED# + 16384 min (&gt;K:ELEVATOR_TRIM_SET)</DOWN_CODE>
+							<IS_LOOPING/>
+						</UseTemplate>
+					</True>
+					<False>
+						<UseTemplate Name="ASOBO_GT_Lever_DraggingYAxis_EventsSet">
+							<ANIM_LENGTH>400</ANIM_LENGTH>
+							<ANIM_CODE>(A:ELEVATOR TRIM PCT, Percent) 100 +</ANIM_CODE>
+							<DRAG_SIMVAR>ELEVATOR TRIM PCT</DRAG_SIMVAR>
+							<DRAG_SIMVAR_UNITS>percent</DRAG_SIMVAR_UNITS>
+							<DRAG_EVENTID_SET>ELEVATOR_TRIM_SET</DRAG_EVENTID_SET>
+						</UseTemplate>
+					</False>
+				</Condition>
+			</Component>
+			<Condition Check="HIGHLIGHT_NODE_ID">
+				<UseTemplate Name="ASOBO_GT_ComponentWith_PART_ID">
+					<NODE_ID>#HIGHLIGHT_NODE_ID#</NODE_ID>
+				</UseTemplate>
+			</Condition>
+		</False>
+	</Condition>
+	
+
+	<Condition Check="DOUBLE_WHEEL">
+		<Component ID="#NODE_ID2#" Node="#NODE_ID2#">
+			<Condition Check="INFINITE">
+				<True>
+					<UseTemplate Name="ASOBO_GT_Interaction_DraggingYAxis_Code">
+						<UP_CODE>(A:ELEVATOR TRIM PCT, position 16k) #EVENT_SPEED# - -16384 max (&gt;K:ELEVATOR_TRIM_SET)</UP_CODE>
+						<DOWN_CODE>(A:ELEVATOR TRIM PCT, position 16k) #EVENT_SPEED# + 16384 min (&gt;K:ELEVATOR_TRIM_SET)</DOWN_CODE>
+						<HELPID>HELPID_GAUGE_PITCH_TRIM</HELPID>
+						<IS_LOOPING/>
+					</UseTemplate>
+				</True>
+				<False>
+					<UseTemplate Name="ASOBO_GT_Interaction_DraggingYAxis_EventSet">
+						<HELPID>HELPID_GAUGE_PITCH_TRIM</HELPID>
+						<DRAG_MIN_VALUE>-16384</DRAG_MIN_VALUE>
+						<DRAG_EVENTID_SET>ELEVATOR_TRIM_SET</DRAG_EVENTID_SET>
+						<DRAG_SIMVAR>ELEVATOR TRIM PCT</DRAG_SIMVAR>
+						<DRAG_SIMVAR_UNITS>percent</DRAG_SIMVAR_UNITS>
+					</UseTemplate>
+				</False>
+			</Condition>
+		</Component>
+	</Condition>
+</Template>
+
+</ModelBehaviors>
