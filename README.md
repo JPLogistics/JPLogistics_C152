@@ -11,9 +11,13 @@
 
 - **Alternative Download Site: [V0.9.2](https://flightsim.to/file/2246/msfs-c152-community)**
 
-## V0.9.3 - Work In Progress!
+## V0.9.3 - Work In Progress - Things will change!
+Changelog:
 - Spanish translations corrected! Thanks 'danderio'
-
+- Engine now idles around 630 RPM
+   - I think its a bit slow to spool down, i will look into this more later!
+- Testing a reduced Drag Flaps setting
+- Corrected the position of "Baggage Areas"
 ### V0.9.2 - Mistakes were made!
 Basically,
 
