@@ -18,6 +18,7 @@ Changelog:
    - I think its a bit slow to spool down, i will look into this more later!
 - Testing a reduced Drag Flaps setting
 - Corrected the position of "Baggage Areas"
+- Adjusted Trim Wheel speed!
 ### V0.9.2 - Mistakes were made!
 Basically,
 
