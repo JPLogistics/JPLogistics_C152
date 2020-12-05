@@ -4,7 +4,7 @@
 
 ![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?label=Downloads%40github&logo=Downloads%40github&color=blue) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-1'482-blue)
 
-<a href="https://www.buymeacoffee.com/n95jpl" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 30px !important;width: 108px !important;" ></a>
+<a href="https://www.buymeacoffee.com/n95jpl" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="20%"></img></a>
 
 # JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
