@@ -16,7 +16,7 @@
 <ModelBehaviors>
 
 	<Include Path="Asobo\Common.xml"/>
-	<Include Path="Asobo\Transponder\\Transponder.xml"/>
+	<Include Path="Asobo\Transponder\Transponder.xml"/>
 	<Include Path="Asobo\NAVCOM\NavComSystem.xml"/>
 	<Include Path="Asobo\NAVCOM\ADF.xml"/>
 
@@ -160,7 +160,7 @@
 		<UseTemplate Name="ASOBO_HANDLING_Indicator_Flaps_Template">
 		</UseTemplate>
 		
-		<UseTemplate Name="C152_HANDLING_Wheel_ElevatorTrim_Template">
+		<UseTemplate Name="ASOBO_HANDLING_Wheel_ElevatorTrim_Template">
 			<INFINITE>false</INFINITE>
 		</UseTemplate>
 		
