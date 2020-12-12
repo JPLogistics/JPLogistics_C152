@@ -1,17 +1,37 @@
+# DEVELOPER BUILD - Use at your own risk!
 ![C152](https://img.shields.io/badge/Aircraft-Cessna%20152-blue) ![Game](https://img.shields.io/badge/Software-Microsoft%20Flight%20Simulator-blue)
 
-![Version](https://img.shields.io/badge/Version-V0.9.2-blue)
+![Version](https://img.shields.io/badge/Version-V0.9.3-blue)
 
-![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?label=Downloads%40github&logo=Downloads%40github&color=blue) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-2.6k-blue)
+![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?label=Downloads%40github&logo=Downloads%40github&color=blue) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-2.7k-blue)
 
 <a href="https://www.buymeacoffee.com/n95jpl" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="20%"></img></a>
 
 # JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
+- **Primary Download (Latest Release): [V0.9.3](https://github.com/JPLogistics/MSFS_C152/releases/)**
 
-- **Primary Download (Latest Release): [V0.9.2](https://github.com/JPLogistics/MSFS_C152/releases/)**
+- **Alternative Download Site: [V0.9.3](https://flightsim.to/file/2246/msfs-c152-community)**
 
-- **Alternative Download Site: [V0.9.2](https://flightsim.to/file/2246/msfs-c152-community)**
+## V0.9.3 - Onwards & Upwards!
+Changelog:
+- Spanish translations corrected! Thanks 'danderio'
+- Wording changes in Weight & Balance Screens
+- Fixed an issue where autopilot took control of aircraft
+- Adjusted Engine Parameters
+  - Smoother taxi speeds/control
+  - Realistic power levels
+  - Adjusted Propeller parameters
+- Corrected flap lift & drag parameters
+  - Corrected aggressive aerodynamic changes on takeoff
+- Reverted Fuel Tanks to "Standard" editions
+  - This was a collaborative decision to save on weight & to reflect what most real world C152's have!
+- Corrected the position of "Baggage Areas"
+- Corrected Centre of Gravity
+- Adjusted Trim Wheel speed!
+  - Also fixed broken Animation!
+- Adjusted Default Pilot Camera Position
+- **NEW LIVERY!**
 
 ## V0.9.2 - Mistakes were made!
 Basically,
