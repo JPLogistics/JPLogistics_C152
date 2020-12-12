@@ -1,124 +1,14 @@
 {
   "content": [
     {
-      "path": "ContentInfo/jplogistics-c152/Thumbnail.jpg",
-      "size": 36409,
-      "date": 132522077896320566
-    },
-    {
       "path": "de-DE.locPak",
       "size": 2001,
       "date": 132487231460000000
     },
     {
-      "path": "Effects/LIGHT_C152_BeaconTop.fx",
-      "size": 1220,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/LIGHT_C152_Landing.fx",
-      "size": 1231,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/LIGHT_C152_NavigationGreen.fx",
-      "size": 1230,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/LIGHT_C152_NavigationRed.fx",
-      "size": 1227,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/LIGHT_C152_NavigationWhite.fx",
-      "size": 1353,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/LIGHT_C152_StrobeSimple.fx",
-      "size": 4720,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/LIGHT_C152_Taxi.fx",
-      "size": 1281,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/LIGHT_C152_vLanding.fx",
-      "size": 1232,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/LIGHT_C152_vTaxi.fx",
-      "size": 1281,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/texture/FX_ulm01.PNG.dds",
-      "size": 87556,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/texture/fx_ulm01.png.DDS.FLAGS",
-      "size": 21,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/texture/FX_ulm01.PNG.DDS.json",
-      "size": 144,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/texture/FX_ulm02.PNG.dds",
-      "size": 87556,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/texture/fx_ulm02.png.DDS.FLAGS",
-      "size": 21,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/texture/FX_ulm02.PNG.DDS.json",
-      "size": 144,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/texture/FX_ulm03.PNG.dds",
-      "size": 87556,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/texture/fx_ulm03.png.DDS.FLAGS",
-      "size": 21,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/texture/FX_ulm03.PNG.DDS.json",
-      "size": 144,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/texture/FX_ulm04.PNG.DDS",
-      "size": 87556,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/texture/fx_ulm04.png.DDS.FLAGS",
-      "size": 21,
-      "date": 132487231460000000
-    },
-    {
-      "path": "Effects/texture/FX_ulm04.PNG.DDS.json",
-      "size": 144,
-      "date": 132487231460000000
-    },
-    {
       "path": "en-US.locPak",
       "size": 1585,
-      "date": 132520361038918139
+      "date": 132520361038918140
     },
     {
       "path": "es-ES.locPak",
@@ -133,41 +23,6 @@
     {
       "path": "it-IT.locPak",
       "size": 1790,
-      "date": 132487231460000000
-    },
-    {
-      "path": "ModelBehaviorDefs/C152X/Asobo/Common/Index.xml",
-      "size": 63,
-      "date": 132519280860000000
-    },
-    {
-      "path": "ModelBehaviorDefs/C152X/Asobo/Common/Instrument.xml",
-      "size": 1077,
-      "date": 132516035920000000
-    },
-    {
-      "path": "ModelBehaviorDefs/C152X/Asobo/Common/Subtemplates/Instrument_Subtemplates.xml",
-      "size": 23164,
-      "date": 132516042360000000
-    },
-    {
-      "path": "ModelBehaviorDefs/C152X/Asobo/Common.xml",
-      "size": 36,
-      "date": 132487231460000000
-    },
-    {
-      "path": "ModelBehaviorDefs/C152X/Asobo/NAVCOM/ADF.xml",
-      "size": 5044,
-      "date": 132487231460000000
-    },
-    {
-      "path": "ModelBehaviorDefs/C152X/Asobo/NAVCOM/NavComSystem.xml",
-      "size": 18588,
-      "date": 132487231460000000
-    },
-    {
-      "path": "ModelBehaviorDefs/C152X/Asobo/Transponder/Transponder.xml",
-      "size": 4406,
       "date": 132487231460000000
     },
     {
@@ -186,14 +41,119 @@
       "date": 132487231460000000
     },
     {
+      "path": "effects/LIGHT_C152_BeaconTop.fx",
+      "size": 1220,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/LIGHT_C152_Landing.fx",
+      "size": 1231,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/LIGHT_C152_NavigationGreen.fx",
+      "size": 1230,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/LIGHT_C152_NavigationRed.fx",
+      "size": 1227,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/LIGHT_C152_NavigationWhite.fx",
+      "size": 1353,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/LIGHT_C152_StrobeSimple.fx",
+      "size": 4720,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/LIGHT_C152_Taxi.fx",
+      "size": 1281,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/LIGHT_C152_vLanding.fx",
+      "size": 1232,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/LIGHT_C152_vTaxi.fx",
+      "size": 1281,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/texture/FX_ulm01.PNG.dds",
+      "size": 87556,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/texture/fx_ulm01.png.DDS.FLAGS",
+      "size": 21,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/texture/FX_ulm01.PNG.DDS.json",
+      "size": 144,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/texture/FX_ulm02.PNG.dds",
+      "size": 87556,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/texture/fx_ulm02.png.DDS.FLAGS",
+      "size": 21,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/texture/FX_ulm02.PNG.DDS.json",
+      "size": 144,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/texture/FX_ulm03.PNG.dds",
+      "size": 87556,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/texture/fx_ulm03.png.DDS.FLAGS",
+      "size": 21,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/texture/FX_ulm03.PNG.DDS.json",
+      "size": 144,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/texture/FX_ulm04.PNG.DDS",
+      "size": 87556,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/texture/fx_ulm04.png.DDS.FLAGS",
+      "size": 21,
+      "date": 132487231460000000
+    },
+    {
+      "path": "effects/texture/FX_ulm04.PNG.DDS.json",
+      "size": 144,
+      "date": 132487231460000000
+    },
+    {
       "path": "SimObjects/Airplanes/Asobo_C152/ai.cfg",
       "size": 1462,
-      "date": 132522050589508417
+      "date": 132522522257887998
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/aircraft.cfg",
       "size": 3179,
-      "date": 132522050666586673
+      "date": 132522522330646288
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/Approach.flt",
@@ -207,8 +167,8 @@
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/cameras.cfg",
-      "size": 20460,
-      "date": 132522050664951050
+      "size": 20457,
+      "date": 132522522328646510
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/Climb.flt",
@@ -218,7 +178,7 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/cockpit.cfg",
       "size": 5728,
-      "date": 132522050588499108
+      "date": 132522522257030596
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/Cruise.flt",
@@ -228,7 +188,7 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/engines.cfg",
       "size": 5471,
-      "date": 132522050565962904
+      "date": 132522522237462422
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/Final.flt",
@@ -238,16 +198,36 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/flight_model.cfg",
       "size": 13996,
-      "date": 132522050561501831
+      "date": 132522522229114926
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/GAMEPLAY.CFG",
       "size": 106,
-      "date": 132522050588638751
+      "date": 132522522257190420
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/hangar.flt",
       "size": 3832,
+      "date": 132487231460000000
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/runway.FLT",
+      "size": 3897,
+      "date": 132487231460000000
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/systems.cfg",
+      "size": 11755,
+      "date": 132522524701767016
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/target_performance.cfg",
+      "size": 1638,
+      "date": 132516010080000000
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/taxi.flt",
+      "size": 3897,
       "date": 132487231460000000
     },
     {
@@ -258,67 +238,127 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/C152_cockpit_LOD00.bin",
       "size": 16307840,
-      "date": 132522036667699815
+      "date": 132463344260000000
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/C152_cockpit_LOD00.gltf",
-      "size": 584889,
-      "date": 132522036667819486
+      "size": 585103,
+      "date": 132463344260000000
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/C152_cockpit_LOD01.bin",
       "size": 8696576,
-      "date": 132522036669046239
+      "date": 132463344260000000
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/C152_cockpit_LOD01.gltf",
-      "size": 519265,
-      "date": 132522036669165885
+      "size": 519418,
+      "date": 132463344260000000
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/C152_cockpit_LOD02.bin",
       "size": 11351396,
-      "date": 132522036670283002
+      "date": 132513310900000000
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/C152_cockpit_LOD02.gltf",
-      "size": 476516,
-      "date": 132522036670392714
+      "size": 476664,
+      "date": 132513310900000000
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/C152_cockpit_LOD03.bin",
       "size": 3491968,
-      "date": 132522036671114381
+      "date": 132463344200000000
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/C152_cockpit_LOD03.gltf",
-      "size": 136111,
-      "date": 132522036671214107
+      "size": 136170,
+      "date": 132463344200000000
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/C152_cockpit_LOD04.bin",
       "size": 193536,
-      "date": 132522036671483383
+      "date": 132463344200000000
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/C152_cockpit_LOD04.gltf",
-      "size": 31863,
-      "date": 132522036671573158
+      "size": 31871,
+      "date": 132463344200000000
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/C152_LOD00.bin",
       "size": 11748352,
-      "date": 132522036666612711
+      "date": 132437460360000000
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/C152_LOD00.gltf",
-      "size": 120923,
-      "date": 132522036666692511
+      "size": 120940,
+      "date": 132437460360000000
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/model/C152_LOD01.bin",
+      "size": 7901696,
+      "date": 132463344200000000
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/model/C152_LOD01.gltf",
+      "size": 120205,
+      "date": 132463344200000000
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/model/C152_LOD02.bin",
+      "size": 5350528,
+      "date": 132463344200000000
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/model/C152_LOD02.gltf",
+      "size": 119499,
+      "date": 132463344200000000
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/model/C152_LOD03.bin",
+      "size": 2379392,
+      "date": 132463344200000000
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/model/C152_LOD03.gltf",
+      "size": 107834,
+      "date": 132463344200000000
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/model/C152_LOD04.bin",
+      "size": 1567232,
+      "date": 132463344200000000
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/model/C152_LOD04.gltf",
+      "size": 101596,
+      "date": 132463344200000000
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/model/C152_LOD05.bin",
+      "size": 1349760,
+      "date": 132463344200000000
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/model/C152_LOD05.gltf",
+      "size": 89060,
+      "date": 132463344200000000
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/model/C152_LOD06.bin",
+      "size": 61824,
+      "date": 132463344200000000
+    },
+    {
+      "path": "SimObjects/Airplanes/Asobo_C152/model/C152_LOD06.gltf",
+      "size": 65214,
+      "date": 132463344200000000
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/Cessna152_interior.xml",
       "size": 24591,
-      "date": 132522030133779061
+      "date": 132522030133779060
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/model/model.CFG",
@@ -333,26 +373,6 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/panel/panel.xml",
       "size": 318,
-      "date": 132487231460000000
-    },
-    {
-      "path": "SimObjects/Airplanes/Asobo_C152/runway.FLT",
-      "size": 3897,
-      "date": 132487231460000000
-    },
-    {
-      "path": "SimObjects/Airplanes/Asobo_C152/systems.cfg",
-      "size": 11751,
-      "date": 132522052036108458
-    },
-    {
-      "path": "SimObjects/Airplanes/Asobo_C152/target_performance.cfg",
-      "size": 1638,
-      "date": 132516010080000000
-    },
-    {
-      "path": "SimObjects/Airplanes/Asobo_C152/taxi.flt",
-      "size": 3897,
       "date": 132487231460000000
     },
     {
@@ -378,7 +398,7 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSA152_AIRFRAME_DECALS_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132475263031124597
+      "date": 132475263031124596
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSA152_AIRFRAME_FUSELAGE_ALBD.PNG.DDS",
@@ -388,7 +408,7 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSA152_AIRFRAME_FUSELAGE_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132475263025679157
+      "date": 132475263025679156
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSA152_AIRFRAME_FUSELAGE_COMP.PNG.DDS",
@@ -398,12 +418,12 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSA152_AIRFRAME_FUSELAGE_COMP.PNG.DDS.json",
       "size": 191,
-      "date": 132475263025001245
+      "date": 132475263025001244
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSA152_AIRFRAME_PROP_STATIC_ALBD.PNG.DDS",
       "size": 5592580,
-      "date": 132475263024582433
+      "date": 132475263024582434
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSA152_AIRFRAME_PROP_STATIC_ALBD.PNG.DDS.json",
@@ -418,7 +438,7 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSA152_AIRFRAME_TAIL_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132475263022258643
+      "date": 132475263022258644
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSA152_AIRFRAME_TAIL_COMP.PNG.DDS",
@@ -428,7 +448,7 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSA152_AIRFRAME_TAIL_COMP.PNG.DDS.json",
       "size": 191,
-      "date": 132475263021630259
+      "date": 132475263021630258
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSA152_AIRFRAME_WINGS_ALBD.PNG.DDS",
@@ -438,17 +458,17 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSA152_AIRFRAME_WINGS_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132475263019705401
+      "date": 132475263019705400
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSA152_AIRFRAME_WINGS_COMP.PNG.DDS",
       "size": 5592580,
-      "date": 132475263019246357
+      "date": 132475263019246356
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSA152_AIRFRAME_WINGS_COMP.PNG.DDS.json",
       "size": 191,
-      "date": 132475263018737989
+      "date": 132475263018737988
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSNA_152_COCKPIT_DETAILS_ALBD.PNG.dds",
@@ -458,17 +478,17 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSNA_152_COCKPIT_DETAILS_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132475263018618037
+      "date": 132475263018618038
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSNA_152_COCKPIT_DOOR_SHELL_ALBD.PNG.dds",
       "size": 2796344,
-      "date": 132475263017750357
+      "date": 132475263017750356
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSNA_152_COCKPIT_DOOR_SHELL_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132475263018009643
+      "date": 132475263018009644
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSNA_152_COCKPIT_FLOOR_SHELL_ALBD.PNG.dds",
@@ -478,17 +498,17 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSNA_152_COCKPIT_FLOOR_SHELL_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132475263017530936
+      "date": 132475263017530934
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSNA_152_COCKPIT_MAIN_PANEL_ALBD.PNG.dds",
       "size": 5592560,
-      "date": 132475263016334131
+      "date": 132475263016334130
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSNA_152_COCKPIT_MAIN_PANEL_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132475263016713134
+      "date": 132475263016713132
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSNA_152_COCKPIT_SEAT_ALBD.PNG.dds",
@@ -498,17 +518,17 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSNA_152_COCKPIT_SEAT_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132475263015995317
+      "date": 132475263015995316
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSNA_152_COCKPIT_SIDE_SHELL_ALBD.PNG.dds",
       "size": 5592560,
-      "date": 132475263014818425
+      "date": 132475263014818426
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/CESSNA_152_COCKPIT_SIDE_SHELL_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132475263015187439
+      "date": 132475263015187440
     },
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/texture.CFG",
@@ -523,7 +543,42 @@
     {
       "path": "SimObjects/Airplanes/Asobo_C152/texture.BlueM/thumbnail_small.JPG",
       "size": 9575,
-      "date": 132520356373452865
+      "date": 132520356373452866
+    },
+    {
+      "path": "ModelBehaviorDefs/C152X/Asobo/Common.xml",
+      "size": 36,
+      "date": 132487231460000000
+    },
+    {
+      "path": "ModelBehaviorDefs/C152X/Asobo/Common/Index.xml",
+      "size": 63,
+      "date": 132519280860000000
+    },
+    {
+      "path": "ModelBehaviorDefs/C152X/Asobo/Common/Instrument.xml",
+      "size": 1077,
+      "date": 132516035920000000
+    },
+    {
+      "path": "ModelBehaviorDefs/C152X/Asobo/Common/Subtemplates/Instrument_Subtemplates.xml",
+      "size": 23164,
+      "date": 132516042360000000
+    },
+    {
+      "path": "ModelBehaviorDefs/C152X/Asobo/NAVCOM/ADF.xml",
+      "size": 5044,
+      "date": 132487231460000000
+    },
+    {
+      "path": "ModelBehaviorDefs/C152X/Asobo/NAVCOM/NavComSystem.xml",
+      "size": 18588,
+      "date": 132487231460000000
+    },
+    {
+      "path": "ModelBehaviorDefs/C152X/Asobo/Transponder/Transponder.xml",
+      "size": 4406,
+      "date": 132487231460000000
     }
   ]
 }
