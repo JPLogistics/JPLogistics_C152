@@ -17,14 +17,22 @@
 ## V0.9.3 - Work In Progress - Things will change!
 Changelog:
 - Spanish translations corrected! Thanks 'danderio'
-- Engine now idles around 630 RPM
-   - I think its a bit slow to spool down, i will look into this more later!
-- Testing a reduced Drag Flaps setting
+- Wording changes in Weight & Balance Screens
+- Fixed an issue where autopilot took control of aircraft
+- Adjusted Engine Parameters
+  - Smoother taxi speeds/control
+  - Realistic power levels
+  - Adjusted Propeller parameters
+- Corrected flap lift & drag parameters
+  - Corrected aggressive aerodynamic changes on takeoff
+- Reverted Fuel Tanks to "Standard" editions
+  - This was a collaborative decision to save on weight & to reflect what most real world C152's have!
 - Corrected the position of "Baggage Areas"
-- Corrected W&B Center of Gravity
+- Corrected Center of Gravity
 - Adjusted Trim Wheel speed!
-- Adjusted Camera Position
-- NEW LIVERY!
+  - Also fixed broken Animation!
+- Adjusted Default Pilot Camera Position
+- **NEW LIVERY!**
 
 ### V0.9.2 - Mistakes were made!
 Basically,
