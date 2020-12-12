@@ -1,20 +1,19 @@
 # DEVELOPER BUILD - Use at your own risk!
 ![C152](https://img.shields.io/badge/Aircraft-Cessna%20152-blue) ![Game](https://img.shields.io/badge/Software-Microsoft%20Flight%20Simulator-blue)
 
-![Version](https://img.shields.io/badge/Version-V0.9.2-blue)
+![Version](https://img.shields.io/badge/Version-V0.9.3-blue)
 
-![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?label=Downloads%40github&logo=Downloads%40github&color=blue) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-1'482-blue)
+![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?label=Downloads%40github&logo=Downloads%40github&color=blue) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-2.7k-blue)
 
 <a href="https://www.buymeacoffee.com/n95jpl" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="20%"></img></a>
 
 # JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
-- **Download BETA: [MSFS_C152_BETA](https://github.com/JPLogistics/MSFS_C152/raw/Developer/MSFS_C152_BETA.zip)**
-- **Primary Download (Latest Release): [V0.9.2](https://github.com/JPLogistics/MSFS_C152/releases/)**
+- **Primary Download (Latest Release): [V0.9.3](https://github.com/JPLogistics/MSFS_C152/releases/)**
 
-- **Alternative Download Site: [V0.9.2](https://flightsim.to/file/2246/msfs-c152-community)**
+- **Alternative Download Site: [V0.9.3](https://flightsim.to/file/2246/msfs-c152-community)**
 
-## V0.9.3 - Work In Progress - Things will change!
+## V0.9.3 - Onwards & Upwards!
 Changelog:
 - Spanish translations corrected! Thanks 'danderio'
 - Wording changes in Weight & Balance Screens
@@ -28,7 +27,7 @@ Changelog:
 - Reverted Fuel Tanks to "Standard" editions
   - This was a collaborative decision to save on weight & to reflect what most real world C152's have!
 - Corrected the position of "Baggage Areas"
-- Corrected Center of Gravity
+- Corrected Centre of Gravity
 - Adjusted Trim Wheel speed!
   - Also fixed broken Animation!
 - Adjusted Default Pilot Camera Position
