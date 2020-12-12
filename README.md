@@ -33,7 +33,7 @@ Changelog:
 - Adjusted Default Pilot Camera Position
 - **NEW LIVERY!**
 
-### V0.9.2 - Mistakes were made!
+## V0.9.2 - Mistakes were made!
 Basically,
 
 It’s been decided by our amazing supporters that the previous flight model was actually better than the one we tried out!
