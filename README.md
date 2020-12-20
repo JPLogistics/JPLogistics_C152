@@ -8,7 +8,7 @@
 <a href="https://www.buymeacoffee.com/n95jpl" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="20%"></img></a>
 
 # JPLogistics MSFS_C152 :small_airplane:
-- **BETA Download: [V0.9.4 Beta 1](https://github.com/JPLogistics/MSFS_C152/raw/Developer/MSFS_C152_BETA.zip)**
+- **BETA Download: [V0.9.4 Beta 2](https://github.com/JPLogistics/MSFS_C152/raw/Developer/MSFS_C152_BETA.zip)**
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
 - **Primary Download (Latest Release): [V0.9.3](https://github.com/JPLogistics/MSFS_C152/releases/)**
 
