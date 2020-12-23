@@ -29,7 +29,6 @@ I wish you all a Merry Christmas and I will update you soon!
 Changelog:
 - Flight Model changes
   - Aircraft tyre contact corrected! Inflated tyres!
-  - Fuel consumption corrected!
 - AI Livery removed (Useable livery is still in the mod!)
 
 ## V0.9.3 - Onwards & Upwards!
