@@ -15,9 +15,13 @@
 ## V0.9.3b - Mayday Mayday Mayday!
 **An important notice!**
 Due to the recent 1.12.13.0 release of MSFS and the amount of changes Asobo made to the default C152 (Which this mod builds upon) that caused serious issues within our addon, we have taken the decision to *temporarily remove* the Flight Model changes from this build.
+
 This was a difficult decision, however, in the interest of making a "quick hotfix" to get the rest of the addon working as it should, it was necessary!
+
 *It isn't all bad news!* - This does mean that we get a chance to completely rethink our approach, after learning so much from the past versions, meaning we will be able to deliver a more realistic, higher quality & stable flight model in our next release!
+
 I hope you understand and I really appreciate your patience! I want to provide you with the spectacular addon and wan't happy to release a flight model that had a number of big issues!
+
 Myself and the Beta Testing team are working hard to get the next update ready! I will hopefully have an update for you around New Years Day!
 
 I wish you all a Merry Christmas and I will update you soon!
