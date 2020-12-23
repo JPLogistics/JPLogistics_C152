@@ -252,19 +252,19 @@
         <!--<DefaultTemplateParameters>
           <IS_AVIONICS_ON>(A:CIRCUIT ON:14, Bool)</IS_AVIONICS_ON>
         </DefaultTemplateParameters>-->
-        <UseTemplate Name="ASOBO_INSTRUMENT_CDI_Template">
+        <UseTemplate Name="C152X_INSTRUMENT_CDI_Template">
           <ID>1</ID>
-          <IS_AVIONICS_ON>(A:CIRCUIT ON:17, Bool)</IS_AVIONICS_ON>
-          <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_1</KNOB_HIGHLIGHT_NODE_ID>
+          <!--<IS_AVIONICS_ON>(A:CIRCUIT ON:17, Bool)</IS_AVIONICS_ON>-->
+          <!--<KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_1</KNOB_HIGHLIGHT_NODE_ID>-->
         </UseTemplate>
-        <UseTemplate Name="ASOBO_INSTRUMENT_CDI_Template">
+        <UseTemplate Name="C152X_INSTRUMENT_CDI_Template">
           <ID>2</ID>
-          <IS_AVIONICS_ON>(A:CIRCUIT ON:19, Bool)</IS_AVIONICS_ON>
-          <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_2</KNOB_HIGHLIGHT_NODE_ID>
+          <!--<IS_AVIONICS_ON>(A:CIRCUIT ON:19, Bool)</IS_AVIONICS_ON>-->
+          <!--<KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_2</KNOB_HIGHLIGHT_NODE_ID>-->
         </UseTemplate>
       </Component>
 
-      <UseTemplate Name="C152X_INSTRUMENT_Dial_Compass_Template">
+      <UseTemplate Name="ASOBO_INSTRUMENT_Dial_Compass_Template">
       </UseTemplate>
 
       <Component ID="INSTRUMENTS_Electrical">
@@ -376,14 +376,14 @@
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Temperature_Template">
           <UNITS>fahrenheit</UNITS>
           <MIN_VALUE>0</MIN_VALUE>
-          <MAX_VALUE>270</MAX_VALUE>
+          <MAX_VALUE>245</MAX_VALUE>
           <FAILURE_CODE>0</FAILURE_CODE>
           <DONT_APPEND_ID>True</DONT_APPEND_ID>
         </UseTemplate>
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Pressure_Template">
           <UNITS>psi</UNITS>
           <MIN_VALUE>0</MIN_VALUE>
-          <MAX_VALUE>120</MAX_VALUE>
+          <MAX_VALUE>100</MAX_VALUE>
           <FAILURE_CODE>0</FAILURE_CODE>
           <DONT_APPEND_ID>True</DONT_APPEND_ID>
         </UseTemplate>
