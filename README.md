@@ -1,16 +1,32 @@
 ![C152](https://img.shields.io/badge/Aircraft-Cessna%20152-blue) ![Game](https://img.shields.io/badge/Software-Microsoft%20Flight%20Simulator-blue)
 
-![Version](https://img.shields.io/badge/Version-V0.9.3-blue)
+![Version](https://img.shields.io/badge/Version-V0.9.3b-blue)
 
 ![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?label=Downloads%40github&logo=Downloads%40github&color=blue) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-3.2k-blue)
 
-<a href="https://www.buymeacoffee.com/n95jpl" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="20%"></img></a>
+<a href="https://www.buymeacoffee.com/n95jpl" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="30%"></img></a>
 
 # JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
-- **Primary Download (Latest Release): [V0.9.3](https://github.com/JPLogistics/MSFS_C152/releases/)**
+- **Primary Download (Latest Release): [V0.9.3b](https://github.com/JPLogistics/MSFS_C152/releases/)**
 
-- **Alternative Download Site: [V0.9.3](https://flightsim.to/file/2246/msfs-c152-community)**
+- **Alternative Download Site: [V0.9.3b](https://flightsim.to/file/2246/msfs-c152-community)**
+
+## V0.9.3b - Mayday Mayday Mayday!
+**An important notice!**
+Due to the recent 1.12.13.0 release of MSFS and the amount of changes Asobo made to the default C152 (Which this mod builds upon) that caused serious issues within our addon, we have taken the decision to *temporarily remove* the Flight Model changes from this build.
+This was a difficult decision, however, in the interest of making a "quick hotfix" to get the rest of the addon working as it should, it was necessary!
+*It isn't all bad news!* - This does mean that we get a chance to completely rethink our approach, after learning so much from the past versions, meaning we will be able to deliver a more realistic, higher quality & stable flight model in our next release!
+I hope you understand and I really appreciate your patience! I want to provide you with the spectacular addon and wan't happy to release a flight model that had a number of big issues!
+Myself and the Beta Testing team are working hard to get the next update ready! I will hopefully have an update for you around New Years Day!
+
+I wish you all a Merry Christmas and I will update you soon!
+
+Changelog:
+- Flight Model changes
+  - Aircraft tyre contact corrected! Inflated tyres!
+  - Fuel consumption corrected!
+- AI Livery removed (Useable livery is still in the mod!)
 
 ## V0.9.3 - Onwards & Upwards!
 Changelog:
