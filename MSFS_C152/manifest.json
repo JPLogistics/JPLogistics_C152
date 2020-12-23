@@ -4,12 +4,13 @@
   "title": "MSFS_C152",
   "manufacturer": "JPLogistics",
   "creator": "N95JPL",
-  "package_version": "0.9.3",
-  "minimum_game_version": "1.11.7",
+  "package_version": "0.9.4",
+  "minimum_game_version": "1.12.13",
   "release_notes": {
     "neutral": {
       "LastUpdate": "VERSION 0.9.3 RELEASED JANUARY 1, 0\\n- Spanish translations corrected! Thanks 'danderio'\n- Wording changes in Weight & Balance Screens\n- Fixed an issue where autopilot took control of aircraft\n- Adjusted Engine Parameters\n  - Smoother taxi speeds/control\n  - Realistic power levels\n  - Adjusted Propeller parameters\n- Corrected flap lift & drag parameters\n  - Corrected aggressive aerodynamic changes on takeoff\n- Reverted Fuel Tanks to \"Standard\" editions\n  - This was a collaborative decision to save on weight & to reflect what most real world C152's have!\n- Corrected the position of \"Baggage Areas\"\n- Corrected Centre of Gravity\n- Adjusted Trim Wheel speed!\n  - Also fixed broken Animation!\n- Adjusted Default Pilot Camera Position\n- **NEW LIVERY!**",
       "OlderHistory": ""
     }
-  }
+  },
+  "total_package_size": "00000000000160178209"
 }
