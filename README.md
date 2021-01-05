@@ -1,6 +1,6 @@
 ![C152](https://img.shields.io/badge/Aircraft-Cessna%20152-blue) ![Game](https://img.shields.io/badge/Software-Microsoft%20Flight%20Simulator-blue)
 
-![Version](https://img.shields.io/badge/Version-V0.9.3b-blue)
+![Version](https://img.shields.io/badge/Version-V0.9.4-blue)
 
 ![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?label=Downloads%40github&logo=Downloads%40github&color=blue) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-3.2k-blue)
 
@@ -8,9 +8,25 @@
 
 # JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
-- **Primary Download (Latest Release): [V0.9.3b](https://github.com/JPLogistics/MSFS_C152/releases/)**
+- **Primary Download (Latest Release): [V0.9.4](https://github.com/JPLogistics/MSFS_C152/releases/)**
+- **Alternative Download Site: [V0.9.4](https://flightsim.to/file/2246/msfs-c152-community)**
+- **Discord Channel: [MSFS_C152 Community](https://discord.gg/Arj3jnBmk5)**
 
-- **Alternative Download Site: [V0.9.3b](https://flightsim.to/file/2246/msfs-c152-community)**
+## V0.9.4 - It can only get better!
+Firstly I would like to thank each and every one of you for patiently waiting for this release! 
+Over the last couple of weeks the weather here in the UK has been, interesting, which has caused a lot of extra time required focusing on my full-time job, throw Christmas/New Year into the mix and well, all I can do is apologise!
+*But here we have it!*
+Changelog:
+- Flight Model changes
+  - This should now more closely reflect the real world aircraft!
+    - More work is still being done to completely fine-tune the flight model!
+    - If you have any feedback please join our [Discord Channel](https://discord.gg/Arj3jnBmk5)!
+- Corrected Gauge Calibration after recent updates
+- Utilising the new RPM Gauge, this was released in V0.9.3b but I forgot to mention it!
+- Aircraft Geometry updated!
+- *Hopefully*, a fix for Saitek Panel users, causing a weird sound bug when starting the engine!
+
+Until next time, see you soon and thanks again for understanding the reasons for the delays!
 
 ## V0.9.3b - Mayday Mayday Mayday!
 **An important notice!**

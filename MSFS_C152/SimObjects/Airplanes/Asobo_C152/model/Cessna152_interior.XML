@@ -67,8 +67,6 @@
         <INDEX_BOTH>3</INDEX_BOTH>
         <ARROW_TYPE>Curved</ARROW_TYPE>
         <USE_STARTER/>
-        <!-- Max time in START pos (any input except mouse), when using mouse will stay for this time0 -->
-        <STATE_MAX_TIMER>3</STATE_MAX_TIMER>
         <ANIMREF_ID>0</ANIMREF_ID>
         <ANIMCURSOR_DIR>1</ANIMCURSOR_DIR>
         <ANIMTIP_0>TT:COCKPIT.TOOLTIPS.MAGNETO_START_SWITCH_OFF</ANIMTIP_0>
@@ -382,8 +380,8 @@
         </UseTemplate>
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Pressure_Template">
           <UNITS>psi</UNITS>
-          <MIN_VALUE>0</MIN_VALUE>
-          <MAX_VALUE>100</MAX_VALUE>
+          <MIN_VALUE>-20</MIN_VALUE>
+          <MAX_VALUE>120</MAX_VALUE>
           <FAILURE_CODE>0</FAILURE_CODE>
           <DONT_APPEND_ID>True</DONT_APPEND_ID>
         </UseTemplate>
