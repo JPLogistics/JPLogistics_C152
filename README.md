@@ -20,7 +20,7 @@ Continued work on this project is with a large thanks to our donators! Without t
 
 I accept the following CryptoCoins or via the button above!
 
-(Preferred) FIRO: aDmPY6wepGPHHSexWHfXegDsUqTZPhKrLv
+(Preferred) FIRO: aPyzCY1n33eSgdBaBPPcJhBBkaXeasj7r7
 
 BitCoin: 1LbnfyHbTrYinAmCgbXA58xh5zni34YPP9
 
