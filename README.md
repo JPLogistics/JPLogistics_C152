@@ -18,7 +18,7 @@
 
 Continued work on this project is with a large thanks to our donators! Without this kind gesture finding time is slightly more difficult, but every donation means extra time I can set aside to update/upgrade and improve this mod!
 
-I accept the following CryptoCoins or via the buttons below!
+I accept the following CryptoCoins or via the button above!
 
 (Preferred) FIRO: aDmPY6wepGPHHSexWHfXegDsUqTZPhKrLv
 
