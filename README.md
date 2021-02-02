@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/Version-V0.9.4-blue)
 
-![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?color=blue&label=Downloads@Github) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-4.5k-blue)
+![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?color=blue&label=Downloads@Github) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-6.3k-blue)
 
 <a href="https://www.buymeacoffee.com/n95jpl" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="30%"></img></a>
 
@@ -11,6 +11,16 @@
 - **Primary Download (Latest Release): [V0.9.4](https://github.com/JPLogistics/MSFS_C152/releases/)**
 - **Alternative Download Site: [V0.9.4](https://flightsim.to/file/2246/msfs-c152-community)**
 - **Discord Channel: [MSFS_C152 Community](https://discord.gg/Arj3jnBmk5)**
+
+**Donations**
+Continued work on this project is with a large thanks to our donators! Without this kind gesture finding time is slightly more difficult, but every donation means extra time I can set aside to update/upgrade and improve this mod!
+I accept the following CryptoCoins or via the buttons below!
+
+(Preferred) FIRO: aDmPY6wepGPHHSexWHfXegDsUqTZPhKrLv
+BitCoin: 1LbnfyHbTrYinAmCgbXA58xh5zni34YPP9
+USDT: 0x3a6e64ba672c02f59600508d6657f4dd5a44546c
+
+**OVER 10'000 DOWNLOADS!**
 
 ## V0.9.4 - It can only get better!
 Firstly I would like to thank each and every one of you for patiently waiting for this release! 
