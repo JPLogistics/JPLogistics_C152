@@ -26,6 +26,21 @@ BitCoin: 1LbnfyHbTrYinAmCgbXA58xh5zni34YPP9
 
 USDT: 0x3a6e64ba672c02f59600508d6657f4dd5a44546c
 
+## V0.9.5 - DME Reader!!
+Changelog:
+
+* DME Reader - Yes, you read that correctly!
+  * To enable this feature you need to click the "DME" button in on the Audio Panel!
+  * It will switch between the NAV Freq. & DME Distance (in NM) every 5 seconds
+  * This is a temporary measure until we can install a proper DME system!
+* Flight Model Changes
+* Copilot is now *livery* based
+  * Choose a livery with "w/CP" on the end
+  * To convert a existing Livery, open the relevent "aircraft.cfg" and add "copilot" into the "model = " section!
+
+Links as standard at the top of the page!
+I hope you enjoy!
+
 ## V0.9.4 - It can only get better!
 Firstly I would like to thank each and every one of you for patiently waiting for this release! 
 Over the last couple of weeks the weather here in the UK has been, interesting, which has caused a lot of extra time required focusing on my full-time job, throw Christmas/New Year into the mix and well, all I can do is apologise!
