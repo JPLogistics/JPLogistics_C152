@@ -151,14 +151,14 @@
 		<Condition Check="NO_GPS_DEPENDENCY"><!-- If set, GPS cannot drive instrument values -->
 			<True>
 				<LOCALIZER_ANIM_CODE>
-					(A:COM VOLUME:#ID#,Percent) 0 &gt; (A:CIRCUIT NAVCOM#ID# ON, Bool) and if{
+					(A:COM VOLUME:#ID#,Percent) 0 &gt; (A:CIRCUIT AVIONICS ON, Bool) and if{
 						(A:NAV CDI:#ID#, Number) 127 +
 					 } els{							
 							127
 					 }
 				</LOCALIZER_ANIM_CODE>
 				<GLIDEPATH_ANIM_CODE>
-					(A:COM VOLUME:#ID#,Percent) 0 &gt; (A:CIRCUIT NAVCOM#ID# ON, Bool) and if{
+					(A:COM VOLUME:#ID#,Percent) 0 &gt; (A:CIRCUIT AVIONICS ON, Bool) and if{
 						(A:NAV GSI:#ID#, Number) 127 + 
 					 } els{							
 							127
@@ -167,7 +167,7 @@
 			</True>
 			<False>
 				<LOCALIZER_ANIM_CODE>
-					(A:COM VOLUME:#ID#,Percent) 0 &gt; (A:CIRCUIT NAVCOM#ID# ON, Bool) and if{
+					(A:COM VOLUME:#ID#,Percent) 0 &gt; (A:CIRCUIT AVIONICS ON, Bool) and if{
 						(A:GPS DRIVES NAV1, Bool) if{
 							(A:GPS WP CROSS TRK, nautical mile) 127 * 127 +
 						} els{
@@ -178,7 +178,7 @@
 					}				
 				</LOCALIZER_ANIM_CODE>	
 				<GLIDEPATH_ANIM_CODE>
-					(A:COM VOLUME:#ID#,Percent) 0 &gt; (A:CIRCUIT NAVCOM#ID# ON, Bool) and if{
+					(A:COM VOLUME:#ID#,Percent) 0 &gt; (A:CIRCUIT AVIONICS ON, Bool) and if{
 						(A:GPS DRIVES NAV1, Bool) if{
 							127
 						} els{
@@ -325,7 +325,7 @@
 				<False>
 					<Update Frequency="#WATCHER_FREQ#">
 						(* Avionics switch watcher *)
-						(A:CIRCUIT AVIONICS ON, Bool) sp0
+						(A:CIRCUIT #CIRCUIT_ID# ON, Bool) sp0 <!-- JPL Editted --> 
 						l0 (O:XMLVAR_Avionics_ON) != if{
 							l0 if{
 								1 (&gt;O:XMLVAR_Needles_Init_Animation_Playing)

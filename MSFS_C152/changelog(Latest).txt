@@ -1,0 +1,12 @@
+Changelog:
+V0.9.5
+- DME Reader - Yes, you read that correctly!
+   - To enable this feature you need to click the "DME" button in on the Audio Panel!
+   - It will switch between the NAV Freq. & DME Distance (in NM) every 5 seconds
+   - This is a temporary measure until we can install a proper DME system!
+- Flight Model Changes
+- Copilot is now *livery* based
+   - Choose a livery with "w/CP" on the end
+   - To convert a existing Livery, open the relevent "aircraft.cfg" and add "copilot" into the "model = " section!
+
+I hope you enjoy!

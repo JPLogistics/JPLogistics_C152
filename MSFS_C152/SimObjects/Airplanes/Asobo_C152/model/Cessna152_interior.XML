@@ -14,7 +14,7 @@
   <Behaviors>
 
     <Include ModelBehaviorFile="Asobo\Common.xml"/>
-    <Include ModelBehaviorFile="Asobo\Transponder\\Transponder.xml"/>
+    <Include ModelBehaviorFile="Asobo\Transponder\Transponder.xml"/>
     <Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
     <Include ModelBehaviorFile="Asobo\NAVCOM\ADF.xml"/>
     <Include ModelBehaviorFile="C152X\Asobo\Transponder\Transponder.xml"/>
@@ -247,18 +247,16 @@
       </UseTemplate>
 
       <Component ID="INSTRUMENTS_CDI">
-        <!--<DefaultTemplateParameters>
-          <IS_AVIONICS_ON>(A:CIRCUIT ON:14, Bool)</IS_AVIONICS_ON>
-        </DefaultTemplateParameters>-->
         <UseTemplate Name="C152X_INSTRUMENT_CDI_Template">
           <ID>1</ID>
-          <!--<IS_AVIONICS_ON>(A:CIRCUIT ON:17, Bool)</IS_AVIONICS_ON>-->
-          <!--<KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_1</KNOB_HIGHLIGHT_NODE_ID>-->
+          <CIRCUIT_ID>18</CIRCUIT_ID>
+          <!-- Disable below? We will see...-->
+          <!-- <HIGHLIGHT_NODE_ID>INSTRUMENT_CDI</HIGHLIGHT_NODE_ID>-->
         </UseTemplate>
         <UseTemplate Name="C152X_INSTRUMENT_CDI_Template">
           <ID>2</ID>
-          <!--<IS_AVIONICS_ON>(A:CIRCUIT ON:19, Bool)</IS_AVIONICS_ON>-->
-          <!--<KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_2</KNOB_HIGHLIGHT_NODE_ID>-->
+          <CIRCUIT_ID>20</CIRCUIT_ID>
+          <!-- <HIGHLIGHT_NODE_ID>INSTRUMENT_CDI</HIGHLIGHT_NODE_ID>-->
         </UseTemplate>
       </Component>
 

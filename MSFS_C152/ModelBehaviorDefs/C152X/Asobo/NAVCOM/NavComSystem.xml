@@ -56,10 +56,6 @@
 					}
 				</CIRCUIT_CODE_OFF>
 			</True>
-			<False>
-				<CIRCUIT_CODE_ON/>
-				<CIRCUIT_CODE_OFF/>
-			</False>
 		</Condition>				
 		<NODE_ID>#RADIO_TYPE#_Knob_OnOff_#ID##SUFFIX_ID#</NODE_ID>
 		<ANIM_SIMVAR_UNITS_SWITCH>Bool</ANIM_SIMVAR_UNITS_SWITCH>
@@ -88,7 +84,7 @@
 				<USE_SIMVAR_FOR_BUTTON_ANIM>False</USE_SIMVAR_FOR_BUTTON_ANIM>				
 				<COUNT>10</COUNT>
 				<Switch Param="RADIO_TYPE">
-					<Case Value="NAV">						
+					<Case Value="NAV">	
 						<LEFT_SINGLE_CODE>
 							(* Lvar state *)
 							(L:XMLVAR_NAVCOM_#RADIO_TYPE#_#ID#_IDENT, Bool) ! (&gt;L:XMLVAR_NAVCOM_#RADIO_TYPE#_#ID#_IDENT, Bool)							
@@ -445,7 +441,7 @@
 							<FREQUENCY>5</FREQUENCY>
 							<UPDATE_CODE>
 								(* Set NAVCOM ident. AUDIO panel NAV button and NAVCOM ident both selected *)
-								(L:XMLVAR_AUDIO_NAV_#ID#_SEL, Bool) (L:XMLVAR_NAVCOM_NAV_#ID#_IDENT, Bool) (A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Bool) and and if{									
+								(L:XMLVAR_NAVCOM_NAV_#ID#_IDENT, Bool) (L:XMLVAR_AUDIO_NAV_#ID#_SEL, Bool) (A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Bool) and and if{									
 									1 (&gt;K:RADIO_VOR#ID#_IDENT_SET)
 								} els{
 									0 (&gt;K:RADIO_VOR#ID#_IDENT_SET)
