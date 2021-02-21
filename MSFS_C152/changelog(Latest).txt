@@ -1,12 +1,12 @@
 Changelog:
-V0.9.5
-- DME Reader - Yes, you read that correctly!
-   - To enable this feature you need to click the "DME" button in on the Audio Panel!
-   - It will switch between the NAV Freq. & DME Distance (in NM) every 5 seconds
-   - This is a temporary measure until we can install a proper DME system!
+V0.9.6
+- Updated to be compatible with the new "World Update 3" MSFS release!
+- Temp. fix applied to the flap settings (Thanks RetiredMan for this!)
+- Radio Stock/Avionics issue partial fix applied (Subject to change due to rewriting much of the animation codes)
 - Flight Model Changes
 - Copilot is now *livery* based
    - Choose a livery with "w/CP" on the end
    - To convert a existing Livery, open the relevent "aircraft.cfg" and add "copilot" into the "model = " section!
+- Liveries removed, a seperate pack will be available in the future!
 
 I hope you enjoy!

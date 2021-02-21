@@ -8,8 +8,26 @@
 					<Simvar name="ADF VOLUME:1" unit="Percent"/>
 					<Constant>0</Constant>
 				</Greater>
-				<Simvar name="CIRCUIT AVIONICS ON" unit="Boolean"/>
+				<Simvar name="CIRCUIT ON:35" unit="Boolean"/>
 			</And>
+		</Electric>
+	</Instrument>
+	<Instrument>
+		<Name>KX155A_1</Name>
+		<Electric>
+			<Simvar name="CIRCUIT ON:35" unit="Boolean"/>
+		</Electric>
+	</Instrument>
+	<Instrument>
+		<Name>KX155A_2</Name>
+		<Electric>
+			<Simvar name="CIRCUIT ON:35" unit="Boolean"/>
+		</Electric>
+	</Instrument>
+	<Instrument>
+		<Name>HourMeter</Name>
+		<Electric>
+			<Simvar name="CIRCUIT ON:35" unit="Boolean"/>
 		</Electric>
 	</Instrument>
 

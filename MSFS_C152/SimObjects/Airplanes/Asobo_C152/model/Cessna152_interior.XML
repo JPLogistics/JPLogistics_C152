@@ -279,35 +279,33 @@
 
           <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
 
-          <REF_VALUE_0>0</REF_VALUE_0>
-          <!--0USG EMPTY-->
           <REF_VALUE_1>
-            11.5 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_11> <!--3USG 22.7L-->
+            1.79 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_11> <!--1USG 22.7L-->
             <REF_VALUE_2>
-              22.7 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_21>  <!--6USG 22.7L-->
+              11.36 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_21>  <!--3USG 22.7L-->
               <REF_VALUE_3>
-                30.3 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_31> <!--8USG 22.7L-->
+                18.93 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_31> <!--5USG 22.7L-->
                 <REF_VALUE_4>
-                  37.9 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_41> <!--10USG 22.7L-->
+                  26.50 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_41> <!--7USG 22.7L-->
                   <REF_VALUE_5>
-                    45.4 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_51> <!--12USG 22.7L-->
+                    30.28 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_51> <!--8USG 22.7L-->
                     <REF_VALUE_6>
-                      52.9 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_61> <!--14USG 22.7L-->
+                      34.07 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_61> <!--9USG 22.7L-->
                       <REF_VALUE_7>
-                        60.6 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_71> <!--16USG 22.7L-->
+                        37.85 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_71> <!--10USG 22.7L-->
                         <REF_VALUE_8>
-                          68.1 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_81> <!--18USG 68.1L-->
+                          45.42 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_81> <!--12USG 68.1L-->
                           <REF_VALUE_9>
-                            73.8 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_91> <!--19.5USG FULL-->
+                            49.21 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_91> <!--13USG FULL-->
                             <ANIM_VALUE_0>0</ANIM_VALUE_0>
-                            <ANIM_VALUE_1>15</ANIM_VALUE_1>
-                            <ANIM_VALUE_2>35</ANIM_VALUE_2>
-                            <ANIM_VALUE_3>47</ANIM_VALUE_3>
-                            <ANIM_VALUE_4>57</ANIM_VALUE_4>
-                            <ANIM_VALUE_5>68</ANIM_VALUE_5>
-                            <ANIM_VALUE_6>80</ANIM_VALUE_6>
-                            <ANIM_VALUE_7>92</ANIM_VALUE_7>
-                            <ANIM_VALUE_8>99</ANIM_VALUE_8>
+                            <ANIM_VALUE_1>13</ANIM_VALUE_1>
+                            <ANIM_VALUE_2>30</ANIM_VALUE_2>
+                            <ANIM_VALUE_3>42</ANIM_VALUE_3>
+                            <ANIM_VALUE_4>50</ANIM_VALUE_4>
+                            <ANIM_VALUE_5>62</ANIM_VALUE_5>
+                            <ANIM_VALUE_6>77</ANIM_VALUE_6>
+                            <ANIM_VALUE_7>88</ANIM_VALUE_7>
+                            <ANIM_VALUE_8>97</ANIM_VALUE_8>
                             <ANIM_VALUE_9>100</ANIM_VALUE_9>
                             <MAX_POINT_INDEX>9</MAX_POINT_INDEX>
                             <ANIM_LENGTH>100</ANIM_LENGTH>
@@ -329,31 +327,31 @@
           <REF_VALUE_0>0</REF_VALUE_0>
           <!--0USG EMPTY-->
           <REF_VALUE_1>
-            11.5 @FuelTankSensorAdjustmentRightTank</REF_VALUE_11> <!--3USG 22.7L-->
+            1.79 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_11> <!--1USG 22.7L-->
             <REF_VALUE_2>
-              22.7 @FuelTankSensorAdjustmentRightTank</REF_VALUE_21>  <!--6USG 22.7L-->
+              11.36 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_21>  <!--3USG 22.7L-->
               <REF_VALUE_3>
-                30.3 @FuelTankSensorAdjustmentRightTank</REF_VALUE_31> <!--8USG 22.7L-->
+                18.93 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_31> <!--5USG 22.7L-->
                 <REF_VALUE_4>
-                  37.9 @FuelTankSensorAdjustmentRightTank</REF_VALUE_41> <!--10USG 22.7L-->
+                  26.50 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_41> <!--7USG 22.7L-->
                   <REF_VALUE_5>
-                    45.4 @FuelTankSensorAdjustmentRightTank</REF_VALUE_51> <!--12USG 22.7L-->
+                    30.28 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_51> <!--8USG 22.7L-->
                     <REF_VALUE_6>
-                      52.9 @FuelTankSensorAdjustmentRightTank</REF_VALUE_61> <!--14USG 22.7L-->
+                      34.07 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_61> <!--9USG 22.7L-->
                       <REF_VALUE_7>
-                        60.6 @FuelTankSensorAdjustmentRightTank</REF_VALUE_71> <!--16USG 22.7L-->
+                        37.85 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_71> <!--10USG 22.7L-->
                         <REF_VALUE_8>
-                          68.1 @FuelTankSensorAdjustmentRightTank</REF_VALUE_81> <!--18USG 68.1L-->
+                          45.42 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_81> <!--12USG 68.1L-->
                           <REF_VALUE_9>
-                            73.8 @FuelTankSensorAdjustmentRightTank</REF_VALUE_91> <!--19.5USG FULL-->
+                            49.21 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_91> <!--13USG FULL-->
                             <ANIM_VALUE_0>0</ANIM_VALUE_0>
                             <ANIM_VALUE_1>13</ANIM_VALUE_1>
-                            <ANIM_VALUE_2>37</ANIM_VALUE_2>
-                            <ANIM_VALUE_3>45</ANIM_VALUE_3>
-                            <ANIM_VALUE_4>59</ANIM_VALUE_4>
-                            <ANIM_VALUE_5>67</ANIM_VALUE_5>
-                            <ANIM_VALUE_6>82</ANIM_VALUE_6>
-                            <ANIM_VALUE_7>91</ANIM_VALUE_7>
+                            <ANIM_VALUE_2>30</ANIM_VALUE_2>
+                            <ANIM_VALUE_3>42</ANIM_VALUE_3>
+                            <ANIM_VALUE_4>50</ANIM_VALUE_4>
+                            <ANIM_VALUE_5>62</ANIM_VALUE_5>
+                            <ANIM_VALUE_6>77</ANIM_VALUE_6>
+                            <ANIM_VALUE_7>88</ANIM_VALUE_7>
                             <ANIM_VALUE_8>97</ANIM_VALUE_8>
                             <ANIM_VALUE_9>100</ANIM_VALUE_9>
                             <MAX_POINT_INDEX>9</MAX_POINT_INDEX>
