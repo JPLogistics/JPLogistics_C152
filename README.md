@@ -1,8 +1,8 @@
 ![C152](https://img.shields.io/badge/Aircraft-Cessna%20152-blue) ![Game](https://img.shields.io/badge/Software-Microsoft%20Flight%20Simulator-blue)
 
-![Version](https://img.shields.io/badge/Version-V0.9.5-blue)
+![Version](https://img.shields.io/badge/Version-V0.9.6-blue)
 
-![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?color=blue&label=Downloads@Github) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-6.3k-blue)
+![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?color=blue&label=Downloads@Github) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-8.0k-blue)
 
 <a href="https://www.buymeacoffee.com/n95jpl" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="30%"></img></a>
 
@@ -10,8 +10,8 @@
 
 # JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
-- **Primary Download (Latest Release): [V0.9.5](https://github.com/JPLogistics/MSFS_C152/releases/)**
-- **Alternative Download Site: [V0.9.5](https://flightsim.to/file/2246/msfs-c152-community)**
+- **Primary Download (Latest Release): [V0.9.6](https://github.com/JPLogistics/MSFS_C152/releases/)**
+- **Alternative Download Site: [V0.9.6](https://flightsim.to/file/2246/msfs-c152-community)**
 - **Discord Channel: [MSFS_C152 Community](https://discord.gg/Arj3jnBmk5)**
 
 ## Donations
@@ -25,6 +25,19 @@ I accept the following CryptoCoins or via the button above!
 BitCoin: 1LbnfyHbTrYinAmCgbXA58xh5zni34YPP9
 
 USDT: 0x3a6e64ba672c02f59600508d6657f4dd5a44546c
+## V0.9.6 - Oh dear, Asobo!
+***Make sure you delete the "MSFS_C152" folder from your "Community" then place this one in, do *not* overwrite it!***
+Changelog:
+- Updated to be compatible with the new "World Update 3" MSFS release!
+- Temp. fix applied to the flap settings (Thanks RetiredMan for this!)
+- Radio Stock/Avionics issue partial fix applied (Subject to change due to rewriting much of the animation codes)
+- Flight Model Changes
+- Copilot is now *livery* based
+   - Choose a livery with "w/CP" on the end
+   - To convert a existing Livery, open the relevent "aircraft.cfg" and add "copilot" into the "model = " section!
+- Liveries removed, a seperate pack will be available in the future!
+
+I hope you enjoy!
 
 ## V0.9.5 - DME Reader!!
 Changelog:
