@@ -1,6 +1,6 @@
 ![C152](https://img.shields.io/badge/Aircraft-Cessna%20152-blue) ![Game](https://img.shields.io/badge/Software-Microsoft%20Flight%20Simulator-blue)
 
-![Version](https://img.shields.io/badge/Version-V0.9.6-blue)
+![Version](https://img.shields.io/badge/Version-V0.9.7-blue)
 
 ![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?color=blue&label=Downloads@Github) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-8.0k-blue)
 
@@ -10,8 +10,8 @@
 
 # JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
-- **Primary Download (Latest Release): [V0.9.6](https://github.com/JPLogistics/MSFS_C152/releases/)**
-- **Alternative Download Site: [V0.9.6](https://flightsim.to/file/2246/msfs-c152-community)**
+- **Primary Download (Latest Release): [V0.9.7](https://github.com/JPLogistics/MSFS_C152/releases/)**
+- **Alternative Download Site: [V0.9.7](https://flightsim.to/file/2246/msfs-c152-community)**
 - **Discord Channel: [MSFS_C152 Community](https://discord.gg/Arj3jnBmk5)**
 
 ## Donations
@@ -25,6 +25,16 @@ I accept the following CryptoCoins or via the button above!
 BitCoin: 1LbnfyHbTrYinAmCgbXA58xh5zni34YPP9
 
 USDT: 0x3a6e64ba672c02f59600508d6657f4dd5a44546c
+## V0.9.7 - Restructure!
+**_Again_, sorry to be annoying! I have actually restructure the mod please delete the _MSFS_C152_ folder & copy the _jplogistics-c152_ folder instead!**
+I've released this update a little prematurely, I had actually wanted to fix a few more issues first, but this is a Hotfix that needed to be public ASAP!
+Changelog:
+- Revert the "Flap/Lift Hotfix" after MSFS Update
+- Fuel Gauge now reads correctly!
+- Pilot/Copilot models are now based on weight & can be controlled by an interior button!
+   - Here is a short video showing the buttons and how it works! [YouTube](https://youtu.be/fzMIlF0RBxw)
+- Renamed the folder, to help users who had _old_ files knocking about causing issues!
+
 ## V0.9.6 - Oh dear, Asobo!
 ***Make sure you delete the "MSFS_C152" folder from your "Community" then place this one in, do *not* overwrite it!***
 Changelog:
