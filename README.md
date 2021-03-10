@@ -44,7 +44,7 @@ Changelog:
 - Flight Model Changes
 - Copilot is now *livery* based
    - Choose a livery with "w/CP" on the end
-   - To convert a existing Livery, open the relevent "aircraft.cfg" and add "copilot" into the "model = " section!
+   - To convert a existing Livery, open the relevant "aircraft.cfg" and add "copilot" into the "model = " section!
 - Liveries removed, a seperate pack will be available in the future!
 
 I hope you enjoy!
@@ -59,7 +59,7 @@ Changelog:
 * Flight Model Changes
 * Copilot is now *livery* based
   * Choose a livery with "w/CP" on the end
-  * To convert a existing Livery, open the relevent "aircraft.cfg" and add "copilot" into the "model = " section!
+  * To convert a existing Livery, open the relevant "aircraft.cfg" and add "copilot" into the "model = " section!
 
 Links as standard at the top of the page!
 I hope you enjoy!
