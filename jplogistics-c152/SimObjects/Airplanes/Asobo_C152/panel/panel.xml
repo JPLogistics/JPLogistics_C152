@@ -8,14 +8,14 @@
 					<Simvar name="ADF VOLUME:1" unit="Percent"/>
 					<Constant>0</Constant>
 				</Greater>
-				<Simvar name="CIRCUIT ON:35" unit="Boolean"/>
+				<Simvar name="CIRCUIT ON:10" unit="Boolean"/>
 			</And>
 		</Electric>
 	</Instrument>
 	<Instrument>
 		<Name>HourMeter</Name>
 		<Electric>
-			<Simvar name="CIRCUIT ON:35" unit="Boolean"/>
+			<Simvar name="CIRCUIT ON:2" unit="Boolean"/>
 		</Electric>
 	</Instrument>
 

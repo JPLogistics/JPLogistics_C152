@@ -241,23 +241,21 @@
         <MAX_VALUE>3500</MAX_VALUE>
         <NODE_ID>INSTRUMENT_Needle_Engine_RPM_1</NODE_ID>
         <ANIM_NAME>INSTRUMENT_Needle_Engine_RPM</ANIM_NAME>
-        <CREATE_HIGHLIGHT_NODE>
-          <HIGHLIGHT_NODE_ID>INSTRUMENT_Engine_RPM_Highlight</HIGHLIGHT_NODE_ID>
-          <HIGHLIGHT_PART_ID>INSTRUMENT_Engine_RPM_Highlight</HIGHLIGHT_PART_ID>
-        </CREATE_HIGHLIGHT_NODE>
+        <CREATE_HIGHLIGHT_NODE>True</CREATE_HIGHLIGHT_NODE>
+        <HIGHLIGHT_NODE_ID>INSTRUMENT_Engine_RPM_Highlight</HIGHLIGHT_NODE_ID>
+        <HIGHLIGHT_PART_ID>INSTRUMENT_Engine_RPM_Highlight</HIGHLIGHT_PART_ID>
       </UseTemplate>
 
       <Component ID="INSTRUMENTS_CDI">
         <UseTemplate Name="C152X_INSTRUMENT_CDI_Template">
           <ID>1</ID>
           <CIRCUIT_ID>18</CIRCUIT_ID>
-          <!-- Disable below? We will see...-->
-          <HIGHLIGHT_NODE_ID>INSTRUMENT_CDI</HIGHLIGHT_NODE_ID>
+          <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_1</KNOB_HIGHLIGHT_NODE_ID>
         </UseTemplate>
         <UseTemplate Name="C152X_INSTRUMENT_CDI_Template">
           <ID>2</ID>
           <CIRCUIT_ID>20</CIRCUIT_ID>
-          <HIGHLIGHT_NODE_ID>INSTRUMENT_CDI</HIGHLIGHT_NODE_ID>
+          <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_2</KNOB_HIGHLIGHT_NODE_ID>
         </UseTemplate>
       </Component>
 

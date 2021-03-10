@@ -8,8 +8,8 @@ Due to the changes made to the default C152 in 1.12.13.0 the mod is undergoing a
 
 |  Version  | Supported          |
 | --------- | ------------------ |
-| 1.12.13.0 | :white_check_mark: |
-|<1.10.11.0 | :x:                |
+| 1.14.5.0 | :white_check_mark: |
+|<1.13.16.0 | :x:                |
 
 ## Reporting an issue
 

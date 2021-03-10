@@ -31,7 +31,6 @@ class KX155A extends BaseInstrument {
         this.navBotDisplayMid = this.getChildById("NavBotDisplayMid");
         this.navBotDisplayRight = this.getChildById("NavBotDisplayRight");
         this.cdiCursor = this.getChildById("CDICursor");
-        this.navDME = this.getChildById("NAVDME")
         var parsedUrl = new URL(this.getAttribute("Url"));
         let index = parsedUrl.searchParams.get("Index");
         if (index)
@@ -43,6 +42,26 @@ class KX155A extends BaseInstrument {
     Init() {
         super.Init();
         SimVar.SetSimVarValue("K:COM_" + this.radioIndex + "_SPACING_MODE_SWITCH", "number", 1);
+    }
+    parseXMLConfig() {
+        super.parseXMLConfig();
+        if (this.instrumentXmlConfig) {
+            let display = this.instrumentXmlConfig.getElementsByTagName("Display");
+            if (display.length > 0) {
+                this.setAttribute("display", display[0].textContent.toLowerCase());
+            }
+            let colors = this.instrumentXmlConfig.getElementsByTagName("Colors");
+            if (colors.length > 0) {
+                let background = colors[0].getElementsByTagName("Background");
+                if (background.length > 0) {
+                    this.style.backgroundColor = background[0].textContent;
+                }
+                let font = colors[0].getElementsByTagName("Font");
+                if (font.length > 0) {
+                    this.style.color = font[0].textContent;
+                }
+            }
+        }
     }
     onInteractionEvent(_args) {
         if (this.isElectricityAvailable()) {
@@ -256,188 +275,190 @@ class KX155A extends BaseInstrument {
     }
     Update() {
         super.Update();
-        if (this.CanUpdate()) {
-            if (this.updateElectricity()) {
-                if (this.blinkingElapsedTime > 0) {
-                    this.blinkingElapsedTime -= this.deltaTime;
-                }
-                if (!this.editElapsed) {
-                    if (this.revertElapsed) {
-                        this.elapsedTime -= this.deltaTime;
-                        if (this.elapsedTime <= 0) {
-                            this.elapsedTime = 0;
-                            this.revertElapsed = false;
-                            this.blinkingElapsedTime = 15000;
-                        }
+        if (this.isElectricityAvailable()) {
+            if (this.blinkingElapsedTime > 0) {
+                this.blinkingElapsedTime -= this.deltaTime;
+            }
+            if (!this.editElapsed) {
+                if (this.revertElapsed) {
+                    this.elapsedTime -= this.deltaTime;
+                    if (this.elapsedTime <= 0) {
+                        this.elapsedTime = 0;
+                        this.revertElapsed = false;
+                        this.blinkingElapsedTime = 15000;
                     }
-                    else {
-                        this.elapsedTime += this.deltaTime;
-                    }
-                }
-                if (this.comKnobState == 3) {
-                    this.chanelSelectionTimer -= this.deltaTime;
-                    if (this.chanelSelectionTimer <= 0) {
-                        this.chanelSelectionTimer = 0;
-                        var freq = SimVar.GetSimVarValue("COM" + this.radioIndex + " STORED FREQUENCY HZ:" + this.selectedStorageIndex, "Hz");
-                        if (freq != 0) {
-                            SimVar.SetSimVarValue("K:COM" + (this.radioIndex == 1 ? "" : this.radioIndex) + "_STBY_RADIO_SET_HZ", "Hz", freq);
-                        }
-                        this.comKnobState = 0;
-                    }
-                }
-                this.comActiveFreq.textContent = this.getActiveComFreq();
-                if (this.comKnobState == 0) {
-                    if (this.comdirectActiveinput) {
-                        this.comStandbyFreq.textContent = "";
-                    }
-                    else {
-                        this.comStandbyFreq.textContent = this.getStandbyComFreq();
-                    }
-                    this.channelNumber.textContent = "";
-                    this.channelState.setAttribute("state", "");
-                    this.comStandbyFreq.setAttribute("state", "Blink");
                 }
                 else {
-                    this.comStandbyFreq.textContent = this.getStoredFrequency(this.selectedStorageIndex);
-                    this.channelNumber.textContent = this.selectedStorageIndex.toString();
-                    if (this.comKnobState == 3) {
-                        this.channelState.setAttribute("state", "CH");
-                    }
-                    else {
-                        this.channelState.setAttribute("state", "PG");
-                    }
-                    if (this.comKnobState == 1) {
-                        this.channelNumber.setAttribute("state", (this.blinkGetState(400, 200) ? "Blink" : "Off"));
-                    }
-                    else {
-                        this.channelNumber.setAttribute("state", "Blink");
-                    }
-                    if (this.comKnobState == 2) {
-                        this.comStandbyFreq.setAttribute("state", (this.blinkGetState(400, 200) ? "Blink" : "Off"));
-                    }
-                    else {
-                        this.comStandbyFreq.setAttribute("state", "Blink");
-                    }
+                    this.elapsedTime += this.deltaTime;
                 }
-                this.comState.setAttribute("state", this.getTransmitingState());
-                this.cavActiveFreq.textContent = SimVar.GetSimVarValue("L:XMLVAR_AUDIO_DME_SEL", "Bool") > 0 ? (this.getNAVDME() > 0 ? (this.blinkGetState(10000, 5000) ? this.getNAVDME() + "NM" : this.getActiveNavFreq()) : this.getActiveNavFreq()) : this.getActiveNavFreq() ;
-                switch (this.navMode) {
-                    case 0:
-                        this.navState.setAttribute("state", "none");
-                        if (this.navDirectActiveInput) {
-                            this.navRightDisplay.textContent = "";
-                        }
-                        else {
-                            this.navRightDisplay.textContent = this.getStandbyNavFreq();
-                        }
-                        this.obs.style.visibility = "hidden";
-                        this.navBotDisplayLeft.textContent = "";
-                        this.navBotDisplayMid.textContent = "";
-                        this.navBotDisplayRight.textContent = "";
-                        this.cdiCursor.style.visibility = "hidden";
-                        break;
-                    case 1:
-                        this.navState.setAttribute("state", "none");
-                        this.navRightDisplay.textContent = this.getObs();
-                        if (this.navKnobPulled) {
-                            this.obs.style.visibility = (this.blinkGetState(400, 200)) ? "visible" : "hidden";
-                        }
-                        else {
-                            this.obs.style.visibility = "hidden";
-                        }
-                        if (this.getIsSignalOk()) {
-                            if (this.isLocalizer()) {
-                                this.navRightDisplay.textContent = "LOC";
-                                this.obs.style.visibility = "hidden";
-                                this.navBotDisplayMid.textContent = "><";
-                            }
-                            else {
-                                if (this.getNavDir() == 1) {
-                                    this.navBotDisplayMid.textContent = "^";
-                                }
-                                else {
-                                    this.navBotDisplayMid.textContent = "v";
-                                }
-                            }
-                            this.navBotDisplayLeft.textContent = "- --  --  --  --";
-                            this.cdiCursor.setAttribute("style", "left:" + (this.getCDIPos() * 50 / 127 + 50) + "%");
-                        }
-                        else {
-                            this.navBotDisplayLeft.textContent = "FLAG";
-                            this.cdiCursor.style.visibility = "hidden";
-                            this.navBotDisplayMid.textContent = "";
-                        }
-                        this.navBotDisplayRight.textContent = " --  --  --  --  -";
-                        break;
-                    case 2:
-                        this.navState.setAttribute("state", "TO");
-                        if (this.getIsSignalOk()) {
-                            this.navRightDisplay.textContent = this.getBearing();
-                        }
-                        else {
-                            this.navRightDisplay.textContent = "---";
-                        }
-                        this.obs.style.visibility = "hidden";
-                        this.navBotDisplayLeft.textContent = "";
-                        this.navBotDisplayMid.textContent = "";
-                        this.navBotDisplayRight.textContent = "";
-                        this.cdiCursor.style.visibility = "hidden";
-                        break;
-                    case 3:
-                        this.navState.setAttribute("state", "FR");
-                        if (this.getIsSignalOk()) {
-                            this.navRightDisplay.textContent = this.getRadial();
-                        }
-                        else {
-                            this.navRightDisplay.textContent = "---";
-                        }
-                        this.navRightDisplay.textContent = this.getRadial();
-                        this.obs.style.visibility = "hidden";
-                        this.navBotDisplayLeft.textContent = "";
-                        this.navBotDisplayMid.textContent = "";
-                        this.navBotDisplayRight.textContent = "";
-                        this.cdiCursor.style.visibility = "hidden";
-                        break;
-                    case 4:
-                        this.obs.style.visibility = "hidden";
-                        if (this.editElapsed && this.blinkGetState(600, 300)) {
-                            this.navState.setAttribute("state", "None");
-                        }
-                        else {
-                            this.navState.setAttribute("state", "ET");
-                        }
-                        if (this.blinkingElapsedTime > 0 && this.blinkGetState(1000, 500)) {
-                            this.navRightDisplay.textContent = "";
-                        }
-                        else {
-                            this.navRightDisplay.textContent = this.getElapsedTime();
-                        }
-                        this.navBotDisplayLeft.textContent = "";
-                        this.navBotDisplayMid.textContent = "";
-                        this.navBotDisplayRight.textContent = "";
-                        this.cdiCursor.style.visibility = "hidden";
-                        break;
+            }
+            if (this.comKnobState == 3) {
+                this.chanelSelectionTimer -= this.deltaTime;
+                if (this.chanelSelectionTimer <= 0) {
+                    this.chanelSelectionTimer = 0;
+                    var freq = SimVar.GetSimVarValue("COM" + this.radioIndex + " STORED FREQUENCY HZ:" + this.selectedStorageIndex, "Hz");
+                    if (freq != 0) {
+                        SimVar.SetSimVarValue("K:COM" + (this.radioIndex == 1 ? "" : this.radioIndex) + "_STBY_RADIO_SET_HZ", "Hz", freq);
+                    }
+                    this.comKnobState = 0;
                 }
+            }
+            this.comActiveFreq.textContent = this.getActiveComFreq();
+            if (this.comKnobState == 0) {
+                if (this.comdirectActiveinput) {
+                    this.comStandbyFreq.textContent = "";
+                }
+                else {
+                    this.comStandbyFreq.textContent = this.getStandbyComFreq();
+                }
+                this.channelNumber.textContent = "";
+                this.channelState.setAttribute("state", "");
+                this.comStandbyFreq.setAttribute("state", "Blink");
             }
             else {
-                this.elapsedTime = 0;
-                this.revertElapsed = false;
-                this.blinkingElapsedTime = 0;
-                this.comActiveFreq.textContent = "";
-                this.comStandbyFreq.textContent = "";
-                this.comState.setAttribute("state", "none");
-                this.channelState.setAttribute("state", "none");
-                this.channelNumber.textContent = "";
-                this.cavActiveFreq.textContent = "";
-                this.obs.style.visibility = "hidden";
-                this.navRightDisplay.textContent = "";
-                this.navState.setAttribute("state", "none");
-                this.navBotDisplayLeft.textContent = "";
-                this.navBotDisplayMid.textContent = "";
-                this.navBotDisplayRight.textContent = "";
-                this.cdiCursor.style.visibility = "hidden";
+                this.comStandbyFreq.textContent = this.getStoredFrequency(this.selectedStorageIndex);
+                this.channelNumber.textContent = this.selectedStorageIndex.toString();
+                if (this.comKnobState == 3) {
+                    this.channelState.setAttribute("state", "CH");
+                }
+                else {
+                    this.channelState.setAttribute("state", "PG");
+                }
+                if (this.comKnobState == 1) {
+                    this.channelNumber.setAttribute("state", (this.blinkGetState(400, 200) ? "Blink" : "Off"));
+                }
+                else {
+                    this.channelNumber.setAttribute("state", "Blink");
+                }
+                if (this.comKnobState == 2) {
+                    this.comStandbyFreq.setAttribute("state", (this.blinkGetState(400, 200) ? "Blink" : "Off"));
+                }
+                else {
+                    this.comStandbyFreq.setAttribute("state", "Blink");
+                }
+            }
+            this.comState.setAttribute("state", this.getTransmitingState());
+            this.cavActiveFreq.textContent = SimVar.GetSimVarValue("L:XMLVAR_AUDIO_DME_SEL", "Bool") > 0 ? (this.getNAVDME() > 0 ? (this.blinkGetState(10000, 5000) ? this.getNAVDME() + "NM" : this.getActiveNavFreq()) : this.getActiveNavFreq()) : this.getActiveNavFreq();
+
+            switch (this.navMode) {
+                case 0:
+                    this.navState.setAttribute("state", "none");
+                    if (this.navDirectActiveInput) {
+                        this.navRightDisplay.textContent = "";
+                    }
+                    else {
+                        this.navRightDisplay.textContent = this.getStandbyNavFreq();
+                    }
+                    this.obs.style.visibility = "hidden";
+                    this.navBotDisplayLeft.textContent = "";
+                    this.navBotDisplayMid.textContent = "";
+                    this.navBotDisplayRight.textContent = "";
+                    this.cdiCursor.style.visibility = "hidden";
+                    break;
+                case 1:
+                    this.navState.setAttribute("state", "none");
+                    this.navRightDisplay.textContent = this.getObs();
+                    if (this.navKnobPulled) {
+                        this.obs.style.visibility = (this.blinkGetState(400, 200)) ? "visible" : "hidden";
+                    }
+                    else {
+                        this.obs.style.visibility = "hidden";
+                    }
+                    if (this.getIsSignalOk()) {
+                        if (this.isLocalizer()) {
+                            this.navRightDisplay.textContent = "LOC";
+                            this.obs.style.visibility = "hidden";
+                            this.navBotDisplayMid.textContent = "><";
+                        }
+                        else {
+                            if (this.getNavDir() == 1) {
+                                this.navBotDisplayMid.textContent = "^";
+                            }
+                            else {
+                                this.navBotDisplayMid.textContent = "v";
+                            }
+                        }
+                        this.navBotDisplayLeft.textContent = "- --  --  --  --";
+                        this.cdiCursor.setAttribute("style", "left:" + (this.getCDIPos() * 50 / 127 + 50) + "%");
+                    }
+                    else {
+                        this.navBotDisplayLeft.textContent = "FLAG";
+                        this.cdiCursor.style.visibility = "hidden";
+                        this.navBotDisplayMid.textContent = "";
+                    }
+                    this.navBotDisplayRight.textContent = " --  --  --  --  -";
+                    break;
+                case 2:
+                    this.navState.setAttribute("state", "TO");
+                    if (this.getIsSignalOk()) {
+                        this.navRightDisplay.textContent = this.getBearing();
+                    }
+                    else {
+                        this.navRightDisplay.textContent = "---";
+                    }
+                    this.obs.style.visibility = "hidden";
+                    this.navBotDisplayLeft.textContent = "";
+                    this.navBotDisplayMid.textContent = "";
+                    this.navBotDisplayRight.textContent = "";
+                    this.cdiCursor.style.visibility = "hidden";
+                    break;
+                case 3:
+                    this.navState.setAttribute("state", "FR");
+                    if (this.getIsSignalOk()) {
+                        this.navRightDisplay.textContent = this.getRadial();
+                    }
+                    else {
+                        this.navRightDisplay.textContent = "---";
+                    }
+                    this.navRightDisplay.textContent = this.getRadial();
+                    this.obs.style.visibility = "hidden";
+                    this.navBotDisplayLeft.textContent = "";
+                    this.navBotDisplayMid.textContent = "";
+                    this.navBotDisplayRight.textContent = "";
+                    this.cdiCursor.style.visibility = "hidden";
+                    break;
+                case 4:
+                    this.obs.style.visibility = "hidden";
+                    if (this.editElapsed && this.blinkGetState(600, 300)) {
+                        this.navState.setAttribute("state", "None");
+                    }
+                    else {
+                        this.navState.setAttribute("state", "ET");
+                    }
+                    if (this.blinkingElapsedTime > 0 && this.blinkGetState(1000, 500)) {
+                        this.navRightDisplay.textContent = "";
+                    }
+                    else {
+                        this.navRightDisplay.textContent = this.getElapsedTime();
+                    }
+                    this.navBotDisplayLeft.textContent = "";
+                    this.navBotDisplayMid.textContent = "";
+                    this.navBotDisplayRight.textContent = "";
+                    this.cdiCursor.style.visibility = "hidden";
+                    break;
             }
         }
+        else {
+            this.elapsedTime = 0;
+            this.revertElapsed = false;
+            this.blinkingElapsedTime = 0;
+            this.comActiveFreq.textContent = "";
+            this.comStandbyFreq.textContent = "";
+            this.comState.setAttribute("state", "none");
+            this.channelState.setAttribute("state", "none");
+            this.channelNumber.textContent = "";
+            this.cavActiveFreq.textContent = "";
+            this.obs.style.visibility = "hidden";
+            this.navRightDisplay.textContent = "";
+            this.navState.setAttribute("state", "none");
+            this.navBotDisplayLeft.textContent = "";
+            this.navBotDisplayMid.textContent = "";
+            this.navBotDisplayRight.textContent = "";
+            this.cdiCursor.style.visibility = "hidden";
+        }
+    }
+    getNAVDME() {
+        return Math.round(SimVar.GetSimVarValue("NAV DME:" + this.radioIndex, "nautical mile") * 10) / 10;
     }
     getActiveComFreq() {
         return this.frequency3DigitsFormat(SimVar.GetSimVarValue("COM ACTIVE FREQUENCY:" + this.radioIndex, "MHz"));
@@ -479,9 +500,6 @@ class KX155A extends BaseInstrument {
     }
     getCDIPos() {
         return SimVar.GetSimVarValue("NAV CDI:" + this.radioIndex, "number");
-    }
-    getNAVDME() {
-            return Math.round(SimVar.GetSimVarValue("NAV DME:" + this.radioIndex, "nautical mile") * 10) / 10;
     }
     getElapsedTime() {
         var seconds = Math.floor((this.elapsedTime / 1000) % 60);
