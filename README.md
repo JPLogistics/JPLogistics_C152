@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/Version-V0.9.7-blue)
 
-![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?color=blue&label=Downloads@Github) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-8.0k-blue)
+![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?color=blue&label=Downloads@Github) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-11.0k-blue)
 
 <a href="https://www.buymeacoffee.com/n95jpl" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="30%"></img></a>
 
@@ -10,8 +10,8 @@
 
 # JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
-- **Primary Download (Latest Release): [V0.9.7](https://github.com/JPLogistics/MSFS_C152/releases/)**
-- **Alternative Download Site: [V0.9.7](https://flightsim.to/file/2246/msfs-c152-community)**
+- **Primary Download (Latest Release): [V0.9.71](https://github.com/JPLogistics/MSFS_C152/releases/)**
+- **Alternative Download Site: [V0.9.71](https://flightsim.to/file/2246/msfs-c152-community)**
 - **Discord Channel: [MSFS_C152 Community](https://discord.gg/Arj3jnBmk5)**
 
 ## Donations
@@ -25,6 +25,13 @@ I accept the following CryptoCoins or via the button above!
 BitCoin: 1LbnfyHbTrYinAmCgbXA58xh5zni34YPP9
 
 USDT: 0x3a6e64ba672c02f59600508d6657f4dd5a44546c
+
+## V0.9.71 - Hotfix! ##
+Only a small update this time, just to provide the fixes needed for V1.14.5!
+- Fixed NAVCOM Radio Stacks
+- Fixed some coding changes to internal systems
+- Corrected HourMeter & ADF Systems
+
 ## V0.9.7 - Restructure!
 **_Again_, sorry to be annoying! I have actually restructure the mod please delete the _MSFS_C152_ folder & copy the _jplogistics-c152_ folder instead!**
 I've released this update a little prematurely, I had actually wanted to fix a few more issues first, but this is a Hotfix that needed to be public ASAP!
