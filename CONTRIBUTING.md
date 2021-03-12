@@ -2,6 +2,8 @@ We actively encourage others to help with this Addon if you believe something is
 
 In order to maintain the required standard, please do not modify any file locations or folder structures
 
+Please can I also request that you Fork / Pull Request into the Development Channel!
+
 When creating a Pull Request, please name it describing the changes made EG: "Modified Taxi Light Position"
 Also include a description of what has changed and any reasoning you think is applicable!
 
