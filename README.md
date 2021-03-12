@@ -10,6 +10,7 @@
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
 - **Discord Community: [MSFS_C152](https://discord.gg/dJNwC3BSFZ)**
 
+This package hasn't been built yet! Standby for more details!
 ## V0.9.8 - Work in progress
 *Things to focus on!*
 - Correct the Fuel Gauge calibration
