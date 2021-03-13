@@ -1,7 +1,7 @@
 <AssetPackage Name="jplogistics-c152" ReleaseNotes="PackageDefinitions\jplogistics-c152\ReleaseNotes.xml" Version="0.9.80">
 	<ItemSettings>
-		<ContentType>MISC</ContentType>
-		<Title>MSFS_C152</Title>
+		<ContentType>AIRCRAFT</ContentType>
+		<Title>JPLogistics_C152</Title>
 		<Manufacturer>JPLogistics</Manufacturer>
 		<Creator>N95JPL</Creator>
 	</ItemSettings>
@@ -23,15 +23,15 @@
 			<Flags>
 				<FSXCompatibility>false</FSXCompatibility>
 			</Flags>
-			<AssetDir>src\MSFS_C152_Additional\</AssetDir>
+			<AssetDir>src\JPLogistics_C152_Additional\</AssetDir>
 			<OutputDir>.\</OutputDir>
 		</AssetGroup>
-		<AssetGroup Name="msfs-c152">
+		<AssetGroup Name="jplogistics-c152">
 			<Type>SimObject</Type>
 			<Flags>
 				<FSXCompatibility>false</FSXCompatibility>
 			</Flags>
-			<AssetDir>src\MSFS_C152\SimObjects\Airplanes\Asobo_C152\</AssetDir>
+			<AssetDir>src\JPLogistics_C152\SimObjects\Airplanes\Asobo_C152\</AssetDir>
 			<OutputDir>SimObjects\Airplanes\Asobo_C152\</OutputDir>
 		</AssetGroup>
 	</AssetGroups>

@@ -274,6 +274,7 @@
 
           <!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
 
+
           <SIMVAR_UNIT>liter</SIMVAR_UNIT>
 
           <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
