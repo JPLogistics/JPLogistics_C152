@@ -13,6 +13,8 @@
 This package hasn't been built yet! Standby for more details!
 ## V0.9.8 - Work in progress
 *Things to focus on!*
+- Disabled Autopilot on "Airborne" loading situations
+  - This is to remove the "Reversed Yoke" issue!
 - Correct the Fuel Gauge calibration
   - Also fix the texture
 - See "Issues" for more things to work through!
