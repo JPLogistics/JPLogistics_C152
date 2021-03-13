@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/Version-V0.9.7-blue)
 
-![Download](https://img.shields.io/github/downloads/JPLogistics/MSFS_C152/total?color=blue&label=Downloads@Github) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-11.5k-blue)
+![Download](https://img.shields.io/github/downloads/JPLogistics/JPLogistics_C152/total?color=blue&label=Downloads@Github) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-11.5k-blue)
 
 <a href="https://www.buymeacoffee.com/n95jpl" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="30%"></img></a>
 
