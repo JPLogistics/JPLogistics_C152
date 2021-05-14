@@ -1,4 +1,4 @@
-<AssetPackage Name="jplogistics-c152" ReleaseNotes="PackageDefinitions\jplogistics-c152\ReleaseNotes.xml" Version="0.9.80">
+<AssetPackage Name="jplogistics-c152" ReleaseNotes="PackageDefinitions\jplogistics-c152\ReleaseNotes.xml" Version="0.9.90">
 	<ItemSettings>
 		<ContentType>AIRCRAFT</ContentType>
 		<Title>JPLogistics_C152</Title>
@@ -26,6 +26,14 @@
 			<AssetDir>src\JPLogistics_C152_Additional\</AssetDir>
 			<OutputDir>.\</OutputDir>
 		</AssetGroup>
+    <AssetGroup Name="additional-livery">
+      <Type>Copy</Type>
+      <Flags>
+        <FSXCompatibility>false</FSXCompatibility>
+      </Flags>
+      <AssetDir>src\JPLogistics_C152_Liveries</AssetDir>
+      <OutputDir>.\</OutputDir>
+    </AssetGroup>
 		<AssetGroup Name="jplogistics-c152">
 			<Type>SimObject</Type>
 			<Flags>
