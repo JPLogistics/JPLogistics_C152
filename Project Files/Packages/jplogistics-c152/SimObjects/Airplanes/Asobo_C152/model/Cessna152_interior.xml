@@ -17,10 +17,11 @@
     <Include ModelBehaviorFile="Asobo\Transponder\Transponder.xml"/>
     <Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
     <Include ModelBehaviorFile="Asobo\NAVCOM\ADF.xml"/>
-    <Include ModelBehaviorFile="C152X\Asobo\Transponder\Transponder.xml"/>
-    <Include ModelBehaviorFile="C152X\Asobo\Common.xml"/>
-    <Include ModelBehaviorFile="C152X\Asobo\NAVCOM\NavComSystem.xml"/>
-    <Include ModelBehaviorFile="C152X\Asobo\NAVCOM\ADF.xml"/>
+    <Include ModelBehaviorFile="C152X\Asobo152X\Transponder152X\Transponder152X.xml"/>
+    <Include ModelBehaviorFile="C152X\Asobo152X\Common152X.xml"/>
+    <Include ModelBehaviorFile="C152X\Asobo152X\NAVCOM152X\NavComSystem152X.xml"/>
+    <Include ModelBehaviorFile="C152X\Asobo152X\NAVCOM152X\ADF152X.xml"/>
+	
 	  
     <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank and the 20 in the formula is a scaling factor for the amount of yaw induced variation in the tank indication. The first value is the current tank quantity in liters. 	The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
     <Macro Name="FuelTankSensorAdjustmentLeftTank">
@@ -100,7 +101,7 @@
         <DRAG_AXIS_SCALE>-400</DRAG_AXIS_SCALE>
         <BUTTON_NODE_ID>FUEL_Lever_Mixture_1_Push</BUTTON_NODE_ID>
       </UseTemplate>
-      <UseTemplate Name="ASOBO_ENGINE_Lever_Primer_Template">
+      <UseTemplate Name="ASOBO_ENGINE_Lever_Primer_Template"> <!--pump/primer-->
         <NODE_ID>ENGINE_LEVER_PRIMER</NODE_ID>
         <ANIM_NAME>ENGINE_LEVER_PRIMER</ANIM_NAME>
         <INVERT_SWITCH_ON_CONDITION>True</INVERT_SWITCH_ON_CONDITION>
@@ -280,32 +281,32 @@
           <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
 
           <REF_VALUE_1>
-            1.79 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_1> <!--1USG 22.7L-->
+            5.4676 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_1> <!--1.4444USG 22.7L-->
             <REF_VALUE_2>
-              11.36 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_2>  <!--3USG 22.7L-->
+              10.9338 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_2>  <!--2.8884USG 22.7L-->
               <REF_VALUE_3>
-                18.93 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_3> <!--5USG 22.7L-->
+                16.3999 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_3> <!--4.3324USG 22.7L-->
                 <REF_VALUE_4>
-                  26.50 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_4> <!--7USG 22.7L-->
+                  23.8661 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_4> <!--5.7764USG 22.7L-->
                   <REF_VALUE_5>
-                    30.28 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_5> <!--8USG 22.7L-->
+                    29.3322 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_5> <!--7.2204USG 22.7L-->
                     <REF_VALUE_6>
-                      34.07 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_6> <!--9USG 22.7L-->
+                      32.7983 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_6> <!--8.6644USG 22.7L-->
                       <REF_VALUE_7>
-                        37.85 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_7> <!--10USG 22.7L-->
+                        38.2645 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_7> <!--10.1084USG 22.7L-->
                         <REF_VALUE_8>
-                          45.42 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_8> <!--12USG 68.1L-->
+                          43.7306 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_8> <!--11.5524USG 68.1L-->
                           <REF_VALUE_9>
-                            49.21 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_9> <!--13USG FULL-->
+                            49.2104 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_9> <!--13USG FULL-->
                             <ANIM_VALUE_0>0</ANIM_VALUE_0>
-                            <ANIM_VALUE_1>13</ANIM_VALUE_1>
-                            <ANIM_VALUE_2>30</ANIM_VALUE_2>
-                            <ANIM_VALUE_3>42</ANIM_VALUE_3>
-                            <ANIM_VALUE_4>50</ANIM_VALUE_4>
-                            <ANIM_VALUE_5>62</ANIM_VALUE_5>
-                            <ANIM_VALUE_6>77</ANIM_VALUE_6>
-                            <ANIM_VALUE_7>88</ANIM_VALUE_7>
-                            <ANIM_VALUE_8>97</ANIM_VALUE_8>
+                            <ANIM_VALUE_1>12</ANIM_VALUE_1>
+                            <ANIM_VALUE_2>34</ANIM_VALUE_2>
+                            <ANIM_VALUE_3>48</ANIM_VALUE_3>
+                            <ANIM_VALUE_4>60</ANIM_VALUE_4>
+                            <ANIM_VALUE_5>69</ANIM_VALUE_5>
+                            <ANIM_VALUE_6>78</ANIM_VALUE_6>
+                            <ANIM_VALUE_7>87</ANIM_VALUE_7>
+                            <ANIM_VALUE_8>93</ANIM_VALUE_8>
                             <ANIM_VALUE_9>100</ANIM_VALUE_9>
                             <MAX_POINT_INDEX>9</MAX_POINT_INDEX>
                             <ANIM_LENGTH>100</ANIM_LENGTH>
@@ -327,32 +328,32 @@
           <REF_VALUE_0>0</REF_VALUE_0>
           <!--0USG EMPTY-->
           <REF_VALUE_1>
-            1.79 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_1> <!--1USG 22.7L-->
+            5.4676 @FuelTankSensorAdjustmentRightTank</REF_VALUE_1> <!--1.4444USG 22.7L-->
             <REF_VALUE_2>
-              11.36 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_2>  <!--3USG 22.7L-->
+              10.9338 @FuelTankSensorAdjustmentRightTank</REF_VALUE_2>  <!--2.8884USG 22.7L-->
               <REF_VALUE_3>
-                18.93 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_3> <!--5USG 22.7L-->
+                16.3999 @FuelTankSensorAdjustmentRightTank</REF_VALUE_3> <!--4.3324USG 22.7L-->
                 <REF_VALUE_4>
-                  26.50 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_4> <!--7USG 22.7L-->
+                  23.8661 @FuelTankSensorAdjustmentRightTank</REF_VALUE_4> <!--5.7764USG 22.7L-->
                   <REF_VALUE_5>
-                    30.28 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_5> <!--8USG 22.7L-->
+                    29.3322 @FuelTankSensorAdjustmentRightTank</REF_VALUE_5> <!--7.2204USG 22.7L-->
                     <REF_VALUE_6>
-                      34.07 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_6> <!--9USG 22.7L-->
+                      32.7983 @FuelTankSensorAdjustmentRightTank</REF_VALUE_6> <!--8.6644USG 22.7L-->
                       <REF_VALUE_7>
-                        37.85 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_7> <!--10USG 22.7L-->
+                        38.2645 @FuelTankSensorAdjustmentRightTank</REF_VALUE_7> <!--10.1084USG 22.7L-->
                         <REF_VALUE_8>
-                          45.42 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_8> <!--12USG 68.1L-->
+                          43.7306 @FuelTankSensorAdjustmentRightTank</REF_VALUE_8> <!--11.5524USG 68.1L-->
                           <REF_VALUE_9>
-                            49.21 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_9> <!--13USG FULL-->
+                            49.2104 @FuelTankSensorAdjustmentRightTank</REF_VALUE_9> <!--13USG FULL-->
                             <ANIM_VALUE_0>0</ANIM_VALUE_0>
-                            <ANIM_VALUE_1>13</ANIM_VALUE_1>
-                            <ANIM_VALUE_2>30</ANIM_VALUE_2>
-                            <ANIM_VALUE_3>42</ANIM_VALUE_3>
-                            <ANIM_VALUE_4>50</ANIM_VALUE_4>
-                            <ANIM_VALUE_5>62</ANIM_VALUE_5>
-                            <ANIM_VALUE_6>77</ANIM_VALUE_6>
-                            <ANIM_VALUE_7>88</ANIM_VALUE_7>
-                            <ANIM_VALUE_8>97</ANIM_VALUE_8>
+                            <ANIM_VALUE_1>12</ANIM_VALUE_1>
+                            <ANIM_VALUE_2>34</ANIM_VALUE_2>
+                            <ANIM_VALUE_3>48</ANIM_VALUE_3>
+                            <ANIM_VALUE_4>60</ANIM_VALUE_4>
+                            <ANIM_VALUE_5>69</ANIM_VALUE_5>
+                            <ANIM_VALUE_6>78</ANIM_VALUE_6>
+                            <ANIM_VALUE_7>87</ANIM_VALUE_7>
+                            <ANIM_VALUE_8>93</ANIM_VALUE_8>
                             <ANIM_VALUE_9>100</ANIM_VALUE_9>
                             <MAX_POINT_INDEX>9</MAX_POINT_INDEX>
                             <ANIM_LENGTH>100</ANIM_LENGTH>
@@ -364,9 +365,14 @@
           <INVERT_ANIM>True</INVERT_ANIM>
           <DONT_APPEND_ID>True</DONT_APPEND_ID>
         </UseTemplate>
+		
         <UseTemplate Name="ASOBO_SAFETY_Indicator_LowVolt_Template">
           <THRESHOLD>26</THRESHOLD>
         </UseTemplate>
+		<!-- changed to amps should it be volts?
+		<UseTemplate Name="C152X_SAFETY_Indicator_LowVolt_Template">
+        </UseTemplate>-->
+		
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Temperature_Template">
           <UNITS>fahrenheit</UNITS>
           <MIN_VALUE>0</MIN_VALUE>
@@ -381,45 +387,57 @@
           <FAILURE_CODE>0</FAILURE_CODE>
           <DONT_APPEND_ID>True</DONT_APPEND_ID>
         </UseTemplate>
-        <UseTemplate Name="ASOBO_INSTRUMENT_Needle_OAT_Template">
+      </Component>
+	  <Component ID="OAT"> 
+		<UseTemplate Name="ASOBO_INSTRUMENT_Needle_OAT_Template">
           <MIN_VALUE>-60</MIN_VALUE>
           <MAX_VALUE>80</MAX_VALUE>
+		  <SIMVAR_ADJUSTMENT_CODE>(A:AMBIENT TEMPERATURE, celsius) 43 -</SIMVAR_ADJUSTMENT_CODE>
         </UseTemplate>
-      </Component>
+	  </Component>
     </Component>
 
     <!-- LIGHTING ########################### -->
     <Component ID="LIGHTING">
-      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Strobe_Template">
-      </UseTemplate>
-
-      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Navigation_Template">
-      </UseTemplate>
-
-      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Taxi_Template">
-      </UseTemplate>
-
-      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Landing_Template">
-      </UseTemplate>
-
       <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Beacon_Template">
       </UseTemplate>
-
-      <UseTemplate Name="ASOBO_LIGHTING_Knob_Glareshield_Template">
+      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Landing_Template">
+      </UseTemplate>
+      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Taxi_Template">
+      </UseTemplate>	  
+      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Navigation_Template">
+      </UseTemplate>
+      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Strobe_Template">
+      </UseTemplate>
+	  
+	  
+      <UseTemplate Name="C152X_LIGHTING_Knob_Panel_Template"> <!-- Lower Knob by key for instrument light dimming -- Pot 5-->
         <NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
         <ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
         <KNOB_TURN_SPEED>4.0</KNOB_TURN_SPEED>
+		<INIT_VALUE>20</INIT_VALUE>
+		<MIN_VALUE>5</MIN_VALUE>
       </UseTemplate>
 
-      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Cabin_Template">
-      </UseTemplate>
-
-      <UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template">
+      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Cabin_Template"> <!--Dome Light Switch-->
+        </UseTemplate>
+      <UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template"> <!-- White cabin light on ceiling -->
         <POTENTIOMETER>5</POTENTIOMETER>
+		<SIMVAR_INDEX>1</SIMVAR_INDEX>
       </UseTemplate>
-      <UseTemplate Name="ASOBO_LIGHTING_Glareshield_Emissive_Template">
+	  
+	  
+      <UseTemplate Name="ASOBO_LIGHTING_Glareshield_Emissive_Template"> <!-- Red light on ceiling -->
         <NODE_ID>LIGHTING_Panel_Emisive</NODE_ID>
+		    <POTENTIOMETER>4</POTENTIOMETER>
       </UseTemplate>
+	  
+	  <UseTemplate Name="C152X_LIGHTING_Switch_Light_Panel_Template"> <!-- Upper Panel lights on/off -->
+		<NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
+		<ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
+		<CIRCUIT_ID>25</CIRCUIT_ID>
+	  </UseTemplate>
+	  
     </Component>
 
     <!-- PASSENGERS ########################### -->
@@ -445,8 +463,9 @@
       <DefaultTemplateParameters>
         <ANIM_LAG_SWITCH>500</ANIM_LAG_SWITCH>
         <BUTTON_POTENTIOMETER/>
-        <POTENTIOMETER>4</POTENTIOMETER>
+        <POTENTIOMETER>5</POTENTIOMETER>
         <ANIM_NEVER_FAILS>True</ANIM_NEVER_FAILS>
+		<INIT_VALUE>50</INIT_VALUE>
       </DefaultTemplateParameters>
       <UseTemplate Name="C152X_NAVCOM_Simple_Radio_Template">
         <ID>1</ID>
@@ -464,20 +483,20 @@
         <CIRCUIT_ID>20</CIRCUIT_ID>
         <FAILURE>(A:COM VOLUME:2,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
+	  <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
+        <ID>2</ID>
+        <NODE_ID>NavCom2_Screen</NODE_ID>
+        <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
+        <USE_DIMMING_POTENTIOMETER/>
+        <DIMMING_FACTOR>1</DIMMING_FACTOR>
+      </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
         <ID>1</ID>
         <NODE_ID>NavCom1_Screen</NODE_ID>
-        <NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>
+        <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
         <USE_DIMMING_POTENTIOMETER/>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
-      </UseTemplate>
-      <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
-        <ID>2</ID>
-        <NODE_ID>NavCom2_Screen</NODE_ID>
-        <NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>
-        <USE_DIMMING_POTENTIOMETER/>
-        <DIMMING_FACTOR>1</DIMMING_FACTOR>
-      </UseTemplate>
+      </UseTemplate>  
       <Component Id="NAVCOM_Sound_Push_Buttons">
         <DefaultTemplateParameters>
           <SWITCH_TYPE>Switch</SWITCH_TYPE>
@@ -547,12 +566,13 @@
           <ANIM_NAME>AUDIO_Push_SPKR</ANIM_NAME>
           <TOOLTIPID>Toggle Co-Pilot</TOOLTIPID>
         </UseTemplate>
-      </Component>
+    </Component>
     </Component>
     <Component ID="ADF">
       <DefaultTemplateParameters>
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
-        <POTENTIOMETER>4</POTENTIOMETER>
+        <POTENTIOMETER>5</POTENTIOMETER>
+				<BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
       </DefaultTemplateParameters>
       <UseTemplate Name="ASOBO_ADF_3Knobs_Frequency_Template">
       </UseTemplate>
@@ -568,18 +588,28 @@
       </UseTemplate>
     </Component>
     <Component ID="TRANSPONDER">
-      <UseTemplate Name="C152X_5Knobs_Transponder_Template">
+      <UseTemplate Name="ASOBO_5Knobs_Transponder_Template">
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
         <ANIM_LAG>500</ANIM_LAG>
+				<BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
+				<EMISSIVE_POTENTIOMETER>5</EMISSIVE_POTENTIOMETER>
       </UseTemplate>
     </Component>
+	
     <Component ID="AUDIO_TOP_PANEL">
       <DefaultTemplateParameters>
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
       </DefaultTemplateParameters>
-      <UseTemplate Name="ASOBO_AUDIO_Knob_Volume_Template">
+	  
+	  
+	  
+      <UseTemplate Name="C152X_AUDIO_Knob_Volume_Template">
+		    <CIRCUIT_ID>28</CIRCUIT_ID>	  <!----------------------- Upper knob pot 4----------------------->
         <USE_DIMMING_KNOB/>
+		    <SIMVAR_INDEX>2</SIMVAR_INDEX>
       </UseTemplate>
+
+
       <Component ID="OMI_Indicators">
         <DefaultTemplateParameters>
           <FAILURE>(A:CIRCUIT GENERAL PANEL ON, Bool)</FAILURE>
@@ -595,25 +625,40 @@
       </UseTemplate>
     </Component>
 
-    <Component ID="TT_INOP">
-      <UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+    <Component ID="SafetySwitches">
+      <!--<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
         <NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
-      </UseTemplate>
-      <UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+      </UseTemplate>-->
+      <!--<UseTemplate Name="ASOBO_SAFETY_Push_Annunciator_Template">
         <NODE_ID>AUDIO_Switch_Test</NODE_ID>
-      </UseTemplate>
+		<ANIM_NAME>AUDIO_Switch_Test</ANIM_NAME>
+      </UseTemplate>-->
+		<Component ID="ANNUNCIATOR_TEST">
+		  <UseTemplate Name="C152X_Annun_Test">
+			<NODE_ID>AUDIO_Switch_Test</NODE_ID>
+			<ANIM_NAME>AUDIO_Switch_Test</ANIM_NAME>
+			<PART_ID>AUDIO_Switch_Test</PART_ID>
+		  </UseTemplate>			
+		</Component>
 		<Component ID="Pilots_Visibility">
 			<Component ID="PILOT_0" Node="PILOT_0">
 				<UseTemplate Name="ASOBO_GT_Visibility_Code">
 					<VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and</VISIBILITY_CODE>
 				</UseTemplate>
-			</Component>
+      </Component>
 			<Component ID="PILOT_1" Node="PILOT_1">
 				<UseTemplate Name="ASOBO_GT_Visibility_Code">
 					<VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 == and</VISIBILITY_CODE>
 				</UseTemplate>
 			</Component>
-		</Component>
+      <Component ID="Red_Dome" Node="LIGHT_C152_CockpitSpotRed">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:C152_Red_Dome, Bool) == (A:CIRCUIT GENERAL PANEL ON, Bool)</VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+    </Component>
     </Component>
   </Behaviors>
 </ModelInfo>
+
+
