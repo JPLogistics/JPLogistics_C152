@@ -1,0 +1,255 @@
+﻿:root {
+    --bodyHeightScale: 1;
+}
+
+@keyframes TemporaryShow {
+    0%, 100% {
+        visibility: visible;
+    }
+}
+
+@keyframes TemporaryHide {
+    0%, 100% {
+        visibility: hidden;
+    }
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+    html body {
+        -webkit-user-select: none;
+        font-family: Roboto-Regular;
+        font-size: calc(var(--viewportHeightRatio) * (36px / 21.6) * var(--currentPageHeight) / 100);
+        color: white;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+#highlight {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+#Electricity {
+    width: 100%;
+    height: 100%;
+}
+
+    #Electricity[state=off] {
+        display: none;
+    }
+
+@font-face {
+    font-family: "Alarm-Clock";
+    src: url("/Pages/VCockpit/Instruments/Shared/Fonts/Quartz.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+KX155A-element {
+    width: 100%;
+    height: 100%;
+    color: orangered;
+    font-family: Alarm-Clock;
+    overflow: hidden;
+}
+
+    KX155A-element #Mainframe {
+        width: 100%;
+        height: 100%;
+        margin-left: 20px;
+        margin-top: 30px;
+    }
+
+    KX155A-element #ComPanel {
+        position: absolute;
+        top: 12%;
+        left: 1%;
+        width: 48%;
+    }
+
+    KX155A-element #NavPanel {
+        position: absolute;
+        top: 12%;
+        left: 49%;
+        width: 48%;
+    }
+
+    KX155A-element #NavState {
+        position: absolute;
+        top: 12%;
+        right: 6%;
+        width: 5%;
+        text-align: right;
+    }
+
+    KX155A-element #Separator {
+        top: 12%;
+        left: 49%;
+        width: 0%;
+        height: 75%;
+        border: 1px solid orangered;
+        position: absolute;
+    }
+
+    KX155A-element .Align {
+        display: inline-block;
+    }
+
+    KX155A-element #ComActiveFreq {
+        margin-left: -17px;
+        font-size: 27px;
+        width: 110px;
+        text-align: right;
+    }
+
+    KX155A-element #ComStandbyFreq {
+        margin-left: -17px;
+        font-size: 27px;
+        width: 110px;
+        text-align: right;
+    }
+
+    KX155A-element #NavActiveFreq, KX155A-element #NavRightDisplay {
+        font-size: 27px;
+        width: 95px;
+        text-align: right;
+    }
+
+    KX155A-element #NavActiveFreq {
+        margin-bottom: 4px;
+    }
+
+    KX155A-element #OBS {
+        font-size: 12px;
+        text-align: right;
+        width: 13px;
+        vertical-align: top;
+        Line-Height: 8pt;
+    }
+
+    KX155A-element #ComState {
+        margin-left: 16px;
+        font-size: 12px;
+        text-align: right;
+        width: 13px;
+        Line-Height: 8pt;
+    }
+
+        KX155A-element #ComState #T, KX155A-element #ComState #R {
+            visibility: hidden;
+        }
+
+        KX155A-element #ComState[state=T] #T,
+        KX155A-element #ComState[state=R] #R,
+        KX155A-element #ComState[state=both] #T,
+        KX155A-element #ComState[state=both] #R {
+            visibility: visible;
+        }
+
+    KX155A-element #ChannelState {
+        font-size: 12px;
+    }
+
+        KX155A-element #ChannelState #CH, KX155A-element #ChannelState #PG {
+            visibility: hidden;
+        }
+
+        KX155A-element #ChannelState[state=CH] #CH,
+        KX155A-element #ChannelState[state=PG] #PG {
+            visibility: visible;
+        }
+
+    KX155A-element #NavState {
+        font-size: 10px;
+        vertical-align: top;
+    }
+
+        KX155A-element #NavState #TO, KX155A-element #NavState #FR, KX155A-element #NavState #ET {
+            visibility: hidden;
+        }
+
+        KX155A-element #NavState[state=TO] #TO,
+        KX155A-element #NavState[state=FR] #FR,
+        KX155A-element #NavState[state=ET] #ET {
+            visibility: visible;
+        }
+
+    KX155A-element #ChannelNumber {
+        font-size: 26px;
+        text-align: right;
+        width: 40px;
+    }
+
+    KX155A-element #BotNav {
+        margin-top: -7px;
+    }
+
+    KX155A-element #BotCom {
+        margin-top: -7px;
+        margin-left: 150px;
+    }
+
+    KX155A-element #NavBotDisplayLeft {
+        position: absolute;
+        left: 0%;
+        font-size: 15px;
+        width: 38%;
+        text-align: right;
+    }
+
+    KX155A-element #NavBotDisplayMid {
+        position: absolute;
+        left: 42%;
+        font-size: 15px;
+        width: auto;
+        text-align: center;
+    }
+
+    KX155A-element #NavBotDisplayRight {
+        position: absolute;
+        left: 49%;
+        font-size: 15px;
+        width: 50%;
+        text-align: left;
+    }
+
+    KX155A-element #CDICursor {
+        position: absolute;
+    }
+
+    KX155A-element .Blink {
+        visibility: hidden;
+    }
+
+        KX155A-element .Blink[state=Blink] {
+            visibility: visible;
+        }
+
+    KX155A-element[display=comonly] {
+        color: #C7F6FC;
+        background-color: #04192D;
+    }
+
+        KX155A-element[display=comonly] #ComPanel {
+            top: 20%;
+            left: 57%;
+            width: 100%;
+            transform: scaleX(2) scaleY(1.5);
+        }
+
+        KX155A-element[display=comonly] #BotCom {
+            margin-top: -15px;
+        }
+
+        KX155A-element[display=comonly] #Separator, KX155A-element[display=comonly] #NavPanel, KX155A-element[display=comonly] #NavState {
+            display: none;
+        }
