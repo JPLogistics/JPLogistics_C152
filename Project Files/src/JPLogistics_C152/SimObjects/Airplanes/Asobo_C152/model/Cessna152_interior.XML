@@ -392,7 +392,6 @@
 		<UseTemplate Name="ASOBO_INSTRUMENT_Needle_OAT_Template">
           <MIN_VALUE>-60</MIN_VALUE>
           <MAX_VALUE>80</MAX_VALUE>
-		  <SIMVAR_ADJUSTMENT_CODE>(A:AMBIENT TEMPERATURE, celsius) 43 -</SIMVAR_ADJUSTMENT_CODE>
         </UseTemplate>
 	  </Component>
     </Component>
@@ -643,12 +642,12 @@
 		<Component ID="Pilots_Visibility">
 			<Component ID="PILOT_0" Node="PILOT_0">
 				<UseTemplate Name="ASOBO_GT_Visibility_Code">
-					<VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and</VISIBILITY_CODE>
+					<VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
 				</UseTemplate>
       </Component>
 			<Component ID="PILOT_1" Node="PILOT_1">
 				<UseTemplate Name="ASOBO_GT_Visibility_Code">
-					<VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 == and</VISIBILITY_CODE>
+					<VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
 				</UseTemplate>
 			</Component>
       <Component ID="Red_Dome" Node="LIGHT_C152_CockpitSpotRed">

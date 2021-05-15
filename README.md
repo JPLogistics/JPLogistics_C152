@@ -10,8 +10,8 @@
 
 # JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
-- **Primary Download (Latest Release): [V0.9.71](https://github.com/JPLogistics/MSFS_C152/releases/)**
-- **Alternative Download Site: [V0.9.71](https://flightsim.to/file/2246/msfs-c152-community)**
+- **Primary Download (Latest Release): [V0.9.9](https://github.com/JPLogistics/MSFS_C152/releases/)**
+- **Alternative Download Site: [V0.9.9](https://flightsim.to/file/2246/msfs-c152-community)**
 - **Discord Channel: [MSFS_C152 Community](https://discord.gg/Arj3jnBmk5)**
 
 ## Donations
@@ -26,7 +26,6 @@ BitCoin: 1LbnfyHbTrYinAmCgbXA58xh5zni34YPP9
 
 USDT: 0x3a6e64ba672c02f59600508d6657f4dd5a44546c
 
-This package hasn't been built yet! Standby for more details!
 ## V0.9.9 - It's about time!
 - Panel Lighting completely reworked!
    - A MASSIVE thanks to @WeptBurrito2749 from the Forums for work on this!
@@ -40,5 +39,3 @@ This package hasn't been built yet! Standby for more details!
 - Checked compatibility with latest MSFS
 - Updated Cockpit Files to match latest Asobo with Modifications
 
-Changelog:
-- **Work in progress**
