@@ -38,4 +38,6 @@ USDT: 0x3a6e64ba672c02f59600508d6657f4dd5a44546c
 - Flight Model updates, special shout out to @RetiredMan93231 for the help here!
 - Checked compatibility with latest MSFS
 - Updated Cockpit Files to match latest Asobo with Modifications
+- Cockpit textures updated
+- Fuel Gauges calibrated and textures updated!
 
