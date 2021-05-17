@@ -164,34 +164,3 @@
 		</Component>
 	</Condition>
 </Template>
-
-<!-- to be removed ?? ---->
-<Template Name="C152X_SAFETY_Indicator_LowVolt_Template">
-	<DefaultTemplateParameters>
-		<NODE_ID>SAFETY_Indicator_LowVolt</NODE_ID>
-		<THRESHOLD>0</THRESHOLD>
-		<BUS_ID>1</BUS_ID>
-	</DefaultTemplateParameters>
-	<UseTemplate Name="ASOBO_SAFETY_Indicator_Caution_Template">
-		<Condition Check="THRESHOLD_UP">
-			<True>
-				<EMISSIVE_CODE>
-					(A:ELECTRICAL MAIN BUS AMPS:#BUS_ID#, Amperes) #THRESHOLD_DOWN# &lt; if{ 
-						(O:LightOn) ! if{ 1 (&gt;O:LightOn) }
-						1 
-					} els{
-						(O:LightOn) (A:ELECTRICAL MAIN BUS AMPS:#BUS_ID#, Amperes) #THRESHOLD_UP# &gt; and if{
-							0 (&gt;O:LightOn)
-						}
-						(O:LightOn)
-					}
-				</EMISSIVE_CODE>
-			</True>
-			<False>
-				<EMISSIVE_CODE>
-					(A:ELECTRICAL MAIN BUS AMPS:#BUS_ID#, Amperes) #THRESHOLD# &lt;
-				</EMISSIVE_CODE>
-			</False>
-		</Condition>
-	</UseTemplate>
-</Template>
