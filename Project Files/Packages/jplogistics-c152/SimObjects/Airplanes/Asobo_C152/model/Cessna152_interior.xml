@@ -369,9 +369,6 @@
         <UseTemplate Name="ASOBO_SAFETY_Indicator_LowVolt_Template">
           <THRESHOLD>26</THRESHOLD>
         </UseTemplate>
-		<!-- changed to amps should it be volts?
-		<UseTemplate Name="C152X_SAFETY_Indicator_LowVolt_Template">
-        </UseTemplate>-->
 		
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Temperature_Template">
           <UNITS>fahrenheit</UNITS>
@@ -599,15 +596,11 @@
       <DefaultTemplateParameters>
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
       </DefaultTemplateParameters>
-	  
-	  
-	  
+	  	  
       <UseTemplate Name="C152X_AUDIO_Knob_Volume_Template">
-		    <CIRCUIT_ID>28</CIRCUIT_ID>	  <!----------------------- Upper knob pot 4----------------------->
+		<CIRCUIT_ID>28</CIRCUIT_ID>	  <!----------------------- Upper knob pot 4----------------------->
         <USE_DIMMING_KNOB/>
-		    <SIMVAR_INDEX>2</SIMVAR_INDEX>
       </UseTemplate>
-
 
       <Component ID="OMI_Indicators">
         <DefaultTemplateParameters>
