@@ -1,18 +1,24 @@
-{
-  "models": [
-    {
-      "gltf": "Cockpit Models/Coffee Cup/Export/model/C152_cockpit_LOD00.gltf",
-      "bin": "Cockpit Models/Coffee Cup/Export/model/C152_cockpit_LOD00.bin",
-      "output": {
-        "gltf": "Edit Model Test/model/C152_cockpit_LOD00.gltf",
-        "bin": "Edit Model Test/model/C152_cockpit_LOD00.bin"
-      },
-      "additions": [
-	      {
-		      "gltf": "Cockpit Models/Coffee Cup/Export/model/CoffeeCup.gltf",
-          "bin": "Cockpit Models/Coffee Cup/Export/model/CoffeeCup.bin"
-	      }
-	    ]
-    }
-  ]
-}
+[
+  {
+    "gltf": [
+      "./C152_Interior/C152_cockpit_LOD00.gltf"
+    ],
+    "bin": [
+      "./C152_Interior/C152_cockpit_LOD00.bin"
+    ],
+    "output": {
+      "gltf": [
+        "../JPLogistics_C152/SimObjects/Airplanes/Asobo_C152/model/C152_cockpit_LOD00.gltf"
+      ],
+      "bin": [
+        "../JPLogistics_C152/SimObjects/Airplanes/Asobo_C152/model/C152_cockpit_LOD00.bin"
+      ]
+    },
+    "additions": [
+      {
+        "gltf": "./cup/cup.gltf",
+        "bin": "./cup/cup.bin"
+      }
+    ]
+  }
+]

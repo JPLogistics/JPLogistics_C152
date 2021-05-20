@@ -1,0 +1,18 @@
+{
+  "models": [
+    {
+      "gltf": "Cockpit Models/Coffee Cup/Export/model/C152_cockpit_LOD00.gltf",
+      "bin": "Cockpit Models/Coffee Cup/Export/model/C152_cockpit_LOD00.bin",
+      "output": {
+        "gltf": "Edit Model Test/model/C152_cockpit_LOD00.gltf",
+        "bin": "Edit Model Test/model/C152_cockpit_LOD00.bin"
+      },
+      "additions": [
+	      {
+		      "gltf": "Cockpit Models/Coffee Cup/Export/model/CoffeeCup.gltf",
+          "bin": "Cockpit Models/Coffee Cup/Export/model/CoffeeCup.bin"
+	      }
+	    ]
+    }
+  ]
+}

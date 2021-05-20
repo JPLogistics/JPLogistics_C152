@@ -1,1 +1,774 @@
-{"accessors":[{"bufferView":0,"componentType":5126,"count":35768,"min":[-3.1878459453582765,-3.1937060356140138,-8.547439575195313],"max":[3.1995809078216554,3.1937201023101808,0.0020039998926222326],"type":"VEC3","name":"CoffeeCup_vertices#0_POSITION"},{"bufferView":0,"byteOffset":12,"componentType":5120,"count":35768,"type":"VEC4","name":"CoffeeCup_vertices#0_TANGENT"},{"bufferView":0,"byteOffset":16,"componentType":5120,"count":35768,"type":"VEC4","name":"CoffeeCup_vertices#0_NORMAL"},{"bufferView":0,"byteOffset":20,"componentType":5122,"count":35768,"type":"VEC2","name":"CoffeeCup_vertices#0_TEXCOORD_0"},{"bufferView":0,"byteOffset":24,"componentType":5122,"count":35768,"type":"VEC2","name":"CoffeeCup_vertices#0_TEXCOORD_1"},{"bufferView":0,"byteOffset":28,"componentType":5123,"count":35768,"type":"VEC4","name":"CoffeeCup_vertices#0_COLOR_0"},{"bufferView":1,"componentType":5123,"count":117942,"type":"SCALAR","name":"CoffeeCup_indices#2"}],"asset":{"generator":"Extended Khronos glTF Blender I/O v1.0.0","version":"2.0","extensions":{"ASOBO_asset_optimized":{"BoundingBoxMax":[3.1995809078216554,3.1937201023101808,0.0020039998926222326],"BoundingBoxMin":[-3.1878459453582765,-3.1937060356140138,-8.547439575195313],"MajorVersion":4,"MinorVersion":2},"ASOBO_normal_map_convention":{"tangent_space_convention":"DirectX"}}},"bufferViews":[{"buffer":0,"byteLength":1287648,"byteStride":36,"target":34962,"name":"BufferViewVertexND"},{"buffer":0,"byteLength":235884,"byteOffset":1287648,"target":34963,"name":"BufferViewIndex"}],"extensionsUsed":["ASOBO_normal_map_convention","ASOBO_material_detail_map","MSFT_texture_dds","ASOBO_asset_optimized"],"extensionsRequired":["MSFT_texture_dds"],"materials":[{"name":"card_board","occlusionTexture":{"index":1},"pbrMetallicRoughness":{"baseColorTexture":{"index":2},"metallicRoughnessTexture":{"index":1}},"extensions":{"ASOBO_material_detail_map":{"detailColorTexture":{"index":0}}}},{"name":"black_plastic","normalTexture":{"index":3},"pbrMetallicRoughness":{"metallicFactor":0.0,"roughnessFactor":0.5,"baseColorTexture":{"index":4}}},{"name":"white_body","occlusionTexture":{"index":7},"pbrMetallicRoughness":{"baseColorTexture":{"index":8},"metallicRoughnessTexture":{"index":7}},"extensions":{"ASOBO_material_detail_map":{"detailColorTexture":{"index":5},"detailNormalTexture":{"index":6}}}}],"meshes":[{"primitives":[{"attributes":{"COLOR_0":5,"NORMAL":2,"POSITION":0,"TANGENT":1,"TEXCOORD_0":3,"TEXCOORD_1":4},"indices":6,"material":0,"mode":4,"extras":{"ASOBO_primitive":{"PrimitiveCount":4000,"VertexType":"VTX","VertexVersion":2}}},{"attributes":{"COLOR_0":5,"NORMAL":2,"POSITION":0,"TANGENT":1,"TEXCOORD_0":3,"TEXCOORD_1":4},"indices":6,"material":1,"mode":4,"extras":{"ASOBO_primitive":{"PrimitiveCount":28530,"StartIndex":12000,"VertexType":"VTX","VertexVersion":2}}},{"attributes":{"COLOR_0":5,"NORMAL":2,"POSITION":0,"TANGENT":1,"TEXCOORD_0":3,"TEXCOORD_1":4},"indices":6,"material":2,"mode":4,"extras":{"ASOBO_primitive":{"PrimitiveCount":6784,"StartIndex":97590,"VertexType":"VTX","VertexVersion":2}}}],"name":"CoffeeCup"}],"nodes":[{"rotation":[0.7071068286895752,0.0,0.0,0.7071067094802856],"mesh":0,"name":"CoffeeCup"}],"scene":0,"scenes":[{"nodes":[0],"name":"Scene"}],"textures":[{"extensions":{"MSFT_texture_dds":{"source":0}}},{"extensions":{"MSFT_texture_dds":{"source":1}}},{"extensions":{"MSFT_texture_dds":{"source":0}}},{"extensions":{"MSFT_texture_dds":{"source":2}}},{"extensions":{"MSFT_texture_dds":{"source":3}}},{"extensions":{"MSFT_texture_dds":{"source":0}}},{"extensions":{"MSFT_texture_dds":{"source":3}}},{"extensions":{"MSFT_texture_dds":{"source":3}}},{"extensions":{"MSFT_texture_dds":{"source":0}}}],"buffers":[{"byteLength":1523532,"uri":"CoffeeCup.bin"}],"images":[{"uri":"COFFEE CUP.PNG.DDS","name":"coffee cup","extras":"ASOBO_image_converted_meta"},{"uri":"METALLIC.PNG.DDS","name":"Metallic","extras":"ASOBO_image_converted_meta"},{"uri":"CAP ROUGHNESS.PNG.DDS","name":"cap roughness","extras":"ASOBO_image_converted_meta"},{"uri":"METALLIC-1.PNG.DDS","name":"Metallic","extras":"ASOBO_image_converted_meta"}]}
+{
+    "asset" : {
+        "extensions" : {
+            "ASOBO_normal_map_convention" : {
+                "tangent_space_convention" : "DirectX"
+            }
+        },
+        "generator" : "Extended Khronos glTF Blender I/O v1.0.0",
+        "version" : "2.0"
+    },
+    "extensionsUsed" : [
+        "ASOBO_normal_map_convention"
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "extras" : {
+                "gltf_filename_no_ext" : "C152_cockpit_LOD00",
+                "extensionsUsed" : [
+                    "ASOBO_normal_map_convention",
+                    "ASOBO_tags",
+                    "ASOBO_material_invisible",
+                    "ASOBO_material_glass",
+                    "ASOBO_material_blend_gbuffer",
+                    "ASOBO_material_detail_map",
+                    "ASOBO_material_shadow_options",
+                    "ASOBO_material_draw_order",
+                    "ASOBO_material_environment_occluder",
+                    "ASOBO_material_kitty_glass",
+                    "MSFT_texture_dds",
+                    "ASOBO_asset_optimized"
+                ],
+                "extensionsRequired" : [
+                    "MSFT_texture_dds"
+                ]
+            },
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "CoffeeCup",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "translation" : [
+                -0.01724051497876644,
+                -0.34831440448760986,
+                0.22820442914962769
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "extras" : {
+                "msfs_material_type" : 1,
+                "msfs_base_color_factor" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_base_color_texture" : {
+                    "name" : "coffee cup.dds",
+                    "type" : "Image"
+                },
+                "msfs_emissive_factor" : [
+                    0,
+                    0,
+                    0
+                ],
+                "msfs_alpha_mode" : 0,
+                "msfs_draw_order" : 0,
+                "msfs_double_sided" : 0,
+                "msfs_dont_cast_shadows" : 0,
+                "msfs_day_night_cycle" : 0,
+                "msfs_use_pearl_effect" : 0,
+                "msfs_pearl_shift" : 0,
+                "msfs_pearl_range" : 0,
+                "msfs_pearl_brightness" : 0,
+                "msfs_collision_material" : 0,
+                "msfs_road_material" : 0,
+                "msfs_uv_offset_u" : 0,
+                "msfs_uv_offset_v" : 0,
+                "msfs_uv_tiling_u" : 1,
+                "msfs_uv_tiling_v" : 1,
+                "msfs_uv_rotation" : 0,
+                "msfs_uv_clamp_u" : 0,
+                "msfs_uv_clamp_v" : 0,
+                "msfs_roughness_factor" : 1,
+                "msfs_metallic_factor" : 1,
+                "msfs_normal_scale" : 1,
+                "msfs_alpha_cutoff" : 0.5,
+                "msfs_detail_uv_scale" : 1,
+                "msfs_detail_uv_offset_u" : 0,
+                "msfs_detail_uv_offset_v" : 0,
+                "msfs_detail_normal_scale" : 1,
+                "msfs_blend_threshold" : 0.10000000149011612,
+                "msfs_decal_color_blend_factor" : 1,
+                "msfs_decal_metal_blend_factor" : 1,
+                "msfs_decal_normal_blend_factor" : 1,
+                "msfs_decal_roughness_blend_factor" : 1,
+                "msfs_decal_occlusion_blend_factor" : 1,
+                "msfs_decal_emissive_blend_factor" : 1,
+                "msfs_rain_drop_scale" : 1,
+                "msfs_wiper_1_state" : 0,
+                "msfs_wiper_2_state" : 0,
+                "msfs_glass_reflection_factor" : 1,
+                "msfs_glass_deformation_factor" : 0,
+                "msfs_parallax_scale" : 0,
+                "msfs_parallax_room_size_x" : 0.5,
+                "msfs_parallax_room_size_y" : 0.5,
+                "msfs_parallax_room_number" : 1,
+                "msfs_parallax_corridor" : 0,
+                "msfs_sss_color" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_fresnel_factor" : 1,
+                "msfs_fresnel_opacity_bias" : 0,
+                "msfs_show_colors" : 1,
+                "msfs_show_emissive_color" : 1,
+                "msfs_show_alpha_mode" : 1,
+                "msfs_show_render_options" : 1,
+                "msfs_show_day_night_cycle" : 1,
+                "msfs_show_pearl" : 1,
+                "msfs_show_gameplay_options" : 1,
+                "msfs_show_uv_options" : 1,
+                "msfs_show_material_options" : 1,
+                "msfs_show_material_detail_options" : 1,
+                "msfs_show_blend_threshold" : 1,
+                "msfs_show_decal_blend_factors" : 0,
+                "msfs_show_windshield_options" : 0,
+                "msfs_show_glass_options" : 0,
+                "msfs_show_parallax_options" : 0,
+                "msfs_show_sss_color" : 0,
+                "msfs_show_fresnel_options" : 0,
+                "msfs_show_base_color_texture" : 1,
+                "msfs_show_comp_texture" : 1,
+                "msfs_show_normal_texture" : 1,
+                "msfs_show_emissive_texture" : 1,
+                "msfs_show_detail_color_texture" : 1,
+                "msfs_show_detail_comp_texture" : 1,
+                "msfs_show_detail_normal_texture" : 1,
+                "msfs_show_blend_mask_texture" : 1,
+                "msfs_show_wetness_ao_texture" : 0,
+                "msfs_show_dirt_texture" : 0,
+                "msfs_show_height_map_texture" : 0,
+                "msfs_material_mode" : 1,
+                "msfs_albedo_texture" : {
+                    "name" : "coffee cup.png",
+                    "type" : "Image"
+                },
+                "msfs_show_tint" : 1,
+                "msfs_show_glass_parameters" : 0,
+                "msfs_show_decal_parameters" : 0,
+                "msfs_show_fresnel_parameters" : 0,
+                "msfs_show_parallax_parameters" : 0,
+                "msfs_show_geo_decal_parameters" : 0,
+                "msfs_show_albedo" : 1,
+                "msfs_show_metallic" : 1,
+                "msfs_show_normal" : 1,
+                "msfs_show_emissive" : 1,
+                "msfs_show_detail_albedo" : 1,
+                "msfs_show_detail_metallic" : 1,
+                "msfs_show_detail_normal" : 1,
+                "msfs_show_blend_mask" : 1,
+                "msfs_show_anisotropic_direction" : 0,
+                "msfs_show_clearcoat" : 0,
+                "msfs_show_behind_glass" : 0,
+                "msfs_show_blend_mode" : 1,
+                "msfs_show_draworder" : 1,
+                "msfs_show_no_cast_shadow" : 1,
+                "msfs_show_double_sided" : 1,
+                "msfs_show_responsive_aa" : 0,
+                "msfs_show_collision_material" : 1,
+                "msfs_show_road_material" : 1,
+                "msfs_show_ao_use_uv2" : 1,
+                "msfs_show_uv_clamp" : 1,
+                "msfs_show_alpha_cutoff" : 1,
+                "msfs_color_albedo_mix" : [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            "name" : "card_board",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "extras" : {
+                "msfs_material_type" : 1,
+                "msfs_base_color_factor" : [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "msfs_emissive_factor" : [
+                    0,
+                    0,
+                    0
+                ],
+                "msfs_alpha_mode" : 0,
+                "msfs_draw_order" : 0,
+                "msfs_double_sided" : 0,
+                "msfs_dont_cast_shadows" : 0,
+                "msfs_day_night_cycle" : 0,
+                "msfs_use_pearl_effect" : 0,
+                "msfs_pearl_shift" : 0,
+                "msfs_pearl_range" : 0,
+                "msfs_pearl_brightness" : 0,
+                "msfs_collision_material" : 0,
+                "msfs_road_material" : 0,
+                "msfs_uv_offset_u" : 0,
+                "msfs_uv_offset_v" : 0,
+                "msfs_uv_tiling_u" : 1,
+                "msfs_uv_tiling_v" : 1,
+                "msfs_uv_rotation" : 0,
+                "msfs_uv_clamp_u" : 0,
+                "msfs_uv_clamp_v" : 0,
+                "msfs_roughness_factor" : 1,
+                "msfs_metallic_factor" : 1,
+                "msfs_normal_scale" : 1,
+                "msfs_alpha_cutoff" : 0.5,
+                "msfs_detail_uv_scale" : 1,
+                "msfs_detail_uv_offset_u" : 0,
+                "msfs_detail_uv_offset_v" : 0,
+                "msfs_detail_normal_scale" : 1,
+                "msfs_blend_threshold" : 0.10000000149011612,
+                "msfs_decal_color_blend_factor" : 1,
+                "msfs_decal_metal_blend_factor" : 1,
+                "msfs_decal_normal_blend_factor" : 1,
+                "msfs_decal_roughness_blend_factor" : 1,
+                "msfs_decal_occlusion_blend_factor" : 1,
+                "msfs_decal_emissive_blend_factor" : 1,
+                "msfs_rain_drop_scale" : 1,
+                "msfs_wiper_1_state" : 0,
+                "msfs_wiper_2_state" : 0,
+                "msfs_glass_reflection_factor" : 1,
+                "msfs_glass_deformation_factor" : 0,
+                "msfs_parallax_scale" : 0,
+                "msfs_parallax_room_size_x" : 0.5,
+                "msfs_parallax_room_size_y" : 0.5,
+                "msfs_parallax_room_number" : 1,
+                "msfs_parallax_corridor" : 0,
+                "msfs_sss_color" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_fresnel_factor" : 1,
+                "msfs_fresnel_opacity_bias" : 0,
+                "msfs_base_color_texture" : {
+                    "name" : "Metallic.dds",
+                    "type" : "Image"
+                },
+                "msfs_normal_texture" : {
+                    "name" : "cap roughness.png",
+                    "type" : "Image"
+                },
+                "msfs_show_colors" : 1,
+                "msfs_show_emissive_color" : 1,
+                "msfs_show_alpha_mode" : 1,
+                "msfs_show_render_options" : 1,
+                "msfs_show_day_night_cycle" : 1,
+                "msfs_show_pearl" : 1,
+                "msfs_show_gameplay_options" : 1,
+                "msfs_show_uv_options" : 1,
+                "msfs_show_material_options" : 1,
+                "msfs_show_material_detail_options" : 1,
+                "msfs_show_blend_threshold" : 1,
+                "msfs_show_decal_blend_factors" : 0,
+                "msfs_show_windshield_options" : 0,
+                "msfs_show_glass_options" : 0,
+                "msfs_show_parallax_options" : 0,
+                "msfs_show_sss_color" : 0,
+                "msfs_show_fresnel_options" : 0,
+                "msfs_show_base_color_texture" : 1,
+                "msfs_show_comp_texture" : 1,
+                "msfs_show_normal_texture" : 1,
+                "msfs_show_emissive_texture" : 1,
+                "msfs_show_detail_color_texture" : 1,
+                "msfs_show_detail_comp_texture" : 1,
+                "msfs_show_detail_normal_texture" : 1,
+                "msfs_show_blend_mask_texture" : 1,
+                "msfs_show_wetness_ao_texture" : 0,
+                "msfs_show_dirt_texture" : 0,
+                "msfs_show_height_map_texture" : 0,
+                "msfs_material_mode" : 1,
+                "msfs_albedo_texture" : {
+                    "name" : "Metallic.001",
+                    "type" : "Image"
+                },
+                "msfs_show_tint" : 1,
+                "msfs_show_glass_parameters" : 0,
+                "msfs_show_decal_parameters" : 0,
+                "msfs_show_fresnel_parameters" : 0,
+                "msfs_show_parallax_parameters" : 0,
+                "msfs_show_geo_decal_parameters" : 0,
+                "msfs_show_albedo" : 1,
+                "msfs_show_metallic" : 1,
+                "msfs_show_normal" : 1,
+                "msfs_show_emissive" : 1,
+                "msfs_show_detail_albedo" : 1,
+                "msfs_show_detail_metallic" : 1,
+                "msfs_show_detail_normal" : 1,
+                "msfs_show_blend_mask" : 1,
+                "msfs_show_anisotropic_direction" : 0,
+                "msfs_show_clearcoat" : 0,
+                "msfs_show_behind_glass" : 0,
+                "msfs_show_blend_mode" : 1,
+                "msfs_show_draworder" : 1,
+                "msfs_show_no_cast_shadow" : 1,
+                "msfs_show_double_sided" : 1,
+                "msfs_show_responsive_aa" : 0,
+                "msfs_show_collision_material" : 1,
+                "msfs_show_road_material" : 1,
+                "msfs_show_ao_use_uv2" : 1,
+                "msfs_show_uv_clamp" : 1,
+                "msfs_show_alpha_cutoff" : 1,
+                "msfs_color_albedo_mix" : [
+                    0,
+                    0,
+                    0
+                ],
+                "msfs_roughness_scale" : 1,
+                "msfs_show_alpha_mix" : 1
+            },
+            "name" : "black_plastic",
+            "normalTexture" : {
+                "index" : 1,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 2,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "extras" : {
+                "msfs_material_type" : 1,
+                "msfs_base_color_factor" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_base_color_texture" : {
+                    "name" : "coffee cup.dds",
+                    "type" : "Image"
+                },
+                "msfs_comp_texture" : {
+                    "name" : "Metallic.dds",
+                    "type" : "Image"
+                },
+                "msfs_emissive_factor" : [
+                    0,
+                    0,
+                    0
+                ],
+                "msfs_alpha_mode" : 0,
+                "msfs_draw_order" : 0,
+                "msfs_double_sided" : 0,
+                "msfs_dont_cast_shadows" : 0,
+                "msfs_day_night_cycle" : 0,
+                "msfs_use_pearl_effect" : 0,
+                "msfs_pearl_shift" : 0,
+                "msfs_pearl_range" : 0,
+                "msfs_pearl_brightness" : 0,
+                "msfs_collision_material" : 0,
+                "msfs_road_material" : 0,
+                "msfs_uv_offset_u" : 0,
+                "msfs_uv_offset_v" : 0,
+                "msfs_uv_tiling_u" : 1,
+                "msfs_uv_tiling_v" : 1,
+                "msfs_uv_rotation" : 0,
+                "msfs_uv_clamp_u" : 0,
+                "msfs_uv_clamp_v" : 0,
+                "msfs_roughness_factor" : 1,
+                "msfs_metallic_factor" : 1,
+                "msfs_normal_scale" : 0,
+                "msfs_alpha_cutoff" : 0.5,
+                "msfs_detail_uv_scale" : 1,
+                "msfs_detail_uv_offset_u" : 0,
+                "msfs_detail_uv_offset_v" : 0,
+                "msfs_detail_normal_scale" : 1,
+                "msfs_blend_threshold" : 0.10000000149011612,
+                "msfs_decal_color_blend_factor" : 1,
+                "msfs_decal_metal_blend_factor" : 1,
+                "msfs_decal_normal_blend_factor" : 1,
+                "msfs_decal_roughness_blend_factor" : 1,
+                "msfs_decal_occlusion_blend_factor" : 1,
+                "msfs_decal_emissive_blend_factor" : 1,
+                "msfs_rain_drop_scale" : 1,
+                "msfs_wiper_1_state" : 0,
+                "msfs_wiper_2_state" : 0,
+                "msfs_glass_reflection_factor" : 1,
+                "msfs_glass_deformation_factor" : 0,
+                "msfs_parallax_scale" : 0,
+                "msfs_parallax_room_size_x" : 0.5,
+                "msfs_parallax_room_size_y" : 0.5,
+                "msfs_parallax_room_number" : 1,
+                "msfs_parallax_corridor" : 0,
+                "msfs_sss_color" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_fresnel_factor" : 1,
+                "msfs_fresnel_opacity_bias" : 0,
+                "msfs_show_colors" : 1,
+                "msfs_show_emissive_color" : 1,
+                "msfs_show_alpha_mode" : 1,
+                "msfs_show_render_options" : 1,
+                "msfs_show_day_night_cycle" : 1,
+                "msfs_show_pearl" : 1,
+                "msfs_show_gameplay_options" : 1,
+                "msfs_show_uv_options" : 1,
+                "msfs_show_material_options" : 1,
+                "msfs_show_material_detail_options" : 1,
+                "msfs_show_blend_threshold" : 1,
+                "msfs_show_decal_blend_factors" : 0,
+                "msfs_show_windshield_options" : 0,
+                "msfs_show_glass_options" : 0,
+                "msfs_show_parallax_options" : 0,
+                "msfs_show_sss_color" : 0,
+                "msfs_show_fresnel_options" : 0,
+                "msfs_show_base_color_texture" : 1,
+                "msfs_show_comp_texture" : 1,
+                "msfs_show_normal_texture" : 1,
+                "msfs_show_emissive_texture" : 1,
+                "msfs_show_detail_color_texture" : 1,
+                "msfs_show_detail_comp_texture" : 1,
+                "msfs_show_detail_normal_texture" : 1,
+                "msfs_show_blend_mask_texture" : 1,
+                "msfs_show_wetness_ao_texture" : 0,
+                "msfs_show_dirt_texture" : 0,
+                "msfs_show_height_map_texture" : 0,
+                "msfs_material_mode" : 1,
+                "msfs_albedo_texture" : {
+                    "name" : "coffee cup.png",
+                    "type" : "Image"
+                },
+                "msfs_metallic_texture" : {
+                    "name" : "Metallic.001",
+                    "type" : "Image"
+                },
+                "msfs_show_tint" : 1,
+                "msfs_show_glass_parameters" : 0,
+                "msfs_show_decal_parameters" : 0,
+                "msfs_show_fresnel_parameters" : 0,
+                "msfs_show_parallax_parameters" : 0,
+                "msfs_show_geo_decal_parameters" : 0,
+                "msfs_show_albedo" : 1,
+                "msfs_show_metallic" : 1,
+                "msfs_show_normal" : 1,
+                "msfs_show_emissive" : 1,
+                "msfs_show_detail_albedo" : 1,
+                "msfs_show_detail_metallic" : 1,
+                "msfs_show_detail_normal" : 1,
+                "msfs_show_blend_mask" : 1,
+                "msfs_show_anisotropic_direction" : 0,
+                "msfs_show_clearcoat" : 0,
+                "msfs_show_behind_glass" : 0,
+                "msfs_show_blend_mode" : 1,
+                "msfs_show_draworder" : 1,
+                "msfs_show_no_cast_shadow" : 1,
+                "msfs_show_double_sided" : 1,
+                "msfs_show_responsive_aa" : 0,
+                "msfs_show_collision_material" : 1,
+                "msfs_show_road_material" : 1,
+                "msfs_show_ao_use_uv2" : 1,
+                "msfs_show_uv_clamp" : 1,
+                "msfs_show_alpha_cutoff" : 1,
+                "msfs_blend_mode" : 0,
+                "msfs_roughness_scale" : 0,
+                "msfs_metallic_scale" : 0.2200000286102295
+            },
+            "name" : "white_body",
+            "occlusionTexture" : {
+                "index" : 3,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 4,
+                    "texCoord" : 0
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 3,
+                    "texCoord" : 0
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "CoffeeCup",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 8,
+                        "NORMAL" : 9,
+                        "TEXCOORD_0" : 10
+                    },
+                    "indices" : 11,
+                    "material" : 2
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        },
+        {
+            "source" : 2
+        },
+        {
+            "source" : 2
+        },
+        {
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "coffee cup",
+            "uri" : "coffee cup.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "cap roughness",
+            "uri" : "cap roughness.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "Metallic",
+            "uri" : "Metallic.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 2372,
+            "max" : [
+                0.05160261690616608,
+                0.13896946609020233,
+                -0.1659252643585205
+            ],
+            "min" : [
+                -0.017398007214069366,
+                0.07074188441038132,
+                -0.20852231979370117
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 2372,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 2372,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 11967,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 27801,
+            "max" : [
+                0.05365082621574402,
+                0.14203256368637085,
+                -0.22422003746032715
+            ],
+            "min" : [
+                -0.020750362426042557,
+                0.06763137876987457,
+                -0.23948931694030762
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 27801,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 27801,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 82410,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 3638,
+            "max" : [
+                0.05211130902171135,
+                0.14019159972667694,
+                -0.13990473747253418
+            ],
+            "min" : [
+                -0.018785223364830017,
+                0.06924719363451004,
+                -0.22852325439453125
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 3638,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 3638,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5123,
+            "count" : 20352,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 28464,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 28464,
+            "byteOffset" : 28464
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 18976,
+            "byteOffset" : 56928
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 23934,
+            "byteOffset" : 75904
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 333612,
+            "byteOffset" : 99840
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 333612,
+            "byteOffset" : 433452
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 222408,
+            "byteOffset" : 767064
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 164820,
+            "byteOffset" : 989472
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 43656,
+            "byteOffset" : 1154292
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 43656,
+            "byteOffset" : 1197948
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 29104,
+            "byteOffset" : 1241604
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 40704,
+            "byteOffset" : 1270708
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 1311412,
+            "uri" : "CoffeeCup.bin"
+        }
+    ]
+}
