@@ -1,0 +1,1461 @@
+{
+    "asset" : {
+        "extensions" : {
+            "ASOBO_normal_map_convention" : {
+                "tangent_space_convention" : "DirectX"
+            }
+        },
+        "generator" : "Extended Khronos glTF Blender I/O v1.0.0",
+        "version" : "2.0"
+    },
+    "extensionsUsed" : [
+        "ASOBO_normal_map_convention"
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "extras" : {
+                "gltf_filename_no_ext" : "C152_cockpit_LOD00",
+                "extensionsUsed" : [
+                    "ASOBO_normal_map_convention",
+                    "ASOBO_tags",
+                    "ASOBO_material_invisible",
+                    "ASOBO_material_glass",
+                    "ASOBO_material_blend_gbuffer",
+                    "ASOBO_material_detail_map",
+                    "ASOBO_material_shadow_options",
+                    "ASOBO_material_draw_order",
+                    "ASOBO_material_environment_occluder",
+                    "ASOBO_material_kitty_glass",
+                    "MSFT_texture_dds",
+                    "ASOBO_asset_optimized"
+                ],
+                "extensionsRequired" : [
+                    "MSFT_texture_dds"
+                ],
+                "glTF2ExportSettings" : {
+                    "export_apply" : 1,
+                    "export_extras" : 1,
+                    "export_generate_guid" : 1,
+                    "export_image_format" : "AUTO",
+                    "export_texture_dir" : "../texture",
+                    "export_xml" : 1,
+                    "export_xml_file" : "models",
+                    "use_selection" : 1
+                }
+            },
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1,
+                2,
+                3
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "extras" : {
+                "xplane" : {}
+            },
+            "mesh" : 0,
+            "name" : "CARGO",
+            "rotation" : [
+                0.04046035557985306,
+                0,
+                0,
+                0.9991811513900757
+            ],
+            "scale" : [
+                0.8279199600219727,
+                0.8279199600219727,
+                0.8279199600219727
+            ],
+            "translation" : [
+                0,
+                0.13593637943267822,
+                -1.214817762374878
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "COCKPIT_COFFEE_R",
+            "rotation" : [
+                0.29489612579345703,
+                0.6518782377243042,
+                -0.6365325450897217,
+                0.2879539728164673
+            ],
+            "scale" : [
+                0.8999999761581421,
+                0.8999999761581421,
+                0.8999999761581421
+            ],
+            "translation" : [
+                0.003206111490726471,
+                -0.1404138207435608,
+                0.33596134185791016
+            ]
+        },
+        {
+            "mesh" : 2,
+            "name" : "JPL_VISOR",
+            "rotation" : [
+                0.8427876234054565,
+                0,
+                0,
+                1
+            ],
+            "translation" : [
+                0,
+                0.7385162711143494,
+                0.4501153826713562
+            ]
+        },
+        {
+            "mesh" : 3,
+            "name" : "LIGHTING_Switch_Cabin",
+            "translation" : [
+                -0.020752375945448875,
+                0.7121812105178833,
+                -0.07753610610961914
+            ]
+        }
+    ],
+    "animations" : [
+        {
+            "channels" : [
+                {
+                    "sampler" : 0,
+                    "target" : {
+                        "node" : 2,
+                        "path" : "rotation"
+                    }
+                }
+            ],
+            "name" : "JPL_VISOR",
+            "samplers" : [
+                {
+                    "input" : 34,
+                    "interpolation" : "LINEAR",
+                    "output" : 35
+                }
+            ]
+        },
+        {
+            "channels" : [
+                {
+                    "sampler" : 0,
+                    "target" : {
+                        "node" : 3,
+                        "path" : "translation"
+                    }
+                }
+            ],
+            "name" : "LIGHTING_Switch_Cabin",
+            "samplers" : [
+                {
+                    "input" : 36,
+                    "interpolation" : "LINEAR",
+                    "output" : 37
+                }
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "extras" : {},
+            "name" : "cargo.001",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "emissiveFactor" : [
+                0.0015475141117349267,
+                0.0015475141117349267,
+                0.0015475141117349267
+            ],
+            "extras" : {
+                "msfs_material_type" : 1,
+                "msfs_albedo_texture" : {
+                    "name" : "CUP_LOW2_ALBEDO_PNG.PNG.DDS.001",
+                    "type" : "Image"
+                },
+                "msfs_metallic_texture" : {
+                    "name" : "CUP_LOW2_METAL_PNG.PNG.DDS.001",
+                    "type" : "Image"
+                },
+                "msfs_normal_texture" : {
+                    "name" : "CUP_LOW2_NORMAL_PNG.PNG.DDS.001",
+                    "type" : "Image"
+                },
+                "msfs_show_tint" : 1,
+                "msfs_show_sss_color" : 0,
+                "msfs_show_alpha_mix" : 1,
+                "msfs_show_glass_parameters" : 0,
+                "msfs_show_decal_parameters" : 0,
+                "msfs_show_fresnel_parameters" : 0,
+                "msfs_show_parallax_parameters" : 0,
+                "msfs_show_geo_decal_parameters" : 0,
+                "msfs_show_albedo" : 1,
+                "msfs_show_metallic" : 1,
+                "msfs_show_normal" : 1,
+                "msfs_show_emissive" : 1,
+                "msfs_show_detail_albedo" : 1,
+                "msfs_show_detail_metallic" : 1,
+                "msfs_show_detail_normal" : 1,
+                "msfs_show_blend_mask" : 1,
+                "msfs_show_anisotropic_direction" : 0,
+                "msfs_show_clearcoat" : 0,
+                "msfs_show_behind_glass" : 0,
+                "msfs_show_blend_mode" : 1,
+                "msfs_show_draworder" : 1,
+                "msfs_show_no_cast_shadow" : 1,
+                "msfs_show_double_sided" : 1,
+                "msfs_show_responsive_aa" : 0,
+                "msfs_show_day_night_cycle" : 1,
+                "msfs_show_collision_material" : 1,
+                "msfs_show_road_material" : 1,
+                "msfs_show_ao_use_uv2" : 1,
+                "msfs_show_uv_clamp" : 1,
+                "msfs_show_alpha_cutoff" : 1,
+                "msfs_show_blend_threshold" : 1,
+                "msfs_material_mode" : 1
+            },
+            "name" : "CUP.001",
+            "normalTexture" : {
+                "index" : 1,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 2,
+                    "texCoord" : 0
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 3,
+                    "texCoord" : 0
+                }
+            }
+        },
+        {
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "emissiveTexture" : {
+                "index" : 4,
+                "texCoord" : 0
+            },
+            "extras" : {
+                "is_import" : 0,
+                "msfs_material_type" : 1,
+                "msfs_base_color_factor" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_emissive_factor" : [
+                    0,
+                    0,
+                    0
+                ],
+                "msfs_alpha_mode" : 0,
+                "msfs_draw_order" : 0,
+                "msfs_double_sided" : 0,
+                "msfs_dont_cast_shadows" : 0,
+                "msfs_day_night_cycle" : 0,
+                "msfs_use_pearl_effect" : 0,
+                "msfs_pearl_shift" : 0,
+                "msfs_pearl_range" : 0,
+                "msfs_pearl_brightness" : 0,
+                "msfs_collision_material" : 0,
+                "msfs_road_material" : 0,
+                "msfs_uv_offset_u" : 0,
+                "msfs_uv_offset_v" : 0,
+                "msfs_uv_tiling_u" : 1,
+                "msfs_uv_tiling_v" : 1,
+                "msfs_uv_rotation" : 0,
+                "msfs_uv_clamp_u" : 0,
+                "msfs_uv_clamp_v" : 0,
+                "msfs_roughness_factor" : 1,
+                "msfs_metallic_factor" : 1,
+                "msfs_normal_scale" : 1,
+                "msfs_alpha_cutoff" : 0.5,
+                "msfs_detail_uv_scale" : 1,
+                "msfs_detail_uv_offset_u" : 0,
+                "msfs_detail_uv_offset_v" : 0,
+                "msfs_detail_normal_scale" : 1,
+                "msfs_blend_threshold" : 0.10000000149011612,
+                "msfs_decal_color_blend_factor" : 1,
+                "msfs_decal_metal_blend_factor" : 1,
+                "msfs_decal_normal_blend_factor" : 1,
+                "msfs_decal_roughness_blend_factor" : 1,
+                "msfs_decal_occlusion_blend_factor" : 1,
+                "msfs_decal_emissive_blend_factor" : 1,
+                "msfs_rain_drop_scale" : 1,
+                "msfs_wiper_1_state" : 0,
+                "msfs_wiper_2_state" : 0,
+                "msfs_glass_reflection_factor" : 1,
+                "msfs_glass_deformation_factor" : 0,
+                "msfs_parallax_scale" : 0,
+                "msfs_parallax_room_size_x" : 0.5,
+                "msfs_parallax_room_size_y" : 0.5,
+                "msfs_parallax_room_number" : 1,
+                "msfs_parallax_corridor" : 0,
+                "msfs_sss_color" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_fresnel_factor" : 1,
+                "msfs_fresnel_opacity_bias" : 0,
+                "msfs_base_color_texture" : {
+                    "name" : "CESSNA_152_COCKPIT_INPUTS_ALBD.PNG.PNG.001",
+                    "type" : "Image"
+                },
+                "msfs_comp_texture" : {
+                    "name" : "CESSNA_152_COCKPIT_INPUTS_COMP.PNG.PNG.001",
+                    "type" : "Image"
+                },
+                "msfs_normal_texture" : {
+                    "name" : "CESSNA_152_COCKPIT_INPUTS_NORM.PNG.PNG.001",
+                    "type" : "Image"
+                },
+                "msfs_emissive_texture" : {
+                    "name" : "CESSNA_152_COCKPIT_INPUTS_EMIS.TIF.PNG.001",
+                    "type" : "Image"
+                },
+                "msfs_show_colors" : 1,
+                "msfs_show_emissive_color" : 1,
+                "msfs_show_alpha_mode" : 1,
+                "msfs_show_render_options" : 1,
+                "msfs_show_day_night_cycle" : 1,
+                "msfs_show_pearl" : 1,
+                "msfs_show_gameplay_options" : 1,
+                "msfs_show_uv_options" : 1,
+                "msfs_show_material_options" : 1,
+                "msfs_show_material_detail_options" : 1,
+                "msfs_show_blend_threshold" : 1,
+                "msfs_show_decal_blend_factors" : 0,
+                "msfs_show_windshield_options" : 0,
+                "msfs_show_glass_options" : 0,
+                "msfs_show_parallax_options" : 0,
+                "msfs_show_sss_color" : 0,
+                "msfs_show_fresnel_options" : 0,
+                "msfs_show_base_color_texture" : 1,
+                "msfs_show_comp_texture" : 1,
+                "msfs_show_normal_texture" : 1,
+                "msfs_show_emissive_texture" : 1,
+                "msfs_show_detail_color_texture" : 1,
+                "msfs_show_detail_comp_texture" : 1,
+                "msfs_show_detail_normal_texture" : 1,
+                "msfs_show_blend_mask_texture" : 1,
+                "msfs_show_wetness_ao_texture" : 0,
+                "msfs_show_dirt_texture" : 0,
+                "msfs_show_height_map_texture" : 0
+            },
+            "name" : "CockpitInputs.001",
+            "normalTexture" : {
+                "index" : 5,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 6,
+                    "texCoord" : 0
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 7,
+                    "texCoord" : 0
+                }
+            }
+        },
+        {
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "extras" : {
+                "is_import" : 0,
+                "msfs_material_type" : 1,
+                "msfs_base_color_factor" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_emissive_factor" : [
+                    0,
+                    0,
+                    0
+                ],
+                "msfs_alpha_mode" : 0,
+                "msfs_draw_order" : 0,
+                "msfs_double_sided" : 0,
+                "msfs_dont_cast_shadows" : 0,
+                "msfs_day_night_cycle" : 0,
+                "msfs_use_pearl_effect" : 0,
+                "msfs_pearl_shift" : 0,
+                "msfs_pearl_range" : 0,
+                "msfs_pearl_brightness" : 0,
+                "msfs_collision_material" : 0,
+                "msfs_road_material" : 0,
+                "msfs_uv_offset_u" : 0,
+                "msfs_uv_offset_v" : 0,
+                "msfs_uv_tiling_u" : 1,
+                "msfs_uv_tiling_v" : 1,
+                "msfs_uv_rotation" : 0,
+                "msfs_uv_clamp_u" : 0,
+                "msfs_uv_clamp_v" : 0,
+                "msfs_roughness_factor" : 1,
+                "msfs_metallic_factor" : 1,
+                "msfs_normal_scale" : 1,
+                "msfs_alpha_cutoff" : 0.5,
+                "msfs_detail_uv_scale" : 1,
+                "msfs_detail_uv_offset_u" : 0,
+                "msfs_detail_uv_offset_v" : 0,
+                "msfs_detail_normal_scale" : 1,
+                "msfs_blend_threshold" : 0.10000000149011612,
+                "msfs_decal_color_blend_factor" : 1,
+                "msfs_decal_metal_blend_factor" : 1,
+                "msfs_decal_normal_blend_factor" : 1,
+                "msfs_decal_roughness_blend_factor" : 1,
+                "msfs_decal_occlusion_blend_factor" : 1,
+                "msfs_decal_emissive_blend_factor" : 1,
+                "msfs_rain_drop_scale" : 1,
+                "msfs_wiper_1_state" : 0,
+                "msfs_wiper_2_state" : 0,
+                "msfs_glass_reflection_factor" : 1,
+                "msfs_glass_deformation_factor" : 0,
+                "msfs_parallax_scale" : 0,
+                "msfs_parallax_room_size_x" : 0.5,
+                "msfs_parallax_room_size_y" : 0.5,
+                "msfs_parallax_room_number" : 1,
+                "msfs_parallax_corridor" : 0,
+                "msfs_sss_color" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_fresnel_factor" : 1,
+                "msfs_fresnel_opacity_bias" : 0,
+                "msfs_base_color_texture" : {
+                    "name" : "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_ALBD.PNG.PNG.001",
+                    "type" : "Image"
+                },
+                "msfs_comp_texture" : {
+                    "name" : "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_COMP.PNG.PNG.001",
+                    "type" : "Image"
+                },
+                "msfs_normal_texture" : {
+                    "name" : "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_NORM.PNG.PNG.001",
+                    "type" : "Image"
+                },
+                "msfs_show_colors" : 1,
+                "msfs_show_emissive_color" : 1,
+                "msfs_show_alpha_mode" : 1,
+                "msfs_show_render_options" : 1,
+                "msfs_show_day_night_cycle" : 1,
+                "msfs_show_pearl" : 1,
+                "msfs_show_gameplay_options" : 1,
+                "msfs_show_uv_options" : 1,
+                "msfs_show_material_options" : 1,
+                "msfs_show_material_detail_options" : 1,
+                "msfs_show_blend_threshold" : 1,
+                "msfs_show_decal_blend_factors" : 0,
+                "msfs_show_windshield_options" : 0,
+                "msfs_show_glass_options" : 0,
+                "msfs_show_parallax_options" : 0,
+                "msfs_show_sss_color" : 0,
+                "msfs_show_fresnel_options" : 0,
+                "msfs_show_base_color_texture" : 1,
+                "msfs_show_comp_texture" : 1,
+                "msfs_show_normal_texture" : 1,
+                "msfs_show_emissive_texture" : 1,
+                "msfs_show_detail_color_texture" : 1,
+                "msfs_show_detail_comp_texture" : 1,
+                "msfs_show_detail_normal_texture" : 1,
+                "msfs_show_blend_mask_texture" : 1,
+                "msfs_show_wetness_ao_texture" : 0,
+                "msfs_show_dirt_texture" : 0,
+                "msfs_show_height_map_texture" : 0
+            },
+            "name" : "glare_shield_pedestal.001",
+            "normalTexture" : {
+                "index" : 8,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 9,
+                    "texCoord" : 0
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 10,
+                    "texCoord" : 0
+                }
+            }
+        },
+        {
+            "alphaMode" : "BLEND",
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "extras" : {
+                "is_import" : 0,
+                "msfs_material_type" : 5,
+                "msfs_base_color_factor" : [
+                    1,
+                    1,
+                    1,
+                    0.009999999776482582
+                ],
+                "msfs_emissive_factor" : [
+                    0,
+                    0,
+                    0
+                ],
+                "msfs_alpha_mode" : 2,
+                "msfs_draw_order" : 0,
+                "msfs_double_sided" : 0,
+                "msfs_dont_cast_shadows" : 0,
+                "msfs_day_night_cycle" : 0,
+                "msfs_use_pearl_effect" : 0,
+                "msfs_pearl_shift" : 0,
+                "msfs_pearl_range" : 0,
+                "msfs_pearl_brightness" : 0,
+                "msfs_collision_material" : 0,
+                "msfs_road_material" : 0,
+                "msfs_uv_offset_u" : 0,
+                "msfs_uv_offset_v" : 0,
+                "msfs_uv_tiling_u" : 1,
+                "msfs_uv_tiling_v" : 1,
+                "msfs_uv_rotation" : 0,
+                "msfs_uv_clamp_u" : 0,
+                "msfs_uv_clamp_v" : 0,
+                "msfs_roughness_factor" : 1,
+                "msfs_metallic_factor" : 1,
+                "msfs_normal_scale" : 1,
+                "msfs_alpha_cutoff" : 0.5,
+                "msfs_detail_uv_scale" : 1,
+                "msfs_detail_uv_offset_u" : 0,
+                "msfs_detail_uv_offset_v" : 0,
+                "msfs_detail_normal_scale" : 1,
+                "msfs_blend_threshold" : 0.10000000149011612,
+                "msfs_decal_color_blend_factor" : 1,
+                "msfs_decal_metal_blend_factor" : 1,
+                "msfs_decal_normal_blend_factor" : 1,
+                "msfs_decal_roughness_blend_factor" : 1,
+                "msfs_decal_occlusion_blend_factor" : 1,
+                "msfs_decal_emissive_blend_factor" : 1,
+                "msfs_rain_drop_scale" : 1,
+                "msfs_wiper_1_state" : 0,
+                "msfs_wiper_2_state" : 0,
+                "msfs_glass_reflection_factor" : 0.699999988079071,
+                "msfs_glass_deformation_factor" : 0,
+                "msfs_parallax_scale" : 0,
+                "msfs_parallax_room_size_x" : 0.5,
+                "msfs_parallax_room_size_y" : 0.5,
+                "msfs_parallax_room_number" : 1,
+                "msfs_parallax_corridor" : 0,
+                "msfs_sss_color" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_fresnel_factor" : 1,
+                "msfs_fresnel_opacity_bias" : 0,
+                "msfs_show_colors" : 1,
+                "msfs_show_emissive_color" : 1,
+                "msfs_show_alpha_mode" : 0,
+                "msfs_show_render_options" : 1,
+                "msfs_show_day_night_cycle" : 0,
+                "msfs_show_pearl" : 1,
+                "msfs_show_gameplay_options" : 1,
+                "msfs_show_uv_options" : 1,
+                "msfs_show_material_options" : 1,
+                "msfs_show_material_detail_options" : 1,
+                "msfs_show_blend_threshold" : 1,
+                "msfs_show_decal_blend_factors" : 0,
+                "msfs_show_windshield_options" : 0,
+                "msfs_show_glass_options" : 1,
+                "msfs_show_parallax_options" : 0,
+                "msfs_show_sss_color" : 0,
+                "msfs_show_fresnel_options" : 0,
+                "msfs_show_base_color_texture" : 1,
+                "msfs_show_comp_texture" : 1,
+                "msfs_show_normal_texture" : 1,
+                "msfs_show_emissive_texture" : 1,
+                "msfs_show_detail_color_texture" : 1,
+                "msfs_show_detail_comp_texture" : 1,
+                "msfs_show_detail_normal_texture" : 1,
+                "msfs_show_blend_mask_texture" : 1,
+                "msfs_show_wetness_ao_texture" : 0,
+                "msfs_show_dirt_texture" : 0,
+                "msfs_show_height_map_texture" : 0
+            },
+            "name" : "GlassForVisor",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0
+            }
+        },
+        {
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "extras" : {
+                "is_import" : 0,
+                "msfs_material_type" : 1,
+                "msfs_base_color_factor" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_emissive_factor" : [
+                    0,
+                    0,
+                    0
+                ],
+                "msfs_alpha_mode" : 0,
+                "msfs_draw_order" : 0,
+                "msfs_double_sided" : 0,
+                "msfs_dont_cast_shadows" : 0,
+                "msfs_day_night_cycle" : 0,
+                "msfs_use_pearl_effect" : 0,
+                "msfs_pearl_shift" : 0,
+                "msfs_pearl_range" : 0,
+                "msfs_pearl_brightness" : 0,
+                "msfs_collision_material" : 0,
+                "msfs_road_material" : 0,
+                "msfs_uv_offset_u" : 0,
+                "msfs_uv_offset_v" : 0,
+                "msfs_uv_tiling_u" : 1,
+                "msfs_uv_tiling_v" : 1,
+                "msfs_uv_rotation" : 0,
+                "msfs_uv_clamp_u" : 0,
+                "msfs_uv_clamp_v" : 0,
+                "msfs_roughness_factor" : 1,
+                "msfs_metallic_factor" : 1,
+                "msfs_normal_scale" : 1,
+                "msfs_alpha_cutoff" : 0.5,
+                "msfs_detail_uv_scale" : 1,
+                "msfs_detail_uv_offset_u" : 0,
+                "msfs_detail_uv_offset_v" : 0,
+                "msfs_detail_normal_scale" : 1,
+                "msfs_blend_threshold" : 0.10000000149011612,
+                "msfs_decal_color_blend_factor" : 1,
+                "msfs_decal_metal_blend_factor" : 1,
+                "msfs_decal_normal_blend_factor" : 1,
+                "msfs_decal_roughness_blend_factor" : 1,
+                "msfs_decal_occlusion_blend_factor" : 1,
+                "msfs_decal_emissive_blend_factor" : 1,
+                "msfs_rain_drop_scale" : 1,
+                "msfs_wiper_1_state" : 0,
+                "msfs_wiper_2_state" : 0,
+                "msfs_glass_reflection_factor" : 1,
+                "msfs_glass_deformation_factor" : 0,
+                "msfs_parallax_scale" : 0,
+                "msfs_parallax_room_size_x" : 0.5,
+                "msfs_parallax_room_size_y" : 0.5,
+                "msfs_parallax_room_number" : 1,
+                "msfs_parallax_corridor" : 0,
+                "msfs_sss_color" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_fresnel_factor" : 1,
+                "msfs_fresnel_opacity_bias" : 0,
+                "msfs_base_color_texture" : {
+                    "name" : "CESSNA_152_COCKPIT_TOP_SHELL_ALBD.PNG.PNG",
+                    "type" : "Image"
+                },
+                "msfs_comp_texture" : {
+                    "name" : "CESSNA_152_COCKPIT_TOP_SHELL_COMP.PNG.PNG",
+                    "type" : "Image"
+                },
+                "msfs_normal_texture" : {
+                    "name" : "CESSNA_152_COCKPIT_TOP_SHELL_NORM.PNG.PNG",
+                    "type" : "Image"
+                },
+                "msfs_show_colors" : 1,
+                "msfs_show_emissive_color" : 1,
+                "msfs_show_alpha_mode" : 1,
+                "msfs_show_render_options" : 1,
+                "msfs_show_day_night_cycle" : 1,
+                "msfs_show_pearl" : 1,
+                "msfs_show_gameplay_options" : 1,
+                "msfs_show_uv_options" : 1,
+                "msfs_show_material_options" : 1,
+                "msfs_show_material_detail_options" : 1,
+                "msfs_show_blend_threshold" : 1,
+                "msfs_show_decal_blend_factors" : 0,
+                "msfs_show_windshield_options" : 0,
+                "msfs_show_glass_options" : 0,
+                "msfs_show_parallax_options" : 0,
+                "msfs_show_sss_color" : 0,
+                "msfs_show_fresnel_options" : 0,
+                "msfs_show_base_color_texture" : 1,
+                "msfs_show_comp_texture" : 1,
+                "msfs_show_normal_texture" : 1,
+                "msfs_show_emissive_texture" : 1,
+                "msfs_show_detail_color_texture" : 1,
+                "msfs_show_detail_comp_texture" : 1,
+                "msfs_show_detail_normal_texture" : 1,
+                "msfs_show_blend_mask_texture" : 1,
+                "msfs_show_wetness_ao_texture" : 0,
+                "msfs_show_dirt_texture" : 0,
+                "msfs_show_height_map_texture" : 0
+            },
+            "name" : "top_shell",
+            "normalTexture" : {
+                "index" : 11,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 12,
+                    "texCoord" : 0
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 13,
+                    "texCoord" : 0
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "x0_COCKPIT_COFFEE_R.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6,
+                        "TEXCOORD_1" : 7,
+                        "COLOR_0" : 8
+                    },
+                    "indices" : 9,
+                    "material" : 1
+                }
+            ]
+        },
+        {
+            "name" : "x0_JPL_VISOR.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 10,
+                        "NORMAL" : 11,
+                        "TEXCOORD_0" : 12,
+                        "TEXCOORD_1" : 13,
+                        "COLOR_0" : 14
+                    },
+                    "indices" : 15,
+                    "material" : 2
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 16,
+                        "NORMAL" : 17,
+                        "TEXCOORD_0" : 18,
+                        "TEXCOORD_1" : 19,
+                        "COLOR_0" : 20
+                    },
+                    "indices" : 21,
+                    "material" : 3
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 22,
+                        "NORMAL" : 23,
+                        "TEXCOORD_0" : 24,
+                        "TEXCOORD_1" : 25,
+                        "COLOR_0" : 26
+                    },
+                    "indices" : 27,
+                    "material" : 4
+                }
+            ]
+        },
+        {
+            "name" : "x0_LIGHTING_Switch_Cabin",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 28,
+                        "NORMAL" : 29,
+                        "TEXCOORD_0" : 30,
+                        "TEXCOORD_1" : 31,
+                        "COLOR_0" : 32
+                    },
+                    "indices" : 33,
+                    "material" : 5
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        },
+        {
+            "source" : 2
+        },
+        {
+            "source" : 3
+        },
+        {
+            "source" : 4
+        },
+        {
+            "source" : 5
+        },
+        {
+            "source" : 6
+        },
+        {
+            "source" : 7
+        },
+        {
+            "source" : 8
+        },
+        {
+            "source" : 9
+        },
+        {
+            "source" : 10
+        },
+        {
+            "source" : 11
+        },
+        {
+            "source" : 12
+        },
+        {
+            "source" : 13
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "cargocomanche1",
+            "uri" : "cargocomanche1.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "CUP_LOW2_NORMAL_PNG",
+            "uri" : "CUP_LOW2_NORMAL_PNG.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "CUP_LOW2_ALBEDO_PNG",
+            "uri" : "CUP_LOW2_ALBEDO_PNG.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "CUP_LOW2_METAL_PNG",
+            "uri" : "CUP_LOW2_METAL_PNG.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "CESSNA_152_COCKPIT_INPUTS_EMIS.TIF",
+            "uri" : "CESSNA_152_COCKPIT_INPUTS_EMIS_TIF.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "CESSNA_152_COCKPIT_INPUTS_NORM.PNG",
+            "uri" : "CESSNA_152_COCKPIT_INPUTS_NORM_PNG.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "CESSNA_152_COCKPIT_INPUTS_ALBD.PNG",
+            "uri" : "CESSNA_152_COCKPIT_INPUTS_ALBD_PNG.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "CESSNA_152_COCKPIT_INPUTS_COMP.PNG",
+            "uri" : "CESSNA_152_COCKPIT_INPUTS_COMP_PNG.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_NORM.PNG",
+            "uri" : "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_NORM_PNG.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_ALBD.PNG",
+            "uri" : "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_ALBD_PNG.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_COMP.PNG",
+            "uri" : "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_COMP_PNG.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "CESSNA_152_COCKPIT_TOP_SHELL_NORM.PNG",
+            "uri" : "CESSNA_152_COCKPIT_TOP_SHELL_NORM_PNG.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "CESSNA_152_COCKPIT_TOP_SHELL_ALBD.PNG",
+            "uri" : "CESSNA_152_COCKPIT_TOP_SHELL_ALBD_PNG.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "CESSNA_152_COCKPIT_TOP_SHELL_COMP.PNG",
+            "uri" : "CESSNA_152_COCKPIT_TOP_SHELL_COMP_PNG.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 1327,
+            "max" : [
+                0.3683227002620697,
+                0.24885210394859314,
+                1.142617106437683
+            ],
+            "min" : [
+                -0.3674056828022003,
+                -0.30904513597488403,
+                0.33360597491264343
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 1327,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 1327,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 2346,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 393,
+            "max" : [
+                0.04937799647450447,
+                0.04509599134325981,
+                0.07059100270271301
+            ],
+            "min" : [
+                -0.04081349819898605,
+                -0.045096009969711304,
+                -0.07059099525213242
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 393,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 393,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 393,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 393,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5123,
+            "count" : 1074,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 2390,
+            "max" : [
+                0.39181002974510193,
+                -0.009324848651885986,
+                0.012209683656692505
+            ],
+            "min" : [
+                -0.39181002974510193,
+                -0.017679274082183838,
+                -0.002088010311126709
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5126,
+            "count" : 2390,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 12,
+            "componentType" : 5126,
+            "count" : 2390,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 13,
+            "componentType" : 5126,
+            "count" : 2390,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 14,
+            "componentType" : 5126,
+            "count" : 2390,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 15,
+            "componentType" : 5123,
+            "count" : 11340,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 16,
+            "componentType" : 5126,
+            "count" : 1582,
+            "max" : [
+                0.42990031838417053,
+                0.0057201385498046875,
+                0.009449928998947144
+            ],
+            "min" : [
+                -0.42990031838417053,
+                -0.17406553030014038,
+                -0.006734490394592285
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 17,
+            "componentType" : 5126,
+            "count" : 1582,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 18,
+            "componentType" : 5126,
+            "count" : 1582,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 19,
+            "componentType" : 5126,
+            "count" : 1582,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 20,
+            "componentType" : 5126,
+            "count" : 1582,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 21,
+            "componentType" : 5123,
+            "count" : 7404,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 22,
+            "componentType" : 5126,
+            "count" : 136,
+            "max" : [
+                0.42552053928375244,
+                -0.005084693431854248,
+                0.0058821141719818115
+            ],
+            "min" : [
+                -0.42552053928375244,
+                -0.17015975713729858,
+                -0.004344284534454346
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 23,
+            "componentType" : 5126,
+            "count" : 136,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 24,
+            "componentType" : 5126,
+            "count" : 136,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 25,
+            "componentType" : 5126,
+            "count" : 136,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 26,
+            "componentType" : 5126,
+            "count" : 136,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 27,
+            "componentType" : 5123,
+            "count" : 468,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 28,
+            "componentType" : 5126,
+            "count" : 97,
+            "max" : [
+                0.006224252283573151,
+                0.0009848475456237793,
+                0.006205476820468903
+            ],
+            "min" : [
+                -0.006224252283573151,
+                -0.000984787940979004,
+                -0.0062054842710494995
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 29,
+            "componentType" : 5126,
+            "count" : 97,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 30,
+            "componentType" : 5126,
+            "count" : 97,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 31,
+            "componentType" : 5126,
+            "count" : 97,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 32,
+            "componentType" : 5126,
+            "count" : 97,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 33,
+            "componentType" : 5123,
+            "count" : 504,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 34,
+            "componentType" : 5126,
+            "count" : 101,
+            "max" : [
+                4.166666666666667
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 35,
+            "componentType" : 5126,
+            "count" : 101,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 36,
+            "componentType" : 5126,
+            "count" : 3,
+            "max" : [
+                0.08333333333333333
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 37,
+            "componentType" : 5126,
+            "count" : 3,
+            "type" : "VEC3"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 15924,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 15924,
+            "byteOffset" : 15924
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10616,
+            "byteOffset" : 31848
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4692,
+            "byteOffset" : 42464
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4716,
+            "byteOffset" : 47156
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4716,
+            "byteOffset" : 51872
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3144,
+            "byteOffset" : 56588
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3144,
+            "byteOffset" : 59732
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6288,
+            "byteOffset" : 62876
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2148,
+            "byteOffset" : 69164
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 28680,
+            "byteOffset" : 71312
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 28680,
+            "byteOffset" : 99992
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 19120,
+            "byteOffset" : 128672
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 19120,
+            "byteOffset" : 147792
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 38240,
+            "byteOffset" : 166912
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 22680,
+            "byteOffset" : 205152
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 18984,
+            "byteOffset" : 227832
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 18984,
+            "byteOffset" : 246816
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12656,
+            "byteOffset" : 265800
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12656,
+            "byteOffset" : 278456
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 25312,
+            "byteOffset" : 291112
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 14808,
+            "byteOffset" : 316424
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1632,
+            "byteOffset" : 331232
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1632,
+            "byteOffset" : 332864
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1088,
+            "byteOffset" : 334496
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1088,
+            "byteOffset" : 335584
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2176,
+            "byteOffset" : 336672
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 936,
+            "byteOffset" : 338848
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1164,
+            "byteOffset" : 339784
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1164,
+            "byteOffset" : 340948
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 776,
+            "byteOffset" : 342112
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 776,
+            "byteOffset" : 342888
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1552,
+            "byteOffset" : 343664
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1008,
+            "byteOffset" : 345216
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 404,
+            "byteOffset" : 346224
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1616,
+            "byteOffset" : 346628
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12,
+            "byteOffset" : 348244
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 36,
+            "byteOffset" : 348256
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 348292,
+            "uri" : "Models.bin"
+        }
+    ]
+}

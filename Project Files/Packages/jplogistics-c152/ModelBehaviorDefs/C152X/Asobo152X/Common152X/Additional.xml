@@ -1,0 +1,21 @@
+<Template Name="JPL_Sun_Visors">
+  <DefaultTemplateParameters>
+    <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
+    <TOOLTIPID>TT:COCKPIT.TOOLTIPS.SUN_VISORS</TOOLTIPID>
+  </DefaultTemplateParameters>
+  <Component ID="#NODE_ID#" Node="#NODE_ID#">
+    <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
+      <LEFT_LEAVE_CODE/>
+      <LEFT_SINGLE_CODE>(L:XMLVAR_JPL_VISOR) ! (&gt;L:XMLVAR_JPL_VISOR)</LEFT_SINGLE_CODE>
+    </UseTemplate>
+    <UseTemplate Name="ASOBO_GT_Anim_Code">
+    <ANIM_NAME>JPL_VISOR</ANIM_NAME>
+    <ANIM_LENGTH>100</ANIM_LENGTH>
+      <ANIM_LAG>100</ANIM_LAG>
+			<ANIM_CODE>
+        (* Default is current needle position *)
+        (L:XMLVAR_JPL_VISOR) 100 *
+      </ANIM_CODE>				
+		</UseTemplate>
+  </Component>
+</Template>

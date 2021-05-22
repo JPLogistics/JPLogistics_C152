@@ -21,6 +21,7 @@
     <Include ModelBehaviorFile="C152X\Asobo152X\Common152X.xml"/>
     <Include ModelBehaviorFile="C152X\Asobo152X\NAVCOM152X\NavComSystem152X.xml"/>
     <Include ModelBehaviorFile="C152X\Asobo152X\NAVCOM152X\ADF152X.xml"/>
+    <Include ModelBehaviorFile="C152X\Asobo152X\Common152X\Additional.xml"/>
 	
 	  
     <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank and the 20 in the formula is a scaling factor for the amount of yaw induced variation in the tank indication. The first value is the current tank quantity in liters. 	The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
@@ -411,8 +412,8 @@
         <NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
         <ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
         <KNOB_TURN_SPEED>4.0</KNOB_TURN_SPEED>
-		<INIT_VALUE>20</INIT_VALUE>
-		<MIN_VALUE>5</MIN_VALUE>
+		    <INIT_VALUE>20</INIT_VALUE>
+		    <MIN_VALUE>5</MIN_VALUE>
       </UseTemplate>
 
       <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Cabin_Template"> <!--Dome Light Switch-->
@@ -433,7 +434,13 @@
 		<ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
 		<CIRCUIT_ID>25</CIRCUIT_ID>
 	  </UseTemplate>
-	  
+      
+    <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Cabin_Template"> <!-- Flood lights on/off -->
+		  <NODE_ID>LIGHTING_Switch_Cabin</NODE_ID>
+		  <ANIM_NAME>LIGHTING_Switch_Cabin</ANIM_NAME>
+		  <CIRCUIT_ID>25</CIRCUIT_ID>
+	  </UseTemplate>
+      
     </Component>
 
     <!-- PASSENGERS ########################### -->
@@ -649,6 +656,11 @@
         </UseTemplate>
       </Component>
     </Component>
+    </Component>
+    <Component ID="Sun_visors">
+      <UseTemplate Name="JPL_Sun_Visors">
+        <NODE_ID>Sun_visors</NODE_ID>
+      </UseTemplate>
     </Component>
   </Behaviors>
 </ModelInfo>

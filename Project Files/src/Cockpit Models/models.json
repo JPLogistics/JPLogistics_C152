@@ -1,23 +1,23 @@
 [
   {
     "gltf": [
-      "./C152_Interior/Original/C152_cockpit_LOD00.gltf"
+      "./C152_Custom_Models/Original/C152_cockpit_LOD00.gltf"
     ],
     "bin": [
-      "./C152_Interior/Original/C152_cockpit_LOD00.bin"
+      "./C152_Custom_Models/Original/C152_cockpit_LOD00.bin"
     ],
     "output": {
       "gltf": [
-        "./C152_Interior/Modded/C152_cockpit_LOD00.gltf"
+        "./C152_Custom_Models/Modded/model/C152_cockpit_LOD00.gltf"
       ],
       "bin": [
-        "./C152_Interior/Modded/C152_cockpit_LOD00.bin"
+        "./C152_Custom_Models/Modded/model/C152_cockpit_LOD00.bin"
       ]
     },
     "additions": [
       {
-        "gltf": "./cup/cup.gltf",
-        "bin": "./cup/cup.bin"
+        "gltf": "./Package Builder/Packages/jplogistics-simobjects-builder/SimObjects/Landmarks/JPLogistics-Additional/model/models.gltf",
+        "bin": "./Package Builder/Packages/jplogistics-simobjects-builder/SimObjects/Landmarks/JPLogistics-Additional/model/models.bin"
       }
     ]
   }

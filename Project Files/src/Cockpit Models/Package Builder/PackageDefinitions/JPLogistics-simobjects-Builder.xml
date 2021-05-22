@@ -1,0 +1,31 @@
+<AssetPackage Name="JPLogistics-simobjects-Builder" Version="0.1.0">
+	<ItemSettings>
+		<ContentType>SCENERY</ContentType>
+		<Title>Builder</Title>
+		<Manufacturer/>
+		<Creator>My Company</Creator>
+	</ItemSettings>
+	<Flags>
+		<VisibleInStore>true</VisibleInStore>
+		<CanBeReferenced>true</CanBeReferenced>
+	</Flags>
+	<AssetGroups>
+		<AssetGroup Name="ContentInfo">
+			<Type>Copy</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageDefinitions\JPLogistics-simobjects-Builder\</AssetDir>
+			<OutputDir>ContentInfo\JPLogistics-simobjects-Builder\</OutputDir>
+		</AssetGroup>
+		<AssetGroup Name="JPLogistics_Builder">
+			<Type>SimObject</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageSources\SimObjects\Landmarks\JPLogistics-Builder\</AssetDir>
+			<OutputDir>SimObjects\Landmarks\JPLogistics-Additional\</OutputDir>
+		</AssetGroup>
+	</AssetGroups>
+</AssetPackage>
+
