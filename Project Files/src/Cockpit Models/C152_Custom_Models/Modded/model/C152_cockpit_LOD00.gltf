@@ -20436,282 +20436,132 @@
     {
       "bufferView": 9,
       "componentType": 5126,
-      "count": 3,
+      "count": 1995,
       "min": [
-        0
+        -0.42866379022598267,
+        -0.1740655153989792,
+        -0.006734490394592285
       ],
       "max": [
-        0.08333333333333333
+        -0.05189201608300209,
+        0.005720153450965881,
+        0.012209683656692505
       ],
-      "type": "SCALAR"
+      "type": "VEC3",
+      "name": "x0_Sun_visors_CoPilot_vertices#0_POSITION"
+    },
+    {
+      "bufferView": 9,
+      "byteOffset": 12,
+      "componentType": 5120,
+      "count": 1995,
+      "type": "VEC4",
+      "name": "x0_Sun_visors_CoPilot_vertices#0_TANGENT"
+    },
+    {
+      "bufferView": 9,
+      "byteOffset": 16,
+      "componentType": 5120,
+      "count": 1995,
+      "type": "VEC4",
+      "name": "x0_Sun_visors_CoPilot_vertices#0_NORMAL"
+    },
+    {
+      "bufferView": 9,
+      "byteOffset": 20,
+      "componentType": 5122,
+      "count": 1995,
+      "type": "VEC2",
+      "name": "x0_Sun_visors_CoPilot_vertices#0_TEXCOORD_0"
+    },
+    {
+      "bufferView": 9,
+      "byteOffset": 24,
+      "componentType": 5122,
+      "count": 1995,
+      "type": "VEC2",
+      "name": "x0_Sun_visors_CoPilot_vertices#0_TEXCOORD_1"
+    },
+    {
+      "bufferView": 9,
+      "byteOffset": 28,
+      "componentType": 5123,
+      "count": 1995,
+      "type": "VEC4",
+      "name": "x0_Sun_visors_CoPilot_vertices#0_COLOR_0"
     },
     {
       "bufferView": 10,
-      "componentType": 5126,
-      "count": 3,
-      "type": "VEC3"
-    },
-    {
-      "bufferView": 11,
-      "componentType": 5126,
-      "count": 1331,
-      "min": [
-        -0.3674056828022003,
-        -0.30904513597488403,
-        0.33360597491264343
-      ],
-      "max": [
-        0.3683227002620697,
-        0.24885210394859314,
-        1.142617106437683
-      ],
-      "type": "VEC3",
-      "name": "Cube.001_vertices#0_POSITION"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 12,
-      "componentType": 5120,
-      "count": 1331,
-      "type": "VEC4",
-      "name": "Cube.001_vertices#0_TANGENT"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 16,
-      "componentType": 5120,
-      "count": 1331,
-      "type": "VEC4",
-      "name": "Cube.001_vertices#0_NORMAL"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 20,
-      "componentType": 5122,
-      "count": 1331,
-      "type": "VEC2",
-      "name": "Cube.001_vertices#0_TEXCOORD_0"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 24,
-      "componentType": 5122,
-      "count": 1331,
-      "type": "VEC2",
-      "name": "Cube.001_vertices#0_TEXCOORD_1"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 28,
       "componentType": 5123,
-      "count": 1331,
-      "type": "VEC4",
-      "name": "Cube.001_vertices#0_COLOR_0"
-    },
-    {
-      "bufferView": 12,
-      "componentType": 5123,
-      "count": 2346,
+      "count": 9354,
       "type": "SCALAR",
-      "name": "Cube.001_indices#0"
+      "name": "x0_Sun_visors_CoPilot_indices#2"
     },
     {
-      "bufferView": 11,
-      "byteOffset": 47916,
+      "bufferView": 9,
+      "byteOffset": 71820,
       "componentType": 5126,
-      "count": 393,
+      "count": 2058,
       "min": [
-        -0.04081349819898605,
-        -0.045096009969711304,
-        -0.07059099525213242
-      ],
-      "max": [
-        0.04937799647450447,
-        0.04509599134325981,
-        0.07059100270271301
-      ],
-      "type": "VEC3",
-      "name": "x0_COCKPIT_COFFEE_R.001_vertices#0_POSITION"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 47928,
-      "componentType": 5120,
-      "count": 393,
-      "type": "VEC4",
-      "name": "x0_COCKPIT_COFFEE_R.001_vertices#0_TANGENT"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 47932,
-      "componentType": 5120,
-      "count": 393,
-      "type": "VEC4",
-      "name": "x0_COCKPIT_COFFEE_R.001_vertices#0_NORMAL"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 47936,
-      "componentType": 5122,
-      "count": 393,
-      "type": "VEC2",
-      "name": "x0_COCKPIT_COFFEE_R.001_vertices#0_TEXCOORD_0"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 47940,
-      "componentType": 5122,
-      "count": 393,
-      "type": "VEC2",
-      "name": "x0_COCKPIT_COFFEE_R.001_vertices#0_TEXCOORD_1"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 47944,
-      "componentType": 5123,
-      "count": 393,
-      "type": "VEC4",
-      "name": "x0_COCKPIT_COFFEE_R.001_vertices#0_COLOR_0"
-    },
-    {
-      "bufferView": 12,
-      "byteOffset": 4692,
-      "componentType": 5123,
-      "count": 1074,
-      "type": "SCALAR",
-      "name": "x0_COCKPIT_COFFEE_R.001_indices#0"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 62064,
-      "componentType": 5126,
-      "count": 4116,
-      "min": [
-        -0.42990031838417053,
-        -0.17406553030014038,
+        0.05189201608300209,
+        -0.1740655153989792,
         -0.006734490394592285
       ],
       "max": [
         0.42990031838417053,
-        0.0057201385498046875,
+        0.005720153450965881,
         0.012209683656692505
       ],
       "type": "VEC3",
-      "name": "x0_JPL_VISOR.001_vertices#0_POSITION"
+      "name": "x0_Sun_visors_Pilot_vertices#0_POSITION"
     },
     {
-      "bufferView": 11,
-      "byteOffset": 62076,
+      "bufferView": 9,
+      "byteOffset": 71832,
       "componentType": 5120,
-      "count": 4116,
+      "count": 2058,
       "type": "VEC4",
-      "name": "x0_JPL_VISOR.001_vertices#0_TANGENT"
+      "name": "x0_Sun_visors_Pilot_vertices#0_TANGENT"
     },
     {
-      "bufferView": 11,
-      "byteOffset": 62080,
+      "bufferView": 9,
+      "byteOffset": 71836,
       "componentType": 5120,
-      "count": 4116,
+      "count": 2058,
       "type": "VEC4",
-      "name": "x0_JPL_VISOR.001_vertices#0_NORMAL"
+      "name": "x0_Sun_visors_Pilot_vertices#0_NORMAL"
     },
     {
-      "bufferView": 11,
-      "byteOffset": 62084,
+      "bufferView": 9,
+      "byteOffset": 71840,
       "componentType": 5122,
-      "count": 4116,
+      "count": 2058,
       "type": "VEC2",
-      "name": "x0_JPL_VISOR.001_vertices#0_TEXCOORD_0"
+      "name": "x0_Sun_visors_Pilot_vertices#0_TEXCOORD_0"
     },
     {
-      "bufferView": 11,
-      "byteOffset": 62088,
+      "bufferView": 9,
+      "byteOffset": 71844,
       "componentType": 5122,
-      "count": 4116,
+      "count": 2058,
       "type": "VEC2",
-      "name": "x0_JPL_VISOR.001_vertices#0_TEXCOORD_1"
+      "name": "x0_Sun_visors_Pilot_vertices#0_TEXCOORD_1"
     },
     {
-      "bufferView": 11,
-      "byteOffset": 62092,
+      "bufferView": 9,
+      "byteOffset": 71848,
       "componentType": 5123,
-      "count": 4116,
+      "count": 2058,
       "type": "VEC4",
-      "name": "x0_JPL_VISOR.001_vertices#0_COLOR_0"
+      "name": "x0_Sun_visors_Pilot_vertices#0_COLOR_0"
     },
     {
-      "bufferView": 12,
-      "byteOffset": 6840,
+      "bufferView": 10,
+      "byteOffset": 18708,
       "componentType": 5123,
-      "count": 19212,
+      "count": 9606,
       "type": "SCALAR",
-      "name": "x0_JPL_VISOR.001_indices#2"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 210240,
-      "componentType": 5126,
-      "count": 97,
-      "min": [
-        -0.006224252283573151,
-        -0.000984787940979004,
-        -0.0062054842710494995
-      ],
-      "max": [
-        0.006224252283573151,
-        0.0009848475456237793,
-        0.006205476820468903
-      ],
-      "type": "VEC3",
-      "name": "x0_LIGHTING_Switch_Cabin_vertices#0_POSITION"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 210252,
-      "componentType": 5120,
-      "count": 97,
-      "type": "VEC4",
-      "name": "x0_LIGHTING_Switch_Cabin_vertices#0_TANGENT"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 210256,
-      "componentType": 5120,
-      "count": 97,
-      "type": "VEC4",
-      "name": "x0_LIGHTING_Switch_Cabin_vertices#0_NORMAL"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 210260,
-      "componentType": 5122,
-      "count": 97,
-      "type": "VEC2",
-      "name": "x0_LIGHTING_Switch_Cabin_vertices#0_TEXCOORD_0"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 210264,
-      "componentType": 5122,
-      "count": 97,
-      "type": "VEC2",
-      "name": "x0_LIGHTING_Switch_Cabin_vertices#0_TEXCOORD_1"
-    },
-    {
-      "bufferView": 11,
-      "byteOffset": 210268,
-      "componentType": 5123,
-      "count": 97,
-      "type": "VEC4",
-      "name": "x0_LIGHTING_Switch_Cabin_vertices#0_COLOR_0"
-    },
-    {
-      "bufferView": 12,
-      "byteOffset": 45264,
-      "componentType": 5123,
-      "count": 504,
-      "type": "SCALAR",
-      "name": "x0_LIGHTING_Switch_Cabin_indices#0"
+      "name": "x0_Sun_visors_Pilot_indices#2"
     }
   ],
   "animations": [
@@ -24484,7 +24334,7 @@
         {
           "sampler": 0,
           "target": {
-            "node": 11,
+            "node": 249,
             "path": "rotation"
           }
         }
@@ -24493,25 +24343,6 @@
         {
           "input": 2088,
           "output": 2089,
-          "interpolation": "LINEAR"
-        }
-      ]
-    },
-    {
-      "name": "LIGHTING_Switch_Cabin",
-      "channels": [
-        {
-          "sampler": 0,
-          "target": {
-            "node": 252,
-            "path": "translation"
-          }
-        }
-      ],
-      "samplers": [
-        {
-          "input": 2090,
-          "output": 2091,
           "interpolation": "LINEAR"
         }
       ]
@@ -24599,26 +24430,16 @@
     },
     {
       "buffer": 0,
-      "byteLength": 12,
-      "byteOffset": 15969420
-    },
-    {
-      "buffer": 0,
-      "byteLength": 36,
-      "byteOffset": 15969432
-    },
-    {
-      "buffer": 0,
-      "byteLength": 213732,
+      "byteLength": 145908,
       "byteStride": 36,
-      "byteOffset": 15969468,
+      "byteOffset": 15969420,
       "target": 34962,
       "name": "BufferViewVertexND"
     },
     {
       "buffer": 0,
-      "byteLength": 46272,
-      "byteOffset": 16183200,
+      "byteLength": 37920,
+      "byteOffset": 16115328,
       "target": 34963,
       "name": "BufferViewIndex"
     }
@@ -25389,74 +25210,46 @@
       }
     },
     {
-      "name": "cargo.001",
-      "doubleSided": true,
-      "pbrMetallicRoughness": {
-        "metallicFactor": 0,
-        "roughnessFactor": 0.5,
-        "baseColorTexture": {
-          "index": 85
-        }
-      }
-    },
-    {
-      "name": "CUP.001",
-      "normalTexture": {
-        "index": 86
-      },
-      "emissiveFactor": [
-        0.0015475141117349267,
-        0.0015475141117349267,
-        0.0015475141117349267
-      ],
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 87
-        }
-      }
-    },
-    {
-      "name": "CockpitInputs.001",
-      "normalTexture": {
-        "index": 90
-      },
-      "emissiveTexture": {
-        "index": 89
-      },
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 91
-        }
-      }
-    },
-    {
-      "name": "glare_shield_pedestal.001",
-      "normalTexture": {
-        "index": 93
-      },
-      "pbrMetallicRoughness": {
-        "baseColorTexture": {
-          "index": 94
-        }
-      }
-    },
-    {
       "name": "GlassForVisor",
       "alphaMode": "BLEND",
       "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          0.009999999776482582
+        ],
         "metallicFactor": 0,
         "roughnessFactor": 0
       }
     },
     {
-      "name": "top_shell",
+      "name": "glare_shield_pedestal",
       "normalTexture": {
-        "index": 96
+        "index": 85
+      },
+      "occlusionTexture": {
+        "index": 86
       },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
-          "index": 97
+          "index": 87
+        },
+        "metallicRoughnessTexture": {
+          "index": 86
         }
+      }
+    },
+    {
+      "name": "GlassForVisor.001",
+      "alphaMode": "BLEND",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.014669548720121384,
+          0.014669548720121384,
+          0.014669548720121384,
+          1
+        ]
       }
     }
   ],
@@ -32023,69 +31816,19 @@
       "primitives": [
         {
           "attributes": {
-            "COLOR_0": 2097,
-            "NORMAL": 2094,
-            "POSITION": 2092,
-            "TANGENT": 2093,
-            "TEXCOORD_0": 2095,
-            "TEXCOORD_1": 2096
+            "COLOR_0": 2095,
+            "NORMAL": 2092,
+            "POSITION": 2090,
+            "TANGENT": 2091,
+            "TEXCOORD_0": 2093,
+            "TEXCOORD_1": 2094
           },
-          "indices": 2098,
+          "indices": 2096,
           "material": 40,
           "mode": 4,
           "extras": {
             "ASOBO_primitive": {
-              "PrimitiveCount": 782,
-              "VertexType": "VTX",
-              "VertexVersion": 2
-            }
-          }
-        }
-      ],
-      "name": "Cube.001"
-    },
-    {
-      "primitives": [
-        {
-          "attributes": {
-            "COLOR_0": 2104,
-            "NORMAL": 2101,
-            "POSITION": 2099,
-            "TANGENT": 2100,
-            "TEXCOORD_0": 2102,
-            "TEXCOORD_1": 2103
-          },
-          "indices": 2105,
-          "material": 41,
-          "mode": 4,
-          "extras": {
-            "ASOBO_primitive": {
-              "PrimitiveCount": 358,
-              "VertexType": "VTX",
-              "VertexVersion": 2
-            }
-          }
-        }
-      ],
-      "name": "x0_COCKPIT_COFFEE_R.001"
-    },
-    {
-      "primitives": [
-        {
-          "attributes": {
-            "COLOR_0": 2111,
-            "NORMAL": 2108,
-            "POSITION": 2106,
-            "TANGENT": 2107,
-            "TEXCOORD_0": 2109,
-            "TEXCOORD_1": 2110
-          },
-          "indices": 2112,
-          "material": 42,
-          "mode": 4,
-          "extras": {
-            "ASOBO_primitive": {
-              "PrimitiveCount": 3780,
+              "PrimitiveCount": 1890,
               "VertexType": "VTX",
               "VertexVersion": 2
             }
@@ -32093,20 +31836,20 @@
         },
         {
           "attributes": {
-            "COLOR_0": 23,
-            "NORMAL": 20,
-            "POSITION": 18,
-            "TANGENT": 19,
-            "TEXCOORD_0": 21,
-            "TEXCOORD_1": 22
+            "COLOR_0": 7,
+            "NORMAL": 4,
+            "POSITION": 2,
+            "TANGENT": 3,
+            "TEXCOORD_0": 5,
+            "TEXCOORD_1": 6
           },
-          "indices": 24,
-          "material": 3,
+          "indices": 8,
+          "material": 1,
           "mode": 4,
           "extras": {
             "ASOBO_primitive": {
-              "PrimitiveCount": 2468,
-              "StartIndex": 11340,
+              "PrimitiveCount": 1150,
+              "StartIndex": 5670,
               "VertexType": "VTX",
               "VertexVersion": 2
             }
@@ -32114,52 +31857,94 @@
         },
         {
           "attributes": {
-            "COLOR_0": 23,
-            "NORMAL": 20,
-            "POSITION": 18,
-            "TANGENT": 19,
-            "TEXCOORD_0": 21,
-            "TEXCOORD_1": 22
+            "COLOR_0": 7,
+            "NORMAL": 4,
+            "POSITION": 2,
+            "TANGENT": 3,
+            "TEXCOORD_0": 5,
+            "TEXCOORD_1": 6
           },
-          "indices": 24,
-          "material": 4,
+          "indices": 8,
+          "material": 2,
           "mode": 4,
           "extras": {
             "ASOBO_primitive": {
-              "PrimitiveCount": 156,
-              "StartIndex": 18744,
+              "PrimitiveCount": 78,
+              "StartIndex": 9120,
               "VertexType": "VTX",
               "VertexVersion": 2
             }
           }
         }
       ],
-      "name": "x0_JPL_VISOR.001"
+      "name": "x0_Sun_visors_CoPilot"
     },
     {
       "primitives": [
         {
           "attributes": {
-            "COLOR_0": 2118,
-            "NORMAL": 2115,
-            "POSITION": 2113,
-            "TANGENT": 2114,
-            "TEXCOORD_0": 2116,
-            "TEXCOORD_1": 2117
+            "COLOR_0": 2102,
+            "NORMAL": 2099,
+            "POSITION": 2097,
+            "TANGENT": 2098,
+            "TEXCOORD_0": 2100,
+            "TEXCOORD_1": 2101
           },
-          "indices": 2119,
-          "material": 45,
+          "indices": 2103,
+          "material": 40,
           "mode": 4,
           "extras": {
             "ASOBO_primitive": {
-              "PrimitiveCount": 168,
+              "PrimitiveCount": 1890,
+              "VertexType": "VTX",
+              "VertexVersion": 2
+            }
+          }
+        },
+        {
+          "attributes": {
+            "COLOR_0": 14,
+            "NORMAL": 11,
+            "POSITION": 9,
+            "TANGENT": 10,
+            "TEXCOORD_0": 12,
+            "TEXCOORD_1": 13
+          },
+          "indices": 15,
+          "material": 1,
+          "mode": 4,
+          "extras": {
+            "ASOBO_primitive": {
+              "PrimitiveCount": 1234,
+              "StartIndex": 5670,
+              "VertexType": "VTX",
+              "VertexVersion": 2
+            }
+          }
+        },
+        {
+          "attributes": {
+            "COLOR_0": 14,
+            "NORMAL": 11,
+            "POSITION": 9,
+            "TANGENT": 10,
+            "TEXCOORD_0": 12,
+            "TEXCOORD_1": 13
+          },
+          "indices": 15,
+          "material": 2,
+          "mode": 4,
+          "extras": {
+            "ASOBO_primitive": {
+              "PrimitiveCount": 78,
+              "StartIndex": 9372,
               "VertexType": "VTX",
               "VertexVersion": 2
             }
           }
         }
       ],
-      "name": "x0_LIGHTING_Switch_Cabin"
+      "name": "x0_Sun_visors_Pilot"
     }
   ],
   "nodes": [
@@ -37338,42 +37123,17 @@
     {
       "translation": [
         0,
-        0.13593637943267822,
-        -1.214817762374878
+        0.7385162711143494,
+        0.4501153826713562
       ],
       "rotation": [
-        0.04046035557985306,
+        0.9427876472473145,
         0,
         0,
-        0.9991811513900756
-      ],
-      "scale": [
-        0.8279199600219727,
-        0.8279199600219727,
-        0.8279199600219727
+        1
       ],
       "mesh": 230,
-      "name": "CARGO"
-    },
-    {
-      "translation": [
-        0.003206111490726471,
-        -0.1404138207435608,
-        0.33596134185791016
-      ],
-      "rotation": [
-        0.29489612579345703,
-        0.6518782377243042,
-        -0.6365325450897217,
-        0.2879539728164673
-      ],
-      "scale": [
-        0.8999999761581421,
-        0.8999999761581421,
-        0.8999999761581421
-      ],
-      "mesh": 231,
-      "name": "COCKPIT_COFFEE_R"
+      "name": "Sun_visors_CoPilot"
     },
     {
       "translation": [
@@ -37382,22 +37142,13 @@
         0.4501153826713562
       ],
       "rotation": [
-        0.8427876234054565,
+        -0.2073369026184082,
         0,
         0,
         1
       ],
-      "mesh": 232,
-      "name": "JPL_VISOR"
-    },
-    {
-      "translation": [
-        -0.020752375945448875,
-        0.7121812105178833,
-        -0.07753610610961914
-      ],
-      "mesh": 233,
-      "name": "LIGHTING_Switch_Cabin"
+      "mesh": 231,
+      "name": "Sun_visors_Pilot"
     }
   ],
   "scene": 0,
@@ -37407,7 +37158,6 @@
         0,
         5,
         10,
-        11,
         12,
         13,
         14,
@@ -37536,8 +37286,7 @@
         247,
         248,
         249,
-        250,
-        252
+        250
       ]
     }
   ],
@@ -38182,69 +37931,11 @@
     },
     {
       "source": 82
-    },
-    {
-      "extensions": {
-        "MSFT_texture_dds": {
-          "source": 83
-        }
-      }
-    },
-    {
-      "extensions": {
-        "MSFT_texture_dds": {
-          "source": 84
-        }
-      }
-    },
-    {
-      "extensions": {
-        "MSFT_texture_dds": {
-          "source": 85
-        }
-      }
-    },
-    {
-      "source": 86
-    },
-    {
-      "extensions": {
-        "MSFT_texture_dds": {
-          "source": 87
-        }
-      }
-    },
-    {
-      "extensions": {
-        "MSFT_texture_dds": {
-          "source": 88
-        }
-      }
-    },
-    {
-      "source": 89
-    },
-    {
-      "extensions": {
-        "MSFT_texture_dds": {
-          "source": 90
-        }
-      }
-    },
-    {
-      "extensions": {
-        "MSFT_texture_dds": {
-          "source": 91
-        }
-      }
-    },
-    {
-      "source": 92
     }
   ],
   "buffers": [
     {
-      "byteLength": 16229472,
+      "byteLength": 16153248,
       "uri": "C152_cockpit_LOD00.bin"
     }
   ],
@@ -38566,70 +38257,23 @@
       "extras": "ASOBO_image_converted_meta"
     },
     {
-      "uri": "CARGOCOMANCHE1.PNG.DDS",
-      "name": "cargocomanche1",
+      "uri": "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_NORM.PNG.DDS",
+      "name": "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_NORM",
       "extras": "ASOBO_image_converted_meta"
     },
     {
-      "uri": "CUP_LOW2_NORMAL_PNG.PNG.DDS",
-      "name": "CUP_LOW2_NORMAL_PNG",
+      "uri": "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_COMP.PNG.DDS",
+      "name": "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_COMP",
       "extras": "ASOBO_image_converted_meta"
     },
     {
-      "uri": "CUP_LOW2_ALBEDO_PNG.PNG.DDS",
-      "name": "CUP_LOW2_ALBEDO_PNG",
+      "uri": "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_ALBD.PNG.DDS",
+      "name": "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_ALBD",
       "extras": "ASOBO_image_converted_meta"
     },
     {
-      "uri": "CUP_LOW2_METAL_PNG.PNG",
-      "name": "CUP_LOW2_METAL_PNG"
-    },
-    {
-      "uri": "CESSNA_152_COCKPIT_INPUTS_EMIS_TIF.PNG.DDS",
-      "name": "CESSNA_152_COCKPIT_INPUTS_EMIS.TIF",
-      "extras": "ASOBO_image_converted_meta"
-    },
-    {
-      "uri": "CESSNA_152_COCKPIT_INPUTS_NORM_PNG.PNG.DDS",
-      "name": "CESSNA_152_COCKPIT_INPUTS_NORM.PNG",
-      "extras": "ASOBO_image_converted_meta"
-    },
-    {
-      "uri": "CESSNA_152_COCKPIT_INPUTS_ALBD_PNG.PNG.DDS",
-      "name": "CESSNA_152_COCKPIT_INPUTS_ALBD.PNG",
-      "extras": "ASOBO_image_converted_meta"
-    },
-    {
-      "uri": "CESSNA_152_COCKPIT_INPUTS_COMP_PNG.PNG",
-      "name": "CESSNA_152_COCKPIT_INPUTS_COMP.PNG"
-    },
-    {
-      "uri": "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_NORM_PNG.PNG.DDS",
-      "name": "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_NORM.PNG",
-      "extras": "ASOBO_image_converted_meta"
-    },
-    {
-      "uri": "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_ALBD_PNG.PNG.DDS",
-      "name": "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_ALBD.PNG",
-      "extras": "ASOBO_image_converted_meta"
-    },
-    {
-      "uri": "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_COMP_PNG.PNG",
-      "name": "CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_COMP.PNG"
-    },
-    {
-      "uri": "CESSNA_152_COCKPIT_TOP_SHELL_NORM_PNG.PNG.DDS",
-      "name": "CESSNA_152_COCKPIT_TOP_SHELL_NORM.PNG",
-      "extras": "ASOBO_image_converted_meta"
-    },
-    {
-      "uri": "CESSNA_152_COCKPIT_TOP_SHELL_ALBD_PNG.PNG.DDS",
-      "name": "CESSNA_152_COCKPIT_TOP_SHELL_ALBD.PNG",
-      "extras": "ASOBO_image_converted_meta"
-    },
-    {
-      "uri": "CESSNA_152_COCKPIT_TOP_SHELL_COMP_PNG.PNG",
-      "name": "CESSNA_152_COCKPIT_TOP_SHELL_COMP.PNG"
+      "uri": "ADF_AS87_SCREEN_EMIS.PNG",
+      "name": "ADF_AS87_SCREEN_EMIS"
     }
   ]
 }
