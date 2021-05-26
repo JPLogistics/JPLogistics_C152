@@ -1,0 +1,57 @@
+<Include File="Subtemplates\\Instrument_Subtemplates.xml"/>
+<!-- Instruments #################################################### -->
+<Template Name="C152X_INSTRUMENT_Needle_Airspeed_Template">
+	<DefaultTemplateParameters>
+		<ID>1</ID>
+	</DefaultTemplateParameters>
+	
+	<UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
+		<TEMPLATE_TO_CALL>C152X_INSTRUMENT_Needle_Airspeed_SubTemplate</TEMPLATE_TO_CALL>
+	</UseTemplate>
+</Template>
+
+<Template Name="C152X_INSTRUMENT_Needle_ADF_Template">
+	<DefaultTemplateParameters>
+		<ID>1</ID>
+	</DefaultTemplateParameters>
+	
+	<UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
+		<TEMPLATE_TO_CALL>C152X_INSTRUMENT_Needle_ADF_SubTemplate</TEMPLATE_TO_CALL>
+	</UseTemplate>
+</Template>
+
+<Template Name="C152X_INSTRUMENT_CDI_Template">
+	<DefaultTemplateParameters>
+		<PART_ID>INSTRUMENT_CDI</PART_ID>
+	</DefaultTemplateParameters>
+	
+	<UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
+		<TEMPLATE_TO_CALL>C152X_INSTRUMENT_CDI_SubTemplate</TEMPLATE_TO_CALL>
+	</UseTemplate>
+</Template>
+
+<Template Name="JPL_VISOR_SubTemplate">
+<DefaultTemplateParameters>
+  <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
+  <SCROLL_INCREMENT>701</SCROLL_INCREMENT>
+</DefaultTemplateParameters>
+<Component ID="#NODE_ID#" Node="#NODE_ID#">
+  <UseTemplate Name="ASOBO_GT_Lever_DraggingWheelLeftDrag_Axis">
+    <CURSOR>Grab</CURSOR>
+    <NO_ARROWS/>
+    <DRAG_CODE>
+      16384 (M:DragPercent) *
+      16384 min 0 max (>L:XMLVAR_JPL_VISOR_#ID#)
+    </DRAG_CODE>
+    <ANIM_CODE>(L:XMLVAR_JPL_VISOR_#ID#, position 16k) 16384 / 100 *</ANIM_CODE>
+    <ANIM_NAME>JPL_VISOR</ANIM_NAME>
+    <DRAG_ANIM_NAME>JPL_VISOR</DRAG_ANIM_NAME>
+    <POSITIVE_AXIS_CODE>(L:XMLVAR_JPL_VISOR_#ID#, position 16k) #SCROLL_INCREMENT# + 16384 min (>L:XMLVAR_JPL_VISOR_#ID#)</POSITIVE_AXIS_CODE>
+    <NEGATIVE_AXIS_CODE>(L:XMLVAR_JPL_VISOR_#ID#, position 16k) #SCROLL_INCREMENT# - 0 max (>L:XMLVAR_JPL_VISOR_#ID#)</NEGATIVE_AXIS_CODE>
+    <TOOLTIPID>TT:COCKPIT.TOOLTIPS.SUN_VISORS</TOOLTIPID>
+    <WWISE_EVENT_1></WWISE_EVENT_1>
+    <WWISE_EVENT_2></WWISE_EVENT_2>
+  </UseTemplate>
+</Component>
+</Template>
+

@@ -23296,7 +23296,7 @@
           0.009999999776482582
         ],
         "metallicFactor": 0.0,
-        "roughnessFactor": 0.0
+        "roughnessFactor": 0.5
       },
       "extensions": {
         "ASOBO_material_kitty_glass": {
@@ -23680,6 +23680,7 @@
           "detailNormalTexture": {
             "index": 86,
             "scale": 0.25
+
           }
         }
       },
@@ -34386,6 +34387,11 @@
         0.0,
         1.0
       ],
+      "scale": [
+        1.0,
+        0.6332693099975586,
+        1.0
+      ],
       "mesh": 233,
       "name": "Sun_visors_CoPilot"
     },
@@ -34399,6 +34405,11 @@
         0.9427876472473145,
         0.0,
         0.0,
+        1.0
+      ],
+      "scale": [
+        1.0,
+        0.6332693099975586,
         1.0
       ],
       "mesh": 234,

@@ -53,14 +53,14 @@
     <Animation guid="bccb7df6-a771-458a-bc8f-f7bb2471f8fa" name="DEICE_Lever_Engine_DEICE_Lever_Engine_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="33490c5a-d9a0-46e3-be05-2b3d84661187" name="DEICE_Switch_PitotHeat_DEICE_Switch_PitotHeat" type="standard" typeParam="Autoplay"/>
     <Animation guid="9f85dd95-0a07-4c71-ae7d-5645d9332dc0" name="ELECTRICAL_Switch_Alternator_1_ELECTRICAL_Switch_Alternator_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="027a6701-1a4d-42a2-b7f4-bc0833f53665" name="ELECTRICAL_Switch_Battery_Master_1_ELECTRICAL_Switch_Battery_Ma" type="standard" typeParam="Autoplay"/>
+    <Animation guid="027a6701-1a4d-42a2-b7f4-bc0833f53665" name="ELECTRICAL_Switch_Battery_Master_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="bfd86b4a-d2d5-4910-8bce-8322ddf05ea1" name="ELECTRICAL_Switch_Magneto_ELECTRICAL_Switch_Magneto" type="standard" typeParam="Autoplay"/>
     <Animation guid="a0209361-f6b8-4d7c-be34-88931e855fe5" name="ENGINE_Lever_CarbHeat_DEICE_Lever_Engine_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="51fc2638-d227-438c-9aed-9eed5e33d378" name="ENGINE_Lever_Primer_ENGINE_Lever_Primer" type="standard" typeParam="Autoplay"/>
-    <Animation guid="6b296f0b-6010-4828-9f10-46db961e63ae" name="ENGINE_Lever_Throttle_1_ENGINE_Lever_Throttle_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="79b5b67e-f90b-4d7d-9af7-81e28230afa6" name="FUEL_Lever_Mixture_1_FUEL_Lever_Mixture_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="a163df5a-0acc-4a91-821e-b38db2b332b2" name="FUEL_Lever_Mixture_1_Push_FUEL_Lever_Mixture_1_Push" type="standard" typeParam="Autoplay"/>
-    <Animation guid="ba266684-cea4-4e01-a0f2-aa90a632766b" name="FUEL_Switch_Cutoff_1_FUEL_Switch_Cutoff_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="6b296f0b-6010-4828-9f10-46db961e63ae" name="ENGINE_Lever_Throttle_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="79b5b67e-f90b-4d7d-9af7-81e28230afa6" name="FUEL_Lever_Mixture_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="a163df5a-0acc-4a91-821e-b38db2b332b2" name="FUEL_Lever_Mixture_1_Push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ba266684-cea4-4e01-a0f2-aa90a632766b" name="FUEL_Switch_Cutoff_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="2a237d8d-933f-457e-a2dd-9e5b495507d0" name="HANDLING_Indicator_ElevatorTrim_HANDLING_Indicator_ElevatorTrim" type="standard" typeParam="Autoplay"/>
     <Animation guid="18cd3714-6bf1-4978-8c0d-7284b719c3a6" name="HANDLING_Indicator_Flaps_HANDLING_Indicator_Flaps" type="standard" typeParam="Autoplay"/>
     <Animation guid="929f85c9-fdb4-41c1-9601-dd33c2982eec" name="HANDLING_Lever_Flaps_HANDLING_Lever_Flaps" type="standard" typeParam="Autoplay"/>
@@ -164,8 +164,8 @@
     <Animation guid="09a98fc5-5b39-4cf0-bf5d-22c3baf0d09b" name="TRANSPONDER_Knob_02_TRANSPONDER_Knob_02" type="standard" typeParam="Autoplay"/>
     <Animation guid="1814fa96-1887-4c0a-87d7-05f69c7002bb" name="TRANSPONDER_Knob_03_TRANSPONDER_Knob_03" type="standard" typeParam="Autoplay"/>
     <Animation guid="008a2c9d-bbbd-4e04-9972-54a1a06c2a47" name="TRANSPONDER_Knob_04_TRANSPONDER_Knob_04" type="standard" typeParam="Autoplay"/>
-    <Animation guid="d10c95cd-eb77-451c-be78-cbe7798cc6e4" name="TRANSPONDER_Knob_TRANSPONDER_Knob" type="standard" typeParam="Autoplay"/>
-    <Animation guid="8241277c-f62a-47f5-8729-7c209608c8aa" name="TRANSPONDER_Push_IDT_TRANSPONDER_Push_IDT" type="standard" typeParam="Autoplay"/>
+    <Animation guid="d10c95cd-eb77-451c-be78-cbe7798cc6e4" name="TRANSPONDER_Knob" type="standard" typeParam="Autoplay"/>
+    <Animation guid="8241277c-f62a-47f5-8729-7c209608c8aa" name="TRANSPONDER_Push_IDT" type="standard" typeParam="Autoplay"/>
 
 
     <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank and the 20 in the formula is a scaling factor for the amount of yaw induced variation in the tank indication. The first value is the current tank quantity in liters. 	The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
