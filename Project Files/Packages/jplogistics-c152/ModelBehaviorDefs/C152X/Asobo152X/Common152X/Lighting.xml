@@ -230,10 +230,10 @@
 			<False>
 				<Condition Check="LIGHT_TYPE2">
 					<True>
-						<KEY_ID_2>TOGGLE_PANEL_LIGHTS</KEY_ID_2>
+						<KEY_ID_2>TOGGLE_#LIGHT_TYPE2#_LIGHTS</KEY_ID_2>
 					</True>
 					<False>
-						<KEY_ID_2>TOGGLE_PANEL_LIGHTS</KEY_ID_2>
+						<KEY_ID_2>TOGGLE_#LIGHT_TYPE#_LIGHTS</KEY_ID_2>
 					</False>
 				</Condition>
 			</False>
