@@ -416,11 +416,10 @@
 		    <MIN_VALUE>5</MIN_VALUE>
       </UseTemplate>
 
-      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Cabin_Template"> <!--Dome Light Switch-->
-        </UseTemplate>
-      <UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template"> <!-- White cabin light on ceiling -->
-        <POTENTIOMETER>5</POTENTIOMETER>
-		<SIMVAR_INDEX>1</SIMVAR_INDEX>
+      <UseTemplate Name="C152X_LIGHTING_Switch_Light_Cabin_Template"> <!--Dome Light Switch-->
+      </UseTemplate>
+	  
+      <UseTemplate Name="C152X_LIGHTING_Cabin_Emissive_Template"> <!-- White cabin light on ceiling -->
       </UseTemplate>
 	  
 	  
@@ -436,10 +435,10 @@
 	  </UseTemplate>
       
     <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Cabin_Template"> <!-- Flood lights on/off -->
-		  <NODE_ID>LIGHTING_Switch_Cabin</NODE_ID>
-		  <ANIM_NAME>LIGHTING_Switch_Cabin</ANIM_NAME>
-		  <CIRCUIT_ID>25</CIRCUIT_ID>
-	  </UseTemplate>
+		<NODE_ID>LIGHTING_Switch_Cabin</NODE_ID>
+		<ANIM_NAME>LIGHTING_Switch_Cabin</ANIM_NAME>
+		<CIRCUIT_ID>25</CIRCUIT_ID>
+	</UseTemplate>
       
     </Component>
 
@@ -575,7 +574,7 @@
       <DefaultTemplateParameters>
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
         <POTENTIOMETER>5</POTENTIOMETER>
-				<BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
+		<BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
       </DefaultTemplateParameters>
       <UseTemplate Name="ASOBO_ADF_3Knobs_Frequency_Template">
       </UseTemplate>
@@ -594,8 +593,6 @@
       <UseTemplate Name="ASOBO_5Knobs_Transponder_Template">
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
         <ANIM_LAG>500</ANIM_LAG>
-				<BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
-				<EMISSIVE_POTENTIOMETER>5</EMISSIVE_POTENTIOMETER>
       </UseTemplate>
     </Component>
 	
@@ -644,18 +641,13 @@
 				<UseTemplate Name="ASOBO_GT_Visibility_Code">
 					<VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
 				</UseTemplate>
-      </Component>
+			</Component>
 			<Component ID="PILOT_1" Node="PILOT_1">
 				<UseTemplate Name="ASOBO_GT_Visibility_Code">
 					<VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
 				</UseTemplate>
 			</Component>
-      <Component ID="Red_Dome" Node="LIGHT_C152_CockpitSpotRed">
-        <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_Red_Dome, Bool) == (A:CIRCUIT GENERAL PANEL ON, Bool)</VISIBILITY_CODE>
-        </UseTemplate>
-      </Component>
-    </Component>
+		</Component>
     </Component>
     <Component ID="Sun_visors">
       <UseTemplate Name="JPL_Sun_Visors">
