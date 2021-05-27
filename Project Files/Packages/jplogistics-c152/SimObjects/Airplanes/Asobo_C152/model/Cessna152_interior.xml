@@ -415,9 +415,17 @@
 		    <INIT_VALUE>20</INIT_VALUE>
 		    <MIN_VALUE>5</MIN_VALUE>
       </UseTemplate>
+	  
+	  	<!-- Code for the spkr/phone switch
+		<NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
+		<ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
+		<CIRCUIT_ID>25</CIRCUIT_ID>
+		-->
 
-      <UseTemplate Name="C152X_LIGHTING_Switch_Light_Cabin_Template"> <!--Dome Light Switch-->
+	  <!-- To remove later...
+      <UseTemplate Name="C152X/ASOBO_LIGHTING_Switch_Light_Cabin_Template"> <!--Dome Light Switch--
       </UseTemplate>
+	  -->
 	  
       <UseTemplate Name="C152X_LIGHTING_Cabin_Emissive_Template"> <!-- White cabin light on ceiling -->
       </UseTemplate>
@@ -425,19 +433,20 @@
 	  
       <UseTemplate Name="ASOBO_LIGHTING_Glareshield_Emissive_Template"> <!-- Red light on ceiling -->
         <NODE_ID>LIGHTING_Panel_Emisive</NODE_ID>
-		    <POTENTIOMETER>4</POTENTIOMETER>
+		<POTENTIOMETER>4</POTENTIOMETER>
       </UseTemplate>
 	  
 	  <UseTemplate Name="C152X_LIGHTING_Switch_Light_Panel_Template"> <!-- Upper Panel lights on/off -->
-		<NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
-		<ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
+		<ANIM_NAME>LIGHTING_Switch_Light_Cabin_1</ANIM_NAME>
+		<PART_ID>LIGHTING_Switch_Light_Cabin</PART_ID>
+		<NODE_ID>LIGHTING_Switch_Light_Cabin_1</NODE_ID>
 		<CIRCUIT_ID>25</CIRCUIT_ID>
 	  </UseTemplate>
       
     <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Cabin_Template"> <!-- Flood lights on/off -->
 		<NODE_ID>LIGHTING_Switch_Cabin</NODE_ID>
 		<ANIM_NAME>LIGHTING_Switch_Cabin</ANIM_NAME>
-		<CIRCUIT_ID>25</CIRCUIT_ID>
+		<CIRCUIT_ID>26</CIRCUIT_ID>
 	</UseTemplate>
       
     </Component>

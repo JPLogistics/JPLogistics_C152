@@ -178,6 +178,8 @@
 
 
 <!--##########################################################################-->
+<!-- TO REMOVE LATER
+
 	<Template Name="C152X_LIGHTING_Switch_Light_Cabin_Template">
 	<DefaultTemplateParameters>
 		<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.LIGHTING_FLOODLIGHT_OFF</ANIMTIP_0>
@@ -249,7 +251,7 @@
 				<DIMMER_POS_1_VALUE>0</DIMMER_POS_1_VALUE>
 				<DIMMER_POS_2_VALUE>50</DIMMER_POS_2_VALUE>
 			</Case>
-			<Default> <!-- BRT_DIM_OFF -->
+			<Default> 											<!-- BRT_DIM_OFF --
 				<DIMMER_POS_0_VALUE>100</DIMMER_POS_0_VALUE>
 		<DIMMER_POS_1_VALUE>50</DIMMER_POS_1_VALUE>
 		<DIMMER_POS_2_VALUE>0</DIMMER_POS_2_VALUE>
@@ -316,4 +318,4 @@
 			</Switch>
 		</False>
 	</Condition>
-</Template>
+</Template>-->
