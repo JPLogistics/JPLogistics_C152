@@ -415,12 +415,6 @@
 		    <INIT_VALUE>20</INIT_VALUE>
 		    <MIN_VALUE>5</MIN_VALUE>
       </UseTemplate>
-	  
-	  	<!-- Code for the spkr/phone switch
-		<NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
-		<ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
-		<CIRCUIT_ID>25</CIRCUIT_ID>
-		-->
 
 	  <!-- To remove later...
       <UseTemplate Name="C152X/ASOBO_LIGHTING_Switch_Light_Cabin_Template"> <!--Dome Light Switch--
@@ -430,10 +424,10 @@
       <UseTemplate Name="C152X_LIGHTING_Cabin_Emissive_Template"> <!-- White cabin light on ceiling -->
       </UseTemplate>
 	  
-	  
       <UseTemplate Name="ASOBO_LIGHTING_Glareshield_Emissive_Template"> <!-- Red light on ceiling -->
         <NODE_ID>LIGHTING_Panel_Emisive</NODE_ID>
 		<POTENTIOMETER>4</POTENTIOMETER>
+		<CIRCUIT_ID>28</CIRCUIT_ID>
       </UseTemplate>
 	  
 	  <UseTemplate Name="C152X_LIGHTING_Switch_Light_Panel_Template"> <!-- Upper Panel lights on/off -->
@@ -628,6 +622,12 @@
       </Component>
       <UseTemplate Name="ASOBO_AUDIO_Switch_Marker_Sens_Template">
       </UseTemplate>
+	  
+	  <UseTemplate Name="C152X_Speaker"> 
+	  	<NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
+		<ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
+      </UseTemplate>
+	  
     </Component>
 
     <Component ID="SafetySwitches">

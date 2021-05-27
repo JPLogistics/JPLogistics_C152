@@ -19,3 +19,54 @@
 		</UseTemplate>
   </Component>
 </Template>
+
+<Template Name = "C152X_Speaker">
+	<Update Once="True">
+		#CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+	</Update>
+	<UseTemplate Name = "C152X_2way_switch_xml">
+		<ANIMTIP_0>Speaker</ANIMTIP_0>
+		<ANIMTIP_1>Phone</ANIMTIP_1>
+		<WWISE_EVENT_1>audio_switch_intercom</WWISE_EVENT_1>
+		<WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2>
+		<LEFT_SINGLE_CODE>
+			(L:XMLVAR_Spkr) 0 == 
+			if{
+				1 (&gt;L:XMLVAR_Spkr)
+				#CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+			} els{
+				0 (&gt;L:XMLVAR_Spkr)
+				#CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+			}
+		</LEFT_SINGLE_CODE>
+	</UseTemplate>
+</Template>
+
+<Template Name = "C152X_2way_switch_xml">
+	<DefaultTemplateParameters>
+		<SWITCH_POSITION_TYPE>O</SWITCH_POSITION_TYPE>
+		<SWITCH_POSITION_VAR>SwitchState</SWITCH_POSITION_VAR>
+		<LEFT_SINGLE_CODE></LEFT_SINGLE_CODE>
+		<LEFT_LEAVE_CODE></LEFT_LEAVE_CODE>
+		<INIT_VALUE>0</INIT_VALUE>
+		<ANIMREF_ID>0</ANIMREF_ID>
+		<ANIMTIP_0_ON_PERCENT>0</ANIMTIP_0_ON_PERCENT>
+		<ANIMTIP_1_ON_PERCENT>1</ANIMTIP_1_ON_PERCENT>
+	</DefaultTemplateParameters>
+	<Component ID="#NODE_ID#" Node="#NODE_ID#">
+		<Update Once="True">
+			#INIT_VALUE# (&gt;#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#)
+		</Update>
+		<UseTemplate Name = "ASOBO_GT_Anim_Code">
+			<ANIM_CODE>(#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#) 100 *</ANIM_CODE>
+		</UseTemplate>
+		<UseTemplate Name = "ASOBO_GT_AnimTriggers_2SoundEvents">
+		</UseTemplate>
+		<UseTemplate Name = "ASOBO_GT_Interaction_LeftSingle_Code">
+			<LEFT_SINGLE_CODE>
+				(#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#) ! (&gt;#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#)
+				#LEFT_SINGLE_CODE#
+			</LEFT_SINGLE_CODE>
+		</UseTemplate>
+	</Component>
+</Template>
