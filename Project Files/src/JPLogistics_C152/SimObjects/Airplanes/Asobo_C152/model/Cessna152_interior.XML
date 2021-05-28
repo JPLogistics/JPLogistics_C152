@@ -18,6 +18,13 @@
     <Include ModelBehaviorFile="C152X\Asobo152X\NAVCOM152X\NavComSystem152X.xml"/>
     <Include ModelBehaviorFile="C152X\Asobo152X\NAVCOM152X\ADF152X.xml"/>
 
+
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be345" name="JPL_VISOR_Pilot" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be346" name="JPL_VISOR_CoPilot" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be347" name="Pilot_Window" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be348" name="Pilot_Window_Handle" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be349" name="Pilot_Door_Handle" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be350" name="Pilot_Door" type="standard" typeParam="Autoplay"/>
     <Animation guid="8985b341-024e-4a36-84ab-4f207d742a6c" name="ADF_Knob_Frequency_Hz_ADF_Knob_Frequency_Hz" type="standard" typeParam="Autoplay"/>
     <Animation guid="2e4af946-4d98-4ce2-8702-248ad312b03b" name="ADF_Knob_Frequency_KHz_ADF_Knob_Frequency_KHz" type="standard" typeParam="Autoplay"/>
     <Animation guid="5125cd4d-ea1e-4820-b330-eed0cb2e444c" name="ADF_Knob_Frequency_MHz_ADF_Knob_Frequency_MHz" type="standard" typeParam="Autoplay"/>
@@ -159,7 +166,6 @@
     <Animation guid="e847f7e1-6015-4aa0-a649-451a83ceee49" name="PASSENGER_Switch_Cabin_Air_1_PASSENGER_Switch_Cabin_Air_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="85518240-019b-4cd0-97b9-b261d4263862" name="PASSENGER_Switch_Cabin_Heat_1_PASSENGER_Switch_Cabin_Heat_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="c4a0e231-f4d2-48bb-bc7f-14fa652f4ed6" name="PRESSURIZATION_Needle_Suction_PRESSURIZATION_Needle_Suction" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be345" name="JPL_VISOR" type="standard" typeParam="Autoplay"/>
     <Animation guid="b2030c14-9d92-4990-9182-2a9eab0b9df6" name="TRANSPONDER_Knob_01_TRANSPONDER_Knob_01" type="standard" typeParam="Autoplay"/>
     <Animation guid="09a98fc5-5b39-4cf0-bf5d-22c3baf0d09b" name="TRANSPONDER_Knob_02_TRANSPONDER_Knob_02" type="standard" typeParam="Autoplay"/>
     <Animation guid="1814fa96-1887-4c0a-87d7-05f69c7002bb" name="TRANSPONDER_Knob_03_TRANSPONDER_Knob_03" type="standard" typeParam="Autoplay"/>
@@ -241,6 +247,7 @@
     <!-- ENGINE ########################### -->
     <Component ID="ENGINE_CONTROLS">
       <UseTemplate Name="ASOBO_ENGINE_Lever_Throttle_Template">
+        <ID>1</ID>
       </UseTemplate>
       <UseTemplate Name="ASOBO_FUEL_Lever_Mixture_Template">
         <DRAG_AXIS_SCALE>-400</DRAG_AXIS_SCALE>
@@ -559,31 +566,40 @@
 		<INIT_VALUE>20</INIT_VALUE>
 		<MIN_VALUE>5</MIN_VALUE>
       </UseTemplate>
+      
 
-      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Cabin_Template"> <!--Dome Light Switch-->
-        </UseTemplate>
-      <UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template"> <!-- White cabin light on ceiling -->
-        <POTENTIOMETER>5</POTENTIOMETER>
-		<SIMVAR_INDEX>1</SIMVAR_INDEX>
+      <!-- To remove later...
+      <UseTemplate Name="C152X/ASOBO_LIGHTING_Switch_Light_Cabin_Template"> <!--Dome Light Switch--
+      </UseTemplate>
+	  -->
+
+      <UseTemplate Name="C152X_LIGHTING_Cabin_Emissive_Template">
+        <!-- White cabin light on ceiling -->
       </UseTemplate>
 
       <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Cabin_Template">
         <!-- Flood lights on/off -->
         <NODE_ID>LIGHTING_Switch_Cabin</NODE_ID>
         <ANIM_NAME>LIGHTING_Switch_Cabin</ANIM_NAME>
-        <CIRCUIT_ID>25</CIRCUIT_ID>
+        <CIRCUIT_ID>26</CIRCUIT_ID>
       </UseTemplate>
 	  
       <UseTemplate Name="ASOBO_LIGHTING_Glareshield_Emissive_Template"> <!-- Red light on ceiling -->
         <NODE_ID>LIGHTING_Panel_Emisive</NODE_ID>
 		    <POTENTIOMETER>4</POTENTIOMETER>
+        <CIRCUIT_ID>28</CIRCUIT_ID>
       </UseTemplate>
 	  
 	  <UseTemplate Name="C152X_LIGHTING_Switch_Light_Panel_Template"> <!-- Upper Panel lights on/off -->
-		<NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
-		<ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
-		<CIRCUIT_ID>25</CIRCUIT_ID>
+      <ANIM_NAME>LIGHTING_Switch_Light_Cabin_1</ANIM_NAME>
+      <PART_ID>LIGHTING_Switch_Light_Cabin</PART_ID>
+      <NODE_ID>LIGHTING_Switch_Light_Cabin_1</NODE_ID>
 	  </UseTemplate>
+
+      <UseTemplate Name="C152X_Speaker">
+        <NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
+        <ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
+      </UseTemplate>
 	  
     </Component>
 
@@ -776,6 +792,7 @@
         <NODE_ID>AUDIO_Switch_Test</NODE_ID>
 		<ANIM_NAME>AUDIO_Switch_Test</ANIM_NAME>
       </UseTemplate>-->
+    </Component>
 		<Component ID="ANNUNCIATOR_TEST">
 		  <UseTemplate Name="C152X_Annun_Test">
 			<NODE_ID>AUDIO_Switch_Test</NODE_ID>
@@ -794,23 +811,29 @@
 					<VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
 				</UseTemplate>
 			</Component>
-      <Component ID="Red_Dome" Node="LIGHT_C152_CockpitSpotRed">
-        <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_Red_Dome, Bool) == (A:CIRCUIT GENERAL PANEL ON, Bool)</VISIBILITY_CODE>
-        </UseTemplate>
-      </Component>
-    </Component>
     </Component>
     <Component ID="Sun_visors_Pilot">
-      <UseTemplate Name="JPL_VISOR_SubTemplate">
+      <UseTemplate Name="JPL_Sun_Visors">
         <NODE_ID>Sun_visors_Pilot</NODE_ID>
         <ID>Pilot</ID>
       </UseTemplate>
     </Component>
     <Component ID="Sun_visors_CoPilot">
-      <UseTemplate Name="JPL_VISOR_SubTemplate">
+      <UseTemplate Name="JPL_Sun_Visors">
         <NODE_ID>Sun_visors_CoPilot</NODE_ID>
         <ID>CoPilot</ID>
+      </UseTemplate>
+    </Component>
+    <Component ID="Pilot_Window">
+      <UseTemplate Name="JPL_Window_Template">
+        <NODE_ID>Pilot_Window_Handle</NODE_ID>
+        <ID>Pilot</ID>
+      </UseTemplate>
+    </Component>
+    <Component ID="Pilot_Door">
+      <UseTemplate Name="JPL_Door_Template">
+        <NODE_ID>Pilot_Door_Handle</NODE_ID>
+        <ID>Pilot</ID>
       </UseTemplate>
     </Component>
   </Behaviors>

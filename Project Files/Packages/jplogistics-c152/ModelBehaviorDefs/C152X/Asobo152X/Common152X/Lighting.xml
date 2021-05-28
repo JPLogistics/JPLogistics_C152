@@ -164,3 +164,157 @@
 		</Component>
 	</Condition>
 </Template>
+
+<Template Name="C152X_LIGHTING_Cabin_Emissive_Template">
+  <DefaultTemplateParameters>
+    <NODE_ID>LIGHTING_Cabin_Emissive</NODE_ID>
+    <POTENTIOMETER>1</POTENTIOMETER>
+  </DefaultTemplateParameters>
+  <UseTemplate Name="ASOBO_LIGHTING_Emissive_SubTemplate">
+    <SIMVAR_LIGHT>LIGHT CABIN</SIMVAR_LIGHT>
+    <SIMVAR_LIGHT_ON>LIGHT CABIN ON</SIMVAR_LIGHT_ON>
+  </UseTemplate>
+</Template>
+
+
+<!--##########################################################################-->
+<Template Name="C152X_LIGHTING_Switch_Light_Cabin_Template">
+  <DefaultTemplateParameters>
+    <ANIMTIP_0>TT:COCKPIT.TOOLTIPS.LIGHTING_FLOODLIGHT_OFF</ANIMTIP_0>
+    <ANIMTIP_1>TT:COCKPIT.TOOLTIPS.LIGHTING_FLOODLIGHT_ON</ANIMTIP_1>
+    <WWISE_EVENT_1>cabin_light_switch_on</WWISE_EVENT_1>
+    <WWISE_EVENT_2>cabin_light_switch_off</WWISE_EVENT_2>
+    <NORMALIZED_TIME_1>0.1</NORMALIZED_TIME_1>
+    <NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>
+  </DefaultTemplateParameters>
+  <UseTemplate Name="C152X_LIGHTING_Switch_Light_Template">
+    <LIGHT_TYPE>CABIN</LIGHT_TYPE>
+
+  </UseTemplate>
+</Template>
+
+<Template Name="C152X_LIGHTING_Switch_Light_Template">
+  <DefaultTemplateParameters>
+    <ID>1</ID>
+    <SIMVAR_INDEX>0</SIMVAR_INDEX>
+    <INTERACTION>Switch</INTERACTION>
+  </DefaultTemplateParameters>
+  <UseTemplate Name="C152X_LIGHTING_Switch_Light_SubTemplate">
+  </UseTemplate>
+</Template>
+
+<Template Name="C152X_LIGHTING_Switch_Light_SubTemplate">
+  <DefaultTemplateParameters>
+    <ANIM_NAME>LIGHTING_#INTERACTION#_Light_#LIGHT_TYPE#_#ID#</ANIM_NAME>
+    <PART_ID>LIGHTING_#INTERACTION#_Light_#LIGHT_TYPE#</PART_ID>
+    <NODE_ID>LIGHTING_#INTERACTION#_Light_#LIGHT_TYPE#_#ID#</NODE_ID>
+    <ANIM_SIMVAR>LIGHT #LIGHT_TYPE#:#SIMVAR_INDEX#</ANIM_SIMVAR>
+    <WWISE_EVENT>light_switch</WWISE_EVENT>
+    <Condition Check="SIMVAR_INDEX_2">
+      <True>
+        <ANIM_SIMVAR_2>LIGHT #LIGHT_TYPE#:#SIMVAR_INDEX_2#</ANIM_SIMVAR_2>
+      </True>
+    </Condition>
+    <ANIM_SIMVAR_UNITS>Percent</ANIM_SIMVAR_UNITS>
+    <KEY_ID>TOGGLE_#LIGHT_TYPE#_LIGHTS</KEY_ID>
+    <Condition Valid="POTENTIOMETER">
+      <True>
+        <TOGGLE_COND>1</TOGGLE_COND>
+      </True>
+      <False>
+        <HELPID>HELPID_GAUGE_LIGHT_SWITCH_#LIGHT_TYPE#</HELPID>
+
+      </False>
+    </Condition>
+    <Condition Check="KEY_ID_2">
+      <False>
+        <Condition Check="LIGHT_TYPE2">
+          <True>
+            <KEY_ID_2>TOGGLE_#LIGHT_TYPE2#_LIGHTS</KEY_ID_2>
+          </True>
+          <False>
+            <KEY_ID_2>TOGGLE_#LIGHT_TYPE#_LIGHTS</KEY_ID_2>
+          </False>
+        </Condition>
+      </False>
+    </Condition>
+    <Condition Valid="MULTIPLE_EXCLUSIVE_LIGHTS">
+      <POS_ANIM_SIMVAR_1>0</POS_ANIM_SIMVAR_1>
+      <POS_ANIM_SIMVAR_2>1</POS_ANIM_SIMVAR_2>
+      <POS_OFF>2</POS_OFF>
+    </Condition>
+    <Switch Param="DIMMER">
+      <Case Value="BRT_OFF_DIM">
+        <DIMMER_POS_0_VALUE>100</DIMMER_POS_0_VALUE>
+        <DIMMER_POS_1_VALUE>0</DIMMER_POS_1_VALUE>
+        <DIMMER_POS_2_VALUE>50</DIMMER_POS_2_VALUE>
+      </Case>
+      <Default>
+        <!-- BRT_DIM_OFF -->
+        <DIMMER_POS_0_VALUE>100</DIMMER_POS_0_VALUE>
+        <DIMMER_POS_1_VALUE>50</DIMMER_POS_1_VALUE>
+        <DIMMER_POS_2_VALUE>0</DIMMER_POS_2_VALUE>
+      </Default>
+    </Switch>
+  </DefaultTemplateParameters>
+  <OverrideTemplateParameters>
+    <Condition Check="SIMVAR_INDEX_2">
+      <True>
+        <SIMVAR_LEFT_SINGLE_CODE>
+          #SIMVAR_INDEX# (&gt;K:#KEY_ID#)
+          #SIMVAR_INDEX_2# (&gt;K:#KEY_ID_2#)
+        </SIMVAR_LEFT_SINGLE_CODE>
+      </True>
+      <False>
+        <SIMVAR_LEFT_SINGLE_CODE>
+          #SIMVAR_INDEX# (&gt;K:#KEY_ID#)
+        </SIMVAR_LEFT_SINGLE_CODE>
+      </False>
+    </Condition>
+  </OverrideTemplateParameters>
+
+  <Condition Valid="POTENTIOMETER">
+    <True>
+      <Switch>
+        <Default>
+          <UseTemplate Name="ASOBO_LIGHTING_Switch_Potentiometer_Template">
+            <ANIM_CODE>
+              (A:LIGHT POTENTIOMETER:#POTENTIOMETER#, Percent) 0 != (A:#ANIM_SIMVAR#, bool) and 100 *
+            </ANIM_CODE>
+            <LEFT_SINGLE_CODE>
+              #TOGGLE_COND# (A:#ANIM_SIMVAR#, bool) != if{
+              #SIMVAR_LEFT_SINGLE_CODE#
+              }
+            </LEFT_SINGLE_CODE>
+            <INIT_ON_COND>(A:LIGHT POTENTIOMETER:#POTENTIOMETER#, Percent) 0 &gt; (A:#ANIM_SIMVAR#, bool) and</INIT_ON_COND>
+          </UseTemplate>
+        </Default>
+      </Switch>
+    </True>
+    <False>
+      <Switch>
+        <Default>
+          <Component ID="#NODE_ID#" Node="#NODE_ID#">
+            <DefaultTemplateParameters>
+              <TOOLTIPID>%((A:#ANIM_SIMVAR#, #ANIM_SIMVAR_UNITS#))%{if}TT:COCKPIT.TOOLTIPS.#LIGHT_TYPE#_LIGHT_ON %{else}TT:COCKPIT.TOOLTIPS.#LIGHT_TYPE#_LIGHT_OFF%{end}</TOOLTIPID>
+            </DefaultTemplateParameters>
+            <Switch Param="INTERACTION">
+              <Case Value="Push">
+                <UseTemplate Name="ASOBO_GT_Push_Button_Airliner">
+                  <LEFT_SINGLE_CODE>#SIMVAR_LEFT_SINGLE_CODE#</LEFT_SINGLE_CODE>
+                  <ONLY_SEQ1/>
+                  <SEQ1_EMISSIVE_CODE>(A:#ANIM_SIMVAR#, Bool)</SEQ1_EMISSIVE_CODE>
+                </UseTemplate>
+              </Case>
+              <Default>
+                <UseTemplate Name="ASOBO_GT_Switch_Code">
+                  <LEFT_SINGLE_CODE>#SIMVAR_LEFT_SINGLE_CODE#</LEFT_SINGLE_CODE>
+                </UseTemplate>
+              </Default>
+            </Switch>
+          </Component>
+        </Default>
+      </Switch>
+    </False>
+  </Condition>
+</Template>

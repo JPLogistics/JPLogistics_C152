@@ -1,0 +1,160 @@
+<Template Name="JPL_Sun_Visors">
+  <DefaultTemplateParameters>
+    <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
+    <TOOLTIPID>TT:COCKPIT.TOOLTIPS.SUN_VISORS</TOOLTIPID>
+  </DefaultTemplateParameters>
+  <Component ID="#NODE_ID#" Node="#NODE_ID#">
+    <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
+      <LEFT_LEAVE_CODE/>
+      <LEFT_SINGLE_CODE>(L:JPL_VISOR_#ID#) ! (&gt;L:JPL_VISOR_#ID#)</LEFT_SINGLE_CODE>
+    </UseTemplate>
+    <UseTemplate Name="ASOBO_GT_Anim_Code">
+      <ANIM_NAME>JPL_VISOR_#ID#</ANIM_NAME>
+      <ANIM_LENGTH>100</ANIM_LENGTH>
+      <ANIM_LAG>100</ANIM_LAG>
+      <ANIM_CODE>
+        (* Default is current needle position *)
+        (L:JPL_VISOR_#ID#) 100 *
+      </ANIM_CODE>
+    </UseTemplate>
+  </Component>
+</Template>
+
+<!-- Currently not in use... kind of broken, needs more work! -->
+<!-- <Template Name="JPL_VISOR_SubTemplate">
+  <DefaultTemplateParameters>
+    <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
+    <SCROLL_INCREMENT>701</SCROLL_INCREMENT>
+  </DefaultTemplateParameters>
+  <Component ID="#NODE_ID#" Node="#NODE_ID#">
+    <UseTemplate Name="ASOBO_GT_Lever_DraggingWheelLeftDrag_Axis">
+      <CURSOR>Grab</CURSOR>
+      <NO_ARROWS/>
+      <DRAG_CODE>
+        16384 (M:DragPercent) *
+        16384 min 0 max (>L:XMLVAR_JPL_VISOR_#ID#)
+      </DRAG_CODE>
+      <ANIM_CODE>(L:XMLVAR_JPL_VISOR_#ID#, position 16k) 16384 / 100 *</ANIM_CODE>
+      <ANIM_NAME>JPL_VISOR_#ID#</ANIM_NAME>
+      <DRAG_ANIM_NAME>JPL_VISOR_#ID#</DRAG_ANIM_NAME>
+      <POSITIVE_AXIS_CODE>(L:XMLVAR_JPL_VISOR_#ID#, position 16k) #SCROLL_INCREMENT# + 16384 min (>L:XMLVAR_JPL_VISOR_#ID#)</POSITIVE_AXIS_CODE>
+      <NEGATIVE_AXIS_CODE>(L:XMLVAR_JPL_VISOR_#ID#, position 16k) #SCROLL_INCREMENT# - 0 max (>L:XMLVAR_JPL_VISOR_#ID#)</NEGATIVE_AXIS_CODE>
+      <TOOLTIPID>TT:COCKPIT.TOOLTIPS.SUN_VISORS</TOOLTIPID>
+      <WWISE_EVENT_1></WWISE_EVENT_1>
+      <WWISE_EVENT_2></WWISE_EVENT_2>
+    </UseTemplate>
+  </Component>
+</Template> -->
+
+<Template Name="JPL_Window_Template">
+  <DefaultTemplateParameters>
+    <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
+    <TOOLTIPID>TT:COCKPIT.TOOLTIPS.WINDOW</TOOLTIPID>
+  </DefaultTemplateParameters>
+  <Component ID="#NODE_ID#" Node="#NODE_ID#">
+    <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
+      <LEFT_LEAVE_CODE/>
+      <LEFT_SINGLE_CODE>(L:JPL_WINDOW_#ID#) ! (&gt;L:JPL_WINDOW_#ID#)</LEFT_SINGLE_CODE>
+    </UseTemplate>
+    <UseTemplate Name="ASOBO_GT_Anim_Code">
+      <ANIM_NAME>#ID#_Window_Handle</ANIM_NAME>
+      <ANIM_LENGTH>10</ANIM_LENGTH>
+      <ANIM_LAG>10</ANIM_LAG>
+      <ANIM_CODE>
+        (* Default is current needle position *)
+        (L:JPL_WINDOW_#ID#) 100 *
+      </ANIM_CODE>
+    </UseTemplate>
+    <UseTemplate Name="ASOBO_GT_Anim_Code">
+      <ANIM_NAME>#ID#_Window</ANIM_NAME>
+      <ANIM_LENGTH>22</ANIM_LENGTH>
+      <ANIM_LAG>10</ANIM_LAG>
+      <ANIM_CODE>
+        (* Default is current needle position *)
+        (L:JPL_WINDOW_#ID#) 100 *
+      </ANIM_CODE>
+    </UseTemplate>
+  </Component>
+</Template>
+
+<Template Name="JPL_Door_Template">
+  <DefaultTemplateParameters>
+    <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
+    <TOOLTIPID>TT:COCKPIT.TOOLTIPS.Door</TOOLTIPID>
+  </DefaultTemplateParameters>
+  <Component ID="#NODE_ID#" Node="#NODE_ID#">
+    <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
+      <LEFT_LEAVE_CODE/>
+      <LEFT_SINGLE_CODE>(L:JPL_DOOR_#ID#) ! (&gt;L:JPL_DOOR_#ID#)</LEFT_SINGLE_CODE>
+    </UseTemplate>
+    <UseTemplate Name="ASOBO_GT_Anim_Code">
+      <ANIM_NAME>#ID#_Door_Handle</ANIM_NAME>
+      <ANIM_LENGTH>20</ANIM_LENGTH>
+      <ANIM_LAG>10</ANIM_LAG>
+      <ANIM_CODE>
+        (* Default is current needle position *)
+        (L:JPL_Door_#ID#) 100 *
+      </ANIM_CODE>
+    </UseTemplate>
+    <UseTemplate Name="ASOBO_GT_Anim_Code">
+      <ANIM_NAME>#ID#_Door</ANIM_NAME>
+      <ANIM_LENGTH>20</ANIM_LENGTH>
+      <ANIM_LAG>10</ANIM_LAG>
+      <ANIM_CODE>
+        (* Default is current needle position *)
+        (L:JPL_Door_#ID#) 100 *
+      </ANIM_CODE>
+    </UseTemplate>
+  </Component>
+</Template>
+
+<Template Name = "C152X_Speaker">
+  <Update Once="True">
+    #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+  </Update>
+  <UseTemplate Name = "C152X_2way_switch_xml">
+    <ANIMTIP_0>Speaker</ANIMTIP_0>
+    <ANIMTIP_1>Phone</ANIMTIP_1>
+    <WWISE_EVENT_1>audio_switch_intercom</WWISE_EVENT_1>
+    <WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2>
+    <LEFT_SINGLE_CODE>
+      (L:XMLVAR_Spkr) 0 ==
+      if{
+      1 (&gt;L:XMLVAR_Spkr)
+      #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+      } els{
+      0 (&gt;L:XMLVAR_Spkr)
+      #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+      }
+    </LEFT_SINGLE_CODE>
+  </UseTemplate>
+</Template>
+
+<Template Name = "C152X_2way_switch_xml">
+  <DefaultTemplateParameters>
+    <SWITCH_POSITION_TYPE>O</SWITCH_POSITION_TYPE>
+    <SWITCH_POSITION_VAR>SwitchState</SWITCH_POSITION_VAR>
+    <LEFT_SINGLE_CODE></LEFT_SINGLE_CODE>
+    <LEFT_LEAVE_CODE></LEFT_LEAVE_CODE>
+    <INIT_VALUE>0</INIT_VALUE>
+    <ANIMREF_ID>0</ANIMREF_ID>
+    <ANIMTIP_0_ON_PERCENT>0</ANIMTIP_0_ON_PERCENT>
+    <ANIMTIP_1_ON_PERCENT>1</ANIMTIP_1_ON_PERCENT>
+  </DefaultTemplateParameters>
+  <Component ID="#NODE_ID#" Node="#NODE_ID#">
+    <Update Once="True">
+      #INIT_VALUE# (&gt;#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#)
+    </Update>
+    <UseTemplate Name = "ASOBO_GT_Anim_Code">
+      <ANIM_CODE>(#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#) 100 *</ANIM_CODE>
+    </UseTemplate>
+    <UseTemplate Name = "ASOBO_GT_AnimTriggers_2SoundEvents">
+    </UseTemplate>
+    <UseTemplate Name = "ASOBO_GT_Interaction_LeftSingle_Code">
+      <LEFT_SINGLE_CODE>
+        (#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#) ! (&gt;#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#)
+        #LEFT_SINGLE_CODE#
+      </LEFT_SINGLE_CODE>
+    </UseTemplate>
+  </Component>
+</Template>
