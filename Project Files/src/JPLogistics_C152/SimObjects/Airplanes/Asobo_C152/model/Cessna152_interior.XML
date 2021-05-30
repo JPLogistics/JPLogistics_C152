@@ -71,21 +71,9 @@
     <Animation guid="2a237d8d-933f-457e-a2dd-9e5b495507d0" name="HANDLING_Indicator_ElevatorTrim" type="standard" typeParam="Autoplay"/>
     <Animation guid="18cd3714-6bf1-4978-8c0d-7284b719c3a6" name="HANDLING_Indicator_Flaps" type="standard" typeParam="Autoplay"/>
     <Animation guid="929f85c9-fdb4-41c1-9601-dd33c2982eec" name="HANDLING_Lever_Flaps" type="standard" typeParam="Autoplay"/>
-    <Animation guid="37dd8ab5-7af2-4d1a-8b21-ae9e1a133123" name="HANDLING_RudderPedals_1_1_Elemen" type="standard" typeParam="Autoplay"/>
-    <Animation guid="5fef233a-f25e-44fc-a350-5464637f6831" name="HANDLING_RudderPedals_1_1_Brake" type="standard" typeParam="Autoplay"/>
-    <Animation guid="3e3c3306-e831-4454-8ce8-7ab4979f5347" name="HANDLING_RudderPedals_1_1_Element" type="standard" typeParam="Autoplay"/>
-    <Animation guid="fd881928-ee02-4715-b994-57c56803ab6a" name="HANDLING_RudderPedals_1_2_Brake" type="standard" typeParam="Autoplay"/>
-    <Animation guid="b7cb4576-9d0e-4872-bbc8-c853142908c1" name="HANDLING_RudderPedals_1_2_Ele" type="standard" typeParam="Autoplay"/>
-    <Animation guid="d4c7ba67-0618-4106-a9a7-e2e521e2ce61" name="HANDLING_RudderPedals_1_2_Element" type="standard" typeParam="Autoplay"/>
-    <Animation guid="66676a23-0937-4078-b63f-5c90b6f2c174" name="HANDLING_RudderPedals_1_2_Element" type="standard" typeParam="Autoplay"/>
-    <Animation guid="3251fba8-1eac-45fe-92f2-27db804d2087" name="HANDLING_RudderPedals_2_1_Brake" type="standard" typeParam="Autoplay"/>
-    <Animation guid="2d33c21e-723e-448f-a1ac-43fc5aa1d5da" name="HANDLING_RudderPedals_2_1_Ele" type="standard" typeParam="Autoplay"/>
-    <Animation guid="61fcb273-ec44-47ed-9eeb-42b49131a0d9" name="HANDLING_RudderPedals_2_1_Element" type="standard" typeParam="Autoplay"/>
-    <Animation guid="871d7762-ee0e-4ea3-92e9-b6d86d983fcd" name="HANDLING_RudderPedals_2_2_Brake" type="standard" typeParam="Autoplay"/>
-    <Animation guid="6ec5ecbe-052f-4844-9783-103f316f42f7" name="HANDLING_RudderPedals_2_2_Element" type="standard" typeParam="Autoplay"/>
-    <Animation guid="5cb2ea23-b06d-4e82-947f-36c4e83328c8" name="HANDLING_RudderPedals_1_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="70c89e2b-d3e8-45ec-a939-97aca99e6022" name="HANDLING_RudderPedals_1_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="3f2dc044-2b34-424f-af7d-83a463ff3333" name="HANDLING_RudderPedals_2_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="37dd8ab5-7af2-4d1a-8b21-ae9e1a133123" name="HANDLING_RudderPedals_r" type="standard" typeParam="Autoplay"/>
+    <Animation guid="5fef233a-f25e-44fc-a350-5464637f6831" name="HANDLING_RudderPedals_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="5cb2ea23-b06d-4e82-947f-36c4e83328c8" name="HANDLING_RudderPedals" type="standard" typeParam="Autoplay"/>
     <Animation guid="bb6c12c1-a564-4c39-a8b4-79c1b8b03d2b" name="HANDLING_Wheel_ElevatorTrim_Visual" type="standard" typeParam="Autoplay"/>
     <Animation guid="730def0d-673d-47a4-88f5-fa465a3581f2" name="HANDLING_YOKE_Lever_StickForeAft_Armature" type="standard" typeParam="Autoplay"/>
     <Animation guid="c938ae48-eb65-4c25-9195-0fcaf2d39867" name="HANDLING_YOKE_Lever_StickLR_Armature" type="standard" typeParam="Autoplay"/>
@@ -144,7 +132,6 @@
     <Animation guid="6c61289e-afb5-43cb-9644-64e1bfa50bf1" name="INSTRUMENT_Warning_Turn_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="b9f1a66e-1f1e-4dc3-8ce5-82c88baa36f1" name="LANDING_GEAR_Switch_ParkingBrake" type="standard" typeParam="Autoplay"/>
     <Animation guid="f78b71bc-d374-474c-aeca-a618aa6d3990" name="LIGHTING_Knob_Panel" type="standard" typeParam="Autoplay"/>
-    <Animation guid="0029e713-ea78-4d85-b94e-8d60ef7df055" name="LIGHTING_Switch_CabinAction.001" type="standard" typeParam="Autoplay"/>
     <Animation guid="e7f66033-34b9-4d8b-a50b-e1b494d00479" name="LIGHTING_Switch_Light_Beacon_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="cf2f00e4-aefb-437d-b8c4-b70de8ce73a9" name="LIGHTING_Switch_Light_Cabin_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="f49175cc-e6f6-4421-8522-700b2df94868" name="LIGHTING_Switch_Light_Landing_1" type="standard" typeParam="Autoplay"/>
