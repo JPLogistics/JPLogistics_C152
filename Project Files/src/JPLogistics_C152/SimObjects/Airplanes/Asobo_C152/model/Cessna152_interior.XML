@@ -780,47 +780,47 @@
 		<ANIM_NAME>AUDIO_Switch_Test</ANIM_NAME>
       </UseTemplate>-->
     </Component>
-		<Component ID="ANNUNCIATOR_TEST">
-		  <UseTemplate Name="C152X_Annun_Test">
-			<NODE_ID>AUDIO_Switch_Test</NODE_ID>
-			<ANIM_NAME>AUDIO_Switch_Test</ANIM_NAME>
-			<PART_ID>AUDIO_Switch_Test</PART_ID>
-		  </UseTemplate>			
-		</Component>
-		<Component ID="Pilots_Visibility">
-			<Component ID="PILOT_0" Node="PILOT_0">
-				<UseTemplate Name="ASOBO_GT_Visibility_Code">
-					<VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
-				</UseTemplate>
-      </Component>
-			<Component ID="PILOT_1" Node="PILOT_1">
-				<UseTemplate Name="ASOBO_GT_Visibility_Code">
-					<VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
-				</UseTemplate>
-			</Component>
+    <Component ID="ANNUNCIATOR_TEST">
+        <UseTemplate Name="C152X_Annun_Test">
+        <NODE_ID>AUDIO_Switch_Test</NODE_ID>
+        <ANIM_NAME>AUDIO_Switch_Test</ANIM_NAME>
+        <PART_ID>AUDIO_Switch_Test</PART_ID>
+        </UseTemplate>			
     </Component>
-    <Component ID="Sun_visors_Pilot">
+    <Component ID="Pilots_Visibility">
+        <Component ID="PILOT_0" Node="PILOT_0">
+            <UseTemplate Name="ASOBO_GT_Visibility_Code">
+                <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
+            </UseTemplate>
+    </Component>
+    <Component ID="PILOT_1" Node="PILOT_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+            <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
+        </UseTemplate>
+    </Component>
+    </Component>
+    <Component ID="Pilot_Side_Interaction">
       <UseTemplate Name="JPL_Sun_Visors">
         <NODE_ID>Sun_visors_Pilot</NODE_ID>
         <ID>Pilot</ID>
       </UseTemplate>
-    </Component>
-    <Component ID="Sun_visors_CoPilot">
-      <UseTemplate Name="JPL_Sun_Visors">
-        <NODE_ID>Sun_visors_CoPilot</NODE_ID>
-        <ID>CoPilot</ID>
-      </UseTemplate>
-    </Component>
-    <Component ID="Pilot_Window">
       <UseTemplate Name="JPL_Window_Template">
         <NODE_ID>Pilot_Window_Handle</NODE_ID>
         <ID>Pilot</ID>
       </UseTemplate>
-    </Component>
-    <Component ID="Pilot_Door">
+      <UseTemplate Name="JPL_Window_Template">
+        <NODE_ID>Pilot_Window_Handle</NODE_ID>
+        <ID>Pilot</ID>
+      </UseTemplate>
       <UseTemplate Name="JPL_Door_Template">
         <NODE_ID>Pilot_Door_Handle</NODE_ID>
         <ID>Pilot</ID>
+      </UseTemplate>
+    </Component>
+    <Component ID="CoPilot_Side_Interaction">
+      <UseTemplate Name="JPL_Sun_Visors">
+        <NODE_ID>Sun_visors_CoPilot</NODE_ID>
+        <ID>CoPilot</ID>
       </UseTemplate>
     </Component>
   </Behaviors>
