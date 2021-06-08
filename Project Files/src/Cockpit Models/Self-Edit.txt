@@ -4,21 +4,21 @@
 {
       "name": "WINDSHIELD",
       "alphaMode": "BLEND",
-      "occlusionTexture": { "index": 31 },
-      "emissiveTexture": { "index": 32 },
+      "occlusionTexture": { "index": 42 },
+      "emissiveTexture": { "index": 39 },
       "pbrMetallicRoughness": {
         "baseColorFactor": [ 1.0, 1.0, 1.0, 0.01 ],
         "metallicFactor": 0.0,
         "roughnessFactor": 0.0,
-        "metallicRoughnessTexture": { "index": 31 }
+        "metallicRoughnessTexture": { "index": 42 }
       },
       "extensions": {
         "ASOBO_material_detail_map": {
           "UVOffset": [ 0.14, 0.67 ],
           "UVScale": 5.222,
-          "detailColorTexture": { "index": 33 },
+          "detailColorTexture": { "index": 40 },
           "detailNormalTexture": {
-            "index": 34,
+            "index": 41,
             "scale": 0.25
           }
         }

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document
+        Type="EditionInfo"
+        version="1,0"
+        id="sampleEffect_edition">
+    <Descr>This file contains useful additional properties for edition purpose.</Descr>
+    <SimEdition.EditionInfo RelatedInstanceId="{3074F650-5AD8-4525-A749-19212F17116C}">
+        <NodePosition>374.000,-202.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{3C8FB007-FEBC-4E98-9BE4-D50F43C0CD05}">
+        <NodePosition>280.000,-81.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{8BED0745-C374-4E94-A4B7-697A01578DB0}">
+        <NodePosition>314.000,290.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{B50953AB-9510-4827-90C3-70F9C83ECBB5}">
+        <NodePosition>378.000,495.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{50597EA2-C809-4DE1-BD27-9D9D1C36766A}">
+        <NodePosition>312.000,628.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{C950304B-450C-45C4-BB72-B66F4E7BA372}"/>
+    <SimEdition.EditionInfo RelatedInstanceId="{AB754613-3C37-4E93-864F-5403129BC0DD}">
+        <NodePosition>77.500,718.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{7E328FF4-C9F3-42DC-9A7C-61497D608B2B}">
+        <NodePosition>17.000,629.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{AF373207-6797-47D1-B8CC-624D92EE4A41}">
+        <NodePosition>-76.500,654.500</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{4BF70DC8-7C8E-4F0E-A059-00ADF4C89398}">
+        <NodePosition>-69.000,591.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{AA042CC1-A782-43A1-9891-C2BCBF358F37}">
+        <NodePosition>-724.000,743.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{7EADE6A0-B56C-4C7D-AAD5-2112CE5A30C4}">
+        <NodePosition>-323.000,655.000</NodePosition>
+    </SimEdition.EditionInfo>
+</SimBase.Document>

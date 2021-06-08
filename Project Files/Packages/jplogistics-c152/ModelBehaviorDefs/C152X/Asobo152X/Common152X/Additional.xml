@@ -89,7 +89,7 @@
     </UseTemplate>
     <UseTemplate Name="ASOBO_GT_Anim_Code">
       <ANIM_NAME>#ID#_Door_Handle</ANIM_NAME>
-      <ANIM_LENGTH>10</ANIM_LENGTH>
+      <ANIM_LENGTH>20</ANIM_LENGTH>
       <ANIM_LAG>10</ANIM_LAG>
       <ANIM_CODE>
         (* Default is current needle position *)
@@ -98,7 +98,7 @@
     </UseTemplate>
     <UseTemplate Name="ASOBO_GT_Anim_Code">
       <ANIM_NAME>#ID#_Door</ANIM_NAME>
-      <ANIM_LENGTH>22</ANIM_LENGTH>
+      <ANIM_LENGTH>20</ANIM_LENGTH>
       <ANIM_LAG>10</ANIM_LAG>
       <ANIM_CODE>
         (* Default is current needle position *)

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="AceXML" version="1,0">
+    <Descr>AceXML Document</Descr>
+    <WorldBase.Flight>
+        <VisualEffect.VisualEffect InstanceId="{3074F650-5AD8-4525-A749-19212F17116C}">
+            <EmitterList InstanceId="{C950304B-450C-45C4-BB72-B66F4E7BA372}">
+                <ObjectReference InstanceId="{3C8FB007-FEBC-4E98-9BE4-D50F43C0CD05}" id="Emitter"/>
+            </EmitterList>
+        </VisualEffect.VisualEffect>
+        <VisualEffect.Emitter InstanceId="{3C8FB007-FEBC-4E98-9BE4-D50F43C0CD05}">
+            <ParticleRate>{00000000-0000-0000-0000-000000000000}, 1.000000</ParticleRate>
+            <ParticleInit>
+                <ObjectReference InstanceId="{8BED0745-C374-4E94-A4B7-697A01578DB0}" id="BlockParticleInit"/>
+            </ParticleInit>
+        </VisualEffect.Emitter>
+        <VisualEffect.BlockParticleInit InstanceId="{8BED0745-C374-4E94-A4B7-697A01578DB0}">
+            <ParticleUpdate>
+                <ObjectReference InstanceId="{B50953AB-9510-4827-90C3-70F9C83ECBB5}" id="BlockParticleUpdate"/>
+            </ParticleUpdate>
+            <ParticleLifetime>
+                <FloatIn>{00000000-0000-0000-0000-000000000000}, 5.000000</FloatIn>
+            </ParticleLifetime>
+            <ParticleSize>
+                <FloatIn>{00000000-0000-0000-0000-000000000000}, 1.000000</FloatIn>
+            </ParticleSize>
+            <ParticleVelocity>
+                <Float3In>{00000000-0000-0000-0000-000000000000}, 0.000000, 1.000000, 0.000000</Float3In>
+            </ParticleVelocity>
+        </VisualEffect.BlockParticleInit>
+        <VisualEffect.BlockParticleUpdate InstanceId="{B50953AB-9510-4827-90C3-70F9C83ECBB5}">
+            <ParticleOutput>
+                <ObjectReference InstanceId="{50597EA2-C809-4DE1-BD27-9D9D1C36766A}" id="Output"/>
+            </ParticleOutput>
+        </VisualEffect.BlockParticleUpdate>
+        <VisualEffect.Output InstanceId="{50597EA2-C809-4DE1-BD27-9D9D1C36766A}">
+            <ParticleColor>
+                <ColorIn>{62A5E626-BB2B-492C-B854-0599FAF953E6}, 0, 0, 0, 0</ColorIn>
+            </ParticleColor>
+        </VisualEffect.Output>
+        <VisualEffect.Vector4 InstanceId="{4BF70DC8-7C8E-4F0E-A059-00ADF4C89398}">
+            <OutputValue>{62A5E626-BB2B-492C-B854-0599FAF953E6}</OutputValue>
+            <x>{00000000-0000-0000-0000-000000000000}, 1.000000</x>
+            <y>{00000000-0000-0000-0000-000000000000}, 1.000000</y>
+            <z>{00000000-0000-0000-0000-000000000000}, 1.000000</z>
+            <w>{4C5CB84A-0BC8-4397-86A4-801A022CD543}, 0.000000</w>
+        </VisualEffect.Vector4>
+        <VisualEffect.GetParticleAttribute InstanceId="{AA042CC1-A782-43A1-9891-C2BCBF358F37}">
+            <OutputValue>{A4882E31-572E-4A67-B3AD-42F6BD127EBB}</OutputValue>
+            <ParticleAttributeType>AgeOverLifetime</ParticleAttributeType>
+        </VisualEffect.GetParticleAttribute>
+        <VisualEffect.Lerp InstanceId="{7EADE6A0-B56C-4C7D-AAD5-2112CE5A30C4}">
+            <OutputValue>{4C5CB84A-0BC8-4397-86A4-801A022CD543}</OutputValue>
+            <xVariant>{00000000-0000-0000-0000-000000000000}, 1.000000</xVariant>
+            <FXTime>{A4882E31-572E-4A67-B3AD-42F6BD127EBB}, 0.000000</FXTime>
+        </VisualEffect.Lerp>
+    </WorldBase.Flight>
+</SimBase.Document>
