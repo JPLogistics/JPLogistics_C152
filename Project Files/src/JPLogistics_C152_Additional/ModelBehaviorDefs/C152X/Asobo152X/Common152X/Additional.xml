@@ -1,3 +1,4 @@
+<!--
 <Template Name="JPL_Sun_Visors">
   <DefaultTemplateParameters>
     <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
@@ -19,9 +20,9 @@
     </UseTemplate>
   </Component>
 </Template>
-
+-->
 <!-- Currently not in use... kind of broken, needs more work! -->
-<!-- <Template Name="JPL_VISOR_SubTemplate">
+ <Template Name="JPL_Sun_Visors">
   <DefaultTemplateParameters>
     <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
     <SCROLL_INCREMENT>701</SCROLL_INCREMENT>
@@ -40,11 +41,11 @@
       <POSITIVE_AXIS_CODE>(L:XMLVAR_JPL_VISOR_#ID#, position 16k) #SCROLL_INCREMENT# + 16384 min (>L:XMLVAR_JPL_VISOR_#ID#)</POSITIVE_AXIS_CODE>
       <NEGATIVE_AXIS_CODE>(L:XMLVAR_JPL_VISOR_#ID#, position 16k) #SCROLL_INCREMENT# - 0 max (>L:XMLVAR_JPL_VISOR_#ID#)</NEGATIVE_AXIS_CODE>
       <TOOLTIPID>TT:COCKPIT.TOOLTIPS.SUN_VISORS</TOOLTIPID>
-      <WWISE_EVENT_1></WWISE_EVENT_1>
-      <WWISE_EVENT_2></WWISE_EVENT_2>
+      <WWISE_EVENT_1>door</WWISE_EVENT_1>
+      <WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2> 
     </UseTemplate>
   </Component>
-</Template> -->
+</Template> 
 
 <Template Name="JPL_Window_Template">
   <DefaultTemplateParameters>
@@ -62,16 +63,18 @@
       <ANIM_LAG>10</ANIM_LAG>
       <ANIM_CODE>
         (* Default is current needle position *)
-        (L:JPL_WINDOW_#ID#) 100 *
+        (L:JPL_WINDOW_#ID#) 6 *
       </ANIM_CODE>
+	  <WWISE_EVENT_1>audio_switch_intercom</WWISE_EVENT_1>
+      <WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2>
     </UseTemplate>
     <UseTemplate Name="ASOBO_GT_Anim_Code">
       <ANIM_NAME>#ID#_Window</ANIM_NAME>
       <ANIM_LENGTH>22</ANIM_LENGTH>
-      <ANIM_LAG>10</ANIM_LAG>
+      <ANIM_LAG>22</ANIM_LAG>
       <ANIM_CODE>
         (* Default is current needle position *)
-        (L:JPL_WINDOW_#ID#) 100 *
+        (L:JPL_WINDOW_#ID#) 20 *
       </ANIM_CODE>
     </UseTemplate>
   </Component>
@@ -89,20 +92,20 @@
     </UseTemplate>
     <UseTemplate Name="ASOBO_GT_Anim_Code">
       <ANIM_NAME>#ID#_Door_Handle</ANIM_NAME>
-      <ANIM_LENGTH>20</ANIM_LENGTH>
-      <ANIM_LAG>10</ANIM_LAG>
+      <ANIM_LENGTH>10</ANIM_LENGTH>
+      <ANIM_LAG>20</ANIM_LAG>
       <ANIM_CODE>
         (* Default is current needle position *)
-        (L:JPL_Door_#ID#) 100 *
-      </ANIM_CODE>
+        (L:JPL_Door_#ID#) 18 *
+      </ANIM_CODE>  
     </UseTemplate>
     <UseTemplate Name="ASOBO_GT_Anim_Code">
       <ANIM_NAME>#ID#_Door</ANIM_NAME>
-      <ANIM_LENGTH>20</ANIM_LENGTH>
-      <ANIM_LAG>10</ANIM_LAG>
+      <ANIM_LENGTH>30</ANIM_LENGTH>
+      <ANIM_LAG>30</ANIM_LAG>
       <ANIM_CODE>
         (* Default is current needle position *)
-        (L:JPL_Door_#ID#) 100 *
+        (L:JPL_Door_#ID#) 30 *
       </ANIM_CODE>
     </UseTemplate>
   </Component>
@@ -158,3 +161,27 @@
     </UseTemplate>
   </Component>
 </Template>
+
+<!--  ############DOWNSIZED PRIMER TEMPLATE###############
+<Template Name="C152X_ENGINE_Lever_Primer_Template1">
+	<DefaultTemplateParameters>
+		<ID>1</ID>
+	</DefaultTemplateParameters>
+	<UseTemplate Name="C152X_ENGINE_Primer_Template2">
+		<INTERACTION_TYPE>LEVER</INTERACTION_TYPE>
+	</UseTemplate>
+</Template>
+	
+<Template Name="C152X_ENGINE_Primer_Template2">
+	<Component ID="#NODE_ID#" Node="#NODE_ID#">
+		<Switch Param="INTERACTION_TYPE">
+			<Case Value="LEVER">
+				<UseTemplate Name="ASOBO_GT_Switch">
+					<EVENTID>TOGGLE_PRIMER1</EVENTID>
+					<ANIM_SIMVAR>RECIP ENG PRIMER:1</ANIM_SIMVAR>
+				</UseTemplate>
+			</Case>
+		</Switch>
+	</Component>
+</Template>
+-->

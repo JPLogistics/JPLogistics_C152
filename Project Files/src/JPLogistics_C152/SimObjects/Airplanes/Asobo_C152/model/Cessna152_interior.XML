@@ -17,6 +17,16 @@
     <Include ModelBehaviorFile="C152X\Asobo152X\Common152X.xml"/>
     <Include ModelBehaviorFile="C152X\Asobo152X\NAVCOM152X\NavComSystem152X.xml"/>
     <Include ModelBehaviorFile="C152X\Asobo152X\NAVCOM152X\ADF152X.xml"/>
+	
+		<!-- C152X Modification courtesy of G36 Improvement Project-- WIP -->
+	<Include Path="C152X\CustomLogic.xml"/>
+		
+	<Component ID="C152X_Custom_Behavior">
+		<UseTemplate Name="Fuel_Primer_Logic"></UseTemplate>
+		<UseTemplate Name="Engine_Start_Logic"></UseTemplate>
+		<!--<UseTemplate Name="Fuel_Pressure_Logic"></UseTemplate>-->
+	</Component>
+		<!--End of C152X Modification -------------------------------------->
 
 
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be345" name="JPL_VISOR_Pilot" type="standard" typeParam="Autoplay"/>
@@ -73,10 +83,10 @@
     <Animation guid="929f85c9-fdb4-41c1-9601-dd33c2982eec" name="HANDLING_Lever_Flaps" type="standard" typeParam="Autoplay"/>
     <Animation guid="37dd8ab5-7af2-4d1a-8b21-ae9e1a133123" name="HANDLING_RudderPedals_r" type="standard" typeParam="Autoplay"/>
     <Animation guid="5fef233a-f25e-44fc-a350-5464637f6831" name="HANDLING_RudderPedals_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="5cb2ea23-b06d-4e82-947f-36c4e83328c8" name="HANDLING_RudderPedals" type="standard" typeParam="Autoplay"/>
+    <Animation guid="5cb2ea23-b06d-4e82-947f-36c4e83328c8" name="HANDLING_RudderPedals_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="bb6c12c1-a564-4c39-a8b4-79c1b8b03d2b" name="HANDLING_Wheel_ElevatorTrim_Visual" type="standard" typeParam="Autoplay"/>
-    <Animation guid="730def0d-673d-47a4-88f5-fa465a3581f2" name="HANDLING_YOKE_Lever_StickForeAft_Armature" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c938ae48-eb65-4c25-9195-0fcaf2d39867" name="HANDLING_YOKE_Lever_StickLR_Armature" type="standard" typeParam="Autoplay"/>
+    <Animation guid="730def0d-673d-47a4-88f5-fa465a3581f2" name="HANDLING_YOKE_Lever_StickForeAft" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c938ae48-eb65-4c25-9195-0fcaf2d39867" name="HANDLING_YOKE_Lever_StickLR" type="standard" typeParam="Autoplay"/>
     <Animation guid="c94f0c24-4091-4153-b627-64832566840a" name="INSTRUMENT_ADF_Dial_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="22d7a3fd-687f-46cf-9f57-7683b775db65" name="INSTRUMENT_ADF_Knob_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="7be54336-fb96-49fa-9df4-022a4356feb2" name="INSTRUMENT_ADF_Needle_1" type="standard" typeParam="Autoplay"/>
@@ -252,6 +262,7 @@
       <UseTemplate Name="ASOBO_FUEL_Switch_Cutoff_Template">
         <AXIS>X</AXIS>
         <INVERT_SWITCH_ON_CONDITION>True</INVERT_SWITCH_ON_CONDITION>
+		<NODE_ID>FUEL_Switch_Cutoff_1</NODE_ID>
       </UseTemplate>
       <CameraTitle>Checklist_FuelValve</CameraTitle>
     </Component>
@@ -418,31 +429,26 @@
           <SIMVAR_UNIT>liter</SIMVAR_UNIT>
 
           <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
-
-          <REF_VALUE_0>2.8676 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_0>
+		<REF_VALUE_0>2.8676 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_0>
           <REF_VALUE_1>
-            11.3562 @FuelTankSensorAdjustmentLeftTank
-          </REF_VALUE_1>
-          <REF_VALUE_2>
-            22.7125 @FuelTankSensorAdjustmentLeftTank
-          </REF_VALUE_2>
-          <REF_VALUE_3>
-            34.0687 @FuelTankSensorAdjustmentLeftTank
-          </REF_VALUE_3>
-          <REF_VALUE_4>
-            45.4249 @FuelTankSensorAdjustmentLeftTank
-          </REF_VALUE_4>
+            11.3562 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_1>
+            <REF_VALUE_2>
+              22.7125 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_2>
+              <REF_VALUE_3>
+                34.0687 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_3>
+                <REF_VALUE_4>
+                  45.4249 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_4>
 
-          <ANIM_VALUE_0>0</ANIM_VALUE_0>
-          <ANIM_VALUE_1>30</ANIM_VALUE_1>
-          <ANIM_VALUE_2>60</ANIM_VALUE_2>
-          <ANIM_VALUE_3>90</ANIM_VALUE_3>
-          <ANIM_VALUE_4>100</ANIM_VALUE_4>
-          <MAX_POINT_INDEX>5</MAX_POINT_INDEX>
-          <ANIM_LENGTH>100</ANIM_LENGTH>
-          <MAX_DISPLAYABLE>100</MAX_DISPLAYABLE>
-          <MIN_DISPLAYABLE>0</MIN_DISPLAYABLE>
-        </UseTemplate>
+                            <ANIM_VALUE_0>0</ANIM_VALUE_0>
+                            <ANIM_VALUE_1>30</ANIM_VALUE_1>
+                            <ANIM_VALUE_2>60</ANIM_VALUE_2>
+                            <ANIM_VALUE_3>90</ANIM_VALUE_3>
+                            <ANIM_VALUE_4>100</ANIM_VALUE_4>
+                            <MAX_POINT_INDEX>5</MAX_POINT_INDEX>
+                            <ANIM_LENGTH>100</ANIM_LENGTH>
+                            <MAX_DISPLAYABLE>100</MAX_DISPLAYABLE>
+                            <MIN_DISPLAYABLE>0</MIN_DISPLAYABLE>
+                          </UseTemplate>
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Fuel_Quantity_Template">
           <TANK_ID>RIGHT MAIN</TANK_ID>
           <FAILURE_CODE>0</FAILURE_CODE>
@@ -454,31 +460,26 @@
           <SIMVAR_UNIT>liter</SIMVAR_UNIT>
 
           <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
-
-          <REF_VALUE_0>2.8676 @FuelTankSensorAdjustmentRightTank</REF_VALUE_0>
+		<REF_VALUE_0>2.8676 @FuelTankSensorAdjustmentRightTank</REF_VALUE_0>
           <REF_VALUE_1>
-            11.3562 @FuelTankSensorAdjustmentRightTank
-          </REF_VALUE_1>
-          <REF_VALUE_2>
-            22.7125 @FuelTankSensorAdjustmentRightTank
-          </REF_VALUE_2>
-          <REF_VALUE_3>
-            34.0687 @FuelTankSensorAdjustmentRightTank
-          </REF_VALUE_3>
-          <REF_VALUE_4>
-            45.4249 @FuelTankSensorAdjustmentRightTank
-          </REF_VALUE_4>
+            11.3562 @FuelTankSensorAdjustmentRightTank</REF_VALUE_1>
+            <REF_VALUE_2>
+              22.7125 @FuelTankSensorAdjustmentRightTank</REF_VALUE_2>
+              <REF_VALUE_3>
+                34.0687 @FuelTankSensorAdjustmentRightTank</REF_VALUE_3>
+                <REF_VALUE_4>
+                  45.4249 @FuelTankSensorAdjustmentRightTank</REF_VALUE_4>
 
-          <ANIM_VALUE_0>0</ANIM_VALUE_0>
-          <ANIM_VALUE_1>30</ANIM_VALUE_1>
-          <ANIM_VALUE_2>60</ANIM_VALUE_2>
-          <ANIM_VALUE_3>90</ANIM_VALUE_3>
-          <ANIM_VALUE_4>100</ANIM_VALUE_4>
-          <MAX_POINT_INDEX>5</MAX_POINT_INDEX>
-          <ANIM_LENGTH>100</ANIM_LENGTH>
-          <MAX_DISPLAYABLE>100</MAX_DISPLAYABLE>
-          <MIN_DISPLAYABLE>0</MIN_DISPLAYABLE>
-        </UseTemplate>
+                            <ANIM_VALUE_0>0</ANIM_VALUE_0>
+                            <ANIM_VALUE_1>30</ANIM_VALUE_1>
+                            <ANIM_VALUE_2>60</ANIM_VALUE_2>
+                            <ANIM_VALUE_3>90</ANIM_VALUE_3>
+                            <ANIM_VALUE_4>100</ANIM_VALUE_4>
+                            <MAX_POINT_INDEX>5</MAX_POINT_INDEX>
+                            <ANIM_LENGTH>100</ANIM_LENGTH>
+                            <MAX_DISPLAYABLE>100</MAX_DISPLAYABLE>
+                            <MIN_DISPLAYABLE>0</MIN_DISPLAYABLE>
+                          </UseTemplate>
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Ammeter_Template">
           <FAILURE_CODE>50</FAILURE_CODE>
           <INVERT_ANIM>True</INVERT_ANIM>
@@ -532,6 +533,8 @@
         <KNOB_TURN_SPEED>4.0</KNOB_TURN_SPEED>
 		<INIT_VALUE>20</INIT_VALUE>
 		<MIN_VALUE>5</MIN_VALUE>
+		<ANIMTIP_0>Instrument Lights (%((A:LIGHT POTENTIOMETER:5, Percent))%!d!%)</ANIMTIP_0>
+		<ANIMTIP_1>Instrument Lights (%((A:LIGHT POTENTIOMETER:5, Percent))%!d!%)</ANIMTIP_1>
       </UseTemplate>
       
 
@@ -720,7 +723,7 @@
     <Component ID="TRANSPONDER">
       <UseTemplate Name="ASOBO_5Knobs_Transponder_Template">
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
-        <ANIM_LAG>500</ANIM_LAG>
+        <ANIM_LAG>200</ANIM_LAG>
 				<BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
 				<EMISSIVE_POTENTIOMETER>5</EMISSIVE_POTENTIOMETER>
       </UseTemplate>
@@ -788,10 +791,12 @@
         <NODE_ID>Pilot_Window_Handle</NODE_ID>
         <ID>Pilot</ID>
       </UseTemplate>
-      <UseTemplate Name="JPL_Window_Template">
+      <!-- duplicate?
+	  <UseTemplate Name="JPL_Window_Template">
         <NODE_ID>Pilot_Window_Handle</NODE_ID>
         <ID>Pilot</ID>
       </UseTemplate>
+	  -->
       <UseTemplate Name="JPL_Door_Template">
         <NODE_ID>Pilot_Door_Handle</NODE_ID>
         <ID>Pilot</ID>

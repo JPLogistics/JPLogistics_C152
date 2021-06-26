@@ -113,9 +113,10 @@
 		<DefaultTemplateParameters>			
 			<Switch Param="INTERACTION_TYPE">				
 				<Case Value="KNOB">
-					<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.NAVCOM_#RADIO_TYPE#_VOLUME_DECREASE</ANIMTIP_0>
+					<!--<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.NAVCOM_#RADIO_TYPE#_VOLUME_DECREASE</ANIMTIP_0>-->
+					<ANIMTIP_0>#RADIO_TYPE# #ID# VOLUME (%((A:#RADIO_TYPE# VOLUME:#ID#, percent))%!d!%)</ANIMTIP_0>
 					<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
-					<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.NAVCOM_#RADIO_TYPE#_VOLUME_INCREASE</ANIMTIP_1>
+					<ANIMTIP_1>#RADIO_TYPE# #ID# VOLUME (%((A:#RADIO_TYPE# VOLUME:#ID#, percent))%!d!%)</ANIMTIP_1>
 					<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
 					<ANIMREF_ID>1</ANIMREF_ID>
 				</Case>	
@@ -128,7 +129,7 @@
 						<UseTemplate Name="ASOBO_GT_Update">
 							<FREQUENCY>1</FREQUENCY>	
 							<!-- Knob pull works but for now the function of COM TEST (SQ disabled) not modelled-->
-							<UPDATE_CODE></UPDATE_CODE-->						
+							<UPDATE_CODE></UPDATE_CODE>						
 						</UseTemplate>
 					</False>
 				</Condition>

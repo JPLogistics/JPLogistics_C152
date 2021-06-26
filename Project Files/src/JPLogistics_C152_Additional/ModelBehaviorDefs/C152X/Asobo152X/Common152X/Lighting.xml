@@ -147,13 +147,13 @@
 				<ANTICLOCKWISE_CODE>(&gt;K:AUDIO_PANEL_VOLUME_DEC)</ANTICLOCKWISE_CODE>
 				<ANIM_CODE>(O:Knob_Position)</ANIM_CODE>
 				<ANIM_NAME>#DIMMING_ANIM_NAME#</ANIM_NAME>
-				<ANIMTIP_0>Decrease Night Light Brightness</ANIMTIP_0>
+				<ANIMTIP_0>Night Light Brightness (%((A:LIGHT POTENTIOMETER:4, Percent))%!d!%)</ANIMTIP_0>
 				<ANIMTIP_0_ON_CURSOR>TurnLeft</ANIMTIP_0_ON_CURSOR>
-				<ANIMTIP_1>Increase Night Light Brightness</ANIMTIP_1>
+				<ANIMTIP_1>Night Light Brightness (%((A:LIGHT POTENTIOMETER:4, Percent))%!d!%)</ANIMTIP_1>
 				<ANIMTIP_1_ON_CURSOR>TurnRight</ANIMTIP_1_ON_CURSOR>
 				<!--<LIGHT_EVENTID>TOGGLE_RECOGNITION_LIGHTS</LIGHT_EVENTID>-->
 				<CLOCKWISE_CODE>
-					(O:Knob_Position) #KNOB_SPEED# + 40 min (&gt;O:Knob_Position)
+					(O:Knob_Position) #KNOB_SPEED# + 100 min (&gt;O:Knob_Position)
 					(O:Knob_Position) #DIMMING_RANGE# * #DIMMING_MIN_SCALED# + (&gt;K:LIGHT_POTENTIOMETER_#POTENTIOMETER#_SET)
 				</CLOCKWISE_CODE>
 				<ANTICLOCKWISE_CODE>
