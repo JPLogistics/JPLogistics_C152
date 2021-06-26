@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ModelInfo version="1.1" guid="{4423ca76-b01b-4df3-b3cb-de57f26f0556}">
-	
-	<LODS>
-		<LOD minSize="0" ModelFile="Models.gltf"/>
-	</LODS>
-  <Animation guid="fa55ed4e-340b-4171-8558-d1accfaff752" name="JPL_VISOR" type="standard" typeParam="Autoplay"/>
-  <Animation guid="60f8b7d8-97ff-4bc8-8ff4-f99ca05ec649" name="LIGHTING_Switch_Cabin" type="standard" typeParam="Autoplay"/>
-</ModelInfo>
