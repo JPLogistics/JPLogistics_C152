@@ -72,9 +72,9 @@
     <Animation guid="9f85dd95-0a07-4c71-ae7d-5645d9332dc0" name="ELECTRICAL_Switch_Alternator_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="027a6701-1a4d-42a2-b7f4-bc0833f53665" name="ELECTRICAL_Switch_Battery_Master_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="bfd86b4a-d2d5-4910-8bce-8322ddf05ea1" name="ELECTRICAL_Switch_Magneto" type="standard" typeParam="Autoplay"/>
-    <Animation guid="a0209361-f6b8-4d7c-be34-88931e855fe5" name="ENGINE_Lever_CarbHeat_DEICE_Lever_Engine_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="51fc2638-d227-438c-9aed-9eed5e33d378" name="ENGINE_Lever_Primer" type="standard" typeParam="Autoplay"/>
-    <Animation guid="6b296f0b-6010-4828-9f10-46db961e63ae" name="ENGINE_Lever_Throttle_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="a0209361-f6b8-4d7c-be34-88931e855fe5" name="ENGINE_Lever_CarbHeat_DEICE_Lever_Engine_1" type="standard"/>
+    <Animation guid="51fc2638-d227-438c-9aed-9eed5e33d378" name="ENGINE_Lever_Primer" type="standard"/>
+    <Animation guid="6b296f0b-6010-4828-9f10-46db961e63ae" name="ENGINE_Lever_Throttle_1" type="standard"/>
     <Animation guid="79b5b67e-f90b-4d7d-9af7-81e28230afa6" name="FUEL_Lever_Mixture_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="a163df5a-0acc-4a91-821e-b38db2b332b2" name="FUEL_Lever_Mixture_1_Push" type="standard" typeParam="Autoplay"/>
     <Animation guid="ba266684-cea4-4e01-a0f2-aa90a632766b" name="FUEL_Switch_Cutoff_1" type="standard" typeParam="Autoplay"/>
@@ -244,10 +244,11 @@
     <!-- ENGINE ########################### -->
     <Component ID="ENGINE_CONTROLS">
       <UseTemplate Name="ASOBO_ENGINE_Lever_Throttle_Template">
-	    <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
+        <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
         <ID>1</ID>
       </UseTemplate>
       <UseTemplate Name="ASOBO_FUEL_Lever_Mixture_Template">
+        <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
         <DRAG_AXIS_SCALE>-400</DRAG_AXIS_SCALE>
         <BUTTON_NODE_ID>FUEL_Lever_Mixture_1_Push</BUTTON_NODE_ID>
       </UseTemplate>
@@ -706,7 +707,7 @@
       <DefaultTemplateParameters>
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
         <POTENTIOMETER>5</POTENTIOMETER>
-		<BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
+				<BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
       </DefaultTemplateParameters>
       <UseTemplate Name="C152X_ADF_3Knobs_Frequency_Template">
       </UseTemplate>
@@ -772,16 +773,30 @@
         </UseTemplate>			
     </Component>
     <Component ID="Pilots_Visibility">
-        <Component ID="PILOT_0" Node="PILOT_0">
+      <Component ID="PILOT_0" Node="PILOT_0">
             <UseTemplate Name="ASOBO_GT_Visibility_Code">
                 <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
             </UseTemplate>
-    </Component>
-    <Component ID="PILOT_1" Node="PILOT_1">
+      </Component>
+      <Component ID="PILOT_1" Node="PILOT_1">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
             <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
         </UseTemplate>
+      </Component>
     </Component>
+    <Component ID="Baggage_Visibility">
+      <!-- TO DO
+      <Component ID="PILOT_0" Node="PILOT_0">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="PILOT_1" Node="PILOT_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      -->
     </Component>
     <Component ID="Pilot_Side_Interaction">
       <UseTemplate Name="JPL_Sun_Visors">

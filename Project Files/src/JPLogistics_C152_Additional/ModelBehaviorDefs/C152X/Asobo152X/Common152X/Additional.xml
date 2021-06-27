@@ -59,11 +59,11 @@
     </UseTemplate>
     <UseTemplate Name="ASOBO_GT_Anim_Code">
       <ANIM_NAME>#ID#_Window_Handle</ANIM_NAME>
-      <ANIM_LENGTH>10</ANIM_LENGTH>
+      <ANIM_LENGTH>20</ANIM_LENGTH>
       <ANIM_LAG>10</ANIM_LAG>
       <ANIM_CODE>
         (* Default is current needle position *)
-        (L:JPL_WINDOW_#ID#) 6 *
+        (L:JPL_WINDOW_#ID#) 20 *
       </ANIM_CODE>
 	  <WWISE_EVENT_1>audio_switch_intercom</WWISE_EVENT_1>
       <WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2>
@@ -74,7 +74,7 @@
       <ANIM_LAG>22</ANIM_LAG>
       <ANIM_CODE>
         (* Default is current needle position *)
-        (L:JPL_WINDOW_#ID#) 20 *
+        (L:JPL_WINDOW_#ID#) 22 *
       </ANIM_CODE>
     </UseTemplate>
   </Component>
@@ -92,11 +92,11 @@
     </UseTemplate>
     <UseTemplate Name="ASOBO_GT_Anim_Code">
       <ANIM_NAME>#ID#_Door_Handle</ANIM_NAME>
-      <ANIM_LENGTH>10</ANIM_LENGTH>
+      <ANIM_LENGTH>14</ANIM_LENGTH>
       <ANIM_LAG>20</ANIM_LAG>
       <ANIM_CODE>
         (* Default is current needle position *)
-        (L:JPL_Door_#ID#) 18 *
+        (L:JPL_Door_#ID#) 14 *
       </ANIM_CODE>  
     </UseTemplate>
     <UseTemplate Name="ASOBO_GT_Anim_Code">
