@@ -34,6 +34,14 @@
 			<AssetDir>src\JPLogistics_C152_Additional\</AssetDir>
 			<OutputDir>.\</OutputDir>
 		</AssetGroup>
+		<AssetGroup Name="content-info">
+			<Type>ContentInfo</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageSources\ContentInfos\content-info</AssetDir>
+			<OutputDir>ContentInfos\content-info</OutputDir>
+		</AssetGroup>
 		<AssetGroup Name="jplogistics-c152">
 			<Type>SimObject</Type>
 			<Flags>
@@ -41,6 +49,14 @@
 			</Flags>
 			<AssetDir>src\JPLogistics_C152\SimObjects\Airplanes\Asobo_C152\</AssetDir>
 			<OutputDir>SimObjects\Airplanes\Asobo_C152\</OutputDir>
+		</AssetGroup>
+		<AssetGroup Name="visual-effects">
+			<Type>VisualEffectLib</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageSources\VisualEffectLibs\visual-effects</AssetDir>
+			<OutputDir>VisualEffectLibs\visual-effects</OutputDir>
 		</AssetGroup>
 	</AssetGroups>
 </AssetPackage>

@@ -72,7 +72,7 @@
     <Animation guid="9f85dd95-0a07-4c71-ae7d-5645d9332dc0" name="ELECTRICAL_Switch_Alternator_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="027a6701-1a4d-42a2-b7f4-bc0833f53665" name="ELECTRICAL_Switch_Battery_Master_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="bfd86b4a-d2d5-4910-8bce-8322ddf05ea1" name="ELECTRICAL_Switch_Magneto" type="standard" typeParam="Autoplay"/>
-    <Animation guid="a0209361-f6b8-4d7c-be34-88931e855fe5" name="ENGINE_Lever_CarbHeat_DEICE_Lever_Engine_1" type="standard"/>
+    <Animation guid="a0209361-f6b8-4d7c-be34-88931e855fe5" name="ENGINE_Lever_CarbHeat" type="standard"/>
     <Animation guid="51fc2638-d227-438c-9aed-9eed5e33d378" name="ENGINE_Lever_Primer" type="standard"/>
     <Animation guid="6b296f0b-6010-4828-9f10-46db961e63ae" name="ENGINE_Lever_Throttle_1" type="standard"/>
     <Animation guid="79b5b67e-f90b-4d7d-9af7-81e28230afa6" name="FUEL_Lever_Mixture_1" type="standard" typeParam="Autoplay"/>
@@ -245,10 +245,12 @@
     <Component ID="ENGINE_CONTROLS">
       <UseTemplate Name="ASOBO_ENGINE_Lever_Throttle_Template">
         <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
+        <AXIS>X</AXIS>
         <ID>1</ID>
       </UseTemplate>
       <UseTemplate Name="ASOBO_FUEL_Lever_Mixture_Template">
         <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
+        <AXIS>X</AXIS>
         <DRAG_AXIS_SCALE>-400</DRAG_AXIS_SCALE>
         <BUTTON_NODE_ID>FUEL_Lever_Mixture_1_Push</BUTTON_NODE_ID>
       </UseTemplate>
