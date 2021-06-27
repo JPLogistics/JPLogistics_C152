@@ -19,7 +19,7 @@
 			if{
 				0.9 120.3 @PumpScalar * + (&gt;L:XMLVAR_FUEL_FLOW_TARGET, gallons per hour)
 				
-				(L:XMLVAR_PUMPED_FUEL, gallons) @MaxPumpedFuel &lt;
+				(L:XMLVAR_PUMPED_FUEL, gallons) @MaxPumpedFuel &lt; (A:GENERAL ENG FUEL VALVE:1, Bool) and
 				if{
 					(L:XMLVAR_PUMPED_FUEL, gallons) (L:XMLVAR_FUEL_FLOW_TARGET, gallons per hour) 21600 / + (&gt;L:XMLVAR_PUMPED_FUEL, gallons)
 				}
@@ -85,7 +85,7 @@ Factors:
 	</Update>
 
 	<!-- #### THIS IS ONE TO USE ######-->
-	<!--
+	
 	<Update Frequency="1">
 		(L:XMLVAR_Engine_Condition) @MinimumEngScore &gt;= 
 		(L:XMLVAR_Fuel_Evaporating, Bool) ! and
@@ -98,9 +98,10 @@ Factors:
 			(A:GENERAL ENG COMBUSTION:1, bool) if{ (&gt;K:TOGGLE_ENGINE1_FAILURE) }
 		}		
 	</Update>	
-	-->
+
 
 	<!-- #### THIS ONE IS FOR TESTING #####-->
+	<!--	
 	<Update Frequency="1">
 		(L:XMLVAR_Engine_Condition) @MinimumEngScore &gt;= 
 		(L:XMLVAR_Fuel_Evaporating, Bool) ! and
@@ -113,7 +114,7 @@ Factors:
 			(A:LIGHT PANEL, Bool) if{ (&gt;K:PANEL_LIGHTS_TOGGLE) }
 		}		
 	</Update>	
-
+	-->
 </Template>
 
 <!--############ IGNORE THIS FOR NOW, I'VE GOT SOMETHING BETTER################-->
@@ -130,5 +131,6 @@ Factors:
 		}		
 	</Update>
 </Template>
+
 -->
 	<!--(A:GENERAL ENG COMBUSTION:1, bool) ! if{ (&gt;K:TOGGLE_ENGINE1_FAILURE) } -->

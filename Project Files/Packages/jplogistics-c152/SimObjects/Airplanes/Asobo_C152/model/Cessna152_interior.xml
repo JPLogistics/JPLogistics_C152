@@ -244,6 +244,7 @@
     <!-- ENGINE ########################### -->
     <Component ID="ENGINE_CONTROLS">
       <UseTemplate Name="ASOBO_ENGINE_Lever_Throttle_Template">
+	    <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
         <ID>1</ID>
       </UseTemplate>
       <UseTemplate Name="ASOBO_FUEL_Lever_Mixture_Template">
@@ -705,9 +706,9 @@
       <DefaultTemplateParameters>
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
         <POTENTIOMETER>5</POTENTIOMETER>
-				<BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
+		<BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
       </DefaultTemplateParameters>
-      <UseTemplate Name="ASOBO_ADF_3Knobs_Frequency_Template">
+      <UseTemplate Name="C152X_ADF_3Knobs_Frequency_Template">
       </UseTemplate>
       <UseTemplate Name="C152X_ADF_Knob_Volume_Template">
       </UseTemplate>
