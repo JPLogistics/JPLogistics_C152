@@ -1,8 +1,0 @@
-<Project Version="2" Name="BuilderProject" FolderName="Packages">
-	<OutputDirectory>.</OutputDirectory>
-	<TemporaryOutputDirectory>_PackageInt</TemporaryOutputDirectory>
-	<Packages>
-		<Package>PackageDefinitions\JPLogistics-simobjects-Builder.xml</Package>
-	</Packages>
-</Project>
-
