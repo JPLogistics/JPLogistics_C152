@@ -1,6 +1,6 @@
 
 [SimVarForSpawningInTheAir.0]
-IAS=177
+IAS=150
 FlapsDegree=0000.00
 
 [Avionics.0]
@@ -34,10 +34,10 @@ AudioAdf2Listen=False
 AvionicsSwitch=True
 
 [Engine Parameters.1.0]
-ThrottleLeverPct=1
+ThrottleLeverPct=.8
 PropellerLeverPct=0.99993896484375
 Pct Engine RPM=0.99956832930920125335
-MaxReachedEngineRPM=3903.5488821170947631
+MaxReachedEngineRPM=2550
 LeftMagneto=True
 RightMagneto=True
 GeneratorSwitch=True
@@ -114,10 +114,10 @@ BleedAirSource=0
 PitotHeat=False
 BeaconLights=True
 LandingLights=False
-LogoLights=True
+LogoLights=False
 NavLights=True
 PanelLights=True
-RecognitionLights=True
+RecognitionLights=False
 StrobeLights=True
 TaxiLights=False
 WingLights=True
@@ -170,6 +170,7 @@ ParkingBrake=000.00
 
 RudderTrimPct=0
 AileronTrimPct=0
+ElevatorTrimPct=-1.5
 AileronTrimDisabled=False
 ElevatorTrimDisabled=False
 RudderTrimDisabled=False
