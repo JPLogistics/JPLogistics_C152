@@ -24,7 +24,7 @@
 	<Component ID="C152X_Custom_Behavior">
 		<UseTemplate Name="Fuel_Primer_Logic"></UseTemplate>
 		<UseTemplate Name="Engine_Start_Logic"></UseTemplate>
-		<!--<UseTemplate Name="Fuel_Pressure_Logic"></UseTemplate>-->
+		<UseTemplate Name="Fire_Logic"></UseTemplate>
 	</Component>
 		<!--End of C152X Modification -------------------------------------->
 
@@ -321,6 +321,7 @@
         <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
         <INVERT_INTERACTION>True</INVERT_INTERACTION>
         <INVERT_IM_DRAG_INPUT_SCALAR>True</INVERT_IM_DRAG_INPUT_SCALAR>
+		
       </UseTemplate>
 
       <UseTemplate Name="ASOBO_HANDLING_Indicator_Flaps_Template">
@@ -328,6 +329,7 @@
 
       <UseTemplate Name="ASOBO_HANDLING_Wheel_ElevatorTrim_Template">
         <HIGHLIGHT_NODE_ID>HANDLING_Wheel_ElevatorTrim_Visual</HIGHLIGHT_NODE_ID>
+		<TOOLTIPID>Elevator Trim (%((A:ELEVATOR TRIM POSITION, degrees))%!1.1f!%)</TOOLTIPID>
       </UseTemplate>
 
       <UseTemplate Name="ASOBO_HANDLING_Indicator_ElevatorTrim_Template">
@@ -535,7 +537,7 @@
         <NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
         <ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
         <KNOB_TURN_SPEED>4.0</KNOB_TURN_SPEED>
-		<INIT_VALUE>20</INIT_VALUE>
+		<INIT_VALUE>40</INIT_VALUE>
 		<MIN_VALUE>5</MIN_VALUE>
 		<ANIMTIP_0>Instrument Lights (%((A:LIGHT POTENTIOMETER:5, Percent))%!d!%)</ANIMTIP_0>
 		<ANIMTIP_1>Instrument Lights (%((A:LIGHT POTENTIOMETER:5, Percent))%!d!%)</ANIMTIP_1>
