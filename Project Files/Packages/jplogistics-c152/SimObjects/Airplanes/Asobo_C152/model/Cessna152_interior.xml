@@ -28,13 +28,13 @@
 	</Component>
 		<!--End of C152X Modification -------------------------------------->
 
+    <Animation guid="c16737ee-55bd-4255-97f8-5a34e62be350" name="Pilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b24e62be345" name="DME_Switch" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be345" name="JPL_VISOR_Pilot" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be346" name="JPL_VISOR_CoPilot" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be347" name="Pilot_Window" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be348" name="Pilot_Window_Handle" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be349" name="Pilot_Door_Handle" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be350" name="Pilot_Door" type="standard" typeParam="Autoplay"/>
     <Animation guid="8985b341-024e-4a36-84ab-4f207d742a6c" name="ADF_Knob_Frequency_Hz" type="standard" typeParam="Autoplay"/>
     <Animation guid="2e4af946-4d98-4ce2-8702-248ad312b03b" name="ADF_Knob_Frequency_KHz" type="standard" typeParam="Autoplay"/>
     <Animation guid="5125cd4d-ea1e-4820-b330-eed0cb2e444c" name="ADF_Knob_Frequency_MHz" type="standard" typeParam="Autoplay"/>
@@ -824,6 +824,16 @@
       <UseTemplate Name="JPL_Sun_Visors">
         <NODE_ID>Sun_visors_CoPilot</NODE_ID>
         <ID>CoPilot</ID>
+      </UseTemplate>
+      <UseTemplate Name="JPL_Door_Template">
+        <NODE_ID>CoPilot_Door_Handle</NODE_ID>
+        <ID>CoPilot</ID>
+      </UseTemplate>
+    </Component>
+    <Component ID="DME_Interaction">
+      <UseTemplate Name="DME_Switch_Template">
+        <NODE_ID>DME_Switch</NODE_ID>
+        <ID>Pilot</ID>
       </UseTemplate>
     </Component>
   </Behaviors>

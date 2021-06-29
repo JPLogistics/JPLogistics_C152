@@ -100,12 +100,34 @@
       </ANIM_CODE>  
     </UseTemplate>
     <UseTemplate Name="ASOBO_GT_Anim_Code">
-      <ANIM_NAME>#ID#_Door</ANIM_NAME>
-      <ANIM_LENGTH>30</ANIM_LENGTH>
+      <ANIM_NAME>#ID#_Door_Exterior</ANIM_NAME>
+      <ANIM_LENGTH>22</ANIM_LENGTH>
       <ANIM_LAG>30</ANIM_LAG>
       <ANIM_CODE>
         (* Default is current needle position *)
-        (L:JPL_Door_#ID#) 30 *
+        (L:JPL_Door_#ID#) 22 *
+      </ANIM_CODE>
+    </UseTemplate>
+  </Component>
+</Template>
+
+<Template Name="DME_Switch_Template">
+  <DefaultTemplateParameters>
+    <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
+    <TOOLTIPID>TT:COCKPIT.TOOLTIPS.Door</TOOLTIPID>
+  </DefaultTemplateParameters>
+  <Component ID="#NODE_ID#" Node="#NODE_ID#">
+    <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
+      <LEFT_LEAVE_CODE/>
+      <LEFT_SINGLE_CODE>(L:DME_POWER) ! (&gt;L:DME_POWER)</LEFT_SINGLE_CODE>
+    </UseTemplate>
+    <UseTemplate Name="ASOBO_GT_Anim_Code">
+      <ANIM_NAME>DME_Switch</ANIM_NAME>
+      <ANIM_LENGTH>4</ANIM_LENGTH>
+      <ANIM_LAG>20</ANIM_LAG>
+      <ANIM_CODE>
+        (* Default is current needle position *)
+        (L:DME_POWER) 4 *
       </ANIM_CODE>
     </UseTemplate>
   </Component>
