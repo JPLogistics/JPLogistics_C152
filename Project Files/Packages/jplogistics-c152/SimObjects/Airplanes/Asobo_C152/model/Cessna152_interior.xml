@@ -28,7 +28,7 @@
 	</Component>
 		<!--End of C152X Modification -------------------------------------->
 
-
+    <Animation guid="c16737ee-55bd-4255-97f8-4b24e62be345" name="DME_Switch" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be345" name="JPL_VISOR_Pilot" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be346" name="JPL_VISOR_CoPilot" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be347" name="Pilot_Window" type="standard" typeParam="Autoplay"/>
