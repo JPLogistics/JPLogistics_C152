@@ -11,7 +11,7 @@
 		<Include ModelBehaviorFile="Asobo\Common.xml"/>
 		<Include ModelBehaviorFile="Asobo\Exterior.xml"/>
 		<Include ModelBehaviorFile="Asobo\Generic\FX.xml"/>
-    <Include ModelBehaviorFile="C152X\Asobo152X\Common152X.xml"/>
+		<Include ModelBehaviorFile="C152X\Asobo152X\Common152X.xml"/>
 
 		<!-- ###################################### -->
 
@@ -85,24 +85,29 @@
 			</UseTemplate>
 		</Component>
 	<!--#################################################-->
-		<Component ID="FX_CONTRAIL_QUAD">
+		<Component ID="WHITE_SMOKE">
 			<OverrideTemplateParameters>
-					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE> <!--(A:ENG ON FIRE:1, bool) 0 &gt;-->
-					<FX_OFFSET_X>1</FX_OFFSET_X>
-					<FX_OFFSET_Y>1</FX_OFFSET_Y>
-					<FX_OFFSET_Z>1</FX_OFFSET_Z>
+					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
 					<FX_GUID>{F42CE638-11EB-4FC8-B9B0-111A220D681F}</FX_GUID>
 					<FX_NAME>FX_CONTRAILS</FX_NAME>
 			</OverrideTemplateParameters>
-			<Component ID="FX_CONTRAIL_QUAD_LEFT_IN" Node="nose_cone_still">
-				<UseTemplate Name="ASOBO_GT_FX">
-				</UseTemplate>
-			</Component>
-			<Component ID="FX_CONTRAIL_QUAD_LEFT_OUT" Node="nose_cone_still">
+			<Component ID="FX_WHITE_SMOKE" Node="nose_cone_still">
 				<UseTemplate Name="ASOBO_GT_FX">
 				</UseTemplate>
 			</Component>
 		</Component>
+		<Component ID="BLACK_SMOKE">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{3154CA46-3149-4014-AF44-3B111F7C54D3}</FX_GUID>
+					<FX_NAME>Smoke_XXL_Black</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="FX_BLACK_SMOKE" Node="nose_cone_still">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>
+		<!--
 		<Component ID="FX_CONTRAIL_RIBBON">
 			<OverrideTemplateParameters>
 					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
@@ -116,6 +121,9 @@
 				<UseTemplate Name="ASOBO_GT_FX">
 				</UseTemplate>
 			</Component>
+		</Component>-->
+		<Component ID="LANDING_FX">
+			<UseTemplate Name="ASOBO_LANDING_FX"/>
 		</Component>
 	<!-- ##################################### -->
 	</Behaviors>

@@ -811,10 +811,16 @@
         <NODE_ID>Pilot_Window_Handle</NODE_ID>
         <ID>Pilot</ID>
       </UseTemplate>
+	  
+	  
 	  <UseTemplate Name="JPL_Window_Template">
         <NODE_ID>CoPilot_Window_Handle</NODE_ID>
         <ID>CoPilot</ID>
       </UseTemplate>
+	  
+	  
+	  
+	  
       <UseTemplate Name="JPL_Door_Template">
         <NODE_ID>Pilot_Door_Handle</NODE_ID>
         <ID>Pilot</ID>
@@ -830,12 +836,22 @@
         <ID>CoPilot</ID>
       </UseTemplate>
     </Component>
+	<!--
     <Component ID="DME_Interaction">
       <UseTemplate Name="DME_Switch_Template">
         <NODE_ID>DME_Switch</NODE_ID>
         <ID>Pilot</ID>
       </UseTemplate>
     </Component>
+	-->
+	<!--######  FOR CONSIDERATION??? ######-->
+    <Component ID="DME_Interaction">
+      <UseTemplate Name="DME_Switch_Template">
+        <NODE_ID>DME_Switch</NODE_ID>
+        <ANIM_NAME>DME_Switch</ANIM_NAME>
+        <PART_ID>DME_Switch</PART_ID>
+       </UseTemplate>	
+    </Component>	
   </Behaviors>
 </ModelInfo>
 

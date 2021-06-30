@@ -111,6 +111,7 @@
   </Component>
 </Template>
 
+<!--
 <Template Name="DME_Switch_Template">
   <DefaultTemplateParameters>
     <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
@@ -132,14 +133,39 @@
     </UseTemplate>
   </Component>
 </Template>
+-->
+
+<Template Name = "DME_Switch_Template">
+  <Update Once="True">
+    #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+  </Update>
+  <UseTemplate Name = "C152X_2way_switch_xml">
+    <ANIMTIP_0>Power DME On</ANIMTIP_0>
+    <ANIMTIP_1>Power DME Off</ANIMTIP_1>
+    <WWISE_EVENT_1>audio_switch_intercom</WWISE_EVENT_1>
+    <WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2>
+    <LEFT_SINGLE_CODE>
+      (L:DME_POWER) 0 ==
+      if{
+      1 (&gt;L:DME_POWER)
+      #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+      } els{
+      0 (&gt;L:DME_POWER)
+      #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+      }
+    </LEFT_SINGLE_CODE>
+  </UseTemplate>
+</Template>
+
+
 
 <Template Name = "C152X_Speaker">
   <Update Once="True">
     #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
   </Update>
   <UseTemplate Name = "C152X_2way_switch_xml">
-    <ANIMTIP_0>Speaker</ANIMTIP_0>
-    <ANIMTIP_1>Phone</ANIMTIP_1>
+    <ANIMTIP_0>PHONE</ANIMTIP_0>
+    <ANIMTIP_1>SPEAKER</ANIMTIP_1>
     <WWISE_EVENT_1>audio_switch_intercom</WWISE_EVENT_1>
     <WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2>
     <LEFT_SINGLE_CODE>
