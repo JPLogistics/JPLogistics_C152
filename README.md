@@ -13,14 +13,22 @@
 	- New Switches (On roof)
 - New Cargo Options
 - New Graphics
+- New Sound Effects
+	- Enviroment sounds linked too windows/doors
+- Reworked Electrical Systems 
+- Reworked Lighting
+- Proper DME Panel - WIP - Model in place
+	- Gauge is WIP
+- New Start System
+	- Primer now required
+- New Visual Effects
+	- Engine Fire
+	- Smoke
+	- Exhaust plume (WIP)
 
 ### Broken things (As you know, this is a Work in Progress!)
 - Some Animations
-	- Yokes
 	- _Part_ of the NAVCOM Stack
-	- Strobe Light Switch
-- Throttle/Mixture/Carb "Drag Commands"... no idea what has broken these...!
-- Sun Visors aren't "blacked out", yet!
 - Strange 3D Model Artifacts
 	- This is due to the unfinished remodelling I am performing!
 
