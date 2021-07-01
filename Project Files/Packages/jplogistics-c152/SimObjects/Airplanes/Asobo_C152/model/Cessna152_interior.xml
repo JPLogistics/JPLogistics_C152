@@ -29,12 +29,16 @@
 		<!--End of C152X Modification -------------------------------------->
 
     <Animation guid="c16737ee-55bd-4255-97f8-5a34e62be350" name="Pilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-5a34e62be666" name="CoPilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b24e62be345" name="DME_Switch" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be345" name="JPL_VISOR_Pilot" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be346" name="JPL_VISOR_CoPilot" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be347" name="Pilot_Window" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be348" name="Pilot_Window_Handle" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be349" name="Pilot_Door_Handle" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be357" name="CoPilot_Window" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62ae358" name="CoPilot_Window_Handle" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62ce359" name="CoPilot_Door_Handle" type="standard" typeParam="Autoplay"/>
     <Animation guid="8985b341-024e-4a36-84ab-4f207d742a6c" name="ADF_Knob_Frequency_Hz" type="standard" typeParam="Autoplay"/>
     <Animation guid="2e4af946-4d98-4ce2-8702-248ad312b03b" name="ADF_Knob_Frequency_KHz" type="standard" typeParam="Autoplay"/>
     <Animation guid="5125cd4d-ea1e-4820-b330-eed0cb2e444c" name="ADF_Knob_Frequency_MHz" type="standard" typeParam="Autoplay"/>
@@ -600,11 +604,11 @@
     <!-- RADIO STACK ################################## -->
     <Component ID="NAVCOM_Radios">
       <DefaultTemplateParameters>
-        <ANIM_LAG_SWITCH>500</ANIM_LAG_SWITCH>
+        <ANIM_LAG_SWITCH>10</ANIM_LAG_SWITCH>
         <BUTTON_POTENTIOMETER/>
         <POTENTIOMETER>5</POTENTIOMETER>
         <ANIM_NEVER_FAILS>True</ANIM_NEVER_FAILS>
-		<INIT_VALUE>50</INIT_VALUE>
+		<INIT_VALUE>0</INIT_VALUE>
       </DefaultTemplateParameters>
       <UseTemplate Name="C152X_NAVCOM_Simple_Radio_Template">
         <ID>1</ID>
@@ -811,16 +815,6 @@
         <NODE_ID>Pilot_Window_Handle</NODE_ID>
         <ID>Pilot</ID>
       </UseTemplate>
-	  
-	  
-	  <UseTemplate Name="JPL_Window_Template">
-        <NODE_ID>CoPilot_Window_Handle</NODE_ID>
-        <ID>CoPilot</ID>
-      </UseTemplate>
-	  
-	  
-	  
-	  
       <UseTemplate Name="JPL_Door_Template">
         <NODE_ID>Pilot_Door_Handle</NODE_ID>
         <ID>Pilot</ID>
@@ -829,6 +823,10 @@
     <Component ID="CoPilot_Side_Interaction">
       <UseTemplate Name="JPL_Sun_Visors">
         <NODE_ID>Sun_visors_CoPilot</NODE_ID>
+        <ID>CoPilot</ID>
+      </UseTemplate>
+      <UseTemplate Name="JPL_Window_Template">
+        <NODE_ID>CoPilot_Window_Handle</NODE_ID>
         <ID>CoPilot</ID>
       </UseTemplate>
       <UseTemplate Name="JPL_Door_Template">
@@ -851,7 +849,33 @@
         <ANIM_NAME>DME_Switch</ANIM_NAME>
         <PART_ID>DME_Switch</PART_ID>
        </UseTemplate>	
-    </Component>	
+    </Component>
+
+    <Component ID="TUTO_Level" Node="TUTO_Level">
+      <UseTemplate Name="ASOBO_GT_Visibility_Code">
+        <ONCE>True</ONCE>
+        <VISIBILITY_CODE>0</VISIBILITY_CODE>
+      </UseTemplate>
+    </Component>
+    <Component ID="TUTO_Descent" Node="TUTO_Descent">
+      <UseTemplate Name="ASOBO_GT_Visibility_Code">
+        <ONCE>True</ONCE>
+        <VISIBILITY_CODE>0</VISIBILITY_CODE>
+      </UseTemplate>
+    </Component>
+    <Component ID="TUTO_Climb" Node="TUTO_Climb">
+      <UseTemplate Name="ASOBO_GT_Visibility_Code">
+        <ONCE>True</ONCE>
+        <VISIBILITY_CODE>0</VISIBILITY_CODE>
+      </UseTemplate>
+    </Component>
+    <Component ID="TUTO_TurnLeft" Node="TUTO_TurnLeft">
+      <UseTemplate Name="ASOBO_GT_Visibility_Code">
+        <ONCE>True</ONCE>
+        <VISIBILITY_CODE>0</VISIBILITY_CODE>
+      </UseTemplate>
+    </Component>
+    
   </Behaviors>
 </ModelInfo>
 

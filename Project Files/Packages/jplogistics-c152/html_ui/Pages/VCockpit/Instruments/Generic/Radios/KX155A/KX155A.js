@@ -14,6 +14,8 @@ class KX155A extends BaseInstrument {
         this.comKnobState = 0;
         this.comdirectActiveinput = false;
         this.comKnobPulled = false;
+        this.comVolume = 0;
+        this.lastTimeVolumeKnobUsed = 0;
     }
     get templateID() { return "KX155A"; }
     connectedCallback() {
@@ -31,6 +33,8 @@ class KX155A extends BaseInstrument {
         this.navBotDisplayMid = this.getChildById("NavBotDisplayMid");
         this.navBotDisplayRight = this.getChildById("NavBotDisplayRight");
         this.cdiCursor = this.getChildById("CDICursor");
+        this.COMVolume = this.getChildById("COMVolume");
+        this.barVolume = this.getChildById("BarVolume");
         var parsedUrl = new URL(this.getAttribute("Url"));
         let index = parsedUrl.searchParams.get("Index");
         if (index)
@@ -41,25 +45,17 @@ class KX155A extends BaseInstrument {
     }
     Init() {
         super.Init();
-        SimVar.SetSimVarValue("K:COM_" + this.radioIndex + "_SPACING_MODE_SWITCH", "number", 1);
+        if (SimVar.GetSimVarValue("COM SPACING MODE:" + this.radioIndex, "Enum") == 0) {
+            SimVar.SetSimVarValue("K:COM_" + this.radioIndex + "_SPACING_MODE_SWITCH", "number", 0);
+        }
+        this.comVolume = this.getComVolume();
     }
     parseXMLConfig() {
         super.parseXMLConfig();
         if (this.instrumentXmlConfig) {
             let display = this.instrumentXmlConfig.getElementsByTagName("Display");
             if (display.length > 0) {
-                this.setAttribute("display", display[0].textContent.toLowerCase());
-            }
-            let colors = this.instrumentXmlConfig.getElementsByTagName("Colors");
-            if (colors.length > 0) {
-                let background = colors[0].getElementsByTagName("Background");
-                if (background.length > 0) {
-                    this.style.backgroundColor = background[0].textContent;
-                }
-                let font = colors[0].getElementsByTagName("Font");
-                if (font.length > 0) {
-                    this.style.color = font[0].textContent;
-                }
+                diffAndSetAttribute(this, "display", display[0].textContent.toLowerCase());
             }
         }
     }
@@ -94,14 +90,14 @@ class KX155A extends BaseInstrument {
                 case "RADIO" + this.radioIndex + "_COM_Knob_Small_INC":
                     switch (this.comKnobState) {
                         case 0:
-                            SimVar.SetSimVarValue("K:COM" + (this.radioIndex == 1 ? "" : "2") + (this.comdirectActiveinput ? "" : "_STBY") + "_RADIO_SET_HZ", "Hz", this.activeComModify(SimVar.GetSimVarValue("COM " + (this.comdirectActiveinput ? "ACTIVE" : "STANDBY") + " FREQUENCY:" + this.radioIndex, "Hz"), this.comKnobPulled ? 25000 : 50000));
+                            SimVar.SetSimVarValue("K:COM" + (this.radioIndex == 1 ? "" : "2") + (this.comdirectActiveinput ? "" : "_STBY") + "_RADIO_SET_HZ", "Hz", this.activeComModify(SimVar.GetSimVarValue("COM " + (this.comdirectActiveinput ? "ACTIVE" : "STANDBY") + " FREQUENCY:" + this.radioIndex, "Hz"), this.comKnobPulled ? 8333 : 16666));
                             break;
                         case 1:
                             this.selectedStorageIndex = (this.selectedStorageIndex % 32) + 1;
                             break;
                         case 2:
                             SimVar.SetSimVarValue("K:COM" + this.radioIndex + "_STORED_FREQUENCY_INDEX_SET", "number", this.selectedStorageIndex);
-                            SimVar.SetSimVarValue("K:COM" + this.radioIndex + "_STORED_FREQUENCY_SET_HZ", "Hz", this.storedComModify(SimVar.GetSimVarValue("COM" + this.radioIndex + " STORED FREQUENCY:" + this.selectedStorageIndex, "Hertz"), this.comKnobPulled ? 25000 : 50000));
+                            SimVar.SetSimVarValue("K:COM" + this.radioIndex + "_STORED_FREQUENCY_SET_HZ", "Hz", this.storedComModify(SimVar.GetSimVarValue("COM" + this.radioIndex + " STORED FREQUENCY:" + this.selectedStorageIndex, "Hertz"), this.comKnobPulled ? 8333 : 16666));
                             break;
                         case 3:
                             var count = 32;
@@ -115,13 +111,13 @@ class KX155A extends BaseInstrument {
                 case "RADIO" + this.radioIndex + "_COM_Knob_Small_DEC":
                     switch (this.comKnobState) {
                         case 0:
-                            SimVar.SetSimVarValue("K:COM" + (this.radioIndex == 1 ? "" : "2") + (this.comdirectActiveinput ? "" : "_STBY") + "_RADIO_SET_HZ", "Hz", this.activeComModify(SimVar.GetSimVarValue("COM " + (this.comdirectActiveinput ? "ACTIVE" : "STANDBY") + " FREQUENCY:" + this.radioIndex, "Hz"), this.comKnobPulled ? -25000 : -50000));
+                            SimVar.SetSimVarValue("K:COM" + (this.radioIndex == 1 ? "" : "2") + (this.comdirectActiveinput ? "" : "_STBY") + "_RADIO_SET_HZ", "Hz", this.activeComModify(SimVar.GetSimVarValue("COM " + (this.comdirectActiveinput ? "ACTIVE" : "STANDBY") + " FREQUENCY:" + this.radioIndex, "Hz"), this.comKnobPulled ? -8333 : 16666));
                         case 1:
                             this.selectedStorageIndex = (this.selectedStorageIndex + 30) % 32 + 1;
                             break;
                         case 2:
                             SimVar.SetSimVarValue("K:COM" + this.radioIndex + "_STORED_FREQUENCY_INDEX_SET", "number", this.selectedStorageIndex);
-                            SimVar.SetSimVarValue("K:COM" + this.radioIndex + "_STORED_FREQUENCY_SET_HZ", "Hz", this.storedComModify(SimVar.GetSimVarValue("COM" + this.radioIndex + " STORED FREQUENCY:" + this.selectedStorageIndex, "Hertz"), this.comKnobPulled ? -25000 : -50000));
+                            SimVar.SetSimVarValue("K:COM" + this.radioIndex + "_STORED_FREQUENCY_SET_HZ", "Hz", this.storedComModify(SimVar.GetSimVarValue("COM" + this.radioIndex + " STORED FREQUENCY:" + this.selectedStorageIndex, "Hertz"), this.comKnobPulled ? -8333 : 16666));
                             break;
                         case 3:
                             var count = 32;
@@ -275,6 +271,9 @@ class KX155A extends BaseInstrument {
     }
     Update() {
         super.Update();
+        let timeOfDay = SimVar.GetSimVarValue("E:TIME OF DAY", "Enum");
+        this.setAttribute("brightness", timeOfDay == 3 ? "night" : "day");
+        diffAndSetAttribute(this, "brightness", timeOfDay == 3 ? "night" : "day");
         if (this.isElectricityAvailable()) {
             if (this.blinkingElapsedTime > 0) {
                 this.blinkingElapsedTime -= this.deltaTime;
@@ -303,61 +302,71 @@ class KX155A extends BaseInstrument {
                     this.comKnobState = 0;
                 }
             }
-            this.comActiveFreq.textContent = this.getActiveComFreq();
+            diffAndSetText(this.comActiveFreq, this.getActiveComFreq());
             if (this.comKnobState == 0) {
                 if (this.comdirectActiveinput) {
-                    this.comStandbyFreq.textContent = "";
+                    diffAndSetText(this.comStandbyFreq, "");
                 }
                 else {
-                    this.comStandbyFreq.textContent = this.getStandbyComFreq();
+                    diffAndSetText(this.comStandbyFreq, this.getStandbyComFreq());
                 }
-                this.channelNumber.textContent = "";
-                this.channelState.setAttribute("state", "");
-                this.comStandbyFreq.setAttribute("state", "Blink");
+                diffAndSetText(this.channelNumber, "");
+                diffAndSetAttribute(this.channelState, "state", "");
+                diffAndSetAttribute(this.comStandbyFreq, "state", "Blink");
             }
             else {
-                this.comStandbyFreq.textContent = this.getStoredFrequency(this.selectedStorageIndex);
-                this.channelNumber.textContent = this.selectedStorageIndex.toString();
+                diffAndSetText(this.comStandbyFreq, this.getStoredFrequency(this.selectedStorageIndex));
+                diffAndSetText(this.channelNumber, this.selectedStorageIndex + '');
                 if (this.comKnobState == 3) {
-                    this.channelState.setAttribute("state", "CH");
+                    diffAndSetAttribute(this.channelState, "state", "CH");
                 }
                 else {
-                    this.channelState.setAttribute("state", "PG");
+                    diffAndSetAttribute(this.channelState, "state", "PG");
                 }
                 if (this.comKnobState == 1) {
-                    this.channelNumber.setAttribute("state", (this.blinkGetState(400, 200) ? "Blink" : "Off"));
+                    diffAndSetAttribute(this.channelNumber, "state", (this.blinkGetState(400, 200) ? "Blink" : "Off"));
                 }
                 else {
-                    this.channelNumber.setAttribute("state", "Blink");
+                    diffAndSetAttribute(this.channelNumber, "state", "Blink");
                 }
                 if (this.comKnobState == 2) {
-                    this.comStandbyFreq.setAttribute("state", (this.blinkGetState(400, 200) ? "Blink" : "Off"));
+                    diffAndSetAttribute(this.comStandbyFreq, "state", (this.blinkGetState(400, 200) ? "Blink" : "Off"));
                 }
                 else {
-                    this.comStandbyFreq.setAttribute("state", "Blink");
+                    diffAndSetAttribute(this.comStandbyFreq, "state", "Blink");
                 }
             }
-            this.comState.setAttribute("state", this.getTransmitingState());
+            diffAndSetAttribute(this.comState, "state", this.getTransmitingState());
             this.cavActiveFreq.textContent = SimVar.GetSimVarValue("L:XMLVAR_AUDIO_DME_SEL", "Bool") > 0 ? (this.getNAVDME() > 0 ? (this.blinkGetState(10000, 5000) ? this.getNAVDME() + "NM" : this.getActiveNavFreq()) : this.getActiveNavFreq()) : this.getActiveNavFreq();
-
+            if (this.getComVolume() != this.comVolume) {
+                this.comVolume = this.getComVolume();
+                this.COMVolume.setAttribute("combar", "visible");
+                this.lastTimeVolumeKnobUsed = SimVar.GetSimVarValue("E:ABSOLUTE TIME", "seconds");
+                this.barVolume.setAttribute("width", fastToFixed(this.comVolume * 100 / 4, 0));
+                this.COMVolume.children[0].setAttribute("x", "0");
+            }
+            if (SimVar.GetSimVarValue("E:ABSOLUTE TIME", "seconds") - this.lastTimeVolumeKnobUsed > 1.5) {
+                this.COMVolume.setAttribute("combar", "hidden");
+            }
+            diffAndSetText(this.cavActiveFreq, this.getActiveNavFreq());
             switch (this.navMode) {
                 case 0:
-                    this.navState.setAttribute("state", "none");
+                    diffAndSetAttribute(this.navState, "state", "none");
                     if (this.navDirectActiveInput) {
-                        this.navRightDisplay.textContent = "";
+                        diffAndSetText(this.navRightDisplay, "");
                     }
                     else {
-                        this.navRightDisplay.textContent = this.getStandbyNavFreq();
+                        diffAndSetText(this.navRightDisplay, this.getStandbyNavFreq());
                     }
                     this.obs.style.visibility = "hidden";
-                    this.navBotDisplayLeft.textContent = "";
-                    this.navBotDisplayMid.textContent = "";
-                    this.navBotDisplayRight.textContent = "";
+                    diffAndSetText(this.navBotDisplayLeft, "");
+                    diffAndSetText(this.navBotDisplayMid, "");
+                    diffAndSetText(this.navBotDisplayRight, "");
                     this.cdiCursor.style.visibility = "hidden";
                     break;
                 case 1:
-                    this.navState.setAttribute("state", "none");
-                    this.navRightDisplay.textContent = this.getObs();
+                    diffAndSetAttribute(this.navState, "state", "none");
+                    diffAndSetText(this.navRightDisplay, this.getObs());
                     if (this.navKnobPulled) {
                         this.obs.style.visibility = (this.blinkGetState(400, 200)) ? "visible" : "hidden";
                     }
@@ -366,74 +375,74 @@ class KX155A extends BaseInstrument {
                     }
                     if (this.getIsSignalOk()) {
                         if (this.isLocalizer()) {
-                            this.navRightDisplay.textContent = "LOC";
+                            diffAndSetText(this.navRightDisplay, "LOC");
                             this.obs.style.visibility = "hidden";
-                            this.navBotDisplayMid.textContent = "><";
+                            diffAndSetText(this.navBotDisplayMid, "><");
                         }
                         else {
                             if (this.getNavDir() == 1) {
-                                this.navBotDisplayMid.textContent = "^";
+                                diffAndSetText(this.navBotDisplayMid, "^");
                             }
                             else {
-                                this.navBotDisplayMid.textContent = "v";
+                                diffAndSetText(this.navBotDisplayMid, "v");
                             }
                         }
-                        this.navBotDisplayLeft.textContent = "- --  --  --  --";
-                        this.cdiCursor.setAttribute("style", "left:" + (this.getCDIPos() * 50 / 127 + 50) + "%");
+                        diffAndSetText(this.navBotDisplayLeft, "- --  --  --  --");
+                        diffAndSetAttribute(this.cdiCursor, "style", "left:" + (this.getCDIPos() * 50 / 127 + 50) + "%");
                     }
                     else {
-                        this.navBotDisplayLeft.textContent = "FLAG";
+                        diffAndSetText(this.navBotDisplayLeft, "FLAG");
                         this.cdiCursor.style.visibility = "hidden";
-                        this.navBotDisplayMid.textContent = "";
+                        diffAndSetText(this.navBotDisplayMid, "");
                     }
-                    this.navBotDisplayRight.textContent = " --  --  --  --  -";
+                    diffAndSetText(this.navBotDisplayRight, " --  --  --  --  -");
                     break;
                 case 2:
-                    this.navState.setAttribute("state", "TO");
+                    diffAndSetAttribute(this.navState, "state", "TO");
                     if (this.getIsSignalOk()) {
-                        this.navRightDisplay.textContent = this.getBearing();
+                        diffAndSetText(this.navRightDisplay, this.getBearing());
                     }
                     else {
-                        this.navRightDisplay.textContent = "---";
+                        diffAndSetText(this.navRightDisplay, "---");
                     }
                     this.obs.style.visibility = "hidden";
-                    this.navBotDisplayLeft.textContent = "";
-                    this.navBotDisplayMid.textContent = "";
-                    this.navBotDisplayRight.textContent = "";
+                    diffAndSetText(this.navBotDisplayLeft, "");
+                    diffAndSetText(this.navBotDisplayMid, "");
+                    diffAndSetText(this.navBotDisplayRight, "");
                     this.cdiCursor.style.visibility = "hidden";
                     break;
                 case 3:
-                    this.navState.setAttribute("state", "FR");
+                    diffAndSetAttribute(this.navState, "state", "FR");
                     if (this.getIsSignalOk()) {
-                        this.navRightDisplay.textContent = this.getRadial();
+                        diffAndSetText(this.navRightDisplay, this.getRadial());
                     }
                     else {
-                        this.navRightDisplay.textContent = "---";
+                        diffAndSetText(this.navRightDisplay, "---");
                     }
-                    this.navRightDisplay.textContent = this.getRadial();
+                    diffAndSetText(this.navRightDisplay, this.getRadial());
                     this.obs.style.visibility = "hidden";
-                    this.navBotDisplayLeft.textContent = "";
-                    this.navBotDisplayMid.textContent = "";
-                    this.navBotDisplayRight.textContent = "";
+                    diffAndSetText(this.navBotDisplayLeft, "");
+                    diffAndSetText(this.navBotDisplayMid, "");
+                    diffAndSetText(this.navBotDisplayRight, "");
                     this.cdiCursor.style.visibility = "hidden";
                     break;
                 case 4:
                     this.obs.style.visibility = "hidden";
                     if (this.editElapsed && this.blinkGetState(600, 300)) {
-                        this.navState.setAttribute("state", "None");
+                        diffAndSetAttribute(this.navState, "state", "None");
                     }
                     else {
-                        this.navState.setAttribute("state", "ET");
+                        diffAndSetAttribute(this.navState, "state", "ET");
                     }
                     if (this.blinkingElapsedTime > 0 && this.blinkGetState(1000, 500)) {
-                        this.navRightDisplay.textContent = "";
+                        diffAndSetText(this.navRightDisplay, "");
                     }
                     else {
-                        this.navRightDisplay.textContent = this.getElapsedTime();
+                        diffAndSetText(this.navRightDisplay, this.getElapsedTime());
                     }
-                    this.navBotDisplayLeft.textContent = "";
-                    this.navBotDisplayMid.textContent = "";
-                    this.navBotDisplayRight.textContent = "";
+                    diffAndSetText(this.navBotDisplayLeft, "");
+                    diffAndSetText(this.navBotDisplayMid, "");
+                    diffAndSetText(this.navBotDisplayRight, "");
                     this.cdiCursor.style.visibility = "hidden";
                     break;
             }
@@ -442,18 +451,18 @@ class KX155A extends BaseInstrument {
             this.elapsedTime = 0;
             this.revertElapsed = false;
             this.blinkingElapsedTime = 0;
-            this.comActiveFreq.textContent = "";
-            this.comStandbyFreq.textContent = "";
-            this.comState.setAttribute("state", "none");
-            this.channelState.setAttribute("state", "none");
-            this.channelNumber.textContent = "";
-            this.cavActiveFreq.textContent = "";
+            diffAndSetText(this.comActiveFreq, "");
+            diffAndSetText(this.comStandbyFreq, "");
+            diffAndSetAttribute(this.comState, "state", "none");
+            diffAndSetAttribute(this.channelState, "state", "none");
+            diffAndSetText(this.channelNumber, "");
+            diffAndSetText(this.cavActiveFreq, "");
             this.obs.style.visibility = "hidden";
-            this.navRightDisplay.textContent = "";
-            this.navState.setAttribute("state", "none");
-            this.navBotDisplayLeft.textContent = "";
-            this.navBotDisplayMid.textContent = "";
-            this.navBotDisplayRight.textContent = "";
+            diffAndSetText(this.navRightDisplay, "");
+            diffAndSetAttribute(this.navState, "state", "none");
+            diffAndSetText(this.navBotDisplayLeft, "");
+            diffAndSetText(this.navBotDisplayMid, "");
+            diffAndSetText(this.navBotDisplayRight, "");
             this.cdiCursor.style.visibility = "hidden";
         }
     }
@@ -465,6 +474,9 @@ class KX155A extends BaseInstrument {
     }
     getStandbyComFreq() {
         return this.frequency3DigitsFormat(SimVar.GetSimVarValue("COM STANDBY FREQUENCY:" + this.radioIndex, "MHz"));
+    }
+    getComVolume() {
+        return SimVar.GetSimVarValue("COM VOLUME:" + this.radioIndex, "number");
     }
     getTransmitingState() {
         if (SimVar.GetSimVarValue("SPEAKER ACTIVE:" + this.radioIndex, "Bool")) {
@@ -486,11 +498,11 @@ class KX155A extends BaseInstrument {
     }
     frequency2DigitsFormat(_num) {
         var freq = Math.round(_num * 100 - 0.1) / 100;
-        return freq.toFixed(2);
+        return fastToFixed(freq, 2);
     }
     frequency3DigitsFormat(_num) {
         var freq = Math.round(_num * 1000 - 0.1) / 1000;
-        return freq.toFixed(3);
+        return fastToFixed(freq, 3);
     }
     getActiveNavFreq() {
         return this.frequency2DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + this.radioIndex, "MHz"));
@@ -507,7 +519,7 @@ class KX155A extends BaseInstrument {
         return (minutes > 0 ? fastToFixed(minutes, 0) : "") + " : " + (seconds < 10 ? "0" + fastToFixed(seconds, 0) : fastToFixed(seconds, 0));
     }
     getIsSignalOk() {
-        return SimVar.GetSimVarValue("NAV HAS NAV:" + this.radioIndex, "Bool");
+        return Simplane.getNavHasNav(this.radioIndex);
     }
     getNavDir() {
         return SimVar.GetSimVarValue("NAV TOFROM:" + this.radioIndex, "Enum");

@@ -22,8 +22,8 @@ html {
 
     html body {
         -webkit-user-select: none;
-        font-family: Roboto-Regular;
-        font-size: calc(var(--viewportHeightRatio) * (36px / 21.6) * var(--currentPageHeight) / 100);
+        font-family: var(--font);
+        font-size: calc(var(--viewportHeightRatio) * (36px / 21.6) * var(--currentPageHeight) / 100 );
         color: white;
         height: 100%;
         width: 100%;
@@ -136,6 +136,11 @@ KX155A-element {
         Line-Height: 8pt;
     }
 
+    KX155A-element #ComModeACT, KX155A-element #ComModeSTB, KX155A-element #COMText, KX155A-element #COMVolume {
+        visibility: hidden;
+        display: none;
+    }
+
     KX155A-element #ComState {
         margin-left: 16px;
         font-size: 12px;
@@ -148,10 +153,7 @@ KX155A-element {
             visibility: hidden;
         }
 
-        KX155A-element #ComState[state=T] #T,
-        KX155A-element #ComState[state=R] #R,
-        KX155A-element #ComState[state=both] #T,
-        KX155A-element #ComState[state=both] #R {
+        KX155A-element #ComState[state=T] #T, KX155A-element #ComState[state=R] #R, KX155A-element #ComState[state=both] #T, KX155A-element #ComState[state=both] #R {
             visibility: visible;
         }
 
@@ -163,8 +165,7 @@ KX155A-element {
             visibility: hidden;
         }
 
-        KX155A-element #ChannelState[state=CH] #CH,
-        KX155A-element #ChannelState[state=PG] #PG {
+        KX155A-element #ChannelState[state=CH] #CH, KX155A-element #ChannelState[state=PG] #PG {
             visibility: visible;
         }
 
@@ -177,9 +178,7 @@ KX155A-element {
             visibility: hidden;
         }
 
-        KX155A-element #NavState[state=TO] #TO,
-        KX155A-element #NavState[state=FR] #FR,
-        KX155A-element #NavState[state=ET] #ET {
+        KX155A-element #NavState[state=TO] #TO, KX155A-element #NavState[state=FR] #FR, KX155A-element #NavState[state=ET] #ET {
             visibility: visible;
         }
 
@@ -239,8 +238,13 @@ KX155A-element {
         background-color: #04192D;
     }
 
+        KX155A-element[display=comonly][brightness=night] {
+            color: #95b7bb;
+            background-color: #040f19;
+        }
+
         KX155A-element[display=comonly] #ComPanel {
-            top: 20%;
+            top: 35%;
             left: 57%;
             width: 100%;
             transform: scaleX(2) scaleY(1.5);
@@ -253,3 +257,46 @@ KX155A-element {
         KX155A-element[display=comonly] #Separator, KX155A-element[display=comonly] #NavPanel, KX155A-element[display=comonly] #NavState {
             display: none;
         }
+
+        KX155A-element[display=comonly] #ComActiveFreq, KX155A-element[display=comonly] #ComStandbyFreq {
+            margin-left: -21px;
+        }
+
+        KX155A-element[display=comonly] #ComModeACT {
+            visibility: visible;
+            display: inline;
+            margin-left: -15px;
+            font-size: 12px;
+            width: 20px;
+            text-align: right;
+        }
+
+        KX155A-element[display=comonly] #ComModeSTB {
+            visibility: visible;
+            display: inline;
+            margin-left: -26px;
+            font-size: 12px;
+            width: 20px;
+            text-align: right;
+        }
+
+        KX155A-element[display=comonly] #COMText {
+            visibility: visible;
+            display: inline;
+            margin-left: 2px;
+            vertical-align: top;
+            font-size: 12px;
+            width: 20px;
+            text-align: right;
+        }
+
+        KX155A-element[display=comonly] #COMVolume {
+            visibility: hidden;
+            display: block;
+        }
+
+            KX155A-element[display=comonly] #COMVolume[combar=visible] {
+                visibility: visible;
+            }
+
+/*# sourceMappingURL=KX155A.css.map */
