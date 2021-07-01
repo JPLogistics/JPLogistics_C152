@@ -18,14 +18,6 @@
 
 Continued work on this project is with a large thanks to our donators! Without this kind gesture finding time is slightly more difficult, but every donation means extra time I can set aside to update/upgrade and improve this mod!
 
-I accept the following CryptoCoins or via the button above!
-
-(Preferred) FIRO: aPyzCY1n33eSgdBaBPPcJhBBkaXeasj7r7
-
-BitCoin: 1LbnfyHbTrYinAmCgbXA58xh5zni34YPP9
-
-USDT: 0x3a6e64ba672c02f59600508d6657f4dd5a44546c
-
 ## V0.9.9 - It's about time!
 - Panel Lighting completely reworked!
    - A MASSIVE thanks to @WeptBurrito2749 from the Forums for work on this!
