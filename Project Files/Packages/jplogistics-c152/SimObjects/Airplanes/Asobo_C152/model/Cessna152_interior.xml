@@ -13,10 +13,10 @@
     <Include ModelBehaviorFile="Asobo\Transponder\Transponder.xml"/>
     <Include ModelBehaviorFile="Asobo\NAVCOM\ADF.xml"/>
     <Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
-    <Include ModelBehaviorFile="C152X\Asobo152X\Common152X.xml"/>
+    <Include ModelBehaviorFile="C152X\Index.xml"/>
 	
 		<!-- C152X Modification courtesy of G36 Improvement Project-- WIP -->
-	<Include Path="C152X\CustomLogic.xml"/>
+	<!--<Include Path="C152X\CustomLogic.xml"/>-->
 		
 	<Component ID="C152X_Custom_Behavior">
 		<UseTemplate Name="Fuel_Primer_Logic"></UseTemplate>
@@ -560,10 +560,19 @@
       <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Beacon_Template">
         <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_BEACON_ACTION_SET</TT_DESCRIPTION_ID>
       </UseTemplate>
-
-      <UseTemplate Name="ASOBO_LIGHTING_Knob_Glareshield_Template">
+<!--
+      <UseTemplate Name="C152X_LIGHTING_Knob_Panel_Template"> <!-- Lower Knob by key for instrument light dimming -- Pot 5--
         <NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
         <ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
+        <KNOB_TURN_SPEED>4.0</KNOB_TURN_SPEED>
+		<INIT_VALUE>20</INIT_VALUE>
+		<MIN_VALUE>5</MIN_VALUE>
+		<ANIMTIP_0>Instrument Lights (%((A:LIGHT POTENTIOMETER:5, Percent))%!d!%)</ANIMTIP_0>
+		<ANIMTIP_1>Instrument Lights (%((A:LIGHT POTENTIOMETER:5, Percent))%!d!%)</ANIMTIP_1>
+      </UseTemplate>
+-->
+
+      <UseTemplate Name="ASOBO_LIGHTING_Knob_Glareshield_Template">
         <NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
         <ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
         <KNOB_TURN_SPEED>4.0</KNOB_TURN_SPEED>
@@ -581,6 +590,8 @@
         <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_CABIN_ACTION_SET</TT_DESCRIPTION_ID>
         <TOOLTIP_TITLE>@TT_Package.LIGHTING_SWITCH_CABIN_TITLE</TOOLTIP_TITLE>
       </UseTemplate>
+	  
+
 
       <UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template">
       </UseTemplate>
@@ -630,31 +641,37 @@
       <Parameters Type="Default">
         <ANIM_LAG_SWITCH>500</ANIM_LAG_SWITCH>
         <BUTTON_POTENTIOMETER/>
-        <POTENTIOMETER>4</POTENTIOMETER>
+        <POTENTIOMETER>5</POTENTIOMETER>
         <ANIM_NEVER_FAILS>True</ANIM_NEVER_FAILS>
         <TYPE>PULL_25K</TYPE>
       </Parameters>
       <UseTemplate Name="ASOBO_NAVCOM_Simple_Radio_Template">
         <ID>1</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
+		<DONT_APPEND_ID>True</DONT_APPEND_ID>
+        <NAV_CIRCUIT_ID>17</NAV_CIRCUIT_ID>
+        <CIRCUIT_ID>18</CIRCUIT_ID>
         <FAILURE>(A:COM VOLUME:1,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Simple_Radio_Template">
         <ID>2</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
+		 <DONT_APPEND_ID>True</DONT_APPEND_ID>
+        <NAV_CIRCUIT_ID>19</NAV_CIRCUIT_ID>
+        <CIRCUIT_ID>20</CIRCUIT_ID>
         <FAILURE>(A:COM VOLUME:2,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
         <ID>1</ID>
         <NODE_ID>NavCom1_Screen</NODE_ID>
-        <NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>
+        <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
         <USE_DIMMING_POTENTIOMETER/>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
         <ID>2</ID>
         <NODE_ID>NavCom2_Screen</NODE_ID>
-        <NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>
+        <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
         <USE_DIMMING_POTENTIOMETER/>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
       </UseTemplate>
@@ -749,15 +766,10 @@
 		<Parameters Type="Default">
 			<DONT_APPEND_ID>True</DONT_APPEND_ID>
 		</Parameters>
-		<UseTemplate Name="ASOBO_AudioPanel_Knob_Volume_Template">
-			<NODE_ID>AUDIO_Knob_Volume</NODE_ID>
-			<ANIM_NAME>AUDIO_Knob_Volume</ANIM_NAME>
-      <CIRCUIT_ID>28</CIRCUIT_ID>
-		</UseTemplate>
-		<UseTemplate Name="ASOBO_AudioPanel_Knob_Potentiometer_Template">
-			<NODE_ID>AUDIO_Knob_Dimming</NODE_ID>
-			<ANIM_NAME>AUDIO_Knob_Dimming</ANIM_NAME>
-		</UseTemplate>
+     <UseTemplate Name="C152X_AUDIO_Knob_Volume_Template">
+		<CIRCUIT_ID>28</CIRCUIT_ID>	  <!----------------------- Upper knob pot 4----------------------->
+        <USE_DIMMING_KNOB/>
+      </UseTemplate>
 		<Component ID="OMI_Indicators">
 			<DefaultTemplateParameters>
 				<FAILURE>(A:CIRCUIT GENERAL PANEL ON, Bool)</FAILURE>
@@ -852,6 +864,7 @@
         <NODE_ID>DME_Switch</NODE_ID>
         <ANIM_NAME>DME_Switch</ANIM_NAME>
         <PART_ID>DME_Switch</PART_ID>
+		<CIRCUIT_ID>35</CIRCUIT_ID>
        </UseTemplate>
       <UseTemplate Name="JPL_DME_Screens_Template">
         <ID>1</ID>

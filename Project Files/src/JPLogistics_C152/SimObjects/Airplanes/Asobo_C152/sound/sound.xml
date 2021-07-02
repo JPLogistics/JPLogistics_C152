@@ -34,7 +34,7 @@
   <!-- TRIGGERS SOUNDS ========================================================================================== --> 
 
   <WindSounds>
-		<Sound WwiseData="true" WwiseEvent="wind_sound"/>
+    <Sound WwiseEvent="wind_sound" WwiseData="true" />    
   </WindSounds>   
   
   <GroundSounds>
@@ -58,106 +58,33 @@
   
   <MiscellaneousSounds>
     <Sound WwiseEvent="STALL_WARNING" WwiseData="true" />
-	
-
   </MiscellaneousSounds>
   
   <EngineSoundPresets>
-
-  <!-- ###########################################-->
-  
-    <Sound WwiseEvent="Combustion" ConeHeading="180" FadeOutType="2" FadeOutTime="0.2" RPMMin="300" WwiseData="true" EngineIndex="1" >    	
+    <Sound WwiseEvent="Combustion" ConeHeading="180" FadeOutType="2" FadeOutTime="0.2" RPMMin="200" WwiseData="true" EngineIndex="1" >    	
 		<WwiseRTPC SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" Units="PERCENT OVER 100" RTPCReleaseTime="0.5" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-		<WwiseRTPC LocalVar="JPL_WINDOW_PILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.7" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
 	</Sound>
-    <Sound WwiseEvent="Combustion" ConeHeading="180" FadeOutType="2" FadeOutTime="0.2" RPMMin="300" WwiseData="true" EngineIndex="1" >    	
+	<Sound WwiseEvent="Combustion" CustomSuffix="Exhaust" ConeHeading="235" FadeOutType="2" FadeOutTime="0.2" RPMMin="200" WwiseData="true" EngineIndex="1" ViewPoint="Outside">   
 		<WwiseRTPC SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" Units="PERCENT OVER 100" RTPCReleaseTime="0.5" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-		<WwiseRTPC LocalVar="JPL_DOOR_PILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.7" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-	</Sound>
-	<Sound WwiseEvent="Combustion" CustomSuffix="Exhaust" ConeHeading="235" FadeOutType="2" FadeOutTime="0.2" RPMMin="300" WwiseData="true" EngineIndex="1" >   
-		<WwiseRTPC SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" Units="PERCENT OVER 100" RTPCReleaseTime="0.5" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
 	</Sound>
     <Sound WwiseEvent="Starter" FadeOutType="2" FadeOutTime="0.1" WwiseData="true" EngineIndex="1" >  
 		<WwiseRTPC SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" Units="PERCENT OVER 100" RTPCReleaseTime="0.5" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-		<WwiseRTPC LocalVar="JPL_DOOR_PILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.7" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
 	</Sound>
     <Sound WwiseEvent="CombustionStart" ConeHeading="180" WwiseData="true" EngineIndex="1" >  
 		<WwiseRTPC SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" Units="PERCENT OVER 100" RTPCReleaseTime="0.5" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-		<WwiseRTPC LocalVar="JPL_WINDOW_PILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.7" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
 	</Sound>
     <Sound WwiseEvent="CombustionStart" CustomSuffix="Propeller" ConeHeading="0" WwiseData="true" EngineIndex="1" > 
 		<WwiseRTPC SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" Units="PERCENT OVER 100" RTPCReleaseTime="0.5" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-		<WwiseRTPC LocalVar="JPL_DOOR_COPILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.7" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
 	</Sound>  
-    <Sound WwiseEvent="Shutdown" ConeHeading="180" RPMMin="300" WwiseData="true" EngineIndex="1" >     
+    <Sound WwiseEvent="Shutdown" ConeHeading="180" RPMMin="200" WwiseData="true" EngineIndex="1" >     
 		<WwiseRTPC SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" Units="PERCENT OVER 100" RTPCReleaseTime="0.5" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-		<WwiseRTPC LocalVar="JPL_DOOR_PILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.7" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
 	</Sound>
-    <Sound WwiseEvent="Shutdown" CustomSuffix="Propeller" ConeHeading="0" RPMMin="300" WwiseData="true" EngineIndex="1" > 
+    <Sound WwiseEvent="Shutdown" CustomSuffix="Propeller" ConeHeading="0" RPMMin="200" WwiseData="true" EngineIndex="1" > 
 		<WwiseRTPC SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" Units="PERCENT OVER 100" RTPCReleaseTime="0.5" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-		<WwiseRTPC LocalVar="JPL_WINDOW_PILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.7" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
 	</Sound>
-    <Sound WwiseEvent="Propeller" ConeHeading="0" FadeOutType="2" FadeOutTime="0.2" RPMMin="300" WwiseData="true" EngineIndex="1" >
+    <Sound WwiseEvent="Propeller" ConeHeading="0" FadeOutType="2" FadeOutTime="0.2" RPMMin="200" WwiseData="true" EngineIndex="1" >
 		<WwiseRTPC SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" Units="PERCENT OVER 100" RTPCReleaseTime="0.5" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-		<WwiseRTPC LocalVar="JPL_WINDOW_COPILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.7" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
 	</Sound>
-    <Sound WwiseEvent="Propeller" ConeHeading="0" FadeOutType="2" FadeOutTime="0.2" RPMMin="300" WwiseData="true" EngineIndex="1" >
-		<WwiseRTPC SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" Units="PERCENT OVER 100" RTPCReleaseTime="0.5" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-		<WwiseRTPC LocalVar="JPL_DOOR_COPILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.7" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
-	</Sound>
-
-<!-- ############################-->
-
-	<!--KEEP
-	 <Sound WwiseEvent="Propeller" FadeOutType="2" FadeOutTime="5.5" RPMMin="750" WwiseData="true" EngineIndex="1" ViewPoint="Inside">
-		<WwiseRTPC SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" Units="PERCENT OVER 100" RTPCReleaseType="Linear" RTPCReleaseTime="4.5" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-		<WwiseRTPC LocalVar="JPL_WINDOW_PILOT" Units="PERCENT" Index="0" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-    </Sound>
-	-->
- <!--
-	 <Sound WwiseEvent="Combustion" FadeOutType="2" Panning="9000" FadeOutTime="0.5" RPMMin="100" WwiseData="true" EngineIndex="1" ViewPoint="Inside">
-		<WwiseRTPC LocalVar="JPL_WINDOW_PILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.2" RTPCReleaseTime=".3" RTPCName="JPENGINE" />
-    </Sound>
-	
-	 <Sound WwiseEvent="Propeller" FadeOutType="2" FadeOutTime="0.5" RPMMin="100" WwiseData="true" EngineIndex="1" ViewPoint="Inside">
-		<WwiseRTPC LocalVar="JPL_WINDOW_PILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.2" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-    </Sound>
-	
-	 <Sound WwiseEvent="Starter" FadeOutType="2" FadeOutTime="0.5" RPMMin="100" WwiseData="true" EngineIndex="1" ViewPoint="Inside">
-		<WwiseRTPC LocalVar="JPL_WINDOW_PILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.2" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-    </Sound>
-	
-	 <Sound WwiseEvent="CombustionStart" FadeOutType="2" FadeOutTime="0.5" RPMMin="100" WwiseData="true" EngineIndex="1" ViewPoint="Inside">
-		<WwiseRTPC LocalVar="JPL_WINDOW_PILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.2" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-    </Sound>
-	
-	 <Sound WwiseEvent="Shutdown" FadeOutType="2" FadeOutTime="0.5" RPMMin="100" WwiseData="true" EngineIndex="1" ViewPoint="Inside">
-		<WwiseRTPC LocalVar="JPL_WINDOW_PILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.2" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-    </Sound>
-	
-
-	 <Sound WwiseEvent="Combustion" FadeOutType="2" FadeOutTime="0.5" RPMMin="100" WwiseData="true" EngineIndex="1" ViewPoint="Inside">
-		<WwiseRTPC LocalVar="JPL_DOOR_PILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.2" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-    </Sound>
-	
-	 <Sound WwiseEvent="Propeller" FadeOutType="2" FadeOutTime="0.5" RPMMin="100" WwiseData="true" EngineIndex="1" ViewPoint="Inside">
-		<WwiseRTPC LocalVar="JPL_DOOR_PILOT" Units="PERCENT" Index="1" RTPCAttackTime="1.2" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-    </Sound>
-	
-	 <Sound WwiseEvent="Starter" FadeOutType="2" FadeOutTime="0.5" RPMMin="100" WwiseData="true" EngineIndex="1" ViewPoint="Inside">
-		<WwiseRTPC LocalVar="JPL_DOOR_PILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.2" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-    </Sound>
-	
-	 <Sound WwiseEvent="CombustionStart" FadeOutType="2" FadeOutTime="0.5" RPMMin="100" WwiseData="true" EngineIndex="1" ViewPoint="Inside">
-		<WwiseRTPC LocalVar="JPL_DOOR_PILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.2" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-    </Sound>
-	
-	 <Sound WwiseEvent="Shutdown" FadeOutType="2" FadeOutTime="0.5" RPMMin="100" WwiseData="true" EngineIndex="1" ViewPoint="Inside">
-		<WwiseRTPC LocalVar="JPL_DOOR_PILOT" Units="PERCENT" Index="0" RTPCAttackTime="1.2" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
-    </Sound>
--->
-  
- 
   </EngineSoundPresets>
   
   <EngineSoundStates>
@@ -207,6 +134,23 @@
       <WwiseRTPC SimVar="TRAILING EDGE FLAPS RIGHT PERCENT" Units="PERCENT" Derived="true" Index="0" RTPCName="SIMVAR_TRAILING_EDGE_FLAPS_RIGHT_PERCENT_DERIVED" />
     </Sound>
 
+	<Sound WwiseData="true" WwiseEvent="flaps_drag_left" NodeName="LeftFlap_Aux1" ContinuousStopDelay="1.0" SimVar="TRAILING EDGE FLAPS LEFT PERCENT" Units="PERCENT" Index="0">
+		<Range LowerBound="1" />	
+		<Requires SimVar="AIRSPEED TRUE" Units="KNOTS" Index="0">
+		  <Range LowerBound="1" />
+		</Requires>
+		<WwiseRTPC SimVar="TRAILING EDGE FLAPS LEFT PERCENT" Units="PERCENT" Index="0" RTPCName="SIMVAR_TRAILING_EDGE_FLAPS_LEFT_PERCENT" />
+		<WwiseRTPC SimVar="AIRSPEED TRUE" Units="KNOTS" Index="0" RTPCName="SIMVAR_AIRSPEED_TRUE"/> 
+    </Sound>
+    
+    <Sound WwiseData="true" WwiseEvent="flaps_drag_right" NodeName="RightFlap_Aux1" ContinuousStopDelay="1.0" SimVar="TRAILING EDGE FLAPS RIGHT PERCENT" Units="PERCENT" Index="0">
+		<Range LowerBound="1" />
+		<Requires SimVar="AIRSPEED TRUE" Units="KNOTS" Index="0">
+		  <Range LowerBound="1" />
+		</Requires>
+		<WwiseRTPC SimVar="TRAILING EDGE FLAPS RIGHT PERCENT" Units="PERCENT" Index="0" RTPCName="SIMVAR_TRAILING_EDGE_FLAPS_RIGHT_PERCENT" />
+        <WwiseRTPC SimVar="AIRSPEED TRUE" Units="KNOTS" Index="0" RTPCName="SIMVAR_AIRSPEED_TRUE"/> 
+    </Sound> 
     <!-- INSTRUMENTS FOLEYS  =========================================================================  --> 
     
     <Sound WwiseData="true" WwiseEvent="lever_mixture" ViewPoint="Inside" NodeName="FUEL_LEVER_MIXTURE_1" ContinuousStopDelay="0.2" SimVar="GENERAL ENG MIXTURE LEVER POSITION" Units="PERCENT" Index="1">
@@ -243,11 +187,6 @@
 		<Range LowerBound="66" UpperBound="68" />
 		<Range LowerBound="100" />
 	</Sound>
-	
-	<!--not working-->
-    <Sound WwiseData="true" WwiseEvent="rudder" ViewPoint="Inside" NodeName="Sun_visors_Pilot" ContinuousStopDelay="0.2" LocalVar="XMLVAR_JPL_VISOR_PILOT" Units="NUMBER" Index="1">
-      <WwiseRTPC LocalVar="XMLVAR_JPL_VISOR_PILOT" Units="NUMBER" Index="1" Derived="true" RTPCName="SIMVAR_RUDDER_POSITION_DERIVED" />
-    </Sound>
     
     <!-- RATTLES ========================================================================================== -->    
 
@@ -332,8 +271,7 @@
 	<Sound WwiseData="true" WwiseEvent="taxi_light_switch_off" ViewPoint="Inside"/>	     	  
 	<Sound WwiseData="true" WwiseEvent="nav_light_switch_on" ViewPoint="Inside"/> 	     
 	<Sound WwiseData="true" WwiseEvent="nav_light_switch_off" ViewPoint="Inside"/>	     	  
-	<!--<Sound WwiseData="true" WwiseEvent="beacon_light_switch_on" ViewPoint="Inside"/> 	-->   
-	<Sound WwiseEvent="beacon_light_switch_on" FileName="door_open" WwiseData="false" ApplyCockpitReverb="true" ViewPoint="Inside"/> 
+	<Sound WwiseData="true" WwiseEvent="beacon_light_switch_on" ViewPoint="Inside"/> 	     	  
 	<Sound WwiseData="true" WwiseEvent="beacon_light_switch_off" ViewPoint="Inside"/>	     	  
 	<Sound WwiseData="true" WwiseEvent="strobe_light_switch_on" ViewPoint="Inside"/> 	     	  
 	<Sound WwiseData="true" WwiseEvent="strobe_light_switch_off" ViewPoint="Inside"/>  	  	  
@@ -366,12 +304,14 @@
 	<Sound WwiseData="true" WwiseEvent="navcom_volume_knob_push_button_off" ViewPoint="Inside"/>	   	  	  	 
 	<Sound WwiseData="true" WwiseEvent="navcom_audio_marker_switch_on" ViewPoint="Inside"/>	   	  	  	 
 	<Sound WwiseData="true" WwiseEvent="navcom_audio_marker_switch_off" ViewPoint="Inside"/>
+	<Sound WwiseData="true" WwiseEvent="NAVCOM_push_button_on" ViewPoint="Inside"/>	   	  	  	 
+	<Sound WwiseData="true" WwiseEvent="NAVCOM_push_button_off" ViewPoint="Inside"/>
 	   	  	  
 	<!-- LEVER ========================================================================================== --> 		  
 	<Sound WwiseData="true" WwiseEvent="parking_brake_switch_on" ViewPoint="Inside"/> 	     	  
 	<Sound WwiseData="true" WwiseEvent="parking_brake_switch_off" ViewPoint="Inside"/>	   		  
-	<Sound WwiseData="true" WwiseEvent="cabin_heat_switch_off" ViewPoint="Inside"/> 	     	  
-	<Sound WwiseData="true" WwiseEvent="cabin_heat_switch_on" ViewPoint="Inside"/>	   		  
+	<Sound WwiseData="true" WwiseEvent="cabin_heat_lever_off" ViewPoint="Inside"/> 	     	  
+	<Sound WwiseData="true" WwiseEvent="cabin_heat_lever_on" ViewPoint="Inside"/>	   		  
 	<Sound WwiseData="true" WwiseEvent="fuel_lever_mixture_on" ViewPoint="Inside"/>	  	
 	<Sound WwiseData="true" WwiseEvent="fuel_lever_mixture_off" ViewPoint="Inside"/>
 	<Sound WwiseData="true" WwiseEvent="fuel_lever_mixture_button_on" ViewPoint="Inside"/>
@@ -382,14 +322,12 @@
 	<!-- Audio ========================================================================================== --> 		  	
 	<Sound WwiseData="true" WwiseEvent="audio_switch_intercom" ViewPoint="Inside"/>	   		  
 	<Sound WwiseData="true" WwiseEvent="navcom_audio_volume_knob" ViewPoint="Inside"/>	  
-	<Sound WwiseData="true" WwiseEvent="navcom_audio_volume_large_knob" ViewPoint="Inside"/>	   	
+	<Sound WwiseData="true" WwiseEvent="navcom_audio_volume_knob_1" ViewPoint="Inside"/>	   	
 	 
 	<!-- ADF ========================================================================================== --> 		  
 	<Sound WwiseData="true" WwiseEvent="adf_volume_knob" ViewPoint="Inside"/>	   	  
 	<Sound WwiseData="true" WwiseEvent="adf_frequency_knob" ViewPoint="Inside"/>	   
 	<Sound WwiseData="true" WwiseEvent="adf_mode_knob" ViewPoint="Inside"/>
-	
-
 
   </AnimationSounds> 	  
 
