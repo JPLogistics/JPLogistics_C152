@@ -203,7 +203,7 @@
     <Parameters Type="Default">
       <CENTER_RADIUS>0.002</CENTER_RADIUS>
       <ANIM_LAG>100</ANIM_LAG>
-      <NODE_ID>#RADIO_TYPE#_Knob_OnOff_#ID##SUFFIX_ID#</NODE_ID>
+      <NODE_ID>#RADIO_TYPE#_Knob_OnOff_#ID#</NODE_ID>
       <PART_ID>#RADIO_TYPE##ID#_Knob</PART_ID>
       <Condition Check="USE_SEPARATE_ON_OFF_ANIM">
         <ANIM_NAME_ON_OFF>#RADIO_TYPE#_Knob_OnOff_#ID#_Push</ANIM_NAME_ON_OFF>
@@ -215,7 +215,7 @@
         <False>
           <EXTRA_INTERACTION>_LeftSingle</EXTRA_INTERACTION>
           <USE_SIMVAR_FOR_KNOB_ANIM>True</USE_SIMVAR_FOR_KNOB_ANIM>
-          <ANIM_NAME_KNOB>#RADIO_TYPE#_Knob_OnOff_#ID##SUFFIX_ID#</ANIM_NAME_KNOB>
+          <ANIM_NAME_KNOB>#RADIO_TYPE#_Knob_OnOff_#ID#</ANIM_NAME_KNOB>
           <COUNT>16</COUNT>
           <Switch Param="RADIO_TYPE">
             <Case Value="NAV">
