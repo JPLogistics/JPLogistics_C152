@@ -187,6 +187,7 @@
         <DRAG_AXIS_SCALE>400</DRAG_AXIS_SCALE>
         <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
         <INVERT_IM_DRAG_INPUT_SCALAR>True</INVERT_IM_DRAG_INPUT_SCALAR>
+		<ANIM_NAME>DEICE_Lever_Engine</ANIM_NAME>
       </UseTemplate>
       <UseTemplate Name="ASOBO_DEICE_Switch_Pitot_Template">
       </UseTemplate>
@@ -578,8 +579,8 @@
         <KNOB_TURN_SPEED>4.0</KNOB_TURN_SPEED>
         <INIT_VALUE>40</INIT_VALUE>
         <MIN_VALUE>5</MIN_VALUE>
-        <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_GLARESHIELD_ACTION</TT_DESCRIPTION_ID>
-        <TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_GLARESHIELD_TITLE</TOOLTIP_TITLE>
+        <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_PANEL_ACTION</TT_DESCRIPTION_ID>
+        <TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_PANEL_TITLE</TOOLTIP_TITLE>
       </UseTemplate>
 
       <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Cabin_Template">
@@ -762,14 +763,14 @@
       </UseTemplate>
     </Component>
 
-    	<Component ID="AUDIO_TOP_PANEL">
+    <Component ID="AUDIO_TOP_PANEL">
 		<Parameters Type="Default">
 			<DONT_APPEND_ID>True</DONT_APPEND_ID>
 		</Parameters>
-     <UseTemplate Name="C152X_AUDIO_Knob_Volume_Template">
-		<CIRCUIT_ID>28</CIRCUIT_ID>	  <!----------------------- Upper knob pot 4----------------------->
-        <USE_DIMMING_KNOB/>
-      </UseTemplate>
+		<UseTemplate Name="C152X_AUDIO_Knob_Volume_Template">
+			<CIRCUIT_ID>28</CIRCUIT_ID>	  <!----------------------- Upper knob pot 4----------------------->
+			<USE_DIMMING_KNOB/>
+		</UseTemplate>
 		<Component ID="OMI_Indicators">
 			<DefaultTemplateParameters>
 				<FAILURE>(A:CIRCUIT GENERAL PANEL ON, Bool)</FAILURE>
