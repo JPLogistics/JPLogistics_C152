@@ -1,7 +1,7 @@
 <Include File="Subtemplates\\Instrument_Subtemplates.xml"/>
 <!-- Interior Lighting #################################################### -->
 <Template Name="C152X_LIGHTING_Switch_Light_Panel_Template">
-	<UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Template">
+	<UseTemplate Name="ASOBO_LIGHTING_Light_Template">
 		<DefaultTemplateParameters>
 			<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.PANEL_LIGHT_OFF</ANIMTIP_0>
 			<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.PANEL_LIGHT_ON</ANIMTIP_1>				
