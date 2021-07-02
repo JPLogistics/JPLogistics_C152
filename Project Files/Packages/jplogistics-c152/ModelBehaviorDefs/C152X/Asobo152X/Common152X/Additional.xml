@@ -133,7 +133,43 @@
   </UseTemplate>
 </Template>
 
-
+<Template Name="JPL_DME_Screens_Template">
+  <Parameters Type="Default">
+    <ID>1</ID>
+  </Parameters>
+  <UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
+    <TEMPLATE_TO_CALL>JPL_DME_Screens_SubTemplate</TEMPLATE_TO_CALL>
+  </UseTemplate>
+</Template>
+<Template Name="JPL_DME_Screens_SubTemplate">
+  <DefaultTemplateParameters>
+    <NODE_ID>DME_Screen</NODE_ID>
+    <Condition Check="USE_DIMMING_POTENTIOMETER">
+      <POTENTIOMETER>4</POTENTIOMETER>
+      <DIMMING_FACTOR>1</DIMMING_FACTOR>
+    </Condition>
+  </DefaultTemplateParameters>
+  <Component ID="#NODE_ID#" Node="#NODE_ID#">
+    <UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+      <FAILURE>(A:CIRCUIT NAVCOM#ID# ON, Bool)</FAILURE>
+      <Condition Check="USE_DIMMING_POTENTIOMETER">
+        <True>
+          <EMISSIVE_CODE>(L:DME_POWER, Bool) 0 &gt; (A:LIGHT POTENTIOMETER:#POTENTIOMETER#, percent over 100) * #DIMMING_FACTOR# *</EMISSIVE_CODE>
+        </True>
+        <False>
+          <EMISSIVE_CODE>(L:DME_POWER, Bool) 0 &gt;</EMISSIVE_CODE>
+        </False>
+      </Condition>
+    </UseTemplate>
+  </Component>
+  <Condition Check="NAVCOM_CONTROLS_PANEL_LIGHT_STATE">
+    <Update Frequency="5">
+      (L:DME_POWER, Bool) (A:LIGHT PANEL, Bool) != if{
+      (L:DME_POWER, Bool) (&gt;K:PANEL_LIGHTS_SET)
+      }
+    </Update>
+  </Condition>
+</Template>
 
 <Template Name = "C152X_Speaker">
   <Update Once="True">
