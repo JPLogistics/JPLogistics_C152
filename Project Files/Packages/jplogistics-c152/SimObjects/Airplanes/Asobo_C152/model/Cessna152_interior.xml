@@ -12,7 +12,7 @@
     <Include ModelBehaviorFile="Asobo\Common.xml"/>
     <Include ModelBehaviorFile="Asobo\Transponder\Transponder.xml"/>
     <Include ModelBehaviorFile="Asobo\NAVCOM\ADF.xml"/>
-    <Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
+    <!--<Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>-->
     <Include ModelBehaviorFile="C152X\Index.xml"/>
 
     <!-- C152X Modification courtesy of G36 Improvement Project-- WIP -->
@@ -202,8 +202,8 @@
           (O:_AvionicsShouldBeOn) (A:BUS CONNECTION ON:1, Bool) != if{
           1 1 (&gt;K:2:ELECTRICAL_BUS_TO_BUS_CONNECTION_TOGGLE)
           }
-          (O:_AvionicsShouldBeOn) (A:CIRCUIT SWITCH ON:14, Bool) != if{
-          14 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+          (O:_AvionicsShouldBeOn) (A:CIRCUIT SWITCH ON:19, Bool) != if{
+          19 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
           }
         </SYNC_AVIONICS_TO_BATTERY_STATE>
       </DefaultTemplateParameters>
@@ -564,66 +564,47 @@
       <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Beacon_Template">
         <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_BEACON_ACTION_SET</TT_DESCRIPTION_ID>
       </UseTemplate>
-      <!--
-      <UseTemplate Name="C152X_LIGHTING_Knob_Panel_Template"> <!-- Lower Knob by key for instrument light dimming -- Pot 5--
-        <NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
-        <ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
-        <KNOB_TURN_SPEED>4.0</KNOB_TURN_SPEED>
-		<INIT_VALUE>20</INIT_VALUE>
-		<MIN_VALUE>5</MIN_VALUE>
-		<ANIMTIP_0>Instrument Lights (%((A:LIGHT POTENTIOMETER:5, Percent))%!d!%)</ANIMTIP_0>
-		<ANIMTIP_1>Instrument Lights (%((A:LIGHT POTENTIOMETER:5, Percent))%!d!%)</ANIMTIP_1>
-      </UseTemplate>
--->
 
-      <UseTemplate Name="ASOBO_LIGHTING_Knob_Glareshield_Template">
-        <NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
-        <ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
-        <KNOB_TURN_SPEED>4.0</KNOB_TURN_SPEED>
-        <INIT_VALUE>40</INIT_VALUE>
-        <MIN_VALUE>5</MIN_VALUE>
-        <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_PANEL_ACTION</TT_DESCRIPTION_ID>
-        <TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_PANEL_TITLE</TOOLTIP_TITLE>
-      </UseTemplate>
+		
+		<!-- ##########PANEL LIGHTS THIS IS BOTTOM KNOB AND DONE LT SWITCH ON DASH ###########-->
+		<UseTemplate Name="ASOBO_LIGHTING_Knob_Potentiometer_Template">
+			<NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
+			<ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
+			<POTENTIOMETER>5</POTENTIOMETER>
+			<NO_AUTHORITY_OVER_SWITCH_STATE/>
+			<CIRCUIT_ID>11</CIRCUIT_ID>
+			<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_PANEL_ACTION</TT_DESCRIPTION_ID>
+			<TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_PANEL_TITLE</TOOLTIP_TITLE>
+			<WWISE_EVENT>navcom_audio_volume_knob</WWISE_EVENT>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Panel_Template"> 
+			<ANIM_NAME>LIGHTING_Switch_Light_Cabin_1</ANIM_NAME>
+			<PART_ID>LIGHTING_Switch_Light_Cabin</PART_ID>
+			<NODE_ID>LIGHTING_Switch_Light_Cabin_1</NODE_ID>
+			<CIRCUIT_ID>11</CIRCUIT_ID>
+			<WWISE_EVENT_1>cabin_light_switch_on</WWISE_EVENT_1>
+			<WWISE_EVENT_2>cabin_light_switch_off</WWISE_EVENT_2>
+		</UseTemplate>
+		
+		
+		
+		<!--#######BUTTON ON CEILING##########-->
+		<UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Cabin_Template">
+			<NODE_ID>LIGHTING_Switch_Cabin</NODE_ID>
+			<ANIM_NAME>LIGHTING_Switch_Cabin</ANIM_NAME>
+			<CIRCUIT_ID>15</CIRCUIT_ID>
+		</UseTemplate>		
+		<UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template">
+		</UseTemplate>	
+		
+		
+		<UseTemplate Name="ASOBO_LIGHTING_Glareshield_Emissive_Template">
+			<NODE_ID>LIGHTING_Panel_Emisive</NODE_ID>
+		    <POTENTIOMETER>4</POTENTIOMETER>
+        <CIRCUIT_ID>12</CIRCUIT_ID>
+		</UseTemplate>
 
-      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Cabin_Template">
-        <!-- Flood lights on/off? -->
-        <NODE_ID>LIGHTING_Switch_Cabin</NODE_ID>
-        <ANIM_NAME>LIGHTING_Switch_Cabin</ANIM_NAME>
-        <CIRCUIT_ID>26</CIRCUIT_ID>
-        <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_CABIN_ACTION_SET</TT_DESCRIPTION_ID>
-        <TOOLTIP_TITLE>@TT_Package.LIGHTING_SWITCH_CABIN_TITLE</TOOLTIP_TITLE>
-      </UseTemplate>
 
-
-
-      <UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template">
-      </UseTemplate>
-
-      <UseTemplate Name="ASOBO_LIGHTING_Glareshield_Emissive_Template">
-        <!-- Red light on ceiling -->
-        <NODE_ID>LIGHTING_Panel_Emisive</NODE_ID>
-        <POTENTIOMETER>4</POTENTIOMETER>
-        <CIRCUIT_ID>28</CIRCUIT_ID>
-      </UseTemplate>
-
-      <UseTemplate Name="C152X_LIGHTING_Cabin_Emissive_Template">
-        <!-- White cabin light on ceiling -->
-      </UseTemplate>
-
-      <UseTemplate Name="C152X_LIGHTING_Switch_Light_Panel_Template">
-        <!-- Upper Panel lights on/off -->
-        <ANIM_NAME>LIGHTING_Switch_Light_Cabin_1</ANIM_NAME>
-        <PART_ID>LIGHTING_Switch_Light_Cabin</PART_ID>
-        <NODE_ID>LIGHTING_Switch_Light_Cabin_1</NODE_ID>
-      </UseTemplate>
-
-      <!-- Which is this for? -->
-      <UseTemplate Name="C152X_Speaker">
-        <NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
-        <ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
-        <CIRCUIT_ID>17</CIRCUIT_ID>
-      </UseTemplate>
 
     </Component>
 
@@ -678,19 +659,25 @@
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
       </UseTemplate>
       <Component Id="NAVCOM_Sound_Push_Buttons">
-        <UseTemplate Name="ASOBO_NAVCOM_Push_MARKER_Sound_Template">
+        <UseTemplate Name="ASOBO_NAVCOM_Switch_MARKER_Sound_Template"><!--WAS PUSH-->
           <NODE_ID>AUDIO_Push_MKR</NODE_ID>
           <ANIM_NAME>AUDIO_Push_MKR</ANIM_NAME>
+		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
-        <UseTemplate Name="ASOBO_NAVCOM_Push_DME_Sound_Template">
+        <UseTemplate Name="ASOBO_NAVCOM_Switch_DME_Sound_Template"><!--WAS PUSH-->
           <NODE_ID>AUDIO_Push_DME</NODE_ID>
           <ANIM_NAME>AUDIO_Push_DME</ANIM_NAME>
+		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
-        <UseTemplate Name="ASOBO_AUDIO_Push_Speaker_Template">
+        <UseTemplate Name="ASOBO_AUDIO_Switch_Speaker_Template"><!--WAS PUSH-->
           <NODE_ID>AUDIO_Push_SPKR</NODE_ID>
           <ANIM_NAME>AUDIO_Push_SPKR</ANIM_NAME>
+		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
-        <UseTemplate Name="ASOBO_NAVCOM_Push_EXT_Sound_Template">
+        <UseTemplate Name="ASOBO_NAVCOM_Switch_EXT_Sound_Template"><!--NEEDS TO BE CREATED-->
           <ID>1</ID>
           <NODE_ID>AUDIO_Push_EXT</NODE_ID>
           <ANIM_NAME>AUDIO_Push_EXT</ANIM_NAME>
@@ -699,6 +686,8 @@
         <UseTemplate Name="ASOBO_NAVCOM_ADF_Sound_Template">
           <NODE_ID>AUDIO_Push_AOE</NODE_ID>
           <ANIM_NAME>AUDIO_Push_AOE</ANIM_NAME>
+		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
         <UseTemplate Name="ASOBO_NAVCOM_Switch_NAV_Sound_Template">
           <ID>1</ID>
@@ -706,6 +695,8 @@
           <OTHER_ID>2</OTHER_ID>
           <NODE_ID>AUDIO_Push_NAV_1</NODE_ID>
           <ANIM_NAME>AUDIO_Push_NAV_1</ANIM_NAME>
+		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
         <UseTemplate Name="ASOBO_NAVCOM_Switch_NAV_Sound_Template">
           <ID>2</ID>
@@ -713,6 +704,8 @@
           <OTHER_ID>1</OTHER_ID>
           <NODE_ID>AUDIO_Push_NAV_2</NODE_ID>
           <ANIM_NAME>AUDIO_Push_NAV_2</ANIM_NAME>
+		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
         <UseTemplate Name="ASOBO_NAVCOM_Base_Template">
           <SET_STATE_EXTERNAL>
@@ -737,6 +730,8 @@
           <SIMVAR_TO_WATCH_0>COM RECEIVE:1</SIMVAR_TO_WATCH_0>
           <SIMVAR_TO_WATCH_1>COM RECEIVE:2</SIMVAR_TO_WATCH_1>
           <BTN_ID>NAV_Sound_Both</BTN_ID>
+		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
         <UseTemplate Name="ASOBO_GT_COM_Push_Transmit_Template">
           <ID>1</ID>
@@ -762,16 +757,31 @@
         <ANIM_LAG>500</ANIM_LAG>
       </UseTemplate>
     </Component>
-
+    <Component ID="DME_Interaction"> <!--##########################################################-->
+      <UseTemplate Name="DME_Switch_Template">
+        <NODE_ID>DME_Switch</NODE_ID>
+        <ANIM_NAME>DME_Switch</ANIM_NAME>
+        <PART_ID>DME_Switch</PART_ID>
+        <CIRCUIT_ID>36</CIRCUIT_ID>
+      </UseTemplate>
+      <UseTemplate Name="JPL_DME_Screens_Template">
+        <ID>1</ID>
+        <NODE_ID>DME_Screen</NODE_ID>
+        <DIMMING_FACTOR>1</DIMMING_FACTOR>
+      </UseTemplate>
+    </Component>
     <Component ID="AUDIO_TOP_PANEL">
       <Parameters Type="Default">
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
       </Parameters>
-      <UseTemplate Name="C152X_AUDIO_Knob_Volume_Template">
-        <CIRCUIT_ID>28</CIRCUIT_ID>
-        <!----------------------- Upper knob pot 4----------------------->
-        <USE_DIMMING_KNOB/>
-      </UseTemplate>
+		<UseTemplate Name="ASOBO_AudioPanel_Knob_Volume_Template">
+			<NODE_ID>AUDIO_Knob_Volume</NODE_ID>
+			<ANIM_NAME>AUDIO_Knob_Volume</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_AudioPanel_Knob_Potentiometer_Template">
+			<NODE_ID>AUDIO_Knob_Dimming</NODE_ID>
+			<ANIM_NAME>AUDIO_Knob_Dimming</ANIM_NAME>
+		</UseTemplate>
       <Component ID="OMI_Indicators">
         <DefaultTemplateParameters>
           <FAILURE>(A:CIRCUIT GENERAL PANEL ON, Bool)</FAILURE>
@@ -781,27 +791,25 @@
       <UseTemplate Name="ASOBO_AUDIO_Switch_Marker_Sens_Template">
       </UseTemplate>
     </Component>
-
-    <Component ID="SafetySwitches">
-      <!--<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+	<Component ID="SPEAKER_SWITCH">  <!--################# Just to animate the switch for now -->
+      <UseTemplate Name="C152X_Speaker">
         <NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
-      </UseTemplate>-->
-      <!--<UseTemplate Name="ASOBO_SAFETY_Push_Annunciator_Template">
-        <NODE_ID>AUDIO_Switch_Test</NODE_ID>
-		<ANIM_NAME>AUDIO_Switch_Test</ANIM_NAME>
-      </UseTemplate>-->
-    </Component>
+        <ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
+		<CIRCUIT_ID>38</CIRCUIT_ID>
+      </UseTemplate>
+	</Component>
     <Component ID="ANNUNCIATOR_TEST">
       <UseTemplate Name="C152X_Annun_Test">
         <NODE_ID>AUDIO_Switch_Test</NODE_ID>
         <ANIM_NAME>AUDIO_Switch_Test</ANIM_NAME>
         <PART_ID>AUDIO_Switch_Test</PART_ID>
+		<CIRCUIT_ID></CIRCUIT_ID>
       </UseTemplate>
     </Component>
     <Component ID="Pilots_Visibility">
       <Component ID="PILOT_0" Node="PILOT_0">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (A:COM TRANSMIT:1, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
       <Component ID="PILOT_1" Node="PILOT_1">
@@ -823,6 +831,43 @@
         </UseTemplate>
       </Component>
       -->
+	</Component>
+	<Component ID="SPEAKER_SWITCH">  <!--################# Just to animate the switch for now -->
+      <UseTemplate Name="C152X_Speaker">
+        <NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
+        <ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
+      </UseTemplate>
+	</Component>
+    <Component ID="ANNUNCIATOR_TEST">
+      <UseTemplate Name="C152X_Annun_Test">
+        <NODE_ID>AUDIO_Switch_Test</NODE_ID>
+        <ANIM_NAME>AUDIO_Switch_Test</ANIM_NAME>
+        <PART_ID>AUDIO_Switch_Test</PART_ID>
+      </UseTemplate>
+    </Component>
+    <Component ID="TUTO_Level" Node="TUTO_Level">
+      <UseTemplate Name="ASOBO_GT_Visibility_Code">
+        <ONCE>True</ONCE>
+        <VISIBILITY_CODE>0</VISIBILITY_CODE>
+      </UseTemplate>
+    </Component>
+    <Component ID="TUTO_Descent" Node="TUTO_Descent">
+      <UseTemplate Name="ASOBO_GT_Visibility_Code">
+        <ONCE>True</ONCE>
+        <VISIBILITY_CODE>0</VISIBILITY_CODE>
+      </UseTemplate>
+    </Component>
+    <Component ID="TUTO_Climb" Node="TUTO_Climb">
+      <UseTemplate Name="ASOBO_GT_Visibility_Code">
+        <ONCE>True</ONCE>
+        <VISIBILITY_CODE>0</VISIBILITY_CODE>
+      </UseTemplate>
+    </Component>
+    <Component ID="TUTO_TurnLeft" Node="TUTO_TurnLeft">
+      <UseTemplate Name="ASOBO_GT_Visibility_Code">
+        <ONCE>True</ONCE>
+        <VISIBILITY_CODE>0</VISIBILITY_CODE>
+      </UseTemplate>
     </Component>
     <Component ID="Pilot_Side_Interaction">
       <UseTemplate Name="JPL_Sun_Visors">
@@ -852,54 +897,6 @@
         <ID>CoPilot</ID>
       </UseTemplate>
     </Component>
-    <!--
-    <Component ID="DME_Interaction">
-      <UseTemplate Name="DME_Switch_Template">
-        <NODE_ID>DME_Switch</NODE_ID>
-        <ID>Pilot</ID>
-      </UseTemplate>
-    </Component>
-	-->
-    <!--######  FOR CONSIDERATION??? ######-->
-    <Component ID="DME_Interaction">
-      <UseTemplate Name="DME_Switch_Template">
-        <NODE_ID>DME_Switch</NODE_ID>
-        <ANIM_NAME>DME_Switch</ANIM_NAME>
-        <PART_ID>DME_Switch</PART_ID>
-        <CIRCUIT_ID>36</CIRCUIT_ID>
-      </UseTemplate>
-      <UseTemplate Name="JPL_DME_Screens_Template">
-        <ID>1</ID>
-        <NODE_ID>DME_Screen</NODE_ID>
-        <DIMMING_FACTOR>1</DIMMING_FACTOR>
-      </UseTemplate>
-    </Component>
-
-    <Component ID="TUTO_Level" Node="TUTO_Level">
-      <UseTemplate Name="ASOBO_GT_Visibility_Code">
-        <ONCE>True</ONCE>
-        <VISIBILITY_CODE>0</VISIBILITY_CODE>
-      </UseTemplate>
-    </Component>
-    <Component ID="TUTO_Descent" Node="TUTO_Descent">
-      <UseTemplate Name="ASOBO_GT_Visibility_Code">
-        <ONCE>True</ONCE>
-        <VISIBILITY_CODE>0</VISIBILITY_CODE>
-      </UseTemplate>
-    </Component>
-    <Component ID="TUTO_Climb" Node="TUTO_Climb">
-      <UseTemplate Name="ASOBO_GT_Visibility_Code">
-        <ONCE>True</ONCE>
-        <VISIBILITY_CODE>0</VISIBILITY_CODE>
-      </UseTemplate>
-    </Component>
-    <Component ID="TUTO_TurnLeft" Node="TUTO_TurnLeft">
-      <UseTemplate Name="ASOBO_GT_Visibility_Code">
-        <ONCE>True</ONCE>
-        <VISIBILITY_CODE>0</VISIBILITY_CODE>
-      </UseTemplate>
-    </Component>
-
   </Behaviors>
 </ModelInfo>
 
