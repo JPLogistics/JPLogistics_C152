@@ -677,10 +677,11 @@
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
-        <UseTemplate Name="ASOBO_NAVCOM_Switch_EXT_Sound_Template"><!--NEEDS TO BE CREATED-->
-          <ID>1</ID>
+        <UseTemplate Name="ASOBO_AUDIO_Switch_EXT_Template"><!--NEEDS TO BE CREATED-->
           <NODE_ID>AUDIO_Push_EXT</NODE_ID>
           <ANIM_NAME>AUDIO_Push_EXT</ANIM_NAME>
+		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
           <TOOLTIPID>Toggle Pilot</TOOLTIPID>
         </UseTemplate>
         <UseTemplate Name="ASOBO_NAVCOM_ADF_Sound_Template">
@@ -689,7 +690,7 @@
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
-        <UseTemplate Name="ASOBO_NAVCOM_Switch_NAV_Sound_Template">
+        <UseTemplate Name="ASOBO_NAVCOM_Switch_NAV_Sound_Template"><!--WAS PUSH-->
           <ID>1</ID>
           <USE_EXCLUSIVE_ID>True</USE_EXCLUSIVE_ID>
           <OTHER_ID>2</OTHER_ID>
@@ -698,7 +699,7 @@
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
-        <UseTemplate Name="ASOBO_NAVCOM_Switch_NAV_Sound_Template">
+        <UseTemplate Name="ASOBO_NAVCOM_Switch_NAV_Sound_Template"><!--WAS PUSH-->
           <ID>2</ID>
           <USE_EXCLUSIVE_ID>True</USE_EXCLUSIVE_ID>
           <OTHER_ID>1</OTHER_ID>
@@ -733,15 +734,19 @@
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
-        <UseTemplate Name="ASOBO_GT_COM_Push_Transmit_Template">
+        <UseTemplate Name="ASOBO_GT_COM_Switch_Transmit_Template"><!--WAS PUSH-->
           <ID>1</ID>
           <NODE_ID>AUDIO_Push_MIC_1</NODE_ID>
           <ANIM_NAME>AUDIO_Push_MIC_1</ANIM_NAME>
+		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
-        <UseTemplate Name="ASOBO_GT_COM_Push_Transmit_Template">
+        <UseTemplate Name="ASOBO_GT_COM_Switch_Transmit_Template"><!--WAS PUSH-->
           <ID>2</ID>
           <NODE_ID>AUDIO_Push_MIC_2</NODE_ID>
           <ANIM_NAME>AUDIO_Push_MIC_2</ANIM_NAME>
+		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
       </Component>
     </Component>
@@ -809,7 +814,7 @@
     <Component ID="Pilots_Visibility">
       <Component ID="PILOT_0" Node="PILOT_0">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (A:COM TRANSMIT:1, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
       <Component ID="PILOT_1" Node="PILOT_1">
