@@ -1,0 +1,302 @@
+﻿:root {
+    --bodyHeightScale: 1;
+}
+
+@keyframes TemporaryShow {
+    0%, 100% {
+        visibility: visible;
+    }
+}
+
+@keyframes TemporaryHide {
+    0%, 100% {
+        visibility: hidden;
+    }
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+    html body {
+        -webkit-user-select: none;
+        font-family: var(--font);
+        font-size: calc(var(--viewportHeightRatio) * (36px / 21.6) * var(--currentPageHeight) / 100 );
+        color: white;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+#highlight {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+#Electricity {
+    width: 100%;
+    height: 100%;
+}
+
+    #Electricity[state=off] {
+        display: none;
+    }
+
+@font-face {
+    font-family: "Alarm-Clock";
+    src: url("/Pages/VCockpit/Instruments/Shared/Fonts/Quartz.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+jpldme-element1 {
+    width: 100%;
+    height: 100%;
+    color: orangered;
+    font-family: Alarm-Clock;
+    overflow: hidden;
+}
+
+    jpldme-element1 #Mainframe {
+        width: 100%;
+        height: 100%;
+        margin-left: 20px;
+        margin-top: 30px;
+    }
+
+    jpldme-element1 #ComPanel {
+        position: absolute;
+        top: 12%;
+        left: 1%;
+        width: 48%;
+    }
+
+    jpldme-element1 #NavPanel {
+        position: absolute;
+        top: 12%;
+        left: 49%;
+        width: 48%;
+    }
+
+    jpldme-element1 #NavState {
+        position: absolute;
+        top: 12%;
+        right: 6%;
+        width: 5%;
+        text-align: right;
+    }
+
+    jpldme-element1 #Separator {
+        top: 12%;
+        left: 49%;
+        width: 0%;
+        height: 75%;
+        border: 1px solid orangered;
+        position: absolute;
+    }
+
+    jpldme-element1 .Align {
+        display: inline-block;
+    }
+
+    jpldme-element1 #ComActiveFreq {
+        margin-left: 17px;
+        font-size: 100px;
+        width: 200px;
+        text-align: right;
+    }
+
+    jpldme-element1 #ComStandbyFreq {
+        margin-left: -17px;
+        font-size: 27px;
+        width: 110px;
+        text-align: right;
+    }
+
+    jpldme-element1 #NavActiveFreq, jpldme-element1 #NavRightDisplay {
+        font-size: 100px;
+        width: 200px;
+        text-align: right;
+    }
+
+    jpldme-element1 #NavActiveFreq {
+        margin-bottom: 4px;
+    }
+
+    jpldme-element1 #OBS {
+        font-size: 12px;
+        text-align: right;
+        width: 13px;
+        vertical-align: top;
+        Line-Height: 8pt;
+    }
+
+    jpldme-element1 #ComModeACT, jpldme-element1 #ComModeSTB, jpldme-element1 #COMText, jpldme-element1 #COMVolume {
+        visibility: hidden;
+        display: none;
+    }
+
+    jpldme-element1 #ComState {
+        margin-left: 16px;
+        font-size: 12px;
+        text-align: right;
+        width: 13px;
+        Line-Height: 8pt;
+    }
+
+        jpldme-element1 #ComState #T, jpldme-element1 #ComState #R {
+            visibility: hidden;
+        }
+
+        jpldme-element1 #ComState[state=T] #T, jpldme-element1 #ComState[state=R] #R, jpldme-element1 #ComState[state=both] #T, jpldme-element1 #ComState[state=both] #R {
+            visibility: visible;
+        }
+
+    jpldme-element1 #ChannelState {
+        font-size: 12px;
+    }
+
+        jpldme-element1 #ChannelState #CH, jpldme-element1 #ChannelState #PG {
+            visibility: hidden;
+        }
+
+        jpldme-element1 #ChannelState[state=CH] #CH, jpldme-element1 #ChannelState[state=PG] #PG {
+            visibility: visible;
+        }
+
+    jpldme-element1 #NavState {
+        font-size: 10px;
+        vertical-align: top;
+    }
+
+        jpldme-element1 #NavState #TO, jpldme-element1 #NavState #FR, jpldme-element1 #NavState #ET {
+            visibility: hidden;
+        }
+
+        jpldme-element1 #NavState[state=TO] #TO, jpldme-element1 #NavState[state=FR] #FR, jpldme-element1 #NavState[state=ET] #ET {
+            visibility: visible;
+        }
+
+    jpldme-element1 #ChannelNumber {
+        font-size: 26px;
+        text-align: right;
+        width: 40px;
+    }
+
+    jpldme-element1 #BotNav {
+        margin-top: -7px;
+    }
+
+    jpldme-element1 #BotCom {
+        margin-top: -7px;
+        margin-left: 150px;
+    }
+
+    jpldme-element1 #NavBotDisplayLeft {
+        position: absolute;
+        left: 0%;
+        font-size: 15px;
+        width: 38%;
+        text-align: right;
+    }
+
+    jpldme-element1 #NavBotDisplayMid {
+        position: absolute;
+        left: 42%;
+        font-size: 15px;
+        width: auto;
+        text-align: center;
+    }
+
+    jpldme-element1 #NavBotDisplayRight {
+        position: absolute;
+        left: 49%;
+        font-size: 15px;
+        width: 50%;
+        text-align: left;
+    }
+
+    jpldme-element1 #CDICursor {
+        position: absolute;
+    }
+
+    jpldme-element1 .Blink {
+        visibility: hidden;
+    }
+
+        jpldme-element1 .Blink[state=Blink] {
+            visibility: visible;
+        }
+
+    jpldme-element1[display=comonly] {
+        color: #C7F6FC;
+        background-color: #04192D;
+    }
+
+        jpldme-element1[display=comonly][brightness=night] {
+            color: #95b7bb;
+            background-color: #040f19;
+        }
+
+        jpldme-element1[display=comonly] #ComPanel {
+            top: 35%;
+            left: 57%;
+            width: 100%;
+            transform: scaleX(2) scaleY(1.5);
+        }
+
+        jpldme-element1[display=comonly] #BotCom {
+            margin-top: -15px;
+        }
+
+        jpldme-element1[display=comonly] #Separator, jpldme-element1[display=comonly] #NavPanel, jpldme-element1[display=comonly] #NavState {
+            display: none;
+        }
+
+        jpldme-element1[display=comonly] #ComActiveFreq, jpldme-element1[display=comonly] #ComStandbyFreq {
+            margin-left: -21px;
+        }
+
+        jpldme-element1[display=comonly] #ComModeACT {
+            visibility: visible;
+            display: inline;
+            margin-left: -15px;
+            font-size: 12px;
+            width: 20px;
+            text-align: right;
+        }
+
+        jpldme-element1[display=comonly] #ComModeSTB {
+            visibility: visible;
+            display: inline;
+            margin-left: -26px;
+            font-size: 12px;
+            width: 20px;
+            text-align: right;
+        }
+
+        jpldme-element1[display=comonly] #COMText {
+            visibility: visible;
+            display: inline;
+            margin-left: 2px;
+            vertical-align: top;
+            font-size: 12px;
+            width: 20px;
+            text-align: right;
+        }
+
+        jpldme-element1[display=comonly] #COMVolume {
+            visibility: hidden;
+            display: block;
+        }
+
+            jpldme-element1[display=comonly] #COMVolume[combar=visible] {
+                visibility: visible;
+            }
+
+/*# sourceMappingURL=KX155A.css.map */

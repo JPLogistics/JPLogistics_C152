@@ -8,7 +8,7 @@
           <Simvar name="ADF VOLUME:1" unit="Percent"/>
           <Constant>0</Constant>
         </Greater>
-        <Simvar name="CIRCUIT ON:34" unit="Boolean"/>
+        <Simvar name="CIRCUIT ON:10" unit="Boolean"/>
       </And>
     </Electric>
   </Instrument>
@@ -25,12 +25,12 @@
     </Electric>
   </Instrument>
   <Instrument>
-    <Instrument>
-      <Name>KX155A_3</Name>
-      <Electric>
-        <Simvar name="CIRCUIT ON:25" unit="Boolean"/>
-      </Electric>
-    </Instrument>
+  <Instrument>
+    <Name>JPLDME_1</Name>
+    <Electric>
+      <Simvar name="CIRCUIT ON:36" unit="Boolean"/>
+    </Electric>
+  </Instrument>
     <Instrument>
     <Name>HourMeter</Name>
     <Electric>

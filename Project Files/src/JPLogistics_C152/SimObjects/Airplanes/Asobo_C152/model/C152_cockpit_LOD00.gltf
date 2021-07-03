@@ -3247,7 +3247,7 @@
         },
         {
             "mesh" : 193,
-            "name" : "NAVCOM1_Screens",
+            "name" : "NAVCOM1_Screen",
             "rotation" : [
                 0.02267259731888771,
                 0,
@@ -11854,6 +11854,7 @@
             }
         },
         {
+            "alphaMode" : "BLEND",
             "emissiveFactor" : [
                 0,
                 0,
@@ -11862,6 +11863,17 @@
             "emissiveTexture" : {
                 "index" : 57,
                 "texCoord" : 0
+            },
+            "extensions" : {
+                "ASOBO_material_blend_gbuffer" : {
+                    "enabled" : true,
+                    "baseColorBlendFactor" : 1,
+                    "metallicBlendFactor" : 1,
+                    "roughnessBlendFactor" : 1,
+                    "normalBlendFactor" : 1,
+                    "emissiveBlendFactor" : 1,
+                    "occlusionBlendFactor" : 1
+                }
             },
             "extras" : {
                 "is_import" : 0,
@@ -11960,7 +11972,7 @@
                 "msfs_show_wetness_ao_texture" : 0,
                 "msfs_show_dirt_texture" : 0,
                 "msfs_show_height_map_texture" : 0,
-                "msfs_material_mode" : 1,
+                "msfs_material_mode" : 5,
                 "msfs_albedo_texture" : {
                     "name" : "COMNAV_AS155_SCREEN_ALBD.TIF",
                     "type" : "Image"
@@ -11971,7 +11983,7 @@
                 },
                 "msfs_show_tint" : 1,
                 "msfs_show_glass_parameters" : 0,
-                "msfs_show_decal_parameters" : 0,
+                "msfs_show_decal_parameters" : 1,
                 "msfs_show_fresnel_parameters" : 0,
                 "msfs_show_parallax_parameters" : 0,
                 "msfs_show_geo_decal_parameters" : 0,
@@ -11995,8 +12007,8 @@
                 "msfs_show_road_material" : 1,
                 "msfs_show_ao_use_uv2" : 1,
                 "msfs_show_uv_clamp" : 1,
-                "msfs_show_alpha_cutoff" : 1,
-                "msfs_blend_mode" : 0
+                "msfs_show_alpha_cutoff" : 0,
+                "msfs_blend_mode" : 2
             },
             "name" : "$NavCom1_Screens",
             "occlusionTexture" : {
