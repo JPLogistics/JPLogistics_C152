@@ -13,6 +13,7 @@
         "ASOBO_normal_map_convention",
         "ASOBO_material_invisible",
         "ASOBO_material_glass",
+        "ASOBO_material_blend_gbuffer",
         "ASOBO_material_environment_occluder",
         "ASOBO_material_detail_map"
     ],
@@ -3246,7 +3247,7 @@
         },
         {
             "mesh" : 193,
-            "name" : "NAVCOM1_Screen",
+            "name" : "NAVCOM1_Screens",
             "rotation" : [
                 0.02267259731888771,
                 0,
@@ -11864,139 +11865,7 @@
             },
             "extras" : {
                 "is_import" : 0,
-                "msfs_material_type" : 1,
-                "msfs_base_color_factor" : [
-                    1,
-                    1,
-                    1,
-                    1
-                ],
-                "msfs_emissive_factor" : [
-                    1,
-                    1,
-                    1
-                ],
-                "msfs_alpha_mode" : 0,
-                "msfs_draw_order" : 0,
-                "msfs_double_sided" : 0,
-                "msfs_dont_cast_shadows" : 0,
-                "msfs_day_night_cycle" : 0,
-                "msfs_use_pearl_effect" : 0,
-                "msfs_pearl_shift" : 0,
-                "msfs_pearl_range" : 0,
-                "msfs_pearl_brightness" : 0,
-                "msfs_collision_material" : 0,
-                "msfs_road_material" : 0,
-                "msfs_uv_offset_u" : 0,
-                "msfs_uv_offset_v" : 0,
-                "msfs_uv_tiling_u" : 1,
-                "msfs_uv_tiling_v" : 1,
-                "msfs_uv_rotation" : 0,
-                "msfs_uv_clamp_u" : 0,
-                "msfs_uv_clamp_v" : 0,
-                "msfs_roughness_factor" : 1,
-                "msfs_metallic_factor" : 1,
-                "msfs_normal_scale" : 1,
-                "msfs_alpha_cutoff" : 0.5,
-                "msfs_detail_uv_scale" : 1,
-                "msfs_detail_uv_offset_u" : 0,
-                "msfs_detail_uv_offset_v" : 0,
-                "msfs_detail_normal_scale" : 1,
-                "msfs_blend_threshold" : 0.10000000149011612,
-                "msfs_decal_color_blend_factor" : 1,
-                "msfs_decal_metal_blend_factor" : 1,
-                "msfs_decal_normal_blend_factor" : 1,
-                "msfs_decal_roughness_blend_factor" : 1,
-                "msfs_decal_occlusion_blend_factor" : 1,
-                "msfs_decal_emissive_blend_factor" : 1,
-                "msfs_rain_drop_scale" : 1,
-                "msfs_wiper_1_state" : 0,
-                "msfs_wiper_2_state" : 0,
-                "msfs_glass_reflection_factor" : 1,
-                "msfs_glass_deformation_factor" : 0,
-                "msfs_parallax_scale" : 0,
-                "msfs_parallax_room_size_x" : 0.5,
-                "msfs_parallax_room_size_y" : 0.5,
-                "msfs_parallax_room_number" : 1,
-                "msfs_parallax_corridor" : 0,
-                "msfs_sss_color" : [
-                    1,
-                    1,
-                    1,
-                    1
-                ],
-                "msfs_fresnel_factor" : 1,
-                "msfs_fresnel_opacity_bias" : 0,
-                "msfs_base_color_texture" : {
-                    "name" : "COMNAV_AS155_SCREEN_ALBD.TIF",
-                    "type" : "Image"
-                },
-                "msfs_comp_texture" : {
-                    "name" : "COMNAV_AS155_SCREEN_COMP.TIF",
-                    "type" : "Image"
-                },
-                "msfs_emissive_texture" : {
-                    "name" : "COMNAV_AS155_SCREEN_EMIS.TIF",
-                    "type" : "Image"
-                },
-                "msfs_show_colors" : 1,
-                "msfs_show_emissive_color" : 1,
-                "msfs_show_alpha_mode" : 1,
-                "msfs_show_render_options" : 1,
-                "msfs_show_day_night_cycle" : 1,
-                "msfs_show_pearl" : 1,
-                "msfs_show_gameplay_options" : 1,
-                "msfs_show_uv_options" : 1,
-                "msfs_show_material_options" : 1,
-                "msfs_show_material_detail_options" : 1,
-                "msfs_show_blend_threshold" : 1,
-                "msfs_show_decal_blend_factors" : 0,
-                "msfs_show_windshield_options" : 0,
-                "msfs_show_glass_options" : 0,
-                "msfs_show_parallax_options" : 0,
-                "msfs_show_sss_color" : 0,
-                "msfs_show_fresnel_options" : 0,
-                "msfs_show_base_color_texture" : 1,
-                "msfs_show_comp_texture" : 1,
-                "msfs_show_normal_texture" : 1,
-                "msfs_show_emissive_texture" : 1,
-                "msfs_show_detail_color_texture" : 1,
-                "msfs_show_detail_comp_texture" : 1,
-                "msfs_show_detail_normal_texture" : 1,
-                "msfs_show_blend_mask_texture" : 1,
-                "msfs_show_wetness_ao_texture" : 0,
-                "msfs_show_dirt_texture" : 0,
-                "msfs_show_height_map_texture" : 0
-            },
-            "name" : "$NavCom1_Screens",
-            "occlusionTexture" : {
-                "index" : 58,
-                "texCoord" : 0
-            },
-            "pbrMetallicRoughness" : {
-                "baseColorTexture" : {
-                    "index" : 59,
-                    "texCoord" : 0
-                },
-                "metallicRoughnessTexture" : {
-                    "index" : 58,
-                    "texCoord" : 0
-                }
-            }
-        },
-        {
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
-            "emissiveTexture" : {
-                "index" : 60,
-                "texCoord" : 0
-            },
-            "extras" : {
-                "is_import" : 0,
-                "msfs_material_type" : 1,
+                "msfs_material_type" : 0,
                 "msfs_base_color_factor" : [
                     1,
                     1,
@@ -12059,14 +11928,6 @@
                 ],
                 "msfs_fresnel_factor" : 1,
                 "msfs_fresnel_opacity_bias" : 0,
-                "msfs_base_color_texture" : {
-                    "name" : "COMNAV_AS155_SCREEN_ALBD.TIF",
-                    "type" : "Image"
-                },
-                "msfs_comp_texture" : {
-                    "name" : "COMNAV_AS155_SCREEN_COMP.TIF",
-                    "type" : "Image"
-                },
                 "msfs_emissive_texture" : {
                     "name" : "COMNAV_AS155_SCREEN_EMIS.TIF",
                     "type" : "Image"
@@ -12098,7 +11959,216 @@
                 "msfs_show_blend_mask_texture" : 1,
                 "msfs_show_wetness_ao_texture" : 0,
                 "msfs_show_dirt_texture" : 0,
-                "msfs_show_height_map_texture" : 0
+                "msfs_show_height_map_texture" : 0,
+                "msfs_material_mode" : 1,
+                "msfs_albedo_texture" : {
+                    "name" : "COMNAV_AS155_SCREEN_ALBD.TIF",
+                    "type" : "Image"
+                },
+                "msfs_metallic_texture" : {
+                    "name" : "COMNAV_AS155_SCREEN_COMP.TIF",
+                    "type" : "Image"
+                },
+                "msfs_show_tint" : 1,
+                "msfs_show_glass_parameters" : 0,
+                "msfs_show_decal_parameters" : 0,
+                "msfs_show_fresnel_parameters" : 0,
+                "msfs_show_parallax_parameters" : 0,
+                "msfs_show_geo_decal_parameters" : 0,
+                "msfs_show_albedo" : 1,
+                "msfs_show_metallic" : 1,
+                "msfs_show_normal" : 1,
+                "msfs_show_emissive" : 1,
+                "msfs_show_detail_albedo" : 1,
+                "msfs_show_detail_metallic" : 1,
+                "msfs_show_detail_normal" : 1,
+                "msfs_show_blend_mask" : 1,
+                "msfs_show_anisotropic_direction" : 0,
+                "msfs_show_clearcoat" : 0,
+                "msfs_show_behind_glass" : 0,
+                "msfs_show_blend_mode" : 1,
+                "msfs_show_draworder" : 1,
+                "msfs_show_no_cast_shadow" : 1,
+                "msfs_show_double_sided" : 1,
+                "msfs_show_responsive_aa" : 0,
+                "msfs_show_collision_material" : 1,
+                "msfs_show_road_material" : 1,
+                "msfs_show_ao_use_uv2" : 1,
+                "msfs_show_uv_clamp" : 1,
+                "msfs_show_alpha_cutoff" : 1,
+                "msfs_blend_mode" : 0
+            },
+            "name" : "$NavCom1_Screens",
+            "occlusionTexture" : {
+                "index" : 58,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 59,
+                    "texCoord" : 0
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 58,
+                    "texCoord" : 0
+                }
+            }
+        },
+        {
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "emissiveTexture" : {
+                "index" : 60,
+                "texCoord" : 0
+            },
+            "extensions" : {
+                "ASOBO_material_blend_gbuffer" : {
+                    "enabled" : true,
+                    "baseColorBlendFactor" : 1,
+                    "metallicBlendFactor" : 1,
+                    "roughnessBlendFactor" : 1,
+                    "normalBlendFactor" : 1,
+                    "emissiveBlendFactor" : 1,
+                    "occlusionBlendFactor" : 1
+                }
+            },
+            "extras" : {
+                "is_import" : 0,
+                "msfs_material_type" : 0,
+                "msfs_base_color_factor" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_emissive_factor" : [
+                    0,
+                    0,
+                    0
+                ],
+                "msfs_alpha_mode" : 0,
+                "msfs_draw_order" : 0,
+                "msfs_double_sided" : 0,
+                "msfs_dont_cast_shadows" : 0,
+                "msfs_day_night_cycle" : 0,
+                "msfs_use_pearl_effect" : 0,
+                "msfs_pearl_shift" : 0,
+                "msfs_pearl_range" : 0,
+                "msfs_pearl_brightness" : 0,
+                "msfs_collision_material" : 0,
+                "msfs_road_material" : 0,
+                "msfs_uv_offset_u" : 0,
+                "msfs_uv_offset_v" : 0,
+                "msfs_uv_tiling_u" : 1,
+                "msfs_uv_tiling_v" : 1,
+                "msfs_uv_rotation" : 0,
+                "msfs_uv_clamp_u" : 0,
+                "msfs_uv_clamp_v" : 0,
+                "msfs_roughness_factor" : 1,
+                "msfs_metallic_factor" : 1,
+                "msfs_normal_scale" : 1,
+                "msfs_alpha_cutoff" : 0.5,
+                "msfs_detail_uv_scale" : 1,
+                "msfs_detail_uv_offset_u" : 0,
+                "msfs_detail_uv_offset_v" : 0,
+                "msfs_detail_normal_scale" : 1,
+                "msfs_blend_threshold" : 0.10000000149011612,
+                "msfs_decal_color_blend_factor" : 1,
+                "msfs_decal_metal_blend_factor" : 1,
+                "msfs_decal_normal_blend_factor" : 1,
+                "msfs_decal_roughness_blend_factor" : 1,
+                "msfs_decal_occlusion_blend_factor" : 1,
+                "msfs_decal_emissive_blend_factor" : 1,
+                "msfs_rain_drop_scale" : 1,
+                "msfs_wiper_1_state" : 0,
+                "msfs_wiper_2_state" : 0,
+                "msfs_glass_reflection_factor" : 1,
+                "msfs_glass_deformation_factor" : 0,
+                "msfs_parallax_scale" : 0,
+                "msfs_parallax_room_size_x" : 0.5,
+                "msfs_parallax_room_size_y" : 0.5,
+                "msfs_parallax_room_number" : 1,
+                "msfs_parallax_corridor" : 0,
+                "msfs_sss_color" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_fresnel_factor" : 1,
+                "msfs_fresnel_opacity_bias" : 0,
+                "msfs_emissive_texture" : {
+                    "name" : "COMNAV_AS155_SCREEN_EMIS.TIF",
+                    "type" : "Image"
+                },
+                "msfs_show_colors" : 1,
+                "msfs_show_emissive_color" : 1,
+                "msfs_show_alpha_mode" : 1,
+                "msfs_show_render_options" : 1,
+                "msfs_show_day_night_cycle" : 1,
+                "msfs_show_pearl" : 1,
+                "msfs_show_gameplay_options" : 1,
+                "msfs_show_uv_options" : 1,
+                "msfs_show_material_options" : 1,
+                "msfs_show_material_detail_options" : 1,
+                "msfs_show_blend_threshold" : 1,
+                "msfs_show_decal_blend_factors" : 0,
+                "msfs_show_windshield_options" : 0,
+                "msfs_show_glass_options" : 0,
+                "msfs_show_parallax_options" : 0,
+                "msfs_show_sss_color" : 0,
+                "msfs_show_fresnel_options" : 0,
+                "msfs_show_base_color_texture" : 1,
+                "msfs_show_comp_texture" : 1,
+                "msfs_show_normal_texture" : 1,
+                "msfs_show_emissive_texture" : 1,
+                "msfs_show_detail_color_texture" : 1,
+                "msfs_show_detail_comp_texture" : 1,
+                "msfs_show_detail_normal_texture" : 1,
+                "msfs_show_blend_mask_texture" : 1,
+                "msfs_show_wetness_ao_texture" : 0,
+                "msfs_show_dirt_texture" : 0,
+                "msfs_show_height_map_texture" : 0,
+                "msfs_material_mode" : 5,
+                "msfs_albedo_texture" : {
+                    "name" : "COMNAV_AS155_SCREEN_ALBD.TIF",
+                    "type" : "Image"
+                },
+                "msfs_metallic_texture" : {
+                    "name" : "COMNAV_AS155_SCREEN_COMP.TIF",
+                    "type" : "Image"
+                },
+                "msfs_show_tint" : 1,
+                "msfs_show_glass_parameters" : 0,
+                "msfs_show_decal_parameters" : 1,
+                "msfs_show_fresnel_parameters" : 0,
+                "msfs_show_parallax_parameters" : 0,
+                "msfs_show_geo_decal_parameters" : 0,
+                "msfs_show_albedo" : 1,
+                "msfs_show_metallic" : 1,
+                "msfs_show_normal" : 1,
+                "msfs_show_emissive" : 1,
+                "msfs_show_detail_albedo" : 1,
+                "msfs_show_detail_metallic" : 1,
+                "msfs_show_detail_normal" : 1,
+                "msfs_show_blend_mask" : 1,
+                "msfs_show_anisotropic_direction" : 0,
+                "msfs_show_clearcoat" : 0,
+                "msfs_show_behind_glass" : 0,
+                "msfs_show_blend_mode" : 1,
+                "msfs_show_draworder" : 1,
+                "msfs_show_no_cast_shadow" : 1,
+                "msfs_show_double_sided" : 1,
+                "msfs_show_responsive_aa" : 0,
+                "msfs_show_collision_material" : 1,
+                "msfs_show_road_material" : 1,
+                "msfs_show_ao_use_uv2" : 1,
+                "msfs_show_uv_clamp" : 1,
+                "msfs_show_alpha_cutoff" : 0,
+                "msfs_blend_mode" : 0
             },
             "name" : "$NavCom2_Screens",
             "occlusionTexture" : {

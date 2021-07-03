@@ -5,7 +5,7 @@
     <!-- Highest LOD -->
     <!-- minimum display size in % (should be bounding sphere vertical screen size, sphere will often be slightly larger than you expect) -->
     <!-- default minSize is 0 -->
-    <LOD minSize="1" ModelFile="C152_cockpit_LOD00.gltf"/>
+    <LOD minSize="50" ModelFile="C152_cockpit_LOD00.gltf"/>
   </LODS>
   <Behaviors>
 
@@ -14,16 +14,16 @@
     <Include ModelBehaviorFile="Asobo\NAVCOM\ADF.xml"/>
     <Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
     <Include ModelBehaviorFile="C152X\Index.xml"/>
-	
-		<!-- C152X Modification courtesy of G36 Improvement Project-- WIP -->
-	<!--<Include Path="C152X\CustomLogic.xml"/>-->
-		
-	<Component ID="C152X_Custom_Behavior">
-		<UseTemplate Name="Fuel_Primer_Logic"></UseTemplate>
-		<UseTemplate Name="Engine_Start_Logic"></UseTemplate>
-		<UseTemplate Name="Fire_Logic"></UseTemplate>
-	</Component>
-		<!--End of C152X Modification -------------------------------------->
+
+    <!-- C152X Modification courtesy of G36 Improvement Project-- WIP -->
+    <!--<Include Path="C152X\CustomLogic.xml"/>-->
+
+    <Component ID="C152X_Custom_Behavior">
+      <UseTemplate Name="Fuel_Primer_Logic"></UseTemplate>
+      <UseTemplate Name="Engine_Start_Logic"></UseTemplate>
+      <UseTemplate Name="Fire_Logic"></UseTemplate>
+    </Component>
+    <!--End of C152X Modification -------------------------------------->
 
     <Animation guid="c16737ee-55bd-4255-97f8-5a34e62be350" name="Pilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-5a34e62be666" name="CoPilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
@@ -149,18 +149,18 @@
     <Animation guid="dc2b961c-17fc-4b7b-9fb0-2dd66b59c1fa" name="LIGHTING_Switch_Light_Nav_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="81d5aa21-40c5-4c68-80d2-87d8ab2dc71c" name="LIGHTING_Switch_Light_Strobe_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="4872314c-0189-4ba3-9288-d3622ab18a5f" name="LIGHTING_Switch_Light_Taxi_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="b0011ba1-3bb5-4bfe-976a-7d039ed5dca8" name="NAV_Knob_Khz_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="92e92ce5-a3cf-46fc-9381-24727f3a1886" name="NAV_Knob_Khz_1_Push" type="standard" typeParam="Autoplay"/>
-    <Animation guid="2908dfba-d97b-4de5-9622-0071b73cddcd" name="NAV_Knob_Khz_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="83e89205-541a-4dd8-ba89-4c66b6557269" name="NAV_Knob_Khz_2_Push" type="standard" typeParam="Autoplay"/>
-    <Animation guid="52768e38-a0e5-4fad-a16c-12cca6d248a4" name="NAV_Knob_Mhz_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="9e0fed2a-25ff-45e9-8e42-906752486070" name="NAV_Knob_Mhz_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="7d2d7cfb-ca31-4246-b08a-bb4a82fd6ffd" name="NAV_Knob_OnOff_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="2c2a02f1-7de9-47c3-adb5-05bd053bf72f" name="NAV_Knob_OnOff_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="4cb08ffd-bad5-48ec-aae8-b23a125d7f73" name="NAV_Push_Ident_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="148816fc-e2bd-4ee2-8847-d37adc7968d2" name="NAV_Push_Ident_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="a6bcdc35-fd03-4d81-828e-d0784da41322" name="NAV_Push_Swap_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="4a269144-de8f-4058-9945-cd48263d990d" name="NAV_Push_Swap_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="b0011ba1-3bb5-4bfe-976a-7d039ed5dca8" name="NAV_Knob_Khz1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="92e92ce5-a3cf-46fc-9381-24727f3a1886" name="NAV_Knob_Khz1_Push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2908dfba-d97b-4de5-9622-0071b73cddcd" name="NAV_Knob_Khz2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="83e89205-541a-4dd8-ba89-4c66b6557269" name="NAV_Knob_Khz2_Push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="52768e38-a0e5-4fad-a16c-12cca6d248a4" name="NAV_Knob_Mhz1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="9e0fed2a-25ff-45e9-8e42-906752486070" name="NAV_Knob_Mhz2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="7d2d7cfb-ca31-4246-b08a-bb4a82fd6ffd" name="NAV_Knob_OnOff1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2c2a02f1-7de9-47c3-adb5-05bd053bf72f" name="NAV_Knob_OnOff2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="4cb08ffd-bad5-48ec-aae8-b23a125d7f73" name="NAV_Push_Ident1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="148816fc-e2bd-4ee2-8847-d37adc7968d2" name="NAV_Push_Ident2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="a6bcdc35-fd03-4d81-828e-d0784da41322" name="NAV_Push_Swap1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="4a269144-de8f-4058-9945-cd48263d990d" name="NAV_Push_Swap2" type="standard" typeParam="Autoplay"/>
     <Animation guid="e847f7e1-6015-4aa0-a649-451a83ceee49" name="PASSENGER_Switch_Cabin_Air_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="85518240-019b-4cd0-97b9-b261d4263862" name="PASSENGER_Switch_Cabin_Heat_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="c4a0e231-f4d2-48bb-bc7f-14fa652f4ed6" name="PRESSURIZATION_Needle_Suction" type="standard" typeParam="Autoplay"/>
@@ -187,7 +187,7 @@
         <DRAG_AXIS_SCALE>400</DRAG_AXIS_SCALE>
         <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
         <INVERT_IM_DRAG_INPUT_SCALAR>True</INVERT_IM_DRAG_INPUT_SCALAR>
-		<ANIM_NAME>DEICE_Lever_Engine</ANIM_NAME>
+        <ANIM_NAME>DEICE_Lever_Engine</ANIM_NAME>
       </UseTemplate>
       <UseTemplate Name="ASOBO_DEICE_Switch_Pitot_Template">
       </UseTemplate>
@@ -256,7 +256,8 @@
         <DRAG_AXIS_SCALE>-400</DRAG_AXIS_SCALE>
         <BUTTON_NODE_ID>FUEL_Lever_Mixture_1_Push</BUTTON_NODE_ID>
       </UseTemplate>
-      <UseTemplate Name="ASOBO_ENGINE_Lever_Primer_Template"> <!--pump/primer-->
+      <UseTemplate Name="ASOBO_ENGINE_Lever_Primer_Template">
+        <!--pump/primer-->
         <NODE_ID>ENGINE_LEVER_PRIMER</NODE_ID>
         <ANIM_NAME>ENGINE_LEVER_PRIMER</ANIM_NAME>
         <INVERT_SWITCH_ON_CONDITION>True</INVERT_SWITCH_ON_CONDITION>
@@ -268,7 +269,7 @@
       <UseTemplate Name="ASOBO_FUEL_Switch_Cutoff_Template">
         <AXIS>X</AXIS>
         <INVERT_SWITCH_ON_CONDITION>True</INVERT_SWITCH_ON_CONDITION>
-		<NODE_ID>FUEL_Switch_Cutoff_1</NODE_ID>
+        <NODE_ID>FUEL_Switch_Cutoff_1</NODE_ID>
       </UseTemplate>
       <CameraTitle>Checklist_FuelValve</CameraTitle>
     </Component>
@@ -323,7 +324,7 @@
         <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
         <INVERT_INTERACTION>True</INVERT_INTERACTION>
         <INVERT_IM_DRAG_INPUT_SCALAR>True</INVERT_IM_DRAG_INPUT_SCALAR>
-		
+
       </UseTemplate>
 
       <UseTemplate Name="ASOBO_HANDLING_Indicator_Flaps_Template">
@@ -331,7 +332,7 @@
 
       <UseTemplate Name="ASOBO_HANDLING_Wheel_ElevatorTrim_Template">
         <HIGHLIGHT_NODE_ID>HANDLING_Wheel_ElevatorTrim_Visual</HIGHLIGHT_NODE_ID>
-		<TOOLTIPID>Elevator Trim (%((A:ELEVATOR TRIM POSITION, degrees))%!1.1f!%)</TOOLTIPID>
+        <TOOLTIPID>Elevator Trim (%((A:ELEVATOR TRIM POSITION, degrees))%!1.1f!%)</TOOLTIPID>
       </UseTemplate>
 
       <UseTemplate Name="ASOBO_HANDLING_Indicator_ElevatorTrim_Template">
@@ -561,7 +562,7 @@
       <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Beacon_Template">
         <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_BEACON_ACTION_SET</TT_DESCRIPTION_ID>
       </UseTemplate>
-<!--
+      <!--
       <UseTemplate Name="C152X_LIGHTING_Knob_Panel_Template"> <!-- Lower Knob by key for instrument light dimming -- Pot 5--
         <NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
         <ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
@@ -591,12 +592,12 @@
         <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_CABIN_ACTION_SET</TT_DESCRIPTION_ID>
         <TOOLTIP_TITLE>@TT_Package.LIGHTING_SWITCH_CABIN_TITLE</TOOLTIP_TITLE>
       </UseTemplate>
-	  
+
 
 
       <UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template">
       </UseTemplate>
-      
+
       <UseTemplate Name="ASOBO_LIGHTING_Glareshield_Emissive_Template">
         <!-- Red light on ceiling -->
         <NODE_ID>LIGHTING_Panel_Emisive</NODE_ID>
@@ -607,19 +608,20 @@
       <UseTemplate Name="C152X_LIGHTING_Cabin_Emissive_Template">
         <!-- White cabin light on ceiling -->
       </UseTemplate>
-	  
-	  <UseTemplate Name="C152X_LIGHTING_Switch_Light_Panel_Template"> <!-- Upper Panel lights on/off -->
-      <ANIM_NAME>LIGHTING_Switch_Light_Cabin_1</ANIM_NAME>
-      <PART_ID>LIGHTING_Switch_Light_Cabin</PART_ID>
-      <NODE_ID>LIGHTING_Switch_Light_Cabin_1</NODE_ID>
-	  </UseTemplate>
+
+      <UseTemplate Name="C152X_LIGHTING_Switch_Light_Panel_Template">
+        <!-- Upper Panel lights on/off -->
+        <ANIM_NAME>LIGHTING_Switch_Light_Cabin_1</ANIM_NAME>
+        <PART_ID>LIGHTING_Switch_Light_Cabin</PART_ID>
+        <NODE_ID>LIGHTING_Switch_Light_Cabin_1</NODE_ID>
+      </UseTemplate>
 
       <!-- Which is this for? -->
       <UseTemplate Name="C152X_Speaker">
         <NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
         <ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
       </UseTemplate>
-	  
+
     </Component>
 
     <!-- PASSENGERS ########################### -->
@@ -641,25 +643,22 @@
     <Component ID="NAVCOM_Radios">
       <Parameters Type="Default">
         <ANIM_LAG_SWITCH>500</ANIM_LAG_SWITCH>
-        <BUTTON_POTENTIOMETER/>
-        <POTENTIOMETER>5</POTENTIOMETER>
         <ANIM_NEVER_FAILS>True</ANIM_NEVER_FAILS>
         <TYPE>PULL_25K</TYPE>
       </Parameters>
       <UseTemplate Name="ASOBO_NAVCOM_Simple_Radio_Template">
         <ID>1</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
-		<DONT_APPEND_ID>True</DONT_APPEND_ID>
-        <NAV_CIRCUIT_ID>17</NAV_CIRCUIT_ID>
-        <CIRCUIT_ID>18</CIRCUIT_ID>
+        <NAV_CIRCUIT>22</NAV_CIRCUIT>
+        <COM_CIRCUIT>34</COM_CIRCUIT>
+        <CIRCUIT_ID>34</CIRCUIT_ID>
         <FAILURE>(A:COM VOLUME:1,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Simple_Radio_Template">
         <ID>2</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
-		 <DONT_APPEND_ID>True</DONT_APPEND_ID>
-        <NAV_CIRCUIT_ID>19</NAV_CIRCUIT_ID>
-        <CIRCUIT_ID>20</CIRCUIT_ID>
+        <NAV_CIRCUIT_ID>24</NAV_CIRCUIT_ID>
+        <CIRCUIT_ID>25</CIRCUIT_ID>
         <FAILURE>(A:COM VOLUME:2,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
@@ -689,7 +688,7 @@
           <NODE_ID>AUDIO_Push_SPKR</NODE_ID>
           <ANIM_NAME>AUDIO_Push_SPKR</ANIM_NAME>
         </UseTemplate>
-        <UseTemplate Name="C152X_NAVCOM_Switch_EXT_Sound_Template">
+        <UseTemplate Name="ASOBO_NAVCOM_Push_EXT_Sound_Template">
           <ID>1</ID>
           <NODE_ID>AUDIO_Push_EXT</NODE_ID>
           <ANIM_NAME>AUDIO_Push_EXT</ANIM_NAME>
@@ -753,7 +752,7 @@
       <UseTemplate Name="ASOBO_ADF_AS300_Template">
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
         <POTENTIOMETER>4</POTENTIOMETER>
-        <CIRCUIT_ADF>10</CIRCUIT_ADF>
+        <CIRCUIT_ADF>34</CIRCUIT_ADF>
       </UseTemplate>
     </Component>
     <Component ID="TRANSPONDER">
@@ -764,22 +763,23 @@
     </Component>
 
     <Component ID="AUDIO_TOP_PANEL">
-		<Parameters Type="Default">
-			<DONT_APPEND_ID>True</DONT_APPEND_ID>
-		</Parameters>
-		<UseTemplate Name="C152X_AUDIO_Knob_Volume_Template">
-			<CIRCUIT_ID>28</CIRCUIT_ID>	  <!----------------------- Upper knob pot 4----------------------->
-			<USE_DIMMING_KNOB/>
-		</UseTemplate>
-		<Component ID="OMI_Indicators">
-			<DefaultTemplateParameters>
-				<FAILURE>(A:CIRCUIT GENERAL PANEL ON, Bool)</FAILURE>
-			</DefaultTemplateParameters>
-			<UseTemplate Name="ASOBO_AUDIO_Indicator_OMI_Components"/>
-		</Component>
-		<UseTemplate Name="ASOBO_AUDIO_Switch_Marker_Sens_Template">
-		</UseTemplate>
-	</Component>
+      <Parameters Type="Default">
+        <DONT_APPEND_ID>True</DONT_APPEND_ID>
+      </Parameters>
+      <UseTemplate Name="C152X_AUDIO_Knob_Volume_Template">
+        <CIRCUIT_ID>28</CIRCUIT_ID>
+        <!----------------------- Upper knob pot 4----------------------->
+        <USE_DIMMING_KNOB/>
+      </UseTemplate>
+      <Component ID="OMI_Indicators">
+        <DefaultTemplateParameters>
+          <FAILURE>(A:CIRCUIT GENERAL PANEL ON, Bool)</FAILURE>
+        </DefaultTemplateParameters>
+        <UseTemplate Name="ASOBO_AUDIO_Indicator_OMI_Components"/>
+      </Component>
+      <UseTemplate Name="ASOBO_AUDIO_Switch_Marker_Sens_Template">
+      </UseTemplate>
+    </Component>
 
     <Component ID="SafetySwitches">
       <!--<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
@@ -791,21 +791,21 @@
       </UseTemplate>-->
     </Component>
     <Component ID="ANNUNCIATOR_TEST">
-        <UseTemplate Name="C152X_Annun_Test">
+      <UseTemplate Name="C152X_Annun_Test">
         <NODE_ID>AUDIO_Switch_Test</NODE_ID>
         <ANIM_NAME>AUDIO_Switch_Test</ANIM_NAME>
         <PART_ID>AUDIO_Switch_Test</PART_ID>
-        </UseTemplate>			
+      </UseTemplate>
     </Component>
     <Component ID="Pilots_Visibility">
       <Component ID="PILOT_0" Node="PILOT_0">
-            <UseTemplate Name="ASOBO_GT_Visibility_Code">
-                <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
-            </UseTemplate>
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
+        </UseTemplate>
       </Component>
       <Component ID="PILOT_1" Node="PILOT_1">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-            <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (A:SPEAKER ACTIVE, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (A:SPEAKER ACTIVE, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
     </Component>
@@ -851,7 +851,7 @@
         <ID>CoPilot</ID>
       </UseTemplate>
     </Component>
-	<!--
+    <!--
     <Component ID="DME_Interaction">
       <UseTemplate Name="DME_Switch_Template">
         <NODE_ID>DME_Switch</NODE_ID>
@@ -859,19 +859,17 @@
       </UseTemplate>
     </Component>
 	-->
-	<!--######  FOR CONSIDERATION??? ######-->
+    <!--######  FOR CONSIDERATION??? ######-->
     <Component ID="DME_Interaction">
       <UseTemplate Name="DME_Switch_Template">
         <NODE_ID>DME_Switch</NODE_ID>
         <ANIM_NAME>DME_Switch</ANIM_NAME>
         <PART_ID>DME_Switch</PART_ID>
-		<CIRCUIT_ID>35</CIRCUIT_ID>
-       </UseTemplate>
+        <CIRCUIT_ID>36</CIRCUIT_ID>
+      </UseTemplate>
       <UseTemplate Name="JPL_DME_Screens_Template">
         <ID>1</ID>
         <NODE_ID>DME_Screen</NODE_ID>
-        <NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>
-        <USE_DIMMING_POTENTIOMETER/>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
       </UseTemplate>
     </Component>
@@ -900,7 +898,7 @@
         <VISIBILITY_CODE>0</VISIBILITY_CODE>
       </UseTemplate>
     </Component>
-    
+
   </Behaviors>
 </ModelInfo>
 

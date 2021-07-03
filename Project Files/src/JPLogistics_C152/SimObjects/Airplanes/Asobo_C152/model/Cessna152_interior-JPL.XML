@@ -1,0 +1,903 @@
+<!-- Placeholder, copied from C172 -->
+<?xml version="1.0" encoding="utf-8"?>
+<ModelInfo>
+  <LODS>
+    <!-- Highest LOD -->
+    <!-- minimum display size in % (should be bounding sphere vertical screen size, sphere will often be slightly larger than you expect) -->
+    <!-- default minSize is 0 -->
+    <LOD minSize="1" ModelFile="C152_cockpit_LOD00.gltf"/>
+  </LODS>
+  <Behaviors>
+
+    <Include ModelBehaviorFile="Asobo\Common.xml"/>
+    <Include ModelBehaviorFile="Asobo\Transponder\Transponder.xml"/>
+    <Include ModelBehaviorFile="Asobo\NAVCOM\ADF.xml"/>
+    <Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
+    <Include ModelBehaviorFile="C152X\Index.xml"/>
+	
+		<!-- C152X Modification courtesy of G36 Improvement Project-- WIP -->
+	<!--<Include Path="C152X\CustomLogic.xml"/>-->
+		
+	<Component ID="C152X_Custom_Behavior">
+		<UseTemplate Name="Fuel_Primer_Logic"></UseTemplate>
+		<UseTemplate Name="Engine_Start_Logic"></UseTemplate>
+		<UseTemplate Name="Fire_Logic"></UseTemplate>
+	</Component>
+		<!--End of C152X Modification -------------------------------------->
+
+    <Animation guid="c16737ee-55bd-4255-97f8-5a34e62be350" name="Pilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-5a34e62be666" name="CoPilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b24e62be345" name="DME_Switch" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be345" name="JPL_VISOR_Pilot" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be346" name="JPL_VISOR_CoPilot" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be347" name="Pilot_Window" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be348" name="Pilot_Window_Handle" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be349" name="Pilot_Door_Handle" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be357" name="CoPilot_Window" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62ae358" name="CoPilot_Window_Handle" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62ce359" name="CoPilot_Door_Handle" type="standard" typeParam="Autoplay"/>
+    <Animation guid="8985b341-024e-4a36-84ab-4f207d742a6c" name="ADF_Knob_Frequency_Hz" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2e4af946-4d98-4ce2-8702-248ad312b03b" name="ADF_Knob_Frequency_KHz" type="standard" typeParam="Autoplay"/>
+    <Animation guid="5125cd4d-ea1e-4820-b330-eed0cb2e444c" name="ADF_Knob_Frequency_MHz" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c95a98d2-e2b8-46b9-92f4-22d09a99be89" name="ADF_Knob_Mode" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ee710721-c551-4c52-aa1e-d021e43f3c50" name="ADF_Knob_Volume" type="standard" typeParam="Autoplay"/>
+    <Animation guid="8f67102e-05e4-4415-b8ad-0f793675d7bd" name="AUDIO_Knob_Dimming" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ga55ed4e-340b-4171-8558-d1accfaff752" name="AUDIO_Knob_Volume" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ha55ed4e-340b-4171-8558-d1accfaff752" name="AUDIO_Push_AOE" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ia55ed4e-340b-4171-8558-d1accfaff752" name="AUDIO_Push_DME" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ja55ed4e-340b-4171-8558-d1accfaff752" name="AUDIO_Push_Ext" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ka55ed4e-340b-4171-8558-d1accfaff752" name="AUDIO_Push_MIC_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="la55ed4e-340b-4171-8558-d1accfaff752" name="AUDIO_Push_MIC_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ma55ed4e-340b-4171-8558-d1accfaff752" name="AUDIO_Push_MKR" type="standard" typeParam="Autoplay"/>
+    <Animation guid="na55ed4e-340b-4171-8558-d1accfaff752" name="AUDIO_Push_NAV_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="oa55ed4e-340b-4171-8558-d1accfaff752" name="AUDIO_Push_NAV_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="oa55ed4e-340b-4182-8558-d1accfaff752" name="AUDIO_Push_NAV_Both" type="standard" typeParam="Autoplay"/>
+    <Animation guid="db68917f-901f-4b24-9a42-6987eec86e20" name="AUDIO_Push_SPKR" type="standard" typeParam="Autoplay"/>
+    <Animation guid="03856c99-4937-41bf-8d6b-ab3cb47344d4" name="AUDIO_Switch_Intercom" type="standard" typeParam="Autoplay"/>
+    <Animation guid="0badb072-ddd3-4670-a44e-2af01da60617" name="AUDIO_Switch_Marker" type="standard" typeParam="Autoplay"/>
+    <Animation guid="d0accc09-9e53-4dd1-9103-a57305019ca1" name="AUDIO_Switch_Test_AUDIO_Switch_Test" type="standard" typeParam="Autoplay"/>
+    <Animation guid="373d03d4-20f1-4871-a20d-fca3b15cef2a" name="COM_Knob_Khz_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="7697c9fe-a2e5-4311-9959-bc5cb1bce06e" name="COM_Knob_Khz_1_Push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2f784661-5d16-4dcf-85c8-1b0816e31e21" name="COM_Knob_Khz_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="24e9be17-799a-47bc-b633-0a976ef3bd73" name="COM_Knob_Khz_2_Push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c31f385c-c3a7-41a7-a881-343b5716aaf8" name="COM_Knob_Mhz_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="a09e5c43-6303-4cf8-a6a4-af6dc92d6956" name="COM_Knob_Mhz_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="d319d752-e940-41db-b4fb-d8493a813295" name="COM_Knob_OnOff_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f895e7e1-7877-4f24-9415-ecef08a2329e" name="COM_Knob_OnOff_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="19ea968c-69d0-4d8f-b81f-2bd2ecfa6397" name="COM_Push_Swap_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="4cb4e282-62ab-4aa6-a5bd-51b5c0fe2775" name="COM_Push_Swap_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="d26b5429-131b-4ac3-a6e0-3457ff9b4649" name="COM_Push_Test_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="e54b2208-1000-4a45-88df-599cf1aa7de4" name="COM_Push_Test_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="bccb7df6-a771-458a-bc8f-f7bb2471f8fa" name="DEICE_Lever_Engine_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="33490c5a-d9a0-46e3-be05-2b3d84661187" name="DEICE_Switch_PitotHeat" type="standard" typeParam="Autoplay"/>
+    <Animation guid="9f85dd95-0a07-4c71-ae7d-5645d9332dc0" name="ELECTRICAL_Switch_Alternator_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="027a6701-1a4d-42a2-b7f4-bc0833f53665" name="ELECTRICAL_Switch_Battery_Master_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="bfd86b4a-d2d5-4910-8bce-8322ddf05ea1" name="ELECTRICAL_Switch_Magneto" type="standard" typeParam="Autoplay"/>
+    <Animation guid="a0209361-f6b8-4d7c-be34-88931e855fe5" name="ENGINE_Lever_CarbHeat" type="standard"/>
+    <Animation guid="51fc2638-d227-438c-9aed-9eed5e33d378" name="ENGINE_Lever_Primer" type="standard"/>
+    <Animation guid="6b296f0b-6010-4828-9f10-46db961e63ae" name="ENGINE_Lever_Throttle_1" type="standard"/>
+    <Animation guid="79b5b67e-f90b-4d7d-9af7-81e28230afa6" name="FUEL_Lever_Mixture_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="a163df5a-0acc-4a91-821e-b38db2b332b2" name="FUEL_Lever_Mixture_1_Push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ba266684-cea4-4e01-a0f2-aa90a632766b" name="FUEL_Switch_Cutoff_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2a237d8d-933f-457e-a2dd-9e5b495507d0" name="HANDLING_Indicator_ElevatorTrim" type="standard" typeParam="Autoplay"/>
+    <Animation guid="18cd3714-6bf1-4978-8c0d-7284b719c3a6" name="HANDLING_Indicator_Flaps" type="standard" typeParam="Autoplay"/>
+    <Animation guid="929f85c9-fdb4-41c1-9601-dd33c2982eec" name="HANDLING_Lever_Flaps" type="standard" typeParam="Autoplay"/>
+    <Animation guid="37dd8ab5-7af2-4d1a-8b21-ae9e1a133123" name="HANDLING_RudderPedals_r" type="standard" typeParam="Autoplay"/>
+    <Animation guid="5fef233a-f25e-44fc-a350-5464637f6831" name="HANDLING_RudderPedals_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="5cb2ea23-b06d-4e82-947f-36c4e83328c8" name="HANDLING_RudderPedals_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="bb6c12c1-a564-4c39-a8b4-79c1b8b03d2b" name="HANDLING_Wheel_ElevatorTrim_Visual" type="standard" typeParam="Autoplay"/>
+    <Animation guid="730def0d-673d-47a4-88f5-fa465a3581f2" name="HANDLING_YOKE_Lever_StickForeAft" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c938ae48-eb65-4c25-9195-0fcaf2d39867" name="HANDLING_YOKE_Lever_StickLR" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c94f0c24-4091-4153-b627-64832566840a" name="INSTRUMENT_ADF_Dial_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="22d7a3fd-687f-46cf-9f57-7683b775db65" name="INSTRUMENT_ADF_Knob_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="7be54336-fb96-49fa-9df4-022a4356feb2" name="INSTRUMENT_ADF_Needle_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ef68f64e-a1ee-4505-9e3a-ddb3f1bf8c55" name="INSTRUMENT_Altimeter_strip_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="b729aec4-1e83-4321-a8d3-1663e08fd950" name="INSTRUMENT_Altimeter_strip_2_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="aefba366-802b-4d53-973d-10f1d81a9bfc" name="INSTRUMENT_AttitudeIndicator_Bank_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="52f29689-2c95-419a-8dde-c303b2f8f4b0" name="INSTRUMENT_AttitudeIndicator_Bars_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="81a98802-3fac-46a1-bb7c-244563a17b71" name="INSTRUMENT_AttitudeIndicator_Flag_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2a999f89-3d20-46af-a639-854ebf0a0797" name="INSTRUMENT_AttitudeIndicator_Knob_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="1c91a1ec-8a7b-4c83-a893-94a5aa6eb440" name="INSTRUMENT_AttitudeIndicator_Pitch_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="0de2392d-3122-4ca4-9ece-d5dbbf50d512" name="INSTRUMENT_Ball_Turn_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="4e60a8fc-9a10-475f-b48d-54406e963704" name="INSTRUMENT_CDI_Compass_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="d5a9927a-e07d-4409-9f4b-aa09b5a8c283" name="INSTRUMENT_CDI_Compass_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="30b42a58-2e42-426a-8dfa-76b3acd4a27c" name="INSTRUMENT_CDI_Flag_From_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="e359b6e7-4d4e-43b4-8706-689f22bf9ccc" name="INSTRUMENT_CDI_Flag_From_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="d91701ac-447f-4e2f-9a00-15328ce47d73" name="INSTRUMENT_CDI_Flag_Glide_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="8b530905-342e-43d3-909b-1eb4c12164ef" name="INSTRUMENT_CDI_Flag_Glide_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="740a1a8e-f5d5-4545-bd3f-e61432ea8638" name="INSTRUMENT_CDI_Flag_Localizer_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="a17bf87c-29ed-4553-9f1f-23d9271a7678" name="INSTRUMENT_CDI_Flag_Localizer_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="294689ca-c7e1-4df7-a5db-6020df8d99c2" name="INSTRUMENT_CDI_Flag_Off_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="16b4ca5f-862f-4c14-8829-5b6eccebe438" name="INSTRUMENT_CDI_Flag_Off_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="472fa27d-6868-48ce-9ac7-e2c7d710f76b" name="INSTRUMENT_CDI_Flag_To_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="8b66cdfd-bf3a-4334-b85d-07a4ad228903" name="INSTRUMENT_CDI_Flag_To_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="9d2341ba-a3d2-451a-b2b5-0826c306e1f3" name="INSTRUMENT_CDI_Knob_Course_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="a52058e4-ffbe-4bd9-af5c-e8571d93b998" name="INSTRUMENT_CDI_Knob_Course_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="e20d86de-45ee-403f-9a4c-e635509397d4" name="INSTRUMENT_CDI_Needle_Glide_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="45975334-cdd9-4c8f-9199-6fa2b85c927b" name="INSTRUMENT_CDI_Needle_Glide_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="978298f1-e599-40c2-82bd-d185c9b1f004" name="INSTRUMENT_CDI_Needle_Localizer_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="76c03d7d-445f-46ce-b776-1830110627c1" name="INSTRUMENT_CDI_Needle_Localizer_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="922f6cee-abe4-4a96-b8e9-328fa652cf7d" name="INSTRUMENT_Dial_Compass" type="standard" typeParam="Autoplay"/>
+    <Animation guid="16c3064d-9290-433c-b4ca-37ca5b4ede32" name="INSTRUMENT_Flag_Heading_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="44ca6582-9a12-4f2e-9b01-3b7135b79361" name="INSTRUMENT_Knob_Altimeter_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ef72ecd1-4608-4014-879e-fe586fb00357" name="INSTRUMENT_Knob_Clock" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c0713cfe-864c-40dd-9e19-37c1c7a00bf6" name="INSTRUMENT_Knob_Clock_push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="db5c8d00-da6b-47f7-9a74-9f1105009110" name="INSTRUMENT_Knob_Heading_Compass_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="8c0e0b56-1669-44cb-934f-2130ff18128e" name="INSTRUMENT_Needle_Airspeed" type="standard" typeParam="Autoplay"/>
+    <Animation guid="9df8b697-5141-45fe-b176-c160a335e744" name="INSTRUMENT_Needle_Altimeter_10000_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="6a52df60-319a-448b-b9f4-d464001cf748" name="INSTRUMENT_Needle_Altimeter_1000_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2e250392-d4cb-4d44-b2c3-789befb00c81" name="INSTRUMENT_Needle_Altimeter_100_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="456e01bf-977c-45f2-b5f7-55e3aa976619" name="INSTRUMENT_Needle_Ammeter" type="standard" typeParam="Autoplay"/>
+    <Animation guid="58833e63-892a-450e-853e-780a3ceace3a" name="INSTRUMENT_Needle_Clock_Hours" type="standard" typeParam="Autoplay"/>
+    <Animation guid="023c9503-44af-44d6-aed0-2253d1880046" name="INSTRUMENT_Needle_Clock_Minutes" type="standard" typeParam="Autoplay"/>
+    <Animation guid="a750f8b1-f95e-435a-89f0-06b474a79454" name="INSTRUMENT_Needle_Clock_Seconds" type="standard" typeParam="Autoplay"/>
+    <Animation guid="431987ba-83b3-4638-a962-7b56730c2cba" name="INSTRUMENT_Needle_Engine_RPM_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ea6da65e-ed23-4e9c-ac92-ba63d579b879" name="INSTRUMENT_Needle_Fuel_Quantity_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="66dac888-5db1-4b74-9d22-4f91d003ca41" name="INSTRUMENT_Needle_Fuel_Quantity_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="cc9d160f-c58d-40b9-900f-a5669147c03b" name="INSTRUMENT_Needle_Heading_Cylinder" type="standard" typeParam="Autoplay"/>
+    <Animation guid="b9c53558-19ab-4e3a-8397-e1e5c491023e" name="INSTRUMENT_Needle_OAT" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ae725b39-0036-42ea-bedb-72dec98e172e" name="INSTRUMENT_Needle_Oil_Pressure" type="standard" typeParam="Autoplay"/>
+    <Animation guid="23a68b21-e3d3-4cdd-8a35-7e2fe6d04ca1" name="INSTRUMENT_Needle_Oil_Temperature" type="standard" typeParam="Autoplay"/>
+    <Animation guid="90b99c1d-ab6f-4a33-bcfc-f6ff742760d8" name="INSTRUMENT_Needle_Turn_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ab51ca74-e9bc-4201-943f-c518a0f0a3e9" name="INSTRUMENT_Needle_VerticalSpeed_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="6c61289e-afb5-43cb-9644-64e1bfa50bf1" name="INSTRUMENT_Warning_Turn_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="b9f1a66e-1f1e-4dc3-8ce5-82c88baa36f1" name="LANDING_GEAR_Switch_ParkingBrake" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f78b71bc-d374-474c-aeca-a618aa6d3990" name="LIGHTING_Knob_Panel" type="standard" typeParam="Autoplay"/>
+    <Animation guid="e7f66033-34b9-4d8b-a50b-e1b494d00479" name="LIGHTING_Switch_Light_Beacon_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="cf2f00e4-aefb-437d-b8c4-b70de8ce73a9" name="LIGHTING_Switch_Light_Cabin_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f49175cc-e6f6-4421-8522-700b2df94868" name="LIGHTING_Switch_Light_Landing_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="dc2b961c-17fc-4b7b-9fb0-2dd66b59c1fa" name="LIGHTING_Switch_Light_Nav_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="81d5aa21-40c5-4c68-80d2-87d8ab2dc71c" name="LIGHTING_Switch_Light_Strobe_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="4872314c-0189-4ba3-9288-d3622ab18a5f" name="LIGHTING_Switch_Light_Taxi_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="b0011ba1-3bb5-4bfe-976a-7d039ed5dca8" name="NAV_Knob_Khz1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="92e92ce5-a3cf-46fc-9381-24727f3a1886" name="NAV_Knob_Khz1_Push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2908dfba-d97b-4de5-9622-0071b73cddcd" name="NAV_Knob_Khz2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="83e89205-541a-4dd8-ba89-4c66b6557269" name="NAV_Knob_Khz2_Push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="52768e38-a0e5-4fad-a16c-12cca6d248a4" name="NAV_Knob_Mhz1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="9e0fed2a-25ff-45e9-8e42-906752486070" name="NAV_Knob_Mhz2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="7d2d7cfb-ca31-4246-b08a-bb4a82fd6ffd" name="NAV_Knob_OnOff1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2c2a02f1-7de9-47c3-adb5-05bd053bf72f" name="NAV_Knob_OnOff2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="4cb08ffd-bad5-48ec-aae8-b23a125d7f73" name="NAV_Push_Ident1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="148816fc-e2bd-4ee2-8847-d37adc7968d2" name="NAV_Push_Ident2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="a6bcdc35-fd03-4d81-828e-d0784da41322" name="NAV_Push_Swap1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="4a269144-de8f-4058-9945-cd48263d990d" name="NAV_Push_Swap2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="e847f7e1-6015-4aa0-a649-451a83ceee49" name="PASSENGER_Switch_Cabin_Air_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="85518240-019b-4cd0-97b9-b261d4263862" name="PASSENGER_Switch_Cabin_Heat_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c4a0e231-f4d2-48bb-bc7f-14fa652f4ed6" name="PRESSURIZATION_Needle_Suction" type="standard" typeParam="Autoplay"/>
+    <Animation guid="b2030c14-9d92-4990-9182-2a9eab0b9df6" name="TRANSPONDER_Knob_01" type="standard" typeParam="Autoplay"/>
+    <Animation guid="09a98fc5-5b39-4cf0-bf5d-22c3baf0d09b" name="TRANSPONDER_Knob_02" type="standard" typeParam="Autoplay"/>
+    <Animation guid="1814fa96-1887-4c0a-87d7-05f69c7002bb" name="TRANSPONDER_Knob_03" type="standard" typeParam="Autoplay"/>
+    <Animation guid="008a2c9d-bbbd-4e04-9972-54a1a06c2a47" name="TRANSPONDER_Knob_04" type="standard" typeParam="Autoplay"/>
+    <Animation guid="d10c95cd-eb77-451c-be78-cbe7798cc6e4" name="TRANSPONDER_Knob" type="standard" typeParam="Autoplay"/>
+    <Animation guid="8241277c-f62a-47f5-8729-7c209608c8aa" name="TRANSPONDER_Push_IDT" type="standard" typeParam="Autoplay"/>
+
+
+    <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank and the 20 in the formula is a scaling factor for the amount of yaw induced variation in the tank indication. The first value is the current tank quantity in liters. 	The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
+    <Macro Name="FuelTankSensorAdjustmentLeftTank">
+      1 (A:FUEL LEFT QUANTITY, gallon) (A:FUEL TANK LEFT MAIN CAPACITY, gallon) / - 20 * (A:TURN COORDINATOR BALL, scaler) * -
+    </Macro>
+
+    <Macro Name="FuelTankSensorAdjustmentRightTank">
+      1 (A:FUEL RIGHT QUANTITY, gallon) (A:FUEL TANK RIGHT MAIN CAPACITY, gallon) / - 20 * (A:TURN COORDINATOR BALL, scaler) * +
+    </Macro>
+
+    <!-- DEICE ########################### -->
+    <Component ID="DEICE">
+      <UseTemplate Name="ASOBO_DEICE_Lever_Engine_Template">
+        <DRAG_AXIS_SCALE>400</DRAG_AXIS_SCALE>
+        <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
+        <INVERT_IM_DRAG_INPUT_SCALAR>True</INVERT_IM_DRAG_INPUT_SCALAR>
+		<ANIM_NAME>DEICE_Lever_Engine</ANIM_NAME>
+      </UseTemplate>
+      <UseTemplate Name="ASOBO_DEICE_Switch_Pitot_Template">
+      </UseTemplate>
+    </Component>
+
+    <!-- ELECTRICAL ########################### -->
+    <Component ID="ELECTRICAL">
+      <DefaultTemplateParameters>
+        <SYNC_AVIONICS_TO_BATTERY_STATE>
+          (A:ELECTRICAL MASTER BATTERY:1, Bool) (&gt;O:_AvionicsShouldBeOn)
+          1 (&gt;A:BUS LOOKUP INDEX, Number)
+          (O:_AvionicsShouldBeOn) (A:BUS CONNECTION ON:1, Bool) != if{
+          1 1 (&gt;K:2:ELECTRICAL_BUS_TO_BUS_CONNECTION_TOGGLE)
+          }
+          (O:_AvionicsShouldBeOn) (A:CIRCUIT SWITCH ON:14, Bool) != if{
+          14 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+          }
+        </SYNC_AVIONICS_TO_BATTERY_STATE>
+      </DefaultTemplateParameters>
+      <UseTemplate Name="ASOBO_ELECTRICAL_Switch_Magneto_Template">
+        <ANIM_NAME>ELECTRICAL_Switch_Magneto</ANIM_NAME>
+        <NODE_ID>ELECTRICAL_Switch_Magneto</NODE_ID>
+        <SWITCH_DIRECTION>Horizontal</SWITCH_DIRECTION>
+        <NORMALIZED_TIME>0.75</NORMALIZED_TIME>
+        <DIRECTION>Forward</DIRECTION>
+        <INDEX_OFF>0</INDEX_OFF>
+        <INDEX_RIGHT>1</INDEX_RIGHT>
+        <INDEX_LEFT>2</INDEX_LEFT>
+        <INDEX_BOTH>3</INDEX_BOTH>
+        <ARROW_TYPE>Curved</ARROW_TYPE>
+        <USE_STARTER/>
+        <ANIMREF_ID>0</ANIMREF_ID>
+        <ANIMCURSOR_DIR>1</ANIMCURSOR_DIR>
+        <ANIMTIP_0>TT:COCKPIT.TOOLTIPS.MAGNETO_START_SWITCH_OFF</ANIMTIP_0>
+        <ANIMTIP_1>TT:COCKPIT.TOOLTIPS.MAGNETO_START_SWITCH_R</ANIMTIP_1>
+        <ANIMTIP_2>TT:COCKPIT.TOOLTIPS.MAGNETO_START_SWITCH_L</ANIMTIP_2>
+        <ANIMTIP_3>TT:COCKPIT.TOOLTIPS.MAGNETO_START_SWITCH_BOTH</ANIMTIP_3>
+        <ANIMTIP_4>TT:COCKPIT.TOOLTIPS.MAGNETO_START_SWITCH_START</ANIMTIP_4>
+      </UseTemplate>
+      <UseTemplate Name="ASOBO_ELECTRICAL_Switch_Alternator_Template">
+      </UseTemplate>
+      <UseTemplate Name="ASOBO_ELECTRICAL_Switch_Battery_Master_Template">
+        <!-- This battery switch also controls avionics -->
+        <ON_TOGGLE_MASTER_BATTERY>
+          #SYNC_AVIONICS_TO_BATTERY_STATE#
+        </ON_TOGGLE_MASTER_BATTERY>
+      </UseTemplate>
+      <UseTemplate Name="ASOBO_GT_Update">
+        <FREQUENCY>5</FREQUENCY>
+        <UPDATE_CODE>
+          #SYNC_AVIONICS_TO_BATTERY_STATE#
+        </UPDATE_CODE>
+      </UseTemplate>
+    </Component>
+
+    <!-- ENGINE ########################### -->
+    <Component ID="ENGINE_CONTROLS">
+      <UseTemplate Name="ASOBO_ENGINE_Lever_Throttle_Template">
+        <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
+        <AXIS>X</AXIS>
+        <ID>1</ID>
+      </UseTemplate>
+      <UseTemplate Name="ASOBO_FUEL_Lever_Mixture_Template">
+        <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
+        <AXIS>X</AXIS>
+        <DRAG_AXIS_SCALE>-400</DRAG_AXIS_SCALE>
+        <BUTTON_NODE_ID>FUEL_Lever_Mixture_1_Push</BUTTON_NODE_ID>
+      </UseTemplate>
+      <UseTemplate Name="ASOBO_ENGINE_Lever_Primer_Template"> <!--pump/primer-->
+        <NODE_ID>ENGINE_LEVER_PRIMER</NODE_ID>
+        <ANIM_NAME>ENGINE_LEVER_PRIMER</ANIM_NAME>
+        <INVERT_SWITCH_ON_CONDITION>True</INVERT_SWITCH_ON_CONDITION>
+      </UseTemplate>
+    </Component>
+
+    <!-- FUEL ########################### -->
+    <Component ID="FUEL">
+      <UseTemplate Name="ASOBO_FUEL_Switch_Cutoff_Template">
+        <AXIS>X</AXIS>
+        <INVERT_SWITCH_ON_CONDITION>True</INVERT_SWITCH_ON_CONDITION>
+		<NODE_ID>FUEL_Switch_Cutoff_1</NODE_ID>
+      </UseTemplate>
+      <CameraTitle>Checklist_FuelValve</CameraTitle>
+    </Component>
+
+    <!-- HANDLING ########################### -->
+    <Component ID="YOKES">
+      <UseTemplate Name="ASOBO_HANDLING_Yoke_Hideable_Template">
+        <NODE_ID>HANDLING_Yoke_1</NODE_ID>
+        <YOKE_HIDER_NODE_ID>HANDLING_Yoke_Hider_1</YOKE_HIDER_NODE_ID>
+        <YOKE_NODE_ID>HANDLING_Yoke_1</YOKE_NODE_ID>
+        <ANIM_NAME_YOKE_X>HANDLING_Yoke_Lever_StickLR</ANIM_NAME_YOKE_X>
+        <ANIM_NAME_YOKE_Y>HANDLING_Yoke_Lever_StickForeAft</ANIM_NAME_YOKE_Y>
+        <AP_CAN_DRIVE_ANIMATION>True</AP_CAN_DRIVE_ANIMATION>
+        <ID>1</ID>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_HANDLING_Yoke_Hideable_Template">
+        <NODE_ID>HANDLING_Yoke_2</NODE_ID>
+        <YOKE_HIDER_NODE_ID>HANDLING_Yoke_Hider_2</YOKE_HIDER_NODE_ID>
+        <YOKE_NODE_ID>HANDLING_Yoke_2</YOKE_NODE_ID>
+        <ID>2</ID>
+        <ONLY_HIDEABLE/>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_HANDLING_Yoke_Hideable_Template">
+        <NODE_ID>HANDLING_Yoke_1_Cable</NODE_ID>
+        <ID>1</ID>
+        <ONLY_DECORATIVE/>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_HANDLING_Yoke_Hideable_Template">
+        <NODE_ID>HANDLING_Yoke_2_Cable</NODE_ID>
+        <ID>2</ID>
+        <ONLY_DECORATIVE/>
+      </UseTemplate>
+    </Component>
+
+    <Component ID="HANDLING">
+      <UseTemplate Name="ASOBO_HANDLING_RudderPedals_Template">
+        <RUDDERPEDALS_TYPE>SPLITTED</RUDDERPEDALS_TYPE>
+        <DIFFERENTIATE_BRAKE_ANIM_L_R>True</DIFFERENTIATE_BRAKE_ANIM_L_R>
+        <NODE_ID>HANDLING_RudderPedals_1_1</NODE_ID>
+        <PREFIX_LEFT_PEDALS>HANDLING_RudderPedals_</PREFIX_LEFT_PEDALS>
+        <SUFFIX_LEFT_PEDALS>_1_Brake</SUFFIX_LEFT_PEDALS>
+        <PREFIX_RIGHT_PEDALS>HANDLING_RudderPedals_</PREFIX_RIGHT_PEDALS>
+        <SUFFIX_RIGHT_PEDALS>_2_Brake</SUFFIX_RIGHT_PEDALS>
+        <NO_PART_ID_ON_ANIM_NODE>True</NO_PART_ID_ON_ANIM_NODE>
+        <USE_BRAKE>True</USE_BRAKE>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_HANDLING_Lever_Flaps_Continuous_Template">
+        <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
+        <INVERT_INTERACTION>True</INVERT_INTERACTION>
+        <INVERT_IM_DRAG_INPUT_SCALAR>True</INVERT_IM_DRAG_INPUT_SCALAR>
+		
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_HANDLING_Indicator_Flaps_Template">
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_HANDLING_Wheel_ElevatorTrim_Template">
+        <HIGHLIGHT_NODE_ID>HANDLING_Wheel_ElevatorTrim_Visual</HIGHLIGHT_NODE_ID>
+		<TOOLTIPID>Elevator Trim (%((A:ELEVATOR TRIM POSITION, degrees))%!1.1f!%)</TOOLTIPID>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_HANDLING_Indicator_ElevatorTrim_Template">
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_LANDING_GEAR_Switch_ParkingBrake_Template">
+        <ANIM_DELAY>0.2</ANIM_DELAY>
+        <INVERT_SWITCH_ON_CONDITION>True</INVERT_SWITCH_ON_CONDITION>
+      </UseTemplate>
+    </Component>
+
+    <!-- INSTRUMENTS ########################### -->
+    <Component ID="INSTRUMENTS">
+      <UseTemplate Name="ASOBO_INSTRUMENT_Needle_ADF_Template">
+        <ADF_KNOB/>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_PRESSURIZATION_Needle_Suction_Template">
+        <MIN_VALUE>0</MIN_VALUE>
+        <DONT_APPEND_ID>True</DONT_APPEND_ID>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Airspeed_Template">
+        <MIN_VALUE>0</MIN_VALUE>
+        <MAX_VALUE>170</MAX_VALUE>
+        <HIGHLIGHT_NODE_ID>INSTRUMENT_AirspeedIndicator_Highlight</HIGHLIGHT_NODE_ID>
+        <DONT_APPEND_ID>True</DONT_APPEND_ID>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_INSTRUMENT_AttitudeIndicator_Template">
+        <USE_FLAG/>
+        <HIGHLIGHT_NODE_ID>INSTRUMENT_AttitudeIndicator_Highlight_1</HIGHLIGHT_NODE_ID>
+        <USE_SUCTION_PRESSURE_CHECK/>
+        <USE_LINEAR_VALUES>True</USE_LINEAR_VALUES>
+        <NO_CAGE/>
+        <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_AttitudeIndicator_Knob_Visual_1</KNOB_HIGHLIGHT_NODE_ID>
+        <BARS_INVERT_ANIM>True</BARS_INVERT_ANIM>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Current_Time_Clock_Template">
+        <DELTA_VARS_SCOPE>L</DELTA_VARS_SCOPE>
+      </UseTemplate>
+
+
+      <UseTemplate Name="ASOBO_GT_Highlight_Template">
+        <HIGHLIGHT_NODE_ID>INSTRUMENT_Clock_Highlight</HIGHLIGHT_NODE_ID>
+      </UseTemplate>
+
+
+      <UseTemplate Name="ASOBO_INSTRUMENT_Altimeter_Template">
+        <MIN_VALUE_STRIP>27.9</MIN_VALUE_STRIP>
+        <MAX_VALUE_STRIP>31.6</MAX_VALUE_STRIP>
+        <MIN_VALUE_KNOB>28.2</MIN_VALUE_KNOB>
+        <MAX_VALUE_KNOB>31.3</MAX_VALUE_KNOB>
+        <HIGHLIGHT_NODE_ID>INSTRUMENT_Altimeter_Highlight_1</HIGHLIGHT_NODE_ID>
+        <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_Knob_Altimeter_Visual_1</KNOB_HIGHLIGHT_NODE_ID>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Turn_Template">
+        <BALL_PART_ID>INSTRUMENT_TURN_INDICATOR_BALL</BALL_PART_ID>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Heading_Template">
+        <USE_FLAG/>
+        <HIGHLIGHT_NODE_ID>INSTRUMENT_Heading_Highlight_1</HIGHLIGHT_NODE_ID>
+        <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_Knob_Heading_Compass_Visual_1</KNOB_HIGHLIGHT_NODE_ID>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_INSTRUMENT_Needle_VerticalSpeed_Template">
+      </UseTemplate>
+
+      <UseTemplate name="ASOBO_GT_ComponentWith_PART_ID">
+        <PART_ID>INSTRUMENT_VerticalSpeed_Highlight</PART_ID>
+        <NODE_ID>INSTRUMENT_VerticalSpeed_Highlight_1</NODE_ID>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Engine_RPM_Template">
+        <MIN_VALUE>0</MIN_VALUE>
+        <MAX_VALUE>3500</MAX_VALUE>
+        <NODE_ID>INSTRUMENT_Needle_Engine_RPM_1</NODE_ID>
+        <ANIM_NAME>INSTRUMENT_Needle_Engine_RPM</ANIM_NAME>
+        <CREATE_HIGHLIGHT_NODE>True</CREATE_HIGHLIGHT_NODE>
+        <HIGHLIGHT_NODE_ID>INSTRUMENT_Engine_RPM_Highlight</HIGHLIGHT_NODE_ID>
+        <HIGHLIGHT_PART_ID>INSTRUMENT_Engine_RPM_Highlight</HIGHLIGHT_PART_ID>
+      </UseTemplate>
+
+      <Component ID="INSTRUMENTS_CDI">
+        <DefaultTemplateParameters>
+          <IS_AVIONICS_ON>(A:CIRCUIT ON:34, Bool)</IS_AVIONICS_ON>
+        </DefaultTemplateParameters>
+        <UseTemplate Name="ASOBO_INSTRUMENT_CDI_Template">
+          <ID>1</ID>
+          <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_1</KNOB_HIGHLIGHT_NODE_ID>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_INSTRUMENT_CDI_Template">
+          <ID>2</ID>
+          <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_2</KNOB_HIGHLIGHT_NODE_ID>
+        </UseTemplate>
+      </Component>
+
+      <UseTemplate Name="ASOBO_INSTRUMENT_Dial_Compass_Template">
+      </UseTemplate>
+
+      <Component ID="INSTRUMENTS_Electrical">
+        <DefaultTemplateParameters>
+          <FAILURE>(A:ELECTRICAL MAIN BUS VOLTAGE, Volts) 14 &gt;</FAILURE>
+          <ANIM_LAG>100</ANIM_LAG>
+        </DefaultTemplateParameters>
+        <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Fuel_Quantity_Template">
+          <TANK_ID>LEFT MAIN</TANK_ID>
+          <FAILURE_CODE>0</FAILURE_CODE>
+          <USE_CUSTOM_POINTS>True</USE_CUSTOM_POINTS>
+
+          <!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
+
+
+          <SIMVAR_UNIT>liter</SIMVAR_UNIT>
+
+          <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
+          <REF_VALUE_0>2.8676 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_0>
+          <REF_VALUE_1>
+            11.3562 @FuelTankSensorAdjustmentLeftTank
+          </REF_VALUE_1>
+          <REF_VALUE_2>
+            22.7125 @FuelTankSensorAdjustmentLeftTank
+          </REF_VALUE_2>
+          <REF_VALUE_3>
+            34.0687 @FuelTankSensorAdjustmentLeftTank
+          </REF_VALUE_3>
+          <REF_VALUE_4>
+            45.4249 @FuelTankSensorAdjustmentLeftTank
+          </REF_VALUE_4>
+
+          <ANIM_VALUE_0>0</ANIM_VALUE_0>
+          <ANIM_VALUE_1>30</ANIM_VALUE_1>
+          <ANIM_VALUE_2>60</ANIM_VALUE_2>
+          <ANIM_VALUE_3>90</ANIM_VALUE_3>
+          <ANIM_VALUE_4>100</ANIM_VALUE_4>
+          <MAX_POINT_INDEX>5</MAX_POINT_INDEX>
+          <ANIM_LENGTH>100</ANIM_LENGTH>
+          <MAX_DISPLAYABLE>100</MAX_DISPLAYABLE>
+          <MIN_DISPLAYABLE>0</MIN_DISPLAYABLE>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Fuel_Quantity_Template">
+          <TANK_ID>RIGHT MAIN</TANK_ID>
+          <FAILURE_CODE>0</FAILURE_CODE>
+          <ID>2</ID>
+          <USE_CUSTOM_POINTS>True</USE_CUSTOM_POINTS>
+
+          <!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
+
+          <SIMVAR_UNIT>liter</SIMVAR_UNIT>
+
+          <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
+          <REF_VALUE_0>2.8676 @FuelTankSensorAdjustmentRightTank</REF_VALUE_0>
+          <REF_VALUE_1>
+            11.3562 @FuelTankSensorAdjustmentRightTank
+          </REF_VALUE_1>
+          <REF_VALUE_2>
+            22.7125 @FuelTankSensorAdjustmentRightTank
+          </REF_VALUE_2>
+          <REF_VALUE_3>
+            34.0687 @FuelTankSensorAdjustmentRightTank
+          </REF_VALUE_3>
+          <REF_VALUE_4>
+            45.4249 @FuelTankSensorAdjustmentRightTank
+          </REF_VALUE_4>
+
+          <ANIM_VALUE_0>0</ANIM_VALUE_0>
+          <ANIM_VALUE_1>30</ANIM_VALUE_1>
+          <ANIM_VALUE_2>60</ANIM_VALUE_2>
+          <ANIM_VALUE_3>90</ANIM_VALUE_3>
+          <ANIM_VALUE_4>100</ANIM_VALUE_4>
+          <MAX_POINT_INDEX>5</MAX_POINT_INDEX>
+          <ANIM_LENGTH>100</ANIM_LENGTH>
+          <MAX_DISPLAYABLE>100</MAX_DISPLAYABLE>
+          <MIN_DISPLAYABLE>0</MIN_DISPLAYABLE>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Ammeter_Template">
+          <FAILURE_CODE>50</FAILURE_CODE>
+          <INVERT_ANIM>True</INVERT_ANIM>
+          <DONT_APPEND_ID>True</DONT_APPEND_ID>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_SAFETY_Indicator_LowVolt_Template">
+          <THRESHOLD>14</THRESHOLD>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Temperature_Template">
+          <UNITS>fahrenheit</UNITS>
+          <MIN_VALUE>0</MIN_VALUE>
+          <MAX_VALUE>245</MAX_VALUE>
+          <FAILURE_CODE>0</FAILURE_CODE>
+          <DONT_APPEND_ID>True</DONT_APPEND_ID>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Pressure_Template">
+          <UNITS>psi</UNITS>
+          <MIN_VALUE>0</MIN_VALUE>
+          <MAX_VALUE>100</MAX_VALUE>
+          <FAILURE_CODE>0</FAILURE_CODE>
+          <DONT_APPEND_ID>True</DONT_APPEND_ID>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_INSTRUMENT_Needle_OAT_Template">
+          <MIN_VALUE>-60</MIN_VALUE>
+          <MAX_VALUE>80</MAX_VALUE>
+        </UseTemplate>
+      </Component>
+    </Component>
+
+    <!-- LIGHTING ########################### -->
+    <Component ID="LIGHTING">
+      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Strobe_Template">
+        <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_STROBE_ACTION</TT_DESCRIPTION_ID>
+        <TOOLTIP_TITLE>@TT_Package.LIGHTING_SWITCH_LIGHT_STROBE_TITLE</TOOLTIP_TITLE>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Navigation_Template">
+        <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_NAV_ACTION_SET</TT_DESCRIPTION_ID>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Taxi_Template">
+        <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_TAXI_ACTION_SET</TT_DESCRIPTION_ID>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Landing_Template">
+        <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_LANDING_ACTION_SET</TT_DESCRIPTION_ID>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Beacon_Template">
+        <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_BEACON_ACTION_SET</TT_DESCRIPTION_ID>
+      </UseTemplate>
+<!--
+      <UseTemplate Name="C152X_LIGHTING_Knob_Panel_Template"> <!-- Lower Knob by key for instrument light dimming -- Pot 5--
+        <NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
+        <ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
+        <KNOB_TURN_SPEED>4.0</KNOB_TURN_SPEED>
+		<INIT_VALUE>20</INIT_VALUE>
+		<MIN_VALUE>5</MIN_VALUE>
+		<ANIMTIP_0>Instrument Lights (%((A:LIGHT POTENTIOMETER:5, Percent))%!d!%)</ANIMTIP_0>
+		<ANIMTIP_1>Instrument Lights (%((A:LIGHT POTENTIOMETER:5, Percent))%!d!%)</ANIMTIP_1>
+      </UseTemplate>
+-->
+
+      <UseTemplate Name="ASOBO_LIGHTING_Knob_Glareshield_Template">
+        <NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
+        <ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
+        <KNOB_TURN_SPEED>4.0</KNOB_TURN_SPEED>
+        <INIT_VALUE>40</INIT_VALUE>
+        <MIN_VALUE>5</MIN_VALUE>
+        <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_PANEL_ACTION</TT_DESCRIPTION_ID>
+        <TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_PANEL_TITLE</TOOLTIP_TITLE>
+      </UseTemplate>
+
+      <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Cabin_Template">
+        <!-- Flood lights on/off? -->
+        <NODE_ID>LIGHTING_Switch_Cabin</NODE_ID>
+        <ANIM_NAME>LIGHTING_Switch_Cabin</ANIM_NAME>
+        <CIRCUIT_ID>26</CIRCUIT_ID>
+        <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_CABIN_ACTION_SET</TT_DESCRIPTION_ID>
+        <TOOLTIP_TITLE>@TT_Package.LIGHTING_SWITCH_CABIN_TITLE</TOOLTIP_TITLE>
+      </UseTemplate>
+	  
+
+
+      <UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template">
+      </UseTemplate>
+      
+      <UseTemplate Name="ASOBO_LIGHTING_Glareshield_Emissive_Template">
+        <!-- Red light on ceiling -->
+        <NODE_ID>LIGHTING_Panel_Emisive</NODE_ID>
+        <POTENTIOMETER>4</POTENTIOMETER>
+        <CIRCUIT_ID>28</CIRCUIT_ID>
+      </UseTemplate>
+
+      <UseTemplate Name="C152X_LIGHTING_Cabin_Emissive_Template">
+        <!-- White cabin light on ceiling -->
+      </UseTemplate>
+	  
+	  <UseTemplate Name="C152X_LIGHTING_Switch_Light_Panel_Template"> <!-- Upper Panel lights on/off -->
+      <ANIM_NAME>LIGHTING_Switch_Light_Cabin_1</ANIM_NAME>
+      <PART_ID>LIGHTING_Switch_Light_Cabin</PART_ID>
+      <NODE_ID>LIGHTING_Switch_Light_Cabin_1</NODE_ID>
+	  </UseTemplate>
+
+      <!-- Which is this for? -->
+      <UseTemplate Name="C152X_Speaker">
+        <NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
+        <ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
+      </UseTemplate>
+	  
+    </Component>
+
+    <!-- PASSENGERS ########################### -->
+    <Component ID="PASSENGERS">
+      <Parameters Type="Override">
+        <INVERT_IM_DRAG_INPUT_SCALAR>True</INVERT_IM_DRAG_INPUT_SCALAR>
+      </Parameters>
+      <UseTemplate Name="ASOBO_PASSENGER_Lever_Cabin_Air_Template">
+        <NODE_ID>PASSENGER_Switch_Cabin_Air_1</NODE_ID>
+        <ANIM_NAME>PASSENGER_Switch_Cabin_Air_1</ANIM_NAME>
+      </UseTemplate>
+      <UseTemplate Name="ASOBO_PASSENGER_Lever_Cabin_Heat_Template">
+        <NODE_ID>PASSENGER_Switch_Cabin_Heat_1</NODE_ID>
+        <ANIM_NAME>PASSENGER_Switch_Cabin_Heat_1</ANIM_NAME>
+      </UseTemplate>
+    </Component>
+
+    <!-- RADIO STACK ################################## -->
+    <Component ID="NAVCOM_Radios">
+      <Parameters Type="Default">
+        <ANIM_LAG_SWITCH>500</ANIM_LAG_SWITCH>
+        <BUTTON_POTENTIOMETER/>
+        <POTENTIOMETER>5</POTENTIOMETER>
+        <ANIM_NEVER_FAILS>True</ANIM_NEVER_FAILS>
+        <TYPE>PULL_25K</TYPE>
+      </Parameters>
+      <UseTemplate Name="ASOBO_NAVCOM_Simple_Radio_Template">
+        <ID>1</ID>
+        <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
+        <NAV_CIRCUIT_ID>22</NAV_CIRCUIT_ID>
+        <CIRCUIT_ID>23</CIRCUIT_ID>
+        <FAILURE>(A:COM VOLUME:1,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
+      </UseTemplate>
+      <UseTemplate Name="ASOBO_NAVCOM_Simple_Radio_Template">
+        <ID>2</ID>
+        <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
+        <NAV_CIRCUIT_ID>24</NAV_CIRCUIT_ID>
+        <CIRCUIT_ID>25</CIRCUIT_ID>
+        <FAILURE>(A:COM VOLUME:2,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
+      </UseTemplate>
+      <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
+        <ID>1</ID>
+        <NODE_ID>NavCom1_Screen</NODE_ID>
+        <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
+        <USE_DIMMING_POTENTIOMETER/>
+        <DIMMING_FACTOR>1</DIMMING_FACTOR>
+      </UseTemplate>
+      <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
+        <ID>2</ID>
+        <NODE_ID>NavCom2_Screen</NODE_ID>
+        <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
+        <USE_DIMMING_POTENTIOMETER/>
+        <DIMMING_FACTOR>1</DIMMING_FACTOR>
+      </UseTemplate>
+      <Component Id="NAVCOM_Sound_Push_Buttons">
+        <UseTemplate Name="ASOBO_NAVCOM_Push_MARKER_Sound_Template">
+          <NODE_ID>AUDIO_Push_MKR</NODE_ID>
+          <ANIM_NAME>AUDIO_Push_MKR</ANIM_NAME>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_NAVCOM_Push_DME_Sound_Template">
+          <NODE_ID>AUDIO_Push_DME</NODE_ID>
+          <ANIM_NAME>AUDIO_Push_DME</ANIM_NAME>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_AUDIO_Push_Speaker_Template">
+          <NODE_ID>AUDIO_Push_SPKR</NODE_ID>
+          <ANIM_NAME>AUDIO_Push_SPKR</ANIM_NAME>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_NAVCOM_Push_EXT_Sound_Template">
+          <ID>1</ID>
+          <NODE_ID>AUDIO_Push_EXT</NODE_ID>
+          <ANIM_NAME>AUDIO_Push_EXT</ANIM_NAME>
+          <TOOLTIPID>Toggle Pilot</TOOLTIPID>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_NAVCOM_ADF_Sound_Template">
+          <NODE_ID>AUDIO_Push_AOE</NODE_ID>
+          <ANIM_NAME>AUDIO_Push_AOE</ANIM_NAME>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_NAVCOM_Switch_NAV_Sound_Template">
+          <ID>1</ID>
+          <USE_EXCLUSIVE_ID>True</USE_EXCLUSIVE_ID>
+          <OTHER_ID>2</OTHER_ID>
+          <NODE_ID>AUDIO_Push_NAV_1</NODE_ID>
+          <ANIM_NAME>AUDIO_Push_NAV_1</ANIM_NAME>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_NAVCOM_Switch_NAV_Sound_Template">
+          <ID>2</ID>
+          <USE_EXCLUSIVE_ID>True</USE_EXCLUSIVE_ID>
+          <OTHER_ID>1</OTHER_ID>
+          <NODE_ID>AUDIO_Push_NAV_2</NODE_ID>
+          <ANIM_NAME>AUDIO_Push_NAV_2</ANIM_NAME>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_NAVCOM_Base_Template">
+          <SET_STATE_EXTERNAL>
+            (A:COM TRANSMIT:1, Bool) sp0
+            (A:COM TRANSMIT:2, Bool) sp1
+            l0 ! if{
+            (A:COM RECEIVE:1, Bool) ! (&gt;K:COM1_RECEIVE_SELECT)
+            } els{
+            l1 ! if{
+            (A:COM RECEIVE:2, Bool) ! (&gt;K:COM2_RECEIVE_SELECT)
+            } }
+          </SET_STATE_EXTERNAL>
+          <ANIM_CODE>(A:COM RECEIVE:1, Bool) (A:COM RECEIVE:2, Bool) and 100 *</ANIM_CODE>
+          <GET_STATE_EXTERNAL>(A:COM RECEIVE:1, Bool) (A:COM RECEIVE:2, Bool) and sp0</GET_STATE_EXTERNAL>
+          <SIM_STATE_IS_ON_EXTERNAL>l0</SIM_STATE_IS_ON_EXTERNAL>
+          <EMISSIVE_INDICATOR_CODE>(A:COM RECEIVE:1, Bool) (A:COM RECEIVE:2, Bool) and</EMISSIVE_INDICATOR_CODE>
+          <NODE_ID>AUDIO_Push_NAV_Both</NODE_ID>
+          <ANIM_NAME>AUDIO_Push_NAV_Both</ANIM_NAME>
+          <INTERACTION_TYPE>Switch</INTERACTION_TYPE>
+          <TT_DESCRIPTION_ID>@TT_Package.AUDIOPANEL_BOTH_NAV_SOUND_ACTION</TT_DESCRIPTION_ID>
+          <TOOLTIP_TITLE>@TT_Package.AUDIOPANEL_BOTH_NAV_SOUND_TITLE</TOOLTIP_TITLE>
+          <SIMVAR_TO_WATCH_0>COM RECEIVE:1</SIMVAR_TO_WATCH_0>
+          <SIMVAR_TO_WATCH_1>COM RECEIVE:2</SIMVAR_TO_WATCH_1>
+          <BTN_ID>NAV_Sound_Both</BTN_ID>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_GT_COM_Push_Transmit_Template">
+          <ID>1</ID>
+          <NODE_ID>AUDIO_Push_MIC_1</NODE_ID>
+          <ANIM_NAME>AUDIO_Push_MIC_1</ANIM_NAME>
+        </UseTemplate>
+        <UseTemplate Name="ASOBO_GT_COM_Push_Transmit_Template">
+          <ID>2</ID>
+          <NODE_ID>AUDIO_Push_MIC_2</NODE_ID>
+          <ANIM_NAME>AUDIO_Push_MIC_2</ANIM_NAME>
+        </UseTemplate>
+      </Component>
+    </Component>
+    <Component ID="ADF">
+      <UseTemplate Name="ASOBO_ADF_AS300_Template">
+        <DONT_APPEND_ID>True</DONT_APPEND_ID>
+        <POTENTIOMETER>4</POTENTIOMETER>
+        <CIRCUIT_ADF>10</CIRCUIT_ADF>
+      </UseTemplate>
+    </Component>
+    <Component ID="TRANSPONDER">
+      <UseTemplate Name="ASOBO_Transponder_AS76A_Template">
+        <DONT_APPEND_ID>True</DONT_APPEND_ID>
+        <ANIM_LAG>500</ANIM_LAG>
+      </UseTemplate>
+    </Component>
+
+    <Component ID="AUDIO_TOP_PANEL">
+		<Parameters Type="Default">
+			<DONT_APPEND_ID>True</DONT_APPEND_ID>
+		</Parameters>
+		<UseTemplate Name="C152X_AUDIO_Knob_Volume_Template">
+			<CIRCUIT_ID>28</CIRCUIT_ID>	  <!----------------------- Upper knob pot 4----------------------->
+			<USE_DIMMING_KNOB/>
+		</UseTemplate>
+		<Component ID="OMI_Indicators">
+			<DefaultTemplateParameters>
+				<FAILURE>(A:CIRCUIT GENERAL PANEL ON, Bool)</FAILURE>
+			</DefaultTemplateParameters>
+			<UseTemplate Name="ASOBO_AUDIO_Indicator_OMI_Components"/>
+		</Component>
+		<UseTemplate Name="ASOBO_AUDIO_Switch_Marker_Sens_Template">
+		</UseTemplate>
+	</Component>
+
+    <Component ID="SafetySwitches">
+      <!--<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+        <NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
+      </UseTemplate>-->
+      <!--<UseTemplate Name="ASOBO_SAFETY_Push_Annunciator_Template">
+        <NODE_ID>AUDIO_Switch_Test</NODE_ID>
+		<ANIM_NAME>AUDIO_Switch_Test</ANIM_NAME>
+      </UseTemplate>-->
+    </Component>
+    <Component ID="ANNUNCIATOR_TEST">
+        <UseTemplate Name="C152X_Annun_Test">
+        <NODE_ID>AUDIO_Switch_Test</NODE_ID>
+        <ANIM_NAME>AUDIO_Switch_Test</ANIM_NAME>
+        <PART_ID>AUDIO_Switch_Test</PART_ID>
+        </UseTemplate>			
+    </Component>
+    <Component ID="Pilots_Visibility">
+      <Component ID="PILOT_0" Node="PILOT_0">
+            <UseTemplate Name="ASOBO_GT_Visibility_Code">
+                <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
+            </UseTemplate>
+      </Component>
+      <Component ID="PILOT_1" Node="PILOT_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+            <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (A:SPEAKER ACTIVE, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+    </Component>
+    <Component ID="Baggage_Visibility">
+      <!-- TO DO
+      <Component ID="PILOT_0" Node="PILOT_0">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="PILOT_1" Node="PILOT_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      -->
+    </Component>
+    <Component ID="Pilot_Side_Interaction">
+      <UseTemplate Name="JPL_Sun_Visors">
+        <NODE_ID>Sun_visors_Pilot</NODE_ID>
+        <ID>Pilot</ID>
+      </UseTemplate>
+      <UseTemplate Name="JPL_Window_Template">
+        <NODE_ID>Pilot_Window_Handle</NODE_ID>
+        <ID>Pilot</ID>
+      </UseTemplate>
+      <UseTemplate Name="JPL_Door_Template">
+        <NODE_ID>Pilot_Door_Handle</NODE_ID>
+        <ID>Pilot</ID>
+      </UseTemplate>
+    </Component>
+    <Component ID="CoPilot_Side_Interaction">
+      <UseTemplate Name="JPL_Sun_Visors">
+        <NODE_ID>Sun_visors_CoPilot</NODE_ID>
+        <ID>CoPilot</ID>
+      </UseTemplate>
+      <UseTemplate Name="JPL_Window_Template">
+        <NODE_ID>CoPilot_Window_Handle</NODE_ID>
+        <ID>CoPilot</ID>
+      </UseTemplate>
+      <UseTemplate Name="JPL_Door_Template">
+        <NODE_ID>CoPilot_Door_Handle</NODE_ID>
+        <ID>CoPilot</ID>
+      </UseTemplate>
+    </Component>
+	<!--
+    <Component ID="DME_Interaction">
+      <UseTemplate Name="DME_Switch_Template">
+        <NODE_ID>DME_Switch</NODE_ID>
+        <ID>Pilot</ID>
+      </UseTemplate>
+    </Component>
+	-->
+	<!--######  FOR CONSIDERATION??? ######-->
+    <Component ID="DME_Interaction">
+      <UseTemplate Name="DME_Switch_Template">
+        <NODE_ID>DME_Switch</NODE_ID>
+        <ANIM_NAME>DME_Switch</ANIM_NAME>
+        <PART_ID>DME_Switch</PART_ID>
+		    <CIRCUIT_ID>36</CIRCUIT_ID>
+      </UseTemplate>
+      <UseTemplate Name="JPL_DME_Screens_Template">
+        <ID>1</ID>
+        <NODE_ID>DME_Screen</NODE_ID>
+        <DIMMING_FACTOR>1</DIMMING_FACTOR>
+      </UseTemplate>
+    </Component>
+
+    <Component ID="TUTO_Level" Node="TUTO_Level">
+      <UseTemplate Name="ASOBO_GT_Visibility_Code">
+        <ONCE>True</ONCE>
+        <VISIBILITY_CODE>0</VISIBILITY_CODE>
+      </UseTemplate>
+    </Component>
+    <Component ID="TUTO_Descent" Node="TUTO_Descent">
+      <UseTemplate Name="ASOBO_GT_Visibility_Code">
+        <ONCE>True</ONCE>
+        <VISIBILITY_CODE>0</VISIBILITY_CODE>
+      </UseTemplate>
+    </Component>
+    <Component ID="TUTO_Climb" Node="TUTO_Climb">
+      <UseTemplate Name="ASOBO_GT_Visibility_Code">
+        <ONCE>True</ONCE>
+        <VISIBILITY_CODE>0</VISIBILITY_CODE>
+      </UseTemplate>
+    </Component>
+    <Component ID="TUTO_TurnLeft" Node="TUTO_TurnLeft">
+      <UseTemplate Name="ASOBO_GT_Visibility_Code">
+        <ONCE>True</ONCE>
+        <VISIBILITY_CODE>0</VISIBILITY_CODE>
+      </UseTemplate>
+    </Component>
+    
+  </Behaviors>
+</ModelInfo>
+
+

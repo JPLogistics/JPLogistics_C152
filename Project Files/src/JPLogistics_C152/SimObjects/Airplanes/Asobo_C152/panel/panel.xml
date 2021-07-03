@@ -1,23 +1,41 @@
 <PlaneHTMLConfig>
 
-	<Instrument>
-		<Name>C300ADF</Name>
-		<Electric>
-			<And>
-				<Greater>
-					<Simvar name="ADF VOLUME:1" unit="Percent"/>
-					<Constant>0</Constant>
-				</Greater>
-				<Simvar name="CIRCUIT ON:10" unit="Boolean"/>
-			</And>
-		</Electric>
-	</Instrument>
-	<Instrument>
-		<Name>HourMeter</Name>
-		<Electric>
-			<Simvar name="CIRCUIT ON:2" unit="Boolean"/>
-		</Electric>
-	</Instrument>
+  <Instrument>
+    <Name>C300ADF</Name>
+    <Electric>
+      <And>
+        <Greater>
+          <Simvar name="ADF VOLUME:1" unit="Percent"/>
+          <Constant>0</Constant>
+        </Greater>
+        <Simvar name="CIRCUIT ON:34" unit="Boolean"/>
+      </And>
+    </Electric>
+  </Instrument>
+  <Instrument>
+    <Name>KX155A_1</Name>
+    <Electric>
+      <Simvar name="CIRCUIT ON:34" unit="Boolean"/>
+    </Electric>
+  </Instrument>
+  <Instrument>
+    <Name>KX155A_2</Name>
+    <Electric>
+      <Simvar name="CIRCUIT ON:25" unit="Boolean"/>
+    </Electric>
+  </Instrument>
+  <Instrument>
+    <Name>DME-JPL</Name>
+    <Electric>
+      <Simvar name="CIRCUIT ON:36" unit="Boolean"/>
+    </Electric>
+  </Instrument>
+  <Instrument>
+    <Name>HourMeter</Name>
+    <Electric>
+      <Simvar name="CIRCUIT ON:2" unit="Boolean"/>
+    </Electric>
+  </Instrument>
 
 </PlaneHTMLConfig>
-  
+

@@ -144,14 +144,10 @@
 <Template Name="JPL_DME_Screens_SubTemplate">
   <DefaultTemplateParameters>
     <NODE_ID>DME_Screen</NODE_ID>
-    <Condition Check="USE_DIMMING_POTENTIOMETER">
-      <POTENTIOMETER>4</POTENTIOMETER>
-      <DIMMING_FACTOR>1</DIMMING_FACTOR>
-    </Condition>
   </DefaultTemplateParameters>
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <UseTemplate Name="ASOBO_GT_Emissive_Gauge">
-      <FAILURE>(A:CIRCUIT NAVCOM#ID# ON, Bool)</FAILURE>
+      <FAILURE>(A:CIRCUIT ON:36, Bool)</FAILURE>
       <Condition Check="USE_DIMMING_POTENTIOMETER">
         <True>
           <EMISSIVE_CODE>(L:DME_POWER, Bool) 0 &gt; (A:LIGHT POTENTIOMETER:#POTENTIOMETER#, percent over 100) * #DIMMING_FACTOR# *</EMISSIVE_CODE>
