@@ -3,13 +3,7 @@
   <Instrument>
     <Name>C300ADF</Name>
     <Electric>
-      <And>
-        <Greater>
-          <Simvar name="ADF VOLUME:1" unit="Percent"/>
-          <Constant>0</Constant>
-        </Greater>
-        <Simvar name="CIRCUIT ON:10" unit="Boolean"/>
-      </And>
+        <Simvar name="CIRCUIT ON:37" unit="Boolean"/>
     </Electric>
   </Instrument>
   <Instrument>
@@ -24,7 +18,6 @@
       <Simvar name="CIRCUIT ON:25" unit="Boolean"/>
     </Electric>
   </Instrument>
-  <Instrument>
   <Instrument>
     <Name>JPLDME_1</Name>
     <Electric>

@@ -425,10 +425,12 @@
         </DefaultTemplateParameters>
         <UseTemplate Name="ASOBO_INSTRUMENT_CDI_Template">
           <ID>1</ID>
+          <IS_AVIONICS_ON>(A:CIRCUIT ON:22, Bool)</IS_AVIONICS_ON>
           <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_1</KNOB_HIGHLIGHT_NODE_ID>
         </UseTemplate>
         <UseTemplate Name="ASOBO_INSTRUMENT_CDI_Template">
           <ID>2</ID>
+          <IS_AVIONICS_ON>(A:CIRCUIT ON:24, Bool)</IS_AVIONICS_ON>
           <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_2</KNOB_HIGHLIGHT_NODE_ID>
         </UseTemplate>
       </Component>
@@ -620,6 +622,7 @@
       <UseTemplate Name="C152X_Speaker">
         <NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
         <ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
+        <CIRCUIT_ID>17</CIRCUIT_ID>
       </UseTemplate>
 
     </Component>
@@ -656,7 +659,7 @@
       <UseTemplate Name="ASOBO_NAVCOM_Simple_Radio_Template">
         <ID>2</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
-        <NAV_CIRCUIT_ID>24</NAV_CIRCUIT_ID>
+        <NAV_CIRCUIT>24</NAV_CIRCUIT>
         <CIRCUIT_ID>25</CIRCUIT_ID>
         <FAILURE>(A:COM VOLUME:2,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
@@ -750,8 +753,7 @@
     <Component ID="ADF">
       <UseTemplate Name="ASOBO_ADF_AS300_Template">
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
-        <POTENTIOMETER>4</POTENTIOMETER>
-        <CIRCUIT_ADF>34</CIRCUIT_ADF>
+        <CIRCUIT_ADF>37</CIRCUIT_ADF>
       </UseTemplate>
     </Component>
     <Component ID="TRANSPONDER">
