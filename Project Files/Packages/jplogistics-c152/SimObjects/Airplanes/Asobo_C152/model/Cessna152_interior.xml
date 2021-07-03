@@ -650,8 +650,7 @@
         <ID>1</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
         <NAV_CIRCUIT>22</NAV_CIRCUIT>
-        <COM_CIRCUIT>34</COM_CIRCUIT>
-        <CIRCUIT_ID>34</CIRCUIT_ID>
+        <CIRCUIT_ID>23</CIRCUIT_ID>
         <FAILURE>(A:COM VOLUME:1,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Simple_Radio_Template">

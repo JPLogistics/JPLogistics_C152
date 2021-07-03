@@ -15,7 +15,7 @@
   <Instrument>
     <Name>KX155A_1</Name>
     <Electric>
-      <Simvar name="CIRCUIT ON:34" unit="Boolean"/>
+      <Simvar name="CIRCUIT ON:23" unit="Boolean"/>
     </Electric>
   </Instrument>
   <Instrument>
@@ -25,12 +25,13 @@
     </Electric>
   </Instrument>
   <Instrument>
-    <Name>DME-JPL</Name>
-    <Electric>
-      <Simvar name="CIRCUIT ON:36" unit="Boolean"/>
-    </Electric>
-  </Instrument>
-  <Instrument>
+    <Instrument>
+      <Name>KX155A_3</Name>
+      <Electric>
+        <Simvar name="CIRCUIT ON:25" unit="Boolean"/>
+      </Electric>
+    </Instrument>
+    <Instrument>
     <Name>HourMeter</Name>
     <Electric>
       <Simvar name="CIRCUIT ON:2" unit="Boolean"/>
