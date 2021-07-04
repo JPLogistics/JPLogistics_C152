@@ -79,6 +79,12 @@ FoldingWingsState=0, 0
 [LocalVars.0]
 ;Note these settings may override standard config settings
 ;-------------------------------------------- 
+XMLVAR_AUDIO_EXT_SEL=0
+
+
+
+
+;--------------------------------------------
 ;C152X Cessna 300 ADF
 XMLVAR_ADF_MODE_SEL=2	;2='ADF' Mode
 XMLVAR_ADF_VOLUME=0		;0=OFF, 100=FULL
@@ -126,9 +132,9 @@ StrobeLights=False
 TaxiLights=False
 WingLights=False
 CabinLights=False
-GlareshieldLights=True
+GlareshieldLights=False
 PedestalLights=False
-Potentiometer.4=0.8
+Potentiometer.4=0.0
 Potentiometer.5=0.5
 
 
