@@ -503,7 +503,7 @@
           <DONT_APPEND_ID>True</DONT_APPEND_ID>
         </UseTemplate>
         <UseTemplate Name="ASOBO_SAFETY_Indicator_LowVolt_Template">
-          <THRESHOLD>14</THRESHOLD>
+          <THRESHOLD>26</THRESHOLD>
         </UseTemplate>
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Temperature_Template">
           <UNITS>fahrenheit</UNITS>
@@ -555,7 +555,10 @@
 			<NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
 			<ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
 			<POTENTIOMETER>5</POTENTIOMETER>
-			<NO_AUTHORITY_OVER_SWITCH_STATE/>
+			<!--<NO_AUTHORITY_OVER_SWITCH_STATE/>-->
+
+			<INIT_VALUE>50</INIT_VALUE>
+			<MIN_VALUE>10</MIN_VALUE>
 			<CIRCUIT_ID>11</CIRCUIT_ID>
 			<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_PANEL_ACTION</TT_DESCRIPTION_ID>
 			<TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_PANEL_TITLE</TOOLTIP_TITLE>
@@ -585,7 +588,7 @@
 		<UseTemplate Name="ASOBO_LIGHTING_Glareshield_Emissive_Template">
 			<NODE_ID>LIGHTING_Panel_Emisive</NODE_ID>
 		    <POTENTIOMETER>4</POTENTIOMETER>
-        <CIRCUIT_ID>12</CIRCUIT_ID>
+			<CIRCUIT_ID>12</CIRCUIT_ID>
 		</UseTemplate>
 
 
@@ -631,16 +634,18 @@
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
         <ID>1</ID>
         <NODE_ID>NavCom1_Screen</NODE_ID>
-        <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>
-        <USE_DIMMING_POTENTIOMETER/>-->
+        <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
+        <USE_DIMMING_POTENTIOMETER/>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
+		<POTENTIOMETER>5</POTENTIOMETER>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
         <ID>2</ID>
         <NODE_ID>NavCom2_Screen</NODE_ID>
-        <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>
-        <USE_DIMMING_POTENTIOMETER/>-->
+        <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
+        <USE_DIMMING_POTENTIOMETER/>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
+		<POTENTIOMETER>5</POTENTIOMETER>
       </UseTemplate>
       <Component Id="NAVCOM_Sound_Push_Buttons">
         <UseTemplate Name="ASOBO_NAVCOM_Switch_MARKER_Sound_Template"><!--WAS PUSH-->
@@ -738,6 +743,7 @@
       <UseTemplate Name="ASOBO_ADF_AS300_Template">
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
         <CIRCUIT_ADF>37</CIRCUIT_ADF>
+		<POTENTIOMETER>5</POTENTIOMETER>
       </UseTemplate>
     </Component>
     <Component ID="TRANSPONDER">
@@ -757,6 +763,8 @@
         <ID>1</ID>
         <NODE_ID>DME_Screen</NODE_ID>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
+        <USE_DIMMING_POTENTIOMETER/>
+		<POTENTIOMETER>5</POTENTIOMETER>
       </UseTemplate>
     </Component>
     <Component ID="AUDIO_TOP_PANEL">
@@ -767,9 +775,22 @@
 			<NODE_ID>AUDIO_Knob_Volume</NODE_ID>
 			<ANIM_NAME>AUDIO_Knob_Volume</ANIM_NAME>
 		</UseTemplate>
+		<!--
 		<UseTemplate Name="ASOBO_AudioPanel_Knob_Potentiometer_Template">
 			<NODE_ID>AUDIO_Knob_Dimming</NODE_ID>
 			<ANIM_NAME>AUDIO_Knob_Dimming</ANIM_NAME>
+		</UseTemplate>
+		-->
+		<UseTemplate Name="ASOBO_LIGHTING_Knob_Potentiometer_Template">
+			<NODE_ID>AUDIO_Knob_Dimming</NODE_ID>
+			<ANIM_NAME>AUDIO_Knob_Dimming</ANIM_NAME>
+			<POTENTIOMETER>4</POTENTIOMETER>
+			<LIGHT_TYPE>GLARESHIELD</LIGHT_TYPE>			
+			<INIT_VALUE>0</INIT_VALUE>
+			<CIRCUIT_ID>16</CIRCUIT_ID>
+			<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_GLARESHIELD_ACTION</TT_DESCRIPTION_ID>
+			<TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_GLARESHIELD_TITLE</TOOLTIP_TITLE>
+			<WWISE_EVENT>navcom_audio_volume_knob</WWISE_EVENT>
 		</UseTemplate>
       <Component ID="OMI_Indicators">
         <DefaultTemplateParameters>
@@ -798,12 +819,12 @@
     <Component ID="Pilots_Visibility">
       <Component ID="PILOT_0" Node="PILOT_0">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 1 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
       <Component ID="PILOT_1" Node="PILOT_1">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (A:SPEAKER ACTIVE, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (A:SPEAKER ACTIVE, Bool) 1 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
     </Component>

@@ -75,6 +75,12 @@ FoldingWingsState=0, 0
 [LocalVars.0]
 ;Note these settings may override standard config settings
 ;-------------------------------------------- 
+XMLVAR_AUDIO_EXT_SEL=0
+
+
+
+
+;-------------------------------------------- 
 ;C152X Cessna 300 ADF
 XMLVAR_ADF_MODE_SEL=2	;2='ADF' Mode
 XMLVAR_ADF_VOLUME=100	;0=OFF, 100=FULL
@@ -116,7 +122,7 @@ BeaconLights=True
 LandingLights=False
 LogoLights=False
 NavLights=True
-PanelLights=True
+PanelLights=False
 RecognitionLights=False
 StrobeLights=True
 TaxiLights=False
