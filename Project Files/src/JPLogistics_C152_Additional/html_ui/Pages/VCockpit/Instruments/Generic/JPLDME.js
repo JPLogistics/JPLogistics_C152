@@ -1,6 +1,7 @@
 class JPLDME extends BaseInstrument {
     constructor() {
         super();
+        this.initTime = 0;
         this.elapsedTime = 0;
         this.nav1Error = false;
         this.nav2Error = false;
@@ -27,10 +28,11 @@ class JPLDME extends BaseInstrument {
     }
     Update() {
         super.Update();
-        let timeOfDay = SimVar.GetSimVarValue("E:TIME OF DAY", "Enum");
-        this.setAttribute("brightness", timeOfDay == 3 ? "night" : "day");
-        diffAndSetAttribute(this, "brightness", timeOfDay == 3 ? "night" : "day");
         if (this.isElectricityAvailable()) {
+            if (this.initTime == 0) {
+                this.initTime = SimVar.GetSimVarValue("E:ABSOLUTE TIME", "seconds");
+            }
+            this.elapsedTime = (SimVar.GetSimVarValue("E:ABSOLUTE TIME", "seconds") - this.initTime);
             //# Calculate Everything
             //# General
 
@@ -50,21 +52,21 @@ class JPLDME extends BaseInstrument {
             //# Nav 2 Script
             if (this.getIsSignalOk(2)) {
                 if (this.isLocalizer(2)) {
-                    this.nav1Error = true;
+                    this.nav2Error = true;
                 }
                 else {
-                    this.nav1Error = false;
+                    this.nav2Error = false;
                 }
             }
             else {
-                this.nav1Error = true;
+                this.nav2Error = true;
             }
 
 
             //# General
-            if (this.elapsedTime > 10) {
+            if (this.elapsedTime < 10) {
                 diffAndSetText(this.welcome, "JPLogistics DME System");
-                diffAndSetText(this.lowBattery, "Starting...");
+                diffAndSetText(this.welcomeLow, "Starting...");
                 this.welcome.style.visibility = "visible";
                 this.welcomeLow.style.visibility = "visible";
             }
@@ -73,18 +75,21 @@ class JPLDME extends BaseInstrument {
                 this.welcomeLow.style.visibility = "hidden";
                 if (this.lowBatteryCheck()) {
                     this.lowBattery.style.visibility = "visible";
+                    this.navActiveFreq.style.visibility = "hidden";
                 }
                 else {
+                    this.navActiveFreq.style.visibility = "visible";
                     diffAndSetText(this.navActiveFreq, this.getActiveNavFreq());
                     this.lowBattery.style.visibility = "hidden";
                     //# Nav 1 Script
                     if (this.nav1Error) {
-                        diffAndSetText(this.nav1Distance, "");
-                        diffAndSetText(this.nav1Time, "");
-                        diffAndSetText(this.nav1ErrorMsg, "NO DATA");
-                        //this.nav1ErrorMsg.style.visibility = "visible";
+                        this.nav1Time.style.visibility = "hidden";
+                        this.nav1Distance.style.visibility = "hidden";
+                        this.nav1ErrorMsg.style.visibility = "visible";
                     }
                     else {
+                        this.nav1Time.style.visibility = "visible";
+                        this.nav1Distance.style.visibility = "visible";
                         this.nav1ErrorMsg.style.visibility = "hidden";
                         diffAndSetText(this.nav1Distance, this.getDMEDistance(1) + " NM");
                         //diffAndSetText(this.nav1Time, this.getDMETime(1) + " Mins");
@@ -92,12 +97,13 @@ class JPLDME extends BaseInstrument {
                     }
                     //# Nav 2 Script
                     if (this.nav2Error) {
-                        diffAndSetText(this.nav2Distance, "");
-                        diffAndSetText(this.nav2Time, "");
-                        diffAndSetText(this.nav2ErrorMsg, "NO DATA");
+                        this.nav2Time.style.visibility = "hidden";
+                        this.nav2Distance.style.visibility = "hidden"
                         this.nav2ErrorMsg.style.visibility = "visible";
                     }
                     else {
+                        this.nav2Time.style.visibility = "visible";
+                        this.nav2Distance.style.visibility = "visible";
                         this.nav2ErrorMsg.style.visibility = "hidden";
                         diffAndSetText(this.nav2Distance, this.getDMEDistance(2) + " NM");
                         //diffAndSetText(this.nav2Time, this.getDMETime(2) + " Mins");
@@ -107,29 +113,25 @@ class JPLDME extends BaseInstrument {
             }
         }
         else {
+            this.initTime = 0;
             this.elapsedTime = 0;
             this.nav1Error = false;
             this.nav2Error = false;
             //# General
-            diffAndSetText(this.welcome, "");
-            diffAndSetText(this.lowBattery, "");
-            diffAndSetText(this.navActiveFreq, "");
-            //# Nav1
-            diffAndSetText(this.navActiveFreq, "");
-            diffAndSetText(this.nav1Distance, "");
-            diffAndSetText(this.nav1Time, "");
-            diffAndSetText(this.nav1ErrorMsg, "");
-            //# Nav 2
-            diffAndSetText(this.nav2Distance, "");
-            diffAndSetText(this.nav2Time, "");
-            diffAndSetText(this.nav2ErrorMsg, "");
+            //diffAndSetText(this.welcome, "");
+            //diffAndSetText(this.lowBattery, "");
         }
     }
     getDMEDistance(_num) {
         return Math.round(SimVar.GetSimVarValue("NAV DME:" + _num, "nautical mile") * 10) / 10;
     }
     lowBatteryCheck() {
-        return false;
+        if (SimVar.GetSimVarValue("ELECTRICAL BATTERY VOLTAGE", "volt") > 21.6) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
     frequency2DigitsFormat(_num) {
         var freq = Math.round(_num * 100 - 0.1) / 100;
@@ -140,7 +142,7 @@ class JPLDME extends BaseInstrument {
         return fastToFixed(freq, 3);
     }
     getActiveNavFreq() {
-        return this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 1, "MHz")) + "<br>" + this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 2, "MHz"));
+        return this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 1, "MHz")) + "<br />" + this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 2, "MHz"));
     }
     getElapsedTime() {
         var seconds = Math.floor((this.elapsedTime / 1000) % 60);
