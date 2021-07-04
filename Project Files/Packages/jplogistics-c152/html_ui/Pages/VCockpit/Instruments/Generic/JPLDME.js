@@ -10,6 +10,10 @@ class JPLDME extends BaseInstrument {
     connectedCallback() {
         //# General
         super.connectedCallback();
+        //#Screens
+        this.welcomeScreen = this.getChildById("WelcomeScreen");
+        this.lowBScreen = this.getChildById("LowBScreen");
+        this.normalScreen = this.getChildById("NormalScreen");
         this.welcome = this.getChildById("Welcome");
         this.welcomeLow = this.getChildById("WelcomeLow");
         this.lowBattery = this.getChildById("LowBattery");
@@ -50,7 +54,7 @@ class JPLDME extends BaseInstrument {
             }
 
             //# Nav 2 Script
-            if (this.getIsSignalOk(2)) {
+            /*if (this.getIsSignalOk(2)) {
                 if (this.isLocalizer(2)) {
                     this.nav2Error = true;
                 }
@@ -60,51 +64,41 @@ class JPLDME extends BaseInstrument {
             }
             else {
                 this.nav2Error = true;
-            }
-
+            }*/
 
             //# General
-            if (this.elapsedTime < 10) {
+            if (this.elapsedTime < 3) {
+                diffAndSetAttribute(this.welcomeScreen, "state", "on");
+                diffAndSetAttribute(this.normalScreen, "state", "off");
                 diffAndSetText(this.welcome, "JPLogistics DME System");
                 diffAndSetText(this.welcomeLow, "Starting...");
-                this.welcome.style.visibility = "visible";
-                this.welcomeLow.style.visibility = "visible";
             }
             else {
-                this.welcome.style.visibility = "hidden";
-                this.welcomeLow.style.visibility = "hidden";
+                diffAndSetAttribute(this.welcomeScreen, "state", "off");
                 if (this.lowBatteryCheck()) {
-                    this.lowBattery.style.visibility = "visible";
-                    this.navActiveFreq.style.visibility = "hidden";
+                    diffAndSetAttribute(this.normalScreen, "state", "off");
+                    diffAndSetAttribute(this.lowBScreen, "state", "on");
                 }
                 else {
-                    this.navActiveFreq.style.visibility = "visible";
+                    diffAndSetAttribute(this.lowBScreen, "state", "off");
+                    diffAndSetAttribute(this.normalScreen, "state", "on");
                     diffAndSetText(this.navActiveFreq, this.getActiveNavFreq());
-                    this.lowBattery.style.visibility = "hidden";
                     //# Nav 1 Script
                     if (this.nav1Error) {
-                        this.nav1Time.style.visibility = "hidden";
-                        this.nav1Distance.style.visibility = "hidden";
-                        this.nav1ErrorMsg.style.visibility = "visible";
+                        diffAndSetText(this.nav1Time, "--:-- Mins");
+                        diffAndSetText(this.nav1Distance, "-- NM");
                     }
                     else {
-                        this.nav1Time.style.visibility = "visible";
-                        this.nav1Distance.style.visibility = "visible";
-                        this.nav1ErrorMsg.style.visibility = "hidden";
                         diffAndSetText(this.nav1Distance, this.getDMEDistance(1) + " NM");
-                        //diffAndSetText(this.nav1Time, this.getDMETime(1) + " Mins");
+                        //diffAndSetText(this.nav2Time, this.getDMETime(1) + " Mins");
                         diffAndSetText(this.nav1Time, "05:00 Mins");
                     }
                     //# Nav 2 Script
                     if (this.nav2Error) {
-                        this.nav2Time.style.visibility = "hidden";
-                        this.nav2Distance.style.visibility = "hidden"
-                        this.nav2ErrorMsg.style.visibility = "visible";
+                        diffAndSetText(this.nav2Time, "--:-- Mins");
+                        diffAndSetText(this.nav2Distance, "-- NM");
                     }
                     else {
-                        this.nav2Time.style.visibility = "visible";
-                        this.nav2Distance.style.visibility = "visible";
-                        this.nav2ErrorMsg.style.visibility = "hidden";
                         diffAndSetText(this.nav2Distance, this.getDMEDistance(2) + " NM");
                         //diffAndSetText(this.nav2Time, this.getDMETime(2) + " Mins");
                         diffAndSetText(this.nav2Time, "05:00 Mins");
@@ -142,7 +136,7 @@ class JPLDME extends BaseInstrument {
         return fastToFixed(freq, 3);
     }
     getActiveNavFreq() {
-        return this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 1, "MHz")) + "<br />" + this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 2, "MHz"));
+        return this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 1, "MHz")) + "   " + this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 2, "MHz"));
     }
     getElapsedTime() {
         var seconds = Math.floor((this.elapsedTime / 1000) % 60);

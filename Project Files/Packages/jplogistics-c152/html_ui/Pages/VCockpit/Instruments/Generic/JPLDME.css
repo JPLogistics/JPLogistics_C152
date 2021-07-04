@@ -51,6 +51,30 @@ html {
     #Electricity[state=off] {
         display: none;
     }
+#WelcomeScreen {
+    width: 100%;
+    height: 100%;
+}
+
+    #WelcomeScreen[state=off] {
+        display: none;
+    }
+#LowBScreen {
+    width: 100%;
+    height: 100%;
+}
+
+    #LowBScreen[state=off] {
+        display: none;
+    }
+#NormalScreen {
+    width: 100%;
+    height: 100%;
+}
+
+    #NormalScreen[state=off] {
+        display: none;
+    }
 
 @font-face {
     font-family: "Alarm-Clock";
@@ -72,7 +96,6 @@ jpldme-element1 {
 
     /*# General */
     jpldme-element1 #Welcome {
-        visibility: hidden;
         font-size: 50px;
         height: 50%;
         width: 100%;
@@ -81,7 +104,6 @@ jpldme-element1 {
     }
 
     jpldme-element1 #WelcomeLow {
-        visibility: hidden;
         font-size: 50px;
         height: 50%;
         width: 100%;
@@ -90,18 +112,16 @@ jpldme-element1 {
     }
 
     jpldme-element1 #LowBattery {
-        visibility: hidden;
         margin-left: 17px;
-        font-size: 75px;
+        font-size: 50px;
         height: 100%;
         width: 100%;
         text-align: center;
         text-anchor: middle;
     }
     jpldme-element1 #NavActiveFreq {
-        visibility: hidden;
-        margin-left: 17px;
-        font-size: 75px;
+
+        font-size: 40px;
         height: 50%;
         width: 20%;
         text-align: center;
@@ -109,63 +129,39 @@ jpldme-element1 {
     }
     /*# NAV1 */
     jpldme-element1 #Nav1Distance {
-        visibility: hidden;
-        margin-left: 17px;
-        font-size: 75px;
+        margin-top: -4px;
+        font-size: 40px;
         height: 100%;
         width: 20%;
-        text-align: center;
-        text-anchor: middle;
+        text-align: left;
+        text-anchor: start;
     }
     jpldme-element1 #Nav1Time {
-        visibility: hidden;
-        margin-left: 17px;
-        font-size: 75px;
+
+        font-size: 40px;
         height: 100%;
         width: 20%;
-        text-align: center;
-        text-anchor: middle;
-    }
-    jpldme-element1 #Nav1ErrorMsg {
-        visibility: hidden;
-        margin-left: 17px;
-        font-size: 75px;
-        height: 100%;
-        width: 40%;
-        text-align: center;
-        text-anchor: middle;
+        text-align: left;
+
     }
 
 
     /*# NAV2 */
     jpldme-element1 #Nav2Distance {
-        visibility: hidden;
-        margin-left: 17px;
-        font-size: 75px;
+
+        font-size: 40px;
         height: 100%;
         width: 20%;
-        text-align: center;
-        text-anchor: middle;
+        text-align: right;
+        text-anchor: end;
     }
 
     jpldme-element1 #Nav2Time {
-        visibility: hidden;
-        margin-left: 17px;
-        font-size: 75px;
+        font-size: 40px;
         height: 100%;
         width: 20%;
-        text-align: center;
-        text-anchor: middle;
-    }
+        text-align: right;
 
-    jpldme-element1 #Nav2ErrorMsg {
-        visibility: hidden;
-        margin-left: 17px;
-        font-size: 75px;
-        height: 100%;
-        width: 40%;
-        text-align: center;
-        text-anchor: middle;
     }
 
 /*# sourceMappingURL=KX155A.css.map */
