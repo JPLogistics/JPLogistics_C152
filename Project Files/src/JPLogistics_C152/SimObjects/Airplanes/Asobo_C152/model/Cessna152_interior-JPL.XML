@@ -15,7 +15,7 @@
     <Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
     <Include ModelBehaviorFile="C152X\Index.xml"/>
 	
-		<!-- C152X Modification courtesy of G36 Improvement Project-- WIP -->
+		<!-- C152X Modification courtesy of G36 Improvement Project WIP -->
 	<!--<Include Path="C152X\CustomLogic.xml"/>-->
 		
 	<Component ID="C152X_Custom_Behavior">
@@ -23,7 +23,7 @@
 		<UseTemplate Name="Engine_Start_Logic"></UseTemplate>
 		<UseTemplate Name="Fire_Logic"></UseTemplate>
 	</Component>
-		<!--End of C152X Modification -------------------------------------->
+		<!--End of C152X Modification -->
 
     <Animation guid="c16737ee-55bd-4255-97f8-5a34e62be350" name="Pilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-5a34e62be666" name="CoPilot_Door_Exterior" type="standard" typeParam="Autoplay"/>

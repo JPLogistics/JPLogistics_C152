@@ -15,7 +15,7 @@
     <!--<Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>-->
     <Include ModelBehaviorFile="C152X\Index.xml"/>
 
-    <!-- C152X Modification courtesy of G36 Improvement Project-- WIP -->
+    <!-- C152X Modification courtesy of G36 Improvement Project WIP -->
     <!--<Include Path="C152X\CustomLogic.xml"/>-->
 
     <Component ID="C152X_Custom_Behavior">
@@ -23,7 +23,7 @@
       <UseTemplate Name="Engine_Start_Logic"></UseTemplate>
       <UseTemplate Name="Fire_Logic"></UseTemplate>
     </Component>
-    <!--End of C152X Modification -------------------------------------->
+    <!--End of C152X Modification -->
 
     <Animation guid="c16737ee-55bd-4255-97f8-5a34e62be350" name="Pilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-5a34e62be666" name="CoPilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
@@ -451,22 +451,14 @@
           <!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
 
 
-          <SIMVAR_UNIT>liter</SIMVAR_UNIT>
+          <SIMVAR_UNIT>gallon</SIMVAR_UNIT>
 
           <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
-          <REF_VALUE_0>2.8676 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_0>
-          <REF_VALUE_1>
-            11.3562 @FuelTankSensorAdjustmentLeftTank
-          </REF_VALUE_1>
-          <REF_VALUE_2>
-            22.7125 @FuelTankSensorAdjustmentLeftTank
-          </REF_VALUE_2>
-          <REF_VALUE_3>
-            34.0687 @FuelTankSensorAdjustmentLeftTank
-          </REF_VALUE_3>
-          <REF_VALUE_4>
-            45.4249 @FuelTankSensorAdjustmentLeftTank
-          </REF_VALUE_4>
+          <REF_VALUE_0>0 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_0>
+          <REF_VALUE_1>3.675 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_1>
+          <REF_VALUE_2>5.975 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_2>
+          <REF_VALUE_3>11.025 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_3>
+          <REF_VALUE_4>12.25 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_4>
 
           <ANIM_VALUE_0>0</ANIM_VALUE_0>
           <ANIM_VALUE_1>30</ANIM_VALUE_1>
@@ -486,22 +478,14 @@
 
           <!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
 
-          <SIMVAR_UNIT>liter</SIMVAR_UNIT>
+          <SIMVAR_UNIT>gallon</SIMVAR_UNIT>
 
           <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
-          <REF_VALUE_0>2.8676 @FuelTankSensorAdjustmentRightTank</REF_VALUE_0>
-          <REF_VALUE_1>
-            11.3562 @FuelTankSensorAdjustmentRightTank
-          </REF_VALUE_1>
-          <REF_VALUE_2>
-            22.7125 @FuelTankSensorAdjustmentRightTank
-          </REF_VALUE_2>
-          <REF_VALUE_3>
-            34.0687 @FuelTankSensorAdjustmentRightTank
-          </REF_VALUE_3>
-          <REF_VALUE_4>
-            45.4249 @FuelTankSensorAdjustmentRightTank
-          </REF_VALUE_4>
+          <REF_VALUE_0>0 @FuelTankSensorAdjustmentRightTank</REF_VALUE_0>
+          <REF_VALUE_1>3.675 @FuelTankSensorAdjustmentRightTank</REF_VALUE_1>
+          <REF_VALUE_2>5.375 @FuelTankSensorAdjustmentRightTank</REF_VALUE_2>
+          <REF_VALUE_3>11.025 @FuelTankSensorAdjustmentRightTank</REF_VALUE_3>
+          <REF_VALUE_4>12.25 @FuelTankSensorAdjustmentRightTank</REF_VALUE_4>
 
           <ANIM_VALUE_0>0</ANIM_VALUE_0>
           <ANIM_VALUE_1>30</ANIM_VALUE_1>
