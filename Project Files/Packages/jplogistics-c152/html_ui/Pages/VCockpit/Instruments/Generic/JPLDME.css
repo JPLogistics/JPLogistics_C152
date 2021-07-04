@@ -41,8 +41,6 @@ html {
 #Mainframe {
     width: 100%;
     height: 100%;
-    margin-left: 20px;
-    margin-top: 30px;
 }
 #Electricity {
     width: 100%;
@@ -96,72 +94,77 @@ jpldme-element1 {
 
     /*# General */
     jpldme-element1 #Welcome {
-        font-size: 50px;
+        padding-top: 10px;
+        font-size: 40px;
         height: 50%;
         width: 100%;
         text-align: center;
         text-anchor: middle;
+        vertical-align: middle;
     }
 
     jpldme-element1 #WelcomeLow {
-        font-size: 50px;
+        padding-bottom: 10px;
+        font-size: 40px;
         height: 50%;
         width: 100%;
         text-align: center;
         text-anchor: middle;
+        vertical-align: middle;
     }
 
     jpldme-element1 #LowBattery {
-        margin-left: 17px;
-        font-size: 50px;
+        padding-top: 10px;
+        font-size: 40px;
         height: 100%;
         width: 100%;
         text-align: center;
-        text-anchor: middle;
+        vertical-align: middle;
     }
     jpldme-element1 #NavActiveFreq {
-
+        padding-top: 12px;
         font-size: 40px;
-        height: 50%;
+        height: 100%;
         width: 20%;
         text-align: center;
-        text-anchor: middle;
+        vertical-align: middle;
     }
     /*# NAV1 */
     jpldme-element1 #Nav1Distance {
-        margin-top: -4px;
+        padding-top: 35px;
         font-size: 40px;
         height: 100%;
         width: 20%;
-        text-align: left;
-        text-anchor: start;
+        text-align: center;
+        vertical-align: middle;
     }
     jpldme-element1 #Nav1Time {
-
+        padding-top: 35px;
         font-size: 40px;
         height: 100%;
         width: 20%;
-        text-align: left;
-
+        text-align: center;
+        vertical-align: middle;
     }
 
 
     /*# NAV2 */
     jpldme-element1 #Nav2Distance {
-
+        padding-top: 35px;
         font-size: 40px;
         height: 100%;
         width: 20%;
-        text-align: right;
-        text-anchor: end;
+        text-align: center;
+        vertical-align: middle;
     }
 
     jpldme-element1 #Nav2Time {
+        padding-top: 35px;
         font-size: 40px;
         height: 100%;
         width: 20%;
-        text-align: right;
-
+        text-align: center;
+        vertical-align: middle;
     }
 
 /*# sourceMappingURL=KX155A.css.map */
