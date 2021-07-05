@@ -22,7 +22,7 @@
       <UseTemplate Name="Fuel_Primer_Logic"></UseTemplate>
       <UseTemplate Name="Engine_Start_Logic"></UseTemplate>
       <UseTemplate Name="Fire_Logic"></UseTemplate>
-	  <UseTemplate Name="CoPilot_Weight"></UseTemplate>
+	    <!-- TEMPORARY DISABLE WHILST I WORK SOMTHING OUT <UseTemplate Name="CoPilot_Weight"></UseTemplate> -->
     </Component>
     <!--End of C152X Modification -->
 
@@ -503,9 +503,14 @@
           <INVERT_ANIM>True</INVERT_ANIM>
           <DONT_APPEND_ID>True</DONT_APPEND_ID>
         </UseTemplate>
+        <!--IIRC this wont show correctly - Ampres gauge (charge) not battery voltage gauge? See next comment !-->
         <UseTemplate Name="ASOBO_SAFETY_Indicator_LowVolt_Template">
           <THRESHOLD>26</THRESHOLD>
         </UseTemplate>
+        <!-- Might need to use the below template for correct behaviour?
+        <UseTemplate Name="C152X_SAFETY_Indicator_LowVolt_Template">
+        </UseTemplate> -->
+        
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Temperature_Template">
           <UNITS>fahrenheit</UNITS>
           <MIN_VALUE>0</MIN_VALUE>
