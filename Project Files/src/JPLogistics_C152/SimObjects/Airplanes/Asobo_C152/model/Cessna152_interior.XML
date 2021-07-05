@@ -22,6 +22,7 @@
       <UseTemplate Name="Fuel_Primer_Logic"></UseTemplate>
       <UseTemplate Name="Engine_Start_Logic"></UseTemplate>
       <UseTemplate Name="Fire_Logic"></UseTemplate>
+	    <!-- TEMPORARY DISABLE WHILST I WORK SOMTHING OUT <UseTemplate Name="CoPilot_Weight"></UseTemplate> -->
     </Component>
     <!--End of C152X Modification -->
 
@@ -550,7 +551,7 @@
       </UseTemplate>
 
 		
-		<!-- ##########PANEL LIGHTS THIS IS BOTTOM KNOB AND DONE LT SWITCH ON DASH ###########-->
+		<!-- ##########PANEL LIGHTS THIS IS BOTTOM KNOB AND DOME LT SWITCH ON DASH ###########-->
 		<UseTemplate Name="ASOBO_LIGHTING_Knob_Potentiometer_Template">
 			<NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
 			<ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
@@ -582,6 +583,7 @@
 			<CIRCUIT_ID>15</CIRCUIT_ID>
 		</UseTemplate>		
 		<UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template">
+		<POTENTIOMETER>9</POTENTIOMETER>
 		</UseTemplate>	
 		
 		

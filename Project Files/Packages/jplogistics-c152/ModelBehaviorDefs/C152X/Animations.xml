@@ -87,6 +87,18 @@
   </Component>
 </Template>
 
+<Template Name="CoPilot_Weight">
+	<Update Frequency="1">
+		(A:SPEAKER ACTIVE, Bool) 1 &gt;=
+		if{
+			170 (&gt;A:PAYLOAD STATION WEIGHT:2, pounds)
+		}	
+		(A:SPEAKER ACTIVE, Bool) 0 &lt;=
+		if{
+			0 (&gt;A:PAYLOAD STATION WEIGHT:2, pounds)
+		}
+	</Update>
+</Template>	
 <!--
 <Template Name="DME_Switch_Template">
   <DefaultTemplateParameters>
