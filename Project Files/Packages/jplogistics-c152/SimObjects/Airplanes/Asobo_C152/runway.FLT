@@ -108,7 +108,6 @@ XMLVAR_AUDIO_ADF_SEL=0				;
 XMLVAR_AUDIO_DME_SEL=0				;
 XMLVAR_AUDIO_MKR_SEL=1				;
 XMLVAR_AUDIO_SPKR_SEL=0				;
-XMLVAR_AUDIO_EXT_SEL=1				;
 ;--------------------------------------------
 
 [Gauges.0]
@@ -130,8 +129,10 @@ StrobeLights=True
 TaxiLights=False
 WingLights=True
 CabinLights=False
-GlareshieldLights=True
+GlareshieldLights=False
 PedestalLights=False
+Potentiometer.4=0.0
+Potentiometer.5=0.5
 
 [AutoPilot.0]
 MasterSwitch=False
