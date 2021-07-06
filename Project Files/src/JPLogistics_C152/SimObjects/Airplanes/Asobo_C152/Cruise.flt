@@ -1,6 +1,6 @@
 
 [SimVarForSpawningInTheAir.0]
-IAS=150
+IAS=160
 FlapsDegree=0000.00
 
 [Avionics.0]
@@ -34,9 +34,9 @@ AudioAdf2Listen=False
 AvionicsSwitch=True
 
 [Engine Parameters.1.0]
-ThrottleLeverPct=.8
-PropellerLeverPct=0.99993896484375
-Pct Engine RPM=0.99956832930920125335
+ThrottleLeverPct=0.7
+PropellerLeverPct=0.79993896484375
+Pct Engine RPM=0.89
 MaxReachedEngineRPM=2550
 LeftMagneto=True
 RightMagneto=True
@@ -45,7 +45,6 @@ FuelValveOpen=True
 CowlFlapPct=0
 FuelPumpSwitch=False
 FuelPumpSwitch_EX1=0
-FuelValveOpen=True
 CarbHeat/DeiceSwitch=False
 EngineMasterSwitch=True
 GlowPlugTemperaturePct=1
@@ -76,7 +75,7 @@ FoldingWingsState=0, 0
 ;Note these settings may override standard config settings
 ;-------------------------------------------- 
 XMLVAR_AUDIO_EXT_SEL=0
-
+XMLVAR_ADF_Mode=2   ; 0, 1, 2, 3
 
 
 
