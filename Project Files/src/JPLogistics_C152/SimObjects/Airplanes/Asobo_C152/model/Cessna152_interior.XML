@@ -175,11 +175,11 @@
 
     <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank and the 20 in the formula is a scaling factor for the amount of yaw induced variation in the tank indication. The first value is the current tank quantity in liters. 	The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
     <Macro Name="FuelTankSensorAdjustmentLeftTank">
-      1 (A:FUEL LEFT QUANTITY, gallon) (A:FUEL TANK LEFT MAIN CAPACITY, gallon) / - 20 * (A:TURN COORDINATOR BALL, scaler) * -
+      1 (A:FUEL LEFT QUANTITY, gallons) (A:FUEL TANK LEFT MAIN CAPACITY, gallons) / - 20 * (A:TURN COORDINATOR BALL, scaler) * -
     </Macro>
 
     <Macro Name="FuelTankSensorAdjustmentRightTank">
-      1 (A:FUEL RIGHT QUANTITY, gallon) (A:FUEL TANK RIGHT MAIN CAPACITY, gallon) / - 20 * (A:TURN COORDINATOR BALL, scaler) * +
+      1 (A:FUEL RIGHT QUANTITY, gallons) (A:FUEL TANK RIGHT MAIN CAPACITY, gallons) / - 20 * (A:TURN COORDINATOR BALL, scaler) * +
     </Macro>
 
     <!-- DEICE ########################### -->
@@ -422,16 +422,16 @@
 
       <Component ID="INSTRUMENTS_CDI">
         <DefaultTemplateParameters>
-          <IS_AVIONICS_ON>(A:CIRCUIT ON:34, Bool)</IS_AVIONICS_ON>
+          <!--<IS_AVIONICS_ON>(A:CIRCUIT ON:34, Bool)</IS_AVIONICS_ON>--><!-- Not Required - Defined Below -->
         </DefaultTemplateParameters>
         <UseTemplate Name="ASOBO_INSTRUMENT_CDI_Template">
           <ID>1</ID>
-          <IS_AVIONICS_ON>(A:CIRCUIT ON:22, Bool)</IS_AVIONICS_ON>
+          <IS_AVIONICS_ON>(A:CIRCUIT ON:23, Bool)</IS_AVIONICS_ON><!-- COM1 Circuit used for correct behaviour! -->
           <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_1</KNOB_HIGHLIGHT_NODE_ID>
         </UseTemplate>
         <UseTemplate Name="ASOBO_INSTRUMENT_CDI_Template">
           <ID>2</ID>
-          <IS_AVIONICS_ON>(A:CIRCUIT ON:24, Bool)</IS_AVIONICS_ON>
+          <IS_AVIONICS_ON>(A:CIRCUIT ON:25, Bool)</IS_AVIONICS_ON><!-- COM2 Circuit used for correct behaviour! -->
           <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_2</KNOB_HIGHLIGHT_NODE_ID>
         </UseTemplate>
       </Component>
@@ -452,7 +452,7 @@
           <!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
 
 
-          <SIMVAR_UNIT>gallon</SIMVAR_UNIT>
+          <SIMVAR_UNIT>gallons</SIMVAR_UNIT>
 
           <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
           <REF_VALUE_0>0 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_0>
@@ -479,7 +479,7 @@
 
           <!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
 
-          <SIMVAR_UNIT>gallon</SIMVAR_UNIT>
+          <SIMVAR_UNIT>gallons</SIMVAR_UNIT>
 
           <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
           <REF_VALUE_0>0 @FuelTankSensorAdjustmentRightTank</REF_VALUE_0>
@@ -627,14 +627,14 @@
       <UseTemplate Name="ASOBO_NAVCOM_Simple_Radio_Template">
         <ID>1</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
-        <NAV_CIRCUIT>22</NAV_CIRCUIT>
+        <!--<NAV_CIRCUIT>22</NAV_CIRCUIT>--><!-- Removed for test! -->
         <CIRCUIT_ID>23</CIRCUIT_ID>
         <FAILURE>(A:COM VOLUME:1,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Simple_Radio_Template">
         <ID>2</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
-        <NAV_CIRCUIT>24</NAV_CIRCUIT>
+        <!--<NAV_CIRCUIT>24</NAV_CIRCUIT>--><!-- Removed for test! -->
         <CIRCUIT_ID>25</CIRCUIT_ID>
         <FAILURE>(A:COM VOLUME:2,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
