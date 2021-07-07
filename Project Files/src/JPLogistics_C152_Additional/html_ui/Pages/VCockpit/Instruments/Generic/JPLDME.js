@@ -44,11 +44,11 @@ class JPLDME extends BaseInstrument {
                 diffAndSetAttribute(this.welcomeScreen, "state", "on");
                 diffAndSetAttribute(this.normalScreen, "state", "off");
                 diffAndSetText(this.welcome, "JPLogistics DME System");
-                this._msg = "Starting";
+                this.msg = "Starting";
                 for (let i = 0; i < this.elapsedTime; i++){
-                    this._msg += ".";
+                    this.msg += ".";
                 }
-                diffAndSetText(this.welcomeLow, this._msg);
+                diffAndSetText(this.welcomeLow, this.msg);
             }
             else {
                 diffAndSetAttribute(this.welcomeScreen, "state", "off");
@@ -77,7 +77,7 @@ class JPLDME extends BaseInstrument {
                     }
                     //# Nav 2 Script
                     if (this.getNavAlive(25)){
-                        if (this.getIsSignalOk(1)) {
+                        if (this.getIsSignalOk(2)) {
                             diffAndSetText(this.nav2Distance, this.getDMEDistance(2) + " NM");
                             diffAndSetText(this.nav2Time, this.getDMETime(2) + " Mins");
                         }
