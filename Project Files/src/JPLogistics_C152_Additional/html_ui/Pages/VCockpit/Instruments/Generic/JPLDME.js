@@ -61,7 +61,7 @@ class JPLDME extends BaseInstrument {
                     diffAndSetAttribute(this.normalScreen, "state", "on");
                     diffAndSetText(this.navActiveFreq, this.getActiveNavFreq());
                     //# Nav 1 Script
-                    if (this.getNavAlive(1)){
+                    if (this.getNavAlive(23)){
                         if (this.getIsSignalOk(1)) {
                             diffAndSetText(this.nav1Distance, this.getDMEDistance(1) + " NM");
                             diffAndSetText(this.nav1Time, this.getDMETime(1) + " Mins");
@@ -76,7 +76,7 @@ class JPLDME extends BaseInstrument {
                         diffAndSetText(this.nav1Distance, "-- NM");
                     }
                     //# Nav 2 Script
-                    if (this.getNavAlive(2)){
+                    if (this.getNavAlive(25)){
                         if (this.getIsSignalOk(1)) {
                             diffAndSetText(this.nav2Distance, this.getDMEDistance(2) + " NM");
                             diffAndSetText(this.nav2Time, this.getDMETime(2) + " Mins");
