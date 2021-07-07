@@ -562,7 +562,7 @@
         <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_BEACON_ACTION_SET</TT_DESCRIPTION_ID>
       </UseTemplate>
 <!--
-      <UseTemplate Name="C152X_LIGHTING_Knob_Panel_Template"> <!-- Lower Knob by key for instrument light dimming -- Pot 5--
+      <UseTemplate Name="C152X_LIGHTING_Knob_Panel_Template"> // Lower Knob by key for instrument light dimming Pot 5
         <NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
         <ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
         <KNOB_TURN_SPEED>4.0</KNOB_TURN_SPEED>
@@ -766,7 +766,7 @@
 			<DONT_APPEND_ID>True</DONT_APPEND_ID>
 		</Parameters>
 		<UseTemplate Name="C152X_AUDIO_Knob_Volume_Template">
-			<CIRCUIT_ID>28</CIRCUIT_ID>	  <!----------------------- Upper knob pot 4----------------------->
+			<CIRCUIT_ID>28</CIRCUIT_ID>	  <!-- Upper knob pot 4 -->
 			<USE_DIMMING_KNOB/>
 		</UseTemplate>
 		<Component ID="OMI_Indicators">

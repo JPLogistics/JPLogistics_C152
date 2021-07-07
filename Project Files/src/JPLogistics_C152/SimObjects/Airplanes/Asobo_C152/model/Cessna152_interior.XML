@@ -823,28 +823,46 @@
     <Component ID="Pilots_Visibility">
       <Component ID="PILOT_0" Node="PILOT_0">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 1 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, Pounds) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 1 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
       <Component ID="PILOT_1" Node="PILOT_1">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (A:SPEAKER ACTIVE, Bool) 1 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &gt; (A:SPEAKER ACTIVE, Bool) 1 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
     </Component>
     <Component ID="Baggage_Visibility">
-      <!-- TO DO
-      <Component ID="PILOT_0" Node="PILOT_0">
+      <Component ID="MailSmall" Node="MailSmall">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_MailSmallState, Bool) == (A:PAYLOAD STATION WEIGHT:3, Pounds) 1 &gt; (A:PAYLOAD STATION WEIGHT:3, Pounds) 10 &lt; and</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
-      <Component ID="PILOT_1" Node="PILOT_1">
+      <Component ID="MailSmallR" Node="MailSmallR">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; (L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_MailSmallRState, Bool) == (A:PAYLOAD STATION WEIGHT:4, Pounds) 1 &gt; (A:PAYLOAD STATION WEIGHT:4, Pounds) 10 &lt; and</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
-      -->
+      <Component ID="MailLarger" Node="MailLarger">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:C152_MailLargerState, Bool) == (A:PAYLOAD STATION WEIGHT:3, Pounds) 10 &gt; (A:PAYLOAD STATION WEIGHT:3, Pounds) 20 &lt; and</VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="MailLargerR" Node="MailLargerR">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:C152_MailLargerRState, Bool) == (A:PAYLOAD STATION WEIGHT:4, Pounds) 10 &gt; (A:PAYLOAD STATION WEIGHT:4, Pounds) 20 &lt; and</VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="Pump" Node="Pump">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:C152_PumpState, Bool) == (A:PAYLOAD STATION WEIGHT:3, Pounds) 80 &gt; (A:PAYLOAD STATION WEIGHT:4, Pounds) 20 &gt; and</VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="Gennie" Node="Gennie">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:C152_GennieState, Bool) == (A:PAYLOAD STATION WEIGHT:3, Pounds) 100 &gt; (A:PAYLOAD STATION WEIGHT:4, Pounds) 20 &lt; and</VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
 	</Component>
 	<Component ID="SPEAKER_SWITCH">  <!--################# Just to animate the switch for now -->
       <UseTemplate Name="C152X_Speaker">
