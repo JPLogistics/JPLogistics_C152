@@ -18,8 +18,14 @@
 	- Enviroment sounds linked too windows/doors
 - Reworked Electrical Systems 
 - Reworked Lighting
-- Proper DME Panel - WIP - Model in place
-	- Gauge is WIP - Least it turns on!
+- "Tablet" Device
+	- Test Screen Added (Waiting to export)
+	- Device model WIP
+	- Device OS - TBC after discussion
+- "Floats" Version of the C152 - WIP
+- Ski's Version of the C152 - TBC
+- Proper DME Panel - Custom Designed JPLogistics Model
+	- Gauge is functional now - Reformatting required!
 - New Start System
 	- Primer now required
 - New Visual Effects
