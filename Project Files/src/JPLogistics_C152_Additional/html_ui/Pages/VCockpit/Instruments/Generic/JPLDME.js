@@ -136,10 +136,10 @@ class JPLDME extends BaseInstrument {
     getActiveNavFreq() {
         this.nav1freq = "---.---";
         this.nav2freq = "---.---";
-        if (this.getNavAlive(1)){
+        if (this.getNavAlive(23)){
             this.nav1freq = this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 1, "MHz"));
         }
-        if (this.getNavAlive(2)){
+        if (this.getNavAlive(25)){
             this.nav2freq = this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 2, "MHz"));
         }
         return  (this.nav1freq + "   " + this.nav2freq);
