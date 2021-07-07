@@ -38,26 +38,6 @@ class JPLDME extends BaseInstrument {
             }
             this.elapsedTime = (SimVar.GetSimVarValue("E:ABSOLUTE TIME", "seconds") - this.initTime);
             //# Calculate Everything
-            //# General
-            if (this.getNavAlive(1)){
-                if (this.getIsSignalOk(1)) {
-                    this.nav1Error = false;
-                }
-                else {
-                    this.nav1Error = true;
-                }
-            }
-            else {
-                this.nav1Error = true;
-            }
-
-            //# Nav 2 Script
-            if (this.getIsSignalOk(2)) {
-                this.nav2Error = false;
-            }
-            else {
-                this.nav2Error = true;
-            }
 
             //# General
             if (this.elapsedTime < 3) {
@@ -98,12 +78,12 @@ class JPLDME extends BaseInstrument {
                     //# Nav 2 Script
                     if (this.getNavAlive(2)){
                         if (this.getIsSignalOk(1)) {
-                            diffAndSetText(this.nav1Distance, this.getDMEDistance(2) + " NM");
-                            diffAndSetText(this.nav1Time, this.getDMETime(2) + " Mins");
+                            diffAndSetText(this.nav2Distance, this.getDMEDistance(2) + " NM");
+                            diffAndSetText(this.nav2Time, this.getDMETime(2) + " Mins");
                         }
                         else {
-                            diffAndSetText(this.nav1Time, "--:-- Mins");
-                            diffAndSetText(this.nav1Distance, "-- NM");
+                            diffAndSetText(this.nav2Time, "--:-- Mins");
+                            diffAndSetText(this.nav2Distance, "-- NM");
                         }
                     }
                     else {
