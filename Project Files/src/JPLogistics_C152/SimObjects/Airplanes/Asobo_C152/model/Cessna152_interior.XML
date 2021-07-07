@@ -22,6 +22,9 @@
       <UseTemplate Name="Fuel_Primer_Logic"></UseTemplate>
       <UseTemplate Name="Engine_Start_Logic"></UseTemplate>
       <UseTemplate Name="Fire_Logic"></UseTemplate>
+	  <UseTemplate Name="ADF_VOLUME"></UseTemplate>
+	  <UseTemplate Name="COM1_VOLUME"></UseTemplate>
+	  <UseTemplate Name="COM2_VOLUME"></UseTemplate>
 	    <!-- TEMPORARY DISABLE WHILST I WORK SOMTHING OUT <UseTemplate Name="CoPilot_Weight"></UseTemplate> -->
     </Component>
     <!--End of C152X Modification -->

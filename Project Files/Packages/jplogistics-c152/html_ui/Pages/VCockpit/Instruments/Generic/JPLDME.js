@@ -39,10 +39,13 @@ class JPLDME extends BaseInstrument {
             this.elapsedTime = (SimVar.GetSimVarValue("E:ABSOLUTE TIME", "seconds") - this.initTime);
             //# Calculate Everything
             //# General
-
-            //# Nav 1 Script
-            if (this.getIsSignalOk(1)) {
-                this.nav1Error = false;
+            if (this.getNavAlive(1)){
+                if (this.getIsSignalOk(1)) {
+                    this.nav1Error = false;
+                }
+                else {
+                    this.nav1Error = true;
+                }
             }
             else {
                 this.nav1Error = true;
@@ -78,22 +81,34 @@ class JPLDME extends BaseInstrument {
                     diffAndSetAttribute(this.normalScreen, "state", "on");
                     diffAndSetText(this.navActiveFreq, this.getActiveNavFreq());
                     //# Nav 1 Script
-                    if (this.nav1Error) {
+                    if (this.getNavAlive(1)){
+                        if (this.getIsSignalOk(1)) {
+                            diffAndSetText(this.nav1Distance, this.getDMEDistance(1) + " NM");
+                            diffAndSetText(this.nav1Time, this.getDMETime(1) + " Mins");
+                        }
+                        else {
+                            diffAndSetText(this.nav1Time, "--:-- Mins");
+                            diffAndSetText(this.nav1Distance, "-- NM");
+                        }
+                    }
+                    else {
                         diffAndSetText(this.nav1Time, "--:-- Mins");
                         diffAndSetText(this.nav1Distance, "-- NM");
                     }
-                    else {
-                        diffAndSetText(this.nav1Distance, this.getDMEDistance(1) + " NM");
-                        diffAndSetText(this.nav1Time, this.getDMETime(1) + " Mins");
-                    }
                     //# Nav 2 Script
-                    if (this.nav2Error) {
+                    if (this.getNavAlive(2)){
+                        if (this.getIsSignalOk(1)) {
+                            diffAndSetText(this.nav1Distance, this.getDMEDistance(2) + " NM");
+                            diffAndSetText(this.nav1Time, this.getDMETime(2) + " Mins");
+                        }
+                        else {
+                            diffAndSetText(this.nav1Time, "--:-- Mins");
+                            diffAndSetText(this.nav1Distance, "-- NM");
+                        }
+                    }
+                    else {
                         diffAndSetText(this.nav2Time, "--:-- Mins");
                         diffAndSetText(this.nav2Distance, "-- NM");
-                    }
-                    else {
-                        diffAndSetText(this.nav2Distance, this.getDMEDistance(2) + " NM");
-                        diffAndSetText(this.nav2Time, this.getDMETime(2) + " Mins");
                     }
                 }
             }
@@ -119,6 +134,9 @@ class JPLDME extends BaseInstrument {
         if (this.minutes > 99) { this.minutes = 99; this.seconds = 59; }
         return (this.minutes + ":" + this.seconds);
     }
+    getNavAlive(_num) {
+        return SimVar.GetSimVarValue("CIRCUIT ON:" + _num, "bool");
+    }
     lowBatteryCheck() {
         if (SimVar.GetSimVarValue("ELECTRICAL BATTERY VOLTAGE", "volt") > 21.6) {
             return false;
@@ -136,7 +154,15 @@ class JPLDME extends BaseInstrument {
         return fastToFixed(freq, 3);
     }
     getActiveNavFreq() {
-        return this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 1, "MHz")) + "   " + this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 2, "MHz"));
+        this.nav1freq = "---.---";
+        this.nav2freq = "---.---";
+        if (this.getNavAlive(1)){
+            this.nav1freq = this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 1, "MHz"));
+        }
+        if (this.getNavAlive(2)){
+            this.nav2freq = this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 2, "MHz"));
+        }
+        return  (this.nav1freq + "   " + this.nav2freq);
     }
     getElapsedTime() {
         var seconds = Math.floor((this.elapsedTime / 1000) % 60);
