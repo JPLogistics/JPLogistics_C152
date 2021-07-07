@@ -3,8 +3,6 @@ class JPLDME extends BaseInstrument {
         super();
         this.initTime = 0;
         this.elapsedTime = 0;
-        this.nav1Error = false;
-        this.nav2Error = false;
     }
     get templateID() { return "JPLDME"; }
     connectedCallback() {
@@ -96,11 +94,6 @@ class JPLDME extends BaseInstrument {
         else {
             this.initTime = 0;
             this.elapsedTime = 0;
-            this.nav1Error = false;
-            this.nav2Error = false;
-            //# General
-            //diffAndSetText(this.welcome, "");
-            //diffAndSetText(this.lowBattery, "");
         }
     }
     getDMEDistance(_num) {
@@ -142,7 +135,7 @@ class JPLDME extends BaseInstrument {
         if (this.getNavAlive(25)){
             this.nav2freq = this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 2, "MHz"));
         }
-        return  (this.nav1freq + "   " + this.nav2freq);
+        return (this.nav1freq + "\n" + this.nav2freq);
     }
     getElapsedTime() {
         var seconds = Math.floor((this.elapsedTime / 1000) % 60);
@@ -155,9 +148,5 @@ class JPLDME extends BaseInstrument {
     isLocalizer(_num) {
         return SimVar.GetSimVarValue("NAV HAS LOCALIZER:" + _num, "Bool");
     }
-    blinkGetState(_blinkPeriod, _duration) {
-        return Math.round(Date.now() / _duration) % (_blinkPeriod / _duration) == 0;
-    }
 }
 registerInstrument("jpldme-element1", JPLDME);
-//# sourceMappingURL=KX155A.js.map

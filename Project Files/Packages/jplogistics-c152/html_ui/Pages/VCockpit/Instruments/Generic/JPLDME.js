@@ -3,8 +3,6 @@ class JPLDME extends BaseInstrument {
         super();
         this.initTime = 0;
         this.elapsedTime = 0;
-        this.nav1Error = false;
-        this.nav2Error = false;
     }
     get templateID() { return "JPLDME"; }
     connectedCallback() {
@@ -38,37 +36,17 @@ class JPLDME extends BaseInstrument {
             }
             this.elapsedTime = (SimVar.GetSimVarValue("E:ABSOLUTE TIME", "seconds") - this.initTime);
             //# Calculate Everything
-            //# General
-            if (this.getNavAlive(1)){
-                if (this.getIsSignalOk(1)) {
-                    this.nav1Error = false;
-                }
-                else {
-                    this.nav1Error = true;
-                }
-            }
-            else {
-                this.nav1Error = true;
-            }
-
-            //# Nav 2 Script
-            if (this.getIsSignalOk(2)) {
-                this.nav2Error = false;
-            }
-            else {
-                this.nav2Error = true;
-            }
 
             //# General
             if (this.elapsedTime < 3) {
                 diffAndSetAttribute(this.welcomeScreen, "state", "on");
                 diffAndSetAttribute(this.normalScreen, "state", "off");
                 diffAndSetText(this.welcome, "JPLogistics DME System");
-                this._msg = "Starting";
+                this.msg = "Starting";
                 for (let i = 0; i < this.elapsedTime; i++){
-                    this._msg += ".";
+                    this.msg += ".";
                 }
-                diffAndSetText(this.welcomeLow, this._msg);
+                diffAndSetText(this.welcomeLow, this.msg);
             }
             else {
                 diffAndSetAttribute(this.welcomeScreen, "state", "off");
@@ -81,7 +59,7 @@ class JPLDME extends BaseInstrument {
                     diffAndSetAttribute(this.normalScreen, "state", "on");
                     diffAndSetText(this.navActiveFreq, this.getActiveNavFreq());
                     //# Nav 1 Script
-                    if (this.getNavAlive(1)){
+                    if (this.getNavAlive(23)){
                         if (this.getIsSignalOk(1)) {
                             diffAndSetText(this.nav1Distance, this.getDMEDistance(1) + " NM");
                             diffAndSetText(this.nav1Time, this.getDMETime(1) + " Mins");
@@ -96,14 +74,14 @@ class JPLDME extends BaseInstrument {
                         diffAndSetText(this.nav1Distance, "-- NM");
                     }
                     //# Nav 2 Script
-                    if (this.getNavAlive(2)){
-                        if (this.getIsSignalOk(1)) {
-                            diffAndSetText(this.nav1Distance, this.getDMEDistance(2) + " NM");
-                            diffAndSetText(this.nav1Time, this.getDMETime(2) + " Mins");
+                    if (this.getNavAlive(25)){
+                        if (this.getIsSignalOk(2)) {
+                            diffAndSetText(this.nav2Distance, this.getDMEDistance(2) + " NM");
+                            diffAndSetText(this.nav2Time, this.getDMETime(2) + " Mins");
                         }
                         else {
-                            diffAndSetText(this.nav1Time, "--:-- Mins");
-                            diffAndSetText(this.nav1Distance, "-- NM");
+                            diffAndSetText(this.nav2Time, "--:-- Mins");
+                            diffAndSetText(this.nav2Distance, "-- NM");
                         }
                     }
                     else {
@@ -116,11 +94,6 @@ class JPLDME extends BaseInstrument {
         else {
             this.initTime = 0;
             this.elapsedTime = 0;
-            this.nav1Error = false;
-            this.nav2Error = false;
-            //# General
-            //diffAndSetText(this.welcome, "");
-            //diffAndSetText(this.lowBattery, "");
         }
     }
     getDMEDistance(_num) {
@@ -156,13 +129,13 @@ class JPLDME extends BaseInstrument {
     getActiveNavFreq() {
         this.nav1freq = "---.---";
         this.nav2freq = "---.---";
-        if (this.getNavAlive(1)){
+        if (this.getNavAlive(23)){
             this.nav1freq = this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 1, "MHz"));
         }
-        if (this.getNavAlive(2)){
+        if (this.getNavAlive(25)){
             this.nav2freq = this.frequency3DigitsFormat(SimVar.GetSimVarValue("NAV ACTIVE FREQUENCY:" + 2, "MHz"));
         }
-        return  (this.nav1freq + "   " + this.nav2freq);
+        return (this.nav1freq + "\n" + this.nav2freq);
     }
     getElapsedTime() {
         var seconds = Math.floor((this.elapsedTime / 1000) % 60);
@@ -175,9 +148,5 @@ class JPLDME extends BaseInstrument {
     isLocalizer(_num) {
         return SimVar.GetSimVarValue("NAV HAS LOCALIZER:" + _num, "Bool");
     }
-    blinkGetState(_blinkPeriod, _duration) {
-        return Math.round(Date.now() / _duration) % (_blinkPeriod / _duration) == 0;
-    }
 }
 registerInstrument("jpldme-element1", JPLDME);
-//# sourceMappingURL=KX155A.js.map
