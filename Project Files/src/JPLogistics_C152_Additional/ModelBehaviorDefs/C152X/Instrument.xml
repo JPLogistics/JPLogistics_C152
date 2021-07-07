@@ -97,3 +97,49 @@
     </UseTemplate>
   </Component>
 </Template>
+
+<Template Name="ADF_VOLUME">
+	<UseTemplate Name="ASOBO_GT_Update">
+		<UPDATE_ONCE>True</UPDATE_ONCE>
+		<UPDATE_CODE>
+		(L:152X_ADFVOL, bool) 1 &gt;=
+		if{
+			100 (&gt;K:ADF_VOLUME_SET)
+		}	
+		(L:152X_ADFVOL, Bool) 0 &lt;=
+		if{
+			0 (&gt;K:ADF_VOLUME_SET)
+		}
+		</UPDATE_CODE>	
+	</UseTemplate>
+</Template>
+<Template Name="COM1_VOLUME">
+	<UseTemplate Name="ASOBO_GT_Update">
+		<UPDATE_ONCE>True</UPDATE_ONCE>
+		<UPDATE_CODE>
+		(L:152X_COM1VOL, bool) 1 &gt;=
+		if{
+			100 (&gt;K:COM1_VOLUME_SET)
+		}	
+		(L:152X_COM1VOL, Bool) 0 &lt;=
+		if{
+			0 (&gt;K:COM1_VOLUME_SET)
+		}
+		</UPDATE_CODE>	
+	</UseTemplate>
+</Template>	
+<Template Name="COM2_VOLUME">
+	<UseTemplate Name="ASOBO_GT_Update">
+		<UPDATE_ONCE>True</UPDATE_ONCE>
+		<UPDATE_CODE>
+		(L:152X_COM2VOL, bool) 1 &gt;=
+		if{
+			100 (&gt;K:COM2_VOLUME_SET)
+		}	
+		(L:152X_COM2VOL, Bool) 0 &lt;=
+		if{
+			0 (&gt;K:COM2_VOLUME_SET)
+		}
+		</UPDATE_CODE>	
+	</UseTemplate>
+</Template>	
