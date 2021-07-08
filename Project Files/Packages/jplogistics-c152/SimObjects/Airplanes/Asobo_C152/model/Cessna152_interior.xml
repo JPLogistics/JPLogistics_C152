@@ -770,6 +770,11 @@
         <NODE_ID>DME_Screen</NODE_ID>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
       </UseTemplate>
+      <UseTemplate Name="JPL_EFB_Screens_Template">
+        <ID>1</ID>
+        <NODE_ID>SCREEN_EFB</NODE_ID>
+        <DIMMING_FACTOR>1</DIMMING_FACTOR>
+      </UseTemplate>
     </Component>
     <Component ID="AUDIO_TOP_PANEL">
       <Parameters Type="Default">
