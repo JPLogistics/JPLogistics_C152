@@ -124,7 +124,7 @@ BleedAirSource=0
 [Switches.0]
 PitotHeat=False
 BeaconLights=True
-LandingLights=True
+LandingLights=False
 LogoLights=True
 NavLights=True
 PanelLights=False

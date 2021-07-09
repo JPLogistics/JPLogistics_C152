@@ -46,6 +46,7 @@
 	</Component>
 </Template>
 
+<!-- Not needed, voltage is correct indicator. If its being done correctly though...IDK -->
 <Template Name="C152X_SAFETY_Indicator_LowVolt_Template">
 	<DefaultTemplateParameters>
 		<NODE_ID>SAFETY_Indicator_LowVolt</NODE_ID>

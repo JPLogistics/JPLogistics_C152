@@ -506,14 +506,9 @@
           <INVERT_ANIM>True</INVERT_ANIM>
           <DONT_APPEND_ID>True</DONT_APPEND_ID>
         </UseTemplate>
-        <!--IIRC this wont show correctly - Ampres gauge (charge) not battery voltage gauge? See next comment !-->
         <UseTemplate Name="ASOBO_SAFETY_Indicator_LowVolt_Template">
           <THRESHOLD>26</THRESHOLD>
         </UseTemplate>
-        <!-- Might need to use the below template for correct behaviour?
-        <UseTemplate Name="C152X_SAFETY_Indicator_LowVolt_Template">
-        </UseTemplate> -->
-        
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Temperature_Template">
           <UNITS>fahrenheit</UNITS>
           <MIN_VALUE>0</MIN_VALUE>
@@ -565,7 +560,6 @@
 			<ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
 			<POTENTIOMETER>5</POTENTIOMETER>
 			<!--<NO_AUTHORITY_OVER_SWITCH_STATE/>-->
-
 			<!--<INIT_VALUE>50</INIT_VALUE> ############## NO LONGER VALID, SET IN *.flt ########## -->
 			<LOWER_LIMIT>5</LOWER_LIMIT>
 			<CIRCUIT_ID>11</CIRCUIT_ID>
@@ -591,10 +585,10 @@
 			<CIRCUIT_ID>15</CIRCUIT_ID>
 		</UseTemplate>		
 		<UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template">
-		<POTENTIOMETER>9</POTENTIOMETER>
+		<POTENTIOMETER>9</POTENTIOMETER><!-- NONEXISTENT POT TO PREVENT DIMMING -->
 		</UseTemplate>	
 		
-		
+		<!--######## RED EMISSIVE ON CEILING/LIGHT SET FROM TYPE/POT IN SYSTEM.CFG ########## -->
 		<UseTemplate Name="ASOBO_LIGHTING_Glareshield_Emissive_Template">
 			<NODE_ID>LIGHTING_Panel_Emisive</NODE_ID>
 		    <POTENTIOMETER>4</POTENTIOMETER>
@@ -631,14 +625,14 @@
         <ID>1</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
         <!--<NAV_CIRCUIT>22</NAV_CIRCUIT>--><!-- Removed for test! -->
-        <CIRCUIT_ID>23</CIRCUIT_ID>
+		<COM_CIRCUIT>23</COM_CIRCUIT>
         <FAILURE>(A:COM VOLUME:1,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Simple_Radio_Template">
         <ID>2</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
         <!--<NAV_CIRCUIT>24</NAV_CIRCUIT>--><!-- Removed for test! -->
-        <CIRCUIT_ID>25</CIRCUIT_ID>
+        <COM_CIRCUIT>25</COM_CIRCUIT>
         <FAILURE>(A:COM VOLUME:2,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
@@ -646,12 +640,16 @@
         <NODE_ID>NavCom1_Screen</NODE_ID>
         <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
+		<USE_DIMMING_POTENTIOMETER/>
+		<POTENTIOMETER>5</POTENTIOMETER>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
         <ID>2</ID>
         <NODE_ID>NavCom2_Screen</NODE_ID>
         <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
+		<USE_DIMMING_POTENTIOMETER/>
+		<POTENTIOMETER>5</POTENTIOMETER>
       </UseTemplate>
       <Component Id="NAVCOM_Sound_Push_Buttons">
         <UseTemplate Name="ASOBO_NAVCOM_Switch_MARKER_Sound_Template"><!--WAS PUSH-->
@@ -672,7 +670,7 @@
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
-        <UseTemplate Name="ASOBO_AUDIO_Switch_EXT_Template"><!--NEEDS TO BE CREATED-->
+        <UseTemplate Name="ASOBO_AUDIO_Switch_EXT_Template">
           <NODE_ID>AUDIO_Push_EXT</NODE_ID>
           <ANIM_NAME>AUDIO_Push_EXT</ANIM_NAME>
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
@@ -769,6 +767,8 @@
         <ID>1</ID>
         <NODE_ID>DME_Screen</NODE_ID>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
+		<!--<USE_DIMMING_POTENTIOMETER/>
+		<POTENTIOMETER>5</POTENTIOMETER>--Removed for now while testing-->
       </UseTemplate>
       <UseTemplate Name="JPL_EFB_Screens_Template">
         <ID>1</ID>
