@@ -7,7 +7,7 @@
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\JPLDME.css" Timestamp="13270171987"/>
 	<Entry Path="Effects\texture\FX_ulm02.PNG.dds" Timestamp="13269885671"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\Generic\Radios\KX155A\KX155A.css" Timestamp="13269885671"/>
-	<Entry Path="ModelBehaviorDefs\C152X\Lighting.xml" Timestamp="13269991400"/>
+	<Entry Path="ModelBehaviorDefs\C152X\Lighting.xml" Timestamp="13270340816"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Fonts\DME.TTF" Timestamp="12969218154"/>
 	<Entry Path="ModelBehaviorDefs\C152X\InstrumentOld.xml" Timestamp="13269885671"/>
 	<Entry Path="Effects\texture\FX_ulm01.PNG.dds" Timestamp="13269885671"/>
@@ -16,21 +16,23 @@
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\Generic\Radios\KX155A\KX155A.html" Timestamp="13269885671"/>
 	<Entry Path="Effects\LIGHT_C152_NavigationRed.fx" Timestamp="13269885671"/>
 	<Entry Path="Effects\texture\FX_ulm04.PNG.DDS" Timestamp="13269885671"/>
-	<Entry Path="ModelBehaviorDefs\C152X\EngineStart.xml" Timestamp="13269885671"/>
+	<Entry Path="ModelBehaviorDefs\C152X\EngineStart.xml" Timestamp="13270340816"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\JPLDME.js" Timestamp="13270171955"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB.html" Timestamp="13270262265"/>
 	<Entry Path="ModelBehaviorDefs\C152X\LightingOld.xml" Timestamp="13269885671"/>
 	<Entry Path="ModelBehaviorDefs\C152X\Index.xml" Timestamp="13269885671"/>
-	<Entry Path="ModelBehaviorDefs\C152X\Instrument.xml" Timestamp="13270163139"/>
+	<Entry Path="ModelBehaviorDefs\C152X\Instrument.xml" Timestamp="13270347360"/>
 	<Entry Path="Effects\LIGHT_C152_ScreenOrange.fx" Timestamp="13269885671"/>
 	<Entry Path="Effects\LIGHT_C152_NavigationWhite.fx" Timestamp="13269885671"/>
 	<Entry Path="pt-BR.locPak" Timestamp="13269885671"/>
 	<Entry Path="pl-PL.locPak" Timestamp="13269885671"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB.js" Timestamp="13270342178"/>
 	<Entry Path="Effects\LIGHT_C152_CockpitMinimalAmbiant.fx" Timestamp="13269885671"/>
 	<Entry Path="de-DE.locPak" Timestamp="13269885671"/>
 	<Entry Path="fr-FR.locPak" Timestamp="13269885671"/>
 	<Entry Path="Effects\texture\fx_ulm02.png.DDS.FLAGS" Timestamp="13269885671"/>
 	<Entry Path="Effects\texture\FX_ulm03.PNG.DDS.json" Timestamp="13269885671"/>
-	<Entry Path="ModelBehaviorDefs\C152X\Animations.xml" Timestamp="13270163139"/>
+	<Entry Path="ModelBehaviorDefs\C152X\Animations.xml" Timestamp="13270340816"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\JPLDME.html" Timestamp="13270171967"/>
 	<Entry Path="Effects\texture\fx_ulm01.png.DDS.FLAGS" Timestamp="13269885671"/>
 	<Entry Path="en-US.locPak" Timestamp="13269885671"/>
@@ -48,6 +50,7 @@
 	<Entry Path="Effects\texture\fx_ulm03.png.DDS.FLAGS" Timestamp="13269885671"/>
 	<Entry Path="Effects\LIGHT_C152_StrobeSimple.fx" Timestamp="13269885671"/>
 	<Entry Path="ModelBehaviorDefs\C152X\NavComSystem.xml" Timestamp="13269885671"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB.css" Timestamp="13270347737"/>
 	<Entry Path="version.txt" Timestamp="13269885671"/>
 	<Entry Path="Effects\LIGHT_C152_CockpitSpot.fx" Timestamp="13269885671"/>
 	<Entry Path="ModelBehaviorDefs\C152X\Subtemplates\Instrument_Subtemplates.xml" Timestamp="13269885671"/>

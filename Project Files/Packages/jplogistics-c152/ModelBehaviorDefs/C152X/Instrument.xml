@@ -2,22 +2,34 @@
   <Update Once="True">
     #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
   </Update>
-  <UseTemplate Name = "C152X_2way_switch_xml">
-    <ANIMTIP_0>Power DME On</ANIMTIP_0>
-    <ANIMTIP_1>Power DME Off</ANIMTIP_1>
-    <WWISE_EVENT_1>audio_switch_intercom</WWISE_EVENT_1>
-    <WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2>
-    <LEFT_SINGLE_CODE>
-      (L:DME_POWER) 0 ==
-      if{
-      1 (&gt;L:DME_POWER)
-      #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-      } els{
-      0 (&gt;L:DME_POWER)
-      #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-      }
-    </LEFT_SINGLE_CODE>
-  </UseTemplate>
+  <Component ID="#NODE_ID#" Node="#NODE_ID#">
+    <ANIMTIP_0_ON_PERCENT>0</ANIMTIP_0_ON_PERCENT>
+    <ANIMTIP_1_ON_PERCENT>1</ANIMTIP_1_ON_PERCENT>
+    <ANIMTIP_0>DME ON</ANIMTIP_0>
+    <ANIMTIP_1>DME OFF</ANIMTIP_1>
+    <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
+      <LEFT_LEAVE_CODE/>
+      <LEFT_SINGLE_CODE>
+        (L:DME_POWER) 0 ==
+        if{
+        1 (&gt;L:DME_POWER)
+        #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+        } els{
+        0 (&gt;L:DME_POWER)
+        #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+        }
+      </LEFT_SINGLE_CODE>
+    </UseTemplate>
+    <UseTemplate Name="ASOBO_GT_Anim_Code">
+      <ANIM_NAME>#ANIM_NAME#</ANIM_NAME>
+      <ANIM_LENGTH>#ANIM_LENGTH#</ANIM_LENGTH>
+      <ANIM_LAG>#ANIM_LAG#</ANIM_LAG>
+      <ANIM_CODE>
+        (* Default is current needle position *)
+        (L:DME_POWER) 4 *
+      </ANIM_CODE>
+    </UseTemplate>
+  </Component>
 </Template>
 
 <Template Name="JPL_DME_Screens_Template">
@@ -31,6 +43,32 @@
 <Template Name="JPL_DME_Screens_SubTemplate">
   <DefaultTemplateParameters>
     <NODE_ID>DME_Screen</NODE_ID>
+  </DefaultTemplateParameters>
+  <Component ID="#NODE_ID#" Node="#NODE_ID#">
+    <UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+      
+      <Condition Check="USE_DIMMING_POTENTIOMETER">
+        <True>
+          <EMISSIVE_CODE>(L:DME_POWER, Bool) 0 &gt; (A:LIGHT POTENTIOMETER:#POTENTIOMETER#, percent over 100) * #DIMMING_FACTOR# *</EMISSIVE_CODE>
+        </True>
+        <False>
+          <EMISSIVE_CODE>(L:DME_POWER, Bool) 0 &gt;</EMISSIVE_CODE>
+        </False>
+      </Condition>
+    </UseTemplate>
+  </Component>
+</Template>
+<Template Name="JPL_EFB_Screens_Template">
+  <Parameters Type="Default">
+    <ID>1</ID>
+  </Parameters>
+  <UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
+    <TEMPLATE_TO_CALL>JPL_EFB_Screens_SubTemplate</TEMPLATE_TO_CALL>
+  </UseTemplate>
+</Template>
+<Template Name="JPL_EFB_Screens_SubTemplate">
+  <DefaultTemplateParameters>
+    <NODE_ID>SCREEN_EFB</NODE_ID>
   </DefaultTemplateParameters>
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <UseTemplate Name="ASOBO_GT_Emissive_Gauge">
@@ -120,10 +158,12 @@
 		(L:152X_COM1VOL, bool) 1 &gt;=
 		if{
 			100 (&gt;K:COM1_VOLUME_SET)
+      #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_ON)
 		}
 		(L:152X_COM1VOL, Bool) 0 &lt;=
 		if{
 			0 (&gt;K:COM1_VOLUME_SET)
+      #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
 		}
 		</UPDATE_CODE>	
 	</UseTemplate>
@@ -135,10 +175,12 @@
 		(L:152X_COM2VOL, bool) 1 &gt;=
 		if{
 			100 (&gt;K:COM2_VOLUME_SET)
+      1 (&gt;A:CIRCUIT SWITCH ON:#COM_CIRCUIT,bool)
 		}	
 		(L:152X_COM2VOL, Bool) 0 &lt;=
 		if{
 			0 (&gt;K:COM2_VOLUME_SET)
+      0 (&gt;A:CIRCUIT SWITCH ON:#COM_CIRCUIT,bool)
 		}
 		</UPDATE_CODE>	
 	</UseTemplate>

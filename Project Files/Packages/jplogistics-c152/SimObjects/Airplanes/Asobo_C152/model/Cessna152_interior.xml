@@ -625,7 +625,10 @@
         <ID>1</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
         <!--<NAV_CIRCUIT>22</NAV_CIRCUIT>--><!-- Removed for test! -->
-		<COM_CIRCUIT>23</COM_CIRCUIT>
+		    <COM_CIRCUIT>23</COM_CIRCUIT>
+        <UseTemplate Name="COM1_VOLUME">
+          <COM_CIRCUIT>23</COM_CIRCUIT>
+        </UseTemplate>
         <FAILURE>(A:COM VOLUME:1,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Simple_Radio_Template">
@@ -633,6 +636,9 @@
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
         <!--<NAV_CIRCUIT>24</NAV_CIRCUIT>--><!-- Removed for test! -->
         <COM_CIRCUIT>25</COM_CIRCUIT>
+        <UseTemplate Name="COM2_VOLUME">
+          <COM_CIRCUIT>25</COM_CIRCUIT>
+        </UseTemplate>
         <FAILURE>(A:COM VOLUME:2,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
@@ -640,35 +646,35 @@
         <NODE_ID>NavCom1_Screen</NODE_ID>
         <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
-		<USE_DIMMING_POTENTIOMETER/>
-		<POTENTIOMETER>5</POTENTIOMETER>
+		    <USE_DIMMING_POTENTIOMETER/>
+		    <POTENTIOMETER>5</POTENTIOMETER>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
         <ID>2</ID>
         <NODE_ID>NavCom2_Screen</NODE_ID>
         <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
-		<USE_DIMMING_POTENTIOMETER/>
-		<POTENTIOMETER>5</POTENTIOMETER>
+        <USE_DIMMING_POTENTIOMETER/>
+        <POTENTIOMETER>5</POTENTIOMETER>
       </UseTemplate>
       <Component Id="NAVCOM_Sound_Push_Buttons">
         <UseTemplate Name="ASOBO_NAVCOM_Switch_MARKER_Sound_Template"><!--WAS PUSH-->
           <NODE_ID>AUDIO_Push_MKR</NODE_ID>
           <ANIM_NAME>AUDIO_Push_MKR</ANIM_NAME>
-		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
-		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
+		      <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		      <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
         <UseTemplate Name="ASOBO_NAVCOM_Switch_DME_Sound_Template"><!--WAS PUSH-->
           <NODE_ID>AUDIO_Push_DME</NODE_ID>
           <ANIM_NAME>AUDIO_Push_DME</ANIM_NAME>
-		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
-		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
+          <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+          <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
         <UseTemplate Name="ASOBO_AUDIO_Switch_Speaker_Template"><!--WAS PUSH-->
           <NODE_ID>AUDIO_Push_SPKR</NODE_ID>
           <ANIM_NAME>AUDIO_Push_SPKR</ANIM_NAME>
-		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
-		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
+		      <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		      <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
         <UseTemplate Name="ASOBO_AUDIO_Switch_EXT_Template">
           <NODE_ID>AUDIO_Push_EXT</NODE_ID>
@@ -761,6 +767,8 @@
         <NODE_ID>DME_Switch</NODE_ID>
         <ANIM_NAME>DME_Switch</ANIM_NAME>
         <PART_ID>DME_Switch</PART_ID>
+        <ANIM_LENGTH>4</ANIM_LENGTH>
+        <ANIM_LAG>20</ANIM_LAG>
         <CIRCUIT_ID>36</CIRCUIT_ID>
       </UseTemplate>
       <UseTemplate Name="JPL_DME_Screens_Template">
@@ -768,7 +776,7 @@
         <NODE_ID>DME_Screen</NODE_ID>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
 		<!--<USE_DIMMING_POTENTIOMETER/>
-		<POTENTIOMETER>5</POTENTIOMETER>--Removed for now while testing-->
+		<POTENTIOMETER>5</POTENTIOMETER> Removed for now while testing-->
       </UseTemplate>
       <UseTemplate Name="JPL_EFB_Screens_Template">
         <ID>1</ID>

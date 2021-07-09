@@ -14793,6 +14793,10 @@
                 0,
                 0
             ],
+            "emissiveTexture" : {
+                "index" : 108,
+                "texCoord" : 0
+            },
             "extensions" : {
                 "ASOBO_material_blend_gbuffer" : {
                     "enabled" : true,
@@ -14869,9 +14873,13 @@
                 ],
                 "msfs_fresnel_factor" : 1,
                 "msfs_fresnel_opacity_bias" : 0,
+                "msfs_emissive_texture" : {
+                    "name" : "Tablet_EMIS",
+                    "type" : "Image"
+                },
                 "msfs_show_colors" : 1,
                 "msfs_show_emissive_color" : 1,
-                "msfs_show_alpha_mode" : 1,
+                "msfs_show_alpha_mode" : 0,
                 "msfs_show_render_options" : 1,
                 "msfs_show_day_night_cycle" : 1,
                 "msfs_show_pearl" : 1,
@@ -14880,7 +14888,7 @@
                 "msfs_show_material_options" : 1,
                 "msfs_show_material_detail_options" : 1,
                 "msfs_show_blend_threshold" : 1,
-                "msfs_show_decal_blend_factors" : 0,
+                "msfs_show_decal_blend_factors" : 1,
                 "msfs_show_windshield_options" : 0,
                 "msfs_show_glass_options" : 0,
                 "msfs_show_parallax_options" : 0,
@@ -14937,18 +14945,16 @@
             },
             "name" : "$EFB",
             "occlusionTexture" : {
-                "index" : 108,
+                "index" : 109,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0.800000011920929,
-                    0.800000011920929,
-                    0.800000011920929,
-                    1
-                ],
+                "baseColorTexture" : {
+                    "index" : 110,
+                    "texCoord" : 0
+                },
                 "metallicRoughnessTexture" : {
-                    "index" : 108,
+                    "index" : 109,
                     "texCoord" : 0
                 }
             }
@@ -19870,6 +19876,12 @@
         },
         {
             "source" : 101
+        },
+        {
+            "source" : 102
+        },
+        {
+            "source" : 103
         }
     ],
     "images" : [
@@ -20380,8 +20392,18 @@
         },
         {
             "mimeType" : "image/png",
+            "name" : "Tablet_EMIS",
+            "uri" : "Tablet_EMIS.png"
+        },
+        {
+            "mimeType" : "image/png",
             "name" : "Tablet_COMP",
             "uri" : "Tablet_COMP.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "Tablet_ALBD",
+            "uri" : "Tablet_ALBD.png"
         }
     ],
     "skins" : [

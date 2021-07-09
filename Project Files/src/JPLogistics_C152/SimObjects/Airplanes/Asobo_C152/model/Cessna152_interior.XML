@@ -767,6 +767,8 @@
         <NODE_ID>DME_Switch</NODE_ID>
         <ANIM_NAME>DME_Switch</ANIM_NAME>
         <PART_ID>DME_Switch</PART_ID>
+        <ANIM_LENGTH>4</ANIM_LENGTH>
+        <ANIM_LAG>20</ANIM_LAG>
         <CIRCUIT_ID>36</CIRCUIT_ID>
       </UseTemplate>
       <UseTemplate Name="JPL_DME_Screens_Template">
@@ -918,7 +920,7 @@
         <ID>Pilot</ID>
       </UseTemplate>
       <UseTemplate Name="JPL_Window_Template">
-        <NODE_ID>Pilot_Window_Handle<a/NODE_ID>
+        <NODE_ID>Pilot_Window_Handle</NODE_ID>
         <ID>Pilot</ID>
       </UseTemplate>
       <UseTemplate Name="JPL_Door_Template">
