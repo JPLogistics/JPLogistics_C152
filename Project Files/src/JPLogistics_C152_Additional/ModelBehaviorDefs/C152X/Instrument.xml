@@ -105,7 +105,7 @@
 		(L:152X_ADFVOL, bool) 1 &gt;=
 		if{
 			100 (&gt;K:ADF_VOLUME_SET)
-		}	
+		}
 		(L:152X_ADFVOL, Bool) 0 &lt;=
 		if{
 			0 (&gt;K:ADF_VOLUME_SET)
@@ -120,7 +120,7 @@
 		(L:152X_COM1VOL, bool) 1 &gt;=
 		if{
 			100 (&gt;K:COM1_VOLUME_SET)
-		}	
+		}
 		(L:152X_COM1VOL, Bool) 0 &lt;=
 		if{
 			0 (&gt;K:COM1_VOLUME_SET)
