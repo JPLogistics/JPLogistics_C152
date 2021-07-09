@@ -47,6 +47,25 @@
   </Component>
 </Template>
 
+<Template Name="JPL_EFB_Screens_SubTemplate">
+  <DefaultTemplateParameters>
+    <NODE_ID>DME_Screen</NODE_ID>
+  </DefaultTemplateParameters>
+  <Component ID="#NODE_ID#" Node="#NODE_ID#">
+    <UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+      
+      <Condition Check="USE_DIMMING_POTENTIOMETER">
+        <True>
+          <EMISSIVE_CODE>(L:DME_POWER, Bool) 0 &gt; (A:LIGHT POTENTIOMETER:#POTENTIOMETER#, percent over 100) * #DIMMING_FACTOR# *</EMISSIVE_CODE>
+        </True>
+        <False>
+          <EMISSIVE_CODE>(L:DME_POWER, Bool) 0 &gt;</EMISSIVE_CODE>
+        </False>
+      </Condition>
+    </UseTemplate>
+  </Component>
+</Template>
+
 <Template Name = "C152X_Speaker">
   <Update Once="True">
     #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
@@ -120,10 +139,12 @@
 		(L:152X_COM1VOL, bool) 1 &gt;=
 		if{
 			100 (&gt;K:COM1_VOLUME_SET)
+      #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_ON)
 		}
 		(L:152X_COM1VOL, Bool) 0 &lt;=
 		if{
 			0 (&gt;K:COM1_VOLUME_SET)
+      #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
 		}
 		</UPDATE_CODE>	
 	</UseTemplate>
@@ -135,10 +156,12 @@
 		(L:152X_COM2VOL, bool) 1 &gt;=
 		if{
 			100 (&gt;K:COM2_VOLUME_SET)
+      1 (&gt;A:CIRCUIT SWITCH ON:#COM_CIRCUIT,bool)
 		}	
 		(L:152X_COM2VOL, Bool) 0 &lt;=
 		if{
 			0 (&gt;K:COM2_VOLUME_SET)
+      0 (&gt;A:CIRCUIT SWITCH ON:#COM_CIRCUIT,bool)
 		}
 		</UPDATE_CODE>	
 	</UseTemplate>
