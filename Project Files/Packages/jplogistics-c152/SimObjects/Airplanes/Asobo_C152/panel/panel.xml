@@ -31,9 +31,9 @@
     </Electric>
   </Instrument>
   <Instrument>
-    <Name>SCREEN_EFB</Name>
+    <Name>EFB</Name>
     <Electric>
-      <Simvar name="CIRCUIT ON:39" unit="Boolean"/>
+      <Simvar name="CIRCUIT ON:36" unit="Boolean"/>
     </Electric>
   </Instrument>
 </PlaneHTMLConfig>
