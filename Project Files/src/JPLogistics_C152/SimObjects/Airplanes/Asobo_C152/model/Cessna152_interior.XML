@@ -16,7 +16,6 @@
     <Include ModelBehaviorFile="C152X\Index.xml"/>
 
     <!-- C152X Modification courtesy of G36 Improvement Project WIP -->
-    <!--<Include Path="C152X\CustomLogic.xml"/>-->
 
     <Component ID="C152X_Custom_Behavior">
       <UseTemplate Name="Fuel_Primer_Logic"></UseTemplate>
@@ -25,7 +24,7 @@
 	  <UseTemplate Name="ADF_VOLUME"></UseTemplate>
 	  <UseTemplate Name="COM1_VOLUME"></UseTemplate>
 	  <UseTemplate Name="COM2_VOLUME"></UseTemplate>
-	    <!-- TEMPORARY DISABLE WHILST I WORK SOMTHING OUT <UseTemplate Name="CoPilot_Weight"></UseTemplate> -->
+	  <!--<UseTemplate Name="CoPilot_Weight"></UseTemplate>-->
     </Component>
     <!--End of C152X Modification -->
 
@@ -178,7 +177,7 @@
 
     <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank and the 20 in the formula is a scaling factor for the amount of yaw induced variation in the tank indication. The first value is the current tank quantity in liters. 	The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
     <Macro Name="FuelTankSensorAdjustmentLeftTank">
-      1 (A:FUEL LEFT QUANTITY, gallons) (A:FUEL TANK LEFT MAIN CAPACITY, gallons) / - 20 * (A:TURN COORDINATOR BALL, scaler) * -
+      1 (A:FUEL LEFT QUANTITY, gallons) (A:FUEL TANK LEFT MAIN CAPACITY, gallons) / - 2 * (A:TURN COORDINATOR BALL, scaler) * -
     </Macro>
 
     <Macro Name="FuelTankSensorAdjustmentRightTank">
@@ -459,10 +458,10 @@
 
           <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
           <REF_VALUE_0>0 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_0>
-          <REF_VALUE_1>3.675 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_1>
-          <REF_VALUE_2>5.975 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_2>
-          <REF_VALUE_3>11.025 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_3>
-          <REF_VALUE_4>12.25 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_4>
+          <REF_VALUE_1>3 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_1>
+          <REF_VALUE_2>6 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_2>
+          <REF_VALUE_3>9 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_3>
+          <REF_VALUE_4>12 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_4>
 
           <ANIM_VALUE_0>0</ANIM_VALUE_0>
           <ANIM_VALUE_1>30</ANIM_VALUE_1>
@@ -646,8 +645,8 @@
         <NODE_ID>NavCom1_Screen</NODE_ID>
         <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
-		    <USE_DIMMING_POTENTIOMETER/>
-		    <POTENTIOMETER>5</POTENTIOMETER>
+		<USE_DIMMING_POTENTIOMETER/>
+		<POTENTIOMETER>5</POTENTIOMETER>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
         <ID>2</ID>
@@ -762,15 +761,20 @@
         <ANIM_LAG>500</ANIM_LAG>
       </UseTemplate>
     </Component>
+	
+	<Component ID="DME_Switch" Node="DME_Switch">
+		<UseTemplate Name = "ASOBO_GT_Switch_2States">
+			<PART_ID>DME_Switch</PART_ID>
+			<ANIM_NAME>DME_Switch</ANIM_NAME>
+			<SWITCH_POSITION_TYPE>L</SWITCH_POSITION_TYPE>
+			<SWITCH_POSITION_VAR>DME_POWER</SWITCH_POSITION_VAR>
+			<SWITCH_DIRECTION>Horizontal</SWITCH_DIRECTION>
+			<TOOLTIPID> Turn DME %((L:DME_POWER, bool))%{case}%{:0}On%{:1}Off%{end} </TOOLTIPID>
+			<CIRCUIT_ID>36</CIRCUIT_ID>
+		</UseTemplate>
+	</Component>	
+
     <Component ID="DME_Interaction"> <!--##########################################################-->
-      <UseTemplate Name="DME_Switch_Template">
-        <NODE_ID>DME_Switch</NODE_ID>
-        <ANIM_NAME>DME_Switch</ANIM_NAME>
-        <PART_ID>DME_Switch</PART_ID>
-        <ANIM_LENGTH>4</ANIM_LENGTH>
-        <ANIM_LAG>20</ANIM_LAG>
-        <CIRCUIT_ID>36</CIRCUIT_ID>
-      </UseTemplate>
       <UseTemplate Name="JPL_DME_Screens_Template">
         <ID>1</ID>
         <NODE_ID>DME_Screen</NODE_ID>
@@ -877,19 +881,6 @@
         </UseTemplate>
       </Component>
 	</Component>
-	<Component ID="SPEAKER_SWITCH">  <!--################# Just to animate the switch for now -->
-      <UseTemplate Name="C152X_Speaker">
-        <NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
-        <ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
-      </UseTemplate>
-	</Component>
-    <Component ID="ANNUNCIATOR_TEST">
-      <UseTemplate Name="C152X_Annun_Test">
-        <NODE_ID>AUDIO_Switch_Test</NODE_ID>
-        <ANIM_NAME>AUDIO_Switch_Test</ANIM_NAME>
-        <PART_ID>AUDIO_Switch_Test</PART_ID>
-      </UseTemplate>
-    </Component>
     <Component ID="TUTO_Level" Node="TUTO_Level">
       <UseTemplate Name="ASOBO_GT_Visibility_Code">
         <ONCE>True</ONCE>
