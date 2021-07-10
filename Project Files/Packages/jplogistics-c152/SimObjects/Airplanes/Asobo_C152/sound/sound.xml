@@ -282,7 +282,10 @@
 			<Range LowerBound="1" />
 		</Requires>
 	</Sound>
-  </SimVarSounds>
+	
+	<Sound WwiseData="true" WwiseEvent="nav_light_switch_on"  LocalVar="DME_POWER" Units="bool" Continuous="false" ></Sound>
+
+ </SimVarSounds>
   
 <!-- AnimationSounds ####################################################################################-->  
 
