@@ -1,35 +1,16 @@
 <Template Name = "DME_Switch_Template">
-  <Update Once="True">
-    #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-  </Update>
-  <Component ID="#NODE_ID#" Node="#NODE_ID#">
-    <ANIMTIP_0_ON_PERCENT>0</ANIMTIP_0_ON_PERCENT>
-    <ANIMTIP_1_ON_PERCENT>1</ANIMTIP_1_ON_PERCENT>
-    <ANIMTIP_0>DME ON</ANIMTIP_0>
-    <ANIMTIP_1>DME OFF</ANIMTIP_1>
-    <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
-      <LEFT_LEAVE_CODE/>
-      <LEFT_SINGLE_CODE>
-        (L:DME_POWER) 0 ==
-        if{
-        1 (&gt;L:DME_POWER)
-        #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-        } els{
-        0 (&gt;L:DME_POWER)
-        #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-        }
-      </LEFT_SINGLE_CODE>
-    </UseTemplate>
-    <UseTemplate Name="ASOBO_GT_Anim_Code">
-      <ANIM_NAME>#ANIM_NAME#</ANIM_NAME>
-      <ANIM_LENGTH>#ANIM_LENGTH#</ANIM_LENGTH>
-      <ANIM_LAG>#ANIM_LAG#</ANIM_LAG>
-      <ANIM_CODE>
-        (* Default is current needle position *)
-        (L:DME_POWER) 4 *
-      </ANIM_CODE>
-    </UseTemplate>
-  </Component>
+  <UseTemplate Name="ASOBO_GT_Update">
+    <UPDATE_CODE>
+      (L:DME_POWER, bool) 1 &gt;=
+      if{
+      #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_ON)
+      }
+      (L:DME_POWER, Bool) 0 ==
+      if{
+      #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
+      }
+    </UPDATE_CODE>
+  </UseTemplate>
 </Template>
 
 <Template Name="JPL_DME_Screens_Template">

@@ -787,9 +787,11 @@
 			<SWITCH_POSITION_VAR>DME_POWER</SWITCH_POSITION_VAR>
 			<SWITCH_DIRECTION>Horizontal</SWITCH_DIRECTION>
 			<TOOLTIPID> Turn DME %((L:DME_POWER, bool))%{case}%{:0}On%{:1}Off%{end} </TOOLTIPID>
-			<CIRCUIT_ID>36</CIRCUIT_ID>
 		</UseTemplate>
-	</Component>	
+    <UseTemplate Name = "DME_Switch_Template">
+      <CIRCUIT_ID>36</CIRCUIT_ID>
+    </UseTemplate>
+  </Component>	
 
     <Component ID="DME_Interaction"> <!--##########################################################-->
       <UseTemplate Name="JPL_DME_Screens_Template">
@@ -952,104 +954,104 @@
     </Component>
 	<Component ID="Breakers">
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX></BUS_INDEX>
-			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<BUS_INDEX>2</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_ALT</NODE_ID>
 			<ANIM_NAME>Breaker_ALT</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX></BUS_INDEX>
-			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<BUS_INDEX>3</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_FUELIND</NODE_ID>
 			<ANIM_NAME>Breaker_FUELIND</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX></BUS_INDEX>
-			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<BUS_INDEX>4</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_BCNPITOT</NODE_ID>
 			<ANIM_NAME>Breaker_BCNPITOT</ANIM_NAME>
 		</UseTemplate>	
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX>1</BUS_INDEX>
-			<CIRCUIT_INDEX>10</CIRCUIT_INDEX>
+			<BUS_INDEX>5</BUS_INDEX>
+      <BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_STROBELTS</NODE_ID>
 			<ANIM_NAME>Breaker_STROBELTS</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX></BUS_INDEX>
-			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<BUS_INDEX>6</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_LDGLTS</NODE_ID>
 			<ANIM_NAME>Breaker_LDGLTS</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX>1</BUS_INDEX>
-			<CIRCUIT_INDEX>5</CIRCUIT_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
+      <BUS_INDEX>7</BUS_INDEX>
 			<NODE_ID>Breaker_FLAP</NODE_ID>
 			<ANIM_NAME>Breaker_FLAP</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX></BUS_INDEX>
-			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<BUS_INDEX>8</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_INSTLTS</NODE_ID>
 			<ANIM_NAME>Breaker_INSTLTS</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX></BUS_INDEX>
-			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<BUS_INDEX>9</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_NAVDOME</NODE_ID>
 			<ANIM_NAME>Breaker_NAVDOME</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX></BUS_INDEX>
-			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<BUS_INDEX>10</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RADIO_1</NODE_ID>
 			<ANIM_NAME>Breaker_RADIO_1</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX></BUS_INDEX>
-			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<BUS_INDEX>11</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RADIO_2</NODE_ID>
 			<ANIM_NAME>Breaker_RADIO_2</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX></BUS_INDEX>
-			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<BUS_INDEX>12</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RADIO_3</NODE_ID>
 			<ANIM_NAME>Breaker_RADIO_3</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX></BUS_INDEX>
-			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<BUS_INDEX>13</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RADIO_4</NODE_ID>
 			<ANIM_NAME>Breaker_RADIO_4</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX></BUS_INDEX>
-			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<BUS_INDEX>14</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_0</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_0</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX></BUS_INDEX>
-			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<BUS_INDEX>15</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_1</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_1</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX></BUS_INDEX>
-			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<BUS_INDEX>16</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_2</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_2</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX></BUS_INDEX>
-			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<BUS_INDEX>17</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_3</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_3</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX></BUS_INDEX>
-			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<BUS_INDEX>18</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_4</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_4</ANIM_NAME>
 		</UseTemplate>			
