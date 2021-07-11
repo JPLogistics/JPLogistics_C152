@@ -951,13 +951,108 @@
       </UseTemplate>
     </Component>
 	<Component ID="Breakers">
-			<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX></BUS_INDEX>
+			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<NODE_ID>Breaker_ALT</NODE_ID>
+			<ANIM_NAME>Breaker_ALT</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX></BUS_INDEX>
+			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<NODE_ID>Breaker_FUELIND</NODE_ID>
+			<ANIM_NAME>Breaker_FUELIND</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX></BUS_INDEX>
+			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<NODE_ID>Breaker_BCNPITOT</NODE_ID>
+			<ANIM_NAME>Breaker_BCNPITOT</ANIM_NAME>
+		</UseTemplate>	
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX>1</BUS_INDEX>
+			<CIRCUIT_INDEX>10</CIRCUIT_INDEX>
+			<NODE_ID>Breaker_STROBELTS</NODE_ID>
+			<ANIM_NAME>Breaker_STROBELTS</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX></BUS_INDEX>
+			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<NODE_ID>Breaker_LDGLTS</NODE_ID>
+			<ANIM_NAME>Breaker_LDGLTS</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>1</BUS_INDEX>
 			<CIRCUIT_INDEX>5</CIRCUIT_INDEX>
 			<NODE_ID>Breaker_FLAP</NODE_ID>
 			<ANIM_NAME>Breaker_FLAP</ANIM_NAME>
 		</UseTemplate>
-	
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX></BUS_INDEX>
+			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<NODE_ID>Breaker_INSTLTS</NODE_ID>
+			<ANIM_NAME>Breaker_INSTLTS</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX></BUS_INDEX>
+			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<NODE_ID>Breaker_NAVDOME</NODE_ID>
+			<ANIM_NAME>Breaker_NAVDOME</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX></BUS_INDEX>
+			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<NODE_ID>Breaker_RADIO_1</NODE_ID>
+			<ANIM_NAME>Breaker_RADIO_1</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX></BUS_INDEX>
+			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<NODE_ID>Breaker_RADIO_2</NODE_ID>
+			<ANIM_NAME>Breaker_RADIO_2</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX></BUS_INDEX>
+			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<NODE_ID>Breaker_RADIO_3</NODE_ID>
+			<ANIM_NAME>Breaker_RADIO_3</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX></BUS_INDEX>
+			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<NODE_ID>Breaker_RADIO_4</NODE_ID>
+			<ANIM_NAME>Breaker_RADIO_4</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX></BUS_INDEX>
+			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<NODE_ID>Breaker_RIGHT_0</NODE_ID>
+			<ANIM_NAME>Breaker_RIGHT_0</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX></BUS_INDEX>
+			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<NODE_ID>Breaker_RIGHT_1</NODE_ID>
+			<ANIM_NAME>Breaker_RIGHT_1</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX></BUS_INDEX>
+			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<NODE_ID>Breaker_RIGHT_2</NODE_ID>
+			<ANIM_NAME>Breaker_RIGHT_2</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX></BUS_INDEX>
+			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<NODE_ID>Breaker_RIGHT_3</NODE_ID>
+			<ANIM_NAME>Breaker_RIGHT_3</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX></BUS_INDEX>
+			<CIRCUIT_INDEX></CIRCUIT_INDEX>
+			<NODE_ID>Breaker_RIGHT_4</NODE_ID>
+			<ANIM_NAME>Breaker_RIGHT_4</ANIM_NAME>
+		</UseTemplate>			
 	
 	</Component>
   </Behaviors>
