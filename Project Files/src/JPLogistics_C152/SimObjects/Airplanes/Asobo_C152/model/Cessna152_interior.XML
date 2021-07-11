@@ -173,6 +173,23 @@
     <Animation guid="008a2c9d-bbbd-4e04-9972-54a1a06c2a47" name="TRANSPONDER_Knob_04" type="standard" typeParam="Autoplay"/>
     <Animation guid="d10c95cd-eb77-451c-be78-cbe7798cc6e4" name="TRANSPONDER_Knob" type="standard" typeParam="Autoplay"/>
     <Animation guid="8241277c-f62a-47f5-8729-7c209608c8aa" name="TRANSPONDER_Push_IDT" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f43cde57-7c0f-4440-afb3-a3d0838c9239" name="Breaker_ALT" type="standard" typeParam="Autoplay"/>
+    <Animation guid="6e317db9-a13f-4b93-9dce-1d83685e61cf" name="Breaker_BCNPITOT" type="standard" typeParam="Autoplay"/>
+    <Animation guid="67def53c-a416-444d-a888-3a28ad2244ee" name="Breaker_FLAP" type="standard" typeParam="Autoplay"/>
+    <Animation guid="7002af25-ff71-4ed9-a6ef-fdbcb427f4a0" name="Breaker_FUELIND" type="standard" typeParam="Autoplay"/>
+    <Animation guid="831c83ac-e046-49a6-a85e-914c25e20594" name="Breaker_INSTLTS" type="standard" typeParam="Autoplay"/>
+    <Animation guid="fb2606ff-c637-4725-9895-f75b30cb4823" name="Breaker_LDGLTS" type="standard" typeParam="Autoplay"/>
+    <Animation guid="502ac6d8-87d9-4397-a68b-cfab863de5c4" name="Breaker_NAVDOME" type="standard" typeParam="Autoplay"/>
+    <Animation guid="bf42f852-4223-4933-948e-e44978b2977d" name="Breaker_RADIO_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="6fd23d62-2ffb-4088-a168-488dfbe92fbe" name="Breaker_RADIO_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="b6402f4b-2618-4b56-a58c-294c955a3f5b" name="Breaker_RADIO_3" type="standard" typeParam="Autoplay"/>
+    <Animation guid="e6200022-a77a-47c3-9ccb-644335aea48e" name="Breaker_RADIO_4" type="standard" typeParam="Autoplay"/>
+    <Animation guid="e4292e72-e556-41a2-b09e-36f72b9fb59d" name="Breaker_RIGHT_0" type="standard" typeParam="Autoplay"/>
+    <Animation guid="07ad17d1-a08c-4386-8cfb-9c2f915403c5" name="Breaker_RIGHT_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="e0f8278f-8a7a-4014-b65c-150227c43548" name="Breaker_RIGHT_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="df73f832-0972-4dd9-96f8-a88c7860fc80" name="Breaker_RIGHT_3" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c9765e52-94c9-4eb7-9e3a-5eb1bf6160b9" name="Breaker_RIGHT_4" type="standard" typeParam="Autoplay"/>
+    <Animation guid="bb0f75d6-cb91-417a-ad04-038da9fc94ff" name="Breaker_STROBELTS" type="standard" typeParam="Autoplay"/>
 
 
     <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank and the 20 in the formula is a scaling factor for the amount of yaw induced variation in the tank indication. The first value is the current tank quantity in liters. 	The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
