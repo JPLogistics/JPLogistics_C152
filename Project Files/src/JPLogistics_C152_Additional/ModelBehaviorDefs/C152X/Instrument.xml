@@ -158,12 +158,12 @@
 		(L:152X_COM1VOL, bool) 1 &gt;=
 		if{
 			100 (&gt;K:COM1_VOLUME_SET)
-      #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_ON)
+			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_ON)
 		}
 		(L:152X_COM1VOL, Bool) 0 &lt;=
 		if{
 			0 (&gt;K:COM1_VOLUME_SET)
-      #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
+			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
 		}
 		</UPDATE_CODE>	
 	</UseTemplate>
@@ -175,12 +175,12 @@
 		(L:152X_COM2VOL, bool) 1 &gt;=
 		if{
 			100 (&gt;K:COM2_VOLUME_SET)
-      1 (&gt;A:CIRCUIT SWITCH ON:#COM_CIRCUIT,bool)
+			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
 		}	
 		(L:152X_COM2VOL, Bool) 0 &lt;=
 		if{
 			0 (&gt;K:COM2_VOLUME_SET)
-      0 (&gt;A:CIRCUIT SWITCH ON:#COM_CIRCUIT,bool)
+			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
 		}
 		</UPDATE_CODE>	
 	</UseTemplate>
