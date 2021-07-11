@@ -950,6 +950,16 @@
         <ID>CoPilot</ID>
       </UseTemplate>
     </Component>
+	<Component ID="Breakers">
+			<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX>1</BUS_INDEX>
+			<CIRCUIT_INDEX>5</CIRCUIT_INDEX>
+			<NODE_ID>Breaker_FLAP</NODE_ID>
+			<ANIM_NAME>Breaker_FLAP</ANIM_NAME>
+		</UseTemplate>
+	
+	
+	</Component>
   </Behaviors>
 </ModelInfo>
 
