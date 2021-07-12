@@ -780,6 +780,7 @@
       <UseTemplate Name="ASOBO_Transponder_AS76A_Template">
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
         <ANIM_LAG>500</ANIM_LAG>
+        <CIRCUIT_ID>20</CIRCUIT_ID>
       </UseTemplate>
     </Component>
 
@@ -1020,38 +1021,37 @@
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RADIO_4</NODE_ID>
 			<ANIM_NAME>Breaker_RADIO_4</ANIM_NAME>
-		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX>14</BUS_INDEX>
-			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
-			<NODE_ID>Breaker_RIGHT_3</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_3</ANIM_NAME>
-		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX>15</BUS_INDEX>
-			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
-			<NODE_ID>Breaker_RIGHT_4</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_4</ANIM_NAME>
 		</UseTemplate>	
-		<!--
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>14</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_0</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_0</ANIM_NAME>
-		</UseTemplate>-->
+		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX>16</BUS_INDEX>
+			<BUS_INDEX>15</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_1</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_1</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX>17</BUS_INDEX>
+			<BUS_INDEX>16</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_2</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_2</ANIM_NAME>
 		</UseTemplate>
+    <UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+      <BUS_INDEX>17</BUS_INDEX>
+      <BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
+      <NODE_ID>Breaker_RIGHT_3</NODE_ID>
+      <ANIM_NAME>Breaker_RIGHT_3</ANIM_NAME>
+    </UseTemplate>
+    <UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+      <BUS_INDEX>18</BUS_INDEX>
+      <BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
+      <NODE_ID>Breaker_RIGHT_4</NODE_ID>
+      <ANIM_NAME>Breaker_RIGHT_4</ANIM_NAME>
+    </UseTemplate>
 		
 		
 	</Component>
