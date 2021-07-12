@@ -198,7 +198,7 @@
     </Macro>
 
     <Macro Name="FuelTankSensorAdjustmentRightTank">
-      1 (A:FUEL RIGHT QUANTITY, gallons) (A:FUEL TANK RIGHT MAIN CAPACITY, gallons) / - 20 * (A:TURN COORDINATOR BALL, scaler) * +
+      1 (A:FUEL RIGHT QUANTITY, gallons) (A:FUEL TANK RIGHT MAIN CAPACITY, gallons) / - 2 * (A:TURN COORDINATOR BALL, scaler) * +
     </Macro>
 
     <!-- DEICE ########################### -->
@@ -505,10 +505,10 @@
 
           <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
           <REF_VALUE_0>0 @FuelTankSensorAdjustmentRightTank</REF_VALUE_0>
-          <REF_VALUE_1>3.675 @FuelTankSensorAdjustmentRightTank</REF_VALUE_1>
-          <REF_VALUE_2>5.375 @FuelTankSensorAdjustmentRightTank</REF_VALUE_2>
-          <REF_VALUE_3>11.025 @FuelTankSensorAdjustmentRightTank</REF_VALUE_3>
-          <REF_VALUE_4>12.25 @FuelTankSensorAdjustmentRightTank</REF_VALUE_4>
+          <REF_VALUE_1>3 @FuelTankSensorAdjustmentRightTank</REF_VALUE_1>
+          <REF_VALUE_2>6 @FuelTankSensorAdjustmentRightTank</REF_VALUE_2>
+          <REF_VALUE_3>9 @FuelTankSensorAdjustmentRightTank</REF_VALUE_3>
+          <REF_VALUE_4>12 @FuelTankSensorAdjustmentRightTank</REF_VALUE_4>
 
           <ANIM_VALUE_0>0</ANIM_VALUE_0>
           <ANIM_VALUE_1>30</ANIM_VALUE_1>
@@ -527,6 +527,7 @@
         </UseTemplate>
         <UseTemplate Name="ASOBO_SAFETY_Indicator_LowVolt_Template">
           <THRESHOLD>26</THRESHOLD>
+		  <FAILURE>(A:CIRCUIT ON:29, Bool)</FAILURE>
         </UseTemplate>
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Temperature_Template">
           <UNITS>fahrenheit</UNITS>
