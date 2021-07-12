@@ -1,16 +1,34 @@
 <Template Name = "DME_Switch_Template">
-  <UseTemplate Name="ASOBO_GT_Update">
-    <UPDATE_CODE>
-      (L:DME_POWER, bool) 1 &gt;=
+  <Component ID="#NODE_ID#" Node="#NODE_ID#">
+    <Update>
+      (L:DME_POWER) 0 == (A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Bool) == 1 and
       if{
-      #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_ON)
+      #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
       }
-      (L:DME_POWER, Bool) 0 ==
+      (L:DME_POWER) 1 == (A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Bool) == 0 and
       if{
-      #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
+      #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
       }
-    </UPDATE_CODE>
-  </UseTemplate>
+    </Update>
+      <ANIMTIP_0_ON_PERCENT>0</ANIMTIP_0_ON_PERCENT>
+      <ANIMTIP_1_ON_PERCENT>1</ANIMTIP_1_ON_PERCENT>
+      <ANIMTIP_0>DME ON</ANIMTIP_0>
+      <ANIMTIP_1>DME OFF</ANIMTIP_1>
+      <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
+        <LEFT_SINGLE_CODE>
+          (L:DME_POWER) ! (&gt;L:DME_POWER)
+        </LEFT_SINGLE_CODE>
+      </UseTemplate>
+    <UseTemplate Name="ASOBO_GT_Anim_Code">
+      <ANIM_NAME>#ANIM_NAME#</ANIM_NAME>
+      <ANIM_LENGTH>4</ANIM_LENGTH>
+      <ANIM_LAG>20</ANIM_LAG>
+      <ANIM_CODE>
+        (* Default is current needle position *)
+        (L:DME_POWER) 4 *
+      </ANIM_CODE>
+    </UseTemplate>
+  </Component>
 </Template>
 
 <Template Name="JPL_DME_Screens_Template">
@@ -156,7 +174,7 @@
 		(L:152X_COM2VOL, bool) 1 &gt;=
 		if{
 			100 (&gt;K:COM2_VOLUME_SET)
-			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
+			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_ON)
 		}	
 		(L:152X_COM2VOL, Bool) 0 &lt;=
 		if{

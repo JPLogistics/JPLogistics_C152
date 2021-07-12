@@ -30,7 +30,7 @@
 
     <Animation guid="c16737ee-55bd-4255-97f8-5a34e62be350" name="Pilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-5a34e62be666" name="CoPilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c16737ee-55bd-4255-97f8-4b24e62be345" name="DME_Switch" type="standard" typeParam="Autoplay"/>
+    <Animation guid="a5fc5532-406f-40c7-83f0-96d3fba74101" name="DME_Switch" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be345" name="JPL_VISOR_Pilot" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be346" name="JPL_VISOR_CoPilot" type="standard" typeParam="Autoplay"/>
     <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be347" name="Pilot_Window" type="standard" typeParam="Autoplay"/>
@@ -782,22 +782,14 @@
         <ANIM_LAG>500</ANIM_LAG>
       </UseTemplate>
     </Component>
-	
-	<Component ID="DME_Switch" Node="DME_Switch">
-		<UseTemplate Name = "ASOBO_GT_Switch_2States">
-			<PART_ID>DME_Switch</PART_ID>
-			<ANIM_NAME>DME_Switch</ANIM_NAME>
-			<SWITCH_POSITION_TYPE>L</SWITCH_POSITION_TYPE>
-			<SWITCH_POSITION_VAR>DME_POWER</SWITCH_POSITION_VAR>
-			<SWITCH_DIRECTION>Horizontal</SWITCH_DIRECTION>
-			<TOOLTIPID> Turn DME %((L:DME_POWER, bool))%{case}%{:0}On%{:1}Off%{end} </TOOLTIPID>
-		</UseTemplate>
-    <UseTemplate Name = "DME_Switch_Template">
-      <CIRCUIT_ID>36</CIRCUIT_ID>
-    </UseTemplate>
-  </Component>	
 
-    <Component ID="DME_Interaction"> <!--##########################################################-->
+    <Component ID="DME_Interaction">
+      <UseTemplate Name="DME_Switch_Template">
+        <NODE_ID>DME_Switch</NODE_ID>
+        <ANIM_NAME>DME_Switch</ANIM_NAME>
+        <PART_ID>DME_Switch</PART_ID>
+        <CIRCUIT_ID>36</CIRCUIT_ID>
+      </UseTemplate>
       <UseTemplate Name="JPL_DME_Screens_Template">
         <ID>1</ID>
         <NODE_ID>DME_Screen</NODE_ID>
