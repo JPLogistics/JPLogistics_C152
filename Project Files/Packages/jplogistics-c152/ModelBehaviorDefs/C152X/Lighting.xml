@@ -1,0 +1,78 @@
+<Template Name = "C152X_Annun_Test">
+	<UseTemplate Name = "C152X_pushbutton_xml">
+		<ANIMTIP_0>Test Annunciators</ANIMTIP_0>
+		<ANIMTIP_1>Test Annunciators</ANIMTIP_1>
+		<WWISE_EVENT_1>navcom_audio_push_on</WWISE_EVENT_1>
+		<WWISE_EVENT_2>navcom_audio_push_off</WWISE_EVENT_2>
+		<LEFT_SINGLE_CODE>1 (&gt;K:MARKER_BEACON_TEST_MUTE)</LEFT_SINGLE_CODE>
+		<LEFT_LEAVE_CODE>0 (&gt;K:MARKER_BEACON_TEST_MUTE)</LEFT_LEAVE_CODE>
+		<ANIM_CODE>(A:MARKER BEACON TEST MUTE, Bool) 100 *</ANIM_CODE>	
+	</UseTemplate>
+</Template>
+
+
+
+<!-- ########### DO NOT DELETE, THINK OF AS A SUBTEMPLATE ########## -->
+<Template Name = "C152X_pushbutton_xml">
+	<DefaultTemplateParameters>
+		<SWITCH_POSITION_TYPE>O</SWITCH_POSITION_TYPE>
+		<SWITCH_POSITION_VAR>SwitchState</SWITCH_POSITION_VAR>
+		<LEFT_SINGLE_CODE></LEFT_SINGLE_CODE>
+		<LEFT_LEAVE_CODE></LEFT_LEAVE_CODE>
+		<INIT_VALUE>0</INIT_VALUE>
+		<ANIMREF_ID>0</ANIMREF_ID>
+		<ANIMTIP_0_ON_PERCENT>0</ANIMTIP_0_ON_PERCENT>
+		<ANIMTIP_1_ON_PERCENT>1</ANIMTIP_1_ON_PERCENT>
+	</DefaultTemplateParameters>
+	<Component ID="#NODE_ID#" Node="#NODE_ID#">
+		<Update Once="True">
+			#INIT_VALUE# (&gt;#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#)
+		</Update>
+		<UseTemplate Name = "ASOBO_GT_Anim_Code">
+			<ANIM_CODE>(#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#) 100 *</ANIM_CODE>
+		</UseTemplate>
+		<UseTemplate Name = "ASOBO_GT_AnimTriggers_2SoundEvents">
+		</UseTemplate>
+		<UseTemplate Name = "ASOBO_GT_Interaction_LeftSingle_Leave_Code">
+			<LEFT_SINGLE_CODE>
+				(#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#) ! (&gt;#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#)
+				#LEFT_SINGLE_CODE#
+			</LEFT_SINGLE_CODE>
+			<LEFT_LEAVE_CODE>
+				(#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#) ! (&gt;#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#)
+				#LEFT_LEAVE_CODE#
+			</LEFT_LEAVE_CODE>
+		</UseTemplate>
+	</Component>
+</Template>
+
+<!-- Not needed, voltage is correct indicator. If its being done correctly though...IDK -->
+<Template Name="C152X_SAFETY_Indicator_LowVolt_Template">
+	<DefaultTemplateParameters>
+		<NODE_ID>SAFETY_Indicator_LowVolt</NODE_ID>
+		<THRESHOLD>0</THRESHOLD>
+		<BUS_ID>1</BUS_ID>
+	</DefaultTemplateParameters>
+	<UseTemplate Name="ASOBO_SAFETY_Indicator_Caution_Template">
+		<Condition Check="THRESHOLD_UP">
+			<True>
+				<EMISSIVE_CODE>
+					(A:ELECTRICAL MAIN BUS AMPS:#BUS_ID#, Amperes) #THRESHOLD_DOWN# &lt; if{ 
+						(O:LightOn) ! if{ 1 (&gt;O:LightOn) }
+						1 
+					} els{
+						(O:LightOn) (A:ELECTRICAL MAIN BUS AMPS:#BUS_ID#, Amperes) #THRESHOLD_UP# &gt; and if{
+							0 (&gt;O:LightOn)
+						}
+						(O:LightOn)
+					}
+				</EMISSIVE_CODE>
+			</True>
+			<False>
+				<EMISSIVE_CODE>
+					(A:ELECTRICAL MAIN BUS AMPS:#BUS_ID#, Amperes) #THRESHOLD# &lt;
+				</EMISSIVE_CODE>
+			</False>
+		</Condition>
+	</UseTemplate>
+</Template>

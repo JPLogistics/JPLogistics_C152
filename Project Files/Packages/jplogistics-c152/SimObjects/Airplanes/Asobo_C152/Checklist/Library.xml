@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<SimBase.Document Type="CheckpointLibrary" version="1,0">
+	<Checklist.CheckpointLibrary>
+		<Checkpoint Id="Master_Switch_On_C152">
+			<Clue name="TT:CLUE.ELECTRIC_MASTER_SWITCH_ON"/>
+			<CheckpointDesc SubjectTT="TT:GAME.CHECKLIST_MASTER_SWITCH" ExpectationTT="TT:GAME.CHECKLIST_ON"/>
+			<Sequence SeqType="UnOrdered">
+				<Test>
+					<TestValue>
+						<Operator OpType="AND">
+							<Val SimVarName="ELECTRICAL MASTER BATTERY:1" Units="Boolean"/>
+							<Val SimVarName="AVIONICS MASTER SWITCH:1" Units="Boolean"/>
+						</Operator>
+					</TestValue>
+					<Action Copilot="True" Condition="TestValueFalse" Once="true" EventID="MASTER_BATTERY_ON"/>
+					<Action Copilot="True" Condition="TestValueFalse" Once="true" EventID="AVIONICS_MASTER_1_ON"/>
+					<Instrument Id="ENGINE_Switch_Master"/>
+				</Test>
+				<Test>
+					<TestValue>
+						<Val SimVarName="GENERAL ENG MASTER ALTERNATOR:1" Units="Boolean"/>
+					</TestValue>
+					<Action Copilot="True" Condition="TestValueFalse" Once="true" EventID="ALTERNATOR_ON"/>
+					<Instrument Id="ENGINE_Switch_Master"/>
+				</Test>
+			</Sequence>
+		</Checkpoint>
+	</Checklist.CheckpointLibrary>
+</SimBase.Document>
