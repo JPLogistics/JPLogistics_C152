@@ -413,6 +413,7 @@
 
       <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Turn_Template">
         <BALL_PART_ID>INSTRUMENT_TURN_INDICATOR_BALL</BALL_PART_ID>
+		<FAILURE>(A:CIRCUIT ON:3, Bool)</FAILURE>                         <!--#######################  UNTESTED ##################-->
       </UseTemplate>
 
       <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Heading_Template">
@@ -466,6 +467,7 @@
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Fuel_Quantity_Template">
           <TANK_ID>LEFT MAIN</TANK_ID>
           <FAILURE_CODE>0</FAILURE_CODE>
+		  <FAILURE>(A:CIRCUIT ON:28, Bool)</FAILURE>
           <USE_CUSTOM_POINTS>True</USE_CUSTOM_POINTS>
 
           <!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
@@ -493,6 +495,7 @@
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Fuel_Quantity_Template">
           <TANK_ID>RIGHT MAIN</TANK_ID>
           <FAILURE_CODE>0</FAILURE_CODE>
+		  <FAILURE>(A:CIRCUIT ON:28, Bool)</FAILURE>
           <ID>2</ID>
           <USE_CUSTOM_POINTS>True</USE_CUSTOM_POINTS>
 
@@ -531,6 +534,7 @@
           <MAX_VALUE>245</MAX_VALUE>
           <FAILURE_CODE>0</FAILURE_CODE>
           <DONT_APPEND_ID>True</DONT_APPEND_ID>
+		  <CIRCUIT_ID>13</CIRCUIT_ID> <!-- ######################################### WILL BREAK THE GAUGE -->
         </UseTemplate>
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Pressure_Template">
           <UNITS>psi</UNITS>
@@ -973,7 +977,7 @@
 		</UseTemplate>	
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>5</BUS_INDEX>
-      <BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_STROBELTS</NODE_ID>
 			<ANIM_NAME>Breaker_STROBELTS</ANIM_NAME>
 		</UseTemplate>
@@ -985,7 +989,7 @@
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
-      <BUS_INDEX>7</BUS_INDEX>
+			<BUS_INDEX>7</BUS_INDEX>
 			<NODE_ID>Breaker_FLAP</NODE_ID>
 			<ANIM_NAME>Breaker_FLAP</ANIM_NAME>
 		</UseTemplate>
@@ -1028,34 +1032,36 @@
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>14</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
-			<NODE_ID>Breaker_RIGHT_0</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_0</ANIM_NAME>
+			<NODE_ID>Breaker_RIGHT_3</NODE_ID>
+			<ANIM_NAME>Breaker_RIGHT_3</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>15</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
+			<NODE_ID>Breaker_RIGHT_4</NODE_ID>
+			<ANIM_NAME>Breaker_RIGHT_4</ANIM_NAME>
+		</UseTemplate>	
+		<!--
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX>14</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
+			<NODE_ID>Breaker_RIGHT_0</NODE_ID>
+			<ANIM_NAME>Breaker_RIGHT_0</ANIM_NAME>
+		</UseTemplate>-->
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX>16</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_1</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_1</ANIM_NAME>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX>16</BUS_INDEX>
+			<BUS_INDEX>17</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_2</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_2</ANIM_NAME>
 		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX>17</BUS_INDEX>
-			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
-			<NODE_ID>Breaker_RIGHT_3</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_3</ANIM_NAME>
-		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX>18</BUS_INDEX>
-			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
-			<NODE_ID>Breaker_RIGHT_4</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_4</ANIM_NAME>
-		</UseTemplate>			
-	
+		
+		
 	</Component>
   </Behaviors>
 </ModelInfo>
