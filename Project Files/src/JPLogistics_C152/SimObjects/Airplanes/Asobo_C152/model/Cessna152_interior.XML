@@ -535,7 +535,7 @@
           <MAX_VALUE>245</MAX_VALUE>
           <FAILURE_CODE>0</FAILURE_CODE>
           <DONT_APPEND_ID>True</DONT_APPEND_ID>
-		  <CIRCUIT_ID>13</CIRCUIT_ID> <!-- ######################################### WILL BREAK THE GAUGE -->
+		  <FAILURE>(A:CIRCUIT ON:41, Bool)</FAILURE>
         </UseTemplate>
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Pressure_Template">
           <UNITS>psi</UNITS>
