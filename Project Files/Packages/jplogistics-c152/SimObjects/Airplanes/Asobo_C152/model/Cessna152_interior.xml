@@ -535,7 +535,7 @@
           <MAX_VALUE>245</MAX_VALUE>
           <FAILURE_CODE>0</FAILURE_CODE>
           <DONT_APPEND_ID>True</DONT_APPEND_ID>
-		  <CIRCUIT_ID>13</CIRCUIT_ID> <!-- ######################################### WILL BREAK THE GAUGE -->
+		  <FAILURE>(A:CIRCUIT ON:41, Bool)</FAILURE>
         </UseTemplate>
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Pressure_Template">
           <UNITS>psi</UNITS>
@@ -694,8 +694,8 @@
         <UseTemplate Name="ASOBO_AUDIO_Switch_Speaker_Template"><!--WAS PUSH-->
           <NODE_ID>AUDIO_Push_SPKR</NODE_ID>
           <ANIM_NAME>AUDIO_Push_SPKR</ANIM_NAME>
-		      <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
-		      <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
+		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
         <UseTemplate Name="ASOBO_AUDIO_Switch_EXT_Template">
           <NODE_ID>AUDIO_Push_EXT</NODE_ID>
@@ -951,12 +951,16 @@
       </UseTemplate>
     </Component>
 	<Component ID="Breakers">
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		<!--<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>2</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_ALT</NODE_ID>
 			<ANIM_NAME>Breaker_ALT</ANIM_NAME>
-		</UseTemplate>
+		</UseTemplate>-->		
+		<UseTemplate Name="C152X_ALTERNATOR_Breaker">
+			<NODE_ID>Breaker_ALT</NODE_ID>
+			<ANIM_NAME>Breaker_ALT</ANIM_NAME>
+		</UseTemplate>				
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>3</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
