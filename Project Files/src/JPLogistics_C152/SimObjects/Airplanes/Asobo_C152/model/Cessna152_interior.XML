@@ -413,7 +413,7 @@
 
       <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Turn_Template">
         <BALL_PART_ID>INSTRUMENT_TURN_INDICATOR_BALL</BALL_PART_ID>
-		<FAILURE>(A:CIRCUIT ON:3, Bool)</FAILURE>                         <!--#######################  UNTESTED ##################-->
+		<FAILURE>(A:CIRCUIT ON:3, Bool)</FAILURE>                         <!--#######################  WORKING!! ##################-->
       </UseTemplate>
 
       <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Heading_Template">
@@ -457,35 +457,6 @@
       </Component>
 
       <UseTemplate Name="ASOBO_INSTRUMENT_Dial_Compass_Template">
-      </UseTemplate>
-
-      <Component ID="INSTRUMENTS_Electrical">
-        <DefaultTemplateParameters>
-          <FAILURE>(A:ELECTRICAL MAIN BUS VOLTAGE, Volts) 14 &gt;</FAILURE>
-          <ANIM_LAG>100</ANIM_LAG>
-        </DefaultTemplateParameters>
-        <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Fuel_Quantity_Template">
-          <TANK_ID>LEFT MAIN</TANK_ID>
-          <FAILURE_CODE>0</FAILURE_CODE>
-		  <FAILURE>(A:CIRCUIT ON:28, Bool)</FAILURE>
-          <USE_CUSTOM_POINTS>True</USE_CUSTOM_POINTS>
-
-          <!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
-
-
-          <SIMVAR_UNIT>gallons</SIMVAR_UNIT>
-
-          <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
-          <REF_VALUE_0>0 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_0>
-          <REF_VALUE_1>3 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_1>
-          <REF_VALUE_2>6 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_2>
-          <REF_VALUE_3>9 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_3>
-          <REF_VALUE_4>12 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_4>
-
-          <ANIM_VALUE_0>0</ANIM_VALUE_0>
-          <ANIM_VALUE_1>30</ANIM_VALUE_1>
-          <ANIM_VALUE_2>60</ANIM_VALUE_2>
-          <ANIM_VALUE_3>90</ANIM_VALUE_3>
           <ANIM_VALUE_4>100</ANIM_VALUE_4>
           <MAX_POINT_INDEX>5</MAX_POINT_INDEX>
           <ANIM_LENGTH>100</ANIM_LENGTH>
@@ -495,6 +466,7 @@
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Fuel_Quantity_Template">
           <TANK_ID>RIGHT MAIN</TANK_ID>
           <FAILURE_CODE>0</FAILURE_CODE>
+          <THRESHOLD>26</THRESHOLD>
 		  <FAILURE>(A:CIRCUIT ON:28, Bool)</FAILURE>
           <ID>2</ID>
           <USE_CUSTOM_POINTS>True</USE_CUSTOM_POINTS>
@@ -526,16 +498,44 @@
           <DONT_APPEND_ID>True</DONT_APPEND_ID>
         </UseTemplate>
         <UseTemplate Name="ASOBO_SAFETY_Indicator_LowVolt_Template">
-          <THRESHOLD>26</THRESHOLD>
 		  <FAILURE>(A:CIRCUIT ON:29, Bool)</FAILURE>
         </UseTemplate>
+      </UseTemplate>
+
+      <Component ID="INSTRUMENTS_Electrical">
+        <DefaultTemplateParameters>
+          <FAILURE>(A:ELECTRICAL MAIN BUS VOLTAGE, Volts) 14 &gt;</FAILURE>
+          <ANIM_LAG>100</ANIM_LAG>
+        </DefaultTemplateParameters>
+        <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Fuel_Quantity_Template">
+          <TANK_ID>LEFT MAIN</TANK_ID>
+          <FAILURE_CODE>0</FAILURE_CODE>
+		  <FAILURE>(A:CIRCUIT ON:28, Bool)</FAILURE>
+          <USE_CUSTOM_POINTS>True</USE_CUSTOM_POINTS>
+
+          <!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
+
+
+          <SIMVAR_UNIT>gallons</SIMVAR_UNIT>
+
+          <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
+          <REF_VALUE_0>0 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_0>
+          <REF_VALUE_1>3 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_1>
+          <REF_VALUE_2>6 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_2>
+          <REF_VALUE_3>9 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_3>
+          <REF_VALUE_4>12 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_4>
+
+          <ANIM_VALUE_0>0</ANIM_VALUE_0>
+          <ANIM_VALUE_1>30</ANIM_VALUE_1>
+          <ANIM_VALUE_2>60</ANIM_VALUE_2>
+          <ANIM_VALUE_3>90</ANIM_VALUE_3>
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Temperature_Template">
           <UNITS>fahrenheit</UNITS>
           <MIN_VALUE>0</MIN_VALUE>
           <MAX_VALUE>245</MAX_VALUE>
           <FAILURE_CODE>0</FAILURE_CODE>
           <DONT_APPEND_ID>True</DONT_APPEND_ID>
-		  <FAILURE>(A:CIRCUIT ON:41, Bool)</FAILURE>
+		  <FAILURE>(A:CIRCUIT ON:40, Bool)</FAILURE>
         </UseTemplate>
         <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Pressure_Template">
           <UNITS>psi</UNITS>
