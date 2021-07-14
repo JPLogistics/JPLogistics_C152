@@ -597,18 +597,6 @@
 			<TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_PANEL_TITLE</TOOLTIP_TITLE>
 			<WWISE_EVENT>navcom_audio_volume_knob</WWISE_EVENT>
 		</UseTemplate>
-      <UseTemplate Name="ASOBO_LIGHTING_Knob_Potentiometer_Template">
-        <NODE_ID>LIGHTING_Knob_Radio</NODE_ID>
-        <ANIM_NAME>LIGHTING_Knob_Radio</ANIM_NAME>
-        <POTENTIOMETER>6</POTENTIOMETER>
-        <!--<NO_AUTHORITY_OVER_SWITCH_STATE/>-->
-        <!--<INIT_VALUE>50</INIT_VALUE> ############## NO LONGER VALID, SET IN *.flt ########## -->
-        <LOWER_LIMIT>5</LOWER_LIMIT>
-        <CIRCUIT_ID>23</CIRCUIT_ID>
-        <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_PANEL_ACTION</TT_DESCRIPTION_ID>
-        <TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_PANEL_TITLE</TOOLTIP_TITLE>
-        <WWISE_EVENT>navcom_audio_volume_knob</WWISE_EVENT>
-      </UseTemplate>
 		<UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Panel_Template"> 
 			<ANIM_NAME>LIGHTING_Switch_Light_Cabin_1</ANIM_NAME>
 			<PART_ID>LIGHTING_Switch_Light_Cabin</PART_ID>
@@ -616,6 +604,20 @@
 			<CIRCUIT_ID>11</CIRCUIT_ID>
 			<WWISE_EVENT_1>cabin_light_switch_on</WWISE_EVENT_1>
 			<WWISE_EVENT_2>cabin_light_switch_off</WWISE_EVENT_2>
+		</UseTemplate>
+
+		<!--##########RADIO DIMMMING KNOB ##############################--------->
+		<UseTemplate Name="ASOBO_LIGHTING_Knob_Potentiometer_Template">
+			<NODE_ID>LIGHTING_Knob_Radio</NODE_ID>
+			<ANIM_NAME>LIGHTING_Knob_Radio</ANIM_NAME>
+			<POTENTIOMETER>6</POTENTIOMETER>
+			<!--<NO_AUTHORITY_OVER_SWITCH_STATE/>-->
+			<!--<INIT_VALUE>50</INIT_VALUE> ############## NO LONGER VALID, SET IN *.flt ########## -->
+			<LOWER_LIMIT>5</LOWER_LIMIT>
+			<CIRCUIT_ID>23</CIRCUIT_ID>
+			<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_PANEL_ACTION</TT_DESCRIPTION_ID>
+			<TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_PANEL_TITLE</TOOLTIP_TITLE>
+			<WWISE_EVENT>navcom_audio_volume_knob</WWISE_EVENT>
 		</UseTemplate>
 			
 		<!--#######BUTTON ON CEILING##########-->
@@ -684,7 +686,7 @@
         <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
 		<USE_DIMMING_POTENTIOMETER/>
-		<POTENTIOMETER>5</POTENTIOMETER>
+		<POTENTIOMETER>6</POTENTIOMETER>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
         <ID>2</ID>
@@ -692,14 +694,14 @@
         <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
         <USE_DIMMING_POTENTIOMETER/>
-        <POTENTIOMETER>5</POTENTIOMETER>
+        <POTENTIOMETER>6</POTENTIOMETER>
       </UseTemplate>
       <Component Id="NAVCOM_Sound_Push_Buttons">
         <UseTemplate Name="ASOBO_NAVCOM_Switch_MARKER_Sound_Template"><!--WAS PUSH-->
           <NODE_ID>AUDIO_Push_MKR</NODE_ID>
           <ANIM_NAME>AUDIO_Push_MKR</ANIM_NAME>
-		      <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
-		      <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
+		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
         <UseTemplate Name="ASOBO_NAVCOM_Switch_DME_Sound_Template"><!--WAS PUSH-->
           <NODE_ID>AUDIO_Push_DME</NODE_ID>
@@ -790,7 +792,7 @@
       <UseTemplate Name="ASOBO_ADF_AS300_Template">
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
         <CIRCUIT_ADF>37</CIRCUIT_ADF>
-		<POTENTIOMETER>5</POTENTIOMETER>
+		<POTENTIOMETER>6</POTENTIOMETER>
       </UseTemplate>
     </Component>
     <Component ID="TRANSPONDER">
@@ -812,15 +814,15 @@
         <ID>1</ID>
         <NODE_ID>DME_Screen</NODE_ID>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
-		<!--<USE_DIMMING_POTENTIOMETER/>
-		<POTENTIOMETER>5</POTENTIOMETER> Removed for now while testing-->
+		<USE_DIMMING_POTENTIOMETER/>
+		<POTENTIOMETER>6</POTENTIOMETER><!-- Removed for now while testing-->
       </UseTemplate>
       <UseTemplate Name="JPL_EFB_Screens_Template">
         <ID>1</ID>
         <NODE_ID>SCREEN_EFB</NODE_ID>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
 		<!--<USE_DIMMING_POTENTIOMETER/>
-		<POTENTIOMETER>5</POTENTIOMETER> Removed for now while testing-->
+		<POTENTIOMETER>6</POTENTIOMETER> Removed for now while testing-->
       </UseTemplate>
     </Component>
     <Component ID="AUDIO_TOP_PANEL">
