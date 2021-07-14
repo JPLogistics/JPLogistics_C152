@@ -1,0 +1,32 @@
+	<Template Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		<DefaultTemplateParameters>
+			<WWISE_EVENT_1>beacon_light_switch_on</WWISE_EVENT_1>
+			<WWISE_EVENT_2>beacon_light_switch_off</WWISE_EVENT_2>
+		</DefaultTemplateParameters>
+		<Component ID="#NODE_ID#" Node="#NODE_ID#">
+			<UseTemplate Name="ASOBO_GT_Switch_Code">
+				<INVERT_ANIM>TRUE</INVERT_ANIM>
+				<ANIM_CODE>(A:BUS CONNECTION ON:#BUS_INDEX#, Bool) 100 *</ANIM_CODE>
+				<LEFT_SINGLE_CODE>
+					#BUS_INDEX# #BATTERY_BUS_INDEX# (&gt;K:2:ELECTRICAL_BUS_TO_BUS_CONNECTION_TOGGLE)
+				</LEFT_SINGLE_CODE>
+			</UseTemplate>
+		</Component>	
+	</Template>
+	
+<Template Name = "C152X_ALTERNATOR_Breaker">
+  <UseTemplate Name = "C152X_2way_switch_xml">
+    <ANIMTIP_0></ANIMTIP_0>
+    <ANIMTIP_1></ANIMTIP_1>
+    <WWISE_EVENT_1>audio_switch_intercom</WWISE_EVENT_1>
+    <WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2>
+    <LEFT_SINGLE_CODE>
+      (K:ELECTRICAL_ALTERNATOR_BREAKER_TOGGLE) 0 ==
+      if{
+      1 (&gt;K:ELECTRICAL_ALTERNATOR_BREAKER_TOGGLE)
+      } els{
+      0 (&gt;K:ELECTRICAL_ALTERNATOR_BREAKER_TOGGLE)
+      }
+    </LEFT_SINGLE_CODE>
+  </UseTemplate>
+</Template>
