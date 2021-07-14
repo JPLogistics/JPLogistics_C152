@@ -146,6 +146,7 @@
     <Animation guid="6c61289e-afb5-43cb-9644-64e1bfa50bf1" name="INSTRUMENT_Warning_Turn_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="b9f1a66e-1f1e-4dc3-8ce5-82c88baa36f1" name="LANDING_GEAR_Switch_ParkingBrake" type="standard" typeParam="Autoplay"/>
     <Animation guid="f78b71bc-d374-474c-aeca-a618aa6d3990" name="LIGHTING_Knob_Panel" type="standard" typeParam="Autoplay"/>
+    <Animation guid="9cb1828f-f8e9-40d0-bc51-a1c390e2b3a5" name="LIGHTING_Knob_Radio" type="standard" typeParam="Autoplay"/>
     <Animation guid="e7f66033-34b9-4d8b-a50b-e1b494d00479" name="LIGHTING_Switch_Light_Beacon_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="cf2f00e4-aefb-437d-b8c4-b70de8ce73a9" name="LIGHTING_Switch_Light_Cabin_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="f49175cc-e6f6-4421-8522-700b2df94868" name="LIGHTING_Switch_Light_Landing_1" type="standard" typeParam="Autoplay"/>
@@ -208,6 +209,7 @@
         <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
         <INVERT_IM_DRAG_INPUT_SCALAR>True</INVERT_IM_DRAG_INPUT_SCALAR>
         <ANIM_NAME>DEICE_Lever_Engine</ANIM_NAME>
+        <UseTemplate Name="JPL_Windshield"></UseTemplate>
       </UseTemplate>
       <UseTemplate Name="ASOBO_DEICE_Switch_Pitot_Template">
       </UseTemplate>
@@ -339,7 +341,22 @@
         <NO_PART_ID_ON_ANIM_NODE>True</NO_PART_ID_ON_ANIM_NODE>
         <USE_BRAKE>True</USE_BRAKE>
       </UseTemplate>
-
+	  <!--
+		<UseTemplate Name="ASOBO_GT_Highlight_Template">
+			<HIGHLIGHT_NODE_ID>HANDLING_RudderPedals_1_1</HIGHLIGHT_NODE_ID>
+			<PART_ID>HANDLING_RudderPedals_1_1_Highlight</PART_ID>
+		</UseTemplate>
+		
+		<UseTemplate Name="ASOBO_GT_Highlight_Template">
+			<HIGHLIGHT_NODE_ID>HANDLING_RudderPedals_1_2</HIGHLIGHT_NODE_ID>
+			<PART_ID>HANDLING_RudderPedals_1_2_Highlight</PART_ID>
+		</UseTemplate>
+		
+		<UseTemplate Name="ASOBO_GT_Highlight_Template">
+			<HIGHLIGHT_NODE_ID>HANDLING_RudderPedals_2_1</HIGHLIGHT_NODE_ID>
+			<PART_ID>HANDLING_RudderPedals_2_1_Highlight</PART_ID>
+		</UseTemplate>
+		-->
       <UseTemplate Name="ASOBO_HANDLING_Lever_Flaps_Continuous_Template">
         <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
         <INVERT_INTERACTION>True</INVERT_INTERACTION>
@@ -366,191 +383,184 @@
 
     <!-- INSTRUMENTS ########################### -->
     <Component ID="INSTRUMENTS">
-      <UseTemplate Name="ASOBO_INSTRUMENT_Needle_ADF_Template">
-        <ADF_KNOB/>
-      </UseTemplate>
+		<UseTemplate Name="ASOBO_INSTRUMENT_Needle_ADF_Template">
+			<ADF_KNOB/>
+		</UseTemplate>
 
-      <UseTemplate Name="ASOBO_PRESSURIZATION_Needle_Suction_Template">
-        <MIN_VALUE>0</MIN_VALUE>
-        <DONT_APPEND_ID>True</DONT_APPEND_ID>
-      </UseTemplate>
+		<UseTemplate Name="ASOBO_PRESSURIZATION_Needle_Suction_Template">
+			<MIN_VALUE>0</MIN_VALUE>
+			<DONT_APPEND_ID>True</DONT_APPEND_ID>
+		</UseTemplate>
 
-      <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Airspeed_Template">
-        <MIN_VALUE>0</MIN_VALUE>
-        <MAX_VALUE>170</MAX_VALUE>
-        <HIGHLIGHT_NODE_ID>INSTRUMENT_AirspeedIndicator_Highlight</HIGHLIGHT_NODE_ID>
-        <DONT_APPEND_ID>True</DONT_APPEND_ID>
-      </UseTemplate>
+		<UseTemplate Name="ASOBO_INSTRUMENT_Needle_Airspeed_Template">
+			<MIN_VALUE>0</MIN_VALUE>
+			<MAX_VALUE>170</MAX_VALUE>
+			<HIGHLIGHT_NODE_ID>INSTRUMENT_AirspeedIndicator_Highlight</HIGHLIGHT_NODE_ID>
+			<DONT_APPEND_ID>True</DONT_APPEND_ID>
+		</UseTemplate>
 
-      <UseTemplate Name="ASOBO_INSTRUMENT_AttitudeIndicator_Template">
-        <USE_FLAG/>
-        <HIGHLIGHT_NODE_ID>INSTRUMENT_AttitudeIndicator_Highlight_1</HIGHLIGHT_NODE_ID>
-        <USE_SUCTION_PRESSURE_CHECK/>
-        <USE_LINEAR_VALUES>True</USE_LINEAR_VALUES>
-        <NO_CAGE/>
-        <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_AttitudeIndicator_Knob_Visual_1</KNOB_HIGHLIGHT_NODE_ID>
-        <BARS_INVERT_ANIM>True</BARS_INVERT_ANIM>
-      </UseTemplate>
+		<UseTemplate Name="ASOBO_INSTRUMENT_AttitudeIndicator_Template">
+			<USE_FLAG/>
+			<HIGHLIGHT_NODE_ID>INSTRUMENT_AttitudeIndicator_Highlight_1</HIGHLIGHT_NODE_ID>
+			<USE_SUCTION_PRESSURE_CHECK/>
+			<USE_LINEAR_VALUES>True</USE_LINEAR_VALUES>
+			<NO_CAGE/>
+			<KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_AttitudeIndicator_Knob_Visual_1</KNOB_HIGHLIGHT_NODE_ID>
+			<BARS_INVERT_ANIM>True</BARS_INVERT_ANIM>
+		</UseTemplate>
 
-      <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Current_Time_Clock_Template">
-        <DELTA_VARS_SCOPE>L</DELTA_VARS_SCOPE>
-      </UseTemplate>
-
-
-      <UseTemplate Name="ASOBO_GT_Highlight_Template">
-        <HIGHLIGHT_NODE_ID>INSTRUMENT_Clock_Highlight</HIGHLIGHT_NODE_ID>
-      </UseTemplate>
+		<UseTemplate Name="ASOBO_INSTRUMENT_Needle_Current_Time_Clock_Template">
+			<DELTA_VARS_SCOPE>L</DELTA_VARS_SCOPE>
+		</UseTemplate>
 
 
-      <UseTemplate Name="ASOBO_INSTRUMENT_Altimeter_Template">
-        <MIN_VALUE_STRIP>27.9</MIN_VALUE_STRIP>
-        <MAX_VALUE_STRIP>31.6</MAX_VALUE_STRIP>
-        <MIN_VALUE_KNOB>28.2</MIN_VALUE_KNOB>
-        <MAX_VALUE_KNOB>31.3</MAX_VALUE_KNOB>
-        <HIGHLIGHT_NODE_ID>INSTRUMENT_Altimeter_Highlight_1</HIGHLIGHT_NODE_ID>
-        <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_Knob_Altimeter_Visual_1</KNOB_HIGHLIGHT_NODE_ID>
-      </UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Highlight_Template">
+			<HIGHLIGHT_NODE_ID>INSTRUMENT_Clock_Highlight</HIGHLIGHT_NODE_ID>
+		</UseTemplate>
 
-      <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Turn_Template">
-        <BALL_PART_ID>INSTRUMENT_TURN_INDICATOR_BALL</BALL_PART_ID>
-		<FAILURE>(A:CIRCUIT ON:3, Bool)</FAILURE>                         <!--#######################  UNTESTED ##################-->
-      </UseTemplate>
 
-      <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Heading_Template">
-        <USE_FLAG/>
-        <HIGHLIGHT_NODE_ID>INSTRUMENT_Heading_Highlight_1</HIGHLIGHT_NODE_ID>
-        <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_Knob_Heading_Compass_Visual_1</KNOB_HIGHLIGHT_NODE_ID>
-      </UseTemplate>
+		<UseTemplate Name="ASOBO_INSTRUMENT_Altimeter_Template">
+			<MIN_VALUE_STRIP>27.9</MIN_VALUE_STRIP>
+			<MAX_VALUE_STRIP>31.6</MAX_VALUE_STRIP>
+			<MIN_VALUE_KNOB>28.2</MIN_VALUE_KNOB>
+			<MAX_VALUE_KNOB>31.3</MAX_VALUE_KNOB>
+			<HIGHLIGHT_NODE_ID>INSTRUMENT_Altimeter_Highlight_1</HIGHLIGHT_NODE_ID>
+			<KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_Knob_Altimeter_Visual_1</KNOB_HIGHLIGHT_NODE_ID>
+		</UseTemplate>
 
-      <UseTemplate Name="ASOBO_INSTRUMENT_Needle_VerticalSpeed_Template">
-      </UseTemplate>
+		<UseTemplate Name="ASOBO_INSTRUMENT_Needle_Turn_Template">
+			<BALL_PART_ID>INSTRUMENT_TURN_INDICATOR_BALL</BALL_PART_ID>
+			<FAILURE>(A:CIRCUIT ON:41, Bool)</FAILURE>                   <!--#######################  WORKING!! ##################-->
+		</UseTemplate>
 
-      <UseTemplate name="ASOBO_GT_ComponentWith_PART_ID">
-        <PART_ID>INSTRUMENT_VerticalSpeed_Highlight</PART_ID>
-        <NODE_ID>INSTRUMENT_VerticalSpeed_Highlight_1</NODE_ID>
-      </UseTemplate>
+		<UseTemplate Name="ASOBO_INSTRUMENT_Needle_Heading_Template">
+			<USE_FLAG/>
+			<HIGHLIGHT_NODE_ID>INSTRUMENT_Heading_Highlight_1</HIGHLIGHT_NODE_ID>
+			<KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_Knob_Heading_Compass_Visual_1</KNOB_HIGHLIGHT_NODE_ID>
+		</UseTemplate>
 
-      <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Engine_RPM_Template">
-        <MIN_VALUE>0</MIN_VALUE>
-        <MAX_VALUE>3500</MAX_VALUE>
-        <NODE_ID>INSTRUMENT_Needle_Engine_RPM_1</NODE_ID>
-        <ANIM_NAME>INSTRUMENT_Needle_Engine_RPM</ANIM_NAME>
-        <CREATE_HIGHLIGHT_NODE>True</CREATE_HIGHLIGHT_NODE>
-        <HIGHLIGHT_NODE_ID>INSTRUMENT_Engine_RPM_Highlight</HIGHLIGHT_NODE_ID>
-        <HIGHLIGHT_PART_ID>INSTRUMENT_Engine_RPM_Highlight</HIGHLIGHT_PART_ID>
-      </UseTemplate>
+		<UseTemplate Name="ASOBO_INSTRUMENT_Needle_VerticalSpeed_Template">
+		</UseTemplate>
 
-      <Component ID="INSTRUMENTS_CDI">
-        <DefaultTemplateParameters>
-          <!--<IS_AVIONICS_ON>(A:CIRCUIT ON:34, Bool)</IS_AVIONICS_ON>--><!-- Not Required - Defined Below -->
-        </DefaultTemplateParameters>
-        <UseTemplate Name="ASOBO_INSTRUMENT_CDI_Template">
-          <ID>1</ID>
-          <IS_AVIONICS_ON>(A:CIRCUIT ON:23, Bool)</IS_AVIONICS_ON><!-- COM1 Circuit used for correct behaviour! -->
-          <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_1</KNOB_HIGHLIGHT_NODE_ID>
+		<UseTemplate name="ASOBO_GT_ComponentWith_PART_ID">
+			<PART_ID>INSTRUMENT_VerticalSpeed_Highlight</PART_ID>
+			<NODE_ID>INSTRUMENT_VerticalSpeed_Highlight_1</NODE_ID>
+		</UseTemplate>
+
+		<UseTemplate Name="ASOBO_INSTRUMENT_Needle_Engine_RPM_Template">
+			<MIN_VALUE>0</MIN_VALUE>
+			<MAX_VALUE>3500</MAX_VALUE>
+			<NODE_ID>INSTRUMENT_Needle_Engine_RPM_1</NODE_ID>
+			<ANIM_NAME>INSTRUMENT_Needle_Engine_RPM</ANIM_NAME>
+			<CREATE_HIGHLIGHT_NODE>True</CREATE_HIGHLIGHT_NODE>
+			<HIGHLIGHT_NODE_ID>INSTRUMENT_Engine_RPM_Highlight</HIGHLIGHT_NODE_ID>
+			<HIGHLIGHT_PART_ID>INSTRUMENT_Engine_RPM_Highlight</HIGHLIGHT_PART_ID>
+		</UseTemplate>
+
+		<Component ID="INSTRUMENTS_CDI">
+			<DefaultTemplateParameters>
+			<!--<IS_AVIONICS_ON>(A:CIRCUIT ON:34, Bool)</IS_AVIONICS_ON>--><!-- Not Required - Defined Below -->
+			</DefaultTemplateParameters>
+			<UseTemplate Name="ASOBO_INSTRUMENT_CDI_Template">
+				<ID>1</ID>
+				<IS_AVIONICS_ON>(A:CIRCUIT ON:23, Bool)</IS_AVIONICS_ON><!-- COM1 Circuit used for correct behaviour! -->
+				<KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_1</KNOB_HIGHLIGHT_NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_INSTRUMENT_CDI_Template">
+				<ID>2</ID>
+				<IS_AVIONICS_ON>(A:CIRCUIT ON:25, Bool)</IS_AVIONICS_ON><!-- COM2 Circuit used for correct behaviour! -->
+				<KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_2</KNOB_HIGHLIGHT_NODE_ID>
+			</UseTemplate>
+		</Component>
+	
+		<UseTemplate Name="ASOBO_INSTRUMENT_Dial_Compass_Template">
         </UseTemplate>
-        <UseTemplate Name="ASOBO_INSTRUMENT_CDI_Template">
-          <ID>2</ID>
-          <IS_AVIONICS_ON>(A:CIRCUIT ON:25, Bool)</IS_AVIONICS_ON><!-- COM2 Circuit used for correct behaviour! -->
-          <KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_2</KNOB_HIGHLIGHT_NODE_ID>
-        </UseTemplate>
-      </Component>
 
-      <UseTemplate Name="ASOBO_INSTRUMENT_Dial_Compass_Template">
-      </UseTemplate>
+		<Component ID="INSTRUMENTS_Electrical">
+			<DefaultTemplateParameters>
+				<FAILURE>(A:ELECTRICAL MAIN BUS VOLTAGE, Volts) 14 &gt;</FAILURE>
+				<ANIM_LAG>100</ANIM_LAG>
+			</DefaultTemplateParameters>
+			<UseTemplate Name="ASOBO_INSTRUMENT_Needle_Fuel_Quantity_Template">
+				<TANK_ID>LEFT MAIN</TANK_ID>
+				<FAILURE_CODE>0</FAILURE_CODE>
+				<FAILURE>(A:CIRCUIT ON:28, Bool)</FAILURE>
+				<USE_CUSTOM_POINTS>True</USE_CUSTOM_POINTS>
+				<!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
+				<SIMVAR_UNIT>gallons</SIMVAR_UNIT>
+				<!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
+				<REF_VALUE_0>0 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_0>
+				<REF_VALUE_1>3 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_1>
+				<REF_VALUE_2>6 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_2>
+				<REF_VALUE_3>9 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_3>
+				<REF_VALUE_4>12 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_4>
 
-      <Component ID="INSTRUMENTS_Electrical">
-        <DefaultTemplateParameters>
-          <FAILURE>(A:ELECTRICAL MAIN BUS VOLTAGE, Volts) 14 &gt;</FAILURE>
-          <ANIM_LAG>100</ANIM_LAG>
-        </DefaultTemplateParameters>
-        <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Fuel_Quantity_Template">
-          <TANK_ID>LEFT MAIN</TANK_ID>
-          <FAILURE_CODE>0</FAILURE_CODE>
-		  <FAILURE>(A:CIRCUIT ON:28, Bool)</FAILURE>
-          <USE_CUSTOM_POINTS>True</USE_CUSTOM_POINTS>
+				<ANIM_VALUE_0>0</ANIM_VALUE_0>
+				<ANIM_VALUE_1>30</ANIM_VALUE_1>
+				<ANIM_VALUE_2>60</ANIM_VALUE_2>
+				<ANIM_VALUE_3>90</ANIM_VALUE_3>
+				<ANIM_VALUE_4>100</ANIM_VALUE_4>
+				<MAX_POINT_INDEX>5</MAX_POINT_INDEX>
+				<ANIM_LENGTH>100</ANIM_LENGTH>
+				<MAX_DISPLAYABLE>100</MAX_DISPLAYABLE>
+				<MIN_DISPLAYABLE>0</MIN_DISPLAYABLE>
+			</UseTemplate>	
+		
+			<UseTemplate Name="ASOBO_INSTRUMENT_Needle_Fuel_Quantity_Template">
+				<TANK_ID>RIGHT MAIN</TANK_ID>
+				<FAILURE_CODE>0</FAILURE_CODE>
+				<FAILURE>(A:CIRCUIT ON:28, Bool)</FAILURE>
+				<ID>2</ID>
+				<USE_CUSTOM_POINTS>True</USE_CUSTOM_POINTS>
+				<!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
+				<SIMVAR_UNIT>gallons</SIMVAR_UNIT>
+				<!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
+				<REF_VALUE_0>0 @FuelTankSensorAdjustmentRightTank</REF_VALUE_0>
+				<REF_VALUE_1>3 @FuelTankSensorAdjustmentRightTank</REF_VALUE_1>
+				<REF_VALUE_2>6 @FuelTankSensorAdjustmentRightTank</REF_VALUE_2>
+				<REF_VALUE_3>9 @FuelTankSensorAdjustmentRightTank</REF_VALUE_3>
+				<REF_VALUE_4>12 @FuelTankSensorAdjustmentRightTank</REF_VALUE_4>
 
-          <!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
-
-
-          <SIMVAR_UNIT>gallons</SIMVAR_UNIT>
-
-          <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
-          <REF_VALUE_0>0 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_0>
-          <REF_VALUE_1>3 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_1>
-          <REF_VALUE_2>6 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_2>
-          <REF_VALUE_3>9 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_3>
-          <REF_VALUE_4>12 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_4>
-
-          <ANIM_VALUE_0>0</ANIM_VALUE_0>
-          <ANIM_VALUE_1>30</ANIM_VALUE_1>
-          <ANIM_VALUE_2>60</ANIM_VALUE_2>
-          <ANIM_VALUE_3>90</ANIM_VALUE_3>
-          <ANIM_VALUE_4>100</ANIM_VALUE_4>
-          <MAX_POINT_INDEX>5</MAX_POINT_INDEX>
-          <ANIM_LENGTH>100</ANIM_LENGTH>
-          <MAX_DISPLAYABLE>100</MAX_DISPLAYABLE>
-          <MIN_DISPLAYABLE>0</MIN_DISPLAYABLE>
-        </UseTemplate>
-        <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Fuel_Quantity_Template">
-          <TANK_ID>RIGHT MAIN</TANK_ID>
-          <FAILURE_CODE>0</FAILURE_CODE>
-		  <FAILURE>(A:CIRCUIT ON:28, Bool)</FAILURE>
-          <ID>2</ID>
-          <USE_CUSTOM_POINTS>True</USE_CUSTOM_POINTS>
-
-          <!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
-
-          <SIMVAR_UNIT>gallons</SIMVAR_UNIT>
-
-          <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
-          <REF_VALUE_0>0 @FuelTankSensorAdjustmentRightTank</REF_VALUE_0>
-          <REF_VALUE_1>3 @FuelTankSensorAdjustmentRightTank</REF_VALUE_1>
-          <REF_VALUE_2>6 @FuelTankSensorAdjustmentRightTank</REF_VALUE_2>
-          <REF_VALUE_3>9 @FuelTankSensorAdjustmentRightTank</REF_VALUE_3>
-          <REF_VALUE_4>12 @FuelTankSensorAdjustmentRightTank</REF_VALUE_4>
-
-          <ANIM_VALUE_0>0</ANIM_VALUE_0>
-          <ANIM_VALUE_1>30</ANIM_VALUE_1>
-          <ANIM_VALUE_2>60</ANIM_VALUE_2>
-          <ANIM_VALUE_3>90</ANIM_VALUE_3>
-          <ANIM_VALUE_4>100</ANIM_VALUE_4>
-          <MAX_POINT_INDEX>5</MAX_POINT_INDEX>
-          <ANIM_LENGTH>100</ANIM_LENGTH>
-          <MAX_DISPLAYABLE>100</MAX_DISPLAYABLE>
-          <MIN_DISPLAYABLE>0</MIN_DISPLAYABLE>
-        </UseTemplate>
-        <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Ammeter_Template">
-          <FAILURE_CODE>50</FAILURE_CODE>
-          <INVERT_ANIM>True</INVERT_ANIM>
-          <DONT_APPEND_ID>True</DONT_APPEND_ID>
-        </UseTemplate>
-        <UseTemplate Name="ASOBO_SAFETY_Indicator_LowVolt_Template">
-          <THRESHOLD>26</THRESHOLD>
-		  <FAILURE>(A:CIRCUIT ON:29, Bool)</FAILURE>
-        </UseTemplate>
-        <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Temperature_Template">
-          <UNITS>fahrenheit</UNITS>
-          <MIN_VALUE>0</MIN_VALUE>
-          <MAX_VALUE>245</MAX_VALUE>
-          <FAILURE_CODE>0</FAILURE_CODE>
-          <DONT_APPEND_ID>True</DONT_APPEND_ID>
-		  <FAILURE>(A:CIRCUIT ON:40, Bool)</FAILURE>
-        </UseTemplate>
-        <UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Pressure_Template">
-          <UNITS>psi</UNITS>
-          <MIN_VALUE>0</MIN_VALUE>
-          <MAX_VALUE>100</MAX_VALUE>
-          <FAILURE_CODE>0</FAILURE_CODE>
-          <DONT_APPEND_ID>True</DONT_APPEND_ID>
-        </UseTemplate>
-        <UseTemplate Name="ASOBO_INSTRUMENT_Needle_OAT_Template">
-          <MIN_VALUE>-58</MIN_VALUE>
-          <MAX_VALUE>66</MAX_VALUE>
-        </UseTemplate>
-      </Component>
-    </Component>
-
+				<ANIM_VALUE_0>0</ANIM_VALUE_0>
+				<ANIM_VALUE_1>30</ANIM_VALUE_1>
+				<ANIM_VALUE_2>60</ANIM_VALUE_2>
+				<ANIM_VALUE_3>90</ANIM_VALUE_3>
+				<ANIM_VALUE_4>100</ANIM_VALUE_4>
+				<MAX_POINT_INDEX>5</MAX_POINT_INDEX>
+				<ANIM_LENGTH>100</ANIM_LENGTH>
+				<MAX_DISPLAYABLE>100</MAX_DISPLAYABLE>
+				<MIN_DISPLAYABLE>0</MIN_DISPLAYABLE>
+			</UseTemplate>		  
+			<UseTemplate Name="ASOBO_INSTRUMENT_Needle_Ammeter_Template">
+				<FAILURE_CODE>50</FAILURE_CODE>
+				<INVERT_ANIM>True</INVERT_ANIM>
+				<DONT_APPEND_ID>True</DONT_APPEND_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_SAFETY_Indicator_LowVolt_Template">
+				<FAILURE>(A:CIRCUIT ON:29, Bool)</FAILURE>
+				<THRESHOLD>26</THRESHOLD>
+			</UseTemplate>				  		  
+			<UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Temperature_Template">
+				<UNITS>fahrenheit</UNITS>
+				<MIN_VALUE>0</MIN_VALUE>
+				<MAX_VALUE>245</MAX_VALUE>
+				<FAILURE_CODE>0</FAILURE_CODE>
+				<DONT_APPEND_ID>True</DONT_APPEND_ID>
+				<FAILURE>(A:CIRCUIT ON:40, Bool)</FAILURE>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_INSTRUMENT_Needle_Oil_Pressure_Template">
+				<UNITS>psi</UNITS>
+				<MIN_VALUE>0</MIN_VALUE>
+				<MAX_VALUE>100</MAX_VALUE>
+				<FAILURE_CODE>0</FAILURE_CODE>
+				<DONT_APPEND_ID>True</DONT_APPEND_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_INSTRUMENT_Needle_OAT_Template">
+				<MIN_VALUE>-58</MIN_VALUE>
+				<MAX_VALUE>66</MAX_VALUE>
+			</UseTemplate>
+		</Component>
+	</Component>
     <!-- LIGHTING ########################### -->
     <Component ID="LIGHTING">
       <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Strobe_Template">
@@ -573,7 +583,6 @@
       <UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Beacon_Template">
         <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_BEACON_ACTION_SET</TT_DESCRIPTION_ID>
       </UseTemplate>
-
 		
 		<!-- ##########PANEL LIGHTS THIS IS BOTTOM KNOB AND DOME LT SWITCH ON DASH ###########-->
 		<UseTemplate Name="ASOBO_LIGHTING_Knob_Potentiometer_Template">
@@ -588,6 +597,18 @@
 			<TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_PANEL_TITLE</TOOLTIP_TITLE>
 			<WWISE_EVENT>navcom_audio_volume_knob</WWISE_EVENT>
 		</UseTemplate>
+      <UseTemplate Name="ASOBO_LIGHTING_Knob_Potentiometer_Template">
+			<NODE_ID>LIGHTING_Knob_Radio</NODE_ID>
+			<ANIM_NAME>LIGHTING_Knob_Radio</ANIM_NAME>
+			<POTENTIOMETER>6</POTENTIOMETER>
+			<!--<NO_AUTHORITY_OVER_SWITCH_STATE/>-->
+			<!--<INIT_VALUE>50</INIT_VALUE> ############## NO LONGER VALID, SET IN *.flt ########## -->
+			<LOWER_LIMIT>5</LOWER_LIMIT>
+			<CIRCUIT_ID>23</CIRCUIT_ID>
+			<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_PANEL_ACTION</TT_DESCRIPTION_ID>
+			<TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_PANEL_TITLE</TOOLTIP_TITLE>
+			<WWISE_EVENT>navcom_audio_volume_knob</WWISE_EVENT>
+		</UseTemplate>
 		<UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Panel_Template"> 
 			<ANIM_NAME>LIGHTING_Switch_Light_Cabin_1</ANIM_NAME>
 			<PART_ID>LIGHTING_Switch_Light_Cabin</PART_ID>
@@ -596,9 +617,7 @@
 			<WWISE_EVENT_1>cabin_light_switch_on</WWISE_EVENT_1>
 			<WWISE_EVENT_2>cabin_light_switch_off</WWISE_EVENT_2>
 		</UseTemplate>
-		
-		
-		
+			
 		<!--#######BUTTON ON CEILING##########-->
 		<UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Cabin_Template">
 			<NODE_ID>LIGHTING_Switch_Cabin</NODE_ID>
@@ -606,7 +625,7 @@
 			<CIRCUIT_ID>15</CIRCUIT_ID>
 		</UseTemplate>		
 		<UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template">
-		<POTENTIOMETER>9</POTENTIOMETER><!-- NONEXISTENT POT TO PREVENT DIMMING -->
+			<POTENTIOMETER>9</POTENTIOMETER><!-- NONEXISTENT POT TO PREVENT DIMMING -->
 		</UseTemplate>	
 		
 		<!--######## RED EMISSIVE ON CEILING/LIGHT SET FROM TYPE/POT IN SYSTEM.CFG ########## -->
@@ -615,9 +634,6 @@
 		    <POTENTIOMETER>4</POTENTIOMETER>
 			<CIRCUIT_ID>12</CIRCUIT_ID>
 		</UseTemplate>
-
-
-
     </Component>
 
     <!-- PASSENGERS ########################### -->
@@ -803,6 +819,8 @@
         <ID>1</ID>
         <NODE_ID>SCREEN_EFB</NODE_ID>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
+		<!--<USE_DIMMING_POTENTIOMETER/>
+		<POTENTIOMETER>5</POTENTIOMETER> Removed for now while testing-->
       </UseTemplate>
     </Component>
     <Component ID="AUDIO_TOP_PANEL">
@@ -1045,18 +1063,18 @@
 			<NODE_ID>Breaker_RIGHT_2</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_2</ANIM_NAME>
 		</UseTemplate>
-    <UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-      <BUS_INDEX>17</BUS_INDEX>
-      <BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
-      <NODE_ID>Breaker_RIGHT_3</NODE_ID>
-      <ANIM_NAME>Breaker_RIGHT_3</ANIM_NAME>
-    </UseTemplate>
-    <UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-      <BUS_INDEX>18</BUS_INDEX>
-      <BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
-      <NODE_ID>Breaker_RIGHT_4</NODE_ID>
-      <ANIM_NAME>Breaker_RIGHT_4</ANIM_NAME>
-    </UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX>17</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
+			<NODE_ID>Breaker_RIGHT_3</NODE_ID>
+			<ANIM_NAME>Breaker_RIGHT_3</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX>18</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
+			<NODE_ID>Breaker_RIGHT_4</NODE_ID>
+			<ANIM_NAME>Breaker_RIGHT_4</ANIM_NAME>
+		</UseTemplate>
 		
 		
 	</Component>
