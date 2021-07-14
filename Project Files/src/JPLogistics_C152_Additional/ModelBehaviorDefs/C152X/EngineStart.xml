@@ -1,13 +1,3 @@
-<Template Name = "JPL_Windshield">
-  <UseTemplate Name="ASOBO_GT_Update">
-    <UPDATE_CODE>
-      (A:ENG ANTI ICE:1, Bool) (A:WINDSHIELD DEICE SWITCH, Bool) != if{
-      (&gt;K:WINDSHIELD_DEICE_TOGGLE)
-      }
-    </UPDATE_CODE>
-  </UseTemplate>
-</Template>
-
 <!--All fuel and engine logic courtesy of G36 Improvement Project-->
 <!-- Fuel System / Engine Start macro's -->
 <!--<Macro Name="PumpScalar"> (A:GENERAL ENG THROTTLE LEVER POSITION:1, percent) 100 / (A:GENERAL ENG MIXTURE LEVER POSITION:1, percent) 100 / * </Macro>-->
