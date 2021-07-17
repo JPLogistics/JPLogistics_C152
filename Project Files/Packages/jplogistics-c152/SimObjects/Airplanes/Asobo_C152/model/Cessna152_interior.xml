@@ -209,7 +209,6 @@
         <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
         <INVERT_IM_DRAG_INPUT_SCALAR>True</INVERT_IM_DRAG_INPUT_SCALAR>
         <ANIM_NAME>DEICE_Lever_Engine</ANIM_NAME>
-        <UseTemplate Name="JPL_Windshield"></UseTemplate>
       </UseTemplate>
       <UseTemplate Name="ASOBO_DEICE_Switch_Pitot_Template">
       </UseTemplate>
@@ -650,6 +649,7 @@
       <UseTemplate Name="ASOBO_PASSENGER_Lever_Cabin_Heat_Template">
         <NODE_ID>PASSENGER_Switch_Cabin_Heat_1</NODE_ID>
         <ANIM_NAME>PASSENGER_Switch_Cabin_Heat_1</ANIM_NAME>
+        <UseTemplate Name="JPL_Windshield"></UseTemplate>
       </UseTemplate>
     </Component>
 
