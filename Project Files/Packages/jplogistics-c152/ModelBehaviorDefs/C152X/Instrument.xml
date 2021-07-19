@@ -166,6 +166,15 @@
 		}
 		</UPDATE_CODE>	
 	</UseTemplate>
+  <UseTemplate Name="ASOBO_GT_Update">
+    <Update Frequency="5">
+      (A:COM VOLUME:2,Percent) 1 &gt;= if{
+        #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_ON)
+      } els {
+        #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
+      }
+    </Update>
+  </UseTemplate>
 </Template>	
 <Template Name="COM2_VOLUME">
 	<UseTemplate Name="ASOBO_GT_Update">
@@ -183,4 +192,13 @@
 		}
 		</UPDATE_CODE>	
 	</UseTemplate>
+  <UseTemplate Name="ASOBO_GT_Update">
+    <Update Frequency="5">
+      (A:COM VOLUME:2,Percent) 1 &gt;= if{
+      #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_ON)
+      } els {
+      #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
+      }
+    </Update>
+  </UseTemplate>
 </Template>	

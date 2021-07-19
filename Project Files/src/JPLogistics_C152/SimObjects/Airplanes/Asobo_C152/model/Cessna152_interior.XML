@@ -12,7 +12,7 @@
     <Include ModelBehaviorFile="Asobo\Common.xml"/>
     <Include ModelBehaviorFile="Asobo\Transponder\Transponder.xml"/>
     <Include ModelBehaviorFile="Asobo\NAVCOM\ADF.xml"/>
-    <!--<Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>-->
+    <Include ModelBehaviorFile="C152X\NavComSystem.xml"/>
     <Include ModelBehaviorFile="C152X\Index.xml"/>
 
     <!-- C152X Modification courtesy of G36 Improvement Project WIP -->
@@ -607,7 +607,7 @@
 			<WWISE_EVENT_2>cabin_light_switch_off</WWISE_EVENT_2>
 		</UseTemplate>
 
-		<!--##########RADIO DIMMMING KNOB ##############################--------->
+		<!--##########RADIO DIMMMING KNOB ##############################-->
 		<UseTemplate Name="ASOBO_LIGHTING_Knob_Potentiometer_Template">
 			<NODE_ID>LIGHTING_Knob_Radio</NODE_ID>
 			<ANIM_NAME>LIGHTING_Knob_Radio</ANIM_NAME>
@@ -749,45 +749,31 @@
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
-        <UseTemplate Name="ASOBO_NAVCOM_Base_Template">
-          <SET_STATE_EXTERNAL>
-            (A:COM TRANSMIT:1, Bool) sp0
-            (A:COM TRANSMIT:2, Bool) sp1
-            l0 ! if{
-            (A:COM RECEIVE:1, Bool) ! (&gt;K:COM1_RECEIVE_SELECT)
-            } els{
-            l1 ! if{
-            (A:COM RECEIVE:2, Bool) ! (&gt;K:COM2_RECEIVE_SELECT)
-            } }
-          </SET_STATE_EXTERNAL>
-          <ANIM_CODE>(A:COM RECEIVE:1, Bool) (A:COM RECEIVE:2, Bool) and 100 *</ANIM_CODE>
-          <GET_STATE_EXTERNAL>(A:COM RECEIVE:1, Bool) (A:COM RECEIVE:2, Bool) and sp0</GET_STATE_EXTERNAL>
-          <SIM_STATE_IS_ON_EXTERNAL>l0</SIM_STATE_IS_ON_EXTERNAL>
-          <EMISSIVE_INDICATOR_CODE>(A:COM RECEIVE:1, Bool) (A:COM RECEIVE:2, Bool) and</EMISSIVE_INDICATOR_CODE>
+        <UseTemplate Name="C152X_NAVCOM_Switch_BOTH_Sound_Template">
           <NODE_ID>AUDIO_Push_NAV_Both</NODE_ID>
+				  <TOOLTIP_TITLE>COM RECEIVE ALL</TOOLTIP_TITLE>
+				  <BTN_ID>NAV_Sound_Both</BTN_ID>
           <ANIM_NAME>AUDIO_Push_NAV_Both</ANIM_NAME>
-          <INTERACTION_TYPE>Switch</INTERACTION_TYPE>
-          <TT_DESCRIPTION_ID>@TT_Package.AUDIOPANEL_BOTH_NAV_SOUND_ACTION</TT_DESCRIPTION_ID>
-          <TOOLTIP_TITLE>@TT_Package.AUDIOPANEL_BOTH_NAV_SOUND_TITLE</TOOLTIP_TITLE>
-          <SIMVAR_TO_WATCH_0>COM RECEIVE:1</SIMVAR_TO_WATCH_0>
-          <SIMVAR_TO_WATCH_1>COM RECEIVE:2</SIMVAR_TO_WATCH_1>
-          <BTN_ID>NAV_Sound_Both</BTN_ID>
-		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
-		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
-        <UseTemplate Name="ASOBO_GT_COM_Switch_Transmit_Template"><!--WAS PUSH-->
+        <UseTemplate Name="JPL_GT_COM_Push_Transmit_Template"><!--WAS PUSH-->
           <ID>1</ID>
+          <USE_EXCLUSIVE_ID>True</USE_EXCLUSIVE_ID>
+				  <OTHER_ID>2</OTHER_ID>
+          <INTERACTION_TYPE>Switch</INTERACTION_TYPE>
           <NODE_ID>AUDIO_Push_MIC_1</NODE_ID>
           <ANIM_NAME>AUDIO_Push_MIC_1</ANIM_NAME>
-		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
-		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
+		      <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		      <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
-        <UseTemplate Name="ASOBO_GT_COM_Switch_Transmit_Template"><!--WAS PUSH-->
+        <UseTemplate Name="JPL_GT_COM_Push_Transmit_Template"><!--WAS PUSH-->
           <ID>2</ID>
+				  <USE_EXCLUSIVE_ID>True</USE_EXCLUSIVE_ID>
+				  <OTHER_ID>1</OTHER_ID>
+          <INTERACTION_TYPE>Switch</INTERACTION_TYPE>
           <NODE_ID>AUDIO_Push_MIC_2</NODE_ID>
           <ANIM_NAME>AUDIO_Push_MIC_2</ANIM_NAME>
-		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
-		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
+		      <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		      <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
       </Component>
     </Component>
@@ -866,7 +852,7 @@
       <UseTemplate Name="C152X_Speaker">
         <NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
         <ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
-		<CIRCUIT_ID>38</CIRCUIT_ID>
+		    <CIRCUIT_ID>38</CIRCUIT_ID>
       </UseTemplate>
 	</Component>
     <Component ID="ANNUNCIATOR_TEST">
