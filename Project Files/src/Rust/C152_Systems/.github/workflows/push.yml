@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          docker run --rm -v "$(pwd)":/external ghcr.io/flybywiresim/dev-env:latest scripts/ci.sh
+          sudo chown -R $(whoami) target/doc
+          touch target/doc/.nojekyll
+      - uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: target/doc

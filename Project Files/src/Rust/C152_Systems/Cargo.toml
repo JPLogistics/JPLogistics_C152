@@ -1,0 +1,7 @@
+[workspace]
+members = [
+  "msfs",
+  "msfs_sdk",
+  "msfs_derive",
+]
+exclude = ["examples"]
