@@ -1,0 +1,229 @@
+# Version 1.0.0 Stable (GitHub Jul-27-2021)
+
+include:
+  - definitions/modules/autopilot.yaml
+  - definitions/modules/deice.yaml
+  - definitions/modules/electrical.yaml
+  - definitions/modules/engines.yaml
+  - definitions/modules/fuel.yaml
+  - definitions/modules/general.yaml
+  - definitions/modules/lights.yaml
+  - definitions/modules/navigation.yaml
+  - definitions/modules/passenger.yaml
+  - definitions/modules/physics.yaml
+  - definitions/modules/radios.yaml
+  - definitions/modules/safety.yaml
+  - definitions/modules/transponder.yaml
+  - definitions/modules/trim.yaml
+
+shared:
+  - # Engine
+    type: NumSet
+    var_name: A:RECIP ENG PRIMER:1
+    var_units: percent
+    var_type: i32
+    event_name: TOGGLE_PRIMER1
+
+  - # Electrical
+  -
+    type: var
+    var_name: A:BUS CONNECTION ON:1
+    var_units: Bool
+    var_type: bool
+  - # Failures
+    type: var
+    var_name: A:CIRCUIT GENERAL PANEL ON
+    var_units: Bool
+    var_type: bool
+  -
+    type: var
+    var_name: A:CIRCUIT AVIONICS ON
+    var_units: Bool
+    var_type: bool
+  -
+    type: var
+    var_name: A:CIRCUIT NAVCOM1 ON
+    var_units: Bool
+    var_type: bool
+  -
+    type: var
+    var_name: A:CIRCUIT NAVCOM2 ON
+    var_units: Bool
+    var_type: bool
+  -
+    type: var
+    var_name: A:CIRCUIT ON:39
+    var_units: Bool
+    var_type: bool
+  -
+    type: var
+    var_name: A:CIRCUIT ON:36
+    var_units: Bool
+    var_type: bool
+
+  - # Lights
+    type: ToggleSwitch
+    var_name: A:LIGHT CABIN
+    var_units: Bool
+    event_name: TOGGLE_CABIN_LIGHTS
+  -
+    type: NumSet
+    var_name: A:LIGHT GLARESHIELD
+    var_units: Bool
+    var_type: i32
+    event_name: GLARESHIELD_LIGHTS_SET
+  -
+    type: NumSet
+    var_name: A:LIGHT POTENTIOMETER:4
+    var_units: percent
+    var_type: f64
+    event_name: LIGHT_POTENTIOMETER_SET
+    event_param: 4
+    index_reversed: true
+  -
+    type: NumSet
+    var_name: A:LIGHT POTENTIOMETER:5
+    var_units: percent
+    var_type: f64
+    event_name: LIGHT_POTENTIOMETER_SET
+    event_param: 5
+    index_reversed: true
+  -
+    type: NumSet
+    var_name: A:LIGHT POTENTIOMETER:6
+    var_units: percent
+    var_type: f64
+    event_name: LIGHT_POTENTIOMETER_SET
+    event_param: 5
+    index_reversed: true
+  -
+    type: NumSet
+    var_name: A:LIGHT POTENTIOMETER:7
+    var_units: percent
+    var_type: f64
+    event_name: LIGHT_POTENTIOMETER_SET
+    event_param: 5
+    index_reversed: true
+  -
+    type: NumSet
+    var_name: A:LIGHT POTENTIOMETER:8
+    var_units: percent
+    var_type: f64
+    event_name: LIGHT_POTENTIOMETER_SET
+    event_param: 5
+    index_reversed: true
+master:
+  -
+    type: var
+    var_name: A:PLANE HEADING DEGREES GYRO # Drifts for some reason
+    var_units: Degrees
+    var_type: f64
+    interpolate: DefaultConstant
+
+server:
+  - # Payload
+    type: var
+    var_name: FUEL TANK LEFT MAIN LEVEL
+    var_units: Percent
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: FUEL TANK RIGHT MAIN LEVEL
+    var_units: Percent
+    var_type: f64
+    unreliable: true
+
+shared:
+  - # Electrical
+    type: ToggleSwitch
+    var_name: A:CIRCUIT SWITCH ON:18
+    var_units: Bool
+    event_name: ELECTRICAL_CIRCUIT_TOGGLE
+    event_param: 18
+  -
+    type: ToggleSwitch
+    var_name: A:CIRCUIT SWITCH ON:20
+    var_units: Bool
+    event_name: ELECTRICAL_CIRCUIT_TOGGLE
+    event_param: 20
+
+  - # LVAR Dump (JPL only)
+    type: var
+    var_name: L:XMLVAR_ADF_MODE_SEL
+  -
+    type: var
+    var_name: L:XMLVAR_ADF_VOLUME
+  -
+    type: var
+    var_name: L:XMLVAR_NAVCOM_COM_1_VOLUME
+  -
+    type: var
+    var_name: L:XMLVAR_NAVCOM_COM_2_VOLUME
+  -
+    type: var
+    var_name: L:XMLVAR_NAVCOM_COM_1_TEST
+  -
+    type: var
+    var_name: L:XMLVAR_NAVCOM_COM_2_TEST
+  -
+    type: var
+    var_name: L:XMLVAR_NAVCOM_NAV_1_VOLUME
+  -
+    type: var
+    var_name: L:XMLVAR_NAVCOM_NAV_2_VOLUME
+  -
+    type: var
+    var_name: L:XMLVAR_NAVCOM_NAV_1_IDENT
+  -
+    type: var
+    var_name: L:XMLVAR_NAVCOM_NAV_2_IDENT
+  -
+    type: var
+    var_name: L:XMLVAR_AUDIO_COM_1_MIC_SEL
+  -
+    type: var
+    var_name: L:XMLVAR_AUDIO_COM_2_MIC_SEL
+  -
+    type: var
+    var_name: L:XMLVAR_AUDIO_BOTH_SEL
+  -
+    type: var
+    var_name: L:XMLVAR_AUDIO_NAV_1_SEL
+  -
+    type: var
+    var_name: L:XMLVAR_AUDIO_NAV_2_SEL
+  -
+    type: var
+    var_name: L:XMLVAR_AUDIO_ADF_SEL
+  -
+    type: var
+    var_name: L:XMLVAR_AUDIO_DME_SEL
+  -
+    type: var
+    var_name: L:XMLVAR_AUDIO_MKR_SEL
+  -
+    type: var
+    var_name: L:XMLVAR_AUDIO_SPKR_SEL
+  -
+    type: var
+    var_name: L:JPL_Door_Pilot
+  -
+    type: var
+    var_name: L:JPL_Window_Pilot
+  -
+    type: var
+    var_name: L:JPL_Door_CoPilot
+  -
+    type: var
+    var_name: L:JPL_Window_CoPilot
+  -
+    type: var
+    var_name: L:JPL_DME_Switch
+  -
+    type: var
+    var_name: L:JPL_VISOR_Pilot
+  -
+    type: var
+    var_name: L:JPL_VISOR_CoPilot
+  
