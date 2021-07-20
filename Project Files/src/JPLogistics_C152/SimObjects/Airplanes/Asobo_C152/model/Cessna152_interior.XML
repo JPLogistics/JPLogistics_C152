@@ -10,7 +10,7 @@
   <Behaviors>
 
     <Include ModelBehaviorFile="Asobo\Common.xml"/>
-    <Include ModelBehaviorFile="Asobo\Transponder\Transponder.xml"/>
+    <Include Path="Asobo\Transponder\AS330.xml"/>
     <Include ModelBehaviorFile="Asobo\NAVCOM\ADF.xml"/>
     <Include ModelBehaviorFile="C152X\NavComSystem.xml"/>
     <Include ModelBehaviorFile="C152X\Index.xml"/>
@@ -28,23 +28,23 @@
     </Component>
     <!--End of C152X Modification -->
 
-    <Animation guid="c16737ee-55bd-4255-97f8-5a34e62be350" name="Pilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c16737ee-55bd-4255-97f8-5a34e62be666" name="CoPilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
-    <Animation guid="a5fc5532-406f-40c7-83f0-96d3fba74101" name="DME_Switch" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be345" name="JPL_VISOR_Pilot" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be346" name="JPL_VISOR_CoPilot" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be347" name="Pilot_Window" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be348" name="Pilot_Window_Handle" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be349" name="Pilot_Door_Handle" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62be357" name="CoPilot_Window" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62ae358" name="CoPilot_Window_Handle" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c16737ee-55bd-4255-97f8-4b34e62ce359" name="CoPilot_Door_Handle" type="standard" typeParam="Autoplay"/>
-    <Animation guid="8985b341-024e-4a36-84ab-4f207d742a6c" name="ADF_Knob_Frequency_Hz" type="standard" typeParam="Autoplay"/>
-    <Animation guid="2e4af946-4d98-4ce2-8702-248ad312b03b" name="ADF_Knob_Frequency_KHz" type="standard" typeParam="Autoplay"/>
-    <Animation guid="5125cd4d-ea1e-4820-b330-eed0cb2e444c" name="ADF_Knob_Frequency_MHz" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c95a98d2-e2b8-46b9-92f4-22d09a99be89" name="ADF_Knob_Mode" type="standard" typeParam="Autoplay"/>
-    <Animation guid="ee710721-c551-4c52-aa1e-d021e43f3c50" name="ADF_Knob_Volume" type="standard" typeParam="Autoplay"/>
-    <Animation guid="8f67102e-05e4-4415-b8ad-0f793675d7bd" name="AUDIO_Knob_Dimming" type="standard" typeParam="Autoplay"/>
+    <Animation guid="b0d3b57f-d467-44d4-a243-74d2c88428a6" name="Pilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
+    <Animation guid="60010cc5-afa7-43aa-914d-98714ae7d5c6" name="CoPilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
+    <Animation guid="bcf3f3ca-27be-4bca-a9e7-2d1ab3f2a6f9" name="DME_Switch" type="standard" typeParam="Autoplay"/>
+    <Animation guid="3702b540-622f-48db-9c2d-05c7ee8462c3" name="JPL_VISOR_Pilot" type="standard" typeParam="Autoplay"/>
+    <Animation guid="d8871a47-4c85-4cc3-a487-8ff13ca497dc" name="JPL_VISOR_CoPilot" type="standard" typeParam="Autoplay"/>
+    <Animation guid="edc931f6-442c-451d-84ab-00eb6ce6be3c" name="Pilot_Window" type="standard" typeParam="Autoplay"/>
+    <Animation guid="463b2fdf-b461-47eb-b915-337b9dfeff35" name="Pilot_Window_Handle" type="standard" typeParam="Autoplay"/>
+    <Animation guid="5151e8aa-c2de-4837-918c-0919e87754c5" name="Pilot_Door_Handle" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ef8ffcc4-767e-41eb-a37d-f33c4985d1ae" name="CoPilot_Window" type="standard" typeParam="Autoplay"/>
+    <Animation guid="66247bb5-ea22-4a66-b358-f12f3e117a1f" name="CoPilot_Window_Handle" type="standard" typeParam="Autoplay"/>
+    <Animation guid="6b0af02c-34c1-4edb-92e7-494c32996cea" name="CoPilot_Door_Handle" type="standard" typeParam="Autoplay"/>
+    <Animation guid="fa90f8a7-5037-463c-8864-4ec1072085ff" name="ADF_Knob_Frequency_Hz" type="standard" typeParam="Autoplay"/>
+    <Animation guid="35afb280-fe23-4f3d-84c3-26550c9fd76f" name="ADF_Knob_Frequency_KHz" type="standard" typeParam="Autoplay"/>
+    <Animation guid="666d6c60-5e25-4323-b795-db37bc7a0f9e" name="ADF_Knob_Frequency_MHz" type="standard" typeParam="Autoplay"/>
+    <Animation guid="37cc58e0-f5fa-4303-a7eb-5dc3b4f2fe78" name="ADF_Knob_Mode" type="standard" typeParam="Autoplay"/>
+    <Animation guid="fcaf68ea-d789-455e-a204-f0250ba99f58" name="ADF_Knob_Volume" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2ded67dc-d39d-42aa-9ba5-4fe06a2d6432" name="AUDIO_Knob_Dimming" type="standard" typeParam="Autoplay"/>
     <Animation guid="ga55ed4e-340b-4171-8558-d1accfaff752" name="AUDIO_Knob_Volume" type="standard" typeParam="Autoplay"/>
     <Animation guid="ha55ed4e-340b-4171-8558-d1accfaff752" name="AUDIO_Push_AOE" type="standard" typeParam="Autoplay"/>
     <Animation guid="ia55ed4e-340b-4171-8558-d1accfaff752" name="AUDIO_Push_DME" type="standard" typeParam="Autoplay"/>
@@ -55,142 +55,156 @@
     <Animation guid="na55ed4e-340b-4171-8558-d1accfaff752" name="AUDIO_Push_NAV_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="oa55ed4e-340b-4171-8558-d1accfaff752" name="AUDIO_Push_NAV_2" type="standard" typeParam="Autoplay"/>
     <Animation guid="oa55ed4e-340b-4182-8558-d1accfaff752" name="AUDIO_Push_NAV_Both" type="standard" typeParam="Autoplay"/>
-    <Animation guid="db68917f-901f-4b24-9a42-6987eec86e20" name="AUDIO_Push_SPKR" type="standard" typeParam="Autoplay"/>
-    <Animation guid="03856c99-4937-41bf-8d6b-ab3cb47344d4" name="AUDIO_Switch_Intercom" type="standard" typeParam="Autoplay"/>
-    <Animation guid="0badb072-ddd3-4670-a44e-2af01da60617" name="AUDIO_Switch_Marker" type="standard" typeParam="Autoplay"/>
-    <Animation guid="d0accc09-9e53-4dd1-9103-a57305019ca1" name="AUDIO_Switch_Test_AUDIO_Switch_Test" type="standard" typeParam="Autoplay"/>
-    <Animation guid="373d03d4-20f1-4871-a20d-fca3b15cef2a" name="COM_Knob_Khz_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="7697c9fe-a2e5-4311-9959-bc5cb1bce06e" name="COM_Knob_Khz_1_Push" type="standard" typeParam="Autoplay"/>
-    <Animation guid="2f784661-5d16-4dcf-85c8-1b0816e31e21" name="COM_Knob_Khz_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="24e9be17-799a-47bc-b633-0a976ef3bd73" name="COM_Knob_Khz_2_Push" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c31f385c-c3a7-41a7-a881-343b5716aaf8" name="COM_Knob_Mhz_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="a09e5c43-6303-4cf8-a6a4-af6dc92d6956" name="COM_Knob_Mhz_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="d319d752-e940-41db-b4fb-d8493a813295" name="COM_Knob_OnOff_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="f895e7e1-7877-4f24-9415-ecef08a2329e" name="COM_Knob_OnOff_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="19ea968c-69d0-4d8f-b81f-2bd2ecfa6397" name="COM_Push_Swap_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="4cb4e282-62ab-4aa6-a5bd-51b5c0fe2775" name="COM_Push_Swap_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="d26b5429-131b-4ac3-a6e0-3457ff9b4649" name="COM_Push_Test_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="e54b2208-1000-4a45-88df-599cf1aa7de4" name="COM_Push_Test_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="bccb7df6-a771-458a-bc8f-f7bb2471f8fa" name="DEICE_Lever_Engine_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="33490c5a-d9a0-46e3-be05-2b3d84661187" name="DEICE_Switch_PitotHeat" type="standard" typeParam="Autoplay"/>
-    <Animation guid="9f85dd95-0a07-4c71-ae7d-5645d9332dc0" name="ELECTRICAL_Switch_Alternator_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="027a6701-1a4d-42a2-b7f4-bc0833f53665" name="ELECTRICAL_Switch_Battery_Master_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="bfd86b4a-d2d5-4910-8bce-8322ddf05ea1" name="ELECTRICAL_Switch_Magneto" type="standard" typeParam="Autoplay"/>
-    <Animation guid="a0209361-f6b8-4d7c-be34-88931e855fe5" name="ENGINE_Lever_CarbHeat" type="standard"/>
-    <Animation guid="51fc2638-d227-438c-9aed-9eed5e33d378" name="ENGINE_Lever_Primer" type="standard"/>
-    <Animation guid="6b296f0b-6010-4828-9f10-46db961e63ae" name="ENGINE_Lever_Throttle_1" type="standard"/>
-    <Animation guid="79b5b67e-f90b-4d7d-9af7-81e28230afa6" name="FUEL_Lever_Mixture_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="a163df5a-0acc-4a91-821e-b38db2b332b2" name="FUEL_Lever_Mixture_1_Push" type="standard" typeParam="Autoplay"/>
-    <Animation guid="ba266684-cea4-4e01-a0f2-aa90a632766b" name="FUEL_Switch_Cutoff_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="2a237d8d-933f-457e-a2dd-9e5b495507d0" name="HANDLING_Indicator_ElevatorTrim" type="standard" typeParam="Autoplay"/>
-    <Animation guid="18cd3714-6bf1-4978-8c0d-7284b719c3a6" name="HANDLING_Indicator_Flaps" type="standard" typeParam="Autoplay"/>
-    <Animation guid="929f85c9-fdb4-41c1-9601-dd33c2982eec" name="HANDLING_Lever_Flaps" type="standard" typeParam="Autoplay"/>
-    <Animation guid="37dd8ab5-7af2-4d1a-8b21-ae9e1a133123" name="HANDLING_RudderPedals_r" type="standard" typeParam="Autoplay"/>
-    <Animation guid="5fef233a-f25e-44fc-a350-5464637f6831" name="HANDLING_RudderPedals_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="5cb2ea23-b06d-4e82-947f-36c4e83328c8" name="HANDLING_RudderPedals_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="bb6c12c1-a564-4c39-a8b4-79c1b8b03d2b" name="HANDLING_Wheel_ElevatorTrim_Visual" type="standard" typeParam="Autoplay"/>
-    <Animation guid="730def0d-673d-47a4-88f5-fa465a3581f2" name="HANDLING_YOKE_Lever_StickForeAft" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c938ae48-eb65-4c25-9195-0fcaf2d39867" name="HANDLING_YOKE_Lever_StickLR" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c94f0c24-4091-4153-b627-64832566840a" name="INSTRUMENT_ADF_Dial_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="22d7a3fd-687f-46cf-9f57-7683b775db65" name="INSTRUMENT_ADF_Knob_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="7be54336-fb96-49fa-9df4-022a4356feb2" name="INSTRUMENT_ADF_Needle_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="ef68f64e-a1ee-4505-9e3a-ddb3f1bf8c55" name="INSTRUMENT_Altimeter_strip_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="b729aec4-1e83-4321-a8d3-1663e08fd950" name="INSTRUMENT_Altimeter_strip_2_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="aefba366-802b-4d53-973d-10f1d81a9bfc" name="INSTRUMENT_AttitudeIndicator_Bank_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="52f29689-2c95-419a-8dde-c303b2f8f4b0" name="INSTRUMENT_AttitudeIndicator_Bars_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="81a98802-3fac-46a1-bb7c-244563a17b71" name="INSTRUMENT_AttitudeIndicator_Flag_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="2a999f89-3d20-46af-a639-854ebf0a0797" name="INSTRUMENT_AttitudeIndicator_Knob_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="1c91a1ec-8a7b-4c83-a893-94a5aa6eb440" name="INSTRUMENT_AttitudeIndicator_Pitch_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="0de2392d-3122-4ca4-9ece-d5dbbf50d512" name="INSTRUMENT_Ball_Turn_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="4e60a8fc-9a10-475f-b48d-54406e963704" name="INSTRUMENT_CDI_Compass_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="d5a9927a-e07d-4409-9f4b-aa09b5a8c283" name="INSTRUMENT_CDI_Compass_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="30b42a58-2e42-426a-8dfa-76b3acd4a27c" name="INSTRUMENT_CDI_Flag_From_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="e359b6e7-4d4e-43b4-8706-689f22bf9ccc" name="INSTRUMENT_CDI_Flag_From_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="d91701ac-447f-4e2f-9a00-15328ce47d73" name="INSTRUMENT_CDI_Flag_Glide_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="8b530905-342e-43d3-909b-1eb4c12164ef" name="INSTRUMENT_CDI_Flag_Glide_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="740a1a8e-f5d5-4545-bd3f-e61432ea8638" name="INSTRUMENT_CDI_Flag_Localizer_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="a17bf87c-29ed-4553-9f1f-23d9271a7678" name="INSTRUMENT_CDI_Flag_Localizer_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="294689ca-c7e1-4df7-a5db-6020df8d99c2" name="INSTRUMENT_CDI_Flag_Off_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="16b4ca5f-862f-4c14-8829-5b6eccebe438" name="INSTRUMENT_CDI_Flag_Off_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="472fa27d-6868-48ce-9ac7-e2c7d710f76b" name="INSTRUMENT_CDI_Flag_To_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="8b66cdfd-bf3a-4334-b85d-07a4ad228903" name="INSTRUMENT_CDI_Flag_To_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="9d2341ba-a3d2-451a-b2b5-0826c306e1f3" name="INSTRUMENT_CDI_Knob_Course_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="a52058e4-ffbe-4bd9-af5c-e8571d93b998" name="INSTRUMENT_CDI_Knob_Course_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="e20d86de-45ee-403f-9a4c-e635509397d4" name="INSTRUMENT_CDI_Needle_Glide_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="45975334-cdd9-4c8f-9199-6fa2b85c927b" name="INSTRUMENT_CDI_Needle_Glide_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="978298f1-e599-40c2-82bd-d185c9b1f004" name="INSTRUMENT_CDI_Needle_Localizer_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="76c03d7d-445f-46ce-b776-1830110627c1" name="INSTRUMENT_CDI_Needle_Localizer_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="922f6cee-abe4-4a96-b8e9-328fa652cf7d" name="INSTRUMENT_Dial_Compass" type="standard" typeParam="Autoplay"/>
-    <Animation guid="16c3064d-9290-433c-b4ca-37ca5b4ede32" name="INSTRUMENT_Flag_Heading_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="44ca6582-9a12-4f2e-9b01-3b7135b79361" name="INSTRUMENT_Knob_Altimeter_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="ef72ecd1-4608-4014-879e-fe586fb00357" name="INSTRUMENT_Knob_Clock" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c0713cfe-864c-40dd-9e19-37c1c7a00bf6" name="INSTRUMENT_Knob_Clock_push" type="standard" typeParam="Autoplay"/>
-    <Animation guid="db5c8d00-da6b-47f7-9a74-9f1105009110" name="INSTRUMENT_Knob_Heading_Compass_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="8c0e0b56-1669-44cb-934f-2130ff18128e" name="INSTRUMENT_Needle_Airspeed" type="standard" typeParam="Autoplay"/>
-    <Animation guid="9df8b697-5141-45fe-b176-c160a335e744" name="INSTRUMENT_Needle_Altimeter_10000_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="6a52df60-319a-448b-b9f4-d464001cf748" name="INSTRUMENT_Needle_Altimeter_1000_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="2e250392-d4cb-4d44-b2c3-789befb00c81" name="INSTRUMENT_Needle_Altimeter_100_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="456e01bf-977c-45f2-b5f7-55e3aa976619" name="INSTRUMENT_Needle_Ammeter" type="standard" typeParam="Autoplay"/>
-    <Animation guid="58833e63-892a-450e-853e-780a3ceace3a" name="INSTRUMENT_Needle_Clock_Hours" type="standard" typeParam="Autoplay"/>
-    <Animation guid="023c9503-44af-44d6-aed0-2253d1880046" name="INSTRUMENT_Needle_Clock_Minutes" type="standard" typeParam="Autoplay"/>
-    <Animation guid="a750f8b1-f95e-435a-89f0-06b474a79454" name="INSTRUMENT_Needle_Clock_Seconds" type="standard" typeParam="Autoplay"/>
-    <Animation guid="431987ba-83b3-4638-a962-7b56730c2cba" name="INSTRUMENT_Needle_Engine_RPM_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="ea6da65e-ed23-4e9c-ac92-ba63d579b879" name="INSTRUMENT_Needle_Fuel_Quantity_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="66dac888-5db1-4b74-9d22-4f91d003ca41" name="INSTRUMENT_Needle_Fuel_Quantity_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="cc9d160f-c58d-40b9-900f-a5669147c03b" name="INSTRUMENT_Needle_Heading_Cylinder" type="standard" typeParam="Autoplay"/>
-    <Animation guid="b9c53558-19ab-4e3a-8397-e1e5c491023e" name="INSTRUMENT_Needle_OAT" type="standard" typeParam="Autoplay"/>
-    <Animation guid="ae725b39-0036-42ea-bedb-72dec98e172e" name="INSTRUMENT_Needle_Oil_Pressure" type="standard" typeParam="Autoplay"/>
-    <Animation guid="23a68b21-e3d3-4cdd-8a35-7e2fe6d04ca1" name="INSTRUMENT_Needle_Oil_Temperature" type="standard" typeParam="Autoplay"/>
-    <Animation guid="90b99c1d-ab6f-4a33-bcfc-f6ff742760d8" name="INSTRUMENT_Needle_Turn_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="ab51ca74-e9bc-4201-943f-c518a0f0a3e9" name="INSTRUMENT_Needle_VerticalSpeed_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="6c61289e-afb5-43cb-9644-64e1bfa50bf1" name="INSTRUMENT_Warning_Turn_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="b9f1a66e-1f1e-4dc3-8ce5-82c88baa36f1" name="LANDING_GEAR_Switch_ParkingBrake" type="standard" typeParam="Autoplay"/>
-    <Animation guid="f78b71bc-d374-474c-aeca-a618aa6d3990" name="LIGHTING_Knob_Panel" type="standard" typeParam="Autoplay"/>
-    <Animation guid="9cb1828f-f8e9-40d0-bc51-a1c390e2b3a5" name="LIGHTING_Knob_Radio" type="standard" typeParam="Autoplay"/>
-    <Animation guid="e7f66033-34b9-4d8b-a50b-e1b494d00479" name="LIGHTING_Switch_Light_Beacon_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="cf2f00e4-aefb-437d-b8c4-b70de8ce73a9" name="LIGHTING_Switch_Light_Cabin_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="f49175cc-e6f6-4421-8522-700b2df94868" name="LIGHTING_Switch_Light_Landing_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="dc2b961c-17fc-4b7b-9fb0-2dd66b59c1fa" name="LIGHTING_Switch_Light_Nav_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="81d5aa21-40c5-4c68-80d2-87d8ab2dc71c" name="LIGHTING_Switch_Light_Strobe_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="4872314c-0189-4ba3-9288-d3622ab18a5f" name="LIGHTING_Switch_Light_Taxi_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="b0011ba1-3bb5-4bfe-976a-7d039ed5dca8" name="NAV_Knob_Khz1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="92e92ce5-a3cf-46fc-9381-24727f3a1886" name="NAV_Knob_Khz1_Push" type="standard" typeParam="Autoplay"/>
-    <Animation guid="2908dfba-d97b-4de5-9622-0071b73cddcd" name="NAV_Knob_Khz2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="83e89205-541a-4dd8-ba89-4c66b6557269" name="NAV_Knob_Khz2_Push" type="standard" typeParam="Autoplay"/>
-    <Animation guid="52768e38-a0e5-4fad-a16c-12cca6d248a4" name="NAV_Knob_Mhz1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="9e0fed2a-25ff-45e9-8e42-906752486070" name="NAV_Knob_Mhz2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="7d2d7cfb-ca31-4246-b08a-bb4a82fd6ffd" name="NAV_Knob_OnOff1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="2c2a02f1-7de9-47c3-adb5-05bd053bf72f" name="NAV_Knob_OnOff2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="4cb08ffd-bad5-48ec-aae8-b23a125d7f73" name="NAV_Push_Ident1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="148816fc-e2bd-4ee2-8847-d37adc7968d2" name="NAV_Push_Ident2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="a6bcdc35-fd03-4d81-828e-d0784da41322" name="NAV_Push_Swap1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="4a269144-de8f-4058-9945-cd48263d990d" name="NAV_Push_Swap2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="e847f7e1-6015-4aa0-a649-451a83ceee49" name="PASSENGER_Switch_Cabin_Air_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="85518240-019b-4cd0-97b9-b261d4263862" name="PASSENGER_Switch_Cabin_Heat_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c4a0e231-f4d2-48bb-bc7f-14fa652f4ed6" name="PRESSURIZATION_Needle_Suction" type="standard" typeParam="Autoplay"/>
-    <Animation guid="b2030c14-9d92-4990-9182-2a9eab0b9df6" name="TRANSPONDER_Knob_01" type="standard" typeParam="Autoplay"/>
-    <Animation guid="09a98fc5-5b39-4cf0-bf5d-22c3baf0d09b" name="TRANSPONDER_Knob_02" type="standard" typeParam="Autoplay"/>
-    <Animation guid="1814fa96-1887-4c0a-87d7-05f69c7002bb" name="TRANSPONDER_Knob_03" type="standard" typeParam="Autoplay"/>
-    <Animation guid="008a2c9d-bbbd-4e04-9972-54a1a06c2a47" name="TRANSPONDER_Knob_04" type="standard" typeParam="Autoplay"/>
-    <Animation guid="d10c95cd-eb77-451c-be78-cbe7798cc6e4" name="TRANSPONDER_Knob" type="standard" typeParam="Autoplay"/>
-    <Animation guid="8241277c-f62a-47f5-8729-7c209608c8aa" name="TRANSPONDER_Push_IDT" type="standard" typeParam="Autoplay"/>
-    <Animation guid="f43cde57-7c0f-4440-afb3-a3d0838c9239" name="Breaker_ALT" type="standard" typeParam="Autoplay"/>
-    <Animation guid="6e317db9-a13f-4b93-9dce-1d83685e61cf" name="Breaker_BCNPITOT" type="standard" typeParam="Autoplay"/>
-    <Animation guid="67def53c-a416-444d-a888-3a28ad2244ee" name="Breaker_FLAP" type="standard" typeParam="Autoplay"/>
-    <Animation guid="7002af25-ff71-4ed9-a6ef-fdbcb427f4a0" name="Breaker_FUELIND" type="standard" typeParam="Autoplay"/>
-    <Animation guid="831c83ac-e046-49a6-a85e-914c25e20594" name="Breaker_INSTLTS" type="standard" typeParam="Autoplay"/>
-    <Animation guid="fb2606ff-c637-4725-9895-f75b30cb4823" name="Breaker_LDGLTS" type="standard" typeParam="Autoplay"/>
-    <Animation guid="502ac6d8-87d9-4397-a68b-cfab863de5c4" name="Breaker_NAVDOME" type="standard" typeParam="Autoplay"/>
-    <Animation guid="bf42f852-4223-4933-948e-e44978b2977d" name="Breaker_RADIO_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="6fd23d62-2ffb-4088-a168-488dfbe92fbe" name="Breaker_RADIO_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="b6402f4b-2618-4b56-a58c-294c955a3f5b" name="Breaker_RADIO_3" type="standard" typeParam="Autoplay"/>
-    <Animation guid="e6200022-a77a-47c3-9ccb-644335aea48e" name="Breaker_RADIO_4" type="standard" typeParam="Autoplay"/>
-    <Animation guid="e4292e72-e556-41a2-b09e-36f72b9fb59d" name="Breaker_RIGHT_0" type="standard" typeParam="Autoplay"/>
-    <Animation guid="07ad17d1-a08c-4386-8cfb-9c2f915403c5" name="Breaker_RIGHT_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="e0f8278f-8a7a-4014-b65c-150227c43548" name="Breaker_RIGHT_2" type="standard" typeParam="Autoplay"/>
-    <Animation guid="df73f832-0972-4dd9-96f8-a88c7860fc80" name="Breaker_RIGHT_3" type="standard" typeParam="Autoplay"/>
-    <Animation guid="c9765e52-94c9-4eb7-9e3a-5eb1bf6160b9" name="Breaker_RIGHT_4" type="standard" typeParam="Autoplay"/>
-    <Animation guid="bb0f75d6-cb91-417a-ad04-038da9fc94ff" name="Breaker_STROBELTS" type="standard" typeParam="Autoplay"/>
+    <Animation guid="60a964d5-d711-48e9-adff-fd369f79d728" name="AUDIO_Push_SPKR" type="standard" typeParam="Autoplay"/>
+    <Animation guid="25c844cd-5064-427a-8a28-c3bf5f422e2d" name="AUDIO_Switch_Intercom" type="standard" typeParam="Autoplay"/>
+    <Animation guid="3dcc2d57-f7e7-4824-930f-0c2f7fc0dc29" name="AUDIO_Switch_Marker" type="standard" typeParam="Autoplay"/>
+    <Animation guid="48708e60-4f9a-4392-8f40-17930d48882b" name="AUDIO_Switch_Test_AUDIO_Switch_Test" type="standard" typeParam="Autoplay"/>
+    <Animation guid="0598f4a7-32ee-49f3-82ef-901f5f76ac47" name="COM_Knob_Khz_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="981406e3-6742-4420-8a3c-ed2e17d55761" name="COM_Knob_Khz_1_Push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="25a382e9-b4be-49bf-a6c2-a3f2d0c67181" name="COM_Knob_Khz_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="b605e399-e863-4b39-8b8a-24c5e753f248" name="COM_Knob_Khz_2_Push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="22b06f93-fbf4-40ed-8467-ce80ddcf9376" name="COM_Knob_Mhz_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="1f078987-b6d0-4d71-a5cb-129e665c3fdd" name="COM_Knob_Mhz_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="47ca9280-cac8-4a93-b51f-48df3d566669" name="COM_Knob_OnOff_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="730fb187-1e7b-4084-9431-b8403b158a29" name="COM_Knob_OnOff_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f01a4f84-5715-4e80-a87b-3b99bb74e3f5" name="COM_Push_Swap_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="e8e41c6c-d92b-4158-86ba-f68ef5bc09c7" name="COM_Push_Swap_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="32a618da-cbe2-4746-b3eb-de3966ed4a54" name="COM_Push_Test_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="31ad2ed4-2f94-4e4b-ba3f-815d47754568" name="COM_Push_Test_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c6692617-e8f3-4a66-bbb0-081cfbc7cec4" name="DEICE_Lever_Engine_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="32078955-bfdc-4b36-9abf-75f6cd838cdf" name="DEICE_Switch_PitotHeat" type="standard" typeParam="Autoplay"/>
+    <Animation guid="e195eab7-cb3f-4003-a2d3-bd1b693c9f35" name="ELECTRICAL_Switch_Alternator_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="bcfa1029-338a-42f0-bfdc-0b4ee161c1f7" name="ELECTRICAL_Switch_Battery_Master_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="9fe997fc-5e63-4e1f-8554-cfce2750408e" name="ELECTRICAL_Switch_Magneto" type="standard" typeParam="Autoplay"/>
+    <Animation guid="d039ada7-d487-4289-b1c1-d3fa569cb605" name="ENGINE_Lever_CarbHeat" type="standard"/>
+    <Animation guid="c24355f7-37af-4344-b194-0ba9374501f9" name="ENGINE_Lever_Primer" type="standard"/>
+    <Animation guid="a67b4ffd-ef1a-4ffc-857f-605241ba7fde" name="ENGINE_Lever_Throttle_1" type="standard"/>
+    <Animation guid="3d8a139a-d540-4360-80e4-ba03e8b4d949" name="FUEL_Lever_Mixture_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c15fae8b-9f7b-4a2b-80a0-68f3cf82590d" name="FUEL_Lever_Mixture_1_Push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="82f3378b-1a93-4768-9473-52f07390f8f9" name="FUEL_Switch_Cutoff_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="52b67e00-88b4-419b-8c2b-d2601a13d4c4" name="HANDLING_Indicator_ElevatorTrim" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f4805566-10ed-42f4-a772-182cdaa90b12" name="HANDLING_Indicator_Flaps" type="standard" typeParam="Autoplay"/>
+    <Animation guid="9b4e7ef1-f915-4414-a61b-619ebab7eec0" name="HANDLING_Lever_Flaps" type="standard" typeParam="Autoplay"/>
+    <Animation guid="99858bde-0fa1-4167-a01b-60819c35753a" name="HANDLING_RudderPedals_r" type="standard" typeParam="Autoplay"/>
+    <Animation guid="06222e57-4636-44cf-93bf-c39b63eb15ae" name="HANDLING_RudderPedals_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="d724fe05-c8d5-44b6-8530-fdf68b999960" name="HANDLING_RudderPedals_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="aa905c82-058e-42d6-b5f6-eaa6b946701e" name="HANDLING_Wheel_ElevatorTrim_Visual" type="standard" typeParam="Autoplay"/>
+    <Animation guid="95682518-08b8-4626-a61d-bb4d90034b87" name="HANDLING_YOKE_Lever_StickForeAft" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f74e8c9b-3078-4f5d-b883-6859da9eb71f" name="HANDLING_YOKE_Lever_StickLR" type="standard" typeParam="Autoplay"/>
+    <Animation guid="5de797a7-313f-4533-ad71-10a1911e73b4" name="INSTRUMENT_ADF_Dial_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="95bcf7df-a31c-4cfc-bf7c-1d813571ce58" name="INSTRUMENT_ADF_Knob_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="5edd3410-c8cd-4314-a9f8-304fd1b7ab98" name="INSTRUMENT_ADF_Needle_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="38b670cb-b87c-4ec9-a3a0-1be6e3eb4a63" name="INSTRUMENT_Altimeter_strip_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="8155e0db-d5bf-4722-bab1-02a72e92a043" name="INSTRUMENT_Altimeter_strip_2_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="61846098-3f0d-4793-873d-f84e8f96c576" name="INSTRUMENT_AttitudeIndicator_Bank_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="57f4e63e-519a-4687-a9db-343022d6df2e" name="INSTRUMENT_AttitudeIndicator_Bars_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f1855e23-c649-4d0a-a4b5-63e3939dd744" name="INSTRUMENT_AttitudeIndicator_Flag_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="a25629db-8291-4865-95bc-a83f8203684d" name="INSTRUMENT_AttitudeIndicator_Knob_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="4a26ca41-be81-4ce0-8c98-7b51bca402a8" name="INSTRUMENT_AttitudeIndicator_Pitch_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="4371749d-6ac2-48c3-979e-5b0b9d0a8c63" name="INSTRUMENT_Ball_Turn_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="505ad958-55ad-4ed0-91ab-daa295c83650" name="INSTRUMENT_CDI_Compass_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="80f905e2-69cc-400a-bcc0-812774d5d488" name="INSTRUMENT_CDI_Compass_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="8a274ef9-5f72-41e0-b9d8-440dea1806f7" name="INSTRUMENT_CDI_Flag_From_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="806e36a8-1166-4b74-b01b-8ce53b1c5e8b" name="INSTRUMENT_CDI_Flag_From_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c4097bb8-ce5e-4455-a4d9-b65d74d1c6c9" name="INSTRUMENT_CDI_Flag_Glide_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="4a550ea9-c6cf-4109-a0c8-7e36d2529fd3" name="INSTRUMENT_CDI_Flag_Glide_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2a822e2d-bfb4-4c7f-bc43-e502498181a2" name="INSTRUMENT_CDI_Flag_Localizer_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f5681b99-ddc9-48f5-be61-1c7632732799" name="INSTRUMENT_CDI_Flag_Localizer_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f39830d9-de72-436e-a438-1cdd6067d985" name="INSTRUMENT_CDI_Flag_Off_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="0448cc8e-4e1c-49d9-974a-47251fb0b98d" name="INSTRUMENT_CDI_Flag_Off_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="da705f1e-c634-4b28-aff1-debbaf186614" name="INSTRUMENT_CDI_Flag_To_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="71f88ae1-cc67-41ce-bdda-28c02df4be36" name="INSTRUMENT_CDI_Flag_To_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="1a0a844a-d281-4296-9c7d-0cee030ef43f" name="INSTRUMENT_CDI_Knob_Course_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="a5150e1a-334c-4451-b2fc-d1e26fa2a067" name="INSTRUMENT_CDI_Knob_Course_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="7f2e80b3-3fd4-4be8-9dd4-a7c9b27d83d5" name="INSTRUMENT_CDI_Needle_Glide_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="55a9b8dd-3df6-4a57-a76e-42d969eb4067" name="INSTRUMENT_CDI_Needle_Glide_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="68f551db-3c53-4a54-bea6-6597d48e8bc7" name="INSTRUMENT_CDI_Needle_Localizer_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ecc51982-db84-4dd8-8e4a-738a49016f34" name="INSTRUMENT_CDI_Needle_Localizer_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="867a7385-573c-4dc2-89d4-6efb3ee7f929" name="INSTRUMENT_Dial_Compass" type="standard" typeParam="Autoplay"/>
+    <Animation guid="dd57f39f-d90d-47ab-a2fe-fb0db42d4a17" name="INSTRUMENT_Flag_Heading_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ffd89c3b-8fba-423f-93aa-d5d496ff70a2" name="INSTRUMENT_Knob_Altimeter_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="8915320f-53ee-424f-9e60-5ae75d630783" name="INSTRUMENT_Knob_Clock" type="standard" typeParam="Autoplay"/>
+    <Animation guid="6cbe89f9-606d-4bd2-86fd-0e5ee10a483a" name="INSTRUMENT_Knob_Clock_push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="8859dff5-55b8-4a6b-950d-7aa8f9681216" name="INSTRUMENT_Knob_Heading_Compass_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="d719b0d3-abd4-48b2-8868-bd584ac0e754" name="INSTRUMENT_Needle_Airspeed" type="standard" typeParam="Autoplay"/>
+    <Animation guid="89cf662d-1933-4f5f-95ea-cda39db75db6" name="INSTRUMENT_Needle_Altimeter_10000_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="731caa2c-1a56-4dec-a444-7fe8fcd04307" name="INSTRUMENT_Needle_Altimeter_1000_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="4ced51d7-d0d7-488e-8377-8d6472e90289" name="INSTRUMENT_Needle_Altimeter_100_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="3e2b9e76-8d18-47e9-bab4-9c0aef74906b" name="INSTRUMENT_Needle_Ammeter" type="standard" typeParam="Autoplay"/>
+    <Animation guid="cabab47d-29a4-4091-8c7c-00c846655a2d" name="INSTRUMENT_Needle_Clock_Hours" type="standard" typeParam="Autoplay"/>
+    <Animation guid="54784d13-4ee9-4964-afe4-7acc4ac6f90d" name="INSTRUMENT_Needle_Clock_Minutes" type="standard" typeParam="Autoplay"/>
+    <Animation guid="b02872b3-12fd-4ab6-ad65-9b16a32bf2fc" name="INSTRUMENT_Needle_Clock_Seconds" type="standard" typeParam="Autoplay"/>
+    <Animation guid="b61d0d6d-e2ee-421b-a995-4b111e92ad2d" name="INSTRUMENT_Needle_Engine_RPM_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="089b4537-68ab-4d19-9ef7-f612d3c2cdca" name="INSTRUMENT_Needle_Fuel_Quantity_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="bb6d14e6-8c6f-425e-b9c7-dac994512a51" name="INSTRUMENT_Needle_Fuel_Quantity_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ed4930af-ca18-4a66-b51e-25d4d980b74c" name="INSTRUMENT_Needle_Heading_Cylinder" type="standard" typeParam="Autoplay"/>
+    <Animation guid="25f28e10-d6e5-4ac8-b86b-4b71c4647639" name="INSTRUMENT_Needle_OAT" type="standard" typeParam="Autoplay"/>
+    <Animation guid="443085b7-52cc-4516-88c6-57bfccf15aa0" name="INSTRUMENT_Needle_Oil_Pressure" type="standard" typeParam="Autoplay"/>
+    <Animation guid="4a16db35-69fd-4c3d-a7aa-aef71a951424" name="INSTRUMENT_Needle_Oil_Temperature" type="standard" typeParam="Autoplay"/>
+    <Animation guid="158ba743-8f83-4f63-9318-1ff18de9f552" name="INSTRUMENT_Needle_Turn_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f402fe16-c55d-47e3-8b33-f3ed452d6f58" name="INSTRUMENT_Needle_VerticalSpeed_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="05d4094e-577a-4862-b9ca-ece117247cb1" name="INSTRUMENT_Warning_Turn_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="02a27e54-4192-44d2-be82-f2941cb227aa" name="LANDING_GEAR_Switch_ParkingBrake" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f86c675d-6404-4171-b5cf-06736228659f" name="LIGHTING_Knob_Panel" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f83d4036-4870-4e0a-86b9-aacf93bd1d56" name="LIGHTING_Knob_Radio" type="standard" typeParam="Autoplay"/>
+    <Animation guid="0114a6de-0d42-46ed-80ed-b86eed8c01db" name="LIGHTING_Switch_Light_Beacon_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="581d1c0b-0291-49ed-b3b7-ada122a42d7e" name="LIGHTING_Switch_Light_Cabin_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="b55596f7-6a3b-4258-9908-03a321f39c84" name="LIGHTING_Switch_Light_Landing_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="afe21b0f-7c1b-47fe-baea-0660a4a1b8dd" name="LIGHTING_Switch_Light_Nav_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="d8bf693f-15e0-4f6f-9ebc-4740572ed7bc" name="LIGHTING_Switch_Light_Strobe_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="7cf71fbc-948c-481a-8d84-e153a554ebf9" name="LIGHTING_Switch_Light_Taxi_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="0f058b26-ca7d-4f05-b05c-88e99a69c011" name="NAV_Knob_Khz1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="abe31937-cb18-42b7-a252-fe403df2e58f" name="NAV_Knob_Khz1_Push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="3b17a5c4-993c-4a0e-bdd3-7f1e72c50a49" name="NAV_Knob_Khz2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c737bc1c-53de-4f4f-8749-9eb8f4fb396a" name="NAV_Knob_Khz2_Push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="4affcbe1-4215-462d-a6b4-d0341d2f4fb3" name="NAV_Knob_Mhz1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2fd0151b-0ae7-4fad-9801-a1fb4e784947" name="NAV_Knob_Mhz2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="bcef590a-2e43-40e8-a3ae-016208b4d88f" name="NAV_Knob_OnOff1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="6b8eff38-7b39-4a15-9834-305b79495629" name="NAV_Knob_OnOff2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="60dcb705-8358-41ec-a654-75b0b4016ec6" name="NAV_Push_Ident1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="9e849124-00e0-499e-bb5c-d0b81511102c" name="NAV_Push_Ident2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="eaa65a86-2fb5-45dc-99a9-d7f297a7fb33" name="NAV_Push_Swap1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="6e1955b0-7a1f-4011-90be-0cb23085445e" name="NAV_Push_Swap2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c26d0e8e-55c4-4310-8c8c-02b23f88201b" name="PASSENGER_Switch_Cabin_Air_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="3930b2c1-f4be-413a-8791-a35fee2fd9f8" name="PASSENGER_Switch_Cabin_Heat_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="29fef47e-41a5-4c52-8815-935ac9320183" name="PRESSURIZATION_Needle_Suction" type="standard" typeParam="Autoplay"/>
+    <Animation guid="92482fe7-73d5-474f-98a1-ca161c45fcb0" name="TRANSPONDER_Push_0_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="cb1ff47c-0468-42e6-bf43-2f89ced84b0c" name="TRANSPONDER_Push_1_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="97f100c8-fbb6-4105-b798-2c6bf6179a95" name="TRANSPONDER_Push_2_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="d70ee929-802a-4fd2-8acf-6a80b09c5a63" name="TRANSPONDER_Push_3_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="de2a0bc9-6812-4db2-bb5d-3e6bec7e0462" name="TRANSPONDER_Push_4_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c0b4701f-af6e-41f6-807a-a21866cd2165" name="TRANSPONDER_Push_5_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="d98e9d30-a07a-4613-b067-7983d78cf68a" name="TRANSPONDER_Push_6_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ba4fdf5d-5e6d-42da-9c31-7371b7d5b31d" name="TRANSPONDER_Push_7_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="7a0f2f55-01ba-4893-b678-d7ba3cff5e9f" name="TRANSPONDER_Push_8_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="4c879a8d-12c9-4633-a996-efe60c44e31e" name="TRANSPONDER_Push_9_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="e1ebc0ac-6fe7-4bd2-a893-6c73bd1a638c" name="TRANSPONDER_Push_ALT_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="13f3d1cf-b3fb-43c2-b1fc-4edeca0acc08" name="TRANSPONDER_Push_CLR_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="54c6922a-e979-4e55-bac2-bb4f3a69521f" name="TRANSPONDER_Push_CRSR_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="665ab99c-43a6-4105-97e1-2b9e7a4b4dbb" name="TRANSPONDER_Push_FUNC_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="289cf295-81b0-4f16-be0c-6f6f8cabf4de" name="TRANSPONDER_Push_IDT_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="dd7ea7f0-3384-494c-9e4f-527b73021f4c" name="TRANSPONDER_Push_OFF_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2301b6e3-c62b-4550-9a49-d065c52846ba" name="TRANSPONDER_Push_ON_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="cd0392fb-99a2-4394-9c11-3e2aab2610fc" name="TRANSPONDER_Push_STARTSTOP_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ddf5d559-02b0-42ad-8673-8bca6b632d1c" name="TRANSPONDER_Push_STBY_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="882a5300-1f55-4ff4-9515-10e980a854d5" name="TRANSPONDER_Push_VFR_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="1c8f4822-164d-44b1-ad4e-307c308f283a" name="Breaker_ALT" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f66deb83-e8c5-45a2-9fa4-23c5991b3420" name="Breaker_BCNPITOT" type="standard" typeParam="Autoplay"/>
+    <Animation guid="01bd95e7-690b-47f0-9496-c65059cc0506" name="Breaker_FLAP" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2d9d3947-1e3b-455e-a38a-f3f8ec9ed1f0" name="Breaker_FUELIND" type="standard" typeParam="Autoplay"/>
+    <Animation guid="d61dfc24-bc10-4ca4-b935-33e1a9d86186" name="Breaker_INSTLTS" type="standard" typeParam="Autoplay"/>
+    <Animation guid="09ed3afa-f88c-4c8c-abca-af3a7ec7ea95" name="Breaker_LDGLTS" type="standard" typeParam="Autoplay"/>
+    <Animation guid="e861c360-ebf3-479b-a345-4a6a9bccc5ab" name="Breaker_NAVDOME" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c034ab2b-ebf4-452d-952d-ec47efe04fad" name="Breaker_RADIO_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="3fbb208c-b809-4860-a7a4-993bd48d05af" name="Breaker_RADIO_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="87817c0f-ad93-4a71-8c96-bcbc6a5dc4f3" name="Breaker_RADIO_3" type="standard" typeParam="Autoplay"/>
+    <Animation guid="6ecbc105-d031-4d37-a3be-bebd10006a31" name="Breaker_RADIO_4" type="standard" typeParam="Autoplay"/>
+    <Animation guid="604c95b4-9dcd-4741-8c8e-8dffd0608629" name="Breaker_RIGHT_0" type="standard" typeParam="Autoplay"/>
+    <Animation guid="7a5ab4f2-8d93-44f8-8a34-01507ed39886" name="Breaker_RIGHT_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="b190a27a-7bf1-4f36-bc96-0374f1383769" name="Breaker_RIGHT_2" type="standard" typeParam="Autoplay"/>
+    <Animation guid="51dccf56-fde3-4fd2-8c5d-8bcac0df0b4a" name="Breaker_RIGHT_3" type="standard" typeParam="Autoplay"/>
+    <Animation guid="42b4155a-3104-41a0-b360-5badf93247df" name="Breaker_RIGHT_4" type="standard" typeParam="Autoplay"/>
+    <Animation guid="acc8c70b-39db-407c-a0f7-5a3cb5675ed8" name="Breaker_STROBELTS" type="standard" typeParam="Autoplay"/>
 
 
     <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank and the 20 in the formula is a scaling factor for the amount of yaw induced variation in the tank indication. The first value is the current tank quantity in liters. 	The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
@@ -383,6 +397,14 @@
     </Component>
 
     <!-- INSTRUMENTS ########################### -->
+    <Component ID="AS330">
+      <UseTemplate Name="ASOBO_AS330_Template">
+        <DONT_APPEND_ID>False</DONT_APPEND_ID>
+        <CIRCUIT_ID>20</CIRCUIT_ID>
+        <POTENTIOMETER>6</POTENTIOMETER>
+      </UseTemplate>
+    </Component>
+    
     <Component ID="INSTRUMENTS">
 		<UseTemplate Name="ASOBO_INSTRUMENT_Needle_ADF_Template">
 			<ADF_KNOB/>
@@ -782,13 +804,6 @@
         <DONT_APPEND_ID>True</DONT_APPEND_ID>
         <CIRCUIT_ADF>37</CIRCUIT_ADF>
 		<POTENTIOMETER>6</POTENTIOMETER>
-      </UseTemplate>
-    </Component>
-    <Component ID="TRANSPONDER">
-      <UseTemplate Name="ASOBO_Transponder_AS76A_Template">
-        <DONT_APPEND_ID>True</DONT_APPEND_ID>
-        <ANIM_LAG>500</ANIM_LAG>
-        <CIRCUIT_ID>20</CIRCUIT_ID>
       </UseTemplate>
     </Component>
 
