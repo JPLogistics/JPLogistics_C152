@@ -1,0 +1,8 @@
+[package]
+name = "client_data"
+version = "0.1.0"
+authors = ["snek"]
+edition = "2018"
+
+[dependencies]
+msfs = { path = "../../msfs" }

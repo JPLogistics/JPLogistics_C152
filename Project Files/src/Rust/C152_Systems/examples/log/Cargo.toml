@@ -1,0 +1,15 @@
+[package]
+authors = ["snek"]
+edition = "2018"
+name = "log"
+version = "0.1.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[[bin]]
+name = "log_external"
+path = "src/main.rs"
+
+[dependencies]
+msfs = { path = "../../msfs" }
