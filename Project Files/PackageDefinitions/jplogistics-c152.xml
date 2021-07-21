@@ -42,6 +42,14 @@
 			<AssetDir>src\JPLogistics_C152\SimObjects\Airplanes\Asobo_C152\</AssetDir>
 			<OutputDir>SimObjects\Airplanes\Asobo_C152\</OutputDir>
 		</AssetGroup>
+		<AssetGroup Name="jplogistics-c152-fairings">
+			<Type>SimObject</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>C:\Users\joshu\Documents\GitHub\JPLogistics_C152\Project Files\src\JPLogistics_C152\SimObjects\Airplanes\Asobo_C152_Fairing</AssetDir>
+			<OutputDir>SimObjects\Airplanes\Asobo_C152_Fairing</OutputDir>
+		</AssetGroup>
 	</AssetGroups>
 </AssetPackage>
 
