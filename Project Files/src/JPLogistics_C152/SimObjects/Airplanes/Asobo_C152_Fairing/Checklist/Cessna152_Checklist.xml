@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+
+<SimBase.Document Type="Checklist" version="1,0">
+	<Checklist.Checklist>
+		<IncludeCheckpointLibrary FileName="CheckpointsLibrary\\Asobo_DefaultCheckpointLibrary.xml"/>
+		<IncludeCheckpointLibrary FileName="SimObjects\\Airplanes\\Asobo_C152\\Checklist\\Library.xml"/>
+
+		<Step ChecklistStepId="PREFLIGHT_GATE">
+			<!-- Preflight inspection - cockpit 1/2 -->
+			<Page SubjectTT="TT:GAME.CHECKLIST_PREFLIGHT_INSPECTION_COCKPIT_1">
+			</Page>
+			<!-- Before starting engine -->
+			<Page SubjectTT="TT:GAME.CHECKLIST_BEFORE_STARTING_ENGINE">
+				<Checkpoint ReferenceId="Fuel_Shutoff_Valve_Open">
+					<!-- Fuel Shutoff Valve - - ON. / (mettre dans clue que "OPEN"-->
+					<ForceCamera name="Checklist_FuelValve"/>
+				</Checkpoint>
+				<Checkpoint ReferenceId="Brakes_Test_And_Set">
+					<!--  / ! \ 	Brakes - - TEST and SET. -->
+					<ForceCamera name="Instruments04"/>
+					<Instrument Id="HANDLING_RudderPedals_Brake"/>
+				</Checkpoint>
+			</Page>
+			<!-- Starting Engine -->
+			<Page SubjectTT="TT:GAME.CHECKLIST_STARTING_ENGINE">
+				<Checkpoint ReferenceId="Mixture_Rich">
+					<!-- Mixture - - RICH. -->
+					<ForceCamera name="Instruments02"/>
+				</Checkpoint>
+				<Checkpoint ReferenceId="Carb_Heat_Cold">
+					<!-- Carburetor Heat - - COLD. -->
+					<ForceCamera name="Instruments02"/>
+				</Checkpoint>
+				<Checkpoint ReferenceId="PRIME_AS_REQUIRED">
+					<!-- XXXXXXXXXXXXXXXX Prime - - AS REQUIRED (up to strokes none if engine is warm). -->
+					<ForceCamera name="Instruments04"/>
+				</Checkpoint>
+				<Checkpoint ReferenceId="Throttle_Open_1/2">
+					<!-- XXXXXXXXXXXXXXXX	Throttle - - OPEN 1/2 INCH (CLOSED if engine is warm). -->
+					<ForceCamera name="Instruments02"/>
+				</Checkpoint>
+				<Checkpoint ReferenceId="Master_Switch_On_C152">
+					<!-- XXXXXXXXXXXXXXXX 	Master Switch - - ON. -->
+					<ForceCamera name="Instruments04"/>
+				</Checkpoint>
+				<Checkpoint ReferenceId="Ignition_Start">
+					<!-- Ignition Switch - - START (release when engine starts). -->
+					<ForceCamera name="Instruments04"/>
+				</Checkpoint>
+				<Checkpoint ReferenceId="Throttle_Adjust_DESIRED_RPM">
+					<!-- WORDING  CLUE // Throttle - - ADJUST for 1000 RPM or less. -->
+					<Clue name="TT:CLUE.THROTTLE_ADJUST_1000_RPM_OR_LESS"/>
+					<!-- to be overwritten -->
+					<CheckpointDesc SubjectTT="TT:GAME.CHECKLIST_THROTTLE" ExpectationTT="TT:GAME.CHECKLIST_ADJUST_1000_RPM_OR_LESS"/>
+					<!-- to be overwritten -->
+					<SetTemplateValue Id="DesiredRPM_MIN">
+						<Val Value="0"/>
+					</SetTemplateValue>
+					<SetTemplateValue Id="DesiredRPM_MAX">
+						<Val Value="1000" />
+					</SetTemplateValue>
+					<ForceCamera name="Instruments02"/>
+				</Checkpoint>			
+				<Checkpoint ReferenceId="Oil_Pressure_In_Green_Sector">
+					<!-- Oil Pressure - - CHECK. -->
+					<ForceCamera name="Instruments04"/>
+				</Checkpoint>
+				<Checkpoint ReferenceId="FLASHING_BEACON_AND_NAV_LIGHT_ON_AS_REQUIRED">
+					<!-- Flashing Beacon and Navigation Lights - - ON as required. -->
+					<ForceCamera name="Instruments04"/>
+				</Checkpoint>
+			</Page>
+			<!-- After starting engine 1/2 -->
+			<Page SubjectTT="TT:GAME.CHECKLIST_AFTER_STARTING_ENGINE_1">
+			</Page>
+		</Step>
+		<Step ChecklistStepId="PREFLIGHT_TAXI_OUT">
+			<!-- Taxi -->
+			<Page SubjectTT="TT:GAME.CHECKLIST_TAXI">
+			</Page>
+		</Step>
+		<Step ChecklistStepId="FLIGHT_RUNWAY">
+			<!-- Run-up 1/3 -->
+			<Page SubjectTT="TT:GAME.CHECKLIST_RUN_UP_1">
+			</Page>
+
+			<!-- Before take-off -->
+			<Page SubjectTT="TT:GAME.CHECKLIST_BEFORE_TAKE_OFF">
+
+				<Checkpoint ReferenceId="Parking_Brake_Set">
+					<!-- Parking Brake - - SET. -->
+					<ForceCamera name="Instruments04"/>
+				</Checkpoint>
+				<Checkpoint ReferenceId="Fuel_Shutoff_Valve_Open">
+					<!-- Fuel Shutoff Valve - - ON. -->
+					<CheckpointDesc SubjectTT="TT:GAME.CHECKLIST_FUEL_SHUTOFF_VALVE" ExpectationTT="TT:GAME.CHECKLIST_OPEN"/>
+					<ForceCamera name="Checklist_FuelValve"/>
+				</Checkpoint>
+				<Checkpoint ReferenceId="Mixture_Rich_below_3000_feet">
+					<!-- Mixture - - RICH (below 3000 feet). -->
+					<ForceCamera name="Instruments02"/>
+				</Checkpoint>
+				<!-- NOT MVP Throttle - - 1700 RPM. -->
+				<!-- NOT MVP  ooo> Throttle - - 1000 RPM OR LESS. -->
+				<Checkpoint ReferenceId="Strobe_Light_On">
+					<!-- Here we force it to be ON instead of "as desired" (simplification and automation) // Strobe Lights - - AS DESIRED. --> 
+					<ForceCamera name="Instruments04"/>
+				</Checkpoint>
+				<!-- Throttle Friction Lock - - ADJUST. NOT MVP -->
+				<Checkpoint ReferenceId="Parking_Brake_Release">
+					<!-- Brakes - - RELEASE. -->
+					<ForceCamera name="Instruments04"/>
+				</Checkpoint>
+			</Page>
+		</Step>
+		<Step ChecklistStepId="FLIGHT_TAKEOFF">
+			<!-- Normal take-off -->
+			<Page SubjectTT="TT:GAME.CHECKLIST_NORMAL_TAKE_OFF">
+
+				<Checkpoint ReferenceId="Carb_Heat_Cold">
+					<!-- Carburetor Heat - - COLD. -->
+					<ForceCamera name="Instruments02"/>
+				</Checkpoint>
+				<Checkpoint ReferenceId="Throttle_Full">
+					<!-- Throttle FULL OPEN. -->
+					<ForceCamera name="Instruments02"/>
+				</Checkpoint>
+				<Checkpoint ReferenceId="ROTATION_MIN_XXX_KIAS">
+					<!-- Elevator Control LIFT NOSE WHEEL at 50 KIAS. -->
+					<CheckpointDesc SubjectTT="TT:GAME.CHECKLIST_ELEVATOR_CONTROL" ExpectationTT="TT:GAME.CHECKLIST_LIFT_NOSE_WHEEL_AT_50_KIAS"/>
+					<!-- Determine rotation speed -->
+					<SetTemplateValue Id="Desired_Rotation_KIAS">
+						<!-- Determine rotation speed -->
+						<Val Value="50" />
+					</SetTemplateValue>
+					<ForceCamera name="Pilot"/>
+				</Checkpoint>
+			</Page>
+			<!-- Enroute climb -->
+			<Page SubjectTT="TT:GAME.CHECKLIST_ENROUTE_CLIMB">
+			</Page>
+		</Step>
+		<Step ChecklistStepId="FLIGHT_CRUISE">
+			<!-- Cruise -->
+			<Page SubjectTT="TT:GAME.CHECKLIST_CRUISE">
+			</Page>
+		</Step>
+		<Step ChecklistStepId="FLIGHT_DESCENT">
+			<!-- Descent -->
+			<Page SubjectTT="TT:GAME.CHECKLIST_DESCENT">
+			</Page>
+		</Step>
+		<Step ChecklistStepId="LANDING_APPROACH">
+			<!-- Before landing -->
+			<Page SubjectTT="TT:GAME.CHECKLIST_BEFORE_LANDING">
+			</Page>
+		</Step>
+		<Step ChecklistStepId="LANDING_TOUCHDOWN">
+			<!-- Normal landing -->
+			<Page SubjectTT="TT:GAME.CHECKLIST_NORMAL_LANDING">
+			</Page>
+		</Step>
+		<Step ChecklistStepId="LANDING_GROUNDROLL">
+			<!-- After landing -->
+			<Page SubjectTT="TT:GAME.CHECKLIST_AFTER_LANDING">
+			</Page>
+		</Step>
+		<Step ChecklistStepId="LANDING_TAXI_IN">
+		</Step>
+		<Step ChecklistStepId="LANDING_GATE">
+			<!-- Parking -->
+			<Page SubjectTT="TT:GAME.CHECKLIST_PARKING">
+			</Page>
+			<!-- Securing-->
+			<Page SubjectTT="TT:GAME.CHECKLIST_SECURING">
+			</Page>
+		</Step>
+	</Checklist.Checklist>
+</SimBase.Document>

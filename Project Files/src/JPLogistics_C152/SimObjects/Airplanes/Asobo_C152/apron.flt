@@ -23,7 +23,7 @@ OBS2=360
 TransponderState=0
 ADFActive=890
 ADF2Active=890
-DMESelected=1
+DMESelected=0
 ComTransmit=1
 ComReceiveBoth=False
 Com1Receive=True
@@ -84,8 +84,9 @@ XMLVAR_ADF_Mode=0   ; 0, 1, 2, 3
 152X_ADFVOL=0    ;0=OFF, 1=FULL
 152X_COM1VOL=0   ;0=OFF, 1=FULL
 152X_COM2VOL=0   ;0=OFF, 1=FULL
-DME_POWER=1
+DME_POWER=0
 JPL_DOOR_PILOT=1
+JPL_DOOR_COPILOT=1
 
 ;--------------------------------------------
 ;C152X Cessna 300 ADF

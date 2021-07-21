@@ -24,12 +24,6 @@ shared:
     var_type: i32
     event_name: TOGGLE_PRIMER1
 
-  - # Electrical
-  -
-    type: var
-    var_name: A:BUS CONNECTION ON:1
-    var_units: Bool
-    var_type: bool
   - # Failures
     type: var
     var_name: A:CIRCUIT GENERAL PANEL ON
@@ -53,11 +47,6 @@ shared:
   -
     type: var
     var_name: A:CIRCUIT ON:39
-    var_units: Bool
-    var_type: bool
-  -
-    type: var
-    var_name: A:CIRCUIT ON:36
     var_units: Bool
     var_type: bool
 
@@ -94,7 +83,7 @@ shared:
     var_units: percent
     var_type: f64
     event_name: LIGHT_POTENTIOMETER_SET
-    event_param: 5
+    event_param: 6
     index_reversed: true
   -
     type: NumSet
@@ -102,16 +91,9 @@ shared:
     var_units: percent
     var_type: f64
     event_name: LIGHT_POTENTIOMETER_SET
-    event_param: 5
+    event_param: 7
     index_reversed: true
-  -
-    type: NumSet
-    var_name: A:LIGHT POTENTIOMETER:8
-    var_units: percent
-    var_type: f64
-    event_name: LIGHT_POTENTIOMETER_SET
-    event_param: 5
-    index_reversed: true
+    
 master:
   -
     type: var
@@ -147,6 +129,17 @@ shared:
     var_units: Bool
     event_name: ELECTRICAL_CIRCUIT_TOGGLE
     event_param: 20
+  -
+    type: ToggleSwitch
+    var_name: A:BUS CONNECTION ON:1
+    var_units: Bool
+    event_name: ELECTRICAL_BUS_TOGGLE
+    event_param: 20
+  -
+    type: var
+    var_name: A:BUS CONNECTION ON:1
+    var_units: Bool
+    var_type: bool
 
   - # LVAR Dump (JPL only)
     type: var
