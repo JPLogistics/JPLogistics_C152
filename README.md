@@ -1,4 +1,4 @@
-# DEVELOPER BUILD - V1.18.3.0 ONLY - DO NOT USE
+# DEVELOPER BUILD - V1.18.12.0 ONLY - DO NOT USE
 ## This build will only work for people on the PerformancePLUS Flight Beta
 
 ## Use at your own risk, package may be broken during some commits!
@@ -11,21 +11,23 @@
 	- Opening Doors!
 	- Opening Windows!
 	- Sun Visors!
-	- New Switches (On roof)
+	- New Switches/Rotary Dials
+	- Reworked Cockpit Animations
+	- Circuit Breakers!
 - New Cargo Options
 - New Graphics
+- OAT Gauge corrected
 - New Sound Effects
 	- Enviroment sounds linked too windows/doors
-- Reworked Electrical Systems 
+- Reworked Electrical Systems
+	- Build from the ground up!
+	- Circuit Breakers now function (Random snap pending)
 - Reworked Lighting
-- "Tablet" Device
-	- Test Screen Added (Waiting to export)
-	- Device model WIP
-	- Device OS - TBC after discussion
-- "Floats" Version of the C152 - WIP
-- Ski's Version of the C152 - TBC
-- Proper DME Panel - Custom Designed JPLogistics Model
-	- Gauge is functional now - Reformatting required!
+- New Transponder, we are now rocking a AS330!
+- Wheel Fairing version!
+- Proper DME Device - Custom Designed JPLogistics Model
+- Flight Model overhauled
+- Fuel load corrected
 - New Start System
 	- Primer now required
 - New Visual Effects
@@ -33,14 +35,17 @@
 	- Smoke
 	- Exhaust plume (WIP)
 
+All this whilst still remaining completely compatible with already exisitng Community Liveries!
+
+## Known Issues
+- Using ASOBO made "Extra" liveries creates artifacts when opening the doors.
+	- This most likely wont be fixed, it's _ALOT_ of work because of how ASOBO create their liveries.
+	- After hosting a poll 80% said they didn't use them at all, hence this decision!
+
 ### Broken things (As you know, this is a Work in Progress!)
-- Some Animations
-	- _Part_ of the NAVCOM Stack
-           - COM Volume Knobs have stopped responding after code update - Investigating!
-           - This also means the NAVCOM is on at spawn... Problem found! Will sort ASAP!
-	- Transponder Numbers...yeah, not sure what is going on here!
-- Strange 3D Model Artifacts
-	- This is due to the unfinished remodelling I am performing!
+- Windshield Textures
+- Couple of instruments need fine tuning
+- Modify Fairing textures
 
 
 
