@@ -60,8 +60,8 @@
     <Sound WwiseEvent="STALL_WARNING" WwiseData="true" />
   </MiscellaneousSounds>
   
-  <EngineSoundPresets>
-    <Sound WwiseEvent="Combustion" ConeHeading="180" FadeOutType="2" FadeOutTime="0.2" RPMMin="200" WwiseData="true" EngineIndex="1" >    	
+  <EngineSoundPresets> 
+     <Sound WwiseEvent="Combustion" ConeHeading="180" FadeOutType="2" FadeOutTime="0.2" RPMMin="200" WwiseData="true" EngineIndex="1" >    	
 		<WwiseRTPC SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" Units="PERCENT OVER 100" RTPCReleaseTime="0.5" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
 	</Sound>
 	<Sound WwiseEvent="Combustion" CustomSuffix="Exhaust" ConeHeading="235" FadeOutType="2" FadeOutTime="0.2" RPMMin="200" WwiseData="true" EngineIndex="1" ViewPoint="Outside">   
@@ -84,8 +84,24 @@
 	</Sound>
     <Sound WwiseEvent="Propeller" ConeHeading="0" FadeOutType="2" FadeOutTime="0.2" RPMMin="200" WwiseData="true" EngineIndex="1" >
 		<WwiseRTPC SimVar="GENERAL ENG COMBUSTION SOUND PERCENT" Units="PERCENT OVER 100" RTPCReleaseTime="0.5" Index="1" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
+	</Sound> 
+  
+<!---Window/Door Open Sounds ----->
+    <Sound WwiseEvent="Combustion" ConeHeading="180" FadeOutType="2" FadeOutTime="0.2" RPMMin="200" WwiseData="true" EngineIndex="1" >    	
+		<WwiseRTPC LocalVar="JPL_CANOPY_OPEN" Units="PERCENT OVER 100" Index="0" RTPCAttackTime="1.2" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
 	</Sound>
-	
+	<Sound WwiseEvent="Combustion" CustomSuffix="Exhaust" ConeHeading="235" FadeOutType="2" FadeOutTime="0.2" RPMMin="200" WwiseData="true" EngineIndex="1" ViewPoint="Outside"> 
+		<WwiseRTPC LocalVar="JPL_CANOPY_OPEN" Units="PERCENT OVER 100" Index="0" RTPCReleaseTime=".5" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
+	</Sound>
+    <Sound WwiseEvent="CombustionStart" ConeHeading="180" WwiseData="true" EngineIndex="1" >  
+		<WwiseRTPC LocalVar="JPL_CANOPY_OPEN" Units="PERCENT OVER 100" Index="0" RTPCReleaseTime=".5" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
+	</Sound>
+    <Sound WwiseEvent="CombustionStart" CustomSuffix="Propeller" ConeHeading="0" WwiseData="true" EngineIndex="1" > 
+		<WwiseRTPC LocalVar="JPL_CANOPY_OPEN" Units="PERCENT OVER 100" Index="0" RTPCReleaseTime=".5" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
+	</Sound>  
+    <Sound WwiseEvent="Shutdown" CustomSuffix="Propeller" ConeHeading="0" RPMMin="200" WwiseData="true" EngineIndex="1" > 
+		<WwiseRTPC LocalVar="JPL_CANOPY_OPEN" Units="PERCENT OVER 100" Index="0" RTPCReleaseTime=".5" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
+	</Sound>
   </EngineSoundPresets>
   
   <EngineSoundStates>
@@ -252,25 +268,25 @@
     </Sound> 
 <!--###PILOT###-->
 <!--door close-->
-	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="doorclose" Continuous="False" LocalVar="JPL_DOOR_PILOT" Units="percent">
+	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="doorclose" Continuous="False" LocalVar="JPL_DOOR_PILOT" Units="percent" Panning="-9000">
     	<Requires LocalVar="JPL_DOOR_PILOT" Units="percent" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--door open-->
-	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="dooropen" Continuous="False" LocalVar="JPL_DOOR_PILOT" Units="percent">
+	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="dooropen" Continuous="False" LocalVar="JPL_DOOR_PILOT" Units="percent" Panning="-9000">
     	<Requires LocalVar="JPL_DOOR_PILOT" Units="percent" >
 			<Range LowerBound="1" />
 		</Requires>
 	</Sound>
 <!--window close-->
-	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent">
+	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
     	<Requires LocalVar="JPL_WINDOW_PILOT" Units="percent" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--window open-->
-	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent">
+	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
     	<Requires LocalVar="JPL_WINDOW_PILOT" Units="percent" >
 			<Range LowerBound="1" />
 		</Requires>
@@ -278,25 +294,25 @@
 	
 <!--###COPILOT###-->
 <!--door close-->
-	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="doorclose" Continuous="False" LocalVar="JPL_DOOR_COPILOT" Units="percent">
+	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="doorclose" Continuous="False" LocalVar="JPL_DOOR_COPILOT" Units="percent" Panning="9000">
     	<Requires LocalVar="JPL_DOOR_COPILOT" Units="percent" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--door open-->
-	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="dooropen" Continuous="False" LocalVar="JPL_DOOR_COPILOT" Units="percent">
+	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="dooropen" Continuous="False" LocalVar="JPL_DOOR_COPILOT" Units="percent" Panning="9000">
     	<Requires LocalVar="JPL_DOOR_COPILOT" Units="percent" >
 			<Range LowerBound="1" />
 		</Requires>
 	</Sound>	
 <!--window close-->
-	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent">
+	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
     	<Requires LocalVar="JPL_WINDOW_COPILOT" Units="percent" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--window open-->
-	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent">
+	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
     	<Requires LocalVar="JPL_WINDOW_COPILOT" Units="percent" >
 			<Range LowerBound="1" />
 		</Requires>

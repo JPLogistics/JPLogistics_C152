@@ -87,6 +87,25 @@
   </Component>
 </Template>
 
+
+<Template Name="WindowSoundHelper">
+	<Update Frequency="5">
+		(L:JPL_DOOR_PILOT, Bool) 1 &gt;=
+		(L:JPL_WINDOW_PILOT, Bool) 1 &gt;= or
+		(L:JPL_DOOR_COPILOT, Bool) 1 &gt;= or
+		(L:JPL_WINDOW_COPILOT, Bool) 1 &gt;= or
+		if{
+			1 (&gt;L:JPL_CANOPY_OPEN, Bool)
+		}	
+		els{
+			0 (&gt;L:JPL_CANOPY_OPEN, Bool)
+		}
+	</Update>
+</Template>
+
+
+
+
 <Template Name="CoPilot_Weight">
 	<Update Frequency="1">
 		(A:SPEAKER ACTIVE, Bool) 1 &gt;=
