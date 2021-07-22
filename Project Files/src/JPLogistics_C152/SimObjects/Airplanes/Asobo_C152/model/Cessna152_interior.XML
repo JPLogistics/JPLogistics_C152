@@ -12,8 +12,10 @@
     <Include ModelBehaviorFile="Asobo\Common.xml"/>
     <Include Path="Asobo\Transponder\AS330.xml"/>
     <Include ModelBehaviorFile="Asobo\NAVCOM\ADF.xml"/>
+    <Include ModelBehaviorFile="Asobo\NAVCOM\KAP140.xml"/>
     <Include ModelBehaviorFile="C152X\NavComSystem.xml"/>
     <Include ModelBehaviorFile="C152X\Index.xml"/>
+    <Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
 
     <!-- C152X Modification courtesy of G36 Improvement Project WIP -->
 
@@ -397,6 +399,14 @@
     </Component>
 
     <!-- INSTRUMENTS ########################### -->
+    <Component ID="KAP_140">
+      <UseTemplate Name="ASOBO_KAP140_Template">
+        <KNOB_100_ANIM_NAME>AUTOPILOT_Knob_Altitude_1</KNOB_100_ANIM_NAME>
+        <POTENTIOMETER>7</POTENTIOMETER>
+        <EMISSIVE_CODE>0.2</EMISSIVE_CODE>
+      </UseTemplate>
+    </Component>
+    
     <Component ID="AS330">
       <UseTemplate Name="ASOBO_AS330_Template">
         <DONT_APPEND_ID>False</DONT_APPEND_ID>
@@ -404,6 +414,13 @@
 		<FAILURE>(A:CIRCUIT ON:20, Bool)</FAILURE>
       </UseTemplate>
     </Component>
+
+    <UseTemplate Name="ASOBO_INSTRUMENT_ADF_Template">
+      <EMISSIVE_POTENTIOMETER>6</EMISSIVE_POTENTIOMETER>
+      <CIRCUIT_ADF>37</CIRCUIT_ADF>
+      <FAILURE>(A:CIRCUIT AVIONICS ON, Bool)</FAILURE>
+      <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
+    </UseTemplate>
     
     <Component ID="INSTRUMENTS">
 		<UseTemplate Name="ASOBO_INSTRUMENT_Needle_ADF_Template">
@@ -798,13 +815,6 @@
 		      <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
       </Component>
-    </Component>
-    <Component ID="ADF">
-      <UseTemplate Name="ASOBO_ADF_AS300_Template">
-        <DONT_APPEND_ID>True</DONT_APPEND_ID>
-        <CIRCUIT_ADF>37</CIRCUIT_ADF>
-		<POTENTIOMETER>6</POTENTIOMETER>
-      </UseTemplate>
     </Component>
 
     <Component ID="DME_Interaction">
