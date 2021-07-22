@@ -24,6 +24,7 @@
 	  <UseTemplate Name="ADF_VOLUME"></UseTemplate>
 	  <UseTemplate Name="COM1_VOLUME"></UseTemplate>
 	  <UseTemplate Name="COM2_VOLUME"></UseTemplate>
+	  <UseTemplate Name="WindowSoundHelper"></UseTemplate>
 	  <!--<UseTemplate Name="CoPilot_Weight"></UseTemplate>-->
     </Component>
     <!--End of C152X Modification -->
@@ -294,7 +295,6 @@
         <BUTTON_NODE_ID>FUEL_Lever_Mixture_1_Push</BUTTON_NODE_ID>
       </UseTemplate>
       <UseTemplate Name="ASOBO_ENGINE_Lever_Primer_Template">
-        <!--pump/primer-->
         <NODE_ID>ENGINE_LEVER_PRIMER</NODE_ID>
         <ANIM_NAME>ENGINE_LEVER_PRIMER</ANIM_NAME>
         <INVERT_SWITCH_ON_CONDITION>True</INVERT_SWITCH_ON_CONDITION>
@@ -401,6 +401,7 @@
       <UseTemplate Name="ASOBO_AS330_Template">
         <DONT_APPEND_ID>False</DONT_APPEND_ID>
         <POTENTIOMETER>6</POTENTIOMETER>
+		<FAILURE>(A:CIRCUIT ON:20, Bool)</FAILURE>
       </UseTemplate>
     </Component>
     
