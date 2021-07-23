@@ -402,11 +402,17 @@
     <Component ID="KAP_140">
       <UseTemplate Name="ASOBO_KAP140_Template">
         <KNOB_100_ANIM_NAME>AUTOPILOT_Knob_Altitude_1</KNOB_100_ANIM_NAME>
-        <POTENTIOMETER>7</POTENTIOMETER>
+        <POTENTIOMETER></POTENTIOMETER>
         <EMISSIVE_CODE>0.2</EMISSIVE_CODE>
       </UseTemplate>
     </Component>
-    
+	<Component ID="140_screen">
+		<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+			<NODE_ID>AS140_Screen</NODE_ID>
+			<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool)</EMISSIVE_CODE>
+			<POTENTIOMETER></POTENTIOMETER>
+		</UseTemplate>
+    </Component>
     <Component ID="AS330">
       <UseTemplate Name="ASOBO_AS330_Template">
         <DONT_APPEND_ID>False</DONT_APPEND_ID>
