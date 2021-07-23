@@ -47,7 +47,7 @@
     <!--AP-->
     <Name>KAP140</Name>
     <Electric>
-      <Simvar name="CIRCUIT ON:38" unit="Boolean"/>
+      <Simvar name="CIRCUIT ON:32" unit="Boolean"/>
     </Electric>
   </Instrument>
 </PlaneHTMLConfig>
