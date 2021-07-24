@@ -475,15 +475,7 @@ class KX155A extends BaseInstrument {
         return SimVar.GetSimVarValue("COM VOLUME:" + this.radioIndex, "number");
     }
     getTransmitingState() {
-        if (SimVar.GetSimVarValue("COM RECEIVE ALL:" + this.radioIndex, "Bool")) {
-            if (SimVar.GetSimVarValue("PILOT TRANSMITTING:" + this.radioIndex, "Bool") || SimVar.GetSimVarValue("COPILOT TRANSMITTING:" + this.radioIndex, "Bool")) {
-                return "both";
-            }
-            else {
-                return "R";
-            }
-        }
-        else if (SimVar.GetSimVarValue("COM TRANSMIT:" + this.radioIndex, "Bool")) {
+        if (SimVar.GetSimVarValue("SPEAKER ACTIVE:" + this.radioIndex, "Bool")) {
             if (SimVar.GetSimVarValue("PILOT TRANSMITTING:" + this.radioIndex, "Bool") || SimVar.GetSimVarValue("COPILOT TRANSMITTING:" + this.radioIndex, "Bool")) {
                 return "both";
             }

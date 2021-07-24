@@ -30,7 +30,7 @@
                     "export_materials" : 1,
                     "export_normals" : 1,
                     "export_tangents" : 0,
-                    "export_texture_dir" : "../texture",
+                    "export_texture_dir" : "../TEXTURE",
                     "export_xml" : 0,
                     "export_xml_file" : "model",
                     "use_selection" : 1
@@ -119,8 +119,8 @@
                 0.9868817329406738
             ],
             "translation" : [
-                0.010121941566467285,
-                -0.2488892376422882,
+                0.010122060775756836,
+                -0.2488892525434494,
                 0.07908761501312256
             ]
         },
@@ -134,9 +134,9 @@
                 0.9917378425598145
             ],
             "translation" : [
-                -0.02158445119857788,
-                -0.023957937955856323,
-                -0.03719848394393921
+                -0.02158433198928833,
+                -0.0239579975605011,
+                -0.037198662757873535
             ]
         },
         {
@@ -149,9 +149,9 @@
                 0.9954760670661926
             ],
             "translation" : [
-                -0.05032205581665039,
-                -0.489962100982666,
-                1.1856023073196411
+                -0.050321996212005615,
+                -0.4899621307849884,
+                1.1856021881103516
             ]
         },
         {
@@ -167,8 +167,8 @@
                 0.9999586939811707
             ],
             "translation" : [
-                0.010541200637817383,
-                0.5695586800575256,
+                0.010541319847106934,
+                0.5695586204528809,
                 -1.3040692806243896
             ]
         },
@@ -183,7 +183,7 @@
             ],
             "translation" : [
                 0.00987553596496582,
-                -0.0027042925357818604,
+                -0.002704307436943054,
                 0.0016424059867858887
             ]
         },
@@ -204,8 +204,8 @@
             ],
             "translation" : [
                 0.008404605090618134,
-                0,
-                0
+                0.06509581208229065,
+                0.002423926955088973
             ]
         },
         {
@@ -1021,27 +1021,27 @@
             "mesh" : 43,
             "name" : "LEFT_WHEEL",
             "translation" : [
-                0.7210342288017273,
-                -0.44123315811157227,
-                0.13483694195747375
+                0.7210344672203064,
+                -0.44123318791389465,
+                0.13483697175979614
             ]
         },
         {
             "mesh" : 44,
             "name" : "LEFT_WHEEL_BLURRED",
             "translation" : [
-                0.7210343480110168,
-                -0.4412330985069275,
-                0.13483692705631256
+                0.721034586429596,
+                -0.44123315811157227,
+                0.13483695685863495
             ]
         },
         {
             "mesh" : 45,
             "name" : "wheel_base_l_Frost",
             "translation" : [
-                -0.3897460103034973,
-                0.35089901089668274,
-                0.2738820016384125
+                -0.3897460401058197,
+                0.3508990705013275,
+                0.27388203144073486
             ]
         },
         {
@@ -1052,6 +1052,12 @@
             ],
             "mesh" : 46,
             "name" : "wheel_base_l",
+            "rotation" : [
+                0,
+                0,
+                0.05000000074505806,
+                1
+            ],
             "translation" : [
                 0.3897460103034973,
                 -0.34623199701309204,
@@ -3889,7 +3895,7 @@
                         "texCoord" : 0
                     },
                     "detailNormalTexture" : {
-                        "index" : 40,
+                        "index" : 41,
                         "texCoord" : 0
                     },
                     "UVScale" : 5.21999979019165,
@@ -3958,24 +3964,86 @@
                 "msfs_metallic_scale" : 0,
                 "msfs_detail_uv_scale" : 5.21999979019165,
                 "msfs_color_alpha_mix" : 0.10000000149011612,
+                "msfs_material_type" : 0,
+                "msfs_base_color_factor" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_emissive_factor" : [
+                    0,
+                    0,
+                    0
+                ],
+                "msfs_alpha_mode" : 0,
+                "msfs_draw_order" : 0,
+                "msfs_double_sided" : 0,
+                "msfs_dont_cast_shadows" : 0,
+                "msfs_day_night_cycle" : 0,
+                "msfs_use_pearl_effect" : 0,
+                "msfs_pearl_shift" : 0,
+                "msfs_pearl_range" : 0,
+                "msfs_pearl_brightness" : 0,
+                "msfs_collision_material" : 0,
+                "msfs_road_material" : 0,
+                "msfs_uv_offset_u" : 0,
+                "msfs_uv_offset_v" : 0,
+                "msfs_uv_tiling_u" : 1,
+                "msfs_uv_tiling_v" : 1,
+                "msfs_uv_rotation" : 0,
+                "msfs_uv_clamp_u" : 0,
+                "msfs_uv_clamp_v" : 0,
+                "msfs_roughness_factor" : 1,
+                "msfs_metallic_factor" : 1,
+                "msfs_normal_scale" : 1,
+                "msfs_alpha_cutoff" : 0.5,
+                "msfs_detail_uv_offset_u" : 0,
+                "msfs_detail_uv_offset_v" : 0,
+                "msfs_detail_normal_scale" : 1,
+                "msfs_blend_threshold" : 0.10000000149011612,
+                "msfs_decal_color_blend_factor" : 1,
+                "msfs_decal_metal_blend_factor" : 1,
+                "msfs_decal_normal_blend_factor" : 1,
+                "msfs_decal_roughness_blend_factor" : 1,
+                "msfs_decal_occlusion_blend_factor" : 1,
+                "msfs_decal_emissive_blend_factor" : 1,
+                "msfs_rain_drop_scale" : 1,
+                "msfs_wiper_1_state" : 0,
+                "msfs_wiper_2_state" : 0,
+                "msfs_glass_reflection_factor" : 1,
+                "msfs_glass_deformation_factor" : 0,
+                "msfs_parallax_scale" : 0,
+                "msfs_parallax_room_size_x" : 0.5,
+                "msfs_parallax_room_size_y" : 0.5,
+                "msfs_parallax_room_number" : 1,
+                "msfs_parallax_corridor" : 0,
+                "msfs_sss_color" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_fresnel_factor" : 1,
+                "msfs_fresnel_opacity_bias" : 0,
                 "ASOBO_material_code" : "Windshield"
             },
             "name" : "Windshield",
             "normalTexture" : {
-                "index" : 41,
+                "index" : 42,
                 "texCoord" : 0
             },
             "occlusionTexture" : {
-                "index" : 42,
+                "index" : 43,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 43,
+                    "index" : 44,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 42,
+                    "index" : 43,
                     "texCoord" : 0
                 }
             }
@@ -5091,6 +5159,9 @@
         },
         {
             "source" : 43
+        },
+        {
+            "source" : 44
         }
     ],
     "images" : [
@@ -5298,6 +5369,11 @@
             "mimeType" : "image/png",
             "name" : "GLASS_DETAILMAP01",
             "uri" : "GLASS_DETAILMAP01.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "FROST_DETAIL_NORM",
+            "uri" : "FROST_DETAIL_NORM.png"
         },
         {
             "mimeType" : "image/png",

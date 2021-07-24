@@ -31,7 +31,7 @@
                     "export_materials" : 1,
                     "export_normals" : 1,
                     "export_tangents" : 0,
-                    "export_texture_dir" : "../texture",
+                    "export_texture_dir" : "../TEXTURE",
                     "export_xml" : 0,
                     "export_xml_file" : "model",
                     "use_selection" : 1
@@ -4711,7 +4711,7 @@
         },
         {
             "mesh" : 308,
-            "name" : "ADF_Knob_Frequency_MHz_1",
+            "name" : "ADF_Knob_Frequency_MHz",
             "rotation" : [
                 0.0011917001102119684,
                 -0.707105815410614,
@@ -4731,7 +4731,7 @@
         },
         {
             "mesh" : 309,
-            "name" : "ADF_Knob_Volume_1",
+            "name" : "ADF_Knob_VOLUME",
             "rotation" : [
                 0.626660168170929,
                 0.32544803619384766,
@@ -4751,7 +4751,7 @@
         },
         {
             "mesh" : 310,
-            "name" : "ADF_Push_Adf_1",
+            "name" : "ADF_Push_ADF_1",
             "rotation" : [
                 0.0011917835799977183,
                 -0.707105815410614,
@@ -4771,7 +4771,7 @@
         },
         {
             "mesh" : 311,
-            "name" : "ADF_Push_Bfo_1",
+            "name" : "ADF_Push_BFO",
             "rotation" : [
                 0.0011917835799977183,
                 -0.707105815410614,
@@ -4791,7 +4791,7 @@
         },
         {
             "mesh" : 312,
-            "name" : "ADF_Push_Flt_1",
+            "name" : "ADF_Push_FLT",
             "rotation" : [
                 0.0011917835799977183,
                 -0.707105815410614,
@@ -4811,7 +4811,7 @@
         },
         {
             "mesh" : 313,
-            "name" : "ADF_Push_Frq_1",
+            "name" : "ADF_Push_FRQ",
             "rotation" : [
                 0.0011917835799977183,
                 -0.707105815410614,
@@ -4831,7 +4831,7 @@
         },
         {
             "mesh" : 314,
-            "name" : "ADF_Push_SetReset_1",
+            "name" : "ADF_Push_SetReset",
             "rotation" : [
                 0.0011917835799977183,
                 -0.707105815410614,
@@ -4851,7 +4851,7 @@
         },
         {
             "mesh" : 315,
-            "name" : "ADF_Screen",
+            "name" : "ADF_Screen_1",
             "scale" : [
                 0.9542846083641052,
                 0.9542846083641052,
@@ -4865,7 +4865,7 @@
         },
         {
             "mesh" : 316,
-            "name" : "ADF_Knob_Frequency_KHz_1",
+            "name" : "ADF_Knob_Frequency_KHz",
             "rotation" : [
                 0.001191700343042612,
                 -0.707105815410614,
@@ -4882,7 +4882,7 @@
             "children" : [
                 343
             ],
-            "name" : "HELPER_ADF_Knob_Frequency_KHz_Push_1",
+            "name" : "HELPER_ADF_Knob_Frequency_KHz_Push",
             "translation" : [
                 -0.052221789956092834,
                 0.0006426721811294556,
@@ -9683,7 +9683,7 @@
                     }
                 }
             ],
-            "name" : "ADF_Knob_Frequency_MHz_1",
+            "name" : "ADF_Knob_Frequency_MHz",
             "samplers" : [
                 {
                     "input" : 2308,
@@ -9702,7 +9702,7 @@
                     }
                 }
             ],
-            "name" : "ADF_Knob_Volume_1",
+            "name" : "ADF_Knob_Volume",
             "samplers" : [
                 {
                     "input" : 2289,
@@ -9721,7 +9721,7 @@
                     }
                 }
             ],
-            "name" : "ADF_Push_Adf_1",
+            "name" : "ADF_Push_Adf",
             "samplers" : [
                 {
                     "input" : 2306,
@@ -9740,7 +9740,7 @@
                     }
                 }
             ],
-            "name" : "ADF_Push_Bfo_1",
+            "name" : "ADF_Push_Bfo",
             "samplers" : [
                 {
                     "input" : 2306,
@@ -9759,7 +9759,7 @@
                     }
                 }
             ],
-            "name" : "ADF_Push_Flt_1",
+            "name" : "ADF_Push_Flt",
             "samplers" : [
                 {
                     "input" : 2306,
@@ -9778,7 +9778,7 @@
                     }
                 }
             ],
-            "name" : "ADF_Push_Frq_1",
+            "name" : "ADF_Push_Frq",
             "samplers" : [
                 {
                     "input" : 2306,
@@ -9797,7 +9797,7 @@
                     }
                 }
             ],
-            "name" : "ADF_Push_SetReset_1",
+            "name" : "ADF_Push_SetReset",
             "samplers" : [
                 {
                     "input" : 2306,
@@ -9830,7 +9830,7 @@
                     }
                 }
             ],
-            "name" : "ADF_Knob_Frequency_KHz_Push_1",
+            "name" : "ADF_Knob_Frequency_KHz_Push",
             "samplers" : [
                 {
                     "input" : 2306,
@@ -16163,10 +16163,40 @@
                 0,
                 0
             ],
+            "extensions" : {
+                "ASOBO_material_detail_map" : {
+                    "detailColorTexture" : {
+                        "index" : 96,
+                        "texCoord" : 0
+                    },
+                    "detailNormalTexture" : {
+                        "index" : 97,
+                        "texCoord" : 0
+                    },
+                    "UVScale" : 5.21999979019165,
+                    "UVOffset" : [
+                        0.0,
+                        0.0
+                    ],
+                    "blendTreshold" : 0.10000000149011612
+                }
+            },
             "extras" : {
                 "msfs_material_mode" : 10,
+                "msfs_albedo_texture" : {
+                    "name" : "GLASS_albd",
+                    "type" : "Image"
+                },
+                "msfs_metallic_texture" : {
+                    "name" : "GLASS_comp",
+                    "type" : "Image"
+                },
                 "msfs_normal_texture" : {
                     "name" : "Glass_Norm",
+                    "type" : "Image"
+                },
+                "msfs_detail_albedo_texture" : {
+                    "name" : "GLASS_DETAILMAP01",
                     "type" : "Image"
                 },
                 "msfs_detail_normal_texture" : {
@@ -16208,24 +16238,87 @@
                 "msfs_roughness_scale" : 0,
                 "msfs_metallic_scale" : 0,
                 "msfs_detail_uv_scale" : 5.21999979019165,
-                "msfs_color_alpha_mix" : 0.10000000149011612
+                "msfs_color_alpha_mix" : 0.10000000149011612,
+                "msfs_material_type" : 0,
+                "msfs_base_color_factor" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_emissive_factor" : [
+                    0,
+                    0,
+                    0
+                ],
+                "msfs_alpha_mode" : 0,
+                "msfs_draw_order" : 0,
+                "msfs_double_sided" : 0,
+                "msfs_dont_cast_shadows" : 0,
+                "msfs_day_night_cycle" : 0,
+                "msfs_use_pearl_effect" : 0,
+                "msfs_pearl_shift" : 0,
+                "msfs_pearl_range" : 0,
+                "msfs_pearl_brightness" : 0,
+                "msfs_collision_material" : 0,
+                "msfs_road_material" : 0,
+                "msfs_uv_offset_u" : 0,
+                "msfs_uv_offset_v" : 0,
+                "msfs_uv_tiling_u" : 1,
+                "msfs_uv_tiling_v" : 1,
+                "msfs_uv_rotation" : 0,
+                "msfs_uv_clamp_u" : 0,
+                "msfs_uv_clamp_v" : 0,
+                "msfs_roughness_factor" : 1,
+                "msfs_metallic_factor" : 1,
+                "msfs_normal_scale" : 1,
+                "msfs_alpha_cutoff" : 0.5,
+                "msfs_detail_uv_offset_u" : 0,
+                "msfs_detail_uv_offset_v" : 0,
+                "msfs_detail_normal_scale" : 1,
+                "msfs_blend_threshold" : 0.10000000149011612,
+                "msfs_decal_color_blend_factor" : 1,
+                "msfs_decal_metal_blend_factor" : 1,
+                "msfs_decal_normal_blend_factor" : 1,
+                "msfs_decal_roughness_blend_factor" : 1,
+                "msfs_decal_occlusion_blend_factor" : 1,
+                "msfs_decal_emissive_blend_factor" : 1,
+                "msfs_rain_drop_scale" : 1,
+                "msfs_wiper_1_state" : 0,
+                "msfs_wiper_2_state" : 0,
+                "msfs_glass_reflection_factor" : 1,
+                "msfs_glass_deformation_factor" : 0,
+                "msfs_parallax_scale" : 0,
+                "msfs_parallax_room_size_x" : 0.5,
+                "msfs_parallax_room_size_y" : 0.5,
+                "msfs_parallax_room_number" : 1,
+                "msfs_parallax_corridor" : 0,
+                "msfs_sss_color" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "msfs_fresnel_factor" : 1,
+                "msfs_fresnel_opacity_bias" : 0,
+                "ASOBO_material_code" : "Windshield"
             },
             "name" : "Windshield",
             "normalTexture" : {
-                "index" : 96,
+                "index" : 98,
                 "texCoord" : 0
             },
             "occlusionTexture" : {
-                "index" : 97,
+                "index" : 99,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 98,
+                    "index" : 100,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 97,
+                    "index" : 99,
                     "texCoord" : 0
                 }
             }
@@ -16241,7 +16334,7 @@
             "extensions" : {
                 "ASOBO_material_detail_map" : {
                     "detailMetalRoughAOTexture" : {
-                        "index" : 99,
+                        "index" : 101,
                         "texCoord" : 0
                     },
                     "UVScale" : 1,
@@ -16407,20 +16500,20 @@
             },
             "name" : "FROST",
             "normalTexture" : {
-                "index" : 100,
+                "index" : 102,
                 "texCoord" : 0
             },
             "occlusionTexture" : {
-                "index" : 101,
+                "index" : 103,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 102,
+                    "index" : 104,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 101,
+                    "index" : 103,
                     "texCoord" : 0
                 }
             }
@@ -16539,20 +16632,20 @@
             },
             "name" : "door_shell",
             "normalTexture" : {
-                "index" : 103,
+                "index" : 105,
                 "texCoord" : 0
             },
             "occlusionTexture" : {
-                "index" : 104,
+                "index" : 106,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 105,
+                    "index" : 107,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 104,
+                    "index" : 106,
                     "texCoord" : 0
                 }
             }
@@ -16712,7 +16805,7 @@
             "name" : "livery",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 106,
+                    "index" : 108,
                     "texCoord" : 0
                 },
                 "metallicFactor" : 0,
@@ -16875,20 +16968,20 @@
             },
             "name" : "fuselage",
             "normalTexture" : {
-                "index" : 107,
+                "index" : 109,
                 "texCoord" : 0
             },
             "occlusionTexture" : {
-                "index" : 108,
+                "index" : 110,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 109,
+                    "index" : 111,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 108,
+                    "index" : 110,
                     "texCoord" : 0
                 }
             }
@@ -17008,20 +17101,20 @@
             },
             "name" : "rivets",
             "normalTexture" : {
-                "index" : 110,
+                "index" : 112,
                 "texCoord" : 0
             },
             "occlusionTexture" : {
-                "index" : 111,
+                "index" : 113,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 112,
+                    "index" : 114,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 111,
+                    "index" : 113,
                     "texCoord" : 0
                 }
             }
@@ -17034,7 +17127,7 @@
                 0
             ],
             "emissiveTexture" : {
-                "index" : 113,
+                "index" : 115,
                 "texCoord" : 0
             },
             "extensions" : {
@@ -17182,7 +17275,7 @@
             "name" : "Decals",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 114,
+                    "index" : 116,
                     "texCoord" : 0
                 },
                 "metallicFactor" : 0,
@@ -17196,7 +17289,7 @@
                 0
             ],
             "emissiveTexture" : {
-                "index" : 115,
+                "index" : 117,
                 "texCoord" : 0
             },
             "extras" : {
@@ -17339,20 +17432,20 @@
             },
             "name" : "Framex",
             "normalTexture" : {
-                "index" : 116,
+                "index" : 118,
                 "texCoord" : 0
             },
             "occlusionTexture" : {
-                "index" : 117,
+                "index" : 119,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 118,
+                    "index" : 120,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 117,
+                    "index" : 119,
                     "texCoord" : 0
                 }
             }
@@ -17507,7 +17600,7 @@
             "name" : "$AS330_Screen",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 119,
+                    "index" : 121,
                     "texCoord" : 0
                 },
                 "metallicFactor" : 0,
@@ -17521,7 +17614,7 @@
                 0
             ],
             "emissiveTexture" : {
-                "index" : 120,
+                "index" : 122,
                 "texCoord" : 0
             },
             "extras" : {
@@ -17636,20 +17729,20 @@
             },
             "name" : "ADF_Frame",
             "normalTexture" : {
-                "index" : 121,
+                "index" : 123,
                 "texCoord" : 0
             },
             "occlusionTexture" : {
-                "index" : 122,
+                "index" : 124,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 123,
+                    "index" : 125,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 122,
+                    "index" : 124,
                     "texCoord" : 0
                 }
             }
@@ -17662,7 +17755,7 @@
                 0
             ],
             "emissiveTexture" : {
-                "index" : 124,
+                "index" : 126,
                 "texCoord" : 0
             },
             "extras" : {
@@ -17770,7 +17863,7 @@
             "name" : "ADF_Decals",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 125,
+                    "index" : 127,
                     "texCoord" : 0
                 },
                 "metallicFactor" : 0,
@@ -17778,14 +17871,13 @@
             }
         },
         {
-            "alphaMode" : "BLEND",
             "emissiveFactor" : [
                 0,
                 0,
                 0
             ],
             "emissiveTexture" : {
-                "index" : 126,
+                "index" : 128,
                 "texCoord" : 0
             },
             "extensions" : {
@@ -17905,7 +17997,7 @@
                     "name" : "ADF_AS87_SCREEN_COMP",
                     "type" : "Image"
                 },
-                "msfs_blend_mode" : 2,
+                "msfs_blend_mode" : 0,
                 "msfs_show_tint" : 1,
                 "msfs_show_glass_parameters" : 0,
                 "msfs_show_decal_parameters" : 1,
@@ -17932,20 +18024,21 @@
                 "msfs_show_road_material" : 1,
                 "msfs_show_ao_use_uv2" : 1,
                 "msfs_show_uv_clamp" : 1,
-                "msfs_show_alpha_cutoff" : 0
+                "msfs_show_alpha_cutoff" : 0,
+                "msfs_metallic_scale" : 0
             },
             "name" : "ADF_Screen",
             "occlusionTexture" : {
-                "index" : 127,
+                "index" : 129,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 128,
+                    "index" : 130,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 127,
+                    "index" : 129,
                     "texCoord" : 0
                 }
             }
@@ -17957,7 +18050,7 @@
                 0
             ],
             "emissiveTexture" : {
-                "index" : 129,
+                "index" : 131,
                 "texCoord" : 0
             },
             "extras" : {
@@ -18065,7 +18158,7 @@
             "name" : "AS140_Screen",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 130,
+                    "index" : 132,
                     "texCoord" : 0
                 }
             }
@@ -18077,7 +18170,7 @@
                 0
             ],
             "emissiveTexture" : {
-                "index" : 131,
+                "index" : 133,
                 "texCoord" : 0
             },
             "extras" : {
@@ -18192,16 +18285,16 @@
             },
             "name" : "AS140_Frame",
             "normalTexture" : {
-                "index" : 132,
+                "index" : 134,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 133,
+                    "index" : 135,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 134,
+                    "index" : 136,
                     "texCoord" : 0
                 }
             }
@@ -18214,7 +18307,7 @@
                 0
             ],
             "emissiveTexture" : {
-                "index" : 135,
+                "index" : 137,
                 "texCoord" : 0
             },
             "extras" : {
@@ -18322,7 +18415,7 @@
             "name" : "AS140_Decals",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 136,
+                    "index" : 138,
                     "texCoord" : 0
                 },
                 "metallicFactor" : 0,
@@ -24936,22 +25029,28 @@
             "source" : 123
         },
         {
-            "source" : 113
+            "source" : 124
         },
         {
-            "source" : 114
-        },
-        {
-            "source" : 116
+            "source" : 125
         },
         {
             "source" : 115
         },
         {
-            "source" : 124
+            "source" : 116
         },
         {
-            "source" : 125
+            "source" : 118
+        },
+        {
+            "source" : 117
+        },
+        {
+            "source" : 126
+        },
+        {
+            "source" : 127
         }
     ],
     "images" : [
@@ -25399,6 +25498,16 @@
             "mimeType" : "image/png",
             "name" : "ToebarblueRGH",
             "uri" : "ToebarblueRGH.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "GLASS_DETAILMAP01",
+            "uri" : "GLASS_DETAILMAP01.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "FROST_DETAIL_NORM",
+            "uri" : "FROST_DETAIL_NORM.png"
         },
         {
             "mimeType" : "image/png",
