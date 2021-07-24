@@ -12,7 +12,6 @@
     <Include ModelBehaviorFile="Asobo\Common.xml"/>
     <Include Path="Asobo\Transponder\AS330.xml"/>
     <Include ModelBehaviorFile="Asobo\NAVCOM\ADF.xml"/>
-    <Include ModelBehaviorFile="Asobo\NAVCOM\KAP140.xml"/>
     <Include ModelBehaviorFile="C152X\Index.xml"/>
     <Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
 
@@ -412,8 +411,10 @@
 		<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
 			<NODE_ID>AS140_Screen</NODE_ID>
 			<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool)</EMISSIVE_CODE>
-			<POTENTIOMETER></POTENTIOMETER>
-		</UseTemplate>
+			<DIMMING_FACTOR>1</DIMMING_FACTOR>
+			<USE_DIMMING_POTENTIOMETER/>
+			<POTENTIOMETER>6</POTENTIOMETER>
+			</UseTemplate>
     </Component>
     <Component ID="AS330">
       <UseTemplate Name="ASOBO_AS330_Template">
