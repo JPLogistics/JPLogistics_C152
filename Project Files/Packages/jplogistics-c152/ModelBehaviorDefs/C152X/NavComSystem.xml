@@ -59,7 +59,7 @@
   <Template Name="C152X_NAVCOM_Switch_BOTH_Sound_Template">
     <DefaultTemplateParameters>
       <ID>1</ID>
-      <SWITCH_TYPE>Push</SWITCH_TYPE>
+      <SWITCH_TYPE>Switch</SWITCH_TYPE>
     </DefaultTemplateParameters>
 
     <UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">

@@ -88,7 +88,7 @@
 		<Component ID="WHITE_SMOKE">
 			<OverrideTemplateParameters>
 					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
-					<FX_GUID>{1d0153b3-aea8-4196-bab6-1ebd2314504f}</FX_GUID>
+					<FX_GUID>{F42CE638-11EB-4FC8-B9B0-111A220D681F}</FX_GUID>
 					<FX_NAME>FX_CONTRAILS</FX_NAME>
 			</OverrideTemplateParameters>
 			<Component ID="FX_WHITE_SMOKE" Node="nose_cone_still">
@@ -96,28 +96,13 @@
 				</UseTemplate>
 			</Component>
 		</Component>
-		<Component ID="BLACK_SMOKE">
+		<!--<Component ID="BLACK_SMOKE">
 			<OverrideTemplateParameters>
 					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
-					<FX_GUID>{e059a220-c622-4457-936b-88feb4210b91}</FX_GUID>
+					<FX_GUID>{3154CA46-3149-4014-AF44-3B111F7C54D3}</FX_GUID>
 					<FX_NAME>Smoke_XXL_Black</FX_NAME>
 			</OverrideTemplateParameters>
 			<Component ID="FX_BLACK_SMOKE" Node="nose_cone_still">
-				<UseTemplate Name="ASOBO_GT_FX">
-				</UseTemplate>
-			</Component>
-		</Component>
-		<!--
-		<Component ID="FX_CONTRAIL_RIBBON">
-			<OverrideTemplateParameters>
-					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
-					<FX_OFFSET_X>1</FX_OFFSET_X>
-					<FX_OFFSET_Y>1</FX_OFFSET_Y>
-					<FX_OFFSET_Z>1</FX_OFFSET_Z>
-					<FX_GUID>{17f509d0-7a07-491d-837c-ace89d34dbe1}</FX_GUID>
-					<FX_NAME>FX_CONTRAILS_RIBBON</FX_NAME>
-			</OverrideTemplateParameters>
-			<Component ID="FX_CONTRAIL_RIBBON_LEFT_OUT" Node="nose_cone_still">
 				<UseTemplate Name="ASOBO_GT_FX">
 				</UseTemplate>
 			</Component>

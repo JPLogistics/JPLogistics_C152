@@ -247,8 +247,9 @@
 		<Range UpperBound="0.0"/>
 	  </Requires>
 	</Sound> 
+	
 <!--ap_disengage_sound"-->
-	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="ap_disengage_sound" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT DISENGAGED" Units="BOOL" Index="0" ViewPoint="Inside">
+	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="ap_disengage_sound_pre" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="ELECTRICAL MASTER BATTERY" Units="BOOL" Index="0" ViewPoint="Inside">
 	  <Range LowerBound="1" />
 	  <Requires SimVar="ELECTRICAL MASTER BATTERY" Units="BOOL" Index="0">
         <Range LowerBound="1" />
@@ -262,12 +263,12 @@
       </Requires>
     </Sound>
 	
-	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="ap_disengage_sound_pre" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT MASTER" Units="BOOL" Index="0" ViewPoint="Inside">
+	<!--<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="ap_disengage_sound_pre" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT MASTER" Units="BOOL" Index="0" ViewPoint="Inside">
 	  <Range UpperBound="0" />
 	  <Requires SimVar="ELECTRICAL MASTER BATTERY" Units="BOOL" Index="0">
         <Range LowerBound="1" />
       </Requires>
-    </Sound>
+    </Sound>-->
 	<!-- PROPELLER WIND ========================================================================================== --> 
 	
 	<Sound WwiseData="true" WwiseEvent="propeller_wind" ConeHeading="180" SimVar="PROP RPM" Units="RPM" ViewPoint="Outside" Index="1">  
@@ -340,13 +341,13 @@
 	
 	<Sound WwiseData="true" WwiseEvent="nav_light_switch_on"  LocalVar="DME_POWER" Units="bool" Continuous="false" ></Sound>
 
-
-
-	<Sound WwiseEvent="custom_sound_04" WwiseData="false" FileName="windowopen" Continuous="False" SimVar="ENG ON FIRE" EngineIndex="1" Units="bool">
-        <Requires SimVar="ENG ON FIRE" EngineIndex="1" Units="bool" >
-			<Range LowerBound="1" />
-		</Requires>
-	</Sound>
+<!--BACKFIRE SOUND-->
+	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="backfire"  Continuous="false" SimVar="ENG ON FIRE" Units="BOOL" Index="1" >
+	  <Range LowerBound="1" />
+	  <Requires SimVar="ENG ON FIRE" Units="BOOL" Index="1">
+        <Range LowerBound="1" />
+      </Requires>
+    </Sound>
 
  </SimVarSounds>
   

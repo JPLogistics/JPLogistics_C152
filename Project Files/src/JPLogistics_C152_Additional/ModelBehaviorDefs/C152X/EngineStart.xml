@@ -88,7 +88,7 @@ Factors:
 	</Update>
 
 	<!-- #### THIS IS ONE TO USE ######-->
-	<!--
+	
 	<Update Frequency="1">
 		(L:XMLVAR_Engine_Condition) @MinimumEngScore &gt;= 
 		(L:XMLVAR_Fuel_Evaporating, Bool) ! and
@@ -101,10 +101,10 @@ Factors:
 			(A:GENERAL ENG COMBUSTION:1, bool) if{ (&gt;K:TOGGLE_ENGINE1_FAILURE) }
 		}		
 	</Update>	
-	-->
+	
 
 	<!-- #### THIS ONE IS FOR TESTING, WILL TURN ON PANEL LIGHTS WHEN START CONDITIONS ARE MET  #####-->
-		
+	<!--	
 	<Update Frequency="1">
 		(L:XMLVAR_Engine_Condition) @MinimumEngScore &gt;= 
 		(L:XMLVAR_Fuel_Evaporating, Bool) ! and
@@ -117,7 +117,7 @@ Factors:
 			(A:LIGHT PANEL, Bool) if{ (&gt;K:PANEL_LIGHTS_TOGGLE) }
 		}		
 	</Update>	
-	
+	-->
 </Template>
 
 <Template Name = "Fire_Logic">
@@ -126,6 +126,7 @@ Factors:
 		(A:GENERAL ENG THROTTLE LEVER POSITION:1, percent) 60 &gt;= and
 		(A:GENERAL ENG MIXTURE LEVER POSITION:1, percent) 50 &gt;= and
 		(A:GENERAL ENG STARTER:1, bool) 0 &gt; and
+		(A:ELECTRICAL MASTER BATTERY:1, bool) 0 &gt; and
 		if{
 		  1 (&gt;A:ENG ON FIRE:1, bool) <!-- ###  1 (&gt;A:ENG ON FIRE:1, bool) ###  #### (&gt;K:FLAPS_3) ####-->
 		}	
