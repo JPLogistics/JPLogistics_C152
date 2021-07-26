@@ -201,14 +201,14 @@
     <Animation guid="c9724b80-5dfa-41eb-9c4b-03a002aeb855" name="Breaker_RIGHT_3" type="standard" typeParam="Autoplay"/>
     <Animation guid="52618a24-72a7-44b9-a1d2-d9d4e93efbc8" name="Breaker_RIGHT_4" type="standard" typeParam="Autoplay"/>
     <Animation guid="9b3d939a-e9c2-46fa-8b9e-ac9cd99951a2" name="Breaker_STROBELTS" type="standard" typeParam="Autoplay"/>
-    <Animation guid="ec18ddb8-22a6-4e1b-9856-1c4f7d306cbd" name="ADF_Push_Adf" type="standard" typeParam="Autoplay"/>
-    <Animation guid="0e836b07-138a-468d-a6f0-f45e51b86b5e" name="ADF_Push_Bfo" type="standard" typeParam="Autoplay"/>
-    <Animation guid="4541f630-ae2d-4af1-af7d-2c12bc94b775" name="ADF_Push_Frq" type="standard" typeParam="Autoplay"/>
-    <Animation guid="2aca0721-a9b8-46ed-ac16-6fc2c9c3b32e" name="ADF_Push_Flt" type="standard" typeParam="Autoplay"/>
-    <Animation guid="553793d0-1f58-40d8-86f3-26b5474a6fe9" name="ADF_Push_SetReset" type="standard" typeParam="Autoplay"/>
-    <Animation guid="f84448ea-0afb-4e4d-a506-dcf0598eff3e" name="ADF_Knob_Volume" type="standard" typeParam="Autoplay"/>
-    <Animation guid="3f755e9e-3788-4d94-8430-4f9ee303b6f8" name="ADF_Knob_Frequency_MHz" type="standard" typeParam="Autoplay"/>
-    <Animation guid="f801d566-281c-4073-bbc8-e12c71f8b058" name="ADF_Knob_Frequency_KHz" type="standard" typeParam="Autoplay"/>
+    <Animation guid="ec18ddb8-22a6-4e1b-9856-1c4f7d306cbd" name="ADF_Push_Adf_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="0e836b07-138a-468d-a6f0-f45e51b86b5e" name="ADF_Push_Bfo_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="4541f630-ae2d-4af1-af7d-2c12bc94b775" name="ADF_Push_Frq_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2aca0721-a9b8-46ed-ac16-6fc2c9c3b32e" name="ADF_Push_Flt_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="553793d0-1f58-40d8-86f3-26b5474a6fe9" name="ADF_Push_SetReset_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f84448ea-0afb-4e4d-a506-dcf0598eff3e" name="ADF_Knob_Volume_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="3f755e9e-3788-4d94-8430-4f9ee303b6f8" name="ADF_Knob_Frequency_MHz_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="f801d566-281c-4073-bbc8-e12c71f8b058" name="ADF_Knob_Frequency_KHz_1" type="standard" typeParam="Autoplay"/>
     
 
     <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank and the 20 in the formula is a scaling factor for the amount of yaw induced variation in the tank indication. The first value is the current tank quantity in liters. 	The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
@@ -423,32 +423,14 @@
 		<FAILURE>(A:CIRCUIT ON:37, Bool)</FAILURE>
       </UseTemplate>
     </Component>
-
-    <UseTemplate Name="ASOBO_ADF_AS87_Template">
-      <EMISSIVE_POTENTIOMETER>6</EMISSIVE_POTENTIOMETER>
-      <FAILURE>(A:CIRCUIT AVIONICS ON, Bool)</FAILURE>
-      <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
-      <NODE_ID_ADF_VOLUME>ADF_Knob_Volume</NODE_ID_ADF_VOLUME>
-      <ANIM_NAME_ADF_VOLUME>ADF_Knob_Volume</ANIM_NAME_ADF_VOLUME>
-      <NODE_ID_PUSH_ADF>ADF_Push_ADF</NODE_ID_PUSH_ADF>
-      <ANIM_NAME_PUSH_ADF>ADF_Push_ADF</ANIM_NAME_PUSH_ADF>
-      <NODE_ID_PUSH_BFO>ADF_Push_BFO</NODE_ID_PUSH_BFO>
-      <ANIM_NAME_PUSH_BFO>ADF_Push_BFO</ANIM_NAME_PUSH_BFO>
-      <NODE_ID_PUSH_FRQ>ADF_Push_FRQ</NODE_ID_PUSH_FRQ>
-      <ANIM_NAME_PUSH_FRQ>ADF_Push_FRQ</ANIM_NAME_PUSH_FRQ>
-      <NODE_ID_PUSH_FLT>ADF_Push_FLT</NODE_ID_PUSH_FLT>
-      <ANIM_NAME_PUSH_FLT>ADF_Push_FLT</ANIM_NAME_PUSH_FLT>
-      <NODE_ID_PUSH_SET_RESET>ADF_Push_SetReset</NODE_ID_PUSH_SET_RESET>
-      <ANIM_NAME_PUSH_SET_RESET>ADF_Push_SetReset</ANIM_NAME_PUSH_SET_RESET>
-      <NODE_ID_FRAME>ADF_Frame</NODE_ID_FRAME>
-      <NODE_ID_SCREEN>ADF_Screen</NODE_ID_SCREEN>
-      <NODE_ID_100_KHZ>ADF_Knob_Frequency_MHz</NODE_ID_100_KHZ>
-      <ANIM_NAME_100_KHZ>ADF_Knob_Frequency_MHz</ANIM_NAME_100_KHZ>
-      <NODE_ID_1_10_KHZ>ADF_Knob_Frequency_KHz</NODE_ID_1_10_KHZ>
-      <ANIM_NAME_1_10_KHZ>ADF_Knob_Frequency_KHz</ANIM_NAME_1_10_KHZ>
-      <ANIM_NAME_1_10_KHZ_PUSH>ADF_Knob_Frequency_KHz_Push</ANIM_NAME_1_10_KHZ_PUSH>
-    </UseTemplate>
-    
+    <Component ID="ADF_KR87">
+      <UseTemplate Name="ASOBO_INSTRUMENT_ADF_Template">
+        <EMISSIVE_POTENTIOMETER>6</EMISSIVE_POTENTIOMETER>
+        <!--<CIRCUIT_ADF>30</CIRCUIT_ADF> ### NOT WORKING ### -->
+        <FAILURE>(A:CIRCUIT AVIONICS ON, Bool)</FAILURE>
+        <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
+      </UseTemplate>
+    </Component>
     <Component ID="INSTRUMENTS">
 		<UseTemplate Name="ASOBO_INSTRUMENT_Needle_ADF_Template">
 			<ANIM_LAG>200</ANIM_LAG>
