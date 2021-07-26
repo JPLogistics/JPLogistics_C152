@@ -626,6 +626,7 @@
 			<UseTemplate Name="ASOBO_INSTRUMENT_Needle_OAT_Template">
 				<MIN_VALUE>-58</MIN_VALUE>
 				<MAX_VALUE>66</MAX_VALUE>
+				<ANIM_NEVER_FAILS>True</ANIM_NEVER_FAILS>
 			</UseTemplate>
 		</Component>
 	</Component>
