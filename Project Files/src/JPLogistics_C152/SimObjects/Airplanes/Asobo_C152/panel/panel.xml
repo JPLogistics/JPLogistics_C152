@@ -40,8 +40,7 @@
     <!--ADF-->
     <Name>KR87</Name>
     <Electric>
-      <!--<Simvar name="CIRCUIT ON:30" unit="Boolean"/> ## Should be using this ##-->
-      <Simvar name="CIRCUIT ON:36" unit="Boolean"/>
+      <Simvar name="CIRCUIT ON:37" unit="Boolean"/>
     </Electric>
   </Instrument>
   <Instrument>

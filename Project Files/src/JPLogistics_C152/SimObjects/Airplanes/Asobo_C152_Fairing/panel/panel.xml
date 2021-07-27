@@ -36,5 +36,19 @@
       <Simvar name="CIRCUIT ON:36" unit="Boolean"/>
     </Electric>
   </Instrument>
+  <Instrument>
+    <!--ADF-->
+    <Name>KR87</Name>
+    <Electric>
+      <Simvar name="CIRCUIT ON:37" unit="Boolean"/>
+    </Electric>
+  </Instrument>
+  <Instrument>
+    <!--AP-->
+    <Name>KAP140</Name>
+    <Electric>
+      <Simvar name="CIRCUIT ON:32" unit="Boolean"/>
+    </Electric>
+  </Instrument>
 </PlaneHTMLConfig>
 

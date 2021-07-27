@@ -81,13 +81,13 @@ FoldingWingsState=0, 0
 ;-------------------------------------------- 
 152X_COM1VOL=0   ;0=OFF, 1=FULL
 152X_COM2VOL=0   ;0=OFF, 1=FULL
+152X_ADFVOL=0
 DME_POWER=0
 JPL_DOOR_PILOT=1
 JPL_DOOR_COPILOT=1
 
 ;--------------------------------------------
 ;C152X Cessna 300 ADF
-ADFVOLUME:0
 ;XMLVAR_ADF_MODE_SEL=2	;2='ADF' Mode
 ;XMLVAR_ADF_VOLUME=100	;0=OFF, 100=FULL
 ;--------------------------------------------

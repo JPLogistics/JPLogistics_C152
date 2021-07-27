@@ -17,7 +17,10 @@
 
     
 
-    <Animation guid="7c719d93-8933-4c7e-b731-96dd3afa91d2" name="prop_anim" type="standard" typeParam="Autoplay"/>
+    <Animation guid="c54f4247-5a4c-499d-9de2-eaaa3625f001" name="prop_anim" type="standard" typeParam="Autoplay"/>
+    <Animation guid="65977ec5-6a6c-4f4a-9825-80a60f805616" name="c_gear" type="standard" typeParam="Autoplay"/>
+    <Animation guid="042a9fea-621d-401e-9fbb-36ab23187179" name="r_gear" type="standard" typeParam="Autoplay"/>
+    <Animation guid="2b5ceedc-f1ee-4434-aa7a-1391e341f3ab" name="l_gear" type="standard" typeParam="Autoplay"/>
     
 		<Component ID="HANDLING">
 			<UseTemplate Name="ASOBO_HANDLING_Elevator_Template">
@@ -88,7 +91,7 @@
 		<Component ID="WHITE_SMOKE">
 			<OverrideTemplateParameters>
 					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
-					<FX_GUID>{F42CE638-11EB-4FC8-B9B0-111A220D681F}</FX_GUID>
+					<FX_GUID>{f2a19897-2ff7-4aa6-9620-0faa85dc4a57}</FX_GUID>
 					<FX_NAME>FX_CONTRAILS</FX_NAME>
 			</OverrideTemplateParameters>
 			<Component ID="FX_WHITE_SMOKE" Node="nose_cone_still">
@@ -99,7 +102,7 @@
 		<!--<Component ID="BLACK_SMOKE">
 			<OverrideTemplateParameters>
 					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
-					<FX_GUID>{3154CA46-3149-4014-AF44-3B111F7C54D3}</FX_GUID>
+					<FX_GUID>{0ea41a33-02ee-4878-9203-1c969640bf7d}</FX_GUID>
 					<FX_NAME>Smoke_XXL_Black</FX_NAME>
 			</OverrideTemplateParameters>
 			<Component ID="FX_BLACK_SMOKE" Node="nose_cone_still">
