@@ -249,16 +249,16 @@
 	</Sound> 
 	
 <!--ap_disengage_sound"-->
-	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="ap_disengage_sound_pre" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="ELECTRICAL MASTER BATTERY" Units="BOOL" Index="0" ViewPoint="Inside">
+	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="ap_disengage_sound_pre" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="CIRCUIT ON:32" Units="BOOL" Index="0" ViewPoint="Inside">
 	  <Range LowerBound="1" />
-	  <Requires SimVar="ELECTRICAL MASTER BATTERY" Units="BOOL" Index="0">
+	  <Requires SimVar="CIRCUIT ON:32" Units="BOOL" Index="0">
         <Range LowerBound="1" />
       </Requires>
     </Sound>
 	
 	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="ap_disengage_sound" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT MASTER" Units="BOOL" Index="0" ViewPoint="Inside">
 	  <Range UpperBound="0" />
-	  <Requires SimVar="ELECTRICAL MASTER BATTERY" Units="BOOL" Index="0">
+	  <Requires SimVar="CIRCUIT ON:32" Units="BOOL" Index="0">
         <Range LowerBound="1" />
       </Requires>
     </Sound>
@@ -348,6 +348,17 @@
         <Range LowerBound="1" />
       </Requires>
     </Sound>
+	
+	<Sound WwiseData="false" WwiseEvent="custom_sound_07" FileName="vent"  FadeOutType="2" FadeOutTime="2.2" Continuous="true" LocalVar="XMLVAR_Cabin_Air_1_Position" Units="percent" Index="1" breakonstop="true" >
+	  <Range LowerBound="50" />
+	  <Requires LocalVar="XMLVAR_Cabin_Air_1_Position" Units="percent" Index="1">
+        <Range UpperBound="100" />
+      </Requires>
+		<Requires SimVar="AIRSPEED INDICATED" Units="KNOTS" Index="0">
+		  <Range LowerBound="60" />
+		</Requires>
+    </Sound>	
+
 
  </SimVarSounds>
   
