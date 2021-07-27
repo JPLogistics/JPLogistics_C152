@@ -68,8 +68,8 @@ Extrude Heading Max=0.00
 [LightAttributes.0]
 Type=omni
 Size=0.1
-Range=1.0
-Intensity=0.025
+Range=0.4
+Intensity=0.02
 Softness=1.0
 SpotInner=20.0
 SpotOuter=40.0

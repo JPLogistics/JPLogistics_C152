@@ -10,26 +10,52 @@
 
 # JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
-- **Primary Download (Latest Release): [V0.9.9](https://github.com/JPLogistics/MSFS_C152/releases/)**
-- **Alternative Download Site: [V0.9.9](https://flightsim.to/file/2246/msfs-c152-community)**
+- **Primary Download (Latest Release): [V1.0.0](https://github.com/JPLogistics/MSFS_C152/releases/)**
+- **Alternative Download Site: [V1.0.0](https://flightsim.to/file/2246/msfs-c152-community)**
 - **Discord Channel: [MSFS_C152 Community](https://discord.gg/Arj3jnBmk5)**
 
 ## Donations
 
 Continued work on this project is with a large thanks to our donators! Without this kind gesture finding time is slightly more difficult, but every donation means extra time I can set aside to update/upgrade and improve this mod!
 
-## V0.9.9 - It's about time!
-- Panel Lighting completely reworked!
-   - A MASSIVE thanks to @WeptBurrito2749 from the Forums for work on this!
-   - See the attached video for more information
-   - This is a work in progress still, some aspects need tweaking!
-- Disabled Autopilot completely
-  - This is due to it causing so many bug reports!
-- Readded Blue Metal Livery!
-   - As requested by our users!
-- Flight Model updates, special shout out to @RetiredMan93231 for the help here!
-- Checked compatibility with latest MSFS
-- Updated Cockpit Files to match latest Asobo with Modifications
-- Cockpit textures updated
-- Fuel Gauges calibrated and textures updated!
+## V1.0.0 - BETA TEST
+### This is a beta test! Some things still need tweaking!
+- New Animations
+	- Opening Doors!
+	- Opening Windows!
+	- Sun Visors!
+	- New Switches/Rotary Dials
+      - NAVCOM Dimming
+      - Instrument Lighting
+      - Overhead Lighting
+      - Glareshield/Dome Lighting
+	- Reworked Cockpit Animations
+	- Circuit Breakers!
+- New Cargo Options
+- New Graphics
+- OAT Gauge corrected
+- New Sound Effects
+	- Enviroment sounds linked too windows/doors
+- Reworked Electrical Systems
+	- Build from the ground up!
+	- Circuit Breakers now function (Random snap pending)
+- Reworked Lighting
+- New Transponder, we are now rocking a AS330!
+- New ADF KR87!
+- New HSI!
+- KAP140 Autopilot Module (Disable using Circuit Breaker RADIO4)
+- Wheel Fairing version!
+- Proper DME Device - Custom Designed JPLogistics Model
+- Flight Model adjusted
+- Fuel load corrected
+- New Start System
+	- Primer now required
+- New Visual Effects
+	- Engine Fire
+	- Smoke
+	- Exhaust plume
 
+   ### Known Issues
+   - ADF Textures are the wrong colour
+   - Cargo Baggage missing behaviour
+   - Flight Model review

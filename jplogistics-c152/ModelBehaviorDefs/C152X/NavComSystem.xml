@@ -1,0 +1,135 @@
+<ModelBehaviors>
+  <Include ModelBehaviorFile="Asobo\Generic.xml"/>
+  <Include RelativeFile="Inputs\\NavComSystem_Inputs.xml"/>
+
+  <!-- REQ: ID(COM) -->
+  <Template Name="JPL_GT_COM_Push_Transmit_Template">
+    <Parameters Type="Default">
+      <ID>1</ID>
+      <INTERACTION_TYPE>Push</INTERACTION_TYPE>
+    </Parameters>
+    <UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
+      <TEMPLATE_TO_CALL>JPL_GT_COM_Transmit_SubTemplate</TEMPLATE_TO_CALL>
+    </UseTemplate>
+  </Template>
+  <Template Name="JPL_GT_COM_Transmit_SubTemplate">
+    <Parameters Type="Default">
+      <NODE_ID>COM_Push_Transmit_#ID##SUFFIX_ID#</NODE_ID>
+      <ANIM_NAME>COM_Push_Transmit_#ID##SUFFIX_ID#</ANIM_NAME>
+      <COM_ID Process="Int">#ID# 1 -</COM_ID>
+      <Condition Check="COPILOT">
+        <True>
+          <KEY_ID>COPILOT</KEY_ID>
+        </True>
+        <False>
+          <KEY_ID>PILOT</KEY_ID>
+        </False>
+      </Condition>
+      <TRANSMITTER_NONE>4</TRANSMITTER_NONE>
+      <INTERACTION_TYPE>Push</INTERACTION_TYPE>
+      <IS_ALLOW_TO_RESET_RECEIVE>1</IS_ALLOW_TO_RESET_RECEIVE>
+      <!-- override this to be false if you have something else currently blocking the audio channels by its state -->
+    </Parameters>
+    <Parameters Type="Override">
+      <SET_STATE_ON>
+        #COM_ID# (&gt;K:#KEY_ID#_TRANSMITTER_SET)
+        #IS_ALLOW_TO_RESET_RECEIVE# if{ 0 (&gt;K:COM_RECEIVE_ALL_SET) }
+        1 (&gt;K:COM#ID#_RECEIVE_SELECT)
+      </SET_STATE_ON>
+      <SET_STATE_OFF>
+        #TRANSMITTER_NONE#
+        (&gt;K:#KEY_ID#_TRANSMITTER_SET)
+        0 (&gt;K:COM_RECEIVE_ALL_SET)
+      </SET_STATE_OFF>
+      <BTN_ID>COM#ID#_Transmit</BTN_ID>
+      <EMISSIVE_INDICATOR_CODE>(A:#KEY_ID# TRANSMITTER TYPE, Enum) #COM_ID# ==</EMISSIVE_INDICATOR_CODE>
+      <GET_STATE_EXTERNAL>(A:#KEY_ID# TRANSMITTER TYPE, Enum) #COM_ID# == sp0</GET_STATE_EXTERNAL>
+      <SIM_STATE_IS_ON_EXTERNAL>l0</SIM_STATE_IS_ON_EXTERNAL>
+      <NUM_STATES>2</NUM_STATES>
+      <SIMVAR_TO_WATCH_0>#KEY_ID# TRANSMITTER TYPE</SIMVAR_TO_WATCH_0>
+      <TT_DESCRIPTION_ID>@TT_Package.AS1000_MID_PUSH_COM_MIC_ACTION</TT_DESCRIPTION_ID>
+      <TT_DESCRIPTION_INDEX>#ID#</TT_DESCRIPTION_INDEX>
+      <TOOLTIP_TITLE>#ID# (R:1:@TT_Package.AS1000_MID_PUSH_COM_MIC_TITLE) @sprintf</TOOLTIP_TITLE>
+      <TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
+    </Parameters>
+    <UseTemplate Name="ASOBO_NAVCOM_Base_Template"/>
+  </Template>
+
+
+  <Template Name="C152X_NAVCOM_Switch_BOTH_Sound_Template">
+    <DefaultTemplateParameters>
+      <ID>1</ID>
+      <SWITCH_TYPE>Switch</SWITCH_TYPE>
+    </DefaultTemplateParameters>
+
+    <UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
+      <TEMPLATE_TO_CALL>C152X_GT_NAVCOM_Switch_Sound_Template</TEMPLATE_TO_CALL>
+      <RADIO_TYPE>BOTH</RADIO_TYPE>
+    </UseTemplate>
+  </Template>
+
+
+  <Template Name="C152X_GT_NAVCOM_Switch_Sound_Template">
+    <DefaultTemplateParameters>
+      <ID>1</ID>
+    </DefaultTemplateParameters>
+
+    <UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
+      <TEMPLATE_TO_CALL>C152X_GT_NAVCOM_Switch_Sound_SubTemplate</TEMPLATE_TO_CALL>
+    </UseTemplate>
+  </Template>
+
+  <Template Name="C152X_GT_NAVCOM_Switch_Sound_SubTemplate">
+    <DefaultTemplateParameters>
+      <NODE_ID>#RADIO_TYPE#_#SWITCH_TYPE#_#ID##SUFFIX_ID#</NODE_ID>
+      <ANIM_NAME>#RADIO_TYPE#_#SWITCH_TYPE#_#ID##SUFFIX_ID#</ANIM_NAME>
+      <Condition Check="USE_SEPARATE_ON_OFF_ANIM">
+        <ANIM_NAME_ON_OFF>#RADIO_TYPE#_#SWITCH_TYPE#_Push_#ID##SUFFIX_ID#</ANIM_NAME_ON_OFF>
+      </Condition>
+      <Switch Param="RADIO_TYPE">
+        <Case Value="BOTH">
+          <LEFT_SINGLE_CODE>
+            (* Lvar state *)
+            (&gt;K:COM_RECEIVE_ALL_TOGGLE)
+          </LEFT_SINGLE_CODE>
+          <ANIM_CODE>(A:COM RECEIVE ALL, Bool) 100 *</ANIM_CODE>
+          <WWISE_EVENT_1>navcom_audio_push_on</WWISE_EVENT_1>
+          <NORMALIZED_TIME_1>0.1</NORMALIZED_TIME_1>
+          <WWISE_EVENT_2>navcom_audio_push_off</WWISE_EVENT_2>
+          <NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>
+        </Case>
+      </Switch>
+    </DefaultTemplateParameters>
+    <Component ID="#NODE_ID#" Node="#NODE_ID#">
+      <Switch Param="SWITCH_TYPE">
+        <Case Value="Push">
+          <UseTemplate Name="ASOBO_GT_Push_Button">
+          </UseTemplate>
+        </Case>
+        <Default>
+          <UseTemplate Name="ASOBO_GT_Switch_Code">
+          </UseTemplate>
+          <Switch Param="RADIO_TYPE">
+            <Case Value="BOTH">
+              <UseTemplate Name="ASOBO_GT_Update">
+                <FREQUENCY>5</FREQUENCY>
+                <UPDATE_CODE>
+
+                </UPDATE_CODE>
+              </UseTemplate>
+            </Case>
+          </Switch>
+          <Condition Check="USE_SEPARATE_ON_OFF_ANIM">
+            <UseTemplate Name="ASOBO_GT_Anim_Code">
+              <ANIM_CODE>
+                #ANIM_CODE# 0 &gt; 100 *
+              </ANIM_CODE>
+              <ANIM_NAME>#ANIM_NAME_ON_OFF#</ANIM_NAME>
+            </UseTemplate>
+          </Condition>
+        </Default>
+      </Switch>
+    </Component>
+  </Template>  
+  
+</ModelBehaviors>

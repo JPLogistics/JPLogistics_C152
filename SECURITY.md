@@ -6,8 +6,8 @@ A list of supported Microsoft Flight Simulator versions!
 
 |  Version  | Supported          |
 | --------- | ------------------ |
-|  1.15.7.0 | :white_check_mark: |
-| <1.14.5.0 | :x:                |
+|  1.18.13.0 | :white_check_mark: |
+| <1.18.13.0 | :x:                |
 
 ## Reporting an issue
 
