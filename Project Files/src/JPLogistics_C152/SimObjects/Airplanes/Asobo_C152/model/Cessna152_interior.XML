@@ -11,7 +11,7 @@
 
     <Include ModelBehaviorFile="Asobo\Common.xml"/>
     <Include Path="Asobo\Transponder\AS330.xml"/>
-    <Include ModelBehaviorFile="Asobo\NAVCOM\ADF.xml"/>
+    <!--<Include ModelBehaviorFile="Asobo\NAVCOM\ADF.xml"/>-->
     <Include ModelBehaviorFile="C152X\Index.xml"/>
     <Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
 
@@ -413,24 +413,32 @@
 	<Component ID="140_screen">
 		<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
 			<NODE_ID>AS140_Screen</NODE_ID>
-			<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool)</EMISSIVE_CODE>
+			<!--<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool)</EMISSIVE_CODE>   not sure what this is doing -->
+			<FAILURE>(A:CIRCUIT ON:32, Bool)</FAILURE>
 			<DIMMING_FACTOR>1</DIMMING_FACTOR>
 			<USE_DIMMING_POTENTIOMETER/>
 			<POTENTIOMETER>6</POTENTIOMETER>
-			</UseTemplate>
+			<EMISSIVE_POTENTIOMETER>5</EMISSIVE_POTENTIOMETER>
+		</UseTemplate>
     </Component>
     <Component ID="AS330">
       <UseTemplate Name="ASOBO_AS330_Template">
         <DONT_APPEND_ID>False</DONT_APPEND_ID>
         <POTENTIOMETER>6</POTENTIOMETER>
-		<FAILURE>(A:CIRCUIT ON:37, Bool)</FAILURE>
+		<DIMMING_FACTOR>1</DIMMING_FACTOR>
+		<USE_DIMMING_POTENTIOMETER/>
+		<FAILURE>(A:TRANSPONDER STATE:1, Enum) 0 &gt; (A:CIRCUIT ON:20, Bool) and</FAILURE>
+		<EMISSIVE_POTENTIOMETER>5</EMISSIVE_POTENTIOMETER>
       </UseTemplate>
     </Component>
     <Component ID="ADF_KR87">
-      <UseTemplate Name="ASOBO_INSTRUMENT_ADF_Template">
-        <EMISSIVE_POTENTIOMETER>6</EMISSIVE_POTENTIOMETER>
+      <UseTemplate Name="C152X_INSTRUMENT_ADF_Template">
+        <EMISSIVE_POTENTIOMETER>5</EMISSIVE_POTENTIOMETER>
         <CIRCUIT_ADF>37</CIRCUIT_ADF>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
+		<DIMMING_FACTOR>1</DIMMING_FACTOR>
+		<USE_DIMMING_POTENTIOMETER/>
+		<POTENTIOMETER>6</POTENTIOMETER>
       </UseTemplate>
     </Component>
     <Component ID="INSTRUMENTS">
@@ -701,11 +709,11 @@
       <Parameters Type="Override">
         <INVERT_IM_DRAG_INPUT_SCALAR>True</INVERT_IM_DRAG_INPUT_SCALAR>
       </Parameters>
-      <UseTemplate Name="ASOBO_PASSENGER_Lever_Cabin_Air_Template">
+      <UseTemplate Name="C152X_PASSENGER_Lever_Cabin_Air_Template">
         <NODE_ID>PASSENGER_Switch_Cabin_Air_1</NODE_ID>
         <ANIM_NAME>PASSENGER_Switch_Cabin_Air_1</ANIM_NAME>
       </UseTemplate>
-      <UseTemplate Name="152X_PASSENGER_Lever_Cabin_Heat_Template">
+      <UseTemplate Name="C152X_PASSENGER_Lever_Cabin_Heat_Template">
         <NODE_ID>PASSENGER_Switch_Cabin_Heat_1</NODE_ID>
         <ANIM_NAME>PASSENGER_Switch_Cabin_Heat_1</ANIM_NAME>
       </UseTemplate>	
