@@ -128,7 +128,7 @@ Factors:
 		(A:GENERAL ENG STARTER:1, bool) 0 &gt; and
 		(A:ELECTRICAL MASTER BATTERY:1, bool) 0 &gt; and
 		if{
-		  1 (&gt;A:ENG ON FIRE:1, bool) <!-- ###  1 (&gt;A:ENG ON FIRE:1, bool) ###  #### (&gt;K:FLAPS_3) ####-->
+		  1 (&gt;A:ENG ON FIRE:1, bool) 
 		}	
 	</Update>
 </Template>
