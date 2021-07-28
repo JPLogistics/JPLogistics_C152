@@ -2999,7 +2999,6 @@
         },
         {
             "alphaMode" : "BLEND",
-            "doubleSided" : true,
             "emissiveFactor" : [
                 0,
                 0,
@@ -3051,20 +3050,26 @@
                 "msfs_show_blend_threshold" : 1,
                 "msfs_blend_mode" : 2,
                 "msfs_day_night_cycle" : 0,
-                "msfs_double_sided" : 0
+                "msfs_double_sided" : 0,
+                "msfs_color_alpha_mix" : 1,
+                "msfs_alpha_cutoff" : 0.5
             },
             "name" : "prop_blured",
             "normalTexture" : {
                 "index" : 25,
                 "texCoord" : 0
             },
+            "occlusionTexture" : {
+                "index" : 26,
+                "texCoord" : 0
+            },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 26,
+                    "index" : 27,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 27,
+                    "index" : 26,
                     "texCoord" : 0
                 }
             }
@@ -6003,13 +6008,13 @@
         },
         {
             "mimeType" : "image/png",
-            "name" : "CESSA152_AIRFRAME_PROP_BLURRED_ALBD",
-            "uri" : "CESSA152_AIRFRAME_PROP_BLURRED_ALBD.png"
+            "name" : "CESSA152_AIRFRAME_PROP_BLURRED_COMP",
+            "uri" : "CESSA152_AIRFRAME_PROP_BLURRED_COMP.png"
         },
         {
             "mimeType" : "image/png",
-            "name" : "CESSA152_AIRFRAME_PROP_BLURRED_COMP",
-            "uri" : "CESSA152_AIRFRAME_PROP_BLURRED_COMP.png"
+            "name" : "CESSA152_AIRFRAME_PROP_BLURRED_ALBD",
+            "uri" : "CESSA152_AIRFRAME_PROP_BLURRED_ALBD.png"
         },
         {
             "mimeType" : "image/png",
@@ -6098,8 +6103,8 @@
         },
         {
             "mimeType" : "image/png",
-            "name" : "Glass_Norm",
-            "uri" : "Glass_Norm.png"
+            "name" : "GLASS_norm",
+            "uri" : "GLASS_norm.png"
         },
         {
             "mimeType" : "image/png",

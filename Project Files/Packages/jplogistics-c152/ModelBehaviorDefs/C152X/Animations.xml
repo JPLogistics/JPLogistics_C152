@@ -103,7 +103,7 @@
 </Template>
 
 <Template Name="CoPilot_Weight">
-	<Update Frequency="1">
+	<Update Frequency="10">
 		(A:SPEAKER ACTIVE, Bool) 1 &gt;=
 		if{
 			170 (&gt;A:PAYLOAD STATION WEIGHT:2, pounds)

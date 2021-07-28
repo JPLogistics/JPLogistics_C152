@@ -57,7 +57,7 @@ Factors:
 -->
 
 <Template Name = "Engine_Start_Logic">	
-	<Update Frequency="1">
+	<Update Frequency="5">
 		<!-- Calculate and update Engine_Condition start score -->		
 		(L:XMLVAR_PUMPED_FUEL, gallons) @MaxPumpedFuelStart &gt;
 		if{
@@ -75,7 +75,7 @@ Factors:
 			(&gt;L:XMLVAR_Engine_Condition)
 		}		
 	</Update>
-	<Update Frequency="1">
+	<Update Frequency="5">
 		<!-- Fuel evaporation. Fuel may evaporate if the CHT is high and there is little airflow. This  -->
 		@FuelEvaporationFactor 1 &gt;
 		if{
@@ -89,7 +89,7 @@ Factors:
 
 	<!-- #### THIS IS ONE TO USE ######-->
 	
-	<Update Frequency="1">
+	<Update Frequency="5">
 		(L:XMLVAR_Engine_Condition) @MinimumEngScore &gt;= 
 		(L:XMLVAR_Fuel_Evaporating, Bool) ! and
 		if{ 
@@ -121,7 +121,7 @@ Factors:
 </Template>
 
 <Template Name = "Fire_Logic">
-	<Update Frequency="1">
+	<Update Frequency="5">
 		(L:XMLVAR_PUMPED_FUEL, gallons) 0.025 &gt;=
 		(A:GENERAL ENG THROTTLE LEVER POSITION:1, percent) 60 &gt;= and
 		(A:GENERAL ENG MIXTURE LEVER POSITION:1, percent) 50 &gt;= and
