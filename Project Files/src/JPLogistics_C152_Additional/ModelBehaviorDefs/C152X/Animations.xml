@@ -16,7 +16,7 @@
       <DRAG_ANIM_NAME>JPL_VISOR_#ID#</DRAG_ANIM_NAME>
       <POSITIVE_AXIS_CODE>(L:XMLVAR_JPL_VISOR_#ID#, position 16k) #SCROLL_INCREMENT# + 16384 min (>L:XMLVAR_JPL_VISOR_#ID#)</POSITIVE_AXIS_CODE>
       <NEGATIVE_AXIS_CODE>(L:XMLVAR_JPL_VISOR_#ID#, position 16k) #SCROLL_INCREMENT# - 0 max (>L:XMLVAR_JPL_VISOR_#ID#)</NEGATIVE_AXIS_CODE>
-      <TOOLTIPID>TT:COCKPIT.TOOLTIPS.SUN_VISORS</TOOLTIPID>
+      <TOOLTIPID>#ID#'s Sun Visor</TOOLTIPID>
       <WWISE_EVENT_1>cabin_heat_lever_on</WWISE_EVENT_1>
       <WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2> 
     </UseTemplate>
@@ -26,7 +26,7 @@
 <Template Name="JPL_Window_Template">
   <DefaultTemplateParameters>
     <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
-    <TOOLTIPID>TT:COCKPIT.TOOLTIPS.WINDOW</TOOLTIPID>
+    <TOOLTIPID>#ID#'s Window</TOOLTIPID>
   </DefaultTemplateParameters>
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
@@ -59,7 +59,7 @@
 <Template Name="JPL_Door_Template">
   <DefaultTemplateParameters>
     <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
-    <TOOLTIPID>TT:COCKPIT.TOOLTIPS.Door</TOOLTIPID>
+    <TOOLTIPID>#ID#'s Door</TOOLTIPID>
   </DefaultTemplateParameters>
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
@@ -87,7 +87,6 @@
   </Component>
 </Template>
 
-
 <Template Name="WindowSoundHelper">
 	<Update Frequency="5">
 		(L:JPL_DOOR_PILOT, Bool) 1 &gt;=
@@ -103,9 +102,6 @@
 	</Update>
 </Template>
 
-
-
-
 <Template Name="CoPilot_Weight">
 	<Update Frequency="1">
 		(A:SPEAKER ACTIVE, Bool) 1 &gt;=
@@ -118,7 +114,6 @@
 		}
 	</Update>
 </Template>
-
 
 	<!--################# CABIN HEAT LEVER ###################-->
 	<Template Name="C152X_PASSENGER_Lever_Cabin_Heat_Template">
@@ -235,20 +230,18 @@
 		</Condition>
 		<UseTemplate Name="ASOBO_GT_Update">
 		<UPDATE_CODE>
-			(B:#INPUT_EVENT_ID_SOURCE#_#IE_ID#_Set) 20 &gt;= <!-- PASSENGER_Cabin_Heat#SUFFIX_ID#_Set -->
+			(B:PASSENGER_Cabin_Heat#SUFFIX_ID#_Set) 20 &gt;=
 				if{
-					1 (&gt;K:TOGGLE_BEACON_LIGHTS, Bool)
+					1 (&gt;K:WINDSHIELD_DEICE_ON, Bool)
 				}	
-			(B:#INPUT_EVENT_ID_SOURCE#_#IE_ID#_Set) 20 &lt;
+			(B:PASSENGER_Cabin_Heat#SUFFIX_ID#_Set) 20 &lt;
 				if{
-					1 (&gt;K:TOGGLE_BEACON_LIGHTS, Bool)    <!-- 1 (&gt;K:WINDSHIELD_DEICE_OFF, Bool) -->
+					1 (&gt;K:WINDSHIELD_DEICE_OFF, Bool)
 				}	
 		</UPDATE_CODE>
 		</UseTemplate>
 	</Template>
-	
-	
-	
+
 
 <!--
 <Template Name="DME_Switch_Template">
@@ -271,33 +264,5 @@
       </ANIM_CODE>
     </UseTemplate>
   </Component>
-</Template>
--->
-
-
-
-
-
-<!--  ############DOWNSIZED PRIMER TEMPLATE###############
-<Template Name="C152X_ENGINE_Lever_Primer_Template1">
-	<DefaultTemplateParameters>
-		<ID>1</ID>
-	</DefaultTemplateParameters>
-	<UseTemplate Name="C152X_ENGINE_Primer_Template2">
-		<INTERACTION_TYPE>LEVER</INTERACTION_TYPE>
-	</UseTemplate>
-</Template>
-	
-<Template Name="C152X_ENGINE_Primer_Template2">
-	<Component ID="#NODE_ID#" Node="#NODE_ID#">
-		<Switch Param="INTERACTION_TYPE">
-			<Case Value="LEVER">
-				<UseTemplate Name="ASOBO_GT_Switch">
-					<EVENTID>TOGGLE_PRIMER1</EVENTID>
-					<ANIM_SIMVAR>RECIP ENG PRIMER:1</ANIM_SIMVAR>
-				</UseTemplate>
-			</Case>
-		</Switch>
-	</Component>
 </Template>
 -->

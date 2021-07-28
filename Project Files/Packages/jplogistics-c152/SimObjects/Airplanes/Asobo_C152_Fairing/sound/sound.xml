@@ -4,7 +4,7 @@
 <SoundInfo Version="0.1">
 
 	<WwisePackages>
-		<MainPackage Name="Asobo_C152_F"/>
+		<MainPackage Name="Asobo_C152"/>
 	</WwisePackages>
  
   <AcousticParameters>
@@ -247,7 +247,43 @@
 		<Range UpperBound="0.0"/>
 	  </Requires>
 	</Sound> 
-
+	
+<!--
+	<Sound WwiseData="false" WwiseEvent="custom_sound_08" FileName="ap_disengage_sound_pre" NodeName="PUSH_CEILING_TESTLIGHT" SimVar="AUTOPILOT MASTER" Continuous="false" Index="0" ViewPoint="Inside">
+	  <Range UpperBound="0" />
+	  <Requires SimVar="CIRCUIT AUTOPILOT ON" Units="BOOL" Index="0">
+        <Range LowerBound="1" />
+      </Requires>
+    </Sound>
+	
+	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="ap_disengage_sound" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT MASTER" Units="BOOL" Index="0" ViewPoint="Inside">
+	  <Range UpperBound="0" />
+	  <Requires SimVar="CIRCUIT SWITCH ON:32" Units="BOOL" Index="0">
+        <Range LowerBound="1" />
+      </Requires>
+	  <Requires SimVar="ELECTRICAL MASTER BATTERY" Units="BOOL" Index="0">
+        <Range LowerBound="1" />
+      </Requires>
+    </Sound>
+-->
+	<Sound WwiseData="false" WwiseEvent="custom_sound_10" FileName="ap_disengage_sound" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT DISENGAGED" Units="BOOL" Index="0" ViewPoint="Inside">
+	  <Range LowerBound="1" />
+	  <Requires SimVar="CIRCUIT AUTOPILOT ON" Units="BOOL" Index="0">
+        <Range LowerBound="1" />
+      </Requires>
+    </Sound>	
+	<Sound WwiseData="false" WwiseEvent="custom_sound_11" FileName="ap_disengage_sound" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT MASTER" Units="BOOL" Index="0" ViewPoint="Inside">
+	  <Range UpperBound="0" />
+	  <Requires SimVar="CIRCUIT AUTOPILOT ON" Units="BOOL" Index="0">
+        <Range LowerBound="1" />
+      </Requires>
+    </Sound>	
+	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="ap_disengage_sound_pre" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT MASTER" Units="BOOL" Index="0" ViewPoint="Inside" BreakOnStop="true" >
+	  <Range UpperBound="0" />
+	  <Requires SimVar="CIRCUIT AUTOPILOT ON" Units="BOOL" Index="0">
+        <Range LowerBound="1" />
+      </Requires>
+    </Sound>
 	<!-- PROPELLER WIND ========================================================================================== --> 
 	
 	<Sound WwiseData="true" WwiseEvent="propeller_wind" ConeHeading="180" SimVar="PROP RPM" Units="RPM" ViewPoint="Outside" Index="1">  
@@ -320,13 +356,24 @@
 	
 	<Sound WwiseData="true" WwiseEvent="nav_light_switch_on"  LocalVar="DME_POWER" Units="bool" Continuous="false" ></Sound>
 
-
-
-	<Sound WwiseEvent="custom_sound_04" WwiseData="false" FileName="windowopen" Continuous="False" SimVar="ENG ON FIRE" EngineIndex="1" Units="bool">
-        <Requires SimVar="ENG ON FIRE" EngineIndex="1" Units="bool" >
-			<Range LowerBound="1" />
+<!--BACKFIRE SOUND-->
+	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="backfire"  Continuous="false" SimVar="ENG ON FIRE" Units="BOOL" Index="1" >
+	  <Range LowerBound="1" />
+	  <Requires SimVar="ENG ON FIRE" Units="BOOL" Index="1">
+        <Range LowerBound="1" />
+      </Requires>
+    </Sound>
+	
+	<Sound WwiseData="false" WwiseEvent="custom_sound_07" FileName="vent"  FadeOutType="2" FadeOutTime="2.2" Continuous="true" LocalVar="XMLVAR_Cabin_Air_1_Position" Units="percent" Index="1" breakonstop="true" >
+	  <Range LowerBound="50" />
+	  <Requires LocalVar="XMLVAR_Cabin_Air_1_Position" Units="percent" Index="1">
+        <Range UpperBound="100" />
+      </Requires>
+		<Requires SimVar="AIRSPEED INDICATED" Units="KNOTS" Index="0">
+		  <Range LowerBound="60" />
 		</Requires>
-	</Sound>
+    </Sound>	
+
 
  </SimVarSounds>
   

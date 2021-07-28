@@ -91,7 +91,7 @@
 		<Component ID="WHITE_SMOKE">
 			<OverrideTemplateParameters>
 					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
-					<FX_GUID>{d666fb71-40cf-414a-b9fe-d6878e544152}</FX_GUID>
+					<FX_GUID>{F42CE638-11EB-4FC8-B9B0-111A220D681F}</FX_GUID>
 					<FX_NAME>FX_CONTRAILS</FX_NAME>
 			</OverrideTemplateParameters>
 			<Component ID="FX_WHITE_SMOKE" Node="nose_cone_still">
@@ -99,17 +99,17 @@
 				</UseTemplate>
 			</Component>
 		</Component>
-		<!--<Component ID="BLACK_SMOKE">
+		<Component ID="BLACK_SMOKE">
 			<OverrideTemplateParameters>
 					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
-					<FX_GUID>{72605171-7a43-48ce-bf28-0320da9bcf2f}</FX_GUID>
+					<FX_GUID>{48FA21D9-5519-4821-B0B2-15FCB24B6549}</FX_GUID>
 					<FX_NAME>Smoke_XXL_Black</FX_NAME>
 			</OverrideTemplateParameters>
 			<Component ID="FX_BLACK_SMOKE" Node="nose_cone_still">
 				<UseTemplate Name="ASOBO_GT_FX">
 				</UseTemplate>
 			</Component>
-		</Component>-->
+		</Component>
 		<Component ID="LANDING_FX">
 			<UseTemplate Name="ASOBO_LANDING_FX"/>
 		</Component>
