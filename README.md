@@ -18,6 +18,16 @@
 
 Continued work on this project is with a large thanks to our donators! Without this kind gesture finding time is slightly more difficult, but every donation means extra time I can set aside to update/upgrade and improve this mod!
 
+## V1.0.0 - BETA TEST 2
+- Fixed the following
+	- OAT Gauge
+	- FPS Drop (Hopefully - Please test this)
+	- Effects
+	- Removed some baggage
+	- Refactored Textures
+	- Increased Decal Quality
+- Included files to repair community mods
+
 ## V1.0.0 - BETA TEST
 ### This is a beta test! Some things still need tweaking!
 - New Animations
