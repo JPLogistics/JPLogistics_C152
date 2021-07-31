@@ -778,17 +778,18 @@
           <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
           <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
-        <UseTemplate Name="ASOBO_AUDIO_Switch_Speaker_Template"><!--WAS PUSH-->
+        <UseTemplate Name="C152X_AUDIO_Switch_SPKR_Template"><!--WAS PUSH-->
           <NODE_ID>AUDIO_Push_SPKR</NODE_ID>
           <ANIM_NAME>AUDIO_Push_SPKR</ANIM_NAME>
-		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
-		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
+		      <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		      <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
+          <TOOLTIPID>Toggle CoPilot</TOOLTIPID>
         </UseTemplate>
         <UseTemplate Name="C152X_AUDIO_Switch_EXT_Template">
           <NODE_ID>AUDIO_Push_EXT</NODE_ID>
           <ANIM_NAME>AUDIO_Push_EXT</ANIM_NAME>
-		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
-		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
+		      <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		      <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
           <TOOLTIPID>Toggle Pilot</TOOLTIPID>
         </UseTemplate>
         <UseTemplate Name="ASOBO_NAVCOM_ADF_Sound_Template">
@@ -923,7 +924,7 @@
       </Component>
       <Component ID="PILOT_1" Node="PILOT_1">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &gt; (A:SPEAKER ACTIVE, Bool) 1 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &gt; (L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
     </Component>
