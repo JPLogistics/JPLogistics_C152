@@ -778,7 +778,7 @@
           <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
           <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
-        <UseTemplate Name="C152X_AUDIO_Switch_SPKR_Template"><!--WAS PUSH-->
+        <UseTemplate Name="C152X_AUDIO_Switch_Speaker_Template"><!--WAS PUSH-->
           <NODE_ID>AUDIO_Push_SPKR</NODE_ID>
           <ANIM_NAME>AUDIO_Push_SPKR</ANIM_NAME>
 		      <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
@@ -857,7 +857,7 @@
         <NODE_ID>DME_Screen</NODE_ID>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
 		<USE_DIMMING_POTENTIOMETER/>
-		<POTENTIOMETER>6</POTENTIOMETER><!-- Removed for now while testing-->
+		<POTENTIOMETER>6</POTENTIOMETER>
       </UseTemplate>
       <UseTemplate Name="JPL_EFB_Screens_Template">
         <ID>1</ID>
