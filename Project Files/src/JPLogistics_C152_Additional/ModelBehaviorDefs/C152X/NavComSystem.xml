@@ -131,5 +131,43 @@
       </Switch>
     </Component>
   </Template>  
-  
+
+<Template Name="C152X_AUDIO_Switch_EXT_Template">
+	<UseTemplate Name="C152X_AUDIO_EXT_Template">
+		<INTERACTION_TYPE>Switch</INTERACTION_TYPE>
+	</UseTemplate>
+</Template>
+<Template Name="C152X_AUDIO_EXT_Template">
+	<Parameters Type="Default">
+		<ID>1</ID>
+	</Parameters>
+	<UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
+		<TEMPLATE_TO_CALL>C152X_AUDIO_EXT_SubTemplate</TEMPLATE_TO_CALL>
+	</UseTemplate>
+</Template>
+<Template Name="C152X_AUDIO_EXT_SubTemplate">
+	<Parameters Type="Default">
+		<NODE_ID>AUDIO_#INTERACTION_TYPE#_Speaker#SUFFIX_ID#</NODE_ID>
+		<ANIM_NAME>AUDIO_#INTERACTION_TYPE#_Speaker#SUFFIX_ID#</ANIM_NAME>
+		<PART_ID>AUDIO_#INTERACTION_TYPE#_Speaker</PART_ID>
+		<!-- <WWISE_EVENT_1>navcom_audio_push_on</WWISE_EVENT_1>	 -->
+		<!-- <NORMALIZED_TIME_1>0.1</NORMALIZED_TIME_1>	 -->
+		<!-- <WWISE_EVENT_2>navcom_audio_push_off</WWISE_EVENT_2> -->
+		<!-- <NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>	 -->
+		<TT_DESCRIPTION_ID>@TT_Package.AUDIOPANEL_PUSH_SPR_ACTION</TT_DESCRIPTION_ID>
+		<TOOLTIP_TITLE>@TT_Package.AUDIOPANEL_PUSH_SPR_TITLE</TOOLTIP_TITLE>
+	</Parameters>
+	<UseTemplate Name="ASOBO_NAVCOM_Base_Template">
+		<SET_STATE_EXTERNAL>(L:XMLVAR_AUDIO_EXT_SEL, Bool) p0 != if{ p0 (&gt;L:XMLVAR_AUDIO_EXT_SEL, Bool) }</SET_STATE_EXTERNAL>
+		<EMISSIVE_INDICATOR_CODE>(L:XMLVAR_AUDIO_EXT_SEL, Bool)</EMISSIVE_INDICATOR_CODE>
+		<GET_STATE_EXTERNAL>(L:XMLVAR_AUDIO_EXT_SEL, Bool) sp0</GET_STATE_EXTERNAL>
+		<SIM_STATE_IS_ON_EXTERNAL>l0</SIM_STATE_IS_ON_EXTERNAL>
+		<Switch Param="INTERACTION_TYPE">
+			<Case Value="Switch">
+				<ANIM_CODE>(L:XMLVAR_AUDIO_EXT_SEL, Bool) 100 *</ANIM_CODE>
+			</Case>
+		</Switch>
+		<BTN_ID>EXT</BTN_ID>
+	</UseTemplate>
+</Template>  
 </ModelBehaviors>
