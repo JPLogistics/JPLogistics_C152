@@ -34,6 +34,8 @@ Continued work on this project is with a large thanks to our donators! Without t
 		- Should help failed starting/fires occuring
 	- Equipment Key lighting now Screen based
 	- Some baggage enabled (Remember to set a payload weight!)
+	- DME Software updated to work with DME (Not just VORDME) signals
+	- Roll Trim enabled!
 
 ## V1.0.0 - BETA TEST 2
 - Fixed the following
