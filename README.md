@@ -37,7 +37,7 @@ Continued work on this project is with a large thanks to our donators! Without t
 
 ## V1.0.0 - BETA TEST 2
 - Fixed the following
-	- OAT Gauge
+	- OAT Gauge (Some 3rd Party liveries may conflict with this but they shouldnt have this file included)
 	- FPS Drop (Hopefully - Please test this)
 	- Effects
 	- Removed some baggage
