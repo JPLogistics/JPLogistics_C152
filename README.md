@@ -18,6 +18,23 @@
 
 Continued work on this project is with a large thanks to our donators! Without this kind gesture finding time is slightly more difficult, but every donation means extra time I can set aside to update/upgrade and improve this mod!
 
+## V1.0.0 - BETA TEST 3
+	- OAT Gauge Textures
+	- OAT Gauge Model
+	- Aircraft will now be visible in Training/Discovery Flights
+	- Texture updates (ADF Texture is a little weird... I am working on that!)
+	- Prop location/texture changes
+	- Lighting Nodes corrected
+	- 3D Model corrections
+	- Pilot/CoPilot models work again!
+	- Tyre height adjusted
+	- Reduced Trim Speed
+	- Flickering Texture fixes
+	- Corrected Engine Start values
+		- Should help failed starting/fires occuring
+	- Equipment Key lighting now Screen based
+	- Some baggage enabled (Remember to set a payload weight!)
+
 ## V1.0.0 - BETA TEST 2
 - Fixed the following
 	- OAT Gauge
