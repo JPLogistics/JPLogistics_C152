@@ -390,6 +390,8 @@
 
       <UseTemplate Name="ASOBO_HANDLING_Wheel_ElevatorTrim_Template">
         <HIGHLIGHT_NODE_ID>HANDLING_Wheel_ElevatorTrim_Visual</HIGHLIGHT_NODE_ID>
+        <INCREMENT>20</INCREMENT>
+        <MOUSE_WHEEL_INCREMENT>22</MOUSE_WHEEL_INCREMENT>
         <TOOLTIPID>Elevator Trim (%((A:ELEVATOR TRIM POSITION, degrees))%!1.1f!%)</TOOLTIPID>
       </UseTemplate>
 

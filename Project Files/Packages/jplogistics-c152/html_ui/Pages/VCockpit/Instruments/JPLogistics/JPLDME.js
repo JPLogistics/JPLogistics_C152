@@ -149,7 +149,7 @@ class JPLDME extends BaseInstrument {
         return (minutes > 0 ? fastToFixed(minutes, 0) : "") + " : " + (seconds < 10 ? "0" + fastToFixed(seconds, 0) : fastToFixed(seconds, 0));
     }
     getIsSignalOk(_num) {
-        return Simplane.getNavHasNav(_num);
+        return SimVar.GetSimVarValue("NAV HAS DME:"+_num,"Bool");
     }
     isLocalizer(_num) {
         return SimVar.GetSimVarValue("NAV HAS LOCALIZER:" + _num, "Bool");
