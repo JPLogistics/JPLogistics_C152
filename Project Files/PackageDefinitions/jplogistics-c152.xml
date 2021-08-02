@@ -18,14 +18,6 @@
 			<AssetDir>PackageDefinitions\jplogistics-c152\ContentInfo\</AssetDir>
 			<OutputDir>ContentInfo\jplogistics-c152\</OutputDir>
 		</AssetGroup>
-		<AssetGroup Name="Livery">
-			<Type>Copy</Type>
-			<Flags>
-				<FSXCompatibility>false</FSXCompatibility>
-			</Flags>
-			<AssetDir>src\JPLogistics_C152_Liveries\</AssetDir>
-			<OutputDir>.\</OutputDir>
-		</AssetGroup>
 		<AssetGroup Name="additional">
 			<Type>Copy</Type>
 			<Flags>
@@ -39,16 +31,16 @@
 			<Flags>
 				<FSXCompatibility>false</FSXCompatibility>
 			</Flags>
-			<AssetDir>src\JPLogistics_C152\SimObjects\Airplanes\Asobo_C152\</AssetDir>
-			<OutputDir>SimObjects\Airplanes\Asobo_C152\</OutputDir>
+			<AssetDir>src\JPLogistics_C152\SimObjects\Airplanes\JPL_C152\</AssetDir>
+			<OutputDir>SimObjects\Airplanes\JPL_C152\</OutputDir>
 		</AssetGroup>
 		<AssetGroup Name="jplogistics-c152-fairings">
 			<Type>SimObject</Type>
 			<Flags>
 				<FSXCompatibility>false</FSXCompatibility>
 			</Flags>
-			<AssetDir>src\JPLogistics_C152\SimObjects\Airplanes\Asobo_C152_Fairing\</AssetDir>
-			<OutputDir>SimObjects\Airplanes\Asobo_C152_Fairing\</OutputDir>
+			<AssetDir>src\JPLogistics_C152\SimObjects\Airplanes\JPL_C152_Fairing\</AssetDir>
+			<OutputDir>SimObjects\Airplanes\JPL_C152_Fairing\</OutputDir>
 		</AssetGroup>
 	</AssetGroups>
 </AssetPackage>
