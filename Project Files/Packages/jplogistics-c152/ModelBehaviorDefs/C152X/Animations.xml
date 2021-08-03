@@ -26,7 +26,7 @@
 <Template Name="JPL_Window_Template">
   <DefaultTemplateParameters>
     <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
-    <TOOLTIPID>#ID#'s Window</TOOLTIPID>
+	<TOOLTIPID>%((L:JPL_WINDOW_#ID#))%{if}Close #ID#'s Window%{else}Open #ID#'s Window%{end}</TOOLTIPID>
   </DefaultTemplateParameters>
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
@@ -59,7 +59,7 @@
 <Template Name="JPL_Door_Template">
   <DefaultTemplateParameters>
     <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
-    <TOOLTIPID>#ID#'s Door</TOOLTIPID>
+    <TOOLTIPID>%((L:JPL_DOOR_#ID#))%{if}Close #ID#'s Door%{else}Open #ID#'s Door%{end}</TOOLTIPID>
   </DefaultTemplateParameters>
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
