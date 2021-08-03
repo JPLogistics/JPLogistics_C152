@@ -20,6 +20,7 @@ Continued work on this project is with a large thanks to our donators! Without t
 
 ## V1.0.0 - BETA TEST 3
 **IMPORTANT: Please delete the existing folder, then extract this one - Do NOT overwrite, game-breaking errors may occur if not!**
+
 	- OAT Gauge Textures
 	- OAT Gauge Model
 	- Aircraft will now be visible in Training/Discovery Flights
