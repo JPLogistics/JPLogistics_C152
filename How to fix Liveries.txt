@@ -1,0 +1,27 @@
+Due to the recent change to how the aircraft presents itself, all exisiting mods will need to be slightly updated in order to work!
+
+Follow these steps:
+- Open Livery Mod Folder
+- Find "ASOBO_C152"
+- Rename this to "JPL_C152"
+- Find a folder called "Panel" (There may not be one) - If there is, you'll need to download the "Livery Fix" from GitHub (Link below)
+- Open the existing Panel.cfg files
+- Open the files from "Livery Fix"
+- Now, copy the sections labelled "[Vcockpit0*]" there will be 7 of them, and overwrite any existing ones in the original Panel.CFG
+- Do not overwrite the "[VPainting**]" Sections, these are specific to your livery!
+- Save the files
+- Copy Panel.xml from the "Livery Fix" to the Livery you are updating!
+
+If you have Python3 installed now do the following!
+- Open "Livery Fix" (Download from GitHub: https://github.com/JPLogistics/JPLogistics_C152/releases)
+- Copy the Build.py into the "Root" folder, where you will see "SimObjects"
+- Run Build.py and it should update Layout.json & Manifest.json automatically!
+
+If you do not then do the following
+- Open Layout.json
+- Search "Asobo_C152" & Replace with "JPL_C152"
+- Save
+
+Now test in MSFS!
+
+Any issues, you know where to find me!

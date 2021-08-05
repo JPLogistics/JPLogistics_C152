@@ -18,6 +18,23 @@
 
 Continued work on this project is with a large thanks to our donators! Without this kind gesture finding time is slightly more difficult, but every donation means extra time I can set aside to update/upgrade and improve this mod!
 
+## V1.0.0 - BETA TEST 4
+**IMPORTANT: Please delete the existing folder, then extract this one - Do NOT overwrite, game-breaking errors may occur if not!**
+**This is absolutely essential for this mod to work now!**
+**Pre-Existing Liveries will need to be modified, read "How to fix liveries.txt" on GitHub!**
+
+	- Aircraft seperated from default (Now creates 2 new planes!)
+	- Flight Model Adjustments
+	- 3D Model changes
+	- Suspension corrected
+	- Texture updates
+	- CoPilot Fix
+	- AP Sound Fix
+	- Tooltips
+	- Runway Start Fix
+	- Animations corrected
+	- How to guide for updating liveries/installing blue cockpit lights!
+
 ## V1.0.0 - BETA TEST 3
 **IMPORTANT: Please delete the existing folder, then extract this one - Do NOT overwrite, game-breaking errors may occur if not!**
 

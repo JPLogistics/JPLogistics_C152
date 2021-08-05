@@ -25,6 +25,7 @@
 	  <UseTemplate Name="COM1_VOLUME"></UseTemplate>
 	  <UseTemplate Name="COM2_VOLUME"></UseTemplate>
 	  <UseTemplate Name="WindowSoundHelper"></UseTemplate>
+	  <UseTemplate Name="AP_BREAKER_STATE"></UseTemplate>
 	  <!--<UseTemplate Name="CoPilot_Weight"></UseTemplate>-->
     </Component>
     <!--End of C152X Modification -->
@@ -968,12 +969,20 @@
     <Component ID="Pilots_Visibility">
       <Component ID="PILOT_0" Node="PILOT_0">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, Pounds) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 1 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pound) 20 &gt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, Pounds) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 1 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pounds) 20 &gt; and</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
       <Component ID="PILOT_1" Node="PILOT_1">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &gt; (L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pound) 20 &gt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>
+			(L:C152_CoPilotsState, Bool) 1 == 
+			if {	(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == 
+					(A:CAMERA STATE, Enum) 2 != and 
+					(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == or
+					(A:CAMERA STATE, Enum) 2 != 
+					(A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &gt; and or
+				}
+		  </VISIBILITY_CODE>
         </UseTemplate>
       </Component>
     </Component>

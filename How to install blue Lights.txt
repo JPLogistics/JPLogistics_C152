@@ -1,0 +1,29 @@
+In order to install the new "Blue Glareshield" Lights (instead of the Red)
+
+Follow these steps if you want it in only certain liveries:
+- Open Livery Mod Folder
+- Open the "BlueCockpitLights" (Download from GitHub: https://github.com/JPLogistics/JPLogistics_C152/releases)
+- Copy the Effects & SimObjects folders (not the Build.py or Layout.json) from the .zip into the Livery of your choice!
+- Overwrite every file it asks!
+- Move onto the "After" set of instructions!
+
+Follow these steps if you want it in all liveries (Incl. Default)
+- Open JPLogistics_C152 Mod Folder
+- Open the "BlueCockpitLights" (Download from GitHub: https://github.com/JPLogistics/JPLogistics_C152/releases)
+- Copy the Effects & SimObjects folders (not the Build.py or Layout.json) from the .zip into the Livery of your choice!
+- Overwrite every file it asks!
+- Move onto the "After" set of instructions!
+
+
+== After copying files == 
+If you have Python3 installed now do the following!
+- Open "Livery Fix" (Download from GitHub: https://github.com/JPLogistics/JPLogistics_C152/releases)
+- Run the Build.py into the "Root" folder, where you will see "Effects" & "SimObjects"
+- Layout.json & Manifest.json should update automatically!
+
+If you do not then do the following
+- Do not do anything further, the game should figure it out!
+
+Now test in MSFS!
+
+Any issues, you know where to find me!

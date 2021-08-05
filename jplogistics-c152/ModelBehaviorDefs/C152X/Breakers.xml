@@ -30,3 +30,15 @@
     </LEFT_SINGLE_CODE>
   </UseTemplate>
 </Template>
+
+<Template Name="AP_BREAKER_STATE">
+	<UseTemplate Name="ASOBO_GT_Update">
+		<UPDATE_ONCE>True</UPDATE_ONCE>
+		<UPDATE_CODE>
+		(L:152X_APBREAKER, bool) 1 &gt;=
+		if{
+			13 (&gt;K:ELECTRICAL_BUS_BREAKER_TOGGLE)
+		}
+		</UPDATE_CODE>	
+	</UseTemplate>
+</Template>
