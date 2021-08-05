@@ -39,7 +39,7 @@ AudioAdf2Listen=False
 AvionicsSwitch=True
 
 [Engine Parameters.1.0]
-ThrottleLeverPct=0
+ThrottleLeverPct=0.15
 PropellerLeverPct=1
 Pct Engine RPM=0.32811646340229250196
 MaxReachedEngineRPM=3903.5488821170947631
@@ -82,6 +82,7 @@ XMLVAR_ADF_Mode=2   ; 0, 1, 2, 3
 152X_COM1VOL=1   ;0=OFF, 1=FULL
 152X_COM2VOL=1   ;0=OFF, 1=FULL
 DME_POWER=1
+XMLVAR_PUMPED_FUEL=0.02
 
 
 ;--------------------------------------------
