@@ -56,7 +56,7 @@
                 71,
                 72,
                 84,
-                95
+                85
             ]
         }
     ],
@@ -88,7 +88,7 @@
             "children" : [
                 1
             ],
-            "name" : "CenterLeg",
+            "name" : "CenterLeg.001",
             "rotation" : [
                 0,
                 0,
@@ -102,7 +102,7 @@
             ]
         },
         {
-            "name" : "centerLeg_Aux1.1",
+            "name" : "centerLeg_Aux1.004",
             "rotation" : [
                 0.31856536865234375,
                 0.3185648024082184,
@@ -841,12 +841,7 @@
         },
         {
             "mesh" : 33,
-            "name" : "front_gear_piston_trim",
-            "translation" : [
-                0.009999999776482582,
-                0,
-                0
-            ]
+            "name" : "front_gear_piston_trim"
         },
         {
             "mesh" : 34,
@@ -1002,233 +997,24 @@
             ]
         },
         {
-            "name" : "CentralUpLeg_Aux1.1",
+            "name" : "centerLeg_Aux1.003",
             "rotation" : [
-                -0.6260235905647278,
-                -0.3954662084579468,
-                0.10426086187362671,
-                0.6639508008956909
-            ],
-            "scale" : [
-                1.0000004768371582,
-                1.0000004768371582,
-                1.0000019073486328
+                -0.4552524983882904,
+                0.46382105350494385,
+                -0.5423603653907776,
+                0.5324101448059082
             ],
             "translation" : [
-                1.2562344409161597e-06,
-                0.03135738521814346,
-                -1.3219728316471446e-06
-            ]
-        },
-        {
-            "children" : [
-                73
-            ],
-            "name" : "CentralUpLeg_Aux1.3",
-            "rotation" : [
-                0.5363261699676514,
-                0.5019906163215637,
-                0.46330440044403076,
-                0.4956902265548706
-            ],
-            "scale" : [
-                0.9999997019767761,
-                0.9999999403953552,
-                0.9999997019767761
-            ],
-            "translation" : [
-                -0.00018697355699259788,
-                0.0017680090386420488,
-                0.04125392809510231
-            ]
-        },
-        {
-            "name" : "CentralUpLeg_Aux2.1",
-            "rotation" : [
-                0.009772801771759987,
-                0.15926578640937805,
-                0.0008569532656110823,
-                0.9871870279312134
-            ],
-            "scale" : [
-                1.000003695487976,
-                1.000003695487976,
-                1.0000028610229492
-            ],
-            "translation" : [
-                9.801176474866224e-07,
-                0.03135775402188301,
-                -7.421949277386375e-08
-            ]
-        },
-        {
-            "children" : [
-                75
-            ],
-            "name" : "CentralUpLeg_Aux2.3",
-            "rotation" : [
-                -0.4895966649055481,
-                0.5495386123657227,
-                -0.5085654258728027,
-                0.4468374252319336
-            ],
-            "scale" : [
-                0.9999999403953552,
-                0.9999998807907104,
-                0.9999997615814209
-            ],
-            "translation" : [
-                -0.0001869859843282029,
-                0.0017680067103356123,
-                -0.041254106909036636
-            ]
-        },
-        {
-            "name" : "CentralLeg",
-            "rotation" : [
-                0.5000000596046448,
-                0.49999991059303284,
-                -0.5,
-                0.5000000596046448
-            ],
-            "translation" : [
-                -0.17051951587200165,
-                -6.585809660814013e-08,
-                2.9802322387695312e-08
-            ]
-        },
-        {
-            "children" : [
-                74,
-                76,
-                77
-            ],
-            "name" : "CentralUpLeg",
-            "rotation" : [
-                0.3547198176383972,
-                -0.47214454412460327,
-                -0.526383638381958,
-                0.6116974353790283
-            ],
-            "scale" : [
-                0.9999998807907104,
-                0.9999998807907104,
-                0.9999999403953552
-            ],
-            "translation" : [
-                1.800023596842948e-08,
-                0.7327293157577515,
-                -1.1881694793701172
-            ]
-        },
-        {
-            "name" : "CentralUpLeg_Aux1.2",
-            "rotation" : [
-                0.1566019356250763,
-                -0.1987764835357666,
-                0.032193947583436966,
-                0.9669163823127747
-            ],
-            "scale" : [
-                1.0000005960464478,
-                0.9999995827674866,
-                1.0000004768371582
-            ],
-            "translation" : [
-                -0.13888044655323029,
-                0.6759930849075317,
-                -1.0002223253250122
-            ]
-        },
-        {
-            "name" : "CentralUpLeg_Aux2.2",
-            "rotation" : [
-                0.12122167646884918,
-                0.15858161449432373,
-                -0.019622188061475754,
-                0.9796796441078186
-            ],
-            "scale" : [
-                0.9999992847442627,
-                1.0000019073486328,
-                0.9999998211860657
-            ],
-            "translation" : [
-                0.1388837695121765,
-                0.6760199666023254,
-                -1.0003268718719482
-            ]
-        },
-        {
-            "name" : "LeftLeg",
-            "rotation" : [
-                0.13810531795024872,
-                -0.6431640982627869,
-                0.19990313053131104,
-                0.7261581420898438
-            ],
-            "scale" : [
-                0.9999999403953552,
-                1.0000001192092896,
-                1
-            ],
-            "translation" : [
-                0.47716984152793884,
-                0.6073787808418274,
-                0.5165379643440247
-            ]
-        },
-        {
-            "name" : "RightLeg",
-            "rotation" : [
-                0.13810819387435913,
-                0.6431677341461182,
-                -0.1999015063047409,
-                0.7261548042297363
-            ],
-            "scale" : [
-                1.0000001192092896,
-                1.000000238418579,
-                1.0000001192092896
-            ],
-            "translation" : [
-                -0.47717005014419556,
-                0.6073787808418274,
-                0.5165379643440247
-            ]
-        },
-        {
-            "children" : [
-                78,
-                79,
-                80,
-                81,
-                82
-            ],
-            "name" : "Hips",
-            "rotation" : [
-                1,
-                5.08869124985769e-16,
-                7.574776361707336e-09,
-                6.339203650895797e-08
-            ]
-        },
-        {
-            "children" : [
-                83
-            ],
-            "name" : "Armature",
-            "translation" : [
-                0.009999999776482582,
-                0,
-                0
+                -0.04275096207857132,
+                0.00159493088722229,
+                0.00030672550201416016
             ]
         },
         {
             "mesh" : 47,
             "name" : "CENTRAL_WHEEL",
             "translation" : [
-                -0.00010352209210395813,
+                -0.01010352186858654,
                 -0.018900567665696144,
                 0.014309532940387726
             ]
@@ -1242,15 +1028,15 @@
                 1
             ],
             "translation" : [
-                -0.00010352209210395813,
+                -0.01010352186858654,
                 -0.018900567665696144,
                 0.014309532940387726
             ]
         },
         {
             "children" : [
-                85,
-                86
+                74,
+                75
             ],
             "name" : "CenterWheel",
             "rotation" : [
@@ -1261,137 +1047,152 @@
             ],
             "translation" : [
                 0.010122299194335938,
-                -0.2488892376422882,
-                0.07908767461776733
+                -0.24888916313648224,
+                0.07908773422241211
             ]
         },
         {
             "mesh" : 49,
             "name" : "front_arm",
             "rotation" : [
-                -0.12794484198093414,
-                -0.007564975880086422,
-                0.005384077318012714,
-                0.9917378425598145
+                0.1961161494255066,
+                0,
+                0,
+                0.9805806875228882
             ],
             "translation" : [
-                -0.02158445119857788,
+                -0.021584391593933105,
                 -0.023957878351211548,
-                -0.03719848394393921
+                -0.03719830513000488
             ]
         },
         {
             "mesh" : 50,
             "name" : "front_wheel_gear1",
             "rotation" : [
-                0.09501288086175919,
+                -0.14900648593902588,
                 0,
                 0,
-                0.9954760670661926
+                0.9888362288475037
             ],
             "translation" : [
-                -0.05032181739807129,
-                -0.489962100982666,
-                1.1856021881103516
+                -0.05032193660736084,
+                -0.4899621307849884,
+                1.1856024265289307
             ]
         },
         {
             "children" : [
-                89
+                78
             ],
             "mesh" : 51,
             "name" : "front_gear",
             "rotation" : [
-                -0.009091702289879322,
-                0,
-                0,
-                0.9999586939811707
+                0.002344201086089015,
+                -0.008037019520998001,
+                0.002666758606210351,
+                0.9999614953994751
             ],
             "translation" : [
-                0.010541141033172607,
-                0.5695586800575256,
-                -1.3040692806243896
+                0.017703473567962646,
+                0.7225302457809448,
+                -1.338261365890503
             ]
         },
         {
             "mesh" : 52,
             "name" : "front_wheel_hold_Frost",
             "rotation" : [
-                0.0008154477691277862,
+                0.0008154459646902978,
                 0,
                 0,
                 1
             ],
             "translation" : [
                 0.009875714778900146,
-                -0.002704247832298279,
-                0.0016424059867858887
+                -0.0027042031288146973,
+                0.0016425251960754395
             ]
         },
         {
             "mesh" : 53,
             "name" : "LANDING_CENTER_HULL_Frost",
             "translation" : [
-                0.010000109672546387,
+                0.009999990463256836,
                 0,
                 0
             ]
         },
         {
             "children" : [
-                92
+                81
             ],
             "mesh" : 54,
             "name" : "LANDING_CENTER_HULL",
             "rotation" : [
-                -0.05170636624097824,
+                -0.05170635133981705,
                 0,
                 0,
                 0.9986623525619507
             ],
             "translation" : [
-                0.010543107986450195,
-                -0.032124102115631104,
-                0.026179254055023193
+                0.0005431771278381348,
+                -0.03212404251098633,
+                0.026179492473602295
             ]
         },
         {
             "children" : [
-                87,
-                88,
-                90,
-                91,
-                93
+                76,
+                77,
+                79,
+                80,
+                82
             ],
             "mesh" : 55,
             "name" : "front_wheel_hold",
             "rotation" : [
                 0.14631953835487366,
                 0.41749244928359985,
-                -0.06562187522649765,
+                -0.06562188267707825,
                 0.894418478012085
             ],
             "translation" : [
-                -0.009999972768127918,
-                -0.06367108225822449,
-                0.014589071273803711
+                0.0016540754586458206,
+                0.05513656139373779,
+                -0.0014220476150512695
             ]
         },
         {
             "children" : [
-                94
+                73,
+                83
             ],
-            "name" : "C_Gear_Helper",
+            "name" : "CenterLeg",
             "rotation" : [
-                -0.15643423795700073,
-                0.00027302949456498027,
-                -0.0017238403670489788,
-                0.987686812877655
+                -0.16599999368190765,
+                0,
+                0,
+                1
             ],
             "translation" : [
-                0,
-                -0.5245310664176941,
-                1.284924864768982
+                -0.0016540493816137314,
+                -0.7700000405311584,
+                1.3609364032745361
+            ]
+        },
+        {
+            "name" : "centerLeg_Aux1.1",
+            "rotation" : [
+                0.6580510139465332,
+                -0.2587847113609314,
+                0.6580498814582825,
+                0.25878530740737915
+            ],
+            "translation" : [
+                -0.0033785109408199787,
+                0.07813794910907745,
+                0.0806100070476532
             ]
         }
     ],
@@ -1641,7 +1442,7 @@
                 {
                     "sampler" : 5,
                     "target" : {
-                        "node" : 94,
+                        "node" : 83,
                         "path" : "rotation"
                     }
                 }
@@ -1685,14 +1486,14 @@
                 {
                     "sampler" : 0,
                     "target" : {
-                        "node" : 85,
+                        "node" : 74,
                         "path" : "rotation"
                     }
                 },
                 {
                     "sampler" : 1,
                     "target" : {
-                        "node" : 86,
+                        "node" : 75,
                         "path" : "rotation"
                     }
                 }
@@ -1716,6 +1517,133 @@
                 {
                     "sampler" : 0,
                     "target" : {
+                        "node" : 77,
+                        "path" : "rotation"
+                    }
+                },
+                {
+                    "sampler" : 1,
+                    "target" : {
+                        "node" : 79,
+                        "path" : "translation"
+                    }
+                },
+                {
+                    "sampler" : 2,
+                    "target" : {
+                        "node" : 78,
+                        "path" : "rotation"
+                    }
+                },
+                {
+                    "sampler" : 3,
+                    "target" : {
+                        "node" : 84,
+                        "path" : "translation"
+                    }
+                },
+                {
+                    "sampler" : 4,
+                    "target" : {
+                        "node" : 85,
+                        "path" : "translation"
+                    }
+                },
+                {
+                    "sampler" : 5,
+                    "target" : {
+                        "node" : 85,
+                        "path" : "rotation"
+                    }
+                },
+                {
+                    "sampler" : 6,
+                    "target" : {
+                        "node" : 85,
+                        "path" : "scale"
+                    }
+                },
+                {
+                    "sampler" : 7,
+                    "target" : {
+                        "node" : 73,
+                        "path" : "translation"
+                    }
+                },
+                {
+                    "sampler" : 8,
+                    "target" : {
+                        "node" : 73,
+                        "path" : "rotation"
+                    }
+                },
+                {
+                    "sampler" : 9,
+                    "target" : {
+                        "node" : 73,
+                        "path" : "scale"
+                    }
+                }
+            ],
+            "name" : "c_gear",
+            "samplers" : [
+                {
+                    "input" : 437,
+                    "interpolation" : "LINEAR",
+                    "output" : 438
+                },
+                {
+                    "input" : 437,
+                    "interpolation" : "LINEAR",
+                    "output" : 439
+                },
+                {
+                    "input" : 437,
+                    "interpolation" : "LINEAR",
+                    "output" : 440
+                },
+                {
+                    "input" : 437,
+                    "interpolation" : "LINEAR",
+                    "output" : 441
+                },
+                {
+                    "input" : 442,
+                    "interpolation" : "LINEAR",
+                    "output" : 443
+                },
+                {
+                    "input" : 442,
+                    "interpolation" : "LINEAR",
+                    "output" : 444
+                },
+                {
+                    "input" : 442,
+                    "interpolation" : "LINEAR",
+                    "output" : 445
+                },
+                {
+                    "input" : 442,
+                    "interpolation" : "LINEAR",
+                    "output" : 446
+                },
+                {
+                    "input" : 442,
+                    "interpolation" : "LINEAR",
+                    "output" : 447
+                },
+                {
+                    "input" : 442,
+                    "interpolation" : "LINEAR",
+                    "output" : 448
+                }
+            ]
+        },
+        {
+            "channels" : [
+                {
+                    "sampler" : 0,
+                    "target" : {
                         "node" : 65,
                         "path" : "rotation"
                     }
@@ -1724,9 +1652,9 @@
             "name" : "l_gear",
             "samplers" : [
                 {
-                    "input" : 437,
+                    "input" : 442,
                     "interpolation" : "LINEAR",
-                    "output" : 438
+                    "output" : 449
                 }
             ]
         },
@@ -1752,12 +1680,12 @@
                 {
                     "input" : 413,
                     "interpolation" : "LINEAR",
-                    "output" : 439
+                    "output" : 450
                 },
                 {
                     "input" : 413,
                     "interpolation" : "LINEAR",
-                    "output" : 440
+                    "output" : 451
                 }
             ]
         },
@@ -1774,9 +1702,9 @@
             "name" : "r_gear",
             "samplers" : [
                 {
-                    "input" : 437,
+                    "input" : 442,
                     "interpolation" : "LINEAR",
-                    "output" : 441
+                    "output" : 452
                 }
             ]
         },
@@ -1802,31 +1730,12 @@
                 {
                     "input" : 413,
                     "interpolation" : "LINEAR",
-                    "output" : 442
+                    "output" : 453
                 },
                 {
                     "input" : 413,
                     "interpolation" : "LINEAR",
-                    "output" : 443
-                }
-            ]
-        },
-        {
-            "channels" : [
-                {
-                    "sampler" : 0,
-                    "target" : {
-                        "node" : 95,
-                        "path" : "translation"
-                    }
-                }
-            ],
-            "name" : "c_gear",
-            "samplers" : [
-                {
-                    "input" : 444,
-                    "interpolation" : "LINEAR",
-                    "output" : 445
+                    "output" : 454
                 }
             ]
         }
@@ -9515,10 +9424,10 @@
             "componentType" : 5126,
             "count" : 3,
             "max" : [
-                0.06666666666666667
+                0.1
             ],
             "min" : [
-                0
+                0.03333333333333333
             ],
             "type" : "SCALAR"
         },
@@ -9531,50 +9440,104 @@
         {
             "bufferView" : 439,
             "componentType" : 5126,
-            "count" : 101,
-            "type" : "VEC4"
+            "count" : 3,
+            "type" : "VEC3"
         },
         {
             "bufferView" : 440,
             "componentType" : 5126,
-            "count" : 101,
+            "count" : 3,
             "type" : "VEC4"
         },
         {
             "bufferView" : 441,
             "componentType" : 5126,
             "count" : 3,
-            "type" : "VEC4"
+            "type" : "VEC3"
         },
         {
             "bufferView" : 442,
             "componentType" : 5126,
-            "count" : 101,
-            "type" : "VEC4"
+            "count" : 3,
+            "max" : [
+                0.06666666666666667
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
         },
         {
             "bufferView" : 443,
             "componentType" : 5126,
-            "count" : 101,
-            "type" : "VEC4"
+            "count" : 3,
+            "type" : "VEC3"
         },
         {
             "bufferView" : 444,
             "componentType" : 5126,
             "count" : 3,
-            "max" : [
-                0.1
-            ],
-            "min" : [
-                0.03333333333333333
-            ],
-            "type" : "SCALAR"
+            "type" : "VEC4"
         },
         {
             "bufferView" : 445,
             "componentType" : 5126,
             "count" : 3,
             "type" : "VEC3"
+        },
+        {
+            "bufferView" : 446,
+            "componentType" : 5126,
+            "count" : 3,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 447,
+            "componentType" : 5126,
+            "count" : 3,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 448,
+            "componentType" : 5126,
+            "count" : 3,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 449,
+            "componentType" : 5126,
+            "count" : 3,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 450,
+            "componentType" : 5126,
+            "count" : 101,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 451,
+            "componentType" : 5126,
+            "count" : 101,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 452,
+            "componentType" : 5126,
+            "count" : 3,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 453,
+            "componentType" : 5126,
+            "count" : 101,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 454,
+            "componentType" : 5126,
+            "count" : 101,
+            "type" : "VEC4"
         }
     ],
     "bufferViews" : [
@@ -11775,43 +11738,88 @@
         },
         {
             "buffer" : 0,
-            "byteLength" : 1616,
+            "byteLength" : 36,
             "byteOffset" : 13706636
         },
         {
             "buffer" : 0,
-            "byteLength" : 1616,
-            "byteOffset" : 13708252
-        },
-        {
-            "buffer" : 0,
             "byteLength" : 48,
-            "byteOffset" : 13709868
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 1616,
-            "byteOffset" : 13709916
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 1616,
-            "byteOffset" : 13711532
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 12,
-            "byteOffset" : 13713148
+            "byteOffset" : 13706672
         },
         {
             "buffer" : 0,
             "byteLength" : 36,
-            "byteOffset" : 13713160
+            "byteOffset" : 13706720
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12,
+            "byteOffset" : 13706756
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 36,
+            "byteOffset" : 13706768
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 13706804
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 36,
+            "byteOffset" : 13706852
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 36,
+            "byteOffset" : 13706888
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 13706924
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 36,
+            "byteOffset" : 13706972
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 13707008
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1616,
+            "byteOffset" : 13707056
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1616,
+            "byteOffset" : 13708672
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 13710288
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1616,
+            "byteOffset" : 13710336
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1616,
+            "byteOffset" : 13711952
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 13713196,
+            "byteLength" : 13713568,
             "uri" : "C152_LOD00.bin"
         }
     ]
