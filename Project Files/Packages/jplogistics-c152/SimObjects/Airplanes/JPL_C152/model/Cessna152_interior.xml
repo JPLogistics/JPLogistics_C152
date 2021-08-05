@@ -25,6 +25,7 @@
 	  <UseTemplate Name="COM1_VOLUME"></UseTemplate>
 	  <UseTemplate Name="COM2_VOLUME"></UseTemplate>
 	  <UseTemplate Name="WindowSoundHelper"></UseTemplate>
+	  <UseTemplate Name="AP_BREAKER_STATE"></UseTemplate>
 	  <!--<UseTemplate Name="CoPilot_Weight"></UseTemplate>-->
     </Component>
     <!--End of C152X Modification -->
@@ -973,9 +974,7 @@
       </Component>
       <Component ID="PILOT_1" Node="PILOT_1">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>
-		  <Update Frequency="10">(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &gt; (L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pounds) 20 &gt; and</Update>
-		  </VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_CoPilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &gt; (L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:2, pounds) 20 &gt; and</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
     </Component>

@@ -79,9 +79,10 @@ XMLVAR_ADF_Mode=2   ; 0, 1, 2, 3
 152X_ADFVOL=1    ;0=OFF, 1=FULL
 152X_COM1VOL=1   ;0=OFF, 1=FULL
 152X_COM2VOL=1   ;0=OFF, 1=FULL
+XMLVAR_PUMPED_FUEL=0.02
 
 
-;-------------------------------------------- 
+;--------------------------------------------
 ;C152X Cessna 300 ADF
 ;XMLVAR_ADF_MODE_SEL=2	;2='ADF' Mode
 ;XMLVAR_ADF_VOLUME=100	;0=OFF, 100=FULL
@@ -134,6 +135,7 @@ GlareshieldLights=False
 PedestalLights=False
 Potentiometer.4=0.0
 Potentiometer.5=0.5
+Potentiometer.6=0.5
 
 [AutoPilot.0]
 MasterSwitch=False
