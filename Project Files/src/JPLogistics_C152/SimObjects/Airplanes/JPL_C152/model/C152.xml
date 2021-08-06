@@ -48,7 +48,7 @@
 				<ID>1</ID>
 				<ANIM_NODE_ID>Prop1</ANIM_NODE_ID>
 				<ANIM_NAME>prop_anim</ANIM_NAME>
-        <INVERT_ANIM>FALSE</INVERT_ANIM>
+        <INVERT_ANIM>TRUE</INVERT_ANIM>
 				<STILL_NODE_ID>nose_cone_still</STILL_NODE_ID>
 				<SLOW_NODE_ID>nose_cone_slow</SLOW_NODE_ID>
 				<PROP_BLURRED_NODE_ID>nose_cone_blur</PROP_BLURRED_NODE_ID>
