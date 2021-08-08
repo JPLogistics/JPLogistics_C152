@@ -1012,12 +1012,12 @@
       </Component>
       <Component ID="Pump" Node="Pump">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_PumpState, Bool) == (A:PAYLOAD STATION WEIGHT:3, Pounds) 20 &gt;= (A:PAYLOAD STATION WEIGHT:3, Pounds) 30 &lt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_PumpState, Bool) == (A:PAYLOAD STATION WEIGHT:3, Pounds) 20 &gt;= (A:PAYLOAD STATION WEIGHT:3, Pounds) 70 &lt; and</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
       <Component ID="Gennie" Node="Gennie">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_GennieState, Bool) == (A:PAYLOAD STATION WEIGHT:3, Pounds) 30 &gt;= (A:PAYLOAD STATION WEIGHT:4, Pounds) 40 &lt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_GennieState, Bool) == (A:PAYLOAD STATION WEIGHT:3, Pounds) 70 &gt;=</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
       <Component ID="MailSmallR" Node="MailSmallR">
@@ -1027,7 +1027,7 @@
       </Component>
       <Component ID="MailLargerR" Node="MailLargerR">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_MailLargerRState, Bool) == (A:PAYLOAD STATION WEIGHT:4, Pounds) 10 &gt;= (A:PAYLOAD STATION WEIGHT:4, Pounds) 40 &lt;= and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_MailLargerRState, Bool) == (A:PAYLOAD STATION WEIGHT:4, Pounds) 10 &gt;=</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
 		<!--##############-->
