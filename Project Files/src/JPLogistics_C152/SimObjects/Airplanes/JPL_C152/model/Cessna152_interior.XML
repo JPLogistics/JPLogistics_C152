@@ -770,7 +770,7 @@
         <ANIM_NEVER_FAILS>True</ANIM_NEVER_FAILS>
         <TYPE>PULL_25K</TYPE>
       </Parameters>
-      <UseTemplate Name="ASOBO_NAVCOM_Simple_Radio_Template">
+      <UseTemplate Name="C152X_NAVCOM_Simple_Radio_Template">
         <ID>1</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
         <!--<NAV_CIRCUIT>22</NAV_CIRCUIT>--><!-- Removed for test! -->
