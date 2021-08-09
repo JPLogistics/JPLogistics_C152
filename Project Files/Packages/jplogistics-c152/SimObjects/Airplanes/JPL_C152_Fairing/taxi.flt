@@ -77,7 +77,7 @@ FoldingWingsState=0, 0
 [LocalVars.0]
 ;Note these settings may override standard config settings
 ;-------------------------------------------- 
-XMLVAR_AUDIO_EXT_SEL=0
+XMLVAR_AUDIO_SPKR_SEL=1
 XMLVAR_ADF_Mode=2   ; 0, 1, 2, 3
 152X_ADFVOL=1    ;0=OFF, 1=FULL
 152X_COM1VOL=1   ;0=OFF, 1=FULL
