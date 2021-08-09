@@ -770,7 +770,7 @@
         <ANIM_NEVER_FAILS>True</ANIM_NEVER_FAILS>
         <TYPE>PULL_25K</TYPE>
       </Parameters>
-      <UseTemplate Name="C152X_NAVCOM_Simple_Radio_Template">
+      <UseTemplate Name="ASOBO_NAVCOM_Simple_Radio_Template">
         <ID>1</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
         <!--<NAV_CIRCUIT>22</NAV_CIRCUIT>--><!-- Removed for test! -->
@@ -973,19 +973,6 @@
         </UseTemplate>
       </Component>
       <Component ID="PILOT_1" Node="PILOT_1">
-		<UseTemplate Name="ASOBO_GT_Update">
-			<UPDATE_ONCE>True</UPDATE_ONCE>
-			<UPDATE_CODE>
-			(A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &gt;=
-			if{
-				1 (&gt;L:XMLVAR_AUDIO_SPKR_SEL, Bool)
-			}
-			(A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &lt;
-			if{
-				0 (&gt;L:XMLVAR_AUDIO_SPKR_SEL, Bool)
-			}
-			</UPDATE_CODE>	
-		</UseTemplate>
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
           <VISIBILITY_CODE>
 			(L:C152_CoPilotsState, Bool) 1 == 
