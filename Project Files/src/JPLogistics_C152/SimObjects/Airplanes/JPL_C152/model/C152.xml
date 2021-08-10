@@ -44,32 +44,7 @@
 			</UseTemplate>
 		</Component>
 		<Component ID="ENGINE">
-      <Animation name="prop_anim" 			guid="48372184-09c3-4fbe-b8a6-8bd7e65ae00b" length="100" type="Sim" typeParam2="prop_anim" typeParam="AutoPlay" />
-      <PartInfo>
-        <Name>prop_anim</Name>
-        <AnimLength>100</AnimLength>
-        <Animation>
-          <Parameter>
-            <Sim>
-              <Variable>PROP ROTATION ANGLE:1</Variable>
-              <Units>radians</Units>
-              <Scale>15.92</Scale>
-            </Sim>
-          </Parameter>
-        </Animation>
-      </PartInfo>
-      <PartInfo>
-        <Name>nose_cone_still</Name>
-        <Visibility>
-          <Parameter>
-            <Code>
-              (A:PROP MAX RPM PERCENT:1, percent) -1 &gt; if{ 1 } els{ 0 }
-            </Code>
-          </Parameter>
-        </Visibility>
-      </PartInfo>
-      
-			<!--<UseTemplate Name="ASOBO_ENGINE_Propeller_Template">
+			<UseTemplate Name="ASOBO_ENGINE_Propeller_Template">
 				<ID>1</ID>
 				<ANIM_NODE_ID>Prop1</ANIM_NODE_ID>
 				<ANIM_NAME>prop_anim</ANIM_NAME>
@@ -81,7 +56,7 @@
 				<FROSTED_STILL_NODE_ID>prop_spinner_static_FROST</FROSTED_STILL_NODE_ID>
 				<FROSTED_SLOW_NODE_ID>prop_spinner_slow_FROST</FROSTED_SLOW_NODE_ID>
 				<FROSTED_BLURRED_NODE_ID>prop_spinner_blur_FROST</FROSTED_BLURRED_NODE_ID>
-			</UseTemplate>-->
+			</UseTemplate>
 		</Component>
 		<Component ID="GEARS">
 			<UseTemplate Name="ASOBO_GEAR_Center_Template">
