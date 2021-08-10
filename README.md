@@ -1,6 +1,6 @@
 ![C152](https://img.shields.io/badge/Aircraft-Cessna%20152-blue) ![Game](https://img.shields.io/badge/Software-Microsoft%20Flight%20Simulator-blue)
 
-![Version](https://img.shields.io/badge/Version-V1.0.0-BETA6-blue)
+![Version](https://img.shields.io/badge/Version-V1.0.0%20BETA6-blue)
 
 ![Download](https://img.shields.io/github/downloads/JPLogistics/JPLogistics_C152/total?color=blue&label=Downloads@Github) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-24.5k-blue)
 
