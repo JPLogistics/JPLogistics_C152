@@ -25,6 +25,7 @@
 	  <UseTemplate Name="COM1_VOLUME"></UseTemplate>
 	  <UseTemplate Name="COM2_VOLUME"></UseTemplate>
 	  <UseTemplate Name="WindowSoundHelper"></UseTemplate>
+	  <UseTemplate Name="Door_Close"></UseTemplate>
 	  <!--<UseTemplate Name="AP_BREAKER_STATE"></UseTemplate>-->
 	  <!--<UseTemplate Name="CoPilot_Weight"></UseTemplate>-->
     </Component>
@@ -973,19 +974,6 @@
         </UseTemplate>
       </Component>
       <Component ID="PILOT_1" Node="PILOT_1">
-		<UseTemplate Name="ASOBO_GT_Update">
-			<UPDATE_ONCE>True</UPDATE_ONCE>
-			<UPDATE_CODE>
-			(A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &gt;=
-			if{
-				1 (&gt;L:XMLVAR_AUDIO_SPKR_SEL, Bool)
-			}
-			(A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &lt;
-			if{
-				0 (&gt;L:XMLVAR_AUDIO_SPKR_SEL, Bool)
-			}
-			</UPDATE_CODE>	
-		</UseTemplate>
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
           <VISIBILITY_CODE>
 			(L:C152_CoPilotsState, Bool) 1 == 
@@ -1012,12 +1000,12 @@
       </Component>
       <Component ID="Pump" Node="Pump">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_PumpState, Bool) == (A:PAYLOAD STATION WEIGHT:3, Pounds) 20 &gt;= (A:PAYLOAD STATION WEIGHT:3, Pounds) 30 &lt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_PumpState, Bool) == (A:PAYLOAD STATION WEIGHT:3, Pounds) 20 &gt;= (A:PAYLOAD STATION WEIGHT:3, Pounds) 70 &lt; and</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
       <Component ID="Gennie" Node="Gennie">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_GennieState, Bool) == (A:PAYLOAD STATION WEIGHT:3, Pounds) 30 &gt;= (A:PAYLOAD STATION WEIGHT:4, Pounds) 40 &lt; and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_GennieState, Bool) == (A:PAYLOAD STATION WEIGHT:3, Pounds) 70 &gt;=</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
       <Component ID="MailSmallR" Node="MailSmallR">
@@ -1027,7 +1015,7 @@
       </Component>
       <Component ID="MailLargerR" Node="MailLargerR">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_MailLargerRState, Bool) == (A:PAYLOAD STATION WEIGHT:4, Pounds) 10 &gt;= (A:PAYLOAD STATION WEIGHT:4, Pounds) 40 &lt;= and</VISIBILITY_CODE>
+          <VISIBILITY_CODE>(L:C152_MailLargerRState, Bool) == (A:PAYLOAD STATION WEIGHT:4, Pounds) 10 &gt;=</VISIBILITY_CODE>
         </UseTemplate>
       </Component>
 		<!--##############-->

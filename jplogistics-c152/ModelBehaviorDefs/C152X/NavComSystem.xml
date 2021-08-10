@@ -328,7 +328,7 @@
 				<IS_PULLABLE>True</IS_PULLABLE>
 			</Case>
 			<Case Value="PULL_25K">
-				<IS_PULLABLE>True</IS_PULLABLE>
+				<IS_PULLABLE>True</IS_PULLABLE> <!--################################################################################-->
 			</Case>
 		</Switch>
 	</Parameters>
@@ -408,11 +408,11 @@
 				</Parameters>
 				<UseTemplate Name="ASOBO_NAVCOM_Base_Push_Event_Only_Template">
 					<BTN_ID>#BTN_ID_EXTERNAL#</BTN_ID>
-					<EVENT_PUSH>(&gt;H:RADIO#ID#_#RADIO_TYPE#_Knob_Small_PUSH)</EVENT_PUSH>
+					<EVENT_PUSH>(&gt;K:COM_#ID#_SPACING_MODE_SWITCH)</EVENT_PUSH> <!--##############################################-->
 					<TT_ICON>Pull</TT_ICON>
 					<TT_DESCRIPTION_ID>#TT_DESCRIPTION_ID_PULL#</TT_DESCRIPTION_ID>
 					<TT_VALUE>@TT_Package.GT_STATE_NA</TT_VALUE>
-					<TT_VALUE_IS_DYNAMIC>False</TT_VALUE_IS_DYNAMIC>
+					<TT_VALUE_IS_DYNAMIC>True</TT_VALUE_IS_DYNAMIC>
 					<BINDING_INC_0>Pull</BINDING_INC_0>
 					<BINDING_INC_0_PARAM_0>1</BINDING_INC_0_PARAM_0>
 				</UseTemplate>
@@ -426,7 +426,9 @@
 					<EVENT_CCW>(&gt;K:#RADIO_TYPE##IDSIMVAR#_RADIO_FRACT_DEC)</EVENT_CCW>
 					<TT_DESCRIPTION_ID>#TT_DESCRIPTION_ID_KHZ#</TT_DESCRIPTION_ID>
 					<BTN_EXTERNAL_BINDING_TO_CALL>_Pull</BTN_EXTERNAL_BINDING_TO_CALL>
-					<WWISE_EVENT>navcom_frequency_inner_knob</WWISE_EVENT>	
+					<WWISE_EVENT>navcom_frequency_inner_knob</WWISE_EVENT>
+					<WWISE_EVENT_1>navcom_volume_knob_push_button_on</WWISE_EVENT_1>
+					<WWISE_EVENT_2>navcom_volume_knob_push_button_on</WWISE_EVENT_2>						
 					<COUNT>36</COUNT>	
 				</UseTemplate>
 			</Component>

@@ -1,12 +1,12 @@
 ![C152](https://img.shields.io/badge/Aircraft-Cessna%20152-blue) ![Game](https://img.shields.io/badge/Software-Microsoft%20Flight%20Simulator-blue)
 
-![Version](https://img.shields.io/badge/Version-V0.9.9-blue)
+![Version](https://img.shields.io/badge/Version-V1.0.0-BETA6-blue)
 
-![Download](https://img.shields.io/github/downloads/JPLogistics/JPLogistics_C152/total?color=blue&label=Downloads@Github) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-19.1k-blue)
+![Download](https://img.shields.io/github/downloads/JPLogistics/JPLogistics_C152/total?color=blue&label=Downloads@Github) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-24.5k-blue)
 
 <a href="https://www.buymeacoffee.com/n95jpl" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="30%"></img></a>
 
-# OVER 32'000 DOWNLOADS!
+# OVER 43'000 DOWNLOADS!
 
 # JPLogistics MSFS_C152 :small_airplane:
 - **Official Forum Post: [MSFS Forums](https://forums.flightsimulator.com/t/msfs-c152-community/309284)**
@@ -17,6 +17,22 @@
 ## Donations
 
 Continued work on this project is with a large thanks to our donators! Without this kind gesture finding time is slightly more difficult, but every donation means extra time I can set aside to update/upgrade and improve this mod!
+## V1.0.0 - BETA TEST 6
+	- Fix MAJOR Textures issues
+		- Livery designers should now be able to use the aircraft!
+		- Texture quality improved
+		- Removed some issues (Some flickering still exists-WIP)
+	- COM/Freq Spacing fix!
+	- More CoPilot Adjustments
+	- More Suspension Fixes
+	- More Engine Fixes
+
+## V1.0.0 - BETA TEST 5
+	- Fix MAJOR Textures issues
+	- AP Breaker fix
+	- CoPilot Adjustments
+	- Suspension Fixes
+	- Engine Fixes
 
 ## V1.0.0 - BETA TEST 4
 **IMPORTANT: Please delete the existing folder, then extract this one - Do NOT overwrite, game-breaking errors may occur if not!**

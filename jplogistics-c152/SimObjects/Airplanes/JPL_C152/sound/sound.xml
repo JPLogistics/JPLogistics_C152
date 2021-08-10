@@ -316,13 +316,13 @@
 		</Requires>
 	</Sound>
 <!--window close-->
-	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
+	<Sound WwiseEvent="custom_sound_04" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
     	<Requires LocalVar="JPL_WINDOW_PILOT" Units="percent" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--window open-->
-	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
+	<Sound WwiseEvent="custom_sound_03" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
     	<Requires LocalVar="JPL_WINDOW_PILOT" Units="percent" >
 			<Range LowerBound="1" />
 		</Requires>
@@ -342,19 +342,20 @@
 		</Requires>
 	</Sound>	
 <!--window close-->
-	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
+	<Sound WwiseEvent="custom_sound_04" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
     	<Requires LocalVar="JPL_WINDOW_COPILOT" Units="percent" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--window open-->
-	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
+	<Sound WwiseEvent="custom_sound_03" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
     	<Requires LocalVar="JPL_WINDOW_COPILOT" Units="percent" >
 			<Range LowerBound="1" />
 		</Requires>
 	</Sound>
 	
-	<Sound WwiseData="true" WwiseEvent="nav_light_switch_on"  LocalVar="DME_POWER" Units="bool" Continuous="false" ></Sound>
+	<Sound WwiseData="true" WwiseEvent="nav_light_switch_on"  LocalVar="DME_POWER" Units="bool"  ></Sound>
+	
 
 <!--BACKFIRE SOUND-->
 	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="backfire"  Continuous="false" SimVar="ENG ON FIRE" Units="BOOL" Index="1" >
