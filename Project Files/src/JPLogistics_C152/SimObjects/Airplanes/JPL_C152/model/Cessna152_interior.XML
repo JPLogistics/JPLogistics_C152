@@ -25,6 +25,7 @@
 	  <UseTemplate Name="COM1_VOLUME"></UseTemplate>
 	  <UseTemplate Name="COM2_VOLUME"></UseTemplate>
 	  <UseTemplate Name="WindowSoundHelper"></UseTemplate>
+	  <UseTemplate Name="Door_Close"></UseTemplate>
 	  <!--<UseTemplate Name="AP_BREAKER_STATE"></UseTemplate>-->
 	  <!--<UseTemplate Name="CoPilot_Weight"></UseTemplate>-->
     </Component>

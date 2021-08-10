@@ -168,7 +168,7 @@
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/Autopilots/KAP140/KAP140.css",
       "size": 3189,
-      "date": 132696367228484881
+      "date": 132730183567272039
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/Autopilots/KAP140/KAP140.html",
@@ -178,7 +178,7 @@
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/Autopilots/KAP140/KAP140.js",
       "size": 34936,
-      "date": 132715759085116392
+      "date": 132730180145671393
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/Autopilots/KAP140/KAP140_default.js",
@@ -257,8 +257,8 @@
     },
     {
       "path": "ModelBehaviorDefs/C152X/Animations.xml",
-      "size": 10279,
-      "date": 132726925812058406
+      "size": 10654,
+      "date": 132730410485360722
     },
     {
       "path": "ModelBehaviorDefs/C152X/Breakers.xml",
@@ -298,7 +298,7 @@
     {
       "path": "ModelBehaviorDefs/C152X/NavComSystem.xml",
       "size": 29001,
-      "date": 132724522805920986
+      "date": 132730570108402760
     },
     {
       "path": "ModelBehaviorDefs/C152X/Subtemplates/Instrument_Subtemplates.xml",
@@ -342,13 +342,13 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/Approach.flt",
-      "size": 4259,
-      "date": 132726179994874795
+      "size": 4260,
+      "date": 132730142952581919
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/apron.flt",
-      "size": 4262,
-      "date": 132727974797732358
+      "size": 4269,
+      "date": 132730142419993153
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/cameras.cfg",
@@ -367,8 +367,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/Climb.flt",
-      "size": 4276,
-      "date": 132726171904318122
+      "size": 4277,
+      "date": 132730143031825562
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/cockpit.cfg",
@@ -378,22 +378,22 @@
     {
       "path": "SimObjects/Airplanes/JPL_C152/Cruise.flt",
       "size": 4266,
-      "date": 132726171566886353
+      "date": 132730175792583765
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/engines.cfg",
-      "size": 5794,
-      "date": 132729596957761800
+      "size": 8754,
+      "date": 132730647770477198
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/Final.flt",
-      "size": 4275,
-      "date": 132726179890278511
+      "size": 4276,
+      "date": 132730143177331916
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/flight_model.cfg",
-      "size": 13430,
-      "date": 132728723702625199
+      "size": 12749,
+      "date": 132730648520159357
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/GAMEPLAY.CFG",
@@ -432,8 +432,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/model/Cessna152_interior.xml",
-      "size": 69679,
-      "date": 132728859084925119
+      "size": 69384,
+      "date": 132730575649458918
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/model/model.CFG",
@@ -442,8 +442,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/panel/PANEL.CFG",
-      "size": 1600,
-      "date": 132723729028586707
+      "size": 1608,
+      "date": 132730248377195827
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/panel/panel.xml",
@@ -452,8 +452,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/runway.FLT",
-      "size": 4257,
-      "date": 132726154596159078
+      "size": 4258,
+      "date": 132730142599763334
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/sound/ap_disengage_sound.wav",
@@ -533,7 +533,7 @@
     {
       "path": "SimObjects/Airplanes/JPL_C152/systems.cfg",
       "size": 19025,
-      "date": 132726212731414313
+      "date": 132730190755729314
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/target_performance.cfg",
@@ -542,8 +542,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/taxi.flt",
-      "size": 4240,
-      "date": 132726172105553906
+      "size": 4241,
+      "date": 132730142838195788
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_DECALS_ALBD.PNG.DDS",
@@ -2167,13 +2167,13 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/Approach.flt",
-      "size": 4259,
-      "date": 132726179994874795
+      "size": 4260,
+      "date": 132730142952581919
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/apron.flt",
-      "size": 4244,
-      "date": 132726131997694787
+      "size": 4269,
+      "date": 132730142419993153
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/cameras.cfg",
@@ -2192,8 +2192,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/Climb.flt",
-      "size": 4276,
-      "date": 132726171904318122
+      "size": 4277,
+      "date": 132730143031825562
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/cockpit.cfg",
@@ -2202,23 +2202,23 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/Cruise.flt",
-      "size": 4266,
-      "date": 132726171566886353
+      "size": 4267,
+      "date": 132730143131675770
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/engines.cfg",
-      "size": 8478,
-      "date": 132728897382506196
+      "size": 8754,
+      "date": 132730647770477198
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/Final.flt",
-      "size": 4275,
-      "date": 132726179890278511
+      "size": 4276,
+      "date": 132730143177331916
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/flight_model.cfg",
-      "size": 13430,
-      "date": 132728797161276666
+      "size": 12748,
+      "date": 132730641844393611
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/GAMEPLAY.CFG",
@@ -2252,8 +2252,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/panel/PANEL.CFG",
-      "size": 1600,
-      "date": 132723729073960212
+      "size": 1608,
+      "date": 132730262694244019
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/panel/panel.xml",
@@ -2262,8 +2262,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/runway.FLT",
-      "size": 4257,
-      "date": 132726154596159078
+      "size": 4258,
+      "date": 132730142599763334
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/sound/ap_disengage_sound.wav",
@@ -2352,8 +2352,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/taxi.flt",
-      "size": 4240,
-      "date": 132726172105553906
+      "size": 4241,
+      "date": 132730142838195788
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/texture.BlueM/C172SP_AIRFRAME_RIVETS_ALBD_PNG.PNG.DDS",

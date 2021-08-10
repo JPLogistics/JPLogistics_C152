@@ -87,6 +87,23 @@
   </Component>
 </Template>
 
+<Template Name="Door_Close">
+	<Update Frequency="1">
+		(A:AIRSPEED TRUE, knots) 30 &gt;=
+		(L:JPL_DOOR_PILOT, bool) 1 &gt;= and
+		if{
+			0 (&gt;L:JPL_DOOR_PILOT, bool)
+		}	
+	</Update>
+	<Update Frequency=".7">
+		(A:AIRSPEED TRUE, knots) 30 &gt;=
+		(L:JPL_DOOR_COPILOT, bool) 1 &gt;= and
+		if{
+			0 (&gt;L:JPL_DOOR_COPILOT, bool)
+		}	
+	</Update>	
+</Template>
+
 <Template Name="WindowSoundHelper">
 	<Update Frequency="5">
 		(L:JPL_DOOR_PILOT, Bool) 1 &gt;=
