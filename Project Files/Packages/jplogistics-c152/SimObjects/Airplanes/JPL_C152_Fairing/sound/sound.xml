@@ -278,7 +278,7 @@
         <Range LowerBound="1" />
       </Requires>
     </Sound>	
-	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="ap_disengage_sound_pre" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT MASTER" Units="BOOL" Index="0" ViewPoint="Inside" BreakOnStop="true" >
+	<Sound WwiseData="false" WwiseEvent="custom_sound_12" FileName="ap_disengage_sound_pre" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT MASTER" Units="BOOL" Index="0" ViewPoint="Inside" BreakOnStop="true" >
 	  <Range UpperBound="0" />
 	  <Requires SimVar="CIRCUIT AUTOPILOT ON" Units="BOOL" Index="0">
         <Range LowerBound="1" />
@@ -304,25 +304,25 @@
     </Sound> 
 <!--###PILOT###-->
 <!--door close-->
-	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="doorclose" Continuous="False" LocalVar="JPL_DOOR_PILOT" Units="percent" Panning="-9000">
+	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="doorclose" Continuous="False" LocalVar="JPL_DOOR_PILOT" Units="percent" Panning="-9000">
     	<Requires LocalVar="JPL_DOOR_PILOT" Units="percent" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--door open-->
-	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="dooropen" Continuous="False" LocalVar="JPL_DOOR_PILOT" Units="percent" Panning="-9000">
+	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="dooropen" Continuous="False" LocalVar="JPL_DOOR_PILOT" Units="percent" Panning="-9000">
     	<Requires LocalVar="JPL_DOOR_PILOT" Units="percent" >
 			<Range LowerBound="1" />
 		</Requires>
 	</Sound>
 <!--window close-->
-	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
+	<Sound WwiseEvent="custom_sound_03" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
     	<Requires LocalVar="JPL_WINDOW_PILOT" Units="percent" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--window open-->
-	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
+	<Sound WwiseEvent="custom_sound_04" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
     	<Requires LocalVar="JPL_WINDOW_PILOT" Units="percent" >
 			<Range LowerBound="1" />
 		</Requires>
@@ -330,25 +330,25 @@
 	
 <!--###COPILOT###-->
 <!--door close-->
-	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="doorclose" Continuous="False" LocalVar="JPL_DOOR_COPILOT" Units="percent" Panning="9000">
+	<Sound WwiseEvent="custom_sound_05" WwiseData="false" FileName="doorclose" Continuous="False" LocalVar="JPL_DOOR_COPILOT" Units="percent" Panning="9000">
     	<Requires LocalVar="JPL_DOOR_COPILOT" Units="percent" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--door open-->
-	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="dooropen" Continuous="False" LocalVar="JPL_DOOR_COPILOT" Units="percent" Panning="9000">
+	<Sound WwiseEvent="custom_sound_06" WwiseData="false" FileName="dooropen" Continuous="False" LocalVar="JPL_DOOR_COPILOT" Units="percent" Panning="9000">
     	<Requires LocalVar="JPL_DOOR_COPILOT" Units="percent" >
 			<Range LowerBound="1" />
 		</Requires>
 	</Sound>	
 <!--window close-->
-	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
+	<Sound WwiseEvent="custom_sound_07" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
     	<Requires LocalVar="JPL_WINDOW_COPILOT" Units="percent" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--window open-->
-	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
+	<Sound WwiseEvent="custom_sound_08" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
     	<Requires LocalVar="JPL_WINDOW_COPILOT" Units="percent" >
 			<Range LowerBound="1" />
 		</Requires>
@@ -357,14 +357,14 @@
 	<Sound WwiseData="true" WwiseEvent="nav_light_switch_on"  LocalVar="DME_POWER" Units="bool" Continuous="false" ></Sound>
 
 <!--BACKFIRE SOUND-->
-	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="backfire"  Continuous="false" SimVar="ENG ON FIRE" Units="BOOL" Index="1" >
+	<Sound WwiseData="false" WwiseEvent="custom_sound_09" FileName="backfire"  Continuous="false" SimVar="ENG ON FIRE" Units="BOOL" Index="1" >
 	  <Range LowerBound="1" />
 	  <Requires SimVar="ENG ON FIRE" Units="BOOL" Index="1">
         <Range LowerBound="1" />
       </Requires>
     </Sound>
 	
-	<Sound WwiseData="false" WwiseEvent="custom_sound_07" FileName="vent"  FadeOutType="2" FadeOutTime="2.2" Continuous="true" LocalVar="XMLVAR_Cabin_Air_1_Position" Units="percent" Index="1" breakonstop="true" >
+	<Sound WwiseData="false" WwiseEvent="custom_sound_13" FileName="vent"  FadeOutType="2" FadeOutTime="2.2" Continuous="true" LocalVar="XMLVAR_Cabin_Air_1_Position" Units="percent" Index="1" breakonstop="true" >
 	  <Range LowerBound="50" />
 	  <Requires LocalVar="XMLVAR_Cabin_Air_1_Position" Units="percent" Index="1">
         <Range UpperBound="100" />

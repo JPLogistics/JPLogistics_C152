@@ -47,11 +47,11 @@
 				<ID>1</ID>
 				<ANIM_NODE_ID>Prop1</ANIM_NODE_ID>
 				<ANIM_NAME>prop_anim</ANIM_NAME>
+				<INVERT_ANIM>True</INVERT_ANIM>
 				<STILL_NODE_ID>nose_cone_still</STILL_NODE_ID>
-				<SLOW_NODE_ID>nose_cone_slow</SLOW_NODE_ID>
-				<PROP_BLURRED_NODE_ID>prop1_blurred</PROP_BLURRED_NODE_ID>
-				<CONE_BLURRED_NODE_ID>nose_cone_blurred</CONE_BLURRED_NODE_ID>
-				<PROP_SIDE_BLURRED_NODE_ID>PROP_SIDE_BLUR</PROP_SIDE_BLURRED_NODE_ID>
+				<SLOW_NODE_ID>nose_cone_still</SLOW_NODE_ID>
+				<PROP_BLURRED_NODE_ID>nose_cone_blur</PROP_BLURRED_NODE_ID>
+				<CONE_BLURRED_NODE_ID>nose_cone_blur</CONE_BLURRED_NODE_ID>
 				<FROSTED_STILL_NODE_ID>prop_spinner_static_FROST</FROSTED_STILL_NODE_ID>
 				<FROSTED_SLOW_NODE_ID>prop_spinner_slow_FROST</FROSTED_SLOW_NODE_ID>
 				<FROSTED_BLURRED_NODE_ID>prop_spinner_blur_FROST</FROSTED_BLURRED_NODE_ID>
@@ -90,7 +90,7 @@
 		<Component ID="WHITE_SMOKE">
 			<OverrideTemplateParameters>
 					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
-					<FX_GUID>{66b2e6da-b572-4c43-84a0-b3ab512376b8}</FX_GUID>
+					<FX_GUID>{F42CE638-11EB-4FC8-B9B0-111A220D681F}</FX_GUID>
 					<FX_NAME>FX_CONTRAILS</FX_NAME>
 			</OverrideTemplateParameters>
 			<Component ID="FX_WHITE_SMOKE" Node="nose_cone_still">
@@ -101,7 +101,7 @@
 		<Component ID="BLACK_SMOKE">
 			<OverrideTemplateParameters>
 					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
-					<FX_GUID>{ac234878-cf5f-47c8-9521-170499983273}</FX_GUID>
+					<FX_GUID>{48FA21D9-5519-4821-B0B2-15FCB24B6549}</FX_GUID>
 					<FX_NAME>Smoke_XXL_Black</FX_NAME>
 			</OverrideTemplateParameters>
 			<Component ID="FX_BLACK_SMOKE" Node="nose_cone_still">
@@ -109,21 +109,6 @@
 				</UseTemplate>
 			</Component>
 		</Component>
-		<!--
-		<Component ID="FX_CONTRAIL_RIBBON">
-			<OverrideTemplateParameters>
-					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
-					<FX_OFFSET_X>1</FX_OFFSET_X>
-					<FX_OFFSET_Y>1</FX_OFFSET_Y>
-					<FX_OFFSET_Z>1</FX_OFFSET_Z>
-					<FX_GUID>{1991c51c-3fbc-4e4b-ba63-4b66e5e1715f}</FX_GUID>
-					<FX_NAME>FX_CONTRAILS_RIBBON</FX_NAME>
-			</OverrideTemplateParameters>
-			<Component ID="FX_CONTRAIL_RIBBON_LEFT_OUT" Node="nose_cone_still">
-				<UseTemplate Name="ASOBO_GT_FX">
-				</UseTemplate>
-			</Component>
-		</Component>-->
 		<Component ID="LANDING_FX">
 			<UseTemplate Name="ASOBO_LANDING_FX"/>
 		</Component>

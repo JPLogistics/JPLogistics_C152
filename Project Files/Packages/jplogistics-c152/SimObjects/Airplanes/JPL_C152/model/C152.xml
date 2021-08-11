@@ -16,7 +16,6 @@
 		<!-- ###################################### -->
 
     
-
     <Animation guid="3236033a-87c7-4d84-8476-3c4262d0b54b" name="prop_anim" type="standard" typeParam="Autoplay"/>
     <Animation guid="93ea7381-accd-4989-812c-88b5dba5c911" name="c_gear" type="standard" typeParam="Autoplay"/>
     <Animation guid="37c3af74-5262-490d-8899-4a3aa02b20b7" name="r_gear" type="standard" typeParam="Autoplay"/>
@@ -48,7 +47,7 @@
 				<ID>1</ID>
 				<ANIM_NODE_ID>Prop1</ANIM_NODE_ID>
 				<ANIM_NAME>prop_anim</ANIM_NAME>
-        <INVERT_ANIM>FALSE</INVERT_ANIM>
+				<INVERT_ANIM>True</INVERT_ANIM>
 				<STILL_NODE_ID>nose_cone_still</STILL_NODE_ID>
 				<SLOW_NODE_ID>nose_cone_still</SLOW_NODE_ID>
 				<PROP_BLURRED_NODE_ID>nose_cone_blur</PROP_BLURRED_NODE_ID>
