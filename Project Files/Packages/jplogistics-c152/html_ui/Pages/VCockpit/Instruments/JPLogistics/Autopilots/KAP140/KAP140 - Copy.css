@@ -44,7 +44,7 @@ html body {
 }
 @font-face {
   font-family: "Alarm-Clock";
-  src: url("/Pages/VCockpit/Instruments/JPLogistics/Fonts/QUARTZIT.TTF") format("truetype");
+  src: url("/Pages/VCockpit/Instruments/Shared/Fonts/Quartz.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -76,15 +76,15 @@ kap140-element #APPanel {
 }
 kap140-element #APDisplay {
   position: absolute;
-  left: 24.5%;
-  top: 9%;
+  left: 25.5%;
+  top: 10%;
   width: 8%;
   height: 30%;
   border: 2px solid orangered;
-  padding: 0px;
-  padding-left: 6px;
-  font-size: 23px;
-  text-align: left;
+  padding: 1px;
+  padding-left: 3px;
+  font-size: 25px;
+  text-align: center;
 }
 kap140-element #LeftBlock {
   position: absolute;
@@ -105,13 +105,13 @@ kap140-element #RightBlock {
   width: 32%;
 }
 kap140-element #RightBlock #Alert {
-  font-size: 18px;
+  font-size: 20px;
 }
 kap140-element #RightBlock #Fpm {
-  margin-left: 14%;
+  margin-left: 15%;
 }
 kap140-element #RightBlock #Ft {
-  margin-left: 6%;
+  margin-left: 7%;
 }
 kap140-element #RightBlock #InHg {
   margin-left: 36%;
@@ -130,22 +130,22 @@ kap140-element #RightDisplayTop {
 kap140-element #PTDisplay {
   position: absolute;
   left: 57%;
-  top: 13%;
+  top: 14%;
   width: 5%;
-  font-size: 14px;
+  font-size: 15px;
   text-align: right;
   Line-Height: 12pt;
   margin: 5px;
   font-weight: bold;
 }
 kap140-element .Display3Char {
-  font-size: 45px;
+  font-size: 50px;
   text-align: right;
   width: 70%;
   height: 42px;
 }
 kap140-element .Display6Char {
-  font-size: 45px;
+  font-size: 50px;
   text-align: right;
   width: 120%;
   height: 42px;
@@ -155,7 +155,7 @@ kap140-element .Align {
   vertical-align: top;
 }
 kap140-element .ARM {
-  font-size: 15px;
+  font-size: 17px;
   text-align: center;
   Line-Height: 100%;
   margin-left: 7%;

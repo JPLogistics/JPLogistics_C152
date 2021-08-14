@@ -44,7 +44,7 @@ html body {
 }
 @font-face {
   font-family: "Alarm-Clock";
-  src: url("/Pages/VCockpit/Instruments/JPLogistics/Fonts/QUARTZIT.TTF") format("truetype");
+  src: url("/Pages/VCockpit/Instruments/Shared/Fonts/Quartz.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -71,7 +71,6 @@ kr87-element #AdfPanel #ANTModeAnnunc {
   top: 22%;
   left: 13%;
   font-size: 20px;
-  width: 100%;
 }
 kr87-element #AdfPanel #ADFModeAnnunc {
   position: absolute;
@@ -81,9 +80,9 @@ kr87-element #AdfPanel #ADFModeAnnunc {
 }
 kr87-element #AdfPanel #FRQ {
   position: absolute;
-  top: 19%;
-  left: 16%;
-  width: 30%;
+  top: 24%;
+  left: 28%;
+  width: 20%;
 }
 kr87-element #AdfPanel #FRQ #InUseFrequency {
   font-size: 42px;
@@ -94,20 +93,19 @@ kr87-element #AdfPanel #BFOModeAnnunc {
   font-size: 20px;
   position: absolute;
   top: 22%;
-  left: 52%;
-  width: 10%;
+  left: 53%;
 }
 kr87-element #AdfPanel #StbyFrequencyModeAnnunc {
   font-size: 20px;
   position: absolute;
   top: 60%;
-  left: 52%;
+  left: 53%;
 }
 kr87-element #AdfPanel #R {
   position: absolute;
-  top: 19%;
-  left: 53%;
-  width: 30%;
+  top: 24%;
+  left: 60%;
+  width: 25%;
 }
 kr87-element #AdfPanel #R #RightDisplay {
   font-size: 42px;
@@ -118,15 +116,13 @@ kr87-element #AdfPanel #FLTModeAnnunc {
   font-size: 20px;
   position: absolute;
   top: 22%;
-  left: 89%;
-  width: 10%;
+  left: 90%;
 }
 kr87-element #AdfPanel #ETModeAnnunc {
   font-size: 20px;
   position: absolute;
   top: 60%;
-  left: 89%;
-  width: 10%;
+  left: 90%;
 }
 
 /*# sourceMappingURL=KR87.css.map */

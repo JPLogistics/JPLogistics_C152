@@ -15,7 +15,7 @@
 
 		<!-- ###################################### -->
 
-    
+
     <Animation guid="2ce2cfdd-0d6c-48f4-a3d7-d27e264f0f48" name="c_gear" type="standard" typeParam="Autoplay"/>
     <Animation guid="86486150-fc16-4857-8a0b-06dc958c7b50" name="l_gear" type="standard" typeParam="Autoplay"/>
     <Animation guid="1029c557-985b-48f4-b1a0-bd25cb3fd069" name="r_gear" type="standard" typeParam="Autoplay"/>
@@ -47,11 +47,12 @@
 				<ID>1</ID>
 				<ANIM_NODE_ID>Prop1</ANIM_NODE_ID>
 				<ANIM_NAME>prop_anim</ANIM_NAME>
-				<INVERT_ANIM>True</INVERT_ANIM>
+				<INVERT_ANIM>TRUE</INVERT_ANIM>
 				<STILL_NODE_ID>nose_cone_still</STILL_NODE_ID>
-				<SLOW_NODE_ID>nose_cone_still</SLOW_NODE_ID>
-				<PROP_BLURRED_NODE_ID>nose_cone_blur</PROP_BLURRED_NODE_ID>
-				<CONE_BLURRED_NODE_ID>nose_cone_blur</CONE_BLURRED_NODE_ID>
+				<SLOW_NODE_ID>nose_cone_slow</SLOW_NODE_ID>
+				<PROP_BLURRED_NODE_ID>prop1_blurred</PROP_BLURRED_NODE_ID>
+				<CONE_BLURRED_NODE_ID>nose_cone_blurred</CONE_BLURRED_NODE_ID>
+				<PROP_SIDE_BLURRED_NODE_ID>PROP_SIDE_BLUR</PROP_SIDE_BLURRED_NODE_ID>
 				<FROSTED_STILL_NODE_ID>prop_spinner_static_FROST</FROSTED_STILL_NODE_ID>
 				<FROSTED_SLOW_NODE_ID>prop_spinner_slow_FROST</FROSTED_SLOW_NODE_ID>
 				<FROSTED_BLURRED_NODE_ID>prop_spinner_blur_FROST</FROSTED_BLURRED_NODE_ID>
