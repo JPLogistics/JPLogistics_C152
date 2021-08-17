@@ -54,6 +54,21 @@
       </ANIM_CODE>
     </UseTemplate>
   </Component>
+  <!--
+      <Component ID="Window_Blowout" Node="#ID#_Window">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>
+			(L:C152_PilotsWindows, Bool) 1 == if{1} els{0}</VISIBILITY_CODE>
+        </UseTemplate>
+		<Update Frequency="1">
+			(A:AIRSPEED INDICATED, knots) 143 &gt;=
+			if{
+				0 (&gt;L:C152_PilotsWindows, Bool) 
+				1 (&gt;L:JPL_WINDOW_#ID#, bool) and
+			}
+		</Update>		
+      </Component>
+	-->  
 </Template>
 
 <Template Name="JPL_Door_Template">

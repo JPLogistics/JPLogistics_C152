@@ -1173,30 +1173,35 @@
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_0</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_0</ANIM_NAME>
+			<TOOLTIPID>inopérant</TOOLTIPID>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>15</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_1</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_1</ANIM_NAME>
+			<ANIM_NAME>Breaker_RIGHT_1/</ANIM_NAME>
+			<TOOLTIPID>inopérant</TOOLTIPID>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>16</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_2</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_2</ANIM_NAME>
+			<ANIM_NAME>Breaker_RIGHT_2/</ANIM_NAME>
+			<TOOLTIPID>inopérant</TOOLTIPID>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>17</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_3</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_3</ANIM_NAME>
+			<ANIM_NAME>Breaker_RIGHT_3/</ANIM_NAME>
+			<TOOLTIPID>inopérant</TOOLTIPID>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>18</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_4</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_4</ANIM_NAME>
+			<ANIM_NAME>Breaker_RIGHT_4/</ANIM_NAME>
+			<TOOLTIPID>inopérant</TOOLTIPID>
 		</UseTemplate>
 		
 		
