@@ -5,7 +5,8 @@
     <!-- Highest LOD -->
     <!-- minimum display size in % (should be bounding sphere vertical screen size, sphere will often be slightly larger than you expect) -->
     <!-- default minSize is 0 -->
-    <LOD minSize="1" ModelFile="C152_cockpit_LOD00.gltf"/>
+    <LOD minSize="50" ModelFile="C152_cockpit_LOD00.gltf"/>
+    <LOD minSize="0" ModelFile="C152_cockpit_LOD00.gltf"/>
   </LODS>
   <Behaviors>
 
