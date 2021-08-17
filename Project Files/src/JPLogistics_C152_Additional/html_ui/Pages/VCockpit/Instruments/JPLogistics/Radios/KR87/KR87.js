@@ -111,18 +111,22 @@ class KR87 extends BaseInstrument {
             diffAndSetText(this.FltAnnunciator, "");
             diffAndSetText(this.EtAnnunciator, "");
         }
-    }
+    }	
+    frequency1DigitsFormat(_num) {
+        var freq = Math.round(_num * 10 - 0.1) / 10;
+        return fastToFixed(freq, 1);
+    }	
     getActiveFrequency() {
         var value = SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz");
         if (value) {
-            return value + '';
+            return this.frequency1DigitsFormat(SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz"));
         }
         return "";
     }
     getStbyFrequency() {
         var value = SimVar.GetSimVarValue("ADF STANDBY FREQUENCY:1", "KHz");
         if (value) {
-            return value + '';
+            return this.frequency1DigitsFormat(SimVar.GetSimVarValue("ADF STANDBY FREQUENCY:1", "KHz"));
         }
         return "";
     }
