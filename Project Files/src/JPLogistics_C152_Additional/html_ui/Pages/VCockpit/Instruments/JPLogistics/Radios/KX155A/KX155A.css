@@ -44,7 +44,7 @@ html body {
 }
 @font-face {
   font-family: "Alarm-Clock";
-  src: url("/Pages/VCockpit/Instruments/Shared/Fonts/Quartz.ttf") format("truetype");
+  src: url("/Pages/VCockpit/Instruments/JPLogistics/Fonts/QUARTZIT.TTF") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -63,14 +63,14 @@ KX155A-element #Mainframe {
 }
 KX155A-element #ComPanel {
   position: absolute;
-  top: 12%;
+  top: 6%;
   left: 1%;
   width: 48%;
 }
 KX155A-element #NavPanel {
   position: absolute;
-  top: 12%;
-  left: 49%;
+  top: 6%;
+  left: 47%;
   width: 48%;
 }
 KX155A-element #NavState {
@@ -92,7 +92,7 @@ KX155A-element .Align {
   display: inline-block;
 }
 KX155A-element #ComActiveFreq {
-  margin-left: -17px;
+  margin-left: -20px;
   font-size: 27px;
   width: 110px;
   text-align: right;

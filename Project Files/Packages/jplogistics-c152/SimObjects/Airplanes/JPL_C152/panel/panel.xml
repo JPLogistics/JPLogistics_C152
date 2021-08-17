@@ -1,7 +1,7 @@
 <PlaneHTMLConfig>
 
   <Instrument>
-    <Name>C300ADF</Name>
+    <Name>AS330</Name>
     <Electric>
         <Simvar name="CIRCUIT ON:20" unit="Boolean"/>
     </Electric>
@@ -51,4 +51,3 @@
     </Electric>
   </Instrument>
 </PlaneHTMLConfig>
-
