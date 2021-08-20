@@ -45,12 +45,11 @@
 		</Component>
 		<Component ID="ENGINE">
 			<UseTemplate Name="ASOBO_ENGINE_Propeller_Template">
-				<ID>1</ID>
-				<MIN_RPM_FOR_SLOW>143</MIN_RPM_FOR_SLOW>
-				<MIN_RPM_FOR_BLUR>287.5</MIN_RPM_FOR_BLUR>				
+				<ID>1</ID>			
 				<ANIM_NODE_ID>Prop1</ANIM_NODE_ID>
 				<ANIM_NAME>prop_anim</ANIM_NAME>
-				<INVERT_ANIM>TRUE</INVERT_ANIM>
+				<MIN_RPM_FOR_SLOW>143</MIN_RPM_FOR_SLOW><!--143-->
+				<MIN_RPM_FOR_BLUR>400</MIN_RPM_FOR_BLUR><!--287.5-->				
 				<STILL_NODE_ID>nose_cone_still</STILL_NODE_ID>
 				<SLOW_NODE_ID>nose_cone_slow</SLOW_NODE_ID>
 				<PROP_BLURRED_NODE_ID>prop1_blurred</PROP_BLURRED_NODE_ID>
