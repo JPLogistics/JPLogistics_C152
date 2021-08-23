@@ -66,6 +66,11 @@
       "date": 132703661029610391
     },
     {
+      "path": "Effects/LIGHT_C152_StrobeDouble.fx",
+      "size": 10096,
+      "date": 132741728411997971
+    },
+    {
       "path": "Effects/LIGHT_C152_StrobeSimple.fx",
       "size": 4720,
       "date": 132703661029615349
@@ -83,11 +88,6 @@
     {
       "path": "Effects/LIGHT_C152_vTaxi.fx",
       "size": 1281,
-      "date": 132703661029620311
-    },
-    {
-      "path": "Effects/LIGHT_C152_xpndr.fx",
-      "size": 1359,
       "date": 132703661029620311
     },
     {
@@ -277,8 +277,8 @@
     },
     {
       "path": "ModelBehaviorDefs/C152X/Animations.xml",
-      "size": 11372,
-      "date": 132739723385999948
+      "size": 11331,
+      "date": 132741692315692666
     },
     {
       "path": "ModelBehaviorDefs/C152X/Breakers.xml",
@@ -462,8 +462,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/model/Cessna152_interior.xml",
-      "size": 69754,
-      "date": 132740543855734634
+      "size": 69748,
+      "date": 132741692425043987
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/model/model.CFG",
@@ -557,8 +557,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/systems.cfg",
-      "size": 19215,
-      "date": 132741000543856500
+      "size": 19689,
+      "date": 132741748259343692
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/target_performance.cfg",
@@ -2412,8 +2412,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/systems.cfg",
-      "size": 19021,
-      "date": 132734042909176085
+      "size": 19689,
+      "date": 132741748259343692
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/target_performance.cfg",

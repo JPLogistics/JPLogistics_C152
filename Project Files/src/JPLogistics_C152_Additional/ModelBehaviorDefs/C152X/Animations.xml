@@ -276,14 +276,12 @@
 
 <!--
 <Template Name="PanelLight">
-	<Update Once="True">
-		(L:JPL_PANEL_LIGHT_Inc) 1 ==
+	<Update>
+		(L:JPL_PANEL_LIGHT_Inc, enum) 1 ==
 		if{
 			1 (&gt;B:LIGHTING_POTENTIOMETER_5_Inc)
-		}	
-		(L:JPL_PANEL_LIGHT_Dec) 1 ==
-		if{
-			1 (&gt;B:LIGHTING_POTENTIOMETER_5_Dec)
+		} els{
+			0 (&gt;B:LIGHTING_POTENTIOMETER_5_Inc)
 		}	
 	</Update>
 </Template>
