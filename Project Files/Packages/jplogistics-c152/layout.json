@@ -12,8 +12,8 @@
     },
     {
       "path": "de-DE.locPak",
-      "size": 2001,
-      "date": 132703661029684827
+      "size": 1706,
+      "date": 132743125149932320
     },
     {
       "path": "Effects/LIGHT_C152_BeaconTop.fx",
@@ -152,18 +152,23 @@
     },
     {
       "path": "en-US.locPak",
-      "size": 1585,
-      "date": 132703661029689804
+      "size": 1290,
+      "date": 132743125149927371
     },
     {
       "path": "es-ES.locPak",
-      "size": 1707,
-      "date": 132703661029689804
+      "size": 1400,
+      "date": 132743125149922404
+    },
+    {
+      "path": "fi-FI.locPak",
+      "size": 1304,
+      "date": 132743125149932320
     },
     {
       "path": "fr-FR.locPak",
-      "size": 1752,
-      "date": 132703661029694761
+      "size": 1455,
+      "date": 132743125149932320
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/Autopilots/KAP140/KAP140 - Copy.css",
@@ -272,8 +277,13 @@
     },
     {
       "path": "it-IT.locPak",
-      "size": 1790,
-      "date": 132703661029726404
+      "size": 1483,
+      "date": 132743125149937280
+    },
+    {
+      "path": "ja-JP.locPak",
+      "size": 1626,
+      "date": 132743125149922404
     },
     {
       "path": "ModelBehaviorDefs/C152X/Animations.xml",
@@ -336,19 +346,29 @@
       "date": 132709644266996409
     },
     {
+      "path": "nb-NO.locPak",
+      "size": 1306,
+      "date": 132743125149932320
+    },
+    {
+      "path": "nl-NL.locPak",
+      "size": 1310,
+      "date": 132743125149927371
+    },
+    {
       "path": "pl-PL.locPak",
-      "size": 1686,
-      "date": 132703661029731364
+      "size": 1390,
+      "date": 132743125149927371
     },
     {
       "path": "pt-BR.locPak",
-      "size": 1736,
-      "date": 132703661029731364
+      "size": 1440,
+      "date": 132743125149917444
     },
     {
       "path": "ru-RU.locPak",
-      "size": 2751,
-      "date": 132703661029731364
+      "size": 2386,
+      "date": 132743125149927371
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/ai.cfg",
@@ -357,8 +377,13 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/aircraft.cfg",
-      "size": 3651,
-      "date": 132732226940655870
+      "size": 3749,
+      "date": 132743129012172482
+    },
+    {
+      "path": "SimObjects/Airplanes/JPL_C152/aircraft.loc",
+      "size": 20749,
+      "date": 132718936896218081
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/Approach.flt",
@@ -463,7 +488,7 @@
     {
       "path": "SimObjects/Airplanes/JPL_C152/model/Cessna152_interior.xml",
       "size": 69748,
-      "date": 132741692425043987
+      "date": 132742428811897431
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/model/model.CFG",
@@ -558,7 +583,7 @@
     {
       "path": "SimObjects/Airplanes/JPL_C152/systems.cfg",
       "size": 19689,
-      "date": 132741748259343692
+      "date": 132742410070630987
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/target_performance.cfg",
@@ -2654,6 +2679,11 @@
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/texture/thumbnail.JPG",
       "size": 466456,
       "date": 132723729086537212
+    },
+    {
+      "path": "sv-SE.locPak",
+      "size": 1353,
+      "date": 132743125149922404
     },
     {
       "path": "version.txt",
