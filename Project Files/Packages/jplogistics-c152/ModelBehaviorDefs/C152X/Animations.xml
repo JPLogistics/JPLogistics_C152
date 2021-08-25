@@ -260,22 +260,50 @@
 				<NODE_ID>#HIGHLIGHT_NODE_ID#</NODE_ID>
 			</UseTemplate>
 		</Condition>
+		<!--##### LVAR FOR HARDWARE COMPATABILITY #####-->
 		<UseTemplate Name="ASOBO_GT_Update">
-		<UPDATE_CODE>
-			(B:PASSENGER_Cabin_Heat#SUFFIX_ID#_Set) 20 &gt;=
-				if{
-					1 (&gt;K:WINDSHIELD_DEICE_ON, Bool)
-				}	
-			(B:PASSENGER_Cabin_Heat#SUFFIX_ID#_Set) 20 &lt;
-				if{
-					1 (&gt;K:WINDSHIELD_DEICE_OFF, Bool)
-				}	
-		</UPDATE_CODE>
+			<UPDATE_CODE>
+			<UPDATE_ONCE/>
+				(L:XMLVAR_CABIN_HEAT_1_POSITION, enum) (&gt;B:PASSENGER_Cabin_Heat#SUFFIX_ID#_Set) 
+			</UPDATE_CODE>
 		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<UPDATE_CODE>
+				(B:PASSENGER_Cabin_Heat#SUFFIX_ID#_Set) 20 &gt;=
+					if{
+						1 (&gt;K:WINDSHIELD_DEICE_ON, Bool)
+					}	
+				(B:PASSENGER_Cabin_Heat#SUFFIX_ID#_Set) 20 &lt;
+					if{
+						1 (&gt;K:WINDSHIELD_DEICE_OFF, Bool)
+					}	
+			</UPDATE_CODE>
+		</UseTemplate>	
+		<!--##########################-->
 	</Template>
 
 <!--
 <Template Name="PanelLight">
+	<UseTemplate Name="ASOBO_GT_Update">
+		<UPDATE_CODE>
+		<UPDATE_ONCE/>
+			(L:JPL_PANEL_LIGHT_Inc) (&gt;B:LIGHTING_POTENTIOMETER_5_Inc)
+		</UPDATE_CODE>
+	</UseTemplate>
+
+		<UPDATE frequency="2">
+			(B:LIGHTING_POTENTIOMETER_5_Inc) 1 ==
+				if{
+					1 (&gt;L:JPL_PANEL_LIGHT_Inc)
+				}	
+				els{
+					0 (&gt;L:JPL_PANEL_LIGHT_Inc)
+				}	
+		</UPDATE>
+	
+</Template>	
+-->
+<!--	
 	<Update>
 		(L:JPL_PANEL_LIGHT_Inc, enum) 1 ==
 		if{
