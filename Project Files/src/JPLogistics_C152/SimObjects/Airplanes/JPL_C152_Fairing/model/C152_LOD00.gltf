@@ -3792,7 +3792,6 @@
             }
         },
         {
-            "alphaMode" : "BLEND",
             "emissiveFactor" : [
                 0,
                 0,
@@ -3800,127 +3799,7 @@
             ],
             "extras" : {
                 "is_import" : 0,
-                "msfs_material_type" : 2,
-                "msfs_base_color_factor" : [
-                    0.7697842121124268,
-                    0.7697842121124268,
-                    0.7697842121124268,
-                    1
-                ],
-                "msfs_emissive_factor" : [
-                    0,
-                    0,
-                    0
-                ],
-                "msfs_alpha_mode" : 2,
-                "msfs_draw_order" : 0,
-                "msfs_double_sided" : 0,
-                "msfs_dont_cast_shadows" : 0,
-                "msfs_day_night_cycle" : 0,
-                "msfs_use_pearl_effect" : 0,
-                "msfs_pearl_shift" : 0,
-                "msfs_pearl_range" : 0,
-                "msfs_pearl_brightness" : 0,
-                "msfs_collision_material" : 0,
-                "msfs_road_material" : 0,
-                "msfs_uv_offset_u" : 0,
-                "msfs_uv_offset_v" : 0,
-                "msfs_uv_tiling_u" : 1,
-                "msfs_uv_tiling_v" : 1,
-                "msfs_uv_rotation" : 0,
-                "msfs_uv_clamp_u" : 0,
-                "msfs_uv_clamp_v" : 0,
-                "msfs_roughness_factor" : 1,
-                "msfs_metallic_factor" : 1,
-                "msfs_normal_scale" : 1,
-                "msfs_alpha_cutoff" : 0.5,
-                "msfs_detail_uv_scale" : 1,
-                "msfs_detail_uv_offset_u" : 0,
-                "msfs_detail_uv_offset_v" : 0,
-                "msfs_detail_normal_scale" : 1,
-                "msfs_blend_threshold" : 0.10000000149011612,
-                "msfs_decal_color_blend_factor" : 1,
-                "msfs_decal_metal_blend_factor" : 1,
-                "msfs_decal_normal_blend_factor" : 1,
-                "msfs_decal_roughness_blend_factor" : 1,
-                "msfs_decal_occlusion_blend_factor" : 1,
-                "msfs_decal_emissive_blend_factor" : 1,
-                "msfs_rain_drop_scale" : 1,
-                "msfs_wiper_1_state" : 0,
-                "msfs_wiper_2_state" : 0,
-                "msfs_glass_reflection_factor" : 1,
-                "msfs_glass_deformation_factor" : 0,
-                "msfs_parallax_scale" : 0,
-                "msfs_parallax_room_size_x" : 0.5,
-                "msfs_parallax_room_size_y" : 0.5,
-                "msfs_parallax_room_number" : 1,
-                "msfs_parallax_corridor" : 0,
-                "msfs_sss_color" : [
-                    1,
-                    1,
-                    1,
-                    1
-                ],
-                "msfs_fresnel_factor" : 1,
-                "msfs_fresnel_opacity_bias" : 0,
-                "msfs_base_color_texture" : {
-                    "name" : "CESSA152_AIRFRAME_DECALS_ALBD.PNG.PNG",
-                    "type" : "Image"
-                },
-                "msfs_show_colors" : 1,
-                "msfs_show_emissive_color" : 1,
-                "msfs_show_alpha_mode" : 0,
-                "msfs_show_render_options" : 1,
-                "msfs_show_day_night_cycle" : 0,
-                "msfs_show_pearl" : 1,
-                "msfs_show_gameplay_options" : 1,
-                "msfs_show_uv_options" : 1,
-                "msfs_show_material_options" : 1,
-                "msfs_show_material_detail_options" : 1,
-                "msfs_show_blend_threshold" : 1,
-                "msfs_show_decal_blend_factors" : 1,
-                "msfs_show_windshield_options" : 0,
-                "msfs_show_glass_options" : 0,
-                "msfs_show_parallax_options" : 0,
-                "msfs_show_sss_color" : 0,
-                "msfs_show_fresnel_options" : 0,
-                "msfs_show_base_color_texture" : 1,
-                "msfs_show_comp_texture" : 1,
-                "msfs_show_normal_texture" : 1,
-                "msfs_show_emissive_texture" : 1,
-                "msfs_show_detail_color_texture" : 1,
-                "msfs_show_detail_comp_texture" : 1,
-                "msfs_show_detail_normal_texture" : 1,
-                "msfs_show_blend_mask_texture" : 1,
-                "msfs_show_wetness_ao_texture" : 0,
-                "msfs_show_dirt_texture" : 0,
-                "msfs_show_height_map_texture" : 0
-            },
-            "name" : "livery.001",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0.7697842121124268,
-                    0.7697842121124268,
-                    0.7697842121124268,
-                    1
-                ],
-                "baseColorTexture" : {
-                    "index" : 34,
-                    "texCoord" : 0
-                },
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.20000000298023224
-            }
-        },
-        {
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
-            "extras" : {
-                "is_import" : 0,
-                "msfs_material_type" : 1,
+                "msfs_material_type" : 0,
                 "msfs_base_color_factor" : [
                     1,
                     1,
@@ -3983,16 +3862,8 @@
                 ],
                 "msfs_fresnel_factor" : 1,
                 "msfs_fresnel_opacity_bias" : 0,
-                "msfs_base_color_texture" : {
-                    "name" : "CESSA152_AIRFRAME_PROP_STATIC_ALBD.PNG.PNG",
-                    "type" : "Image"
-                },
-                "msfs_comp_texture" : {
-                    "name" : "CESSA152_AIRFRAME_PROP_STATIC_COMP.PNG.PNG",
-                    "type" : "Image"
-                },
                 "msfs_normal_texture" : {
-                    "name" : "CESSA152_AIRFRAME_PROP_STATIC_NORM.PNG.PNG",
+                    "name" : "CESSA152_AIRFRAME_PROP_STATIC_NORM",
                     "type" : "Image"
                 },
                 "msfs_show_colors" : 1,
@@ -4007,278 +3878,6 @@
                 "msfs_show_material_detail_options" : 1,
                 "msfs_show_blend_threshold" : 1,
                 "msfs_show_decal_blend_factors" : 0,
-                "msfs_show_windshield_options" : 0,
-                "msfs_show_glass_options" : 0,
-                "msfs_show_parallax_options" : 0,
-                "msfs_show_sss_color" : 0,
-                "msfs_show_fresnel_options" : 0,
-                "msfs_show_base_color_texture" : 1,
-                "msfs_show_comp_texture" : 1,
-                "msfs_show_normal_texture" : 1,
-                "msfs_show_emissive_texture" : 1,
-                "msfs_show_detail_color_texture" : 1,
-                "msfs_show_detail_comp_texture" : 1,
-                "msfs_show_detail_normal_texture" : 1,
-                "msfs_show_blend_mask_texture" : 1,
-                "msfs_show_wetness_ao_texture" : 0,
-                "msfs_show_dirt_texture" : 0,
-                "msfs_show_height_map_texture" : 0
-            },
-            "name" : "prop_static.001",
-            "normalTexture" : {
-                "index" : 35,
-                "texCoord" : 0
-            },
-            "pbrMetallicRoughness" : {
-                "baseColorTexture" : {
-                    "index" : 36,
-                    "texCoord" : 0
-                },
-                "metallicRoughnessTexture" : {
-                    "index" : 37,
-                    "texCoord" : 0
-                }
-            }
-        },
-        {
-            "alphaMode" : "BLEND",
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
-            "extras" : {
-                "is_import" : 0,
-                "msfs_material_type" : 1,
-                "msfs_base_color_factor" : [
-                    0.800000011920929,
-                    0.800000011920929,
-                    0.800000011920929,
-                    1
-                ],
-                "msfs_emissive_factor" : [
-                    0,
-                    0,
-                    0
-                ],
-                "msfs_alpha_mode" : 2,
-                "msfs_draw_order" : 0,
-                "msfs_double_sided" : 0,
-                "msfs_dont_cast_shadows" : 0,
-                "msfs_day_night_cycle" : 0,
-                "msfs_use_pearl_effect" : 0,
-                "msfs_pearl_shift" : 0,
-                "msfs_pearl_range" : 0,
-                "msfs_pearl_brightness" : 0,
-                "msfs_collision_material" : 0,
-                "msfs_road_material" : 0,
-                "msfs_uv_offset_u" : 0,
-                "msfs_uv_offset_v" : 0,
-                "msfs_uv_tiling_u" : 1,
-                "msfs_uv_tiling_v" : 1,
-                "msfs_uv_rotation" : 0,
-                "msfs_uv_clamp_u" : 0,
-                "msfs_uv_clamp_v" : 0,
-                "msfs_roughness_factor" : 1,
-                "msfs_metallic_factor" : 1,
-                "msfs_normal_scale" : 1,
-                "msfs_alpha_cutoff" : 0.5,
-                "msfs_detail_uv_scale" : 1,
-                "msfs_detail_uv_offset_u" : 0,
-                "msfs_detail_uv_offset_v" : 0,
-                "msfs_detail_normal_scale" : 1,
-                "msfs_blend_threshold" : 0.10000000149011612,
-                "msfs_decal_color_blend_factor" : 1,
-                "msfs_decal_metal_blend_factor" : 1,
-                "msfs_decal_normal_blend_factor" : 1,
-                "msfs_decal_roughness_blend_factor" : 1,
-                "msfs_decal_occlusion_blend_factor" : 1,
-                "msfs_decal_emissive_blend_factor" : 1,
-                "msfs_rain_drop_scale" : 1,
-                "msfs_wiper_1_state" : 0,
-                "msfs_wiper_2_state" : 0,
-                "msfs_glass_reflection_factor" : 1,
-                "msfs_glass_deformation_factor" : 0,
-                "msfs_parallax_scale" : 0,
-                "msfs_parallax_room_size_x" : 0.5,
-                "msfs_parallax_room_size_y" : 0.5,
-                "msfs_parallax_room_number" : 1,
-                "msfs_parallax_corridor" : 0,
-                "msfs_sss_color" : [
-                    1,
-                    1,
-                    1,
-                    1
-                ],
-                "msfs_fresnel_factor" : 1,
-                "msfs_fresnel_opacity_bias" : 0,
-                "msfs_base_color_texture" : {
-                    "name" : "CESSA152_AIRFRAME_PROP_BLURRED_ALBD.PNG.PNG",
-                    "type" : "Image"
-                },
-                "msfs_comp_texture" : {
-                    "name" : "CESSA152_AIRFRAME_PROP_BLURRED_COMP.PNG.PNG",
-                    "type" : "Image"
-                },
-                "msfs_normal_texture" : {
-                    "name" : "CESSA152_AIRFRAME_PROP_BLURRED_NORM.PNG.PNG",
-                    "type" : "Image"
-                },
-                "msfs_show_colors" : 1,
-                "msfs_show_emissive_color" : 1,
-                "msfs_show_alpha_mode" : 1,
-                "msfs_show_render_options" : 1,
-                "msfs_show_day_night_cycle" : 1,
-                "msfs_show_pearl" : 1,
-                "msfs_show_gameplay_options" : 1,
-                "msfs_show_uv_options" : 1,
-                "msfs_show_material_options" : 1,
-                "msfs_show_material_detail_options" : 1,
-                "msfs_show_blend_threshold" : 1,
-                "msfs_show_decal_blend_factors" : 0,
-                "msfs_show_windshield_options" : 0,
-                "msfs_show_glass_options" : 0,
-                "msfs_show_parallax_options" : 0,
-                "msfs_show_sss_color" : 0,
-                "msfs_show_fresnel_options" : 0,
-                "msfs_show_base_color_texture" : 1,
-                "msfs_show_comp_texture" : 1,
-                "msfs_show_normal_texture" : 1,
-                "msfs_show_emissive_texture" : 1,
-                "msfs_show_detail_color_texture" : 1,
-                "msfs_show_detail_comp_texture" : 1,
-                "msfs_show_detail_normal_texture" : 1,
-                "msfs_show_blend_mask_texture" : 1,
-                "msfs_show_wetness_ao_texture" : 0,
-                "msfs_show_dirt_texture" : 0,
-                "msfs_show_height_map_texture" : 0
-            },
-            "name" : "prop_blurred",
-            "normalTexture" : {
-                "index" : 38,
-                "texCoord" : 0
-            },
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0.800000011920929,
-                    0.800000011920929,
-                    0.800000011920929,
-                    1
-                ],
-                "baseColorTexture" : {
-                    "index" : 39,
-                    "texCoord" : 0
-                },
-                "metallicRoughnessTexture" : {
-                    "index" : 40,
-                    "texCoord" : 0
-                }
-            }
-        },
-        {
-            "alphaMode" : "BLEND",
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
-            "extras" : {
-                "is_import" : 0,
-                "msfs_material_type" : 2,
-                "msfs_base_color_factor" : [
-                    1,
-                    1,
-                    1,
-                    1
-                ],
-                "msfs_emissive_factor" : [
-                    0,
-                    0,
-                    0
-                ],
-                "msfs_alpha_mode" : 2,
-                "msfs_draw_order" : 0,
-                "msfs_double_sided" : 0,
-                "msfs_dont_cast_shadows" : 0,
-                "msfs_day_night_cycle" : 0,
-                "msfs_use_pearl_effect" : 0,
-                "msfs_pearl_shift" : 0,
-                "msfs_pearl_range" : 0,
-                "msfs_pearl_brightness" : 0,
-                "msfs_collision_material" : 0,
-                "msfs_road_material" : 0,
-                "msfs_uv_offset_u" : 0,
-                "msfs_uv_offset_v" : 0,
-                "msfs_uv_tiling_u" : 1,
-                "msfs_uv_tiling_v" : 1,
-                "msfs_uv_rotation" : 0,
-                "msfs_uv_clamp_u" : 0,
-                "msfs_uv_clamp_v" : 0,
-                "msfs_roughness_factor" : 0.07999999821186066,
-                "msfs_metallic_factor" : 0.9399999976158142,
-                "msfs_normal_scale" : 1,
-                "msfs_alpha_cutoff" : 0.5,
-                "msfs_detail_uv_scale" : 1,
-                "msfs_detail_uv_offset_u" : 0,
-                "msfs_detail_uv_offset_v" : 0,
-                "msfs_detail_normal_scale" : 1,
-                "msfs_blend_threshold" : 0.10000000149011612,
-                "msfs_decal_color_blend_factor" : 1,
-                "msfs_decal_metal_blend_factor" : 1,
-                "msfs_decal_normal_blend_factor" : 1,
-                "msfs_decal_roughness_blend_factor" : 1,
-                "msfs_decal_occlusion_blend_factor" : 1,
-                "msfs_decal_emissive_blend_factor" : 1,
-                "msfs_rain_drop_scale" : 1,
-                "msfs_wiper_1_state" : 0,
-                "msfs_wiper_2_state" : 0,
-                "msfs_glass_reflection_factor" : 1,
-                "msfs_glass_deformation_factor" : 0,
-                "msfs_parallax_scale" : 0,
-                "msfs_parallax_room_size_x" : 0.5,
-                "msfs_parallax_room_size_y" : 0.5,
-                "msfs_parallax_room_number" : 1,
-                "msfs_parallax_corridor" : 0,
-                "msfs_sss_color" : [
-                    1,
-                    1,
-                    1,
-                    1
-                ],
-                "msfs_fresnel_factor" : 1,
-                "msfs_fresnel_opacity_bias" : 0,
-                "msfs_base_color_texture" : {
-                    "name" : "FROST_ALBD.PNG.PNG",
-                    "type" : "Image"
-                },
-                "msfs_comp_texture" : {
-                    "name" : "FROST_COMP.PNG.PNG",
-                    "type" : "Image"
-                },
-                "msfs_normal_texture" : {
-                    "name" : "FROST_NORM.PNG.PNG",
-                    "type" : "Image"
-                },
-                "msfs_detail_comp_texture" : {
-                    "name" : "FROST_DETAIL_COMP.PNG.PNG",
-                    "type" : "Image"
-                },
-                "msfs_detail_normal_texture" : {
-                    "name" : "FROST_DETAIL_NORM.PNG.PNG",
-                    "type" : "Image"
-                },
-                "msfs_show_colors" : 1,
-                "msfs_show_emissive_color" : 1,
-                "msfs_show_alpha_mode" : 0,
-                "msfs_show_render_options" : 1,
-                "msfs_show_day_night_cycle" : 0,
-                "msfs_show_pearl" : 1,
-                "msfs_show_gameplay_options" : 1,
-                "msfs_show_uv_options" : 1,
-                "msfs_show_material_options" : 1,
-                "msfs_show_material_detail_options" : 1,
-                "msfs_show_blend_threshold" : 1,
-                "msfs_show_decal_blend_factors" : 1,
                 "msfs_show_windshield_options" : 0,
                 "msfs_show_glass_options" : 0,
                 "msfs_show_parallax_options" : 0,
@@ -4295,21 +3894,136 @@
                 "msfs_show_wetness_ao_texture" : 0,
                 "msfs_show_dirt_texture" : 0,
                 "msfs_show_height_map_texture" : 0,
-                "ASOBO_material_code" : "GeoDecalFrosted"
+                "msfs_material_mode" : 1,
+                "msfs_albedo_texture" : {
+                    "name" : "CESSA152_AIRFRAME_PROP_STATIC_ALBD",
+                    "type" : "Image"
+                },
+                "msfs_metallic_texture" : {
+                    "name" : "CESSA152_AIRFRAME_PROP_STATIC_COMP",
+                    "type" : "Image"
+                },
+                "msfs_show_tint" : 1,
+                "msfs_show_glass_parameters" : 0,
+                "msfs_show_decal_parameters" : 0,
+                "msfs_show_fresnel_parameters" : 0,
+                "msfs_show_parallax_parameters" : 0,
+                "msfs_show_geo_decal_parameters" : 0,
+                "msfs_show_albedo" : 1,
+                "msfs_show_metallic" : 1,
+                "msfs_show_normal" : 1,
+                "msfs_show_emissive" : 1,
+                "msfs_show_detail_albedo" : 1,
+                "msfs_show_detail_metallic" : 1,
+                "msfs_show_detail_normal" : 1,
+                "msfs_show_blend_mask" : 1,
+                "msfs_show_anisotropic_direction" : 0,
+                "msfs_show_clearcoat" : 0,
+                "msfs_show_behind_glass" : 0,
+                "msfs_show_blend_mode" : 1,
+                "msfs_show_draworder" : 1,
+                "msfs_show_no_cast_shadow" : 1,
+                "msfs_show_double_sided" : 1,
+                "msfs_show_responsive_aa" : 0,
+                "msfs_show_collision_material" : 1,
+                "msfs_show_road_material" : 1,
+                "msfs_show_ao_use_uv2" : 1,
+                "msfs_show_uv_clamp" : 1,
+                "msfs_show_alpha_cutoff" : 1
             },
-            "name" : "FROST.001",
+            "name" : "prop_static",
             "normalTexture" : {
-                "index" : 41,
-                "scale" : 0.8100000023841858,
+                "index" : 34,
+                "texCoord" : 0
+            },
+            "occlusionTexture" : {
+                "index" : 35,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 42,
+                    "index" : 36,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 43,
+                    "index" : 35,
+                    "texCoord" : 0
+                }
+            }
+        },
+        {
+            "alphaMode" : "BLEND",
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "extras" : {
+                "msfs_material_mode" : 1,
+                "msfs_albedo_texture" : {
+                    "name" : "CESSA152_AIRFRAME_PROP_BLURRED_ALBD",
+                    "type" : "Image"
+                },
+                "msfs_metallic_texture" : {
+                    "name" : "CESSA152_AIRFRAME_PROP_BLURRED_COMP",
+                    "type" : "Image"
+                },
+                "msfs_normal_texture" : {
+                    "name" : "CESSA152_AIRFRAME_PROP_BLURRED_NORM",
+                    "type" : "Image"
+                },
+                "msfs_show_tint" : 1,
+                "msfs_show_sss_color" : 0,
+                "msfs_show_glass_parameters" : 0,
+                "msfs_show_decal_parameters" : 0,
+                "msfs_show_fresnel_parameters" : 0,
+                "msfs_show_parallax_parameters" : 0,
+                "msfs_show_geo_decal_parameters" : 0,
+                "msfs_show_albedo" : 1,
+                "msfs_show_metallic" : 1,
+                "msfs_show_normal" : 1,
+                "msfs_show_emissive" : 1,
+                "msfs_show_detail_albedo" : 1,
+                "msfs_show_detail_metallic" : 1,
+                "msfs_show_detail_normal" : 1,
+                "msfs_show_blend_mask" : 1,
+                "msfs_show_anisotropic_direction" : 0,
+                "msfs_show_clearcoat" : 0,
+                "msfs_show_behind_glass" : 0,
+                "msfs_show_blend_mode" : 1,
+                "msfs_show_draworder" : 1,
+                "msfs_show_no_cast_shadow" : 1,
+                "msfs_show_double_sided" : 1,
+                "msfs_show_responsive_aa" : 0,
+                "msfs_show_day_night_cycle" : 1,
+                "msfs_show_collision_material" : 1,
+                "msfs_show_road_material" : 1,
+                "msfs_show_ao_use_uv2" : 1,
+                "msfs_show_uv_clamp" : 1,
+                "msfs_show_alpha_cutoff" : 1,
+                "msfs_show_blend_threshold" : 1,
+                "msfs_blend_mode" : 2,
+                "msfs_day_night_cycle" : 0,
+                "msfs_double_sided" : 0,
+                "msfs_color_alpha_mix" : 1,
+                "msfs_alpha_cutoff" : 0.5
+            },
+            "name" : "prop_blured",
+            "normalTexture" : {
+                "index" : 37,
+                "texCoord" : 0
+            },
+            "occlusionTexture" : {
+                "index" : 38,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 39,
+                    "texCoord" : 0
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 38,
                     "texCoord" : 0
                 }
             }
@@ -4428,20 +4142,20 @@
             },
             "name" : "TAILLANDING",
             "normalTexture" : {
-                "index" : 44,
+                "index" : 40,
                 "texCoord" : 0
             },
             "occlusionTexture" : {
-                "index" : 45,
+                "index" : 41,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 46,
+                    "index" : 42,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 45,
+                    "index" : 41,
                     "texCoord" : 0
                 }
             }
@@ -4561,16 +4275,16 @@
             },
             "name" : "RIVETS_METAL",
             "normalTexture" : {
-                "index" : 47,
+                "index" : 43,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 48,
+                    "index" : 44,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 49,
+                    "index" : 45,
                     "texCoord" : 0
                 }
             }
@@ -4689,16 +4403,16 @@
             },
             "name" : "wheel_static",
             "normalTexture" : {
-                "index" : 50,
+                "index" : 46,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 51,
+                    "index" : 47,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 52,
+                    "index" : 48,
                     "texCoord" : 0
                 }
             }
@@ -4817,20 +4531,20 @@
             },
             "name" : "wheel_blurred",
             "normalTexture" : {
-                "index" : 53,
+                "index" : 49,
                 "texCoord" : 0
             },
             "occlusionTexture" : {
-                "index" : 54,
+                "index" : 50,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 55,
+                    "index" : 51,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 54,
+                    "index" : 50,
                     "texCoord" : 0
                 }
             }
@@ -5460,7 +5174,7 @@
                         "COLOR_0" : 245
                     },
                     "indices" : 246,
-                    "material" : 15
+                    "material" : 6
                 },
                 {
                     "attributes" : {
@@ -5471,7 +5185,7 @@
                         "COLOR_0" : 251
                     },
                     "indices" : 252,
-                    "material" : 16
+                    "material" : 15
                 }
             ]
         },
@@ -5487,7 +5201,7 @@
                         "COLOR_0" : 257
                     },
                     "indices" : 258,
-                    "material" : 17
+                    "material" : 16
                 }
             ]
         },
@@ -5519,7 +5233,7 @@
                         "COLOR_0" : 269
                     },
                     "indices" : 270,
-                    "material" : 18
+                    "material" : 3
                 }
             ]
         },
@@ -5598,7 +5312,7 @@
                         "COLOR_0" : 298
                     },
                     "indices" : 299,
-                    "material" : 19
+                    "material" : 17
                 },
                 {
                     "attributes" : {
@@ -5609,7 +5323,7 @@
                         "COLOR_0" : 304
                     },
                     "indices" : 305,
-                    "material" : 20
+                    "material" : 18
                 }
             ]
         },
@@ -5624,7 +5338,7 @@
                         "TEXCOORD_1" : 309
                     },
                     "indices" : 310,
-                    "material" : 21
+                    "material" : 19
                 }
             ]
         },
@@ -5639,7 +5353,7 @@
                         "TEXCOORD_1" : 314
                     },
                     "indices" : 315,
-                    "material" : 22
+                    "material" : 20
                 }
             ]
         },
@@ -5701,7 +5415,7 @@
                         "COLOR_0" : 336
                     },
                     "indices" : 337,
-                    "material" : 19
+                    "material" : 17
                 },
                 {
                     "attributes" : {
@@ -5712,7 +5426,7 @@
                         "COLOR_0" : 342
                     },
                     "indices" : 343,
-                    "material" : 20
+                    "material" : 18
                 }
             ]
         },
@@ -5727,7 +5441,7 @@
                         "TEXCOORD_1" : 347
                     },
                     "indices" : 348,
-                    "material" : 21
+                    "material" : 19
                 }
             ]
         },
@@ -5742,7 +5456,7 @@
                         "TEXCOORD_1" : 352
                     },
                     "indices" : 353,
-                    "material" : 22
+                    "material" : 20
                 }
             ]
         },
@@ -5825,7 +5539,7 @@
                         "TEXCOORD_1" : 385
                     },
                     "indices" : 386,
-                    "material" : 21
+                    "material" : 19
                 }
             ]
         },
@@ -5840,7 +5554,7 @@
                         "TEXCOORD_1" : 390
                     },
                     "indices" : 391,
-                    "material" : 22
+                    "material" : 20
                 }
             ]
         },
@@ -5932,7 +5646,7 @@
                         "COLOR_0" : 422
                     },
                     "indices" : 423,
-                    "material" : 19
+                    "material" : 17
                 }
             ]
         },
@@ -6108,18 +5822,6 @@
         },
         {
             "source" : 48
-        },
-        {
-            "source" : 49
-        },
-        {
-            "source" : 50
-        },
-        {
-            "source" : 51
-        },
-        {
-            "source" : 52
         }
     ],
     "images" : [
@@ -6280,53 +5982,33 @@
         },
         {
             "mimeType" : "image/png",
-            "name" : "CESSA152_AIRFRAME_DECALS_ALBD.PNG",
-            "uri" : "CESSA152_AIRFRAME_DECALS_ALBD_PNG.png"
+            "name" : "CESSA152_AIRFRAME_PROP_STATIC_NORM",
+            "uri" : "CESSA152_AIRFRAME_PROP_STATIC_NORM.png"
         },
         {
             "mimeType" : "image/png",
-            "name" : "CESSA152_AIRFRAME_PROP_STATIC_NORM.PNG",
-            "uri" : "CESSA152_AIRFRAME_PROP_STATIC_NORM_PNG.png"
+            "name" : "CESSA152_AIRFRAME_PROP_STATIC_COMP",
+            "uri" : "CESSA152_AIRFRAME_PROP_STATIC_COMP.png"
         },
         {
             "mimeType" : "image/png",
-            "name" : "CESSA152_AIRFRAME_PROP_STATIC_ALBD.PNG",
-            "uri" : "CESSA152_AIRFRAME_PROP_STATIC_ALBD_PNG.png"
+            "name" : "CESSA152_AIRFRAME_PROP_STATIC_ALBD",
+            "uri" : "CESSA152_AIRFRAME_PROP_STATIC_ALBD.png"
         },
         {
             "mimeType" : "image/png",
-            "name" : "CESSA152_AIRFRAME_PROP_STATIC_COMP.PNG",
-            "uri" : "CESSA152_AIRFRAME_PROP_STATIC_COMP_PNG.png"
+            "name" : "CESSA152_AIRFRAME_PROP_BLURRED_NORM",
+            "uri" : "CESSA152_AIRFRAME_PROP_BLURRED_NORM.png"
         },
         {
             "mimeType" : "image/png",
-            "name" : "CESSA152_AIRFRAME_PROP_BLURRED_NORM.PNG",
-            "uri" : "CESSA152_AIRFRAME_PROP_BLURRED_NORM_PNG.png"
+            "name" : "CESSA152_AIRFRAME_PROP_BLURRED_COMP",
+            "uri" : "CESSA152_AIRFRAME_PROP_BLURRED_COMP.png"
         },
         {
             "mimeType" : "image/png",
-            "name" : "CESSA152_AIRFRAME_PROP_BLURRED_ALBD.PNG",
-            "uri" : "CESSA152_AIRFRAME_PROP_BLURRED_ALBD_PNG.png"
-        },
-        {
-            "mimeType" : "image/png",
-            "name" : "CESSA152_AIRFRAME_PROP_BLURRED_COMP.PNG",
-            "uri" : "CESSA152_AIRFRAME_PROP_BLURRED_COMP_PNG.png"
-        },
-        {
-            "mimeType" : "image/png",
-            "name" : "FROST_NORM.PNG",
-            "uri" : "FROST_NORM_PNG.png"
-        },
-        {
-            "mimeType" : "image/png",
-            "name" : "FROST_ALBD.PNG",
-            "uri" : "FROST_ALBD_PNG.png"
-        },
-        {
-            "mimeType" : "image/png",
-            "name" : "FROST_COMP.PNG",
-            "uri" : "FROST_COMP_PNG.png"
+            "name" : "CESSA152_AIRFRAME_PROP_BLURRED_ALBD",
+            "uri" : "CESSA152_AIRFRAME_PROP_BLURRED_ALBD.png"
         },
         {
             "mimeType" : "image/png",

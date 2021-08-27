@@ -215,6 +215,7 @@
     <Animation guid="c0ad7956-91f3-4419-abd3-7c113fd3aa28" name="INSTRUMENT_HeadingIndicator_Knob_Heading_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="ba0639b8-7920-4543-b332-a6ad6e7b463f" name="INSTRUMENT_Needle_Heading_Cylinder_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="28c7bc8e-db07-45e8-a250-45971673c7b8" name="INSTRUMENT_Needle_Heading_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="28c7bc8e-db07-45e8-a250-45971673c7b2" name="ADF_Knob_Frequency_KHz_1_Push" type="standard" typeParam="Autoplay"/>
     
 
     <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank and the 20 in the formula is a scaling factor for the amount of yaw induced variation in the tank indication. The first value is the current tank quantity in liters. 	The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
