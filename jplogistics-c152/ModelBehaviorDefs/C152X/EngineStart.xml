@@ -93,12 +93,12 @@ Factors:
 		(L:XMLVAR_Engine_Condition) @MinimumEngScore &gt;= 
 		(L:XMLVAR_Fuel_Evaporating, Bool) ! and
 		if{ 
-			(A:GENERAL ENG COMBUSTION:1, bool) ! if{ (&gt;K:TOGGLE_ENGINE1_FAILURE) } 
+			(A:ENG FAILED:1, bool)  if{ (&gt;K:TOGGLE_ENGINE1_FAILURE) } 
 		} 
 		(L:XMLVAR_Engine_Condition) @MinimumEngScore &lt;
 		(L:XMLVAR_Fuel_Evaporating, Bool) or
 		if{
-			(A:GENERAL ENG COMBUSTION:1, bool) if{ (&gt;K:TOGGLE_ENGINE1_FAILURE) }
+			(A:ENG FAILED:1, bool) ! if{ (&gt;K:TOGGLE_ENGINE1_FAILURE) }
 		}		
 	</Update>	
 	

@@ -5,7 +5,8 @@
     <!-- Highest LOD -->
     <!-- minimum display size in % (should be bounding sphere vertical screen size, sphere will often be slightly larger than you expect) -->
     <!-- default minSize is 0 -->
-    <LOD minSize="1" ModelFile="C152_cockpit_LOD00.gltf"/>
+    <LOD minSize="50" ModelFile="C152_cockpit_LOD00.gltf"/>
+    <LOD minSize="0" ModelFile="C152_cockpit_LOD00.gltf"/>
   </LODS>
   <Behaviors>
 
@@ -26,7 +27,7 @@
 	  <UseTemplate Name="COM2_VOLUME"></UseTemplate>
 	  <UseTemplate Name="WindowSoundHelper"></UseTemplate>
 	  <UseTemplate Name="Door_Close"></UseTemplate>
-	  <!--<UseTemplate Name="AP_BREAKER_STATE"></UseTemplate>-->
+	  <!--<UseTemplate Name="PanelLight"></UseTemplate>-->
 	  <!--<UseTemplate Name="CoPilot_Weight"></UseTemplate>-->
     </Component>
     <!--End of C152X Modification -->
@@ -214,6 +215,7 @@
     <Animation guid="c0ad7956-91f3-4419-abd3-7c113fd3aa28" name="INSTRUMENT_HeadingIndicator_Knob_Heading_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="ba0639b8-7920-4543-b332-a6ad6e7b463f" name="INSTRUMENT_Needle_Heading_Cylinder_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="28c7bc8e-db07-45e8-a250-45971673c7b8" name="INSTRUMENT_Needle_Heading_1" type="standard" typeParam="Autoplay"/>
+    <Animation guid="28c7bc8e-db07-45e8-a250-45971673c7b2" name="ADF_Knob_Frequency_KHz_1_Push" type="standard" typeParam="Autoplay"/>
     
 
     <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank and the 20 in the formula is a scaling factor for the amount of yaw induced variation in the tank indication. The first value is the current tank quantity in liters. 	The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
@@ -424,7 +426,7 @@
 
     <!-- INSTRUMENTS ########################### -->
     <Component ID="KAP_140">
-      <UseTemplate Name="ASOBO_KAP140_Template">
+      <UseTemplate Name="C152X_KAP140_Template">
         <KNOB_100_ANIM_NAME>AUTOPILOT_Knob_Altitude_1</KNOB_100_ANIM_NAME>
         <POTENTIOMETER></POTENTIOMETER>
         <EMISSIVE_CODE>0.2</EMISSIVE_CODE>
@@ -448,9 +450,15 @@
         <POTENTIOMETER>6</POTENTIOMETER>
 		<DIMMING_FACTOR>1</DIMMING_FACTOR>
 		<USE_DIMMING_POTENTIOMETER/>
-		<FAILURE>(A:TRANSPONDER STATE:1, Enum) 0 &gt; (A:CIRCUIT ON:20, Bool) and</FAILURE>
+		<FAILURE>(A:TRANSPONDER STATE:1, Enum) 0 &gt;</FAILURE>
 		<EMISSIVE_POTENTIOMETER>6</EMISSIVE_POTENTIOMETER>
       </UseTemplate>
+		<Update>
+			(A:CIRCUIT ON:20, bool) 1 &lt;
+			if{
+			0 (&gt;A:TRANSPONDER STATE:1, Enum)
+			}
+		</Update>
     </Component>
     <Component ID="ADF_KR87">
       <UseTemplate Name="C152X_INSTRUMENT_ADF_Template">
@@ -562,16 +570,16 @@
 				<IS_AVIONICS_ON>(A:CIRCUIT ON:23, Bool)</IS_AVIONICS_ON><!-- COM1 Circuit used for correct behaviour! -->
 				<KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_1</KNOB_HIGHLIGHT_NODE_ID>
 				<TOOLTIP_COURSE_TITLE></TOOLTIP_COURSE_TITLE>
-				<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.OBS_BEARING_SELECT (%((A:NAV OBS:1, Degrees))%!d!°)</ANIMTIP_0>
-				<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.OBS_BEARING_SELECT (%((A:NAV OBS:1, Degrees))%!d!°)</ANIMTIP_1>
+				<ANIMTIP_0>VOR 1 BEARING (%((A:NAV OBS:1, Degrees))%!d!°)</ANIMTIP_0>
+				<ANIMTIP_1>VOR 1 BEARING (%((A:NAV OBS:1, Degrees))%!d!°)</ANIMTIP_1>
 			</UseTemplate>
 			<UseTemplate Name="ASOBO_INSTRUMENT_CDI_Template">
 				<ID>2</ID>
 				<IS_AVIONICS_ON>(A:CIRCUIT ON:25, Bool)</IS_AVIONICS_ON><!-- COM2 Circuit used for correct behaviour! -->
 				<KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_2</KNOB_HIGHLIGHT_NODE_ID>
 				<TOOLTIP_COURSE_TITLE></TOOLTIP_COURSE_TITLE>
-				<ANIMTIP_0>TT:COCKPIT.TOOLTIPS.OBS_BEARING_SELECT (%((A:NAV OBS:2, Degrees))%!d!°)</ANIMTIP_0>
-				<ANIMTIP_1>TT:COCKPIT.TOOLTIPS.OBS_BEARING_SELECT (%((A:NAV OBS:2, Degrees))%!d!°)</ANIMTIP_1>
+				<ANIMTIP_0>VOR 2 BEARING (%((A:NAV OBS:2, Degrees))%!d!°)</ANIMTIP_0>
+				<ANIMTIP_1>VOR 2 BEARING (%((A:NAV OBS:2, Degrees))%!d!°)</ANIMTIP_1>
 			</UseTemplate>
 		</Component>
 	
@@ -591,11 +599,11 @@
 				<!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
 				<SIMVAR_UNIT>gallons</SIMVAR_UNIT>
 				<!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
-				<REF_VALUE_0>0 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_0>
+				<REF_VALUE_0>0.75 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_0>
 				<REF_VALUE_1>3.3 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_1>
 				<REF_VALUE_2>6 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_2>
 				<REF_VALUE_3>8.8 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_3>
-				<REF_VALUE_4>12 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_4>
+				<REF_VALUE_4>13 @FuelTankSensorAdjustmentLeftTank</REF_VALUE_4>
 
 				<ANIM_VALUE_0>0</ANIM_VALUE_0>
 				<ANIM_VALUE_1>30</ANIM_VALUE_1>
@@ -617,11 +625,11 @@
 				<!-- Using custom points since the animation non linear. For realism, Left/Right gauges have slightly different calibration. Data for Left gauge was aligned with graphic...-->
 				<SIMVAR_UNIT>gallons</SIMVAR_UNIT>
 				<!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank.  The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
-				<REF_VALUE_0>0 @FuelTankSensorAdjustmentRightTank</REF_VALUE_0>
+				<REF_VALUE_0>0.75 @FuelTankSensorAdjustmentRightTank</REF_VALUE_0>
 				<REF_VALUE_1>3 @FuelTankSensorAdjustmentRightTank</REF_VALUE_1>
 				<REF_VALUE_2>5.8 @FuelTankSensorAdjustmentRightTank</REF_VALUE_2>
 				<REF_VALUE_3>9 @FuelTankSensorAdjustmentRightTank</REF_VALUE_3>
-				<REF_VALUE_4>11.9 @FuelTankSensorAdjustmentRightTank</REF_VALUE_4>
+				<REF_VALUE_4>13 @FuelTankSensorAdjustmentRightTank</REF_VALUE_4>
 
 				<ANIM_VALUE_0>0</ANIM_VALUE_0>
 				<ANIM_VALUE_1>30</ANIM_VALUE_1>
@@ -905,13 +913,15 @@
 		<USE_DIMMING_POTENTIOMETER/>
 		<POTENTIOMETER>6</POTENTIOMETER>
       </UseTemplate>
+	  <!--
       <UseTemplate Name="JPL_EFB_Screens_Template">
         <ID>1</ID>
         <NODE_ID>SCREEN_EFB</NODE_ID>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
-		<!--<USE_DIMMING_POTENTIOMETER/>
-		<POTENTIOMETER>6</POTENTIOMETER> Removed for now while testing-->
+		<USE_DIMMING_POTENTIOMETER/>
+		<POTENTIOMETER>6</POTENTIOMETER>
       </UseTemplate>
+	  -->
     </Component>
     <Component ID="AUDIO_TOP_PANEL">
       <Parameters Type="Default">
@@ -1136,57 +1146,64 @@
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RADIO_1</NODE_ID>
 			<ANIM_NAME>Breaker_RADIO_1</ANIM_NAME>
+			<TOOLTIPID>NAVCOM 1</TOOLTIPID>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>11</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RADIO_2</NODE_ID>
 			<ANIM_NAME>Breaker_RADIO_2</ANIM_NAME>
+			<TOOLTIPID>NAVCOM 2</TOOLTIPID>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>12</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RADIO_3</NODE_ID>
 			<ANIM_NAME>Breaker_RADIO_3</ANIM_NAME>
+			<TOOLTIPID>ADF, DME, XPNDR</TOOLTIPID>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>13</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RADIO_4</NODE_ID>
 			<ANIM_NAME>Breaker_RADIO_4</ANIM_NAME>
+			<TOOLTIPID>Autopilot</TOOLTIPID>
 		</UseTemplate>	
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>14</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_0</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_0</ANIM_NAME>
+			<TOOLTIPID>inopérant</TOOLTIPID>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>15</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_1</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_1</ANIM_NAME>
+			<ANIM_NAME>Breaker_RIGHT_1/</ANIM_NAME>
+			<TOOLTIPID>inopérant</TOOLTIPID>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>16</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_2</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_2</ANIM_NAME>
+			<ANIM_NAME>Breaker_RIGHT_2/</ANIM_NAME>
+			<TOOLTIPID>inopérant</TOOLTIPID>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>17</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_3</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_3</ANIM_NAME>
+			<ANIM_NAME>Breaker_RIGHT_3/</ANIM_NAME>
+			<TOOLTIPID>inopérant</TOOLTIPID>
 		</UseTemplate>
 		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>18</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_4</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_4</ANIM_NAME>
-		</UseTemplate>
-		
-		
+			<ANIM_NAME>Breaker_RIGHT_4/</ANIM_NAME>
+			<TOOLTIPID>inopérant</TOOLTIPID>
+		</UseTemplate>	
 	</Component>
   </Behaviors>
 </ModelInfo>

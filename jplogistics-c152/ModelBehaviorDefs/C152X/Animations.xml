@@ -54,6 +54,21 @@
       </ANIM_CODE>
     </UseTemplate>
   </Component>
+  <!--
+      <Component ID="Window_Blowout" Node="#ID#_Window">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>
+			(L:C152_PilotsWindows, Bool) 1 == if{1} els{0}</VISIBILITY_CODE>
+        </UseTemplate>
+		<Update Frequency="1">
+			(A:AIRSPEED INDICATED, knots) 143 &gt;=
+			if{
+				0 (&gt;L:C152_PilotsWindows, Bool) 
+				1 (&gt;L:JPL_WINDOW_#ID#, bool) and
+			}
+		</Update>		
+      </Component>
+	-->  
 </Template>
 
 <Template Name="JPL_Door_Template">
@@ -88,14 +103,14 @@
 </Template>
 
 <Template Name="Door_Close">
-	<Update Frequency="1">
+	<Update Frequency="2">
 		(A:AIRSPEED TRUE, knots) 30 &gt;=
 		(L:JPL_DOOR_PILOT, bool) 1 &gt;= and
 		if{
 			0 (&gt;L:JPL_DOOR_PILOT, bool)
 		}	
 	</Update>
-	<Update Frequency=".7">
+	<Update Frequency="1.7">
 		(A:AIRSPEED TRUE, knots) 30 &gt;=
 		(L:JPL_DOOR_COPILOT, bool) 1 &gt;= and
 		if{
@@ -245,20 +260,60 @@
 				<NODE_ID>#HIGHLIGHT_NODE_ID#</NODE_ID>
 			</UseTemplate>
 		</Condition>
+		<!--##### LVAR FOR HARDWARE COMPATABILITY #####-->
 		<UseTemplate Name="ASOBO_GT_Update">
-		<UPDATE_CODE>
-			(B:PASSENGER_Cabin_Heat#SUFFIX_ID#_Set) 20 &gt;=
-				if{
-					1 (&gt;K:WINDSHIELD_DEICE_ON, Bool)
-				}	
-			(B:PASSENGER_Cabin_Heat#SUFFIX_ID#_Set) 20 &lt;
-				if{
-					1 (&gt;K:WINDSHIELD_DEICE_OFF, Bool)
-				}	
-		</UPDATE_CODE>
+			<UPDATE_CODE>
+			<UPDATE_ONCE/>
+				(L:XMLVAR_CABIN_HEAT_1_POSITION, enum) (&gt;B:PASSENGER_Cabin_Heat#SUFFIX_ID#_Set) 
+			</UPDATE_CODE>
 		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Update">
+			<UPDATE_CODE>
+				(B:PASSENGER_Cabin_Heat#SUFFIX_ID#_Set) 20 &gt;=
+					if{
+						1 (&gt;K:WINDSHIELD_DEICE_ON, Bool)
+					}	
+				(B:PASSENGER_Cabin_Heat#SUFFIX_ID#_Set) 20 &lt;
+					if{
+						1 (&gt;K:WINDSHIELD_DEICE_OFF, Bool)
+					}	
+			</UPDATE_CODE>
+		</UseTemplate>	
+		<!--##########################-->
 	</Template>
 
+<!--
+<Template Name="PanelLight">
+	<UseTemplate Name="ASOBO_GT_Update">
+		<UPDATE_CODE>
+		<UPDATE_ONCE/>
+			(L:JPL_PANEL_LIGHT_Inc) (&gt;B:LIGHTING_POTENTIOMETER_5_Inc)
+		</UPDATE_CODE>
+	</UseTemplate>
+
+		<UPDATE frequency="2">
+			(B:LIGHTING_POTENTIOMETER_5_Inc) 1 ==
+				if{
+					1 (&gt;L:JPL_PANEL_LIGHT_Inc)
+				}	
+				els{
+					0 (&gt;L:JPL_PANEL_LIGHT_Inc)
+				}	
+		</UPDATE>
+	
+</Template>	
+-->
+<!--	
+	<Update>
+		(L:JPL_PANEL_LIGHT_Inc, enum) 1 ==
+		if{
+			1 (&gt;B:LIGHTING_POTENTIOMETER_5_Inc)
+		} els{
+			0 (&gt;B:LIGHTING_POTENTIOMETER_5_Inc)
+		}	
+	</Update>
+</Template>
+-->
 
 <!--
 <Template Name="DME_Switch_Template">

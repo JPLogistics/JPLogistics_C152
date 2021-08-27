@@ -88,19 +88,19 @@
   
 <!---Window/Door Open Sounds ----->
     <Sound WwiseEvent="Combustion" ConeHeading="180" FadeOutType="2" FadeOutTime="0.2" RPMMin="200" WwiseData="true" EngineIndex="1" >    	
-		<WwiseRTPC LocalVar="JPL_CANOPY_OPEN" Units="PERCENT OVER 100" Index="0" RTPCAttackTime="1.2" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
+		<WwiseRTPC LocalVar="JPL_CANOPY_OPEN" Units="BOOLEAN" Index="0" RTPCAttackTime="1.2" RTPCReleaseTime=".3" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />
 	</Sound>
 	<Sound WwiseEvent="Combustion" CustomSuffix="Exhaust" ConeHeading="235" FadeOutType="2" FadeOutTime="0.2" RPMMin="200" WwiseData="true" EngineIndex="1" ViewPoint="Outside"> 
-		<WwiseRTPC LocalVar="JPL_CANOPY_OPEN" Units="PERCENT OVER 100" Index="0" RTPCReleaseTime=".5" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
+		<WwiseRTPC LocalVar="JPL_CANOPY_OPEN" Units="BOOLEAN" Index="0" RTPCReleaseTime=".5" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
 	</Sound>
     <Sound WwiseEvent="CombustionStart" ConeHeading="180" WwiseData="true" EngineIndex="1" >  
-		<WwiseRTPC LocalVar="JPL_CANOPY_OPEN" Units="PERCENT OVER 100" Index="0" RTPCReleaseTime=".5" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
+		<WwiseRTPC LocalVar="JPL_CANOPY_OPEN" Units="BOOLEAN" Index="0" RTPCReleaseTime=".5" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
 	</Sound>
     <Sound WwiseEvent="CombustionStart" CustomSuffix="Propeller" ConeHeading="0" WwiseData="true" EngineIndex="1" > 
-		<WwiseRTPC LocalVar="JPL_CANOPY_OPEN" Units="PERCENT OVER 100" Index="0" RTPCReleaseTime=".5" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
+		<WwiseRTPC LocalVar="JPL_CANOPY_OPEN" Units="BOOLEAN" Index="0" RTPCReleaseTime=".5" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
 	</Sound>  
     <Sound WwiseEvent="Shutdown" CustomSuffix="Propeller" ConeHeading="0" RPMMin="200" WwiseData="true" EngineIndex="1" > 
-		<WwiseRTPC LocalVar="JPL_CANOPY_OPEN" Units="PERCENT OVER 100" Index="0" RTPCReleaseTime=".5" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
+		<WwiseRTPC LocalVar="JPL_CANOPY_OPEN" Units="BOOLEAN" Index="0" RTPCReleaseTime=".5" RTPCName="SIMVAR_GENERAL_ENG_COMBUSTION_SOUND_PERCENT" />	
 	</Sound>
   </EngineSoundPresets>
   
@@ -138,14 +138,14 @@
     </Sound>
     
     <Sound WwiseData="true" WwiseEvent="flaps_left" NodeName="LeftFlap_Aux1" ContinuousStopDelay="1.0" SimVar="TRAILING EDGE FLAPS LEFT PERCENT" Units="PERCENT" Index="0">
-	  <Requires SimVar="FLAP DAMAGE BY SPEED" Units="BOOL" Index="0">
+	  <Requires SimVar="FLAP DAMAGE BY SPEED" Units="BOOLEAN" Index="0">
         <Range UpperBound="0" />
       </Requires>	
       <WwiseRTPC SimVar="TRAILING EDGE FLAPS LEFT PERCENT" Units="PERCENT" Derived="true" Index="0" RTPCName="SIMVAR_TRAILING_EDGE_FLAPS_LEFT_PERCENT_DERIVED" />
     </Sound>
     
     <Sound WwiseData="true" WwiseEvent="flaps_right" NodeName="RightFlap_Aux1" ContinuousStopDelay="1.0" SimVar="TRAILING EDGE FLAPS RIGHT PERCENT" Units="PERCENT" Index="0">
-	  <Requires SimVar="FLAP DAMAGE BY SPEED" Units="BOOL" Index="0">
+	  <Requires SimVar="FLAP DAMAGE BY SPEED" Units="BOOLEAN" Index="0">
         <Range UpperBound="0" />
       </Requires>	
       <WwiseRTPC SimVar="TRAILING EDGE FLAPS RIGHT PERCENT" Units="PERCENT" Derived="true" Index="0" RTPCName="SIMVAR_TRAILING_EDGE_FLAPS_RIGHT_PERCENT_DERIVED" />
@@ -237,53 +237,38 @@
 	  <Range LowerBound="1.0" />
     </Sound> 
 
-    <Sound WwiseEvent="fuel_pump" WwiseData="true" ContinuousStopDelay="1" FadeOutType="2" FadeOutTime="0.2" SimVar="RECIP ENG PRIMER" Units="BOOL" NodeName="ENGINE_LEVER_PRIMER" Index="1">
+    <Sound WwiseEvent="fuel_pump" WwiseData="true" ContinuousStopDelay="1" FadeOutType="2" FadeOutTime="0.2" SimVar="RECIP ENG PRIMER" Units="BOOLEAN" NodeName="ENGINE_LEVER_PRIMER" Index="1">
 	</Sound>
 	
 	<Sound WwiseData="true" WwiseEvent="exhaust_cooling" ViewPoint="Outside" SimVar="RECIP ENG CYLINDER HEAD TEMPERATURE" Units="CELSIUS" Index="1">
 	  <WwiseRTPC SimVar="RECIP ENG CYLINDER HEAD TEMPERATURE" Units="CELSIUS" Index="1" RTPCName="SIMVAR_RECIP_ENG_CYLINDER_HEAD_TEMPERATURE" />
 	  <Range LowerBound= "20.0"/>
-      <Requires SimVar="GENERAL ENG COMBUSTION" Units="BOOL" Index="1">
+      <Requires SimVar="GENERAL ENG COMBUSTION" Units="BOOLEAN" Index="1">
 		<Range UpperBound="0.0"/>
 	  </Requires>
 	</Sound> 
+
+	<!-- AP BEEPS =====================================================================-->
 	
-<!--
-	<Sound WwiseData="false" WwiseEvent="custom_sound_08" FileName="ap_disengage_sound_pre" NodeName="PUSH_CEILING_TESTLIGHT" SimVar="AUTOPILOT MASTER" Continuous="false" Index="0" ViewPoint="Inside">
+	<Sound WwiseData="false" WwiseEvent="custom_sound_10" FileName="ap_disengage_sound" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT DISENGAGED" Units="BOOLEAN" Index="0" ViewPoint="Inside">
+	  <Range LowerBound="1" />
+	  <Requires SimVar="CIRCUIT AUTOPILOT ON" Units="BOOLEAN" Index="0">
+        <Range LowerBound="1" />
+      </Requires>
+    </Sound>	
+	<Sound WwiseData="false" WwiseEvent="custom_sound_11" FileName="ap_disengage_sound" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT MASTER" Units="BOOLEAN" Index="0" ViewPoint="Inside">
 	  <Range UpperBound="0" />
-	  <Requires SimVar="CIRCUIT AUTOPILOT ON" Units="BOOL" Index="0">
+	  <Requires SimVar="CIRCUIT AUTOPILOT ON" Units="BOOLEAN" Index="0">
         <Range LowerBound="1" />
       </Requires>
-    </Sound>
-	
-	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="ap_disengage_sound" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT MASTER" Units="BOOL" Index="0" ViewPoint="Inside">
-	  <Range UpperBound="0" />
-	  <Requires SimVar="CIRCUIT SWITCH ON:32" Units="BOOL" Index="0">
-        <Range LowerBound="1" />
-      </Requires>
-	  <Requires SimVar="ELECTRICAL MASTER BATTERY" Units="BOOL" Index="0">
-        <Range LowerBound="1" />
-      </Requires>
-    </Sound>
--->
-	<Sound WwiseData="false" WwiseEvent="custom_sound_10" FileName="ap_disengage_sound" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT DISENGAGED" Units="BOOL" Index="0" ViewPoint="Inside">
+    </Sound>	
+	<Sound WwiseData="false" WwiseEvent="custom_sound_12" FileName="ap_disengage_sound" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" LocalVar="AUTOPILOTPREFLIGHTCHECKCOMPLETED" Units="BOOL" Index="0" ViewPoint="Inside" >
 	  <Range LowerBound="1" />
 	  <Requires SimVar="CIRCUIT AUTOPILOT ON" Units="BOOL" Index="0">
         <Range LowerBound="1" />
       </Requires>
-    </Sound>	
-	<Sound WwiseData="false" WwiseEvent="custom_sound_11" FileName="ap_disengage_sound" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT MASTER" Units="BOOL" Index="0" ViewPoint="Inside">
-	  <Range UpperBound="0" />
-	  <Requires SimVar="CIRCUIT AUTOPILOT ON" Units="BOOL" Index="0">
-        <Range LowerBound="1" />
-      </Requires>
-    </Sound>	
-	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="ap_disengage_sound_pre" NodeName="PUSH_CEILING_TESTLIGHT" Continuous="false" SimVar="AUTOPILOT MASTER" Units="BOOL" Index="0" ViewPoint="Inside" BreakOnStop="true" >
-	  <Range UpperBound="0" />
-	  <Requires SimVar="CIRCUIT AUTOPILOT ON" Units="BOOL" Index="0">
-        <Range LowerBound="1" />
-      </Requires>
     </Sound>
+	
 	<!-- PROPELLER WIND ========================================================================================== --> 
 	
 	<Sound WwiseData="true" WwiseEvent="propeller_wind" ConeHeading="180" SimVar="PROP RPM" Units="RPM" ViewPoint="Outside" Index="1">  
@@ -304,67 +289,67 @@
     </Sound> 
 <!--###PILOT###-->
 <!--door close-->
-	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="doorclose" Continuous="False" LocalVar="JPL_DOOR_PILOT" Units="percent" Panning="-9000">
-    	<Requires LocalVar="JPL_DOOR_PILOT" Units="percent" >
+	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="doorclose" Continuous="False" LocalVar="JPL_DOOR_PILOT" Units="percent" Panning="-9000">
+    	<Requires LocalVar="JPL_DOOR_PILOT" Units="BOOLEAN" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--door open-->
-	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="dooropen" Continuous="False" LocalVar="JPL_DOOR_PILOT" Units="percent" Panning="-9000">
-    	<Requires LocalVar="JPL_DOOR_PILOT" Units="percent" >
+	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="dooropen" Continuous="False" LocalVar="JPL_DOOR_PILOT" Units="percent" Panning="-9000">
+    	<Requires LocalVar="JPL_DOOR_PILOT" Units="BOOLEAN" >
 			<Range LowerBound="1" />
 		</Requires>
 	</Sound>
 <!--window close-->
-	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
-    	<Requires LocalVar="JPL_WINDOW_PILOT" Units="percent" >
+	<Sound WwiseEvent="custom_sound_03" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
+    	<Requires LocalVar="JPL_WINDOW_PILOT" Units="BOOLEAN" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--window open-->
-	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
-    	<Requires LocalVar="JPL_WINDOW_PILOT" Units="percent" >
+	<Sound WwiseEvent="custom_sound_04" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
+    	<Requires LocalVar="JPL_WINDOW_PILOT" Units="BOOLEAN" >
 			<Range LowerBound="1" />
 		</Requires>
 	</Sound>
 	
 <!--###COPILOT###-->
 <!--door close-->
-	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="doorclose" Continuous="False" LocalVar="JPL_DOOR_COPILOT" Units="percent" Panning="9000">
-    	<Requires LocalVar="JPL_DOOR_COPILOT" Units="percent" >
+	<Sound WwiseEvent="custom_sound_05" WwiseData="false" FileName="doorclose" Continuous="False" LocalVar="JPL_DOOR_COPILOT" Units="percent" Panning="9000">
+    	<Requires LocalVar="JPL_DOOR_COPILOT" Units="BOOLEAN" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--door open-->
-	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="dooropen" Continuous="False" LocalVar="JPL_DOOR_COPILOT" Units="percent" Panning="9000">
-    	<Requires LocalVar="JPL_DOOR_COPILOT" Units="percent" >
+	<Sound WwiseEvent="custom_sound_06" WwiseData="false" FileName="dooropen" Continuous="False" LocalVar="JPL_DOOR_COPILOT" Units="percent" Panning="9000">
+    	<Requires LocalVar="JPL_DOOR_COPILOT" Units="BOOLEAN" >
 			<Range LowerBound="1" />
 		</Requires>
 	</Sound>	
 <!--window close-->
-	<Sound WwiseEvent="custom_sound_02" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
-    	<Requires LocalVar="JPL_WINDOW_COPILOT" Units="percent" >
+	<Sound WwiseEvent="custom_sound_07" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
+    	<Requires LocalVar="JPL_WINDOW_COPILOT" Units="BOOLEAN" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--window open-->
-	<Sound WwiseEvent="custom_sound_01" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
-    	<Requires LocalVar="JPL_WINDOW_COPILOT" Units="percent" >
+	<Sound WwiseEvent="custom_sound_08" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
+    	<Requires LocalVar="JPL_WINDOW_COPILOT" Units="BOOLEAN" >
 			<Range LowerBound="1" />
 		</Requires>
 	</Sound>
 	
-	<Sound WwiseData="true" WwiseEvent="nav_light_switch_on"  LocalVar="DME_POWER" Units="bool" Continuous="false" ></Sound>
+	<Sound WwiseData="true" WwiseEvent="nav_light_switch_on"  LocalVar="DME_POWER" Units="BOOLEAN" Continuous="false" ></Sound>
 
 <!--BACKFIRE SOUND-->
-	<Sound WwiseData="false" WwiseEvent="custom_sound_06" FileName="backfire"  Continuous="false" SimVar="ENG ON FIRE" Units="BOOL" Index="1" >
+	<Sound WwiseData="false" WwiseEvent="custom_sound_09" FileName="backfire"  Continuous="false" SimVar="ENG ON FIRE" Units="BOOLEAN" Index="1" >
 	  <Range LowerBound="1" />
-	  <Requires SimVar="ENG ON FIRE" Units="BOOL" Index="1">
+	  <Requires SimVar="ENG ON FIRE" Units="BOOLEAN" Index="1">
         <Range LowerBound="1" />
       </Requires>
     </Sound>
 	
-	<Sound WwiseData="false" WwiseEvent="custom_sound_07" FileName="vent"  FadeOutType="2" FadeOutTime="2.2" Continuous="true" LocalVar="XMLVAR_Cabin_Air_1_Position" Units="percent" Index="1" breakonstop="true" >
+	<Sound WwiseData="false" WwiseEvent="custom_sound_02" FileName="vent"  FadeOutType="2" FadeOutTime="2.2" Continuous="true" LocalVar="XMLVAR_Cabin_Air_1_Position" Units="percent" Index="1" breakonstop="true" >
 	  <Range LowerBound="50" />
 	  <Requires LocalVar="XMLVAR_Cabin_Air_1_Position" Units="percent" Index="1">
         <Range UpperBound="100" />
