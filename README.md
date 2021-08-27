@@ -17,6 +17,24 @@
 ## Donations
 
 Continued work on this project is with a large thanks to our donators! Without this kind gesture finding time is slightly more difficult, but every donation means extra time I can set aside to update/upgrade and improve this mod!
+
+## V1.0.0 - BETA TEST 7
+	- Electrical Overhaul
+		- LED Lights taken into account etc!
+		- The system shouldn't die as easily now
+	- Texture fixes
+	- More work made on the Prop Animation/Textures
+	- Animation changes
+		- VS Reaction speed
+	- Aircraft name changed in Aircraft Selector menu!
+	- Lighting updated
+	- Engine Updates
+	- Autopilot sound updates
+	- ADF Fixes
+	- COM bug fixed
+	- LOCPAC Changes
+	- Huge shout out to WeptBurrito for helping with this release while I have been otherwise engaged! Excellent work!
+	
 ## V1.0.0 - BETA TEST 6
 	- Fix MAJOR Textures issues
 		- Livery designers should now be able to use the aircraft!
