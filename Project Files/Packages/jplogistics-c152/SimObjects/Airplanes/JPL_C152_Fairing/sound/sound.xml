@@ -349,7 +349,7 @@
       </Requires>
     </Sound>
 	
-	<Sound WwiseData="false" WwiseEvent="custom_sound_13" FileName="vent"  FadeOutType="2" FadeOutTime="2.2" Continuous="true" LocalVar="XMLVAR_Cabin_Air_1_Position" Units="percent" Index="1" breakonstop="true" >
+	<Sound WwiseData="false" WwiseEvent="custom_sound_02" FileName="vent"  FadeOutType="2" FadeOutTime="2.2" Continuous="true" LocalVar="XMLVAR_Cabin_Air_1_Position" Units="percent" Index="1" breakonstop="true" >
 	  <Range LowerBound="50" />
 	  <Requires LocalVar="XMLVAR_Cabin_Air_1_Position" Units="percent" Index="1">
         <Range UpperBound="100" />
