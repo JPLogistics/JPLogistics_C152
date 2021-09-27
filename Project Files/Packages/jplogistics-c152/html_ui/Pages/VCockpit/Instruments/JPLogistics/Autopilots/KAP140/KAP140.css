@@ -51,7 +51,7 @@ html body {
 kap140-element {
   width: 100%;
   height: 100%;
-  color: orangered;
+  color: darkorange;
   font-family: Alarm-Clock;
   overflow: hidden;
 }
@@ -80,7 +80,7 @@ kap140-element #APDisplay {
   top: 9%;
   width: 8%;
   height: 30%;
-  border: 2px solid orangered;
+  border: 2px solid darkorange;
   padding: 0px;
   padding-left: 6px;
   font-size: 23px;

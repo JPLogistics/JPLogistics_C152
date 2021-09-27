@@ -51,7 +51,7 @@ html body {
 kr87-element {
   width: 100%;
   height: 100%;
-  color: orangered;
+  color: #ff8516;
   font-family: Alarm-Clock;
   overflow: hidden;
 }
@@ -107,7 +107,7 @@ kr87-element #AdfPanel #R {
   position: absolute;
   top: 19%;
   left: 53%;
-  width: 30%;
+  width: 32.05%;
 }
 kr87-element #AdfPanel #R #RightDisplay {
   font-size: 42px;
