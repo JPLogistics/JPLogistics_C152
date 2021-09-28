@@ -113,7 +113,7 @@ class KR87 extends BaseInstrument {
         }
     }	
     frequency1DigitsFormat(_num) {
-        var freq = Math.round(_num * 10 - 0.1) / 10;
+        var freq = Math.round(_num * 100 - 0.1) / 100;
         return fastToFixed(freq, 1);
     }	
     getActiveFrequency() {
