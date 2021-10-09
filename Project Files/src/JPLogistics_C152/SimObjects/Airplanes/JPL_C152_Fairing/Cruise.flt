@@ -80,7 +80,7 @@ XMLVAR_ADF_Mode=2   ; 0, 1, 2, 3
 152X_COM1VOL=1   ;0=OFF, 1=FULL
 152X_COM2VOL=1   ;0=OFF, 1=FULL
 XMLVAR_PUMPED_FUEL=0.02
-
+JPL_CHT_HELPER=1	;0=AMBIENT TEMP, 1=100c
 
 ;--------------------------------------------
 ;C152X Cessna 300 ADF
@@ -182,7 +182,7 @@ ParkingBrake=000.00
 
 RudderTrimPct=0
 AileronTrimPct=0
-ElevatorTrim=47.0
+ElevatorTrim=1.0
 AileronTrimDisabled=False
 ElevatorTrimDisabled=False
 RudderTrimDisabled=False

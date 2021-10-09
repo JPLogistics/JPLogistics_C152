@@ -136,11 +136,11 @@
 
 <Template Name="CoPilot_Weight">
 	<Update Frequency="10">
-		(A:SPEAKER ACTIVE, Bool) 1 &gt;=
+		(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 ==
 		if{
 			170 (&gt;A:PAYLOAD STATION WEIGHT:2, pounds)
 		}	
-		(A:SPEAKER ACTIVE, Bool) 0 &lt;=
+		(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 ==
 		if{
 			0 (&gt;A:PAYLOAD STATION WEIGHT:2, pounds)
 		}
