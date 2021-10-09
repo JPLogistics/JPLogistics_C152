@@ -57,6 +57,19 @@ Factors:
 -->
 
 <Template Name = "Engine_Start_Logic">	
+	<UseTemplate Name="ASOBO_GT_Update">
+		<UPDATE_ONCE>True</UPDATE_ONCE>
+		<UPDATE_CODE>
+			(L:JPL_CHT_HELPER, bool) 0 ==
+			if{
+				(E:AMBIENT TEMPERATURE, celsius) (&gt;A:RECIP ENG CYLINDER HEAD TEMPERATURE:1, celsius) 
+			}
+			(L:JPL_CHT_HELPER, bool) 1 ==
+			if{
+				100 (&gt;A:RECIP ENG CYLINDER HEAD TEMPERATURE:1, celsius) 
+			}
+		</UPDATE_CODE>
+	</UseTemplate>
 	<Update Frequency="1">
 		<!-- Calculate and update Engine_Condition start score -->		
 		(L:XMLVAR_PUMPED_FUEL, gallons) @MaxPumpedFuelStart &gt;
@@ -132,3 +145,4 @@ Factors:
 		}	
 	</Update>
 </Template>
+

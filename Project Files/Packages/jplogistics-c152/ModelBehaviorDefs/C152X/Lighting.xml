@@ -10,12 +10,13 @@
 		<SWITCH_POSITION_TYPE>L</SWITCH_POSITION_TYPE>
 		<SWITCH_POSITION_VAR>JPL_MARKER_TEST</SWITCH_POSITION_VAR>
 	</UseTemplate>		
-	<Update Frequency = "10">
-	(L:JPL_MARKER_TEST, bool) 1 &gt;=
+	<Update Frequency = "5">
+	(L:JPL_MARKER_TEST, bool) 1 ==
 	if{
 		1 (&gt;K:MARKER_BEACON_TEST_MUTE, Bool)
-	}	
-	els{
+	}
+	(L:JPL_MARKER_TEST, bool) 0 ==	
+	if{
 		0 (&gt;K:MARKER_BEACON_TEST_MUTE, Bool)
 	}
 	</Update>
