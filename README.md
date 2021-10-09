@@ -1,6 +1,6 @@
 ![C152](https://img.shields.io/badge/Aircraft-Cessna%20152-blue) ![Game](https://img.shields.io/badge/Software-Microsoft%20Flight%20Simulator-blue)
 
-![Version](https://img.shields.io/badge/Version-V1.0.0%20BETA6-blue)
+![Version](https://img.shields.io/badge/Version-V1.0.0%20BETA8-blue)
 
 ![Download](https://img.shields.io/github/downloads/JPLogistics/JPLogistics_C152/total?color=blue&label=Downloads@Github) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-24.5k-blue)
 
@@ -17,6 +17,23 @@
 ## Donations
 
 Continued work on this project is with a large thanks to our donators! Without this kind gesture finding time is slightly more difficult, but every donation means extra time I can set aside to update/upgrade and improve this mod!
+
+## V1.0.0 - BETA TEST 8
+Firstly, please let me take a moment to apologise for the severe delay in getting this released!
+I have been battling with some personal issues recently, a huge thank-you goes to WeptBurrito for the work here whilst I have been unable too!
+I appreciate every single one of you who uses this mod, our communitity keeps growing bigger and bigger!
+So, onto the changes!
+	- Flight model changes
+	- Grammatical fixes
+	- Fuel Gauge Updated
+	- Engine Param Changes (Magneto)
+	- Autopilot Tweaks
+	- Thumbnails corrected
+	- New Liveries!!
+	- ADF/AP Texture Changes
+	- Power Consumption edits
+	- New Cold & Dark Engine Logic
+	- Livery correction on BlueM
 
 ## V1.0.0 - BETA TEST 7
 	- Electrical Overhaul
