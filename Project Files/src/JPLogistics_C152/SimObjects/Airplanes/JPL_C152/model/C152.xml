@@ -5,7 +5,7 @@
 		<!-- minimum display size in % (should be bounding sphere vertical screen size, sphere will often be slightly larger than you expect) -->
 		<!-- default minSize is 0 -->
 		<LOD minSize="50" ModelFile="C152_LOD00.gltf"/>
-    <LOD minSize="0" ModelFile="C152_LOD01.gltf"/>
+		<LOD minSize="0" ModelFile="C152_LOD01.gltf"/>
 	</LODS>
 	<Behaviors>
 		<!-- Includes ###################################### -->
@@ -56,7 +56,7 @@
 				<CONE_BLURRED_NODE_ID>nose_cone_blurred</CONE_BLURRED_NODE_ID>
 				<PROP_SIDE_BLURRED_NODE_ID>PROP_SIDE_BLUR</PROP_SIDE_BLURRED_NODE_ID>
 				<FROSTED_STILL_NODE_ID>prop_spinner_static_FROST</FROSTED_STILL_NODE_ID>
-        <FROSTED_SLOW_NODE_ID>prop_spinner_slow_FROST</FROSTED_SLOW_NODE_ID>
+				<FROSTED_SLOW_NODE_ID>prop_spinner_slow_FROST</FROSTED_SLOW_NODE_ID>
 				<FROSTED_BLURRED_NODE_ID>prop_spinner_blur_FROST</FROSTED_BLURRED_NODE_ID>
 			</UseTemplate>
 		</Component>
