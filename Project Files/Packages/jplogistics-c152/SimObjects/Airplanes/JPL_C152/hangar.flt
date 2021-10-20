@@ -76,7 +76,8 @@ JPL_WINDOW_PILOT=1
 JPL_DOOR_PILOT=1
 JPL_WINDOW_COPILOT=1
 JPL_DOOR_COPILOT=1
-;--------------------------------------------
+JPL152_APVIZ=1	;0=AP OFF, 1=AP ON
+
 
 [Gauges.0]
 KollsmanSetting=29.921342849731445313

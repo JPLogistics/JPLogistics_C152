@@ -135,7 +135,7 @@
 </Template>
 
 <Template Name="CoPilot_Weight">
-	<Update Frequency="10">
+	<Update Frequency="2">
 		(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 ==
 		if{
 			170 (&gt;A:PAYLOAD STATION WEIGHT:2, pounds)

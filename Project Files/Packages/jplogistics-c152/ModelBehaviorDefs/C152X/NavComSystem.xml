@@ -53,7 +53,7 @@
       <TOOLTIP_TITLE>#ID# (R:1:@TT_Package.AS1000_MID_PUSH_COM_MIC_TITLE) @sprintf</TOOLTIP_TITLE>
       <TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
     </Parameters>
-    <UseTemplate Name="ASOBO_NAVCOM_Base_Template"/>
+    <UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template"/>
   </Template>
 
 
@@ -78,7 +78,35 @@
       <TEMPLATE_TO_CALL>C152X_GT_NAVCOM_Switch_Sound_SubTemplate</TEMPLATE_TO_CALL>
     </UseTemplate>
   </Template>
+  
+  
+<Template Name="C152X_GT_NAVCOM_Switch_Sound_SubTemplate">
+	<Parameters Type="Default">
+		<NODE_ID>#RADIO_TYPE#_#SWITCH_TYPE#_#ID##SUFFIX_ID#</NODE_ID>
+		<ANIM_NAME>#RADIO_TYPE#_#SWITCH_TYPE#_#ID##SUFFIX_ID#</ANIM_NAME>
+		<PART_ID>#RADIO_TYPE#_#SWITCH_TYPE#_#ID#</PART_ID>
+		<!-- <WWISE_EVENT_1>navcom_audio_push_on</WWISE_EVENT_1>	 -->
+		<!-- <NORMALIZED_TIME_1>0.1</NORMALIZED_TIME_1>	 -->
+		<!-- <WWISE_EVENT_2>navcom_audio_push_off</WWISE_EVENT_2> -->
+		<!-- <NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>	 -->
+		<TT_DESCRIPTION_ID></TT_DESCRIPTION_ID>
+		<TOOLTIP_TITLE></TOOLTIP_TITLE>
+	</Parameters>
+	<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template">
+		<SET_STATE_EXTERNAL>(A:COM RECEIVE ALL, Bool) p0 != if{ p0 (&gt;K:COM_RECEIVE_ALL_TOGGLE) }</SET_STATE_EXTERNAL>
+		<EMISSIVE_INDICATOR_CODE>(A:COM RECEIVE ALL, Bool)</EMISSIVE_INDICATOR_CODE>
+		<GET_STATE_EXTERNAL>(A:COM RECEIVE ALL, Bool) sp0</GET_STATE_EXTERNAL>
+		<SIM_STATE_IS_ON_EXTERNAL>l0</SIM_STATE_IS_ON_EXTERNAL>
+		<Switch Param="SWITCH_TYPE">
+			<Case Value="Switch">
+				<ANIM_CODE>(A:COM RECEIVE ALL, Bool) 100 *</ANIM_CODE>
+			</Case>
+		</Switch>
+		<BTN_ID>Both</BTN_ID>
+	</UseTemplate>
+</Template>  
 
+<!--
   <Template Name="C152X_GT_NAVCOM_Switch_Sound_SubTemplate">
     <DefaultTemplateParameters>
       <NODE_ID>#RADIO_TYPE#_#SWITCH_TYPE#_#ID##SUFFIX_ID#</NODE_ID>
@@ -130,8 +158,9 @@
         </Default>
       </Switch>
     </Component>
+	<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template"/>
   </Template>  
-
+-->
 <!--EXT BUTTON-->
 <Template Name="C152X_AUDIO_Switch_EXT_Template">
 	<UseTemplate Name="C152X_AUDIO_EXT_Template">
@@ -158,7 +187,7 @@
 		<TT_DESCRIPTION_ID>@TT_Package.AUDIOPANEL_PUSH_SPR_ACTION</TT_DESCRIPTION_ID>
 		<TOOLTIP_TITLE>@TT_Package.AUDIOPANEL_PUSH_SPR_TITLE</TOOLTIP_TITLE>
 	</Parameters>
-	<UseTemplate Name="ASOBO_NAVCOM_Base_Template">
+	<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template">
 		<SET_STATE_EXTERNAL>(L:XMLVAR_AUDIO_EXT_SEL, Bool) p0 != if{ p0 (&gt;L:XMLVAR_AUDIO_EXT_SEL, Bool) }</SET_STATE_EXTERNAL>
 		<EMISSIVE_INDICATOR_CODE>(L:XMLVAR_AUDIO_EXT_SEL, Bool)</EMISSIVE_INDICATOR_CODE>
 		<GET_STATE_EXTERNAL>(L:XMLVAR_AUDIO_EXT_SEL, Bool) sp0</GET_STATE_EXTERNAL>
@@ -198,7 +227,7 @@
 		<TT_DESCRIPTION_ID>@TT_Package.AUDIOPANEL_PUSH_SPR_ACTION</TT_DESCRIPTION_ID>
 		<TOOLTIP_TITLE>@TT_Package.AUDIOPANEL_PUSH_SPR_TITLE</TOOLTIP_TITLE>
 	</Parameters>
-	<UseTemplate Name="ASOBO_NAVCOM_Base_Template">
+	<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template">
 		<SET_STATE_EXTERNAL>(L:XMLVAR_AUDIO_SPKR_SEL, Bool) p0 != if{ p0 (&gt;L:XMLVAR_AUDIO_SPKR_SEL, Bool) }</SET_STATE_EXTERNAL>
 		<EMISSIVE_INDICATOR_CODE>(L:XMLVAR_AUDIO_SPKR_SEL, Bool)</EMISSIVE_INDICATOR_CODE>
 		<GET_STATE_EXTERNAL>(L:XMLVAR_AUDIO_SPKR_SEL, Bool) sp0</GET_STATE_EXTERNAL>
@@ -389,7 +418,7 @@
 		<INTERACTION_TYPE>Knob</INTERACTION_TYPE>
 		<IS_INFINITE>True</IS_INFINITE>
 	</Parameters>
-	<UseTemplate Name="ASOBO_NAVCOM_Base_Template">
+	<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template">
 		<KNOB_ID>#RADIO_TYPE##ID#_Mhz</KNOB_ID>
 		<NODE_ID>#NODE_ID_LARGE_KNOB#</NODE_ID>
 		<ANIM_NAME>#ANIM_NAME_LARGE_KNOB#</ANIM_NAME>
@@ -406,7 +435,7 @@
 				<Parameters Type="Default">
 					<BTN_ID_EXTERNAL>#RADIO_TYPE##ID#_25K</BTN_ID_EXTERNAL>
 				</Parameters>
-				<UseTemplate Name="ASOBO_NAVCOM_Base_Push_Event_Only_Template">
+				<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Push_Event_Only_Template">
 					<BTN_ID>#BTN_ID_EXTERNAL#</BTN_ID>
 					<EVENT_PUSH>(&gt;K:COM_#ID#_SPACING_MODE_SWITCH)</EVENT_PUSH> <!--##############################################-->
 					<TT_ICON>Pull</TT_ICON>
@@ -416,7 +445,7 @@
 					<BINDING_INC_0>Pull</BINDING_INC_0>
 					<BINDING_INC_0_PARAM_0>1</BINDING_INC_0_PARAM_0>
 				</UseTemplate>
-				<UseTemplate Name="ASOBO_NAVCOM_Base_Template">
+				<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template">
 					<CREATE_COMPONENT>False</CREATE_COMPONENT>
 					<KNOB_ID>#RADIO_TYPE##ID#_Khz</KNOB_ID>
 					<PART_ID>KNOB_#RADIO_TYPE#_Khz</PART_ID>
@@ -434,7 +463,7 @@
 			</Component>
 		</Case>
 		<Default>
-			<UseTemplate Name="ASOBO_NAVCOM_Base_Template">
+			<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template">
 				<KNOB_ID>#RADIO_TYPE##ID#_Khz</KNOB_ID>
 				<NODE_ID>#NODE_ID_SMALL_KNOB#</NODE_ID>
 				<PART_ID>KNOB_#RADIO_TYPE#_Khz</PART_ID>
@@ -575,7 +604,7 @@
 			<False>
 				<CIRCUIT_CODE_ON/>
 				<CIRCUIT_CODE_OFF/>
-			</False>
+			</False>			
 		</Condition>
 	</Parameters>
 	<Parameters Type="Override">
@@ -596,7 +625,7 @@
 	</Parameters>
 	<Switch>
 		<Case Valid="NO_IDENT">
-			<UseTemplate Name="ASOBO_NAVCOM_Base_Template">
+			<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template">
 				<TT_DESCRIPTION_ID>@TT_Package.AUDIOPANEL_KNOB_#RADIO_TYPE#_VOLUME_ACTION</TT_DESCRIPTION_ID>
 				<TT_DESCRIPTION_INDEX>#ID#</TT_DESCRIPTION_INDEX>
 				<TOOLTIP_TITLE></TOOLTIP_TITLE>
@@ -604,8 +633,12 @@
 				<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
 				<Switch Param="INTERACTION_TYPE">
 					<Case Value="Knob">
+						<!--################ To increase nav vol knob speed
 						<EVENT_CW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_INC) #CIRCUIT_CODE_ON#</EVENT_CW>
 						<EVENT_CCW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC) #CIRCUIT_CODE_OFF#</EVENT_CCW>
+						#################-->
+						<EVENT_CW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_INC) #CIRCUIT_CODE_ON# (&gt;K:#RADIO_TYPE##ID#_VOLUME_INC)</EVENT_CW>
+						<EVENT_CCW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC) #CIRCUIT_CODE_OFF# (&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC)</EVENT_CCW>
 						<GET_TT_VALUE_STATE>(A:#RADIO_TYPE# VOLUME:#ID#, Percent) sp0</GET_TT_VALUE_STATE>
 						<FORMAT_VALUE>l0 '%d%%' @sprintf</FORMAT_VALUE>
 						<ANIM_CODE>#KNOB_ANIM_CODE#</ANIM_CODE>
@@ -620,7 +653,19 @@
 		</Case>
 		<Default>
 			<Component ID="#NODE_ID#" Node="#NODE_ID#">
-				<UseTemplate Name="ASOBO_NAVCOM_Base_Push_Event_Only_Template">
+	<Update Frequency = "3">
+		(A:COM VOLUME:#ID#, Percent) 0 &gt;
+		(A:CIRCUIT SWITCH ON:#COM_CIRCUIT#, Boolean) ! and if{
+			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+		}
+	</Update>
+	<Update Frequency = "3">
+		(A:COM VOLUME:#ID#, Percent) 0 ==
+		(A:CIRCUIT SWITCH ON:#COM_CIRCUIT#, Boolean) and if{
+			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+		}
+	</Update>			
+				<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Push_Event_Only_Template">
 					<BTN_ID>#BTN_ID_EXTERNAL#</BTN_ID>
 					<SET_STATE_ON>1 #GET_IDENT# != if{ #SET_IDENT# }</SET_STATE_ON>
 					<SET_STATE_OFF>0 #GET_IDENT# != if{ #SET_IDENT# }</SET_STATE_OFF>
@@ -630,7 +675,7 @@
 					<TT_DESCRIPTION_ID>@TT_Package.AUDIOPANEL_KNOB_#RADIO_TYPE#_VOLUME_ACTION_SET</TT_DESCRIPTION_ID>
 					<TT_DESCRIPTION_INDEX>#ID#</TT_DESCRIPTION_INDEX>
 				</UseTemplate>
-				<UseTemplate Name="ASOBO_NAVCOM_Base_Template">
+				<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template">
 					<BTN_EXTERNAL_BINDING_TO_CALL>_Toggle</BTN_EXTERNAL_BINDING_TO_CALL>
 					<CREATE_COMPONENT>False</CREATE_COMPONENT>
 					<TT_DESCRIPTION_ID>@TT_Package.AUDIOPANEL_KNOB_#RADIO_TYPE#_VOLUME_ACTION</TT_DESCRIPTION_ID>
@@ -640,8 +685,12 @@
 					<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
 					<Switch Param="INTERACTION_TYPE">
 						<Case Value="Knob">
+							<!--####################  To increase com vol knob speed
 							<EVENT_CW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_INC) #CIRCUIT_CODE_ON#</EVENT_CW>
 							<EVENT_CCW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC) #CIRCUIT_CODE_OFF#</EVENT_CCW>
+							#####################-->
+							<EVENT_CW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_INC) #CIRCUIT_CODE_ON# (&gt;K:#RADIO_TYPE##ID#_VOLUME_INC)</EVENT_CW>
+							<EVENT_CCW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC) #CIRCUIT_CODE_OFF# (&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC) #CIRCUIT_CODE_OFF#</EVENT_CCW>
 							<GET_TT_VALUE_STATE>(A:#RADIO_TYPE# VOLUME:#ID#, Percent) sp0</GET_TT_VALUE_STATE>
 							<FORMAT_VALUE>l0 '%d%%' @sprintf</FORMAT_VALUE>
 							<KNOB_TYPE>Finite_Switch</KNOB_TYPE>
