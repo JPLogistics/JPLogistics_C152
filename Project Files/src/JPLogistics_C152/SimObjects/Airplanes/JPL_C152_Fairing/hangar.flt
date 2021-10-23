@@ -8,14 +8,13 @@ Comm3Active=124.850
 Comm3Standby=124.850
 Nav1Active=110.50
 Nav1Standby=113.90
-OBS1=360
+OBS1=274
 Nav2Active=110.50
 Nav2Standby=113.90
-OBS2=360
-
+OBS2=68
 TransponderState=0
-ADFActive=890
-ADF2Active=890
+ADFActive=278.0
+ADF2Active=674.0
 DMESelected=1
 ComTransmit=1
 ComReceiveBoth=False
@@ -76,7 +75,8 @@ JPL_WINDOW_PILOT=1
 JPL_DOOR_PILOT=1
 JPL_WINDOW_COPILOT=1
 JPL_DOOR_COPILOT=1
-;--------------------------------------------
+JPL152_APVIZ=1	;0=AP OFF, 1=AP ON
+
 
 [Gauges.0]
 KollsmanSetting=29.921342849731445313

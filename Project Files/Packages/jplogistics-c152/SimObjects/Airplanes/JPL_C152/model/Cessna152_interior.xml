@@ -25,10 +25,12 @@
 	  <UseTemplate Name="ADF_VOLUME"></UseTemplate>
 	  <UseTemplate Name="COM1_VOLUME"></UseTemplate>
 	  <UseTemplate Name="COM2_VOLUME"></UseTemplate>
+	  <UseTemplate Name="ComVolume_Helper"></UseTemplate>
 	  <UseTemplate Name="WindowSoundHelper"></UseTemplate>
 	  <UseTemplate Name="Door_Close"></UseTemplate>
 	  <!--<UseTemplate Name="PanelLight"></UseTemplate>-->
 	  <!--<UseTemplate Name="CoPilot_Weight"></UseTemplate>-->
+	  <!--<UseTemplate Name="Fouling"></UseTemplate>-->
     </Component>
     <!--End of C152X Modification -->
 
@@ -391,7 +393,7 @@
 		-->
       <UseTemplate Name="ASOBO_HANDLING_Lever_Flaps_Continuous_Template">
         <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
-        <INVERT_INTERACTION>True</INVERT_INTERACTION>
+        <INVERT_INTERACTION/>
         <INVERT_IM_DRAG_INPUT_SCALAR>True</INVERT_IM_DRAG_INPUT_SCALAR>
 		<ANIMTIP_0_ON_PERCENT>0</ANIMTIP_0_ON_PERCENT>
 		<ANIMTIP_1_ON_PERCENT>0.33</ANIMTIP_1_ON_PERCENT>
@@ -461,7 +463,7 @@
 		</Update>
     </Component>
     <Component ID="ADF_KR87">
-      <UseTemplate Name="C152X_INSTRUMENT_ADF_Template">
+      <UseTemplate Name="JPL152_ADF_AS87_Template">
         <EMISSIVE_POTENTIOMETER>6</EMISSIVE_POTENTIOMETER>
         <CIRCUIT_ADF>37</CIRCUIT_ADF>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
@@ -570,6 +572,8 @@
 				<IS_AVIONICS_ON>(A:CIRCUIT ON:23, Bool)</IS_AVIONICS_ON><!-- COM1 Circuit used for correct behaviour! -->
 				<KNOB_HIGHLIGHT_NODE_ID>INSTRUMENT_CDI_Knob_Course_OnlyVisual_1</KNOB_HIGHLIGHT_NODE_ID>
 				<TOOLTIP_COURSE_TITLE></TOOLTIP_COURSE_TITLE>
+				<NO_EMISSIVE_GPS/>
+				<NO_GPS_DEPENDENCY/>				
 				<ANIMTIP_0>VOR 1 BEARING (%((A:NAV OBS:1, Degrees))%!d!°)</ANIMTIP_0>
 				<ANIMTIP_1>VOR 1 BEARING (%((A:NAV OBS:1, Degrees))%!d!°)</ANIMTIP_1>
 			</UseTemplate>
@@ -782,21 +786,21 @@
       <UseTemplate Name="C152X_NAVCOM_Simple_Radio_Template">
         <ID>1</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
-        <!--<NAV_CIRCUIT>22</NAV_CIRCUIT>--><!-- Removed for test! -->
-		    <COM_CIRCUIT>23</COM_CIRCUIT>
-        <UseTemplate Name="COM1_VOLUME">
-          <COM_CIRCUIT>23</COM_CIRCUIT>
-        </UseTemplate>
-        <FAILURE>(A:COM VOLUME:1,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
+        <NAV_CIRCUIT>22</NAV_CIRCUIT><!-- Removed for test! -->
+		<COM_CIRCUIT>23</COM_CIRCUIT>
+      <UseTemplate Name="COM1_VOLUME">
+        <COM_CIRCUIT>23</COM_CIRCUIT>
+      </UseTemplate>
+        <FAILURE>(A:COM VOLUME:1,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) ! and</FAILURE>
       </UseTemplate>
       <UseTemplate Name="C152X_NAVCOM_Simple_Radio_Template">
         <ID>2</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
-        <!--<NAV_CIRCUIT>24</NAV_CIRCUIT>--><!-- Removed for test! -->
+        <NAV_CIRCUIT>24</NAV_CIRCUIT><!-- Removed for test! -->
         <COM_CIRCUIT>25</COM_CIRCUIT>
-        <UseTemplate Name="COM2_VOLUME">
-          <COM_CIRCUIT>25</COM_CIRCUIT>
-        </UseTemplate>
+      <UseTemplate Name="COM2_VOLUME">
+        <COM_CIRCUIT>25</COM_CIRCUIT>
+      </UseTemplate>
         <FAILURE>(A:COM VOLUME:2,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
@@ -804,8 +808,8 @@
         <NODE_ID>NavCom1_Screen</NODE_ID>
         <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
-		    <USE_DIMMING_POTENTIOMETER/>
-		    <POTENTIOMETER>6</POTENTIOMETER>
+		<USE_DIMMING_POTENTIOMETER/>
+		<POTENTIOMETER>6</POTENTIOMETER>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
         <ID>2</ID>
@@ -962,13 +966,20 @@
       <UseTemplate Name="ASOBO_AUDIO_Switch_Marker_Sens_Template">
       </UseTemplate>
     </Component>
-	<Component ID="SPEAKER_SWITCH">  <!--################# Just to animate the switch for now -->
-      <UseTemplate Name="C152X_Speaker">
-        <NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
-        <ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
-		    <CIRCUIT_ID>38</CIRCUIT_ID>
-      </UseTemplate>
+	
+	<Component ID="AUDIO_Switch_Intercom">	
+		<UseTemplate Name="JPL_IntercomSwitch">
+			<MOUSEFLAGS>LeftSingle</MOUSEFLAGS>
+            <Cursor>Hand</Cursor>
+			<SIMVAR>JPL152_APVIZ</SIMVAR>
+			<ANIM_NAME>AUDIO_Switch_Intercom</ANIM_NAME>
+			<ANIM_LAG>100</ANIM_LAG>
+			<NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
+			<TOOLTIPID>%((A:SIM ON GROUND, bool))%{if}TOGGLE AUTOPILOT%{else}DISABLED%{end}</TOOLTIPID>
+			<CIRCUIT_ID>32</CIRCUIT_ID>
+		</UseTemplate>	
 	</Component>
+
     <Component ID="ANNUNCIATOR_TEST">
       <UseTemplate Name="C152X_Annun_Test">
         <NODE_ID>AUDIO_Switch_Test</NODE_ID>
@@ -996,6 +1007,83 @@
 		  </VISIBILITY_CODE>
         </UseTemplate>
       </Component>
+	    
+      <Component ID="AUTOPILOT_Frame_1" Node="AUTOPILOT_Frame_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="AUTOPILOT_Push_VerticalSpeed_1" Node="AUTOPILOT_Push_VerticalSpeed_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="AUTOPILOT_Push_FlightLevelChange_1" Node="AUTOPILOT_Push_FlightLevelChange_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="AUTOPILOT_Push_Autopilot_1" Node="AUTOPILOT_Push_Autopilot_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="AUTOPILOT_Push_Heading_1" Node="AUTOPILOT_Push_Heading_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>  
+      <Component ID="AUTOPILOT_Push_Navigation_1" Node="AUTOPILOT_Push_Navigation_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="AUTOPILOT_Push_Approach_1" Node="AUTOPILOT_Push_Approach_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="AS140_Screen" Node="AS140_Screen">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="AUTOPILOT_Push_BackCourse_1" Node="AUTOPILOT_Push_BackCourse_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="AUTOPILOT_Push_Altitude_1" Node="AUTOPILOT_Push_Altitude_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="AUTOPILOT_Push_VerticalSpeed_DOWN_1" Node="AUTOPILOT_Push_VerticalSpeed_DOWN_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="AUTOPILOT_Push_VerticalSpeed_UP_1" Node="AUTOPILOT_Push_VerticalSpeed_UP_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="AUTOPILOT_Knob_Altitude_100_1" Node="AUTOPILOT_Knob_Altitude_100_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="AUTOPILOT_Knob_Altitude_1000_1" Node="AUTOPILOT_Knob_Altitude_1000_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="AUTOPILOT_Indicator_Status_1" Node="AUTOPILOT_Indicator_Status_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>	  
+
     </Component>
     <Component ID="Baggage_Visibility">
       <Component ID="MailSmall" Node="MailSmall">

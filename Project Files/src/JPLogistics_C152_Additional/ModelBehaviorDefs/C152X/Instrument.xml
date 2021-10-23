@@ -84,72 +84,126 @@
   </Component>
 </Template>
 
-<Template Name = "C152X_Speaker">
-  <Update Once="True">
-    #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-  </Update>
-  <UseTemplate Name = "C152X_2way_switch_xml">
-    <ANIMTIP_0>PHONE</ANIMTIP_0>
-    <ANIMTIP_1>SPEAKER</ANIMTIP_1>
-    <WWISE_EVENT_1>audio_switch_intercom</WWISE_EVENT_1>
-    <WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2>
-    <LEFT_SINGLE_CODE>
-      (L:XMLVAR_Spkr) 0 ==
-      if{
-      1 (&gt;L:XMLVAR_Spkr)
-      #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-      } els{
-      0 (&gt;L:XMLVAR_Spkr)
-      #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-      }
-    </LEFT_SINGLE_CODE>
-  </UseTemplate>
+<Template Name="JPL_IntercomSwitch">
+	<DefaultTemplateParameters>
+		<SIMVAR_PREFIX>L</SIMVAR_PREFIX>
+		<ANIM_LENGTH>20</ANIM_LENGTH>
+		<WWISE_EVENT_1>audio_switch_intercom</WWISE_EVENT_1>
+		<WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2>
+	</DefaultTemplateParameters>
+
+	<Component ID="#NODE_ID#" Node="#NODE_ID#">
+		<MouseRect>
+			<MOUSEFLAGS>#MOUSEFLAGS#</MOUSEFLAGS>
+			<Cursor>#CURSOR#</Cursor>
+			<TOOLTIPID>#TOOLTIPID#</TOOLTIPID>
+			<CallbackCode>
+				<Code>
+					(A:SIM ON GROUND, bool) 1 ==
+					if{
+					(M:Event) 'LeftSingle' scmi 0 == if{
+					(#SIMVAR_PREFIX#:#SIMVAR#,bool) ! (&gt;#SIMVAR_PREFIX#:#SIMVAR#,bool)
+					} 
+					}
+				</Code>
+			</CallbackCode>
+		</MouseRect>
+	</Component>
+			
+	<UseTemplate Name="ASOBO_GT_Anim_Code">
+		<ANIM_CODE>(#SIMVAR_PREFIX#:#SIMVAR#,bool) #ANIM_LENGTH# *</ANIM_CODE>
+	</UseTemplate>
+	<UseTemplate Name = "ASOBO_GT_AnimTriggers_2SoundEvents"/>
+			
+	<Update Frequency = "1">
+		(L:JPL152_APVIZ) 0 &gt;
+		(A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Boolean) ! and if{ #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE) }
+	</Update>
+	<Update Frequency = "1">
+		(L:JPL152_APVIZ) 0 ==
+		(A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Boolean) and if{ #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE) }
+	</Update>
 </Template>
 
-<Template Name = "C152X_2way_switch_xml">
-  <DefaultTemplateParameters>
-    <SWITCH_POSITION_TYPE>O</SWITCH_POSITION_TYPE>
-    <SWITCH_POSITION_VAR>SwitchState</SWITCH_POSITION_VAR>
-    <LEFT_SINGLE_CODE></LEFT_SINGLE_CODE>
-    <LEFT_LEAVE_CODE></LEFT_LEAVE_CODE>
-    <INIT_VALUE>0</INIT_VALUE>
-    <ANIMREF_ID>0</ANIMREF_ID>
-    <ANIMTIP_0_ON_PERCENT>0</ANIMTIP_0_ON_PERCENT>
-    <ANIMTIP_1_ON_PERCENT>1</ANIMTIP_1_ON_PERCENT>
-  </DefaultTemplateParameters>
-  <Component ID="#NODE_ID#" Node="#NODE_ID#">
-    <Update Once="True">
-      #INIT_VALUE# (&gt;#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#)
-    </Update>
-    <UseTemplate Name = "ASOBO_GT_Anim_Code">
-      <ANIM_CODE>(#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#) 100 *</ANIM_CODE>
-    </UseTemplate>
-    <UseTemplate Name = "ASOBO_GT_AnimTriggers_2SoundEvents">
-    </UseTemplate>
-    <UseTemplate Name = "ASOBO_GT_Interaction_LeftSingle_Code">
-      <LEFT_SINGLE_CODE>
-        (#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#) ! (&gt;#SWITCH_POSITION_TYPE#:#SWITCH_POSITION_VAR#)
-        #LEFT_SINGLE_CODE#
-      </LEFT_SINGLE_CODE>
-    </UseTemplate>
-  </Component>
-</Template>
 
 <Template Name="ADF_VOLUME">
 	<UseTemplate Name="ASOBO_GT_Update">
 		<UPDATE_ONCE>True</UPDATE_ONCE>
 		<UPDATE_CODE>
-		(L:152X_ADFVOL, bool) 1 &gt;=
+		(L:JPL152_ADFVOL, bool) 1 &gt;=
 		if{
 			100 (&gt;K:ADF_VOLUME_SET)
 		}
-		(L:152X_ADFVOL, Bool) 0 &lt;=
+		(L:JPL152_ADFVOL, Bool) 0 &lt;=
 		if{
 			0 (&gt;K:ADF_VOLUME_SET)
 		}
-		</UPDATE_CODE>	
+		</UPDATE_CODE>
 	</UseTemplate>
 </Template>
+
+<Template Name="COM1_VOLUME">
+	<UseTemplate Name="ASOBO_GT_Update">
+		<UPDATE_ONCE>True</UPDATE_ONCE>
+		<UPDATE_CODE>
+		(L:JPL152_COM1VOL, bool) 1 ==
+		if{
+			50 (&gt;K:COM1_VOLUME_SET)
+		}
+		(L:JPL152_COM1VOL, Bool) 0 ==
+		if{
+			0 (&gt;K:COM1_VOLUME_SET)
+		}
+		</UPDATE_CODE>	
+	</UseTemplate>
+</Template>	
+
+<Template Name="COM2_VOLUME">
+	<UseTemplate Name="ASOBO_GT_Update">
+		<UPDATE_ONCE>True</UPDATE_ONCE>
+		<UPDATE_CODE>
+		(L:JPL152_COM2VOL, bool) 1 ==
+		if{
+			75 (&gt;K:COM2_VOLUME_SET)
+			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_ON)
+		}	
+		(L:JPL152_COM2VOL, Bool) 0 ==
+		if{
+			0 (&gt;K:COM2_VOLUME_SET)
+			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
+		}
+		</UPDATE_CODE>	
+	</UseTemplate>
+</Template>	
+<!--
+<Template Name="ComVolume_Helper">
+	<Update Frequency = "3">
+		(A:COM VOLUME:1, Percent) 0 &gt;
+		(A:CIRCUIT SWITCH ON:23, Boolean) ! and if{
+			23 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+		}
+	</Update>
+	<Update Frequency = "3">
+		(A:COM VOLUME:1, Percent) 0 ==
+		(A:CIRCUIT SWITCH ON:23, Boolean) and if{
+			23 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+		}
+	</Update>
+	<Update Frequency = "3">
+		(A:COM VOLUME:2, Percent) 0 &gt;
+		(A:CIRCUIT SWITCH ON:25, Boolean) ! and if{
+			25 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+		}
+	</Update>
+	<Update Frequency = "3">
+		(A:COM VOLUME:2, Percent) 0 ==
+		(A:CIRCUIT SWITCH ON:25, Boolean) and if{
+			25 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+		}
+	</Update>
+</Template>
+-->
+<!--
 <Template Name="COM1_VOLUME">
 	<UseTemplate Name="ASOBO_GT_Update">
 		<UPDATE_ONCE>True</UPDATE_ONCE>
@@ -168,9 +222,9 @@
 	</UseTemplate>
   <UseTemplate Name="ASOBO_GT_Update">
     <Update Frequency="5">
-      (A:COM VOLUME:2,Percent) 1 &gt;= if{
+      (A:COM VOLUME:1,Percent) 1 &gt;= if{
         #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_ON)
-      } els {
+      } els{
         #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
       }
     </Update>
@@ -196,9 +250,10 @@
     <Update Frequency="5">
       (A:COM VOLUME:2,Percent) 1 &gt;= if{
       #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_ON)
-      } els {
+      } els{
       #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
       }
     </Update>
   </UseTemplate>
 </Template>	
+-->
