@@ -11,6 +11,10 @@
 			</Page>
 			<!-- Before starting engine -->
 			<Page SubjectTT="TT:GAME.CHECKLIST_BEFORE_STARTING_ENGINE">
+				<Checkpoint ReferenceId="Preflight_Inspection">
+					<!-- Fuel Shutoff Valve - - ON. / (mettre dans clue que "OPEN"-->
+					<ForceCamera name="Instruments01"/>
+				</Checkpoint>
 				<Checkpoint ReferenceId="Fuel_Shutoff_Valve_Open">
 					<!-- Fuel Shutoff Valve - - ON. / (mettre dans clue que "OPEN"-->
 					<ForceCamera name="Checklist_FuelValve"/>
@@ -31,7 +35,7 @@
 					<!-- Carburetor Heat - - COLD. -->
 					<ForceCamera name="Instruments02"/>
 				</Checkpoint>
-				<Checkpoint ReferenceId="PRIME_AS_REQUIRED">
+				<Checkpoint ReferenceId="JPL_PRIME_AS_REQUIRED">
 					<!-- XXXXXXXXXXXXXXXX Prime - - AS REQUIRED (up to strokes none if engine is warm). -->
 					<ForceCamera name="Instruments04"/>
 				</Checkpoint>

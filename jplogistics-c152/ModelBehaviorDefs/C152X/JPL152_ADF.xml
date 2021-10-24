@@ -1,21 +1,22 @@
-
+<ModelBehaviors>
+	<Include RelativeFile="Navcomsystem.xml"/>
 	
 	<!-- #######  -->
 	<!-- Presets -->
 	
 	<!-- ADF AS87 -->
-	<Template Name="C152X_INSTRUMENT_ADF_Template">
-		<UseTemplate Name="C152X_ADF_AS87_Template"/>
+	<Template Name="JPL152_INSTRUMENT_ADF_Template">
+		<UseTemplate Name="JPL152_ADF_AS87_Template"/>
 	</Template>
-	<Template Name="C152X_ADF_AS87_Template">
+	<Template Name="JPL152_ADF_AS87_Template">
 		<Parameters Type="Default">
 			<ID>1</ID>
 		</Parameters>
 		<UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
-			<TEMPLATE_TO_CALL>C152X_ADF_AS87_SubTemplate</TEMPLATE_TO_CALL>
+			<TEMPLATE_TO_CALL>JPL152_ADF_AS87_SubTemplate</TEMPLATE_TO_CALL>
 		</UseTemplate>
 	</Template>
-	<Template Name="C152X_ADF_AS87_SubTemplate">
+	<Template Name="JPL152_ADF_AS87_SubTemplate">
 		<Parameters Type="Default">
 			<ANIM_LAG>400</ANIM_LAG>
 			<EMISSIVE_POTENTIOMETER>1</EMISSIVE_POTENTIOMETER>
@@ -74,7 +75,7 @@
 			<NODE_ID>#NODE_ID_PUSH_SET_RESET#</NODE_ID>
 			<ANIM_NAME>#ANIM_NAME_PUSH_SET_RESET#</ANIM_NAME>
 		</UseTemplate>
-		<UseTemplate Name="ASOBO_ADF_Knob_Volume_Template">
+		<UseTemplate Name="JPL152_ADF_Knob_Volume_Template">
 			<NODE_ID>#NODE_ID_ADF_VOLUME#</NODE_ID>
 			<ANIM_NAME>#ANIM_NAME_ADF_VOLUME#</ANIM_NAME>
 		</UseTemplate>
@@ -87,7 +88,7 @@
 			<EMISSIVE_CODE>0.5</EMISSIVE_CODE>
 		</UseTemplate>
 		<Component ID="ADF_Frequency_Knobs#SUFFIX_ID#">
-			<UseTemplate Name="ASOBO_NAVCOM_Base_Template">
+			<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template">
 				<WWISE_EVENT>adf_frequency_knob</WWISE_EVENT>	
 				<COUNT>36</COUNT>
 				<THRESHOLD_INPUT>0.0005</THRESHOLD_INPUT>
@@ -96,7 +97,7 @@
 				<TT_DESCRIPTION_ID>@TT_Package.ADF_KNOB_FREQUENCY_PARAM_KHZ_ACTION</TT_DESCRIPTION_ID>
 				<TT_DESCRIPTION_INDEX>100</TT_DESCRIPTION_INDEX>
 				<TOOLTIP_TITLE></TOOLTIP_TITLE>
-				<TOOLTIPID>ADF Frequency (%((A:ADF ACTIVE FREQUENCY:1, khz))%!3.1f!%)</TOOLTIPID>
+				<TOOLTIPID>ADF Frequency (%((A:ADF STANDBY FREQUENCY:1, khz))%!3.1f!%)</TOOLTIPID>
 				<KNOB_ID>ADF_Freq_100_Khz</KNOB_ID>
 				<ANIM_NAME>#ANIM_NAME_100_KHZ#</ANIM_NAME>
 				<NODE_ID>#NODE_ID_100_KHZ#</NODE_ID>
@@ -113,7 +114,7 @@
 					<VAR_TYPE>L</VAR_TYPE>
 					<FORMAT_VALUE>'%d' @sprintf</FORMAT_VALUE>
 				</Parameters>
-				<UseTemplate Name="ASOBO_NAVCOM_Base_Push_Event_Only_Template">
+				<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Push_Event_Only_Template">
 					<BTN_ID>#BTN_ID_EXTERNAL#</BTN_ID>
 					<GET_STATE_EXTERNAL>(#VAR_TYPE#:#VAR_NAME#) sp0</GET_STATE_EXTERNAL>
 					<SIM_STATE_IS_ON_EXTERNAL>l0</SIM_STATE_IS_ON_EXTERNAL>
@@ -124,7 +125,7 @@
 					<TT_DESCRIPTION_ID>@TT_Package.ADF_KNOB_FREQUENCY_INCREMENT_ACTION</TT_DESCRIPTION_ID>
 					<TT_DESCRIPTION_INDEX>100</TT_DESCRIPTION_INDEX>
 				</UseTemplate>
-				<UseTemplate Name="ASOBO_NAVCOM_Base_Template">
+				<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template">
 					<KNOB_ID>ADF_Freq_1_10_Khz</KNOB_ID>
 					<BTN_EXTERNAL_BINDING_TO_CALL>_Toggle</BTN_EXTERNAL_BINDING_TO_CALL>
 					<CREATE_COMPONENT>False</CREATE_COMPONENT>
@@ -146,7 +147,7 @@
 					<TT_DESCRIPTION_ID>@TT_Package.ADF_KNOB_FREQUENCY_1_10_KHZ_ACTION</TT_DESCRIPTION_ID>
 					<TOOLTIP_TITLE></TOOLTIP_TITLE>
 					<TOOLTIPID>ADF Frequency (%((A:ADF STANDBY FREQUENCY:1, khz))%!3.1f!%)</TOOLTIPID>
-					<EVENT_CW>(#VAR_TYPE#:#VAR_NAME#) if{ (&gt;K:ADF_10_INC) } els{ 5 (&gt;K:ADF_FRACT_INC_CARRY) }</EVENT_CW>
+					<EVENT_CW>(#VAR_TYPE#:#VAR_NAME#) if{ (&gt;K:ADF_10_INC) } els{ (&gt;K:ADF_FRACT_INC_CARRY) }</EVENT_CW>
 					<EVENT_CCW>(#VAR_TYPE#:#VAR_NAME#) if{ (&gt;K:ADF_10_DEC) } els{ (&gt;K:ADF_FRACT_DEC_CARRY) }</EVENT_CCW>
 					<GET_TT_VALUE_STATE>(A:ADF STANDBY FREQUENCY:#ID#, Khz) sp0 (#VAR_TYPE#:#VAR_NAME#) if{ l0 10 / int 10 % } els{ l0 int 10 % }</GET_TT_VALUE_STATE>
 					<EXTRA_INTERACTION>_LeftSingle</EXTRA_INTERACTION>
@@ -157,6 +158,83 @@
 		</Component>
 	</Template>
 
+	<!-- ADF AS300 -->
+	<Template Name="ASOBO_ADF_AS300_Template">
+		<Parameters Type="Default">
+			<ID>1</ID>
+		</Parameters>
+		<UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
+			<TEMPLATE_TO_CALL>ASOBO_ADF_AS300_SubTemplate</TEMPLATE_TO_CALL>
+		</UseTemplate>
+	</Template>
+	<Template Name="ASOBO_ADF_AS300_SubTemplate">
+		<Parameters Type="Default">
+			<NODE_ID_SCREEN>ADF_Screen</NODE_ID_SCREEN>
+			<NODE_ID_100_KHZ>ADF_Knob_Frequency_MHz#SUFFIX_ID#</NODE_ID_100_KHZ>
+			<ANIM_NAME_100_KHZ>ADF_Knob_Frequency_MHz#SUFFIX_ID#</ANIM_NAME_100_KHZ>
+			<NODE_ID_10_KHZ>ADF_Knob_Frequency_KHz#SUFFIX_ID#</NODE_ID_10_KHZ>
+			<ANIM_NAME_10_KHZ>ADF_Knob_Frequency_KHz#SUFFIX_ID#</ANIM_NAME_10_KHZ>
+			<NODE_ID_1_KHZ>ADF_Knob_Frequency_Hz#SUFFIX_ID#</NODE_ID_1_KHZ>
+			<ANIM_NAME_1_KHZ>ADF_Knob_Frequency_Hz#SUFFIX_ID#</ANIM_NAME_1_KHZ>
+			<NODE_ID_ADF_VOLUME>ADF_Knob_Volume#SUFFIX_ID#</NODE_ID_ADF_VOLUME>
+			<ANIM_NAME_ADF_VOLUME>ADF_Knob_Volume#SUFFIX_ID#</ANIM_NAME_ADF_VOLUME>
+			<NODE_ID_ADF_MODE>ADF_Knob_Mode#SUFFIX_ID#</NODE_ID_ADF_MODE>
+			<ANIM_NAME_ADF_MODE>ADF_Knob_Mode#SUFFIX_ID#</ANIM_NAME_ADF_MODE>
+		</Parameters>
+		<Component ID="ADF_Frequency_Knobs#SUFFIX_ID#">
+			<Parameters Type="Override">
+				<WWISE_EVENT>adf_frequency_knob</WWISE_EVENT>	
+				<COUNT>36</COUNT>
+				<THRESHOLD_INPUT>0.0005</THRESHOLD_INPUT>
+				<THRESHOLD_MOUSE>0.01</THRESHOLD_MOUSE>
+				<INTERACTION_TYPE>Knob</INTERACTION_TYPE>
+				<FORMAT_VALUE>'%d' @sprintf</FORMAT_VALUE>
+				<GET_TT_VALUE_100_KHZ>(A:ADF ACTIVE FREQUENCY:#ID#, Khz) s0 100 / int 10 % l0 1000 / int 10 % 10 * +</GET_TT_VALUE_100_KHZ>
+				<GET_TT_VALUE_10_KHZ>(A:ADF ACTIVE FREQUENCY:#ID#, Khz) 10 / int 10 %</GET_TT_VALUE_10_KHZ>
+				<GET_TT_VALUE_1_KHZ>(A:ADF ACTIVE FREQUENCY:#ID#, Khz) int 10 %</GET_TT_VALUE_1_KHZ>
+			</Parameters>
+			<Loop>
+				<Setup>
+					<Param>CUR_ID</Param>
+					<From>0</From>
+					<Inc>1</Inc>
+					<To>2</To>
+				</Setup>
+				<Do>
+					<Parameters Type="Override">
+						<ID_POS Process="Int">10 #CUR_ID# pow</ID_POS>
+					</Parameters>
+					<Parameters Type="Default">
+						<TT_DESCRIPTION_ID>@TT_Package.ADF_KNOB_FREQUENCY_PARAM_KHZ_ACTION</TT_DESCRIPTION_ID>
+						<TT_DESCRIPTION_INDEX>#ID_POS#</TT_DESCRIPTION_INDEX>
+						<TOOLTIP_TITLE>@TT_Package.ADF_KNOB_FREQUENCY_KHZ_TITLE</TOOLTIP_TITLE>
+					</Parameters>
+					<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template">
+						<KNOB_ID>ADF_Freq_#ID_POS#_Khz</KNOB_ID>
+						<ANIM_NAME Process="Param">ANIM_NAME_#ID_POS#_KHZ</ANIM_NAME>
+						<NODE_ID Process="Param">NODE_ID_#ID_POS#_KHZ</NODE_ID>
+						<GET_TT_VALUE_STATE Process="Param">GET_TT_VALUE_#ID_POS#_KHZ</GET_TT_VALUE_STATE>
+						<EVENT_CW>(&gt;K:ADF_#ID_POS#_INC)</EVENT_CW>
+						<EVENT_CCW>(&gt;K:ADF_#ID_POS#_DEC)</EVENT_CCW>
+						<IS_INFINITE>True</IS_INFINITE>
+					</UseTemplate>
+				</Do>
+			</Loop>
+		</Component>
+		<UseTemplate Name="JPL152_ADF_Knob_Volume_Template">
+			<NODE_ID>#NODE_ID_ADF_VOLUME#</NODE_ID>
+			<ANIM_NAME>#ANIM_NAME_ADF_VOLUME#</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_ADF_Knob_Mode_Template">
+			<NODE_ID>#NODE_ID_ADF_MODE#</NODE_ID>
+			<ANIM_NAME>#ANIM_NAME_ADF_MODE#</ANIM_NAME>
+		</UseTemplate>
+		<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+			<NODE_ID>#NODE_ID_SCREEN#</NODE_ID>
+			<EMISSIVE_CODE>1</EMISSIVE_CODE>
+			<FAILURE>(A:ADF VOLUME:#ID#, Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
+		</UseTemplate>
+	</Template>
 	
 	<!-- ########## -->
 	<!-- Components -->
@@ -171,13 +249,13 @@
 			<TT_DESCRIPTION_ID>@TT_Package.ADF_PUSH_#BUTTON_ID#_ACTION</TT_DESCRIPTION_ID>
 			<TOOLTIP_TITLE>@TT_Package.ADF_PUSH_#BUTTON_ID#_TITLE</TOOLTIP_TITLE>
 		</Parameters>
-		<UseTemplate Name="ASOBO_NAVCOM_Base_Template">
+		<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template">
 			<BTN_ID>ADF_#BUTTON_ID#</BTN_ID>
 			<SET_STATE_EXTERNAL>(&gt;H:#HTML_EVENT#)</SET_STATE_EXTERNAL>
 			<EMISSIVE_CODE>(A:LIGHT POTENTIOMETER:#EMISSIVE_POTENTIOMETER#, percent over 100) #BUTTON_EMISSIVE_FACTOR# *</EMISSIVE_CODE>		
 		</UseTemplate>
 	</Template>
-	<Template Name="ASOBO_ADF_Knob_Volume_Template">
+	<Template Name="JPL152_ADF_Knob_Volume_Template">
 		<Parameters Type="Default">
 			<WWISE_EVENT>adf_volume_knob</WWISE_EVENT>	
 			<COUNT>50</COUNT>
@@ -185,8 +263,8 @@
 			<THRESHOLD_MOUSE>0.0025</THRESHOLD_MOUSE>
 		</Parameters>
 		<Parameters Type="Override">
-			<EVENT_CW>(&gt;K:ADF_VOLUME_INC)</EVENT_CW>
-			<EVENT_CCW>(&gt;K:ADF_VOLUME_DEC)</EVENT_CCW>
+			<EVENT_CW>(&gt;K:ADF_VOLUME_INC) (&gt;K:ADF_VOLUME_INC)</EVENT_CW>
+			<EVENT_CCW>(&gt;K:ADF_VOLUME_DEC) (&gt;K:ADF_VOLUME_DEC)</EVENT_CCW>
 		</Parameters>
 		<Parameters Type="Override">
 			<Condition NotEmpty="CIRCUIT_ADF">
@@ -201,7 +279,7 @@
 			<ANIMTIP_0>ADF Volume (%((A:ADF VOLUME:1, Percent))%!d!%)</ANIMTIP_0>
 			<ANIMTIP_1>ADF Volume (%((A:ADF VOLUME:1, Percent))%!d!%)</ANIMTIP_1>
 		</Parameters>
-		<UseTemplate Name="ASOBO_NAVCOM_Base_Template">
+		<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template">
 			<KNOB_ID>ADF_Volume</KNOB_ID>
 			<GET_TT_VALUE_STATE>(A:ADF VOLUME:1, percent)</GET_TT_VALUE_STATE>
 			<ANIM_CODE>(A:ADF VOLUME:1, percent)</ANIM_CODE>
@@ -209,4 +287,73 @@
 			<INTERACTION_TYPE>Knob</INTERACTION_TYPE>
 		</UseTemplate>
 	</Template>
-
+	<Template Name="ASOBO_ADF_Knob_Mode_Template">
+		<Parameters Type="Default">
+			<WWISE_EVENT>adf_mode_knob</WWISE_EVENT>	
+			<ANIM_LAG>600</ANIM_LAG>
+			<COUNT>3</COUNT>
+			<POS_BFO>0</POS_BFO>
+			<POS_REC>1</POS_REC>
+			<POS_ADF>2</POS_ADF>
+			<POS_TEST>3</POS_TEST>
+			<VAR_TYPE>L</VAR_TYPE>
+			<VAR_NAME>XMLVAR_ADF_Mode</VAR_NAME>
+			<INPUT_EVENT_ID_SOURCE>NAVCOM</INPUT_EVENT_ID_SOURCE>
+		</Parameters>
+		<Parameters Type="Override">
+			<KNOB_ID>ADF_Mode</KNOB_ID>
+			<ENUM_VAL_BFO>0</ENUM_VAL_BFO>
+			<ENUM_VAL_REC>1</ENUM_VAL_REC>
+			<ENUM_VAL_ADF>2</ENUM_VAL_ADF>
+			<ENUM_VAL_TEST>3</ENUM_VAL_TEST>
+		</Parameters>
+		<Parameters Type="Default">
+			<TT_DESCRIPTION_ID>@TT_Package.ADF_KNOB_MODE_ACTION_SET</TT_DESCRIPTION_ID>
+			<TOOLTIP_TITLE>@TT_Package.ADF_KNOB_MODE_TITLE</TOOLTIP_TITLE>
+			<INIT_POS>#POS_ADF#</INIT_POS>
+		</Parameters>
+		<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template">
+			<Condition NotEmpty="INIT_POS">
+				<COMP_INIT_CODE>#INIT_POS# (&gt;#VAR_TYPE#:#VAR_NAME#)</COMP_INIT_CODE>				
+			</Condition>
+			<USE_BTN_IE>True</USE_BTN_IE>
+			<NUM_STATES>4</NUM_STATES>
+			<INTERACTION_TYPE>Knob</INTERACTION_TYPE>
+			<SWITCH_DIRECTION>Horizontal</SWITCH_DIRECTION>
+			<IS_INFINITE>False</IS_INFINITE>
+			<GET_STATE_EXTERNAL>(#VAR_TYPE#:#VAR_NAME#) sp0</GET_STATE_EXTERNAL>
+			<ENUM_VAL_TO_POS_EXTERNAL>
+				l0 #ENUM_VAL_BFO# == if{ #POS_BFO# sp1 g2 }
+				l0 #ENUM_VAL_REC# == if{ #POS_REC# sp1 g2 }
+				l0 #ENUM_VAL_ADF# == if{ #POS_ADF# sp1 g2 }
+				l0 #ENUM_VAL_TEST# == if{ #POS_TEST# sp1 g2 }
+				:2 l1
+			</ENUM_VAL_TO_POS_EXTERNAL>
+			<BTN_ID>#KNOB_ID#</BTN_ID>
+			<!-- POS_BFO -->
+			<TT_VALUE_#POS_BFO#>@TT_Package.GT_STATE_BFO</TT_VALUE_#POS_BFO#>
+			<SET_STATE_#POS_BFO#>#ENUM_VAL_BFO# (&gt;#VAR_TYPE#:#VAR_NAME#)</SET_STATE_#POS_BFO#>
+			<STR_STATE_#POS_BFO#>BFO</STR_STATE_#POS_BFO#>
+			<CODE_POS_#POS_BFO#>(&gt;B:#INPUT_EVENT_ID_SOURCE#_#KNOB_ID#_BFO)</CODE_POS_#POS_BFO#>
+			<STATE#POS_BFO#_TEST>(B:#INPUT_EVENT_ID_SOURCE#_#KNOB_ID#) #POS_BFO# ==</STATE#POS_BFO#_TEST>
+			<!-- POS_REC -->
+			<TT_VALUE_#POS_REC#>@TT_Package.GT_STATE_REC</TT_VALUE_#POS_REC#>
+			<SET_STATE_#POS_REC#>#ENUM_VAL_REC# (&gt;#VAR_TYPE#:#VAR_NAME#)</SET_STATE_#POS_REC#>
+			<STR_STATE_#POS_REC#>REC</STR_STATE_#POS_REC#>
+			<CODE_POS_#POS_REC#>(&gt;B:#INPUT_EVENT_ID_SOURCE#_#KNOB_ID#_REC)</CODE_POS_#POS_REC#>
+			<STATE#POS_REC#_TEST>(B:#INPUT_EVENT_ID_SOURCE#_#KNOB_ID#) #POS_REC# ==</STATE#POS_REC#_TEST>
+			<!-- POS_ADF -->
+			<TT_VALUE_#POS_ADF#>@TT_Package.GT_STATE_ADF</TT_VALUE_#POS_ADF#>
+			<SET_STATE_#POS_ADF#>#ENUM_VAL_ADF# (&gt;#VAR_TYPE#:#VAR_NAME#)</SET_STATE_#POS_ADF#>
+			<STR_STATE_#POS_ADF#>ADF</STR_STATE_#POS_ADF#>
+			<CODE_POS_#POS_ADF#>(&gt;B:#INPUT_EVENT_ID_SOURCE#_#KNOB_ID#_ADF)</CODE_POS_#POS_ADF#>
+			<STATE#POS_ADF#_TEST>(B:#INPUT_EVENT_ID_SOURCE#_#KNOB_ID#) #POS_ADF# ==</STATE#POS_ADF#_TEST>
+			<!-- POS_TEST -->
+			<TT_VALUE_#POS_TEST#>@TT_Package.GT_STATE_TEST</TT_VALUE_#POS_TEST#>
+			<SET_STATE_#POS_TEST#>#ENUM_VAL_TEST# (&gt;#VAR_TYPE#:#VAR_NAME#)</SET_STATE_#POS_TEST#>
+			<STR_STATE_#POS_TEST#>TEST</STR_STATE_#POS_TEST#>
+			<CODE_POS_#POS_TEST#>(&gt;B:#INPUT_EVENT_ID_SOURCE#_#KNOB_ID#_TEST)</CODE_POS_#POS_TEST#>
+			<STATE#POS_TEST#_TEST>(B:#INPUT_EVENT_ID_SOURCE#_#KNOB_ID#) #POS_TEST# ==</STATE#POS_TEST#_TEST>
+		</UseTemplate>
+	</Template>
+</ModelBehaviors>

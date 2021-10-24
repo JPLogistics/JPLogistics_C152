@@ -1,6 +1,6 @@
 ![C152](https://img.shields.io/badge/Aircraft-Cessna%20152-blue) ![Game](https://img.shields.io/badge/Software-Microsoft%20Flight%20Simulator-blue)
 
-![Version](https://img.shields.io/badge/Version-V1.0.0%20BETA8-blue)
+![Version](https://img.shields.io/badge/Version-V1.0.0%20BETA9-blue)
 
 ![Download](https://img.shields.io/github/downloads/JPLogistics/JPLogistics_C152/total?color=blue&label=Downloads@Github) ![FSD](https://img.shields.io/badge/Downloads%40Flightsim.to-24.5k-blue)
 
@@ -17,6 +17,21 @@
 ## Donations
 
 Continued work on this project is with a large thanks to our donators! Without this kind gesture finding time is slightly more difficult, but every donation means extra time I can set aside to update/upgrade and improve this mod!
+
+## V1.0.0 - BETA TEST 9
+### SU6 Update!
+	- NAVCOM and ADF functionality restored.
+	- Flap lever reversal fixed.
+
+### Feature Updates:
+	- COM volume now turns unit on/off properly when controlled by external hardware, keyboard, HOTAS, radio panel etc.
+	- COM, NAV, and ADF volumes now turn by 4 percent instead of 2 percent.
+	- AP installation can now be toggled on/off. Use the intercom switch, Phone/Speaker.  Can only be changed whilst on the ground!!!
+	- Flight model update from  Beta 8 hotfix.
+
+### Known issues:
+The "BOTH"  button not quite right, fix TBD
+Cold & Dark start radio's "may" start with volumes turned up, returns to normal after first flight???
 
 ## V1.0.0 - BETA TEST 8
 Firstly, please let me take a moment to apologise for the severe delay in getting this released!
