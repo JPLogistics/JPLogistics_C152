@@ -1,7 +1,5 @@
 <ModelBehaviors>
   <Include ModelBehaviorFile="Asobo\Generic.xml"/>
-  <Include RelativeFile="Inputs\\NavComSystem_Inputs.xml"/>
-  <Include RelativeFile="NAVCOM\\NavComSystem.xml"/>
 
   <!-- REQ: ID(COM) -->
   <Template Name="JPL_GT_COM_Push_Transmit_Template">
@@ -185,7 +183,7 @@
 		<!-- <WWISE_EVENT_2>navcom_audio_push_off</WWISE_EVENT_2> -->
 		<!-- <NORMALIZED_TIME_2>0.5</NORMALIZED_TIME_2>	 -->
 		<TT_DESCRIPTION_ID>@TT_Package.AUDIOPANEL_PUSH_SPR_ACTION</TT_DESCRIPTION_ID>
-		<TOOLTIP_TITLE>@TT_Package.AUDIOPANEL_PUSH_SPR_TITLE</TOOLTIP_TITLE>
+		<TOOLTIP_TITLE></TOOLTIP_TITLE>
 	</Parameters>
 	<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Template">
 		<SET_STATE_EXTERNAL>(L:XMLVAR_AUDIO_EXT_SEL, Bool) p0 != if{ p0 (&gt;L:XMLVAR_AUDIO_EXT_SEL, Bool) }</SET_STATE_EXTERNAL>
@@ -637,8 +635,8 @@
 						<EVENT_CW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_INC) #CIRCUIT_CODE_ON#</EVENT_CW>
 						<EVENT_CCW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC) #CIRCUIT_CODE_OFF#</EVENT_CCW>
 						#################-->
-						<EVENT_CW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_INC) #CIRCUIT_CODE_ON# (&gt;K:#RADIO_TYPE##ID#_VOLUME_INC)</EVENT_CW>
-						<EVENT_CCW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC) #CIRCUIT_CODE_OFF# (&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC)</EVENT_CCW>
+						<EVENT_CW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_INC) (&gt;K:#RADIO_TYPE##ID#_VOLUME_INC) #CIRCUIT_CODE_ON#</EVENT_CW>
+						<EVENT_CCW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC) (&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC) #CIRCUIT_CODE_OFF#</EVENT_CCW>
 						<GET_TT_VALUE_STATE>(A:#RADIO_TYPE# VOLUME:#ID#, Percent) sp0</GET_TT_VALUE_STATE>
 						<FORMAT_VALUE>l0 '%d%%' @sprintf</FORMAT_VALUE>
 						<ANIM_CODE>#KNOB_ANIM_CODE#</ANIM_CODE>
@@ -653,18 +651,20 @@
 		</Case>
 		<Default>
 			<Component ID="#NODE_ID#" Node="#NODE_ID#">
-	<Update Frequency = "3">
-		(A:COM VOLUME:#ID#, Percent) 0 &gt;
-		(A:CIRCUIT SWITCH ON:#COM_CIRCUIT#, Boolean) ! and if{
-			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-		}
-	</Update>
-	<Update Frequency = "3">
-		(A:COM VOLUME:#ID#, Percent) 0 ==
-		(A:CIRCUIT SWITCH ON:#COM_CIRCUIT#, Boolean) and if{
-			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-		}
-	</Update>			
+			<!--#######MOD ADDED########-->
+				<Update Frequency="3">
+					(A:COM VOLUME:#ID#, Percent) 0 &gt;
+					(A:CIRCUIT SWITCH ON:#COM_CIRCUIT#, Boolean) ! and if{
+						#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+					}
+				</Update>
+				<Update Frequency="3">
+					(A:COM VOLUME:#ID#, Percent) 0 ==
+					(A:CIRCUIT SWITCH ON:#COM_CIRCUIT#, Boolean) and if{
+						#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+					}
+				</Update>
+			<!--#######################-->
 				<UseTemplate Name="ASOBO_NAVCOM_Alternative_Base_Push_Event_Only_Template">
 					<BTN_ID>#BTN_ID_EXTERNAL#</BTN_ID>
 					<SET_STATE_ON>1 #GET_IDENT# != if{ #SET_IDENT# }</SET_STATE_ON>
@@ -689,8 +689,8 @@
 							<EVENT_CW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_INC) #CIRCUIT_CODE_ON#</EVENT_CW>
 							<EVENT_CCW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC) #CIRCUIT_CODE_OFF#</EVENT_CCW>
 							#####################-->
-							<EVENT_CW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_INC) #CIRCUIT_CODE_ON# (&gt;K:#RADIO_TYPE##ID#_VOLUME_INC)</EVENT_CW>
-							<EVENT_CCW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC) #CIRCUIT_CODE_OFF# (&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC) #CIRCUIT_CODE_OFF#</EVENT_CCW>
+							<EVENT_CW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_INC) (&gt;K:#RADIO_TYPE##ID#_VOLUME_INC) #CIRCUIT_CODE_ON#</EVENT_CW>
+							<EVENT_CCW>(&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC) (&gt;K:#RADIO_TYPE##ID#_VOLUME_DEC) #CIRCUIT_CODE_OFF#</EVENT_CCW>
 							<GET_TT_VALUE_STATE>(A:#RADIO_TYPE# VOLUME:#ID#, Percent) sp0</GET_TT_VALUE_STATE>
 							<FORMAT_VALUE>l0 '%d%%' @sprintf</FORMAT_VALUE>
 							<KNOB_TYPE>Finite_Switch</KNOB_TYPE>

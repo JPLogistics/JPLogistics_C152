@@ -1,0 +1,257 @@
+
+
+
+<Macro Name="MaxPsiDrop"> 6 </Macro>
+<Macro Name="PsiScaler"> (L:JPL152_ELAPSED_TIME) 0.01 * 0.29 - </Macro>
+
+<Macro Name="ThrottleScaler2"> (A:GENERAL ENG THROTTLE LEVER POSITION:1, percent) 95 &lt;= if{ (A:GENERAL ENG THROTTLE LEVER POSITION:1, percent) 100 - -1 * 100 / } els{ 0.10 } </Macro>
+			
+<Macro Name="ThrottleScalerA"> (A:GENERAL ENG THROTTLE LEVER POSITION:1, percent) 1 + </Macro>
+<Macro Name="ThrottleScalerB"> (A:GENERAL ENG THROTTLE LEVER POSITION:1, percent) 105 - -1 * </Macro>
+<Macro Name="ThrottleScalerC"> @ThrottleScalerA @ThrottleScalerB log </Macro>
+<Macro Name="ThrottleScalerD"> @ThrottleScalerC 2.7 * </Macro>
+
+<Macro Name="MixtureScalerA"> (A:GENERAL ENG MIXTURE LEVER POSITION:1, percent) 100 - -1 * 100 / </Macro>
+<Macro Name="MixtureScalerB"> @MixtureScalerA 3 * </Macro>
+
+<Macro Name="MaxOilQty"> 7 </Macro>
+<Macro Name="OilBurnRate"> 0.00002778 </Macro> <!-- 0.00002778 -->
+<Macro Name="OilTempScaler1"> @MaxOilQty (L:JPL152_OILREM) - 1 - </Macro> <!-- increasing diff number -->
+<Macro Name="OilTempScaler2"> @OilTempScaler1 @OilBurnRate * 3000 * </Macro> <!-- 13  3000 -->
+<Macro Name="OilPresScaler1"> (L:JPL152_OILREM) @MaxOilQty - </Macro> <!-- neg decreasing diff number ie 5-7=-2 -->
+<Macro Name="OilPresScaler2"> @OilPresScaler1 @OilBurnRate * </Macro>
+<Macro Name="OilPresScaler3"> (A:GENERAL ENG OIL TEMPERATURE:1, celsius) 40000 * </Macro> <!-- 50  40000 -->
+<Macro Name="OilPresScaler4"> @OilPresScaler3 @OilPresScaler2 * 70 + </Macro>
+
+<!--#################################################################################################################-->
+<!--#################################################################################################################-->
+
+<Template Name="Engine_Maintenance">
+
+<!-- ########### PLUG FOULING ########### -->
+
+<!-- ### THROTTLE SCALER 1 ### -->
+	<Update Frequency="1">
+		@ThrottleScalerD @MixtureScalerB * (&gt;L:JPL152_ThrottleScaler1)
+	</Update>
+
+<!-- ### TIMING MECHANISM VARIED BY THROTTLE AND MIXTURE SCALERS ### -->
+	<Update Frequency="1">
+		(A:GENERAL ENG COMBUSTION:1, bool) 1 ==
+		(A:RECIP MIXTURE RATIO:1, ratio) 0.09 &gt; and
+		if{
+			(L:JPL152_ELAPSED_TIME) 600 &lt; if{ (L:JPL152_ELAPSED_TIME) @ThrottleScaler2 + (&gt;L:JPL152_ELAPSED_TIME) }
+		} 
+		(A:GENERAL ENG COMBUSTION:1, bool) 1 ==
+		(A:RECIP MIXTURE RATIO:1, ratio) 0.09 &lt;= and
+		if{
+			(L:JPL152_ELAPSED_TIME) 0 &gt; (A:GENERAL ENG THROTTLE LEVER POSITION:1, percent) 25 &lt; and if{ (L:JPL152_ELAPSED_TIME) 1 - (&gt;L:JPL152_ELAPSED_TIME) }
+			(L:JPL152_ELAPSED_TIME) 0 &gt; (A:GENERAL ENG THROTTLE LEVER POSITION:1, percent) 25 &gt;= and if{ (L:JPL152_ELAPSED_TIME) (L:JPL152_ThrottleScaler1) - (&gt;L:JPL152_ELAPSED_TIME) }
+		}
+	</Update>
+
+<!-- ### TRIGGER ### -->
+	<Update Frequency="1">
+		(L:JPL152_ELAPSED_TIME) 30 &gt;
+		if{
+			1 (&gt;L:JPL152_Fouling, bool)
+		} els{
+			0 (&gt;L:JPL152_Fouling, bool)
+	</Update>
+
+<!-- ### FOULING EFFECT, SCALED BY THE TIMING MECHANISM ### -->
+	<Update Frequency="3">
+		(L:JPL152_Fouling, bool) 1 ==
+		(A:GENERAL ENG RPM:1, rpm) 600 &gt; and
+		if{
+			@PsiScaler @MaxPsiDrop &gt; if{ (A:RECIP ENG MANIFOLD PRESSURE:1, psi) @MaxPsiDrop - (&gt;A:RECIP ENG MANIFOLD PRESSURE:1, psi) } els{ (A:RECIP ENG MANIFOLD PRESSURE:1, psi) @PsiScaler - (&gt;A:RECIP ENG MANIFOLD PRESSURE:1, psi) }
+		}
+	</Update>
+
+<!-- ### EXTRA MAG DROP EFFECT WHEN FOULED ### -->
+	<Update Frequency="3">
+	(L:JPL152_Fouling, bool) 1 ==
+	(A:RECIP ENG LEFT MAGNETO:1, bool) 0 == and
+	if{
+		(A:RECIP ENG MANIFOLD PRESSURE:1, psi) 4 - (&gt;A:RECIP ENG MANIFOLD PRESSURE:1, psi)
+	}
+	(L:JPL152_Fouling, bool) 1 ==
+	(A:RECIP ENG RIGHT MAGNETO:1, bool) 0 == and
+	if{
+		(A:RECIP ENG MANIFOLD PRESSURE:1, psi) 4 - (&gt;A:RECIP ENG MANIFOLD PRESSURE:1, psi)
+	}
+	</Update>
+
+<!-- ### FOULS THE PLUGS FROM ATTEMPTING TO START A FLOODED ENGINE ### -->	
+	<Update Frequency="1">
+		(L:XMLVAR_PUMPED_FUEL, gallons) 0.03 &gt;
+		(A:GENERAL ENG STARTER ACTIVE:1, bool) 1 == and
+		if{ (L:JPL152_ELAPSED_TIME) 20 + (&gt;L:JPL152_ELAPSED_TIME) }
+	</Update>
+
+<!-- ### FOULS THE PLUGS FROM IMPROPER ENGINE SHUTDOWN ### idle suction = 4.86-->
+	<Update Frequency="1">
+		<!--(A:GENERAL ENG RPM:1, rpm) 1000 &gt;-->
+		(A:GENERAL ENG COMBUSTION:1, bool) 0 ==
+		(A:SUCTION PRESSURE, inhg) 4 &gt; and
+		(L:JPL152_ELAPSED_TIME) 30 &gt; and
+		if{ (L:JPL152_ELAPSED_TIME2) 1 &lt; if{ (L:JPL152_ELAPSED_TIME2) 1 + (&gt;L:JPL152_ELAPSED_TIME2) } }
+		
+		(A:SUCTION PRESSURE, inhg) 1 &lt;
+		if{ 0 (&gt;L:JPL152_ELAPSED_TIME2) }
+		
+		(A:GENERAL ENG STARTER ACTIVE:1, bool) 1 == if{ 0 (&gt;L:JPL152_ELAPSED_TIME2) }	
+	</Update>
+	<Update Frequency="0.3">	
+		(L:JPL152_ELAPSED_TIME2) 1 == if{ (L:JPL152_ELAPSED_TIME) 10 + (&gt;L:JPL152_ELAPSED_TIME)
+	</Update>
+
+<!-- ### CUSTOM RANDOMIZED MAG DROP EFFECT ### -->
+	<UseTemplate Name="ASOBO_GT_Update">
+		<UPDATE_ONCE>True</UPDATE_ONCE>
+		<UPDATE_CODE>
+			rand (&gt;O:JPL152_RANDOM_MAG)
+		</UPDATE_CODE>	
+	</UseTemplate>
+	<Update Frequency="3">
+	(A:RECIP ENG LEFT MAGNETO:1, bool) 0 ==
+	if{
+		(O:JPL152_RANDOM_MAG) .5 &gt; if{ (A:RECIP ENG MANIFOLD PRESSURE:1, psi) 1.9 - (&gt;A:RECIP ENG MANIFOLD PRESSURE:1, psi) } els{ (A:RECIP ENG MANIFOLD PRESSURE:1, psi) 1.8 - (&gt;A:RECIP ENG MANIFOLD PRESSURE:1, psi) }
+	}
+	(A:RECIP ENG RIGHT MAGNETO:1, bool) 0 ==
+	if{
+		(O:JPL152_RANDOM_MAG) .5 &gt; if{ (A:RECIP ENG MANIFOLD PRESSURE:1, psi) 2.4 - (&gt;A:RECIP ENG MANIFOLD PRESSURE:1, psi) } els{ (A:RECIP ENG MANIFOLD PRESSURE:1, psi) 2.3 - (&gt;A:RECIP ENG MANIFOLD PRESSURE:1, psi) }
+	}
+	</Update>
+
+
+<!-- ########### OIL LEAK/BURNING ########### -->
+
+	<!-- ### VAR FOR OIL PERCENT REMAINING ### -->
+	<!-- if needed...
+	<Update Frequency="1">
+		(L:JPL152_OILREM) @MaxOilQty / 100 * (&gt;L:JPL152_OILREM_PERCENT)
+	</Update>
+	-->
+	<!-- ### SETS OIL TO 7, OVERRIDDEN BY STATE SAVING WHEN ON ### -->
+	<UseTemplate Name="ASOBO_GT_Update">
+		<UPDATE_ONCE>True</UPDATE_ONCE>
+		<UPDATE_CODE>
+			7 (&gt;L:JPL152_OILREM)
+		</UPDATE_CODE>	
+	</UseTemplate>
+	
+	<!-- ### OIL COUNTDOWN ### -->
+	<Update Frequency="1">
+		(A:GENERAL ENG COMBUSTION:1, bool) 1 ==
+		(A:BUS CONNECTION ON:14, bool) 1 == and
+		if{
+			(L:JPL152_OILREM) 0 &gt; if{ (L:JPL152_OILREM) @OilBurnRate - (&gt;L:JPL152_OILREM) }
+		}
+	</Update>
+	
+	<!-- ### EFFECT ON OIL TEMPERATURE ### -->
+	<Update Frequency="4">
+		(L:JPL152_OILREM) 6 &lt;
+		(A:GENERAL ENG COMBUSTION:1, bool) 1 == and
+		(A:BUS CONNECTION ON:14, bool) 1 == and
+		if{
+			(A:GENERAL ENG OIL TEMPERATURE:1, celsius) @OilTempScaler2 + (&gt;A:GENERAL ENG OIL TEMPERATURE:1, celsius)
+		}
+	</Update>
+	
+	<!-- ### EFFECT ON OIL PRESSURE ### -->
+	<Update Frequency="8">
+		(L:JPL152_OILREM) 6 &lt;
+		(A:GENERAL ENG OIL TEMPERATURE:1, celsius) 30 &gt; and
+		(A:BUS CONNECTION ON:14, bool) 1 == and
+		if{
+			(A:GENERAL ENG OIL PRESSURE:1, psf) @OilPresScaler4 + (&gt;A:GENERAL ENG OIL PRESSURE:1, psf)
+		}
+	</Update>
+	
+	<Update Frequency="3">
+		(A:TURN COORDINATOR BALL, position) 0.1 &gt;
+		(A:FUEL LEFT QUANTITY, Gallons) 0.75 &gt; and
+		if{ 2 (&gt;K:FUEL_SELECTOR_SET) }
+		(A:TURN COORDINATOR BALL, position) -0.1 &lt;
+		(A:FUEL RIGHT QUANTITY, Gallons) 0.75 &gt; and
+		if{ 3 (&gt;K:FUEL_SELECTOR_SET) }
+		(A:TURN COORDINATOR BALL, position) -0.1 &gt;= (A:TURN COORDINATOR BALL, position) 0.1 &lt;= and
+		if{ 1 (&gt;K:FUEL_SELECTOR_SET) }
+	</Update>	
+
+
+<!-- ### TESTING SECTION TO SEE WHAT HAPPENING ### -->
+	<Update Frequency="1">
+		@MaintenanceScaler (&gt;L:JPL152_scalertestTR)
+		 
+		@MaintenanceScaler1 (&gt;L:JPL152_scalertestBL)
+		 
+		@MaintenanceScaler6 (&gt;L:JPL152_scalertestBR)
+	</Update>	
+
+<!-- ########### GENERAL ENGINE WEAR ########### -->
+	<!--
+    when...
+		always...but slow
+		
+		increase with...
+			high rpm
+			fouling = 1
+			low oil
+			not warmed up enough / if oil temp is < X and rpm is > Y ????
+			
+	how long does it take?
+		RW is 2400 hrs for an overhaul...to much for a sim??? 500?
+		1,800,000s = 500hrs
+		18000s = 5 hrs
+		3600s = 1 hr
+		max MP drop of 4 = max time "L:JPL152_MAINTENANCE_TIME" / 4 ... @500hrs this / by 450000   @ 5min for testing this is 75
+			(L:JPL152_MAINTENANCE_TIME) 1800000 &lt;  and   (L:JPL152_MAINTENANCE_TIME) 450000 /
+			(L:JPL152_MAINTENANCE_TIME) 300 &lt;  and   (L:JPL152_MAINTENANCE_TIME) 75 /  <--- this is for a 5min testing window
+		<Macro Name="MaintenanceScaler"> 300 / X to = 4</Macro>
+		<Macro Name="MaintenanceScaler"> 1,800,000 / X to = 4</Macro> ???
+	-->
+<!-- ### TIMER ### -->
+	<Update Frequency="1">
+		(A:GENERAL ENG COMBUSTION:1, bool) 1 ==
+		if{
+			(L:JPL152_MAINTENANCE_TIME) 1800000 &lt; if{ (L:JPL152_MAINTENANCE_TIME) @MaintenanceScaler6 + (&gt;L:JPL152_MAINTENANCE_TIME) }
+		}
+	</Update>
+<!-- ### EFFECT ### -->
+	<Update Frequency="3">
+		(A:GENERAL ENG COMBUSTION:1, bool) 1 ==
+		if{
+			(A:RECIP ENG MANIFOLD PRESSURE:1, psi) @MaintenanceScaler - (&gt;A:RECIP ENG MANIFOLD PRESSURE:1, psi) }
+		}
+	</Update>
+
+</Template>
+
+<Macro Name="MaintenanceScaler1"> (A:GENERAL ENG RPM:1, rpm) 2500 &gt; if{ 0.20 } els{ 0 } </Macro>
+<Macro Name="MaintenanceScaler2"> (L:JPL152_Fouling, bool) 1 == if{ 0.20 } els{ 0 } </Macro>
+<Macro Name="MaintenanceScaler3"> (L:JPL152_OILREM) 6 &lt; if{ 0.20 } els{ 0 } </Macro>
+<Macro Name="MaintenanceScaler4"> (A:ENG OIL TEMPERATURE:1, celsius) 50 &lt; (A:GENERAL ENG RPM:1, rpm) 1500 &gt; and if{ 0.40 } els{ 0 } </Macro>
+<Macro Name="MaintenanceScaler5"> @MaintenanceScaler1 @MaintenanceScaler2 + @MaintenanceScaler3 + @MaintenanceScaler4 + </Macro>
+<Macro Name="MaintenanceScaler6"> @MaintenanceScaler5 1 + </Macro>
+<Macro Name="MaintenanceScaler"> (L:JPL152_MAINTENANCE_TIME) 450000 /</Macro>
+
+<!--
+(A:GENERAL ENG OIL PRESSURE:1, psf) 1000 - (&gt;A:GENERAL ENG OIL PRESSURE:1, psf)
+
+30 hrs = 108000  .1/hr  
+
+0.00027777777 1 qt per hour
+0.000027777777 1 qt per 10 hours
+
+GENERAL ENG OIL PRESSURE:1  psf  will drop the pressure, needs to update
+GENERAL ENG OIL TEMPERATURE:1 celsius  can mess with, needs to update
+
+3 = right tank
+2 = left tank
+1 = both tanks
+
+(A:TURN COORDINATOR BALL, scaler)  right ball positive to .5 = left turn; left ball neg to .5 =  right turn
+-->

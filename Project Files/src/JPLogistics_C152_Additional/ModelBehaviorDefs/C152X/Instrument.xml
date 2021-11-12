@@ -1,11 +1,11 @@
 <Template Name = "DME_Switch_Template">
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <Update>
-      (L:DME_POWER) 0 == (A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Bool) == 1 and
+      (L:JPL152_DME_POWER) 0 == (A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Bool) == 1 and
       if{
       #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
       }
-      (L:DME_POWER) 1 == (A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Bool) == 0 and
+      (L:JPL152_DME_POWER) 1 == (A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Bool) == 0 and
       if{
       #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
       }
@@ -16,7 +16,7 @@
       <ANIMTIP_1>DME OFF</ANIMTIP_1>
       <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
         <LEFT_SINGLE_CODE>
-          (L:DME_POWER) ! (&gt;L:DME_POWER)
+          (L:JPL152_DME_POWER) ! (&gt;L:JPL152_DME_POWER)
         </LEFT_SINGLE_CODE>
       </UseTemplate>
     <UseTemplate Name="ASOBO_GT_Anim_Code">
@@ -25,21 +25,21 @@
       <ANIM_LAG>20</ANIM_LAG>
       <ANIM_CODE>
         (* Default is current needle position *)
-        (L:DME_POWER) 4 *
+        (L:JPL152_DME_POWER) 4 *
       </ANIM_CODE>
     </UseTemplate>
   </Component>
 </Template>
 
-<Template Name="JPL_DME_Screens_Template">
+<Template Name="JPL152_DME_Screens_Template">
   <Parameters Type="Default">
     <ID>1</ID>
   </Parameters>
   <UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
-    <TEMPLATE_TO_CALL>JPL_DME_Screens_SubTemplate</TEMPLATE_TO_CALL>
+    <TEMPLATE_TO_CALL>JPL152_DME_Screens_SubTemplate</TEMPLATE_TO_CALL>
   </UseTemplate>
 </Template>
-<Template Name="JPL_DME_Screens_SubTemplate">
+<Template Name="JPL152_DME_Screens_SubTemplate">
   <DefaultTemplateParameters>
     <NODE_ID>DME_Screen</NODE_ID>
   </DefaultTemplateParameters>
@@ -48,10 +48,10 @@
       
       <Condition Check="USE_DIMMING_POTENTIOMETER">
         <True>
-          <EMISSIVE_CODE>(L:DME_POWER, Bool) 0 &gt; (A:LIGHT POTENTIOMETER:#POTENTIOMETER#, percent over 100) * #DIMMING_FACTOR# *</EMISSIVE_CODE>
+          <EMISSIVE_CODE>(L:JPL152_DME_POWER, Bool) 0 &gt; (A:LIGHT POTENTIOMETER:#POTENTIOMETER#, percent over 100) * #DIMMING_FACTOR# *</EMISSIVE_CODE>
         </True>
         <False>
-          <EMISSIVE_CODE>(L:DME_POWER, Bool) 0 &gt;</EMISSIVE_CODE>
+          <EMISSIVE_CODE>(L:JPL152_DME_POWER, Bool) 0 &gt;</EMISSIVE_CODE>
         </False>
       </Condition>
     </UseTemplate>
@@ -84,7 +84,7 @@
   </Component>
 </Template>
 
-<Template Name="JPL_IntercomSwitch">
+<Template Name="JPL152_IntercomSwitch">
 	<DefaultTemplateParameters>
 		<SIMVAR_PREFIX>L</SIMVAR_PREFIX>
 		<ANIM_LENGTH>20</ANIM_LENGTH>
@@ -125,7 +125,6 @@
 	</Update>
 </Template>
 
-
 <Template Name="ADF_VOLUME">
 	<UseTemplate Name="ASOBO_GT_Update">
 		<UPDATE_ONCE>True</UPDATE_ONCE>
@@ -165,12 +164,12 @@
 		(L:JPL152_COM2VOL, bool) 1 ==
 		if{
 			75 (&gt;K:COM2_VOLUME_SET)
-			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_ON)
+			25 (&gt;K:ELECTRICAL_CIRCUIT_ON)
 		}	
 		(L:JPL152_COM2VOL, Bool) 0 ==
 		if{
 			0 (&gt;K:COM2_VOLUME_SET)
-			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
+			25 (&gt;K:ELECTRICAL_CIRCUIT_OFF)
 		}
 		</UPDATE_CODE>	
 	</UseTemplate>
@@ -257,3 +256,111 @@
   </UseTemplate>
 </Template>	
 -->
+
+	<Template Name="JPL152_INSTRUMENT_Needle_EGT_Template">
+		<Parameters Type="Default">
+			<ID>1</ID>
+		</Parameters>
+		<UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
+			<TEMPLATE_TO_CALL>JPL152_INSTRUMENT_Needle_EGT_SubTemplate</TEMPLATE_TO_CALL>
+		</UseTemplate>
+	</Template>
+	
+<Template Name="JPL152_INSTRUMENT_Needle_EGT_SubTemplate">
+	<DefaultTemplateParameters>
+		<KNOB_ANIM_NAME>INSTRUMENT_Knob_EGT#SUFFIX_ID#</KNOB_ANIM_NAME>
+		<KNOB_NODE_ID>INSTRUMENT_Knob_EGT#SUFFIX_ID#</KNOB_NODE_ID>
+		<PART_ID>INSTRUMENT_EGT</PART_ID>
+		<NEEDLE_ANIM_NAME>INSTRUMENT_Needle_EGT#SUFFIX_ID#</NEEDLE_ANIM_NAME>
+		<NEEDLE_NODE_ID>INSTRUMENT_Needle_EGT#SUFFIX_ID#</NEEDLE_NODE_ID>
+		<NEEDLE_BUG_ANIM_NAME>INSTRUMENT_Needle_Bug_EGT#SUFFIX_ID#</NEEDLE_BUG_ANIM_NAME>
+		<NEEDLE_BUG_NODE_ID>INSTRUMENT_Needle_Bug_EGT#SUFFIX_ID#</NEEDLE_BUG_NODE_ID>
+		<UNITS>Fahrenheit</UNITS>
+		<MIN_VALUE>0</MIN_VALUE>
+		<MAX_VALUE>400</MAX_VALUE>
+	</DefaultTemplateParameters>
+	<EditableTemplateParameters>
+		<AddParams>
+			<KNOB_ANIM_NAME></KNOB_ANIM_NAME>
+			<KNOB_NODE_ID></KNOB_NODE_ID>
+			<NEEDLE_ANIM_NAME></NEEDLE_ANIM_NAME>
+			<NEEDLE_NODE_ID></NEEDLE_NODE_ID>
+			<NEEDLE_BUG_ANIM_NAME></NEEDLE_BUG_ANIM_NAME>
+			<NEEDLE_BUG_NODE_ID></NEEDLE_BUG_NODE_ID>
+			<HIGHLIGHT_NODE_ID></HIGHLIGHT_NODE_ID>
+		</AddParams>
+		<AddOptions>
+			<EGT_BUG></EGT_BUG>
+		</AddOptions>
+		<RemoveParams>
+			<ANIM_NAME></ANIM_NAME>
+			<NODE_ID></NODE_ID>
+		</RemoveParams>
+	</EditableTemplateParameters>
+
+	<Component ID="INSTRUMENT_EGT">
+		<UseTemplate Name="ASOBO_GT_Needle_Code">
+			<NODE_ID>#NEEDLE_NODE_ID#</NODE_ID>
+			<ANIM_NAME>#NEEDLE_ANIM_NAME#</ANIM_NAME>
+			<SIMVAR>ENG EXHAUST GAS TEMPERATURE:1</SIMVAR>
+			<Condition Check="FAILURE_NEEDLE">
+				<FAILURE>#FAILURE_NEEDLE#</FAILURE>
+			</Condition>
+			<Condition Check="HIGHLIGHT_NODE_ID">
+				<PART_ID/>
+			</Condition>
+			<ANIM_WRAP>False</ANIM_WRAP>
+		</UseTemplate>
+		
+		<Condition Check="EGT_BUG">
+			<UseTemplate Name="ASOBO_GT_Needle_Code">
+				<NODE_ID>#NEEDLE_BUG_NODE_ID#</NODE_ID>
+				<ANIM_NAME>#NEEDLE_BUG_ANIM_NAME#</ANIM_NAME>
+				<SIMVAR>ENG EXHAUST GAS TEMPERATURE GES:1</SIMVAR>
+				<UNITS>Percent</UNITS>
+				<MIN_VALUE>0</MIN_VALUE>
+				<MAX_VALUE>100</MAX_VALUE>
+				<Condition Check="FAILURE_NEEDLE">
+					<FAILURE>#FAILURE_NEEDLE#</FAILURE>
+				</Condition>
+				<Condition Check="HIGHLIGHT_NODE_ID">
+					<PART_ID/>
+				</Condition>
+				<ANIM_WRAP>True</ANIM_WRAP>
+			</UseTemplate>
+			
+			<Component ID="#KNOB_NODE_ID#" Node="#KNOB_NODE_ID#">
+				<Parameters Type="Default">
+					<TOOLTIP_EGT_TITLE>@TT_Package.INSTRUMENT_KNOB_EGT_TITLE</TOOLTIP_EGT_TITLE>
+				</Parameters>
+				<Parameters Type="Override">
+					<TOOLTIP_TITLE>#TOOLTIP_EGT_TITLE#</TOOLTIP_TITLE>
+					<!-- <TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC> -->
+					<TOOLTIP_ENTRY_0>INSTRUMENT_EGT_Bug</TOOLTIP_ENTRY_0>
+				</Parameters>
+				<UseInputEvent ID="INSTRUMENT">
+					<KNOB_ID>EGT_Bug</KNOB_ID>
+					<SET_STATE_EXTERNAL>100 / 32768 * (&gt;K:EGT1_SET)</SET_STATE_EXTERNAL>
+					<GET_STATE_EXTERNAL>(A:ENG EXHAUST GAS TEMPERATURE GES:1, percent)</GET_STATE_EXTERNAL>
+					<TT_DESCRIPTION_ID>@TT_Package.INSTRUMENT_KNOB_EGT_ACTION</TT_DESCRIPTION_ID>
+					<MIN_VALUE>0</MIN_VALUE>
+					<MAX_VALUE>100</MAX_VALUE>
+				</UseInputEvent>
+				<UseTemplate Name="ASOBO_GT_Knob_Infinite">
+					<ANIM_NAME>#KNOB_ANIM_NAME#</ANIM_NAME>
+					<CLOCKWISE_CODE>1 (&gt;B:INSTRUMENT_EGT_Bug_Inc)</CLOCKWISE_CODE>
+					<ANTICLOCKWISE_CODE>1 (&gt;B:INSTRUMENT_EGT_Bug_Dec)</ANTICLOCKWISE_CODE>
+					<Condition Check="HIGHLIGHT_NODE_ID">
+						<PART_ID/>
+					</Condition>
+				</UseTemplate>
+			</Component>
+		</Condition>
+		
+		
+		<Condition Check="HIGHLIGHT_NODE_ID">
+			<UseTemplate Name="ASOBO_GT_Highlight_Template">
+			</UseTemplate>
+		</Condition>
+	</Component>
+</Template>

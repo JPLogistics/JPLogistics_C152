@@ -16,7 +16,7 @@
 <!---------------------------------------------- FUEL SYSTEM ---------------------------------------------->
 <Template Name = "Fuel_Primer_Logic">
 	<Update Frequency="6">
-		(A:ENG COMBUSTION:1, bool) !
+		(A:GENERAL ENG COMBUSTION:1, bool) !
 		if{
 			(A:RECIP ENG PRIMER:1, bool)
 			if{
@@ -115,7 +115,6 @@ Factors:
 		}		
 	</Update>	
 	
-
 	<!-- #### THIS ONE IS FOR TESTING, WILL TURN ON PANEL LIGHTS WHEN START CONDITIONS ARE MET  #####-->
 	<!--	
 	<Update Frequency="1">
@@ -131,8 +130,20 @@ Factors:
 		}		
 	</Update>	
 	-->
+	<!-- #### ENGINE FIRE  #####-->
+	<Update Frequency="2">
+		(L:XMLVAR_PUMPED_FUEL, gallons) 0.038 &gt;=
+		(A:GENERAL ENG THROTTLE LEVER POSITION:1, percent) 60 &gt;= and
+		(A:GENERAL ENG MIXTURE LEVER POSITION:1, percent) 50 &gt;= and
+		(A:GENERAL ENG STARTER:1, bool) 0 &gt; and
+		(A:ELECTRICAL MASTER BATTERY:1, bool) 0 &gt; and
+		if{
+		  1 (&gt;A:ENG ON FIRE:1, bool)
+		}	
+	</Update>	
+	
 </Template>
-
+<!--
 <Template Name = "Fire_Logic">
 	<Update Frequency="2">
 		(L:XMLVAR_PUMPED_FUEL, gallons) 0.038 &gt;=
@@ -145,4 +156,4 @@ Factors:
 		}	
 	</Update>
 </Template>
-
+-->

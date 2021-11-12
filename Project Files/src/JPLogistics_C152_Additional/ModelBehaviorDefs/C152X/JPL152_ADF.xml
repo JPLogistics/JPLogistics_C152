@@ -43,7 +43,7 @@
 			<ANIM_NAME_100_KHZ>ADF_Knob_Frequency_MHz#SUFFIX_ID#</ANIM_NAME_100_KHZ>
 			<NODE_ID_1_10_KHZ>ADF_Knob_Frequency_KHz#SUFFIX_ID#</NODE_ID_1_10_KHZ>
 			<ANIM_NAME_1_10_KHZ>ADF_Knob_Frequency_KHz#SUFFIX_ID#</ANIM_NAME_1_10_KHZ>
-			<ANIM_NAME_1_10_KHZ_PUSH>ADF_Knob_Frequency_KHz_Push#SUFFIX_ID#</ANIM_NAME_1_10_KHZ_PUSH>
+			<ANIM_NAME_1_10_KHZ_PUSH>ADF_Knob_Frequency_KHz#SUFFIX_ID#_Push</ANIM_NAME_1_10_KHZ_PUSH>
 		</Parameters>
 		<UseTemplate Name="ASOBO_Button_ADF_ID_Template">
 			<BUTTON_ID>ADF_ANT_MODE_TOGGLE</BUTTON_ID>
@@ -257,7 +257,7 @@
 	</Template>
 	<Template Name="JPL152_ADF_Knob_Volume_Template">
 		<Parameters Type="Default">
-			<WWISE_EVENT>adf_volume_knob</WWISE_EVENT>	
+			<WWISE_EVENT>navcom_volume_knob</WWISE_EVENT>	
 			<COUNT>50</COUNT>
 			<THRESHOLD_INPUT>0.000025</THRESHOLD_INPUT>
 			<THRESHOLD_MOUSE>0.0025</THRESHOLD_MOUSE>
@@ -286,6 +286,18 @@
 			<IS_INFINITE>False</IS_INFINITE>
 			<INTERACTION_TYPE>Knob</INTERACTION_TYPE>
 		</UseTemplate>
+	<Update Frequency = "3">
+		(A:ADF VOLUME:1, Percent) 0 &gt;
+		(A:CIRCUIT SWITCH ON:#CIRCUIT_ADF#, Boolean) ! and if{
+			#CIRCUIT_ADF# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+		}
+	</Update>
+	<Update Frequency = "3">
+		(A:ADF VOLUME:1, Percent) 0 ==
+		(A:CIRCUIT SWITCH ON:#CIRCUIT_ADF#, Boolean) and if{
+			#CIRCUIT_ADF# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+		}
+	</Update>
 	</Template>
 	<Template Name="ASOBO_ADF_Knob_Mode_Template">
 		<Parameters Type="Default">

@@ -11,7 +11,7 @@
   <Behaviors>
 
     <Include ModelBehaviorFile="Asobo\Common.xml"/>
-    <Include Path="Asobo\Transponder\AS330.xml"/>
+    <Include ModelBehaviorFile="Asobo\Transponder\AS330.xml"/>
     <!--<Include ModelBehaviorFile="Asobo\NAVCOM\ADF.xml"/>-->
     <Include ModelBehaviorFile="C152X\Index.xml"/>
     <Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
@@ -21,16 +21,16 @@
     <Component ID="C152X_Custom_Behavior">
       <UseTemplate Name="Fuel_Primer_Logic"></UseTemplate>
       <UseTemplate Name="Engine_Start_Logic"></UseTemplate>
-      <UseTemplate Name="Fire_Logic"></UseTemplate>
 	  <UseTemplate Name="ADF_VOLUME"></UseTemplate>
 	  <UseTemplate Name="COM1_VOLUME"></UseTemplate>
 	  <UseTemplate Name="COM2_VOLUME"></UseTemplate>
-	  <UseTemplate Name="ComVolume_Helper"></UseTemplate>
+	  <!--<UseTemplate Name="ComVolume_Helper"></UseTemplate>-->
 	  <UseTemplate Name="WindowSoundHelper"></UseTemplate>
 	  <UseTemplate Name="Door_Close"></UseTemplate>
 	  <!--<UseTemplate Name="PanelLight"></UseTemplate>-->
 	  <!--<UseTemplate Name="CoPilot_Weight"></UseTemplate>-->
-	  <!--<UseTemplate Name="Fouling"></UseTemplate>-->
+	  <UseTemplate Name="Engine_Maintenance"></UseTemplate>
+	  <UseTemplate Name="Breaker_Trip"/>
     </Component>
     <!--End of C152X Modification -->
 
@@ -328,6 +328,16 @@
 		<ANIMTIP_1>Fuel Valve Open</ANIMTIP_1>
       </UseTemplate>
       <CameraTitle>Checklist_FuelValve</CameraTitle>
+	  <!--
+	  	<UseTemplate Name="ASOBO_FUEL_Knob_Selector_Template"> 
+			<HIGHLIGHT_NODE_ID>FUEL_Lever_Selector_Visual</HIGHLIGHT_NODE_ID>
+			<NODE_ID>FUEL_Lever_Selector</NODE_ID>
+			<ANIM_NAME>FUEL_Lever_Selector</ANIM_NAME>
+			<SELECTOR_STATE_0>LEFT</SELECTOR_STATE_0>
+			<SELECTOR_STATE_1>ALL</SELECTOR_STATE_1>
+			<SELECTOR_STATE_2>RIGHT</SELECTOR_STATE_2>
+		</UseTemplate>
+	  -->
     </Component>
 
     <!-- HANDLING ########################### -->
@@ -428,10 +438,10 @@
 
     <!-- INSTRUMENTS ########################### -->
     <Component ID="KAP_140">
-      <UseTemplate Name="C152X_KAP140_Template">
+      <UseTemplate Name="JPL152_KAP140_Template">
         <KNOB_100_ANIM_NAME>AUTOPILOT_Knob_Altitude_1</KNOB_100_ANIM_NAME>
         <POTENTIOMETER></POTENTIOMETER>
-        <EMISSIVE_CODE>0.2</EMISSIVE_CODE>
+        <EMISSIVE_CODE>(A:CIRCUIT ON:11, Bool) 0 &gt; if{ (A:LIGHT POTENTIOMETER:5, Percent) 100 / } </EMISSIVE_CODE>
       </UseTemplate>
     </Component>
 	<Component ID="KAP_140_screen">
@@ -525,6 +535,8 @@
 
 		<UseTemplate Name="ASOBO_INSTRUMENT_Needle_Turn_Template">
 			<BALL_PART_ID>INSTRUMENT_TURN_INDICATOR_BALL</BALL_PART_ID>
+			<MIN_VALUE>-4.3</MIN_VALUE>
+			<MAX_VALUE>4.3</MAX_VALUE>
 			<!--<FAILURE>(A:CIRCUIT ON:41, Bool)</FAILURE>  -->        <!--#######################  WORKING!! haha, working TOO much##################-->
 		</UseTemplate>
 	<Component ID="Compass">
@@ -559,6 +571,8 @@
 			<NODE_ID>INSTRUMENT_Needle_Engine_RPM_1</NODE_ID>
 			<ANIM_NAME>INSTRUMENT_Needle_Engine_RPM</ANIM_NAME>
 			<CREATE_HIGHLIGHT_NODE>True</CREATE_HIGHLIGHT_NODE>
+			<DEFAULT_VARIATION/>
+			<VARIATION_RANGE>0.009</VARIATION_RANGE>
 			<HIGHLIGHT_NODE_ID>INSTRUMENT_Engine_RPM_Highlight</HIGHLIGHT_NODE_ID>
 			<HIGHLIGHT_PART_ID>INSTRUMENT_Engine_RPM_Highlight</HIGHLIGHT_PART_ID>
 		</UseTemplate>
@@ -644,12 +658,29 @@
 				<ANIM_LENGTH>100</ANIM_LENGTH>
 				<MAX_DISPLAYABLE>100</MAX_DISPLAYABLE>
 				<MIN_DISPLAYABLE>0</MIN_DISPLAYABLE>
-			</UseTemplate>		  
+			</UseTemplate>	
+			<!--
 			<UseTemplate Name="ASOBO_INSTRUMENT_Needle_Ammeter_Template">
 				<FAILURE_CODE>50</FAILURE_CODE>
 				<INVERT_ANIM>True</INVERT_ANIM>
 				<DONT_APPEND_ID>True</DONT_APPEND_ID>
 			</UseTemplate>
+			-->
+			<UseTemplate Name="JPL152_INSTRUMENT_Needle_EGT_Template">
+				<!--<FAILURE_CODE>50</FAILURE_CODE>
+				<INVERT_ANIM>True</INVERT_ANIM>
+				<DONT_APPEND_ID>True</DONT_APPEND_ID>-->
+				<NEEDLE_ANIM_NAME>INSTRUMENT_Needle_Ammeter</NEEDLE_ANIM_NAME>
+				<NEEDLE_NODE_ID>INSTRUMENT_Needle_Ammeter</NEEDLE_NODE_ID>
+				<PART_ID>INSTRUMENT_Needle_Ammeter</PART_ID>
+				<MIN_VALUE>1400</MIN_VALUE>
+				<MAX_VALUE>1700</MAX_VALUE>
+				<ANIM_WRAP>False</ANIM_WRAP>
+			</UseTemplate>
+			
+			
+			
+			
 			<UseTemplate Name="ASOBO_SAFETY_Indicator_LowVolt_Template">
 				<FAILURE>(A:CIRCUIT ON:29, Bool)</FAILURE>
 				<THRESHOLD>26</THRESHOLD>
@@ -699,13 +730,13 @@
         <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_BEACON_ACTION_SET</TT_DESCRIPTION_ID>
       </UseTemplate>
 		
-		<!-- ##########PANEL LIGHTS THIS IS BOTTOM KNOB AND DOME LT SWITCH ON DASH ###########-->
+		<!-- ##########PANEL LIGHTS THIS IS BOTTOM KNOB AND DOME LT SWITCH ON DASH ###########--
 		<UseTemplate Name="ASOBO_LIGHTING_Knob_Potentiometer_Template">
 			<NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
 			<ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
 			<POTENTIOMETER>5</POTENTIOMETER>
-			<!--<NO_AUTHORITY_OVER_SWITCH_STATE/>-->
-			<!--<INIT_VALUE>50</INIT_VALUE> ############## NO LONGER VALID, SET IN *.flt ########## -->
+			<!--<NO_AUTHORITY_OVER_SWITCH_STATE/>--
+			<!--<INIT_VALUE>50</INIT_VALUE> ############## NO LONGER VALID, SET IN *.flt ########## --
 			<LOWER_LIMIT>5</LOWER_LIMIT>
 			<CIRCUIT_ID>11</CIRCUIT_ID>
 			<TT_DESCRIPTION_ID></TT_DESCRIPTION_ID>
@@ -713,6 +744,17 @@
 			<ANIMTIP_0>Panel Lights (%((A:LIGHT POTENTIOMETER:5, Percent))%!d!%)</ANIMTIP_0>
 			<ANIMTIP_1>Panel Lights (%((A:LIGHT POTENTIOMETER:5, Percent))%!d!%)</ANIMTIP_1>
 			<WWISE_EVENT>navcom_audio_volume_knob</WWISE_EVENT>
+		</UseTemplate>-->
+		<UseTemplate Name="JPL152_Light_Potentiometers">
+			<NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
+			<ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
+			<PART_ID>LIGHTING_Knob_Light_Panel</PART_ID>
+			<KNOB_POSITION_VAR>JPL152_Panel_Light</KNOB_POSITION_VAR>
+			<SIMVAR>A:LIGHT POTENTIOMETER:5, Percent</SIMVAR>
+			<POTENTIOMETER>5</POTENTIOMETER>
+			<INIT_VALUE>20</INIT_VALUE>
+			<WWISE_EVENT>navcom_audio_volume_knob</WWISE_EVENT>
+			<TOOLTIPID>Panel Lights (%((A:LIGHT POTENTIOMETER:5, Percent))%!d!%)</TOOLTIPID>
 		</UseTemplate>
 		<UseTemplate Name="ASOBO_LIGHTING_Switch_Light_Panel_Template"> 
 			<ANIM_NAME>LIGHTING_Switch_Light_Cabin_1</ANIM_NAME>
@@ -724,12 +766,11 @@
 		</UseTemplate>
 
 		<!--##########RADIO DIMMMING KNOB ##############################-->
+		<!--
 		<UseTemplate Name="ASOBO_LIGHTING_Knob_Potentiometer_Template">
 			<NODE_ID>LIGHTING_Knob_Radio</NODE_ID>
 			<ANIM_NAME>LIGHTING_Knob_Radio</ANIM_NAME>
 			<POTENTIOMETER>6</POTENTIOMETER>
-			<!--<NO_AUTHORITY_OVER_SWITCH_STATE/>-->
-			<!--<INIT_VALUE>50</INIT_VALUE> ############## NO LONGER VALID, SET IN *.flt ########## -->
 			<LOWER_LIMIT>5</LOWER_LIMIT>
 			<CIRCUIT_ID>23</CIRCUIT_ID>
 			<TT_DESCRIPTION_ID></TT_DESCRIPTION_ID>
@@ -737,6 +778,18 @@
 			<ANIMTIP_0>Radio Lights (%((A:LIGHT POTENTIOMETER:6, Percent))%!d!%)</ANIMTIP_0>
 			<ANIMTIP_1>Radio Lights (%((A:LIGHT POTENTIOMETER:6, Percent))%!d!%)</ANIMTIP_1>
 			<WWISE_EVENT>navcom_audio_volume_knob</WWISE_EVENT>
+		</UseTemplate>
+		-->
+		<UseTemplate Name="JPL152_Light_Potentiometers">
+			<NODE_ID>LIGHTING_Knob_Radio</NODE_ID>
+			<ANIM_NAME>LIGHTING_Knob_Radio</ANIM_NAME>
+			<PART_ID>LIGHTING_Knob_Light_Radio</PART_ID>
+			<KNOB_POSITION_VAR>JPL152_Radio_Light</KNOB_POSITION_VAR>
+			<SIMVAR>A:LIGHT POTENTIOMETER:6, Percent</SIMVAR>
+			<POTENTIOMETER>6</POTENTIOMETER>
+			<INIT_VALUE>75</INIT_VALUE>
+			<WWISE_EVENT>navcom_audio_volume_knob</WWISE_EVENT>
+			<TOOLTIPID>Radio Lights (%((A:LIGHT POTENTIOMETER:6, Percent))%!d!%)</TOOLTIPID><!--<EMISSIVE_CODE>(A:CIRCUIT ON:24, Bool)</EMISSIVE_CODE>-->
 		</UseTemplate>
 			
 		<!--#######BUTTON ON CEILING##########-->
@@ -748,9 +801,24 @@
 			<TOOLTIPID>Dome Light</TOOLTIPID>
 		</UseTemplate>		
 		<UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template">
-			<POTENTIOMETER>9</POTENTIOMETER><!-- NONEXISTENT POT TO PREVENT DIMMING -->
-		</UseTemplate>	
+			<POTENTIOMETER>9</POTENTIOMETER> <!--NONEXISTENT POT TO PREVENT DIMMING -->
+			<CIRCUIT_ID>15</CIRCUIT_ID>
+			<FAILURE>(A:CIRCUIT ON:15, bool)</FAILURE>
+		</UseTemplate>
 		
+		<!-- may be too much lol -->
+		<UseTemplate Name="ASOBO_LIGHTING_Panel_Emissive_Template">
+            <NODE_ID>DECALS</NODE_ID>
+			<EMISSIVE_CODE>
+				(A:ELECTRICAL MAIN BUS AMPS, amperes) 0 &gt;=
+					if{ (A:LIGHT POTENTIOMETER:5, Percent) 1000 /
+					}
+				(A:ELECTRICAL MAIN BUS AMPS, amperes) 0 &lt;
+					if{ (A:LIGHT POTENTIOMETER:5, Percent) 1111 / (A:ELECTRICAL MAIN BUS AMPS, amperes) 1000 / +
+					}
+				</EMISSIVE_CODE>
+		</UseTemplate>
+	
 		<!--######## RED EMISSIVE ON CEILING/LIGHT SET FROM TYPE/POT IN SYSTEM.CFG ########## -->
 		<UseTemplate Name="ASOBO_LIGHTING_Glareshield_Emissive_Template">
 			<NODE_ID>LIGHTING_Panel_Emisive</NODE_ID>
@@ -764,18 +832,16 @@
       <Parameters Type="Override">
         <INVERT_IM_DRAG_INPUT_SCALAR>True</INVERT_IM_DRAG_INPUT_SCALAR>
       </Parameters>
-      <UseTemplate Name="C152X_PASSENGER_Lever_Cabin_Air_Template">
+      <UseTemplate Name="JPL152_PASSENGER_Lever_Cabin_Air_Template">
         <NODE_ID>PASSENGER_Switch_Cabin_Air_1</NODE_ID>
         <ANIM_NAME>PASSENGER_Switch_Cabin_Air_1</ANIM_NAME>
       </UseTemplate>
-      <UseTemplate Name="C152X_PASSENGER_Lever_Cabin_Heat_Template">
+      <UseTemplate Name="JPL152_PASSENGER_Lever_Cabin_Heat_Template">
         <NODE_ID>PASSENGER_Switch_Cabin_Heat_1</NODE_ID>
         <ANIM_NAME>PASSENGER_Switch_Cabin_Heat_1</ANIM_NAME>
       </UseTemplate>	
     </Component>
 	
-
-
     <!-- RADIO STACK ################################## -->
     <Component ID="NAVCOM_Radios">
       <Parameters Type="Default">
@@ -786,21 +852,23 @@
       <UseTemplate Name="C152X_NAVCOM_Simple_Radio_Template">
         <ID>1</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
+		<EMISSIVE_CODE>(A:COM VOLUME:1,Percent) 0 &gt; if{ (A:LIGHT POTENTIOMETER:6, Percent) 1000 / } </EMISSIVE_CODE>
         <NAV_CIRCUIT>22</NAV_CIRCUIT><!-- Removed for test! -->
 		<COM_CIRCUIT>23</COM_CIRCUIT>
-      <UseTemplate Name="COM1_VOLUME">
-        <COM_CIRCUIT>23</COM_CIRCUIT>
-      </UseTemplate>
-        <FAILURE>(A:COM VOLUME:1,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) ! and</FAILURE>
+        <UseTemplate Name="COM1_VOLUME">
+          <COM_CIRCUIT>23</COM_CIRCUIT>
+        </UseTemplate>
+        <FAILURE>(A:COM VOLUME:1,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
       <UseTemplate Name="C152X_NAVCOM_Simple_Radio_Template">
         <ID>2</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
+		<EMISSIVE_CODE>(A:COM VOLUME:2,Percent) 0 &gt; if{ (A:LIGHT POTENTIOMETER:6, Percent) 1000 / } </EMISSIVE_CODE>
         <NAV_CIRCUIT>24</NAV_CIRCUIT><!-- Removed for test! -->
         <COM_CIRCUIT>25</COM_CIRCUIT>
-      <UseTemplate Name="COM2_VOLUME">
-        <COM_CIRCUIT>25</COM_CIRCUIT>
-      </UseTemplate>
+        <UseTemplate Name="COM2_VOLUME">
+          <COM_CIRCUIT>25</COM_CIRCUIT>
+        </UseTemplate>
         <FAILURE>(A:COM VOLUME:2,Percent) 0 &gt; (A:CIRCUIT GENERAL PANEL ON, Bool) and</FAILURE>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
@@ -820,86 +888,178 @@
         <POTENTIOMETER>6</POTENTIOMETER>
       </UseTemplate>
       <Component Id="NAVCOM_Sound_Push_Buttons">
-        <UseTemplate Name="ASOBO_NAVCOM_Switch_MARKER_Sound_Template"><!--WAS PUSH-->
-          <NODE_ID>AUDIO_Push_MKR</NODE_ID>
-          <ANIM_NAME>AUDIO_Push_MKR</ANIM_NAME>
-		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
-		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
-        </UseTemplate>
-        <UseTemplate Name="ASOBO_NAVCOM_Switch_DME_Sound_Template"><!--WAS PUSH-->
-          <NODE_ID>AUDIO_Push_DME</NODE_ID>
-          <ANIM_NAME>AUDIO_Push_DME</ANIM_NAME>
-          <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
-          <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
-        </UseTemplate>
+
         <UseTemplate Name="C152X_AUDIO_Switch_Speaker_Template"><!--WAS PUSH-->
           <NODE_ID>AUDIO_Push_SPKR</NODE_ID>
           <ANIM_NAME>AUDIO_Push_SPKR</ANIM_NAME>
+		  <EMISSIVE_CODE>
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 100 / }
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 2000 / }
+		  </EMISSIVE_CODE>
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
 		  <TT_DESCRIPTION_ID></TT_DESCRIPTION_ID>
 		  <TOOLTIP_TITLE></TOOLTIP_TITLE>
           <TOOLTIPID>Toggle CoPilot</TOOLTIPID>
-        </UseTemplate>
-        <UseTemplate Name="C152X_AUDIO_Switch_EXT_Template">
-          <NODE_ID>AUDIO_Push_EXT</NODE_ID>
-          <ANIM_NAME>AUDIO_Push_EXT</ANIM_NAME>
+        </UseTemplate>	  
+	  
+        <UseTemplate Name="ASOBO_NAVCOM_Switch_MARKER_Sound_Template"><!--WAS PUSH-->
+          <NODE_ID>AUDIO_Push_MKR</NODE_ID>
+          <ANIM_NAME>AUDIO_Push_MKR</ANIM_NAME>
+		  <EMISSIVE_CODE>
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:MARKER SOUND, Bool) 1 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 10 / }
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:MARKER SOUND, Bool) 0 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 50 / }
+		  </EMISSIVE_CODE>
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
-          <TOOLTIPID>Toggle Pilot</TOOLTIPID>
         </UseTemplate>
+		
+        <UseTemplate Name="ASOBO_NAVCOM_Switch_DME_Sound_Template"><!--WAS PUSH-->
+          <NODE_ID>AUDIO_Push_DME</NODE_ID>
+          <ANIM_NAME>AUDIO_Push_DME</ANIM_NAME>
+		  <EMISSIVE_CODE>
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:DME SOUND, Bool) 1 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 10 / }
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:DME SOUND, Bool) 0 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 50 / }
+		  </EMISSIVE_CODE>
+          <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+          <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
+        </UseTemplate>
+		
         <UseTemplate Name="ASOBO_NAVCOM_ADF_Sound_Template">
           <NODE_ID>AUDIO_Push_AOE</NODE_ID>
           <ANIM_NAME>AUDIO_Push_AOE</ANIM_NAME>
+		  <EMISSIVE_CODE>
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:ADF SOUND:1, Bool) 1 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 10 / }
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:ADF SOUND:1, Bool) 0 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 50 / }
+		  </EMISSIVE_CODE>
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
-        <UseTemplate Name="ASOBO_NAVCOM_Switch_NAV_Sound_Template"><!--WAS PUSH-->
-          <ID>1</ID>
-          <USE_EXCLUSIVE_ID>True</USE_EXCLUSIVE_ID>
-          <OTHER_ID>2</OTHER_ID>
-          <NODE_ID>AUDIO_Push_NAV_1</NODE_ID>
-          <ANIM_NAME>AUDIO_Push_NAV_1</ANIM_NAME>
-		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
-		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
-        </UseTemplate>
+
         <UseTemplate Name="ASOBO_NAVCOM_Switch_NAV_Sound_Template"><!--WAS PUSH-->
           <ID>2</ID>
           <USE_EXCLUSIVE_ID>True</USE_EXCLUSIVE_ID>
           <OTHER_ID>1</OTHER_ID>
           <NODE_ID>AUDIO_Push_NAV_2</NODE_ID>
           <ANIM_NAME>AUDIO_Push_NAV_2</ANIM_NAME>
+		  <EMISSIVE_CODE>
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:NAV SOUND:2, Bool) 1 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 10 / }
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:NAV SOUND:2, Bool) 0 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 50 / }
+		  </EMISSIVE_CODE>
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
+
+        <UseTemplate Name="ASOBO_NAVCOM_Switch_NAV_Sound_Template"><!--WAS PUSH-->
+          <ID>1</ID>
+          <USE_EXCLUSIVE_ID>True</USE_EXCLUSIVE_ID>
+          <OTHER_ID>2</OTHER_ID>
+          <NODE_ID>AUDIO_Push_NAV_1</NODE_ID>
+          <ANIM_NAME>AUDIO_Push_NAV_1</ANIM_NAME>
+		  <EMISSIVE_CODE>
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:NAV SOUND:1, Bool) 1 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 10 / }
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:NAV SOUND:1, Bool) 0 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 50 / }
+		  </EMISSIVE_CODE>
+		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
+        </UseTemplate>
+
         <UseTemplate Name="C152X_NAVCOM_Switch_BOTH_Sound_Template">
           <NODE_ID>AUDIO_Push_NAV_Both</NODE_ID>
+		  <!--<EMISSIVE_CODE>(A:CIRCUIT ON:11, Bool) 0 &gt; if{ (A:LIGHT POTENTIOMETER:5, Percent) 100 / } </EMISSIVE_CODE>-->
+		  <EMISSIVE_CODE>
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:COM RECEIVE ALL, Bool) 1 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 10 / }
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:COM RECEIVE ALL, Bool) 0 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 50 / }
+		  </EMISSIVE_CODE>
 		  <TOOLTIP_TITLE>COM RECEIVE ALL</TOOLTIP_TITLE>
 		  <BTN_ID>NAV_Sound_Both</BTN_ID>
           <ANIM_NAME>AUDIO_Push_NAV_Both</ANIM_NAME>
 		  <TOOLTIP_TITLE></TOOLTIP_TITLE>
           <TOOLTIPID>RECEIVE BOTH</TOOLTIPID>
         </UseTemplate>
-        <UseTemplate Name="JPL_GT_COM_Push_Transmit_Template"><!--WAS PUSH-->
-          <ID>1</ID>
-          <USE_EXCLUSIVE_ID>True</USE_EXCLUSIVE_ID>
-		  <OTHER_ID>2</OTHER_ID>
-          <INTERACTION_TYPE>Switch</INTERACTION_TYPE>
-          <NODE_ID>AUDIO_Push_MIC_1</NODE_ID>
-          <ANIM_NAME>AUDIO_Push_MIC_1</ANIM_NAME>
-		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
-		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
-        </UseTemplate>
+
         <UseTemplate Name="JPL_GT_COM_Push_Transmit_Template"><!--WAS PUSH-->
           <ID>2</ID>
 		  <USE_EXCLUSIVE_ID>True</USE_EXCLUSIVE_ID>
 		  <OTHER_ID>1</OTHER_ID>
           <INTERACTION_TYPE>Switch</INTERACTION_TYPE>
+		  <EMISSIVE_CODE>
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:COM RECEIVE:2, Bool) 1 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 100 / }
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:COM RECEIVE:2, Bool) 0 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 2000 / }
+		  </EMISSIVE_CODE>
           <NODE_ID>AUDIO_Push_MIC_2</NODE_ID>
           <ANIM_NAME>AUDIO_Push_MIC_2</ANIM_NAME>
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
         </UseTemplate>
+
+        <UseTemplate Name="JPL_GT_COM_Push_Transmit_Template"><!--WAS PUSH-->
+          <ID>1</ID>
+          <USE_EXCLUSIVE_ID>True</USE_EXCLUSIVE_ID>
+		  <OTHER_ID>2</OTHER_ID>
+          <INTERACTION_TYPE>Switch</INTERACTION_TYPE>
+		  <EMISSIVE_CODE>
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:COM RECEIVE:1, Bool) 1 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 100 / }
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(A:COM RECEIVE:1, Bool) 0 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 2000 / }
+		  </EMISSIVE_CODE>
+          <NODE_ID>AUDIO_Push_MIC_1</NODE_ID>
+          <ANIM_NAME>AUDIO_Push_MIC_1</ANIM_NAME>
+		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
+        </UseTemplate>
+
+        <UseTemplate Name="C152X_AUDIO_Switch_EXT_Template">
+          <NODE_ID>AUDIO_Push_EXT</NODE_ID>
+          <ANIM_NAME>AUDIO_Push_EXT</ANIM_NAME>
+		  <EMISSIVE_CODE>
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(L:XMLVAR_AUDIO_EXT_SEL, Bool) 1 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 100 / }
+			(A:CIRCUIT ON:11, Bool) 1 ==
+			(L:XMLVAR_AUDIO_EXT_SEL, Bool) 0 == and
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 2000 / }
+		  </EMISSIVE_CODE>
+		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
+		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
+          <TOOLTIPID>Toggle Pilot</TOOLTIPID>
+        </UseTemplate>
+
       </Component>
     </Component>
 
@@ -909,8 +1069,9 @@
         <ANIM_NAME>DME_Switch</ANIM_NAME>
         <PART_ID>DME_Switch</PART_ID>
         <CIRCUIT_ID>36</CIRCUIT_ID>
+		<TOOLTIPID>%((L:JPL152_DME_POWER, Bool))%{if}ON%{else}OFF%{end}</TOOLTIPID>
       </UseTemplate>
-      <UseTemplate Name="JPL_DME_Screens_Template">
+      <UseTemplate Name="JPL152_DME_Screens_Template">
         <ID>1</ID>
         <NODE_ID>DME_Screen</NODE_ID>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
@@ -943,7 +1104,7 @@
 			<NODE_ID>AUDIO_Knob_Dimming</NODE_ID>
 			<ANIM_NAME>AUDIO_Knob_Dimming</ANIM_NAME>
 		</UseTemplate>
-		-->
+		--><!--AUDIO_Knob_Dimming_Glareshield partid?
 		<UseTemplate Name="ASOBO_LIGHTING_Knob_Potentiometer_Template">
 			<NODE_ID>AUDIO_Knob_Dimming</NODE_ID>
 			<ANIM_NAME>AUDIO_Knob_Dimming</ANIM_NAME>
@@ -956,7 +1117,23 @@
 			<ANIMTIP_0>Night Nav Light (%((A:LIGHT POTENTIOMETER:4, Percent))%!d!%)</ANIMTIP_0>
 			<ANIMTIP_1>Night Nav Light (%((A:LIGHT POTENTIOMETER:4, Percent))%!d!%)</ANIMTIP_1>
 			<WWISE_EVENT>navcom_audio_volume_knob</WWISE_EVENT>
-		</UseTemplate>
+		</UseTemplate>-->
+		
+		<UseTemplate Name="JPL152_Light_Potentiometers">
+			<NODE_ID>AUDIO_Knob_Dimming</NODE_ID>
+			<ANIM_NAME>AUDIO_Knob_Dimming</ANIM_NAME>
+			<PART_ID>AUDIO_Knob_Dimming</PART_ID>
+			<LIGHT_TYPE>GLARESHIELD</LIGHT_TYPE>
+			<KNOB_POSITION_VAR>JPL152_Map_Light</KNOB_POSITION_VAR>
+			<SIMVAR>A:LIGHT POTENTIOMETER:4, Percent</SIMVAR>
+			<CIRCUIT_ID>16</CIRCUIT_ID>
+			<POTENTIOMETER>4</POTENTIOMETER>
+			<MINIMUM>0</MINIMUM>
+			<INIT_VALUE>0</INIT_VALUE>
+			<WWISE_EVENT>navcom_audio_volume_knob</WWISE_EVENT>
+			<TOOLTIPID>Map Light (%((A:LIGHT POTENTIOMETER:4, Percent))%!d!%)</TOOLTIPID>
+		</UseTemplate>		
+		
       <Component ID="OMI_Indicators">
         <DefaultTemplateParameters>
           <FAILURE>(A:CIRCUIT GENERAL PANEL ON, Bool)</FAILURE>
@@ -968,7 +1145,7 @@
     </Component>
 	
 	<Component ID="AUDIO_Switch_Intercom">	
-		<UseTemplate Name="JPL_IntercomSwitch">
+		<UseTemplate Name="JPL152_IntercomSwitch">
 			<MOUSEFLAGS>LeftSingle</MOUSEFLAGS>
             <Cursor>Hand</Cursor>
 			<SIMVAR>JPL152_APVIZ</SIMVAR>
@@ -981,7 +1158,7 @@
 	</Component>
 
     <Component ID="ANNUNCIATOR_TEST">
-      <UseTemplate Name="C152X_Annun_Test">
+      <UseTemplate Name="JPL152_Annun_Test">
         <NODE_ID>AUDIO_Switch_Test</NODE_ID>
         <ANIM_NAME>AUDIO_Switch_Test</ANIM_NAME>
         <PART_ID>AUDIO_Switch_Test</PART_ID>
@@ -989,6 +1166,29 @@
       </UseTemplate>
     </Component>
     <Component ID="Pilots_Visibility">
+      <Component ID="PILOT_0" Node="PILOT_0">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == 
+							(A:PAYLOAD STATION WEIGHT:1, Pounds) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 1 == and
+							(A:CAMERA STATE, Enum) 2 != (L:JPL_DOOR_PILOT) 0 == and or
+							(A:PAYLOAD STATION WEIGHT:1, pounds) 20 &gt; and
+		</VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+      <Component ID="PILOT_1" Node="PILOT_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>
+			(L:C152_CoPilotsState, Bool) 1 == 
+			if {	(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == 
+					(A:CAMERA STATE, Enum) 2 != and 
+					(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == or
+					(A:CAMERA STATE, Enum) 2 != 
+					(A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &gt; and or
+				}
+		  </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+	<!--
       <Component ID="PILOT_0" Node="PILOT_0">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
           <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, Pounds) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 1 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pounds) 20 &gt; and</VISIBILITY_CODE>
@@ -1007,7 +1207,7 @@
 		  </VISIBILITY_CODE>
         </UseTemplate>
       </Component>
-	    
+	  -->  
       <Component ID="AUTOPILOT_Frame_1" Node="AUTOPILOT_Frame_1">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
           <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
@@ -1183,115 +1383,140 @@
 			<NODE_ID>Breaker_ALT</NODE_ID>
 			<ANIM_NAME>Breaker_ALT</ANIM_NAME>
 		</UseTemplate>-->		
-		<UseTemplate Name="C152X_ALTERNATOR_Breaker">
+		<UseTemplate Name="JPL152_ALTERNATOR_Breaker">
 			<NODE_ID>Breaker_ALT</NODE_ID>
 			<ANIM_NAME>Breaker_ALT</ANIM_NAME>
 		</UseTemplate>				
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>3</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_FUELIND</NODE_ID>
 			<ANIM_NAME>Breaker_FUELIND</ANIM_NAME>
 		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>4</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_BCNPITOT</NODE_ID>
 			<ANIM_NAME>Breaker_BCNPITOT</ANIM_NAME>
 		</UseTemplate>	
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>5</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_STROBELTS</NODE_ID>
 			<ANIM_NAME>Breaker_STROBELTS</ANIM_NAME>
 		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>6</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_LDGLTS</NODE_ID>
 			<ANIM_NAME>Breaker_LDGLTS</ANIM_NAME>
 		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>7</BUS_INDEX>
+			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_FLAP</NODE_ID>
 			<ANIM_NAME>Breaker_FLAP</ANIM_NAME>
 		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>8</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_INSTLTS</NODE_ID>
 			<ANIM_NAME>Breaker_INSTLTS</ANIM_NAME>
 		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>9</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_NAVDOME</NODE_ID>
 			<ANIM_NAME>Breaker_NAVDOME</ANIM_NAME>
 		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>10</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RADIO_1</NODE_ID>
 			<ANIM_NAME>Breaker_RADIO_1</ANIM_NAME>
 			<TOOLTIPID>NAVCOM 1</TOOLTIPID>
 		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>11</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RADIO_2</NODE_ID>
 			<ANIM_NAME>Breaker_RADIO_2</ANIM_NAME>
 			<TOOLTIPID>NAVCOM 2</TOOLTIPID>
 		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>12</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RADIO_3</NODE_ID>
 			<ANIM_NAME>Breaker_RADIO_3</ANIM_NAME>
 			<TOOLTIPID>ADF, DME, XPNDR</TOOLTIPID>
 		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>13</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RADIO_4</NODE_ID>
 			<ANIM_NAME>Breaker_RADIO_4</ANIM_NAME>
 			<TOOLTIPID>Autopilot</TOOLTIPID>
 		</UseTemplate>	
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX>14</BUS_INDEX>
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX>16</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_0</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_0</ANIM_NAME>
 			<TOOLTIPID>inopérant</TOOLTIPID>
 		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>15</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_1</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_1/</ANIM_NAME>
+			<ANIM_NAME>Breaker_RIGHT_1</ANIM_NAME>
 			<TOOLTIPID>inopérant</TOOLTIPID>
 		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX>16</BUS_INDEX>
+		<!--
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
+			<BUS_INDEX>14</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_2</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_2/</ANIM_NAME>
-			<TOOLTIPID>inopérant</TOOLTIPID>
+			<ANIM_NAME>Breaker_RIGHT_2</ANIM_NAME>
+			<TOOLTIPID>%((A:BUS CONNECTION ON:14, Bool))%{if}STATE SAVING ON%{else}STATE SAVING OFF%{end}</TOOLTIPID>
 		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		-->
+		<UseTemplate Name="JPL152_SSONOFF">
+			<NODE_ID>Breaker_RIGHT_2</NODE_ID>
+			<ANIM_NAME>Breaker_RIGHT_2</ANIM_NAME>
+			<PART_ID>Breaker_RIGHT_2</PART_ID>
+			<CIRCUIT_ID></CIRCUIT_ID>
+		</UseTemplate>		
+		
+		<!--
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>17</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_3</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_3/</ANIM_NAME>
 			<TOOLTIPID>inopérant</TOOLTIPID>
 		</UseTemplate>
-		<UseTemplate Name="C152X_ELECTRICAL_Switch_Breaker_Template">
+		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>18</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_4</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_4/</ANIM_NAME>
 			<TOOLTIPID>inopérant</TOOLTIPID>
-		</UseTemplate>	
+		</UseTemplate>
+		-->
+		<!-- bottom left, ready for flight -->
+		<UseTemplate Name="JPL152_RFF">
+			<NODE_ID>Breaker_RIGHT_3</NODE_ID>
+			<ANIM_NAME>Breaker_RIGHT_3</ANIM_NAME>
+			<PART_ID>Breaker_RIGHT_3</PART_ID>
+			<CIRCUIT_ID></CIRCUIT_ID>
+		</UseTemplate>
+		<!-- bottom right, cold and dark -->
+		<UseTemplate Name="JPL152_CAD">
+			<NODE_ID>Breaker_RIGHT_4</NODE_ID>
+			<ANIM_NAME>Breaker_RIGHT_4</ANIM_NAME>
+			<PART_ID>Breaker_RIGHT_4</PART_ID>
+			<CIRCUIT_ID></CIRCUIT_ID>
+		</UseTemplate>
 	</Component>
   </Behaviors>
 </ModelInfo>

@@ -90,7 +90,43 @@
 			</UseTemplate>
 		</Component>
 	<!--#################################################-->
-		<Component ID="WHITE_SMOKE">
+	<!--
+		<Component ID="DOWNWASH_FX">
+			<Component ID="DOWNWASH_1_NODE" Node="nose_cone_still">
+				<UseTemplate Name="ASOBO_GT_FX">
+					<FX_CODE>(A:GENERAL ENG COMBUSTION:1, bool) 1 ==</FX_CODE>
+					<FX_ROTATION_OFFSET_B>45.0</FX_ROTATION_OFFSET_B>
+					<FX_ROTATION_OFFSET_P>45.0</FX_ROTATION_OFFSET_P>
+					<FX_ROTATION_OFFSET_H>45.0</FX_ROTATION_OFFSET_H>
+					<FX_GUID>{936C9B32-A095-47F6-9619-15D8EE073614}</FX_GUID>
+					<FX_NAME>FX_EXHAUST_RIGHT1</FX_NAME>
+				</UseTemplate>
+			</Component>
+		</Component>
+	-->	
+		<Component ID="LARGE_SMOKE">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{2e2d7a61-5053-48c9-b2db-dbbc50251226}</FX_GUID>
+					<FX_NAME>pbk_smoke_L</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="FX_LARGE_SMOKE" Node="nose_cone_still">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>
+		<Component ID="MED_SMOKE">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{f37958e8-4433-471d-9c01-0851638b8032}</FX_GUID>
+					<FX_NAME>pbk_smoke_M</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="FX_MED_SMOKE" Node="nose_cone_still">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>
+		<!--<Component ID="WHITE_SMOKE">
 			<OverrideTemplateParameters>
 					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
 					<FX_GUID>{F42CE638-11EB-4FC8-B9B0-111A220D681F}</FX_GUID>
@@ -111,7 +147,54 @@
 				<UseTemplate Name="ASOBO_GT_FX">
 				</UseTemplate>
 			</Component>
+		</Component>-->
+		
+		<!--
+		<Component ID="exhaust1">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:GENERAL ENG COMBUSTION:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{0E34B3D6-1462-4044-8F14-BCF1678FFD10}</FX_GUID>
+					<FX_NAME>FX_EXHAUST1</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="FX_EXHAUST1" Node="LIGHT_ASOBO_NavigationRed">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
 		</Component>
+
+		<Component ID="exhaust2">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:GENERAL ENG COMBUSTION:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{E9883850-53DE-439C-9313-40E38D8F5199}</FX_GUID>
+					<FX_NAME>FX_EXHAUST2</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="FX_EXHAUST2" Node="LIGHT_ASOBO_NavigationGreen">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>
+		
+		<Component ID="FX1_LOW_ALTITUDE">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:GENERAL ENG COMBUSTION:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{C8FB3147-D775-4CD1-AC8F-AEB717924F86}</FX_GUID>
+					<FX_NAME>LOW_ALTITUDE</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="LOW_ALTITUDE" Node="CenterLeg.001">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>		
+		<Component ID = "FX1_LOW_ALTITUDE">
+			<Parameters Type="Override">
+				<FX_GRAPH_PARAM_0>part_size_clamp, 23</FX_GRAPH_PARAM_0>
+			</Parameters>
+			<UseTemplate Name="ASOBO_FX_LOW_ALTITUDE_DUST">
+				<FX_GUID>{C8FB3147-D775-4CD1-AC8F-AEB717924F86}</FX_GUID>
+			</UseTemplate>
+		</Component>
+		-->
+		
 		<Component ID="LANDING_FX">
 			<UseTemplate Name="ASOBO_LANDING_FX"/>
 		</Component>
