@@ -1,7 +1,6 @@
 <Timestamps>
 	<Entry Path="VisualEffectLibs\touchingcloud\touchingcloud-effect-downwash\Downwash water_edition.spb" Timestamp="13279787455"/>
 	<Entry Path="ModelBehaviorDefs\C152X\toRemove\InstrumentOld.xml" Timestamp="13270964426"/>
-	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\JPL152IP.pln" Timestamp="13280767420"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Fonts\QUARTZIT.TTF" Timestamp="13273362128"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\oldjs\JPL152IP - Copy (2).js" Timestamp="13279508198"/>
 	<Entry Path="Effects\LIGHT_C152_CabinBounceSmall.fx" Timestamp="13270366102"/>
@@ -11,8 +10,9 @@
 	<Entry Path="VisualEffectLibs\pbk-effects\Smoke\pbk_smoke_M.spb" Timestamp="13280576330"/>
 	<Entry Path="VisualEffectLibs\touchingcloud\touchingcloud-effect-downwash\Downwash sand.spb" Timestamp="13279787455"/>
 	<Entry Path="Effects\texture\FX_ulm02.PNG.dds" Timestamp="13270366102"/>
-	<Entry Path="ModelBehaviorDefs\C152X\Breakers.xml" Timestamp="13281181123"/>
-	<Entry Path="ModelBehaviorDefs\C152X\Lighting.xml" Timestamp="13281182312"/>
+	<Entry Path="ModelBehaviorDefs\C152X\Breakers.xml" Timestamp="13281272825"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\oldjs\JPL152IP.js" Timestamp="13281483441"/>
+	<Entry Path="ModelBehaviorDefs\C152X\Lighting.xml" Timestamp="13281598609"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Fonts\DME.TTF" Timestamp="13270366102"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Radios\KX155A\KX155A.css" Timestamp="13273363228"/>
 	<Entry Path="Effects\texture\FX_ulm01.PNG.dds" Timestamp="13270366102"/>
@@ -24,15 +24,16 @@
 	<Entry Path="Effects\texture\FX_ulm04.PNG.DDS" Timestamp="13270366102"/>
 	<Entry Path="VisualEffectLibs\touchingcloud\touchingcloud-effect-downwash\Downwash sand_edition.spb" Timestamp="13279787455"/>
 	<Entry Path="ModelBehaviorDefs\C152X\EngineStart.xml" Timestamp="13280796341"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\JPL152IPdel.js" Timestamp="13281485577"/>
 	<Entry Path="Effects\LIGHT_C152_Gauge.fx" Timestamp="13268954305"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Autopilots\KAP140\KAP140 - Copy.css" Timestamp="13273018356"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Autopilots\KAP140\KAP140.html" Timestamp="13271565790"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\JPLDME.js" Timestamp="13272354218"/>
 	<Entry Path="VisualEffectLibs\pbk-effects\Smoke\pbk_smoke_L.spb" Timestamp="13280576330"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB.html" Timestamp="13270366102"/>
-	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\JPL152IP.js" Timestamp="13280995708"/>
-	<Entry Path="ModelBehaviorDefs\C152X\Index.xml" Timestamp="13280771458"/>
-	<Entry Path="ModelBehaviorDefs\C152X\Instrument.xml" Timestamp="13281180519"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\JPL152IP.js" Timestamp="13281605822"/>
+	<Entry Path="ModelBehaviorDefs\C152X\Index.xml" Timestamp="13281228185"/>
+	<Entry Path="ModelBehaviorDefs\C152X\Instrument.xml" Timestamp="13281478750"/>
 	<Entry Path="Effects\LIGHT_C152_ScreenOrange.fx" Timestamp="13275226636"/>
 	<Entry Path="Effects\LIGHT_C152_NavigationWhite.fx" Timestamp="13270366102"/>
 	<Entry Path="Effects\LIGHT_C152_GaugeSmall.fx" Timestamp="13268954836"/>
@@ -42,10 +43,10 @@
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Radios\KR87\KR87.js" Timestamp="13276160323"/>
 	<Entry Path="VisualEffectLibs\pbk-effects\Smoke\pbk_smoke_S.spb" Timestamp="13280576330"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Radios\KX155A\KX155A.js" Timestamp="13271565790"/>
-	<Entry Path="ModelBehaviorDefs\C152X\EngineTroubles.xml" Timestamp="13281004323"/>
+	<Entry Path="ModelBehaviorDefs\C152X\EngineTroubles.xml" Timestamp="13281602653"/>
 	<Entry Path="Effects\texture\fx_ulm02.png.DDS.FLAGS" Timestamp="13270366102"/>
 	<Entry Path="Effects\texture\FX_ulm03.PNG.DDS.json" Timestamp="13270366102"/>
-	<Entry Path="ModelBehaviorDefs\C152X\Animations.xml" Timestamp="13280789897"/>
+	<Entry Path="ModelBehaviorDefs\C152X\Animations.xml" Timestamp="13281601232"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Radios\KR87\KR87.html" Timestamp="13273238584"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\JPLDME.html" Timestamp="13270366102"/>
 	<Entry Path="Effects\texture\fx_ulm01.png.DDS.FLAGS" Timestamp="13270366102"/>
@@ -65,12 +66,12 @@
 	<Entry Path="Effects\texture\FX_ulm03.PNG.dds" Timestamp="13270366102"/>
 	<Entry Path="Effects\texture\fx_ulm03.png.DDS.FLAGS" Timestamp="13270366102"/>
 	<Entry Path="Effects\LIGHT_C152_StrobeSimple.fx" Timestamp="13270366102"/>
-	<Entry Path="ModelBehaviorDefs\C152X\NavComSystem.xml" Timestamp="13281181807"/>
+	<Entry Path="ModelBehaviorDefs\C152X\NavComSystem.xml" Timestamp="13281267144"/>
 	<Entry Path="Effects\LIGHT_C152_StrobeDouble.fx" Timestamp="13274172841"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB.css" Timestamp="13270366102"/>
 	<Entry Path="version.txt" Timestamp="13281177216"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Radios\KX155A\KX155A.html" Timestamp="13271565790"/>
-	<Entry Path="ModelBehaviorDefs\C152X\JPL152_ADF.xml" Timestamp="13281186315"/>
+	<Entry Path="ModelBehaviorDefs\C152X\JPL152_ADF.xml" Timestamp="13281672460"/>
 	<Entry Path="Effects\LIGHT_C152_CockpitSpot.fx" Timestamp="13272618624"/>
 	<Entry Path="ModelBehaviorDefs\C152X\toRemove\LightingOld.xml" Timestamp="13270964426"/>
 	<Entry Path="VisualEffectLibs\touchingcloud\touchingcloud-effect-downwash\Downwash water.spb" Timestamp="13279787455"/>
@@ -79,7 +80,7 @@
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\oldjs\JPL152IP - Copy.js" Timestamp="13279495405"/>
 	<Entry Path="ModelBehaviorDefs\C152X\Subtemplates\Instrument_Subtemplates.xml" Timestamp="13270964426"/>
 	<Entry Path="VisualEffectLibs\pbk-effects\Smoke\pbk_smoke_XL.spb" Timestamp="13280576330"/>
-	<Entry Path="ModelBehaviorDefs\C152X\JPL152_KAP140.xml" Timestamp="13280771506"/>
+	<Entry Path="ModelBehaviorDefs\C152X\JPL152_KAP140.xml" Timestamp="13281336549"/>
 	<Entry Path="Effects\LIGHT_C152_BeaconTop.fx" Timestamp="13270366102"/>
 	<Entry Path="VisualEffectLibs\touchingcloud\touchingcloud-effect-downwash\VisualEffectLibrary.xml" Timestamp="13279787455"/>
 </Timestamps>

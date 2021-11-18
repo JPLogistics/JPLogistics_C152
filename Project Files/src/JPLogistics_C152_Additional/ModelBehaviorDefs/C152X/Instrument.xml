@@ -10,10 +10,6 @@
       #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
       }
     </Update>
-      <ANIMTIP_0_ON_PERCENT>0</ANIMTIP_0_ON_PERCENT>
-      <ANIMTIP_1_ON_PERCENT>1</ANIMTIP_1_ON_PERCENT>
-      <ANIMTIP_0>DME ON</ANIMTIP_0>
-      <ANIMTIP_1>DME OFF</ANIMTIP_1>
       <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
         <LEFT_SINGLE_CODE>
           (L:JPL152_DME_POWER) ! (&gt;L:JPL152_DME_POWER)
@@ -57,6 +53,7 @@
     </UseTemplate>
   </Component>
 </Template>
+
 <Template Name="JPL_EFB_Screens_Template">
   <Parameters Type="Default">
     <ID>1</ID>
@@ -91,7 +88,6 @@
 		<WWISE_EVENT_1>audio_switch_intercom</WWISE_EVENT_1>
 		<WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2>
 	</DefaultTemplateParameters>
-
 	<Component ID="#NODE_ID#" Node="#NODE_ID#">
 		<MouseRect>
 			<MOUSEFLAGS>#MOUSEFLAGS#</MOUSEFLAGS>
@@ -103,7 +99,7 @@
 					if{
 					(M:Event) 'LeftSingle' scmi 0 == if{
 					(#SIMVAR_PREFIX#:#SIMVAR#,bool) ! (&gt;#SIMVAR_PREFIX#:#SIMVAR#,bool)
-					} 
+					}
 					}
 				</Code>
 			</CallbackCode>
@@ -114,7 +110,6 @@
 		<ANIM_CODE>(#SIMVAR_PREFIX#:#SIMVAR#,bool) #ANIM_LENGTH# *</ANIM_CODE>
 	</UseTemplate>
 	<UseTemplate Name = "ASOBO_GT_AnimTriggers_2SoundEvents"/>
-			
 	<Update Frequency = "1">
 		(L:JPL152_APVIZ) 0 &gt;
 		(A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Boolean) ! and if{ #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE) }

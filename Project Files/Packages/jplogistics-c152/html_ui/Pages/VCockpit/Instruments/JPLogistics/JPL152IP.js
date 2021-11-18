@@ -24,17 +24,17 @@ class JPL152IP extends BaseInstrument {
 	this.baggage1 = GetStoredData('JPL152IP_BAGGAGE1_'+this.livery) ? GetStoredData('JPL152IP_BAGGAGE1_'+this.livery) : 0;
 	this.baggage2 = GetStoredData('JPL152IP_BAGGAGE2_'+this.livery) ? GetStoredData('JPL152IP_BAGGAGE2_'+this.livery) : 0;
 	//------------------------------------HANDLING
-	this.trim = GetStoredData('JPL152IP_TRIM_'+this.livery) ? GetStoredData('JPL152IP_TRIM_'+this.livery) : 1;
+	this.trim = GetStoredData('JPL152IP_TRIM_'+this.livery) ? GetStoredData('JPL152IP_TRIM_'+this.livery) : -0.003;
 	this.flaps = GetStoredData('JPL152IP_FLAPS_'+this.livery) ? GetStoredData('JPL152IP_FLAPS_'+this.livery) : 0;
 	this.flapsL = GetStoredData('JPL152IP_FLAPSL_'+this.livery) ? GetStoredData('JPL152IP_FLAPSL_'+this.livery) : 0;
 	this.flapsR = GetStoredData('JPL152IP_FLAPSR_'+this.livery) ? GetStoredData('JPL152IP_FLAPSR_'+this.livery) : 0;
 	//-------------------------------------KNOBS
 	this.headingBug = GetStoredData('JPL152IP_HEADINGBUG_'+this.livery) ? GetStoredData('JPL152IP_HEADINGBUG_'+this.livery) : 0;
 	this.obs1 = GetStoredData('JPL152IP_OBS1_'+this.livery) ? GetStoredData('JPL152IP_OBS1_'+this.livery) : 55;
-	this.obs2 = GetStoredData('JPL152IP_OBS2_'+this.livery) ? GetStoredData('JPL152IP_OBS2_'+this.livery) : 55;
+	this.obs2 = GetStoredData('JPL152IP_OBS2_'+this.livery) ? GetStoredData('JPL152IP_OBS2_'+this.livery) : 137;
 	this.panelknob = GetStoredData('JPL152IP_PANELKNOB_'+this.livery) ? GetStoredData('JPL152IP_PANELKNOB_'+this.livery) : 15;
-	this.radioknob = GetStoredData('JPL152IP_RADIOKNOB_'+this.livery) ? GetStoredData('JPL152IP_RADIOKNOB_'+this.livery) : 15;
-	this.mapknob = GetStoredData('JPL152IP_MAPKNOB_'+this.livery) ? GetStoredData('JPL152IP_MAPKNOB_'+this.livery) : 15;
+	this.radioknob = GetStoredData('JPL152IP_RADIOKNOB_'+this.livery) ? GetStoredData('JPL152IP_RADIOKNOB_'+this.livery) : 75;
+	this.mapknob = GetStoredData('JPL152IP_MAPKNOB_'+this.livery) ? GetStoredData('JPL152IP_MAPKNOB_'+this.livery) : 0;
 	//-----------------------------------SWITCHES
 	this.pitot = GetStoredData('JPL152IP_PITOT_'+this.livery) ? GetStoredData('JPL152IP_PITOT_'+this.livery) : 0;
 	this.nav = GetStoredData('JPL152IP_NAV_'+this.livery) ? GetStoredData('JPL152IP_NAV_'+this.livery) : 0;
@@ -64,10 +64,10 @@ class JPL152IP extends BaseInstrument {
 	this.nav1vol = GetStoredData('JPL152IP_NAV1VOL_'+this.livery) ? GetStoredData('JPL152IP_NAV1VOL_'+this.livery) : 100;
 	this.nav2vol = GetStoredData('JPL152IP_NAV2VOL_'+this.livery) ? GetStoredData('JPL152IP_NAV2VOL_'+this.livery) : 100;
 	//---------------------------------------ADF
-	this.adfvol = GetStoredData('JPL152IP_ADFVOL_'+this.livery) ? GetStoredData('JPL152IP_ADFVOL_'+this.livery) : 50;
+	this.adfvol = GetStoredData('JPL152IP_ADFVOL_'+this.livery) ? GetStoredData('JPL152IP_ADFVOL_'+this.livery) : 0;
 	this.adfact = GetStoredData('JPL152IP_ADFACT_'+this.livery) ? GetStoredData('JPL152IP_ADFACT_'+this.livery) : 104700; //must be set to hz
 	this.adfstby = GetStoredData('JPL152IP_ADFSTBY_'+this.livery) ? GetStoredData('JPL152IP_ADFSTBY_'+this.livery) : 104700; //must be set to hz
-	this.adfcard = GetStoredData('JPL152IP_ADFCARD_'+this.livery) ? GetStoredData('JPL152IP_ADFCARD_'+this.livery) : 55;
+	this.adfcard = GetStoredData('JPL152IP_ADFCARD_'+this.livery) ? GetStoredData('JPL152IP_ADFCARD_'+this.livery) : 322;
 	//-----------------------------------AUDIO BUTTONS
 	this.pilottrans = GetStoredData('JPL152IP_PILOTTRANS_'+this.livery) ? GetStoredData('JPL152IP_PILOTTRANS_'+this.livery) : 0;
 	this.btncom1 = GetStoredData('JPL152IP_BTNCOM1_'+this.livery) ? GetStoredData('JPL152IP_BTNCOM1_'+this.livery) : 1;
@@ -81,7 +81,7 @@ class JPL152IP extends BaseInstrument {
 	this.btnspkr = GetStoredData('JPL152IP_BTNSPKR_'+this.livery) ? GetStoredData('JPL152IP_BTNSPKR_'+this.livery) : 1;
 	//----------------------------------------TRANSPONDER
 	this.xpndrcode = GetStoredData('JPL152IP_XPNDERCODE_'+this.livery) ? GetStoredData('JPL152IP_XPNDERCODE_'+this.livery) : 2435;
-	this.xpndrstate = GetStoredData('JPL152IP_XPNDERSTATE_'+this.livery) ? GetStoredData('JPL152IP_XPNDERSTATE_'+this.livery) : 4;
+	this.xpndrstate = GetStoredData('JPL152IP_XPNDERSTATE_'+this.livery) ? GetStoredData('JPL152IP_XPNDERSTATE_'+this.livery) : 1;
 	//----------------------------------------MISC
 	this.yoke1 = GetStoredData('JPL152IP_YOKE1_'+this.livery) ? GetStoredData('JPL152IP_YOKE1_'+this.livery) : 0;
 	this.yoke2 = GetStoredData('JPL152IP_YOKE2_'+this.livery) ? GetStoredData('JPL152IP_YOKE2_'+this.livery) : 0;
@@ -101,9 +101,9 @@ class JPL152IP extends BaseInstrument {
 	this.cabheat = GetStoredData('JPL152IP_CABHEAT_'+this.livery) ? GetStoredData('JPL152IP_CABHEAT_'+this.livery) : 70;
 	this.throttle = GetStoredData('JPL152IP_THROTTLE_'+this.livery) ? GetStoredData('JPL152IP_THROTTLE_'+this.livery) : 0;
 	this.mixture = GetStoredData('JPL152IP_MIXTURE_'+this.livery) ? GetStoredData('JPL152IP_MIXTURE_'+this.livery) : 0;
-	this.parkingbrake = GetStoredData('JPL152IP_PARKINGBRAKE_'+this.livery) ? GetStoredData('JPL152IP_PARKINGBRAKE_'+this.livery) : 1;
+	this.parkingbrake = GetStoredData('JPL152IP_PARKINGBRAKE_'+this.livery) ? GetStoredData('JPL152IP_PARKINGBRAKE_'+this.livery) : 0;
 	//--------------------------------------BREAKERS 3-13
-	this.altbreaker = GetStoredData('JPL152IP_ALTBREAKER_'+this.livery) ? GetStoredData('JPL152IP_ALTBREAKER_'+this.livery) : 0;
+	this.altbreaker = GetStoredData('JPL152IP_ALTBREAKER_'+this.livery) ? GetStoredData('JPL152IP_ALTBREAKER_'+this.livery) : 1;
 	this.breaker3 = GetStoredData('JPL152IP_BREAKER3_'+this.livery) ? GetStoredData('JPL152IP_BREAKER3_'+this.livery) : 1;
 	this.breaker4 = GetStoredData('JPL152IP_BREAKER4_'+this.livery) ? GetStoredData('JPL152IP_BREAKER4_'+this.livery) : 1;
 	this.breaker5 = GetStoredData('JPL152IP_BREAKER5_'+this.livery) ? GetStoredData('JPL152IP_BREAKER5_'+this.livery) : 1;
@@ -123,6 +123,7 @@ class JPL152IP extends BaseInstrument {
 	this.simonground = GetStoredData('JPL152IP_SIMONGROUND_'+this.livery) ? GetStoredData('JPL152IP_SIMONGROUND_'+this.livery) : 1;
 	this.onparkingspot = GetStoredData('JPL152IP_ONPARKINGSPOT_'+this.livery) ? GetStoredData('JPL152IP_ONPARKINGSPOT_'+this.livery) : 3;
 	this.ssonoff = GetStoredData('JPL152IP_SSONOFF_'+this.livery) ? GetStoredData('JPL152IP_SSONOFF_'+this.livery) : 0;  // 0 = ON
+	this.engmaintonoff = GetStoredData('JPL152IP_ENGMAINTONOFF_'+this.livery) ? GetStoredData('JPL152IP_ENGMAINTONOFF_'+this.livery) : 0;  // 0 = ON
   }
 
   //load the gauge template - found in JPL152IP.HTML
@@ -134,8 +135,8 @@ class JPL152IP extends BaseInstrument {
 	
     // var reset = resetState();
     function resetState() {
-      DeleteStoredData('JPL152IP_CARBHEAT_'+this.livery);
-	  DeleteStoredData('JPL152IP_CABAIR_'+this.livery);
+      DeleteStoredData('JPL152IP_VISOR1_'+this.livery);
+	  DeleteStoredData('JPL152IP_VISOR2_'+this.livery);
 	  DeleteStoredData('JPL152IP_CABHEAT_'+this.livery);
 	}
 	
@@ -146,10 +147,12 @@ class JPL152IP extends BaseInstrument {
     super.onFlightStart();
 
     //set the variables that we need to wait for the flight to load
-	//STATE SAVING SWITCH LEFT OUTSIDE OF OPTION, AS IS OIL QUANTITY OR IT RESETS TO ZER0
+	//STATE SAVING AND MAINTENANCE SWITCHES LEFT OUTSIDE OF GENERAL STATESAVING. MAINTENANCE TYPE TIMERS CONTROLLED THROUGH XML
 	SimVar.SetSimVarValue("L:JPL152_SSONOFF", "bool", Number(this.ssonoff));
+	SimVar.SetSimVarValue("L:JPL152_MAINTENANCE_ONOFF", "number", Number(this.engmaintonoff));
 	SimVar.SetSimVarValue("L:JPL152_OILREM", "number", Number(this.engoil));
 	SimVar.SetSimVarValue("L:JPL152_MAINTENANCE_TIME", "number", Number(this.engmaintenance));
+	SimVar.SetSimVarValue("L:JPL152_FOULING_TIME", "number", Number(this.plugFouling));
 
 	if (GetStoredData('JPL152IP_SSONOFF_'+this.livery) == 0) { //START STATE SAVING ON/OFF
 	
@@ -215,7 +218,12 @@ class JPL152IP extends BaseInstrument {
 		SimVar.SetSimVarValue("K:RADIO_VOR2_IDENT_SET", "number", Number(this.btnnav2));
 		SimVar.SetSimVarValue("K:RADIO_ADF_IDENT_SET", "number", Number(this.btnadf));
 		SimVar.SetSimVarValue("K:RADIO_DME1_IDENT_SET", "number", Number(this.btndme)); //this looks like it could be set to dme1,dme2, or selected dme if needed
-		SimVar.SetSimVarValue("K:MARKER_SOUND_TOGGLE", "number", Number(this.btnmkr));
+		
+		if (GetStoredData('JPL152IP_BTNMKR_'+this.livery) == 1 && SimVar.GetSimVarValue("MARKER SOUND", "bool") == 0) {
+				SimVar.SetSimVarValue("K:MARKER_SOUND_TOGGLE", "number", 1); }
+		// SimVar.SetSimVarValue("K:MARKER_SOUND_TOGGLE", "number", Number(this.btnmkr));
+		
+		
 		SimVar.SetSimVarValue("L:XMLVAR_AUDIO_SPKR_SEL", "number", Number(this.btnspkr));
 		//----------------------------------------TRANSPONDER
 		SimVar.SetSimVarValue("TRANSPONDER CODE:1", "BCO16", Number(this.xpndrcode));
@@ -229,17 +237,16 @@ class JPL152IP extends BaseInstrument {
 		SimVar.SetSimVarValue("L:JPL_DOOR_COPILOT", "number", Number(this.door2));
 		SimVar.SetSimVarValue("L:JPL_WINDOW_COPILOT", "number", Number(this.window2));
 		SimVar.SetSimVarValue("L:JPL152_VISOR_COPILOT", "position 16k", Number(this.visor2));
-		SimVar.SetSimVarValue("L:JPL152_ELAPSED_TIME", "number", Number(this.plugFouling));
 		//---------------------------------------LEVERS
 		SimVar.SetSimVarValue("K:ANTI_ICE_GRADUAL_SET_ENG1", "position 16k", Number(this.carbheat));
 		SimVar.SetSimVarValue("L:XMLVAR_CABIN_AIR_1_POSITION", "number", Number(this.cabair));
 		SimVar.SetSimVarValue("L:XMLVAR_CABIN_HEAT_1_POSITION", "number", Number(this.cabheat));
-		if (GetStoredData('JPL152IP_PARKINGBRAKE_'+this.livery) == 3 && SimVar.GetSimVarValue("BRAKE INDICATOR", "position") == 0) {
-				SimVar.SetSimVarValue("K:PARKING_BRAKES", "number", 1); }
+		if (GetStoredData('JPL152IP_PARKINGBRAKE_'+this.livery) == 1 && SimVar.GetSimVarValue("BRAKE PARKING INDICATOR", "bool") == 0) {
+				SimVar.SetSimVarValue("K:PARKING_BRAKES", "number", 0); }
 		//--------------------------------------BREAKERS 3-13
-		//SimVar.SetSimVarValue("ALTERNATOR CONNECTION ON:1", "bool", Number(this.altbreaker)); //having odd effect?
-		if (GetStoredData('JPL152IP_ALTBREAKER_'+this.livery) == 0 && SimVar.GetSimVarValue("ALTERNATOR CONNECTION ON:1", "bool") == 1) {
-				(SimVar.SetSimVarValue("K:ELECTRICAL_ALTERNATOR_BREAKER_TOGGLE", "number", 1) && SimVar.SetSimVarValue("L:JPL152_ALT_BREAKER", "number", 1)); }
+		SimVar.SetSimVarValue("L:JPL152_ALT_BREAKER", "number", 0); //having odd effect?
+		//if (GetStoredData('JPL152IP_ALTBREAKER_'+this.livery) == 0 && SimVar.GetSimVarValue("ALTERNATOR CONNECTION ON:1", "bool") == 1) {
+		//		(SimVar.SetSimVarValue("K:ELECTRICAL_ALTERNATOR_BREAKER_TOGGLE", "number", 1) && SimVar.SetSimVarValue("L:JPL152_ALT_BREAKER", "number", 0)); }
 		SimVar.SetSimVarValue("BUS CONNECTION ON:3", "bool", Number(this.breaker3));
 		SimVar.SetSimVarValue("BUS CONNECTION ON:4", "bool", Number(this.breaker4));
 		SimVar.SetSimVarValue("BUS CONNECTION ON:5", "bool", Number(this.breaker5));
@@ -301,10 +308,14 @@ class JPL152IP extends BaseInstrument {
 		// ALWAYS RECORDED
 		var ssonoff = SimVar.GetSimVarValue("L:JPL152_SSONOFF", "bool");
 		SetStoredData('JPL152IP_SSONOFF_'+planeId, ssonoff.toString());
+		var engmaintonoff = SimVar.GetSimVarValue("L:JPL152_MAINTENANCE_ONOFF", "bool");
+		SetStoredData('JPL152IP_ENGMAINTONOFF_'+planeId, engmaintonoff.toString());
 		var engoil = SimVar.GetSimVarValue("L:JPL152_OILREM", "number");
 		SetStoredData('JPL152IP_ENGOIL_'+planeId, engoil.toString());
 		var engmaintenance = SimVar.GetSimVarValue("L:JPL152_MAINTENANCE_TIME", "number");
 		SetStoredData('JPL152IP_ENGMAINTENANCE_'+planeId, engmaintenance.toString());
+		var plugFouling = SimVar.GetSimVarValue("L:JPL152_FOULING_TIME", "number");
+		SetStoredData('JPL152IP_PLUG_FOUL_'+planeId, plugFouling.toString());
 		
 		if (GetStoredData('JPL152IP_SSONOFF_'+planeId) == 0) { //START STATE SAVING ON/OFF
 		
@@ -369,7 +380,7 @@ class JPL152IP extends BaseInstrument {
 			SetStoredData('JPL152IP_FUELVALVE_'+planeId, fuelvalve.toString());
 			var APViz = SimVar.GetSimVarValue("L:JPL152_APVIZ", "number");
 			SetStoredData('JPL152IP_APVIZ_'+planeId, APViz.toString());
-			var dmeswitch = SimVar.GetSimVarValue("L:DME_POWER", "number");
+			var dmeswitch = SimVar.GetSimVarValue("L:JPL152_DME_POWER", "number");
 			SetStoredData('JPL152IP_DMESWITCH_'+planeId, dmeswitch.toString());
 			var magnetoL = SimVar.GetSimVarValue("RECIP ENG LEFT MAGNETO:1", "bool");
 			SetStoredData('JPL152IP_MAGNETOL_'+planeId, magnetoL.toString());
@@ -419,7 +430,7 @@ class JPL152IP extends BaseInstrument {
 			SetStoredData('JPL152IP_BTNCOM1_'+planeId, btncom1.toString());
 			var btncom2 = SimVar.GetSimVarValue("COM RECEIVE:2", "bool");
 			SetStoredData('JPL152IP_BTNCOM2_'+planeId, btncom2.toString());
-			var btnboth = SimVar.GetSimVarValue("COM RECEIVE ALL", "bool");
+			var btnboth = SimVar.GetSimVarValue("COM RECIEVE ALL", "bool");
 			SetStoredData('JPL152IP_BTNBOTH_'+planeId, btnboth.toString());
 			var pilottrans = SimVar.GetSimVarValue("COM RECEIVE:2", "bool");
 			SetStoredData('JPL152IP_PILOTTRANS_'+planeId, pilottrans.toString());
@@ -431,7 +442,7 @@ class JPL152IP extends BaseInstrument {
 			SetStoredData('JPL152IP_BTNADF_'+planeId, btnadf.toString());
 			var btndme = SimVar.GetSimVarValue("DME SOUND", "bool");
 			SetStoredData('JPL152IP_BTNDME_'+planeId, btndme.toString());
-			var btnmkr = SimVar.GetSimVarValue("K:MARKER_SOUND_TOGGLE", "number");
+			var btnmkr = SimVar.GetSimVarValue("MARKER SOUND", "bool");
 			SetStoredData('JPL152IP_BTNMKR_'+planeId, btnmkr.toString());
 			var btnspkr = SimVar.GetSimVarValue("L:XMLVAR_AUDIO_SPKR_SEL", "number");
 			SetStoredData('JPL152IP_BTNSPKR_'+planeId, btnspkr.toString());
@@ -459,9 +470,6 @@ class JPL152IP extends BaseInstrument {
 			SetStoredData('JPL152IP_WINDOW2_'+planeId, window2.toString());
 			var visor2 = SimVar.GetSimVarValue("L:JPL152_VISOR_COPILOT", "position 16k");
 			SetStoredData('JPL152IP_VISOR2_'+planeId, visor2.toString());
-			var plugFouling = SimVar.GetSimVarValue("L:JPL152_ELAPSED_TIME", "number");
-			SetStoredData('JPL152IP_PLUG_FOUL_'+planeId, plugFouling.toString());
-
 		
 			//----------------------------------LEVERS
 			var carbheat = SimVar.GetSimVarValue("A:GENERAL ENG ANTI ICE POSITION:1", "position 16k");
@@ -474,7 +482,7 @@ class JPL152IP extends BaseInstrument {
 			SetStoredData('JPL152IP_THROTTLE_'+planeId, throttle.toString());
 			var mixture = SimVar.GetSimVarValue("GENERAL ENG MIXTURE LEVER POSITION:1", "percent");
 			SetStoredData('JPL152IP_MIXTURE_'+planeId, mixture.toString());
-			var parkingbrake = SimVar.GetSimVarValue("BRAKE INDICATOR", "position");
+			var parkingbrake = SimVar.GetSimVarValue("BRAKE PARKING INDICATOR", "bool");
 			SetStoredData('JPL152IP_PARKINGBRAKE_'+planeId, parkingbrake.toString());
 			
 			//-------------------------------BREAKERS 3-13
@@ -521,6 +529,12 @@ class JPL152IP extends BaseInstrument {
   Update() {
     super.Update();
 
+			
+			// fill oil
+			if (SimVar.GetSimVarValue("L:JPL152_OILFILL", "bool") == 1) {
+					SimVar.SetSimVarValue("L:JPL152_OILREM", "number", 6.8);
+			}
+
 			//optional flight start states for efb
 
 			//cold and dark
@@ -532,7 +546,7 @@ class JPL152IP extends BaseInstrument {
 					SimVar.SetSimVarValue("L:XMLVAR_PUMPED_FUEL", "gallons", 0.00);
 					SimVar.SetSimVarValue("L:JPL_DOOR_PILOT", "bool", 1);
 					SimVar.SetSimVarValue("L:JPL_DOOR_COPILOT", "bool", 1);
-					if (GetStoredData('JPL152IP_PARKINGBRAKE_'+this.livery) !== 3 && SimVar.GetSimVarValue("BRAKE INDICATOR", "position") == 0) {
+					if (GetStoredData('JPL152IP_PARKINGBRAKE_'+this.livery) !== 1 && SimVar.GetSimVarValue("BRAKE PARKING INDICATOR", "bool") == 0) {
 						SimVar.SetSimVarValue("K:PARKING_BRAKES", "number", 1); }
 					SimVar.SetSimVarValue("K:PITOT_HEAT_SET", "number", 0);
 					SimVar.SetSimVarValue("LIGHT NAV", "bool", 0);
@@ -588,7 +602,7 @@ class JPL152IP extends BaseInstrument {
 					setTimeout(function() {
 					SimVar.SetSimVarValue("LIGHT BEACON", "bool", 1);
 					SimVar.SetSimVarValue("GENERAL ENG THROTTLE LEVER POSITION:1", "percent", 20);
-					if (SimVar.GetSimVarValue("BRAKE INDICATOR", "position") == 0) {
+					if (SimVar.GetSimVarValue("BRAKE PARKING INDICATOR", "bool") == 0) {
 						SimVar.SetSimVarValue("K:PARKING_BRAKES", "number", 1); }				
 					}, 3000);
 					

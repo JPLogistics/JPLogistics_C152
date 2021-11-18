@@ -26,7 +26,8 @@
 <Template Name="JPL_Window_Template">
   <DefaultTemplateParameters>
     <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
-	<TOOLTIPID>%((L:JPL_WINDOW_#ID#))%{if}Close #ID#'s Window%{else}Open #ID#'s Window%{end}</TOOLTIPID>
+	<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
+	<TOOLTIP_TITLE>(L:JPL_WINDOW_#ID#) 1 == if{ 'Close Window' } els{ 'Open Window' }</TOOLTIP_TITLE>
   </DefaultTemplateParameters>
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
@@ -74,7 +75,8 @@
 <Template Name="JPL_Door_Template">
   <DefaultTemplateParameters>
     <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
-    <TOOLTIPID>%((L:JPL_DOOR_#ID#))%{if}Close #ID#'s Door%{else}Open #ID#'s Door%{end}</TOOLTIPID>
+    <TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
+	<TOOLTIP_TITLE>(L:JPL_DOOR_#ID#) 1 == if{ 'Close Door' } els{ 'Open Door' }</TOOLTIP_TITLE>
   </DefaultTemplateParameters>
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
@@ -102,7 +104,8 @@
   </Component>
 </Template>
 
-<Template Name="Door_Close">
+<Template Name="Misc_Helpers">
+	<!--### DOOR CLOSE ###-->
 	<Update Frequency="2">
 		(A:AIRSPEED TRUE, knots) 30 &gt;=
 		(L:JPL_DOOR_PILOT, bool) 1 &gt;= and
@@ -117,9 +120,8 @@
 			0 (&gt;L:JPL_DOOR_COPILOT, bool)
 		}	
 	</Update>	
-</Template>
 
-<Template Name="WindowSoundHelper">
+	<!--### WINDOWS SOUND HELPER ###-->
 	<Update Frequency="5">
 		(L:JPL_DOOR_PILOT, Bool) 1 &gt;=
 		(L:JPL_WINDOW_PILOT, Bool) 1 &gt;= or
@@ -132,9 +134,8 @@
 			0 (&gt;L:JPL_CANOPY_OPEN, Bool)
 		}
 	</Update>
-</Template>
 
-<Template Name="CoPilot_Weight">
+	<!-- ### COPILOT WEIGHT/FOR WEPT ### 
 	<Update Frequency="2">
 		(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 ==
 		if{
@@ -143,6 +144,36 @@
 		(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 ==
 		if{
 			0 (&gt;A:PAYLOAD STATION WEIGHT:2, pounds)
+		}
+	</Update>-->
+	
+	<!--### FUEL INBALANCE ###-->
+	<Update Frequency="3">
+		(A:TURN COORDINATOR BALL, position) 0.1 &gt;
+		(A:FUEL LEFT QUANTITY, Gallons) 0.75 &gt; and
+		if{ 2 (&gt;K:FUEL_SELECTOR_SET) }
+		(A:TURN COORDINATOR BALL, position) -0.1 &lt;
+		(A:FUEL RIGHT QUANTITY, Gallons) 0.75 &gt; and
+		if{ 3 (&gt;K:FUEL_SELECTOR_SET) }
+		(A:TURN COORDINATOR BALL, position) -0.1 &gt;= (A:TURN COORDINATOR BALL, position) 0.1 &lt;= and
+		if{ 1 (&gt;K:FUEL_SELECTOR_SET) }
+	</Update>	
+	
+<!-- ### CUSTOM RANDOMIZED MAG DROP EFFECT ### -->
+	<UseTemplate Name="ASOBO_GT_Update">
+		<UPDATE_ONCE>True</UPDATE_ONCE>
+		<UPDATE_CODE>
+			rand (&gt;O:JPL152_RANDOM_MAG)
+		</UPDATE_CODE>	
+	</UseTemplate>
+	<Update Frequency="3">
+		(A:RECIP ENG LEFT MAGNETO:1, bool) 0 ==
+		if{
+			(O:JPL152_RANDOM_MAG) .5 &gt; if{ (A:RECIP ENG MANIFOLD PRESSURE:1, psi) 1.9 - (&gt;A:RECIP ENG MANIFOLD PRESSURE:1, psi) } els{ (A:RECIP ENG MANIFOLD PRESSURE:1, psi) 1.8 - (&gt;A:RECIP ENG MANIFOLD PRESSURE:1, psi) }
+		}
+		(A:RECIP ENG RIGHT MAGNETO:1, bool) 0 ==
+		if{
+			(O:JPL152_RANDOM_MAG) .5 &gt; if{ (A:RECIP ENG MANIFOLD PRESSURE:1, psi) 2.4 - (&gt;A:RECIP ENG MANIFOLD PRESSURE:1, psi) } els{ (A:RECIP ENG MANIFOLD PRESSURE:1, psi) 2.3 - (&gt;A:RECIP ENG MANIFOLD PRESSURE:1, psi) }
 		}
 	</Update>
 </Template>
