@@ -301,14 +301,14 @@
 		</Requires>
 	</Sound>
 <!--window close-->
-	<Sound WwiseEvent="custom_sound_03" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
-    	<Requires LocalVar="JPL_WINDOW_PILOT" Units="BOOLEAN" >
+	<Sound WwiseEvent="custom_sound_03" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_HANDLE_PILOT" Units="percent" Panning="-9000">
+    	<Requires LocalVar="JPL_WINDOW_HANDLE_PILOT" Units="BOOLEAN" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--window open-->
-	<Sound WwiseEvent="custom_sound_04" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
-    	<Requires LocalVar="JPL_WINDOW_PILOT" Units="BOOLEAN" >
+	<Sound WwiseEvent="custom_sound_04" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_HANDLE_PILOT" Units="percent" Panning="-9000">
+    	<Requires LocalVar="JPL_WINDOW_HANDLE_PILOT" Units="BOOLEAN" >
 			<Range LowerBound="1" />
 		</Requires>
 	</Sound>
@@ -327,14 +327,14 @@
 		</Requires>
 	</Sound>	
 <!--window close-->
-	<Sound WwiseEvent="custom_sound_07" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
-    	<Requires LocalVar="JPL_WINDOW_COPILOT" Units="BOOLEAN" >
+	<Sound WwiseEvent="custom_sound_07" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_HANDLE_COPILOT" Units="percent" Panning="9000">
+    	<Requires LocalVar="JPL_WINDOW_HANDLE_COPILOT" Units="BOOLEAN" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
 <!--window open-->
-	<Sound WwiseEvent="custom_sound_08" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
-    	<Requires LocalVar="JPL_WINDOW_COPILOT" Units="BOOLEAN" >
+	<Sound WwiseEvent="custom_sound_08" WwiseData="false" FileName="windowopen" Continuous="False" LocalVar="JPL_WINDOW_HANDLE_COPILOT" Units="percent" Panning="9000">
+    	<Requires LocalVar="JPL_WINDOW_HANDLE_COPILOT" Units="BOOLEAN" >
 			<Range LowerBound="1" />
 		</Requires>
 	</Sound>
@@ -359,6 +359,21 @@
 		</Requires>
     </Sound>	
 
+	<Sound WwiseEvent="custom_sound_10" WwiseData="false" FileName="sse" Continuous="False" LocalVar="JPL152_SSONOFF" Units="bool" Panning="9000">
+    	<Requires LocalVar="JPL152_SSONOFF" Units="BOOLEAN" >
+			<Range UpperBound="0" />
+		</Requires>
+	</Sound>
+	<Sound WwiseEvent="custom_sound_11" WwiseData="false" FileName="ssd" Continuous="False" LocalVar="JPL152_SSONOFF" Units="bool" Panning="9000">
+    	<Requires LocalVar="JPL152_SSONOFF" Units="BOOLEAN" >
+			<Range LowerBound="1" />
+		</Requires>
+	</Sound>
+	<Sound WwiseEvent="custom_sound_12" WwiseData="false" FileName="clear" Continuous="False" LocalVar="JPL152_CLEAR" Units="bool" Panning="-9000">
+    	<Requires LocalVar="JPL152_CLEAR" Units="BOOLEAN" >
+			<Range LowerBound="1" />
+		</Requires>
+	</Sound>
 
  </SimVarSounds>
   

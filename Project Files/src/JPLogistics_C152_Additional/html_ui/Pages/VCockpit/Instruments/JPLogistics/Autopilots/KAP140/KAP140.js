@@ -88,9 +88,12 @@ class KAP140 extends BaseInstrument {
                             SimVar.SetSimVarValue("K:AP_HDG_HOLD_OFF", "number", 0);
                         }
                         else {
+							if (SimVar.GetSimVarValue("AUTOPILOT MASTER", "Bool") == 0) {
+								SimVar.SetSimVarValue("K:AP_MASTER", "number", 0);
+							}
                             SimVar.SetSimVarValue("K:AP_HDG_HOLD_ON", "number", 0);
                         }
-                    //} // MC 
+                    // } // MC 
                     break;
                 case "KAP140_Push_NAV":
                     if (SimVar.GetSimVarValue("AUTOPILOT MASTER", "Bool")) {
