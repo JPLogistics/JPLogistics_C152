@@ -161,40 +161,53 @@
 				</UseTemplate>
 			</Component>
 		</Component>
-
+		-->
+		<!--
+		<Component ID="vortexcone">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:GENERAL ENG COMBUSTION:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{4AF60D22-0A83-4521-B32B-4DD69782B0EB}</FX_GUID>
+					<FX_NAME>Vapor_Cone</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="Vapor_Cone" Node="LIGHT_ASOBO_NavigationRed">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>
+		
+		<Component ID="wintipvortex">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:GENERAL ENG COMBUSTION:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{77462370-C2EF-46CE-B628-8CAD0A951561}</FX_GUID>
+					<FX_NAME>Vapor_Tip</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="Vapor_Tip" Node="LIGHT_ASOBO_NavigationRed">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>
+		-->
 		<Component ID="exhaust2">
 			<OverrideTemplateParameters>
 					<FX_CODE>(A:GENERAL ENG COMBUSTION:1, bool) 0 &gt;</FX_CODE>
 					<FX_GUID>{E9883850-53DE-439C-9313-40E38D8F5199}</FX_GUID>
 					<FX_NAME>FX_EXHAUST2</FX_NAME>
 			</OverrideTemplateParameters>
-			<Component ID="FX_EXHAUST2" Node="LIGHT_ASOBO_NavigationGreen">
+			<Component ID="FX_EXHAUST2" Node="CenterLeg.001">
 				<UseTemplate Name="ASOBO_GT_FX">
 				</UseTemplate>
 			</Component>
 		</Component>
-		
-		<Component ID="FX1_LOW_ALTITUDE">
-			<OverrideTemplateParameters>
-					<FX_CODE>(A:GENERAL ENG COMBUSTION:1, bool) 0 &gt;</FX_CODE>
-					<FX_GUID>{C8FB3147-D775-4CD1-AC8F-AEB717924F86}</FX_GUID>
-					<FX_NAME>LOW_ALTITUDE</FX_NAME>
-			</OverrideTemplateParameters>
-			<Component ID="LOW_ALTITUDE" Node="CenterLeg.001">
-				<UseTemplate Name="ASOBO_GT_FX">
-				</UseTemplate>
-			</Component>
-		</Component>		
+				
+		<!--23-->
 		<Component ID = "FX1_LOW_ALTITUDE">
 			<Parameters Type="Override">
-				<FX_GRAPH_PARAM_0>part_size_clamp, 23</FX_GRAPH_PARAM_0>
+				<FX_GRAPH_PARAM_0>part_size_clamp, 12</FX_GRAPH_PARAM_0>
 			</Parameters>
 			<UseTemplate Name="ASOBO_FX_LOW_ALTITUDE_DUST">
 				<FX_GUID>{C8FB3147-D775-4CD1-AC8F-AEB717924F86}</FX_GUID>
 			</UseTemplate>
 		</Component>
-		-->
-		
 		<Component ID="LANDING_FX">
 			<UseTemplate Name="ASOBO_LANDING_FX"/>
 		</Component>

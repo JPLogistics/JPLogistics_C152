@@ -68,6 +68,7 @@
 			1 (&gt;L:JPL152_Fouling, bool)
 		} els{
 			0 (&gt;L:JPL152_Fouling, bool)
+		}
 	</Update>
 
 <!-- ### FOULING EFFECT, SCALED BY THE TIMING MECHANISM ### -->
@@ -185,7 +186,7 @@
 
 <!-- ### TESTING SECTION TO SEE WHAT HAPPENING ### -->
 	<Update Frequency="1">
-		@MaintenanceScaler (&gt;L:JPL152_scalertestTR)
+		@ThrottleScalerC (&gt;L:JPL152_scalertestTR)
 		 
 		@MaintenanceScaler1 (&gt;L:JPL152_scalertestBL)
 		 

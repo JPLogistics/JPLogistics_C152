@@ -351,8 +351,6 @@
 				</UseTemplate>
 			</Component>
 		</Condition>
-		
-		
 		<Condition Check="HIGHLIGHT_NODE_ID">
 			<UseTemplate Name="ASOBO_GT_Highlight_Template">
 			</UseTemplate>

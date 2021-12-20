@@ -1,4 +1,5 @@
- <Template Name="JPL_Sun_Visors">
+
+<Template Name="JPL_Sun_Visors">
   <DefaultTemplateParameters>
     <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
     <SCROLL_INCREMENT>701</SCROLL_INCREMENT>
@@ -9,13 +10,13 @@
       <NO_ARROWS/>
       <DRAG_CODE>
         16384 (M:DragPercent) *
-        16384 min 0 max (>L:JPL152_VISOR_#ID#)
+        16384 min 0 max (&gt;L:JPL152_VISOR_#ID#)
       </DRAG_CODE>
       <ANIM_CODE>(L:JPL152_VISOR_#ID#, position 16k) 16384 / 100 *</ANIM_CODE>
       <ANIM_NAME>JPL_VISOR_#ID#</ANIM_NAME>
       <DRAG_ANIM_NAME>JPL_VISOR_#ID#</DRAG_ANIM_NAME>
-      <POSITIVE_AXIS_CODE>(L:JPL152_VISOR_#ID#, position 16k) #SCROLL_INCREMENT# + 16384 min (>L:JPL152_VISOR_#ID#)</POSITIVE_AXIS_CODE>
-      <NEGATIVE_AXIS_CODE>(L:JPL152_VISOR_#ID#, position 16k) #SCROLL_INCREMENT# - 0 max (>L:JPL152_VISOR_#ID#)</NEGATIVE_AXIS_CODE>
+      <POSITIVE_AXIS_CODE>(L:JPL152_VISOR_#ID#, position 16k) #SCROLL_INCREMENT# + 16384 min (&gt;L:JPL152_VISOR_#ID#)</POSITIVE_AXIS_CODE>
+      <NEGATIVE_AXIS_CODE>(L:JPL152_VISOR_#ID#, position 16k) #SCROLL_INCREMENT# - 0 max (&gt;L:JPL152_VISOR_#ID#)</NEGATIVE_AXIS_CODE>
       <TOOLTIPID>#ID#'s Sun Visor</TOOLTIPID>
       <WWISE_EVENT_1>cabin_heat_lever_on</WWISE_EVENT_1>
       <WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2> 
@@ -23,16 +24,40 @@
   </Component>
 </Template> 
 
-<Template Name="JPL_Window_Template">
+<Template Name="JPL_Window">
+  <DefaultTemplateParameters>
+    <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
+    <SCROLL_INCREMENT>655.36</SCROLL_INCREMENT>
+  </DefaultTemplateParameters>
+  <Component ID="#NODE_ID#" Node="#NODE_ID#">
+    <UseTemplate Name="ASOBO_GT_Lever_DraggingWheelLeftDrag_Axis">
+      <CURSOR>Grab</CURSOR>
+      <NO_ARROWS/>
+      <DRAG_CODE>
+	  (L:JPL_WINDOW_HANDLE_#ID#, position 16k) 1 == if{
+        16384 (M:DragPercent) *
+        16384 min 0 max (&gt;L:JPL_WINDOW_#ID#, position 16k)
+	  }
+      </DRAG_CODE>
+      <ANIM_CODE>(L:JPL_WINDOW_HANDLE_#ID#, position 16k) 1 == if{ (L:JPL_WINDOW_#ID#, position 16k) 16384 / 100 * }</ANIM_CODE>
+      <ANIM_NAME>#ID#_Window</ANIM_NAME>
+      <DRAG_ANIM_NAME>#ID#_Window</DRAG_ANIM_NAME>
+      <POSITIVE_AXIS_CODE>(L:JPL_WINDOW_HANDLE_#ID#, position 16k) 1 == if{ (L:JPL_WINDOW_#ID#, position 16k) #SCROLL_INCREMENT# + 16384 min (&gt;L:JPL_WINDOW_#ID#, position 16k) }</POSITIVE_AXIS_CODE>
+      <NEGATIVE_AXIS_CODE>(L:JPL_WINDOW_HANDLE_#ID#, position 16k) 1 == if{ (L:JPL_WINDOW_#ID#, position 16k) #SCROLL_INCREMENT# - 0 max (&gt;L:JPL_WINDOW_#ID#, position 16k) }</NEGATIVE_AXIS_CODE>
+    </UseTemplate>
+  </Component>
+</Template>
+
+<Template Name="JPL_Window_Handle">
   <DefaultTemplateParameters>
     <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
 	<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
-	<TOOLTIP_TITLE>(L:JPL_WINDOW_#ID#) 1 == if{ 'Close Window' } els{ 'Open Window' }</TOOLTIP_TITLE>
+	<TOOLTIP_TITLE>(L:JPL_WINDOW_HANDLE_#ID#, position 16k) 1 == if{ 'Lock Window' } els{ 'Unlock Window' }</TOOLTIP_TITLE>
   </DefaultTemplateParameters>
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
       <LEFT_LEAVE_CODE/>
-      <LEFT_SINGLE_CODE>(L:JPL_WINDOW_#ID#) ! (&gt;L:JPL_WINDOW_#ID#)</LEFT_SINGLE_CODE>
+      <LEFT_SINGLE_CODE>(L:JPL_WINDOW_#ID#, position 16k) 0 == if{ (L:JPL_WINDOW_HANDLE_#ID#, position 16k) ! (&gt;L:JPL_WINDOW_HANDLE_#ID#, position 16k) }</LEFT_SINGLE_CODE>
     </UseTemplate>
     <UseTemplate Name="ASOBO_GT_Anim_Code">
       <ANIM_NAME>#ID#_Window_Handle</ANIM_NAME>
@@ -40,11 +65,10 @@
       <ANIM_LAG>10</ANIM_LAG>
       <ANIM_CODE>
         (* Default is current needle position *)
-        (L:JPL_WINDOW_#ID#) 20 *
+        (L:JPL_WINDOW_HANDLE_#ID#, position 16k) 10 *
       </ANIM_CODE>
-	  <WWISE_EVENT_1>audio_switch_intercom</WWISE_EVENT_1>
-      <WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2>
     </UseTemplate>
+	<!--
     <UseTemplate Name="ASOBO_GT_Anim_Code">
       <ANIM_NAME>#ID#_Window</ANIM_NAME>
       <ANIM_LENGTH>22</ANIM_LENGTH>
@@ -54,6 +78,7 @@
         (L:JPL_WINDOW_#ID#) 22 *
       </ANIM_CODE>
     </UseTemplate>
+	-->
   </Component>
   <!--
       <Component ID="Window_Blowout" Node="#ID#_Window">
@@ -105,17 +130,22 @@
 </Template>
 
 <Template Name="Misc_Helpers">
+	<Update Frequency="3">
+		(L:JPL_WINDOW_PILOT, position 16k) (L:JPL_WINDOW_COPILOT, position 16k) - 1638.4 / (&gt;K:AILERON_TRIM_SET)
+	</Update>
+
+
 	<!--### DOOR CLOSE ###-->
 	<Update Frequency="2">
 		(A:AIRSPEED TRUE, knots) 30 &gt;=
-		(L:JPL_DOOR_PILOT, bool) 1 &gt;= and
+		(L:JPL_DOOR_PILOT) 1 &gt;= and
 		if{
 			0 (&gt;L:JPL_DOOR_PILOT, bool)
 		}	
 	</Update>
 	<Update Frequency="1.7">
 		(A:AIRSPEED TRUE, knots) 30 &gt;=
-		(L:JPL_DOOR_COPILOT, bool) 1 &gt;= and
+		(L:JPL_DOOR_COPILOT) 1 &gt;= and
 		if{
 			0 (&gt;L:JPL_DOOR_COPILOT, bool)
 		}	
@@ -123,10 +153,10 @@
 
 	<!--### WINDOWS SOUND HELPER ###-->
 	<Update Frequency="5">
-		(L:JPL_DOOR_PILOT, Bool) 1 &gt;=
-		(L:JPL_WINDOW_PILOT, Bool) 1 &gt;= or
-		(L:JPL_DOOR_COPILOT, Bool) 1 &gt;= or
-		(L:JPL_WINDOW_COPILOT, Bool) 1 &gt;= or
+		(L:JPL_DOOR_PILOT) 1 &gt;=
+		(L:JPL_WINDOW_PILOT, position 16k) 1 &gt;= or
+		(L:JPL_DOOR_COPILOT) 1 &gt;= or
+		(L:JPL_WINDOW_COPILOT, position 16k) 1 &gt;= or
 		if{
 			1 (&gt;L:JPL_CANOPY_OPEN, Bool)
 		}	
@@ -175,6 +205,28 @@
 		if{
 			(O:JPL152_RANDOM_MAG) .5 &gt; if{ (A:RECIP ENG MANIFOLD PRESSURE:1, psi) 2.4 - (&gt;A:RECIP ENG MANIFOLD PRESSURE:1, psi) } els{ (A:RECIP ENG MANIFOLD PRESSURE:1, psi) 2.3 - (&gt;A:RECIP ENG MANIFOLD PRESSURE:1, psi) }
 		}
+	</Update>
+	
+	<UseTemplate Name="ASOBO_GT_Update">
+		<UPDATE_ONCE>True</UPDATE_ONCE>
+		<UPDATE_CODE>
+			0 (&gt;A:CIRCUIT SWITCH ON:42, bool)
+			0 (&gt;A:CIRCUIT SWITCH ON:43, bool)
+		</UPDATE_CODE>	
+	</UseTemplate>	
+	<Update Frequency="3">
+		(A:PILOT TRANSMITTING, bool) 1 ==
+		(A:COPILOT TRANSMITTING, bool) 1 == or
+		(A:COM TRANSMIT:1, bool) 1 == and
+		if{ 1 (&gt;A:CIRCUIT SWITCH ON:42, bool) }
+		els{ 0 (&gt;A:CIRCUIT SWITCH ON:42, bool) }
+	</Update>
+	<Update Frequency="3">
+		(A:PILOT TRANSMITTING, bool) 1 ==
+		(A:COPILOT TRANSMITTING, bool) 1 == or
+		(A:COM TRANSMIT:2, bool) 1 == and
+		if{ 1 (&gt;A:CIRCUIT SWITCH ON:43, bool) }
+		els{ 0 (&gt;A:CIRCUIT SWITCH ON:43, bool) }
 	</Update>
 </Template>
 
