@@ -89,12 +89,12 @@ class JPL152IP extends BaseInstrument {
 	this.yoke1 = GetStoredData('JPL152IP_YOKE1_'+this.livery) ? GetStoredData('JPL152IP_YOKE1_'+this.livery) : 0;
 	this.yoke2 = GetStoredData('JPL152IP_YOKE2_'+this.livery) ? GetStoredData('JPL152IP_YOKE2_'+this.livery) : 0;
 	this.door1 = GetStoredData('JPL152IP_DOOR1_'+this.livery) ? GetStoredData('JPL152IP_DOOR1_'+this.livery) : 1;
-	this.window1 = GetStoredData('JPL152IP_WINDOW1_'+this.livery) ? GetStoredData('JPL152IP_WINDOW1_'+this.livery) : 16384;
-	this.windowhandle1 = GetStoredData('JPL152IP_WINDOWHANDLE1_'+this.livery) ? GetStoredData('JPL152IP_WINDOWHANDLE1_'+this.livery) : 1;
+	this.window1 = GetStoredData('JPL152IP_WINDOW1_'+this.livery) ? GetStoredData('JPL152IP_WINDOW1_'+this.livery) : 0;
+	this.windowhandle1 = GetStoredData('JPL152IP_WINDOWHANDLE1_'+this.livery) ? GetStoredData('JPL152IP_WINDOWHANDLE1_'+this.livery) : 0;
 	this.visor1 = GetStoredData('JPL152IP_VISOR1_'+this.livery) ? GetStoredData('JPL152IP_VISOR1_'+this.livery) : 16384;
 	this.door2 = GetStoredData('JPL152IP_DOOR2_'+this.livery) ? GetStoredData('JPL152IP_DOOR2_'+this.livery) : 1;
-	this.window2 = GetStoredData('JPL152IP_WINDOW2_'+this.livery) ? GetStoredData('JPL152IP_WINDOW2_'+this.livery) : 16384;
-	this.windowhandle2 = GetStoredData('JPL152IP_WINDOWHANDLE2_'+this.livery) ? GetStoredData('JPL152IP_WINDOWHANDLE2_'+this.livery) : 1;
+	this.window2 = GetStoredData('JPL152IP_WINDOW2_'+this.livery) ? GetStoredData('JPL152IP_WINDOW2_'+this.livery) : 0;
+	this.windowhandle2 = GetStoredData('JPL152IP_WINDOWHANDLE2_'+this.livery) ? GetStoredData('JPL152IP_WINDOWHANDLE2_'+this.livery) : 0;
 	this.visor2 = GetStoredData('JPL152IP_VISOR2_'+this.livery) ? GetStoredData('JPL152IP_VISOR2_'+this.livery) : 12000;
 	//---------------------------------------ENG MAINTENANCE
 	this.plugFouling = GetStoredData('JPL152IP_PLUG_FOUL_'+this.livery) ? GetStoredData('JPL152IP_PLUG_FOUL_'+this.livery) : 5;
@@ -286,12 +286,12 @@ class JPL152IP extends BaseInstrument {
 		SimVar.SetSimVarValue("L:XMLVAR_YokeHidden1", "number", Number(this.yoke1));
 		SimVar.SetSimVarValue("L:XMLVAR_YokeHidden2", "number", Number(this.yoke2));
 		SimVar.SetSimVarValue("L:JPL_DOOR_PILOT", "number", Number(this.door1));
-		SimVar.SetSimVarValue("L:JPL_WINDOW_PILOT", "number", Number(this.window1));
 		SimVar.SetSimVarValue("L:JPL_WINDOW_HANDLE_PILOT", "number", Number(this.windowhandle1));
+		SimVar.SetSimVarValue("L:JPL_WINDOW_PILOT", "number", Number(this.window1));
 		SimVar.SetSimVarValue("L:JPL152_VISOR_PILOT", "position 16k", Number(this.visor1));
 		SimVar.SetSimVarValue("L:JPL_DOOR_COPILOT", "number", Number(this.door2));
-		SimVar.SetSimVarValue("L:JPL_WINDOW_COPILOT", "number", Number(this.window2));
 		SimVar.SetSimVarValue("L:JPL_WINDOW_HANDLE_COPILOT", "number", Number(this.windowhandle2));
+		SimVar.SetSimVarValue("L:JPL_WINDOW_COPILOT", "number", Number(this.window2));
 		SimVar.SetSimVarValue("L:JPL152_VISOR_COPILOT", "position 16k", Number(this.visor2));
 		//---------------------------------------LEVERS
 		SimVar.SetSimVarValue("K:ANTI_ICE_GRADUAL_SET_ENG1", "position 16k", Number(this.carbheat));
