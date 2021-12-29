@@ -10,7 +10,7 @@
         "baseColorFactor": [ 1.0, 1.0, 1.0, 0.01 ],
         "metallicFactor": 0.0,
         "roughnessFactor": 0.0,
-        "metallicRoughnessTexture": { "index": 100 }
+        "metallicRoughnessTexture": { "index": 99 }
       }
       "extensions": {
         "ASOBO_material_detail_map": {
@@ -37,3 +37,40 @@
 Nodes to remove!
 10, Main Panel
 11, Sun Visors
+
+
+"name": "Windshield",
+      "normalTexture": {
+        "index": 98,
+        "texCoord": 0
+      },
+      "occlusionTexture": {
+        "index": 99,
+        "texCoord": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [1.0, 1.0, 1.0, 0.01],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.0,
+        "metallicRoughnessTexture": { "index": 44 }
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "emissiveFactor": [0, 0, 0],
+      "extensions": {
+        "ASOBO_material_detail_map": {
+          "detailMetalRoughAOTexture": {
+            "index": 101,
+            "texCoord": 0
+          },
+          "UVOffset": [0.14, 0.67],
+          "UVScale": 5.222,
+          "blendTreshold": 0.10000000149011612,
+
+          "detailNormalTexture": {
+            "index": 98,
+            "scale": 0.25
+          }
+        },
