@@ -1,0 +1,106 @@
+## V1.0.0 - BETA TEST 7
+	- Electrical Overhaul
+		- LED Lights taken into account etc!
+		- The system shouldn't die as easily now
+	- Texture fixes
+	- More work made on the Prop Animation/Textures
+	- Animation changes
+		- VS Reaction speed
+	- Aircraft name changed in Aircraft Selector menu!
+	- Lighting updated
+	- Engine Updates
+	- Autopilot sound updates
+	- ADF Fixes
+	- COM bug fixed
+	- LOCPAC Changes
+	- Huge shout out to WeptBurrito for helping with this release while I have been otherwise engaged! Excellent work!
+
+## V1.0.0 - BETA TEST 6
+	- Fix MAJOR Textures issues
+		- Livery designers should now be able to use the aircraft!
+		- Texture quality improved
+		- Removed some issues (Some flickering still exists-WIP)
+	- COM/Freq Spacing fix!
+	- More CoPilot Adjustments
+	- More Suspension Fixes
+	- More Engine Fixes
+
+## V1.0.0 - BETA TEST 5
+	- Fix MAJOR Textures issues
+	- AP Breaker fix
+	- CoPilot Adjustments
+
+## V1.0.0 - BETA TEST 4
+	- Flight Model Adjustments
+	- 3D Model changes
+	- Suspension corrected
+	- Texture updates
+	- CoPilot Fix
+	- AP Sound Fix
+	- Tooltips
+	- Runway Start Fix
+	- Animations corrected
+
+## V1.0.0 - BETA TEST 3
+	- OAT Gauge Textures
+	- OAT Gauge Model
+	- Aircraft will now be visible in Training/Discovery Flights
+	- Texture updates
+	- Prop location/texture changes
+	- Lighting Nodes corrected
+	- 3D Model corrections
+	- Pilot/CoPilot models work again!
+	- Tyre height adjusted
+	- Reduced Trim Speed
+	- Flickering Texture fixes
+	- Corrected Engine Start values
+		- Should help failed starting/fires occuring
+	- Equipment Key lighting now Screen based
+	- Some baggage enabled (Remember to set a payload weight!)
+	
+## V1.0.0 - BETA TEST 2
+- Fixed the following
+	- OAT Gauge
+	- FPS Drop (Hopefully - Please test this)
+	- Effects
+	- Removed some baggage
+	- Refactored Textures
+	- Increased Decal Quality
+- Included files to repair community mods
+
+## V1.0.0 - BETA TEST
+### This is a beta test! Some things still need tweaking!
+- New Animations
+	- Opening Doors!
+	- Opening Windows!
+	- Sun Visors!
+	- New Switches/Rotary Dials
+      - NAVCOM Dimming
+      - Instrument Lighting
+      - Overhead Lighting
+      - Glareshield/Dome Lighting
+	- Reworked Cockpit Animations
+	- Circuit Breakers!
+- New Cargo Options
+- New Graphics
+- OAT Gauge corrected
+- New Sound Effects
+	- Enviroment sounds linked too windows/doors
+- Reworked Electrical Systems
+	- Build from the ground up!
+	- Circuit Breakers now function (Random snap pending)
+- Reworked Lighting
+- New Transponder, we are now rocking a AS330!
+- New ADF KR87!
+- New HSI!
+- KAP140 Autopilot Module (Disable using Circuit Breaker RADIO4)
+- Wheel Fairing version!
+- Proper DME Device - Custom Designed JPLogistics Model
+- Flight Model adjusted
+- Fuel load corrected
+- New Start System
+	- Primer now required
+- New Visual Effects
+	- Engine Fire
+	- Smoke
+	- Exhaust plume

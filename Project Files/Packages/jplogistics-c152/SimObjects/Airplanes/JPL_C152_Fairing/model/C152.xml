@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ModelInfo>
+	<LODS>
+		<!-- Highest LOD -->
+		<!-- minimum display size in % (should be bounding sphere vertical screen size, sphere will often be slightly larger than you expect) -->
+		<!-- default minSize is 0 -->
+		<LOD minSize="0" ModelFile="C152_LOD00.gltf"/>
+		<!-- <LOD minSize="0" ModelFile="C152_LOD01.gltf"/> -->
+	</LODS>
+	<Behaviors>
+		<!-- Includes ###################################### -->
+		<Include ModelBehaviorFile="Asobo\Common.xml"/>
+		<Include ModelBehaviorFile="Asobo\Exterior.xml"/>
+		<Include ModelBehaviorFile="Asobo\Generic\FX.xml"/>
+		<Include ModelBehaviorFile="C152X\Index.xml"/>
+
+		<!-- ###################################### -->
+
+
+    <Animation guid="3236033a-87c7-4d84-8476-3c4262d0b54b" name="prop_anim" type="standard" typeParam="Autoplay"/>
+    <Animation guid="93ea7381-accd-4989-812c-88b5dba5c911" name="c_gear" type="standard" typeParam="Autoplay"/>
+    <Animation guid="37c3af74-5262-490d-8899-4a3aa02b20b7" name="r_gear" type="standard" typeParam="Autoplay"/>
+    <Animation guid="5bc8e4e1-2c39-44e6-a6eb-3bf8c0b7d93e" name="l_gear" type="standard" typeParam="Autoplay"/>
+    
+		<Component ID="HANDLING">
+			<UseTemplate Name="ASOBO_HANDLING_Elevator_Template">
+				<ANIM_NAME>elevator_percent_key</ANIM_NAME>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_HANDLING_Elevator_Template">
+				<TRIM_ONLY>True</TRIM_ONLY>
+				<ANIM_NAME_TRIM>trimtab_elevator_key</ANIM_NAME_TRIM>
+				<INVERT_ANIM>True</INVERT_ANIM>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_HANDLING_Aileron_Template">
+				<ANIM_NAME_LEFT>l_aileron_percent_key</ANIM_NAME_LEFT>
+				<ANIM_NAME_RIGHT>r_aileron_percent_key</ANIM_NAME_RIGHT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_HANDLING_Rudder_Template">
+				<ANIM_NAME>rudder_percent_key</ANIM_NAME>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_HANDLING_Flaps_Template">
+				<ANIM_NAME_LEFT>l_flap_percent_key</ANIM_NAME_LEFT>
+				<ANIM_NAME_RIGHT>r_flap_percent_key</ANIM_NAME_RIGHT>
+			</UseTemplate>
+		</Component>
+		<Component ID="ENGINE">
+			<UseTemplate Name="ASOBO_ENGINE_Propeller_Template">
+				<ID>1</ID>
+				<ANIM_NODE_ID>Prop1</ANIM_NODE_ID>
+				<ANIM_NAME>prop_anim</ANIM_NAME>
+				<MIN_RPM_FOR_SLOW>200</MIN_RPM_FOR_SLOW><!--143-->
+				<MIN_RPM_FOR_BLUR>400</MIN_RPM_FOR_BLUR><!--287.5-->
+				<STILL_NODE_ID>nose_cone_still</STILL_NODE_ID>
+				<SLOW_NODE_ID>nose_cone_slow</SLOW_NODE_ID>
+				<PROP_BLURRED_NODE_ID>prop1_blurred</PROP_BLURRED_NODE_ID>
+				<CONE_BLURRED_NODE_ID>nose_cone_blurred</CONE_BLURRED_NODE_ID>
+				<PROP_SIDE_BLURRED_NODE_ID>PROP_SIDE_BLUR</PROP_SIDE_BLURRED_NODE_ID>
+				<FROSTED_STILL_NODE_ID>prop_spinner_static_FROST</FROSTED_STILL_NODE_ID>
+				<FROSTED_SLOW_NODE_ID>prop_spinner_slow_FROST</FROSTED_SLOW_NODE_ID>
+				<FROSTED_BLURRED_NODE_ID>prop_spinner_blur_FROST</FROSTED_BLURRED_NODE_ID>
+			</UseTemplate>
+		</Component>
+		<Component ID="GEARS">
+			<UseTemplate Name="ASOBO_GEAR_Center_Template">
+				<ANIM_NAME>c_gear</ANIM_NAME>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GEAR_Left_Template">
+				<ANIM_NAME>l_gear</ANIM_NAME>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GEAR_Right_Template">
+				<ANIM_NAME>r_gear</ANIM_NAME>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GEAR_Center_Tire_Template">
+				<ANIM_NAME>c_tire_anim</ANIM_NAME>
+				<NODE_ID_STILL>CENTRAL_WHEEL</NODE_ID_STILL>
+				<NODE_ID_BLURRED>CENTRAL_WHEEL_BLURRED</NODE_ID_BLURRED>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GEAR_Left_Tire_Template">
+				<ANIM_NAME>l_tire_anim</ANIM_NAME>
+				<NODE_ID_STILL>LEFT_WHEEL</NODE_ID_STILL>
+				<NODE_ID_BLURRED>LEFT_WHEEL_BLURRED</NODE_ID_BLURRED>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GEAR_Right_Tire_Template">
+				<ANIM_NAME>r_tire_anim</ANIM_NAME>
+				<NODE_ID_STILL>RIGHT_WHEEL</NODE_ID_STILL>
+				<NODE_ID_BLURRED>RIGHT_WHEEL_BLURRED</NODE_ID_BLURRED>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GEAR_Steering_Template">
+				<ANIM_NAME>c_wheel</ANIM_NAME>
+			</UseTemplate>
+		</Component>
+	<!--#################################################-->
+	<!--
+		<Component ID="DOWNWASH_FX">
+			<Component ID="DOWNWASH_1_NODE" Node="nose_cone_still">
+				<UseTemplate Name="ASOBO_GT_FX">
+					<FX_CODE>(A:GENERAL ENG COMBUSTION:1, bool) 1 ==</FX_CODE>
+					<FX_ROTATION_OFFSET_B>45.0</FX_ROTATION_OFFSET_B>
+					<FX_ROTATION_OFFSET_P>45.0</FX_ROTATION_OFFSET_P>
+					<FX_ROTATION_OFFSET_H>45.0</FX_ROTATION_OFFSET_H>
+					<FX_GUID>{936C9B32-A095-47F6-9619-15D8EE073614}</FX_GUID>
+					<FX_NAME>FX_EXHAUST_RIGHT1</FX_NAME>
+				</UseTemplate>
+			</Component>
+		</Component>
+	-->	
+		<Component ID="LARGE_SMOKE">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{2e2d7a61-5053-48c9-b2db-dbbc50251226}</FX_GUID>
+					<FX_NAME>pbk_smoke_L</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="FX_LARGE_SMOKE" Node="nose_cone_still">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>
+		<Component ID="MED_SMOKE">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{f37958e8-4433-471d-9c01-0851638b8032}</FX_GUID>
+					<FX_NAME>pbk_smoke_M</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="FX_MED_SMOKE" Node="nose_cone_still">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>
+		<!--<Component ID="WHITE_SMOKE">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{F42CE638-11EB-4FC8-B9B0-111A220D681F}</FX_GUID>
+					<FX_NAME>FX_CONTRAILS</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="FX_WHITE_SMOKE" Node="nose_cone_still">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>
+		<Component ID="BLACK_SMOKE">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:ENG ON FIRE:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{48FA21D9-5519-4821-B0B2-15FCB24B6549}</FX_GUID>
+					<FX_NAME>Smoke_XXL_Black</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="FX_BLACK_SMOKE" Node="nose_cone_still">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>-->
+		
+		<!--
+		<Component ID="exhaust1">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:GENERAL ENG COMBUSTION:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{0E34B3D6-1462-4044-8F14-BCF1678FFD10}</FX_GUID>
+					<FX_NAME>FX_EXHAUST1</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="FX_EXHAUST1" Node="LIGHT_ASOBO_NavigationRed">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>
+		-->
+		<!--
+		<Component ID="vortexcone">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:GENERAL ENG COMBUSTION:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{4AF60D22-0A83-4521-B32B-4DD69782B0EB}</FX_GUID>
+					<FX_NAME>Vapor_Cone</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="Vapor_Cone" Node="LIGHT_ASOBO_NavigationRed">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>
+		
+		<Component ID="wintipvortex">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:GENERAL ENG COMBUSTION:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{77462370-C2EF-46CE-B628-8CAD0A951561}</FX_GUID>
+					<FX_NAME>Vapor_Tip</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="Vapor_Tip" Node="LIGHT_ASOBO_NavigationRed">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>
+		-->
+		<Component ID="exhaust2">
+			<OverrideTemplateParameters>
+					<FX_CODE>(A:GENERAL ENG COMBUSTION:1, bool) 0 &gt;</FX_CODE>
+					<FX_GUID>{E9883850-53DE-439C-9313-40E38D8F5199}</FX_GUID>
+					<FX_NAME>FX_EXHAUST2</FX_NAME>
+			</OverrideTemplateParameters>
+			<Component ID="FX_EXHAUST2" Node="CenterLeg.001">
+				<UseTemplate Name="ASOBO_GT_FX">
+				</UseTemplate>
+			</Component>
+		</Component>
+				
+		<!--23-->
+		<Component ID = "FX1_LOW_ALTITUDE">
+			<Parameters Type="Override">
+				<FX_GRAPH_PARAM_0>part_size_clamp, 12</FX_GRAPH_PARAM_0>
+			</Parameters>
+			<UseTemplate Name="ASOBO_FX_LOW_ALTITUDE_DUST">
+				<FX_GUID>{C8FB3147-D775-4CD1-AC8F-AEB717924F86}</FX_GUID>
+			</UseTemplate>
+		</Component>
+		<Component ID="LANDING_FX">
+			<UseTemplate Name="ASOBO_LANDING_FX"/>
+		</Component>
+	<!-- ##################################### -->
+	</Behaviors>
+</ModelInfo>
