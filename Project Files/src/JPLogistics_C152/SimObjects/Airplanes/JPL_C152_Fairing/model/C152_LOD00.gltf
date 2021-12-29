@@ -4132,8 +4132,8 @@
                     },
                     "UVScale" : 5.21999979019165,
                     "UVOffset" : [
-                        0.0,
-                        0.0
+                        0.14000000059604645,
+                        0.6700000166893005
                     ],
                     "blendTreshold" : 0.10000000149011612
                 }
@@ -4201,7 +4201,7 @@
                     1,
                     1,
                     1,
-                    1
+                    0.009999999776482582
                 ],
                 "msfs_emissive_factor" : [
                     0,
@@ -4226,13 +4226,13 @@
                 "msfs_uv_rotation" : 0,
                 "msfs_uv_clamp_u" : 0,
                 "msfs_uv_clamp_v" : 0,
-                "msfs_roughness_factor" : 1,
-                "msfs_metallic_factor" : 1,
+                "msfs_roughness_factor" : 0,
+                "msfs_metallic_factor" : 0,
                 "msfs_normal_scale" : 1,
                 "msfs_alpha_cutoff" : 0.5,
-                "msfs_detail_uv_offset_u" : 0,
-                "msfs_detail_uv_offset_v" : 0,
-                "msfs_detail_normal_scale" : 1,
+                "msfs_detail_uv_offset_u" : 0.14000000059604645,
+                "msfs_detail_uv_offset_v" : 0.6700000166893005,
+                "msfs_detail_normal_scale" : 0.25,
                 "msfs_blend_threshold" : 0.10000000149011612,
                 "msfs_decal_color_blend_factor" : 1,
                 "msfs_decal_metal_blend_factor" : 1,
@@ -4258,6 +4258,8 @@
                 ],
                 "msfs_fresnel_factor" : 1,
                 "msfs_fresnel_opacity_bias" : 0,
+                "msfs_detail_uv_offset_x" : 0.14000000059604645,
+                "msfs_detail_uv_offset_y" : 0.6700000166893005,
                 "ASOBO_material_code" : "Windshield"
             },
             "name" : "Windshield",
@@ -4269,16 +4271,13 @@
                 "index" : 46,
                 "texCoord" : 0
             },
-            "pbrMetallicRoughness" : {
-                "baseColorTexture" : {
-                    "index" : 47,
-                    "texCoord" : 0
-                },
-                "metallicRoughnessTexture" : {
-                    "index" : 46,
-                    "texCoord" : 0
-                }
-            }
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [1.0, 1.0, 1.0, 0.01],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.0,
+                "metallicRoughnessTexture": { "index": 46 }
+              }
+            
         },
         {
             "alphaMode" : "BLEND",
