@@ -71,10 +71,10 @@
       
       <Condition Check="USE_DIMMING_POTENTIOMETER">
         <True>
-          <EMISSIVE_CODE>(L:DME_POWER, Bool) 0 &gt; (A:LIGHT POTENTIOMETER:#POTENTIOMETER#, percent over 100) * #DIMMING_FACTOR# *</EMISSIVE_CODE>
+          <EMISSIVE_CODE>(L:JPL152_DME_POWER, Bool) 0 &gt; (A:LIGHT POTENTIOMETER:#POTENTIOMETER#, percent over 100) * #DIMMING_FACTOR# *</EMISSIVE_CODE>
         </True>
         <False>
-          <EMISSIVE_CODE>(L:DME_POWER, Bool) 0 &gt;</EMISSIVE_CODE>
+          <EMISSIVE_CODE>(L:JPL152_DME_POWER, Bool) 0 &gt;</EMISSIVE_CODE>
         </False>
       </Condition>
     </UseTemplate>
