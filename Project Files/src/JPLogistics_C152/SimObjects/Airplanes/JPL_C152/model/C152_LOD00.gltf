@@ -25,6 +25,7 @@
         "ASOBO_asset_optimized"
       ],
       "extensionsRequired": [ "MSFT_texture_dds" ],
+    
     "scene" : 0,
     "scenes" : [
         {
@@ -777,9 +778,9 @@
                 0.5102118253707886
             ],
             "translation" : [
-                0.009999284520745277,
                 0,
-                0
+                0,
+                -0.014999999664723873
             ]
         },
         {
@@ -816,7 +817,7 @@
         },
         {
             "mesh" : 30,
-            "name" : "rudder_arm_r.001",
+            "name" : "rudder_arm_r",
             "rotation" : [
                 0.0832899808883667,
                 -0.10827894508838654,

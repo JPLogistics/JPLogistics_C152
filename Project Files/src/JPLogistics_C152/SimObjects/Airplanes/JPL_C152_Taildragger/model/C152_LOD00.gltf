@@ -25,6 +25,7 @@
         "ASOBO_asset_optimized"
       ],
       "extensionsRequired": [ "MSFT_texture_dds" ],
+    
     "scene" : 0,
     "scenes" : [
         {
@@ -651,9 +652,9 @@
                 0.5102118253707886
             ],
             "translation" : [
-                0.009999284520745277,
                 0,
-                0
+                0,
+                -0.014999999664723873
             ]
         },
         {
@@ -690,7 +691,7 @@
         },
         {
             "mesh" : 23,
-            "name" : "rudder_arm_r.001",
+            "name" : "rudder_arm_r",
             "rotation" : [
                 0.0832899808883667,
                 -0.10827894508838654,
@@ -904,7 +905,7 @@
         },
         {
             "mesh" : 37,
-            "name" : "Rear_LandingGear_Part03.004",
+            "name" : "Rear_LandingGear_Part03",
             "rotation" : [
                 1,
                 0,
@@ -951,7 +952,7 @@
         },
         {
             "mesh" : 40,
-            "name" : "rudder_arm_l.001",
+            "name" : "rudder_arm_l_rear",
             "rotation" : [
                 0.1622229516506195,
                 0.10349374264478683,
@@ -983,7 +984,7 @@
         },
         {
             "mesh" : 41,
-            "name" : "rudder_arm_r",
+            "name" : "rudder_arm_r_rear",
             "rotation" : [
                 0.0832899808883667,
                 -0.10827894508838654,
@@ -3083,127 +3084,6 @@
             }
         },
         {
-            "alphaMode" : "BLEND",
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
-            "extras" : {
-                "is_import" : 0,
-                "msfs_material_type" : 1,
-                "msfs_base_color_factor" : [
-                    1,
-                    1,
-                    1,
-                    0.41726619005203247
-                ],
-                "msfs_emissive_factor" : [
-                    0,
-                    0,
-                    0
-                ],
-                "msfs_alpha_mode" : 2,
-                "msfs_draw_order" : 0,
-                "msfs_double_sided" : 0,
-                "msfs_dont_cast_shadows" : 0,
-                "msfs_day_night_cycle" : 0,
-                "msfs_use_pearl_effect" : 0,
-                "msfs_pearl_shift" : 0,
-                "msfs_pearl_range" : 0,
-                "msfs_pearl_brightness" : 0,
-                "msfs_collision_material" : 0,
-                "msfs_road_material" : 0,
-                "msfs_uv_offset_u" : 0,
-                "msfs_uv_offset_v" : 0,
-                "msfs_uv_tiling_u" : 1,
-                "msfs_uv_tiling_v" : 1,
-                "msfs_uv_rotation" : 0,
-                "msfs_uv_clamp_u" : 0,
-                "msfs_uv_clamp_v" : 0,
-                "msfs_roughness_factor" : 0,
-                "msfs_metallic_factor" : 0,
-                "msfs_normal_scale" : 1,
-                "msfs_alpha_cutoff" : 0.5,
-                "msfs_detail_uv_scale" : 1,
-                "msfs_detail_uv_offset_u" : 0,
-                "msfs_detail_uv_offset_v" : 0,
-                "msfs_detail_normal_scale" : 1,
-                "msfs_blend_threshold" : 0.10000000149011612,
-                "msfs_decal_color_blend_factor" : 1,
-                "msfs_decal_metal_blend_factor" : 1,
-                "msfs_decal_normal_blend_factor" : 1,
-                "msfs_decal_roughness_blend_factor" : 1,
-                "msfs_decal_occlusion_blend_factor" : 1,
-                "msfs_decal_emissive_blend_factor" : 1,
-                "msfs_rain_drop_scale" : 1,
-                "msfs_wiper_1_state" : 0,
-                "msfs_wiper_2_state" : 0,
-                "msfs_glass_reflection_factor" : 1,
-                "msfs_glass_deformation_factor" : 0,
-                "msfs_parallax_scale" : 0,
-                "msfs_parallax_room_size_x" : 0.5,
-                "msfs_parallax_room_size_y" : 0.5,
-                "msfs_parallax_room_number" : 1,
-                "msfs_parallax_corridor" : 0,
-                "msfs_sss_color" : [
-                    1,
-                    1,
-                    1,
-                    1
-                ],
-                "msfs_fresnel_factor" : 1,
-                "msfs_fresnel_opacity_bias" : 0,
-                "msfs_base_color_texture" : {
-                    "name" : "CESSA152_AIRFRAME_WINDSHIELD_ALBD",
-                    "type" : "Image"
-                },
-                "msfs_comp_texture" : {
-                    "name" : "CESSA152_AIRFRAME_WINDSHIELD_COMP",
-                    "type" : "Image"
-                },
-                "msfs_show_colors" : 1,
-                "msfs_show_emissive_color" : 1,
-                "msfs_show_alpha_mode" : 1,
-                "msfs_show_render_options" : 1,
-                "msfs_show_day_night_cycle" : 1,
-                "msfs_show_pearl" : 1,
-                "msfs_show_gameplay_options" : 1,
-                "msfs_show_uv_options" : 1,
-                "msfs_show_material_options" : 1,
-                "msfs_show_material_detail_options" : 1,
-                "msfs_show_blend_threshold" : 1,
-                "msfs_show_decal_blend_factors" : 0,
-                "msfs_show_windshield_options" : 0,
-                "msfs_show_glass_options" : 0,
-                "msfs_show_parallax_options" : 0,
-                "msfs_show_sss_color" : 0,
-                "msfs_show_fresnel_options" : 0,
-                "msfs_show_base_color_texture" : 1,
-                "msfs_show_comp_texture" : 1,
-                "msfs_show_normal_texture" : 1,
-                "msfs_show_emissive_texture" : 1,
-                "msfs_show_detail_color_texture" : 1,
-                "msfs_show_detail_comp_texture" : 1,
-                "msfs_show_detail_normal_texture" : 1,
-                "msfs_show_blend_mask_texture" : 1,
-                "msfs_show_wetness_ao_texture" : 0,
-                "msfs_show_dirt_texture" : 0,
-                "msfs_show_height_map_texture" : 0
-            },
-            "name" : "Glass",
-            "pbrMetallicRoughness" : {
-                "baseColorTexture" : {
-                    "index" : 30,
-                    "texCoord" : 0
-                },
-                "metallicRoughnessTexture" : {
-                    "index" : 31,
-                    "texCoord" : 0
-                }
-            }
-        },
-        {
             "doubleSided" : true,
             "emissiveFactor" : [
                 0,
@@ -3359,20 +3239,20 @@
             },
             "name" : "fuselage",
             "normalTexture" : {
-                "index" : 32,
+                "index" : 30,
                 "texCoord" : 0
             },
             "occlusionTexture" : {
-                "index" : 33,
+                "index" : 31,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 34,
+                    "index" : 32,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 33,
+                    "index" : 31,
                     "texCoord" : 0
                 }
             }
@@ -3430,11 +3310,11 @@
             },
             "name" : "landing",
             "normalTexture" : {
-                "index" : 35,
+                "index" : 33,
                 "texCoord" : 0
             },
             "occlusionTexture" : {
-                "index" : 36,
+                "index" : 34,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
@@ -3445,7 +3325,7 @@
                     1
                 ],
                 "metallicRoughnessTexture" : {
-                    "index" : 36,
+                    "index" : 34,
                     "texCoord" : 0
                 }
             }
@@ -3573,11 +3453,11 @@
             "extensions" : {
                 "ASOBO_material_detail_map" : {
                     "detailColorTexture" : {
-                        "index" : 37,
+                        "index" : 35,
                         "texCoord" : 0
                     },
                     "detailNormalTexture" : {
-                        "index" : 38,
+                        "index" : 36,
                         "texCoord" : 0
                     },
                     "UVScale" : 5.21999979019165,
@@ -3714,18 +3594,18 @@
             },
             "name" : "Windshield",
             "normalTexture" : {
-                "index" : 39,
+                "index" : 37,
                 "texCoord" : 0
             },
             "occlusionTexture" : {
-                "index" : 40,
+                "index" : 38,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness": {
                 "baseColorFactor": [ 1.0, 1.0, 1.0, 0.01 ],
                 "metallicFactor": 0.0,
                 "roughnessFactor": 0.0,
-                "metallicRoughnessTexture": { "index": 40 }
+                "metallicRoughnessTexture": { "index": 38 }
               }
         },
         {
@@ -3781,78 +3661,18 @@
             },
             "name" : "landing_gear.001",
             "normalTexture" : {
-                "index" : 42,
+                "index" : 40,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 43,
+                    "index" : 41,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 44,
+                    "index" : 42,
                     "texCoord" : 0
                 }
-            }
-        },
-        {
-            "alphaMode" : "BLEND",
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
-            "extensions" : {
-                "ASOBO_material_glass" : {
-                    "glassReflectionMaskFactor" : 1,
-                    "glassDeformationFactor" : 0
-                }
-            },
-            "extras" : {
-                "msfs_material_mode" : 4,
-                "msfs_blend_mode" : 2,
-                "msfs_show_tint" : 1,
-                "msfs_show_sss_color" : 0,
-                "msfs_show_glass_parameters" : 1,
-                "msfs_show_decal_parameters" : 0,
-                "msfs_show_fresnel_parameters" : 0,
-                "msfs_show_parallax_parameters" : 0,
-                "msfs_show_geo_decal_parameters" : 0,
-                "msfs_show_albedo" : 1,
-                "msfs_show_metallic" : 1,
-                "msfs_show_normal" : 1,
-                "msfs_show_emissive" : 1,
-                "msfs_show_detail_albedo" : 1,
-                "msfs_show_detail_metallic" : 1,
-                "msfs_show_detail_normal" : 1,
-                "msfs_show_blend_mask" : 1,
-                "msfs_show_anisotropic_direction" : 0,
-                "msfs_show_clearcoat" : 0,
-                "msfs_show_behind_glass" : 0,
-                "msfs_show_blend_mode" : 1,
-                "msfs_show_draworder" : 1,
-                "msfs_show_no_cast_shadow" : 1,
-                "msfs_show_double_sided" : 1,
-                "msfs_show_responsive_aa" : 0,
-                "msfs_show_day_night_cycle" : 0,
-                "msfs_show_collision_material" : 1,
-                "msfs_show_road_material" : 1,
-                "msfs_show_ao_use_uv2" : 1,
-                "msfs_show_uv_clamp" : 1,
-                "msfs_show_alpha_cutoff" : 0,
-                "msfs_show_blend_threshold" : 1,
-                "msfs_color_alpha_mix" : 0.05000000074505806
-            },
-            "name" : "Glass.002",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0.800000011920929,
-                    0.800000011920929,
-                    0.800000011920929,
-                    0.05000000074505806
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.05000000074505806
             }
         },
         {
@@ -3908,16 +3728,16 @@
             },
             "name" : "tail.002",
             "normalTexture" : {
-                "index" : 45,
+                "index" : 43,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 46,
+                    "index" : 44,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 47,
+                    "index" : 45,
                     "texCoord" : 0
                 }
             }
@@ -3977,16 +3797,16 @@
             },
             "name" : "RIVETS.001",
             "normalTexture" : {
-                "index" : 48,
+                "index" : 46,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 49,
+                    "index" : 47,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 50,
+                    "index" : 48,
                     "texCoord" : 0
                 }
             }
@@ -4044,16 +3864,16 @@
             },
             "name" : "wheel_static.002",
             "normalTexture" : {
-                "index" : 51,
+                "index" : 49,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 52,
+                    "index" : 50,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 53,
+                    "index" : 51,
                     "texCoord" : 0
                 }
             }
@@ -4111,16 +3931,16 @@
             },
             "name" : "wheel_blurred.002",
             "normalTexture" : {
-                "index" : 54,
+                "index" : 52,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 55,
+                    "index" : 53,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 56,
+                    "index" : 54,
                     "texCoord" : 0
                 }
             }
@@ -4178,16 +3998,16 @@
             },
             "name" : "landing.002",
             "normalTexture" : {
-                "index" : 57,
+                "index" : 55,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 58,
+                    "index" : 56,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 59,
+                    "index" : 57,
                     "texCoord" : 0
                 }
             }
@@ -4245,16 +4065,16 @@
             },
             "name" : "wheel_static.003",
             "normalTexture" : {
-                "index" : 60,
+                "index" : 58,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 61,
+                    "index" : 59,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 62,
+                    "index" : 60,
                     "texCoord" : 0
                 }
             }
@@ -4312,16 +4132,16 @@
             },
             "name" : "wheel_blurred.003",
             "normalTexture" : {
-                "index" : 63,
+                "index" : 61,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 64,
+                    "index" : 62,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 65,
+                    "index" : 63,
                     "texCoord" : 0
                 }
             }
@@ -4379,16 +4199,16 @@
             },
             "name" : "landing.003",
             "normalTexture" : {
-                "index" : 66,
+                "index" : 64,
                 "texCoord" : 0
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 67,
+                    "index" : 65,
                     "texCoord" : 0
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 68,
+                    "index" : 66,
                     "texCoord" : 0
                 }
             }
@@ -4770,7 +4590,7 @@
                         "TEXCOORD_1" : 132
                     },
                     "indices" : 133,
-                    "material" : 12
+                    "material" : 1
                 },
                 {
                     "attributes" : {
@@ -4780,7 +4600,7 @@
                         "TEXCOORD_1" : 137
                     },
                     "indices" : 138,
-                    "material" : 1
+                    "material" : 2
                 },
                 {
                     "attributes" : {
@@ -4789,8 +4609,7 @@
                         "TEXCOORD_0" : 141,
                         "TEXCOORD_1" : 142
                     },
-                    "indices" : 143,
-                    "material" : 2
+                    "indices" : 143
                 }
             ]
         },
@@ -4926,7 +4745,7 @@
                         "COLOR_0" : 188
                     },
                     "indices" : 189,
-                    "material" : 13
+                    "material" : 12
                 },
                 {
                     "attributes" : {
@@ -4948,7 +4767,7 @@
                         "COLOR_0" : 200
                     },
                     "indices" : 201,
-                    "material" : 12
+                    "material" : 13
                 },
                 {
                     "attributes" : {
@@ -4959,7 +4778,7 @@
                         "COLOR_0" : 206
                     },
                     "indices" : 207,
-                    "material" : 14
+                    "material" : 1
                 },
                 {
                     "attributes" : {
@@ -4970,7 +4789,7 @@
                         "COLOR_0" : 212
                     },
                     "indices" : 213,
-                    "material" : 1
+                    "material" : 2
                 },
                 {
                     "attributes" : {
@@ -4981,7 +4800,7 @@
                         "COLOR_0" : 218
                     },
                     "indices" : 219,
-                    "material" : 2
+                    "material" : 14
                 },
                 {
                     "attributes" : {
@@ -4992,7 +4811,7 @@
                         "COLOR_0" : 224
                     },
                     "indices" : 225,
-                    "material" : 15
+                    "material" : 10
                 },
                 {
                     "attributes" : {
@@ -5002,8 +4821,7 @@
                         "TEXCOORD_1" : 229,
                         "COLOR_0" : 230
                     },
-                    "indices" : 231,
-                    "material" : 10
+                    "indices" : 231
                 }
             ]
         },
@@ -5035,7 +4853,7 @@
                         "COLOR_0" : 242
                     },
                     "indices" : 243,
-                    "material" : 15
+                    "material" : 14
                 }
             ]
         },
@@ -5067,7 +4885,7 @@
                         "COLOR_0" : 254
                     },
                     "indices" : 255,
-                    "material" : 16
+                    "material" : 15
                 }
             ]
         },
@@ -5083,7 +4901,7 @@
                         "COLOR_0" : 260
                     },
                     "indices" : 261,
-                    "material" : 17
+                    "material" : 16
                 }
             ]
         },
@@ -5099,7 +4917,7 @@
                         "COLOR_0" : 266
                     },
                     "indices" : 267,
-                    "material" : 17
+                    "material" : 16
                 }
             ]
         },
@@ -5115,7 +4933,7 @@
                         "COLOR_0" : 272
                     },
                     "indices" : 273,
-                    "material" : 17
+                    "material" : 16
                 }
             ]
         },
@@ -5131,7 +4949,7 @@
                         "COLOR_0" : 278
                     },
                     "indices" : 279,
-                    "material" : 17
+                    "material" : 16
                 }
             ]
         },
@@ -5146,7 +4964,7 @@
                         "TEXCOORD_1" : 283
                     },
                     "indices" : 284,
-                    "material" : 18
+                    "material" : 17
                 },
                 {
                     "attributes" : {
@@ -5156,7 +4974,7 @@
                         "TEXCOORD_1" : 288
                     },
                     "indices" : 289,
-                    "material" : 19
+                    "material" : 18
                 },
                 {
                     "attributes" : {
@@ -5165,8 +4983,7 @@
                         "TEXCOORD_0" : 292,
                         "TEXCOORD_1" : 293
                     },
-                    "indices" : 294,
-                    "material" : 20
+                    "indices" : 294
                 }
             ]
         },
@@ -5181,7 +4998,7 @@
                         "TEXCOORD_1" : 298
                     },
                     "indices" : 299,
-                    "material" : 19
+                    "material" : 17
                 }
             ]
         },
@@ -5196,7 +5013,7 @@
                         "TEXCOORD_1" : 303
                     },
                     "indices" : 304,
-                    "material" : 19
+                    "material" : 17
                 }
             ]
         },
@@ -5211,7 +5028,7 @@
                         "TEXCOORD_1" : 308
                     },
                     "indices" : 309,
-                    "material" : 17
+                    "material" : 16
                 }
             ]
         },
@@ -5226,7 +5043,7 @@
                         "TEXCOORD_1" : 313
                     },
                     "indices" : 314,
-                    "material" : 17
+                    "material" : 16
                 }
             ]
         },
@@ -5241,7 +5058,7 @@
                         "TEXCOORD_1" : 318
                     },
                     "indices" : 319,
-                    "material" : 17
+                    "material" : 16
                 }
             ]
         },
@@ -5256,7 +5073,7 @@
                         "TEXCOORD_1" : 323
                     },
                     "indices" : 324,
-                    "material" : 21
+                    "material" : 19
                 }
             ]
         },
@@ -5271,7 +5088,7 @@
                         "TEXCOORD_1" : 328
                     },
                     "indices" : 329,
-                    "material" : 22
+                    "material" : 20
                 }
             ]
         },
@@ -5286,7 +5103,7 @@
                         "TEXCOORD_1" : 333
                     },
                     "indices" : 334,
-                    "material" : 23
+                    "material" : 21
                 }
             ]
         },
@@ -5301,7 +5118,7 @@
                         "TEXCOORD_1" : 338
                     },
                     "indices" : 339,
-                    "material" : 24
+                    "material" : 22
                 }
             ]
         },
@@ -5316,7 +5133,7 @@
                         "TEXCOORD_1" : 343
                     },
                     "indices" : 344,
-                    "material" : 25
+                    "material" : 23
                 }
             ]
         },
@@ -5331,7 +5148,7 @@
                         "TEXCOORD_1" : 348
                     },
                     "indices" : 349,
-                    "material" : 26
+                    "material" : 24
                 }
             ]
         }
@@ -5467,12 +5284,6 @@
             "source" : 39
         },
         {
-            "source" : 40
-        },
-        {
-            "source" : 41
-        },
-        {
             "source" : 0
         },
         {
@@ -5491,31 +5302,10 @@
             "source" : 4
         },
         {
-            "source" : 42
+            "source" : 40
         },
         {
-            "source" : 43
-        },
-        {
-            "source" : 44
-        },
-        {
-            "source" : 45
-        },
-        {
-            "source" : 46
-        },
-        {
-            "source" : 47
-        },
-        {
-            "source" : 32
-        },
-        {
-            "source" : 48
-        },
-        {
-            "source" : 33
+            "source" : 41
         },
         {
             "source" : 42
@@ -5530,19 +5320,40 @@
             "source" : 45
         },
         {
+            "source" : 30
+        },
+        {
             "source" : 46
         },
         {
-            "source" : 47
+            "source" : 31
         },
         {
-            "source" : 32
+            "source" : 40
         },
         {
-            "source" : 48
+            "source" : 41
         },
         {
-            "source" : 33
+            "source" : 42
+        },
+        {
+            "source" : 43
+        },
+        {
+            "source" : 44
+        },
+        {
+            "source" : 45
+        },
+        {
+            "source" : 30
+        },
+        {
+            "source" : 46
+        },
+        {
+            "source" : 31
         }
     ],
     "images" : [
@@ -5680,16 +5491,6 @@
             "mimeType" : "image/png",
             "name" : "CESSA152_AIRFRAME_LIGHT_ALBD",
             "uri" : "CESSA152_AIRFRAME_LIGHT_ALBD.png"
-        },
-        {
-            "mimeType" : "image/png",
-            "name" : "CESSA152_AIRFRAME_WINDSHIELD_ALBD",
-            "uri" : "CESSA152_AIRFRAME_WINDSHIELD_ALBD.png"
-        },
-        {
-            "mimeType" : "image/png",
-            "name" : "CESSA152_AIRFRAME_WINDSHIELD_COMP",
-            "uri" : "CESSA152_AIRFRAME_WINDSHIELD_COMP.png"
         },
         {
             "mimeType" : "image/png",

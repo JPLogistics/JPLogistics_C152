@@ -1,4 +1,27 @@
 
+<Template Name="JPL_iPad">
+	<DefaultTemplateParameters>
+	  <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
+	  <TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
+	  <TOOLTIP_TITLE>(L:JPL_iPad) 1 == if{ 'Stow iPad' } els{ 'Get iPad' }</TOOLTIP_TITLE>
+	</DefaultTemplateParameters>
+	<Component ID="#NODE_ID#" Node="#NODE_ID#">
+	  <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
+		<LEFT_LEAVE_CODE/>
+		<LEFT_SINGLE_CODE>(L:JPL_iPad) ! (&gt;L:JPL_iPad#)</LEFT_SINGLE_CODE>
+	  </UseTemplate>
+	  <UseTemplate Name="ASOBO_GT_Anim_Code">
+		<ANIM_NAME>iPadAction</ANIM_NAME>
+		<ANIM_LENGTH>100</ANIM_LENGTH>
+		<ANIM_LAG>30</ANIM_LAG>
+		<ANIM_CODE>
+		  (* Default is current needle position *)
+		  (L:JPL_iPad) 100 *
+		</ANIM_CODE>
+	  </UseTemplate>
+	</Component>
+  </Template>
+
 <Template Name="JPL_Sun_Visors">
   <DefaultTemplateParameters>
     <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
