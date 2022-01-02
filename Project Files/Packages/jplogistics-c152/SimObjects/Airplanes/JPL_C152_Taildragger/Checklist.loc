@@ -1,0 +1,57 @@
+{
+  "LocalisationFile": {
+    "Version": 2,
+    "UUID": "f3ed5153-d99b-4a5f-b79b-fb8e63ed44e5",
+    "Languages": [
+      "en-US",
+      "fr-FR",
+      "es-ES",
+      "de-DE",
+      "it-IT",
+      "pl-PL",
+      "pt-BR",
+      "ru-RU"
+    ],
+    "Strings": {
+      "GAME.CHECKLIST_ADJUST_1000_RPM_OR_LESS": {
+        "UUID": "4e7d2898-1fc3-4a77-a846-203a550b2d60",
+        "LastModifiedBy": "ajimeno",
+        "LastModifiedDate": "2020-03-18 12:01:32",
+        "LocalizationStatus": "TranslationNeeded",
+        "Languages": {
+          "en-US": {
+            "Text": "ADJUST for 1000 RPM or less"
+          },
+          "fr-FR": {
+            "Text": "AJUSTER à 1 000 tr/min ou moins",
+            "LocalizationStatus": "TranslationNeeded"
+          },
+          "es-ES": {
+            "Text": "PONER 1000 RPM o menos",
+            "LocalizationStatus": "TranslationNeeded"
+          },
+          "de-DE": {
+            "Text": "1000 RPM oder weniger EINSTELLEN",
+            "LocalizationStatus": "TranslationNeeded"
+          },
+          "it-IT": {
+            "Text": "REGOLATI per 1000 giri al minuto o meno",
+            "LocalizationStatus": "TranslationNeeded"
+          },
+          "pl-PL": {
+            "Text": "WYREGULUJ na 1000 obr./min lub mniej",
+            "LocalizationStatus": "TranslationNeeded"
+          },
+          "pt-BR": {
+            "Text": "AJUSTE para 1.000 RPM ou menos",
+            "LocalizationStatus": "TranslationNeeded"
+          },
+          "ru-RU": {
+            "Text": "УСТАНОВИТЬ мощность не более 1000 об/мин",
+            "LocalizationStatus": "TranslationNeeded"
+          }
+        }
+      }
+    }
+  }
+}

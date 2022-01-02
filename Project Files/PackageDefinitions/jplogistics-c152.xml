@@ -42,6 +42,13 @@
 			<AssetDir>src\JPLogistics_C152\SimObjects\Airplanes\JPL_C152_Fairing\</AssetDir>
 			<OutputDir>SimObjects\Airplanes\JPL_C152_Fairing\</OutputDir>
 		</AssetGroup>
+		<AssetGroup Name="jplogistics-c152-taildragger">
+			<Type>SimObject</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>src\JPLogistics_C152\SimObjects\Airplanes\JPL_C152_Taildragger\</AssetDir>
+			<OutputDir>SimObjects\Airplanes\JPL_C152_Taildragger\</OutputDir>
+		</AssetGroup>
 	</AssetGroups>
 </AssetPackage>
-
