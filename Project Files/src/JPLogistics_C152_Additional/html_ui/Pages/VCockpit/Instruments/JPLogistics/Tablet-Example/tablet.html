@@ -1,0 +1,621 @@
+<link rel="stylesheet" href="/Pages/VCockpit/Instruments/JPLogistics/Tablet/tablet.css?ab" />
+<link rel="stylesheet" href="/Pages/VCockpit/Instruments/JPLogistics/Tablet/fonts/fa/css/all.css">
+
+<script type="text/html" id="tablet_script">
+    <div id="tablet">
+        <div id="header">
+            <img src="/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/logo.png" width="25%">
+        </div>
+        <div id="content">
+            <!-- BRIGHTNESS -->
+            <div id="appBrightness" class="screenBrightness">
+            </div>
+
+            <!-- STARTUP -->
+            <div id="appStartup" class="screenBlack center">
+                <img src="/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/logo.png" width="25%">
+            </div>
+
+            <!-- STOWED -->
+            <div id="appPage0" class="screenBlack">
+            </div>
+
+            <!-- CHECKLISTS -->
+            <div id="appPage1" class="hidden">
+                <div class="row">
+                    <div class="column25">
+                        <div id="checklistButton0" class="button">Engine Start</div>
+                        <div id="checklistButton1" class="button">Taxi</div>
+                        <div id="checklistButton2" class="button">Run-up Check</div>
+                        <div id="checklistButton3" class="button">Take-Off</div>
+                        <div id="checklistButton4" class="button">Approach+Landing</div>
+                        <div id="checklistButton5" class="button">After landing</div>
+                        <div id="checklistButton6" class="button">Miscellaneous</div>
+                    </div>
+                    <div class="column75">
+                        <!-- Engine Start -->
+                        <div id="checklistPage0">
+                            <div class="row">
+                                <div class="column50 right shade5 padding16 margin16R lineheight175" style="height: 512px;">
+                                    <h3 class="shade15 padding8H margin8B">List</h3>
+                                    Parking Brake<br>
+                                    Battery<br>
+                                    Prop Control<br>
+                                    Carb Air Filter<br>
+                                    Fuel<br>
+                                    Mixture<br>
+                                    External Tank<br>
+                                    Throttle<br>
+                                    Booster or Wobble Pump<br>
+                                    Primer<br>
+                                    Starter & Booster Coil Covers<br>
+                                    Mixture<br>
+                                    Magnetos<br>
+                                    Starter & Booster<br>
+                                </div>
+                                <div class="column50 shade5 padding16 lineheight175">
+                                    <h3 class="shade15 padding8H margin8B">Check</h3>
+                                    Set<br>
+                                    On<br>
+                                    Full Forward<br>
+                                    Open (Full FWD)<br>
+                                    On<br>
+                                    Idle/Cutoff<br>
+                                    Off<br>
+                                    Open 1/2"<br>
+                                    Until Low Pressure Light Off<br>
+                                    As Required<br>
+                                    Open<br>
+                                    Auto (Full FWD)<br>
+                                    Both On<br>
+                                    Engage Both<br>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Taxi -->
+                        <div id="checklistPage1" class="hidden">
+                            <div class="row">
+                                <div class="column50 right shade5 padding16 margin16R lineheight200" style="height: 512px;">
+                                    <h3 class="shade15 padding8H margin8B">List</h3>
+                                    Flaps<br>
+                                    Prop Control<br>
+                                    Canopy<br>
+                                    Door<br>
+                                    Parking Brake<br>
+                                    Throttle<br>
+                                    Maneuvering<br>
+                                    Braking<br>
+                                </div>
+                                <div class="column50 shade5 padding16 lineheight200">
+                                    <h3 class="shade15 padding8H margin8B">Check</h3>
+                                    Raised<br>
+                                    Full Forward<br>
+                                    Open<br>
+                                    Unlocked<br>
+                                    Release<br>
+                                    Bursts of up to 1500rpm<br>
+                                    S-turns<br>
+                                    Short taps<br>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Run-up Check -->
+                        <div id="checklistPage2" class="hidden">
+                            <div class="row">
+                                <div class="column50 right shade5 padding16 margin16R lineheight200" style="height: 512px;">
+                                    <h3 class="shade15 padding8H margin8B">List</h3>
+                                    Elevator Trim<br>
+                                    Rudder Trim<br>
+                                    Prop Control<br>
+                                    Fuel Booster Pump<br>
+                                    Flaps<br>
+                                    Supercharger<br>
+                                    Carb Air Filter<br>
+                                </div>
+                                <div class="column50 shade5 padding16 lineheight200">
+                                    <h3 class="shade15 padding8H margin8B">Check</h3>
+                                    Neutral or slightly down<br>
+                                    Neutral or right bias<br>
+                                    Full Forward<br>
+                                    On<br>
+                                    Raised<br>
+                                    Auto<br>
+                                    Closed<br>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Take-off -->
+                        <div id="checklistPage3" class="hidden">
+                            <div class="row">
+                                <div class="column50 right shade5 padding16 margin16R lineheight200" style="height: 512px;">
+                                    <h3 class="shade15 padding8H margin8B">List</h3>
+                                    Throttle<br>
+                                    Lift Off<br>
+                                    Landing Gear<br>
+                                    Elevator and Rudder Trims<br>
+                                    Door<br>
+                                    Canopy<br>
+                                </div>
+                                <div class="column50 shade5 padding16 lineheight200">
+                                    <h3 class="shade15 padding8H margin8B">Check</h3>
+                                    Advance to +6 (+12 max)<br>
+                                    100-120mph<br>
+                                    Raise<br>
+                                    Retrim as needed<br>
+                                    Locked<br>
+                                    Closed<br>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Approach & Landing -->
+                        <div id="checklistPage4" class="hidden">
+                            <div class="row">
+                                <div class="column50 right shade5 padding16 margin16R lineheight200" style="height: 512px;">
+                                    <h3 class="shade15 padding8H margin8B">List</h3>
+                                    Canopy<br>
+                                    Door<br>
+                                    Prop Control<br>
+                                    Gear<br>
+                                    Carb Air Filter<br>
+                                    Fuel Booster Pump<br>
+                                    Flaps<br>
+                                    Pneumatic Pressure<br>
+                                    Approach<br>
+                                    Touchdown<br>
+                                </div>
+                                <div class="column50 shade5 padding16 lineheight200">
+                                    <h3 class="shade15 padding8H margin8B">Check</h3>
+                                    Open at &lt; 160mph<br>
+                                    Unlocked<br>
+                                    Full Forward<br>
+                                    Down at &lt; 160mph<br>
+                                    Open (Full FWD)<br>
+                                    On<br>
+                                    Down at &lt; 140mph<br>
+                                    Check Brakes<br>
+                                    120mph<br>
+                                    95mph<br>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- After Landing -->
+                        <div id="checklistPage5" class="hidden">
+                            <div class="row">
+                                <div class="column50 right shade5 padding16 margin16R lineheight200" style="height: 512px;">
+                                    <h3 class="shade15 padding8H margin8B">List</h3>
+                                    Flaps<br>
+                                    Parking Brake<br>
+                                    Idle for 30s<br>
+                                    Throttle<br>
+                                    Fuel<br>
+                                    Magnetos<br>
+                                    Battery<br>
+                                </div>
+                                <div class="column50 shade5 padding16 lineheight200">
+                                    <h3 class="shade15 padding8H margin8B">Check</h3>
+                                    Raise before taxiing<br>
+                                    Set<br>
+                                    800-900rpm<br>
+                                    Idle cut off<br>
+                                    Off<br>
+                                    Both Off<br>
+                                    Off<br>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Miscellaneous -->
+                        <div id="checklistPage6" class="hidden">
+                            <div class="row">
+                                <div class="column50 right shade5 padding16 margin16R lineheight200" style="height: 512px;">
+                                    <h3 class="shade15 padding8H margin8B">Above 10,000'</h3>
+                                    Oxygen Valve<br>
+                                    Oxygen Regulator<br>
+                                    <h3 class="shade15 padding8H margin8B margin16T">Above 12,000'</h3>
+                                    Fuel Pressure<br>
+                                    <h3 class="shade15 padding8H margin8B margin16T">Release Drop Tank</h3>
+                                    Fuel Selector<br>
+                                    Release Tank<br>
+                                </div>
+                                <div class="column50 shade5 padding16 lineheight200">
+                                    <h3 class="shade15 padding8H margin8B">Check</h3>
+                                    Open<br>
+                                    Open<br>
+                                    <h3 class="shade15 padding8H margin8B margin16T">Check</h3>
+                                    On<br>
+                                    <h3 class="shade15 padding8H margin8B margin16T">Check</h3>
+                                    Main Tank (Full FWD)<br>
+                                    Pull Lever<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- V-SPEEDS -->
+            <div id="appPage2" class="hidden">
+                <div class="row">
+                    <div class="column50 right shade5 padding16" style="height: 512px;">
+                        <h3 class="shade15 padding8H margin8B">V-Speeds</h3>
+                        Best glide speed (VBG)<br>
+                        Design cruise speed (VC)<br>
+                        Design diving speed (VD)<br>
+                        Never exceed speed (VNE)<br>
+                        Max flaps extended (VFE)<br>
+                        Max gear extended (VLO)<br>
+
+                        Max speed normal operations (VNO)<br>
+                        Rotation speed (VR)<br>
+                        Threshold cross speed (VREF)<br>
+
+                        Stall speed flaps up (VS)<br>
+                        Stall speed full flaps (VS0)<br>
+
+                        Take off speed (VTO)<br>
+                        Best angle of climb speed (VX)<br>
+                        Best rate of climb speed (VY)<br>
+
+                        Loop (aerobatic)<br>
+                        Roll (aerobatic)<br>
+                        Half-roll off loop (aerobatic)<br>
+                        Climbing roll (aerobatic)<br>
+                    </div>
+                    <div class="column25 shade5 margin16H padding16">
+                        <h3 class="shade15 padding8H margin8B">Mph</h3>
+                        110<br>
+                        243<br>
+                        450<br>
+                        450<br>
+                        160 (85°)<br>
+                        160<br>
+
+                        345<br>
+                        100<br>
+                        95<br>
+
+                        90<br>
+                        75<br>
+
+                        100<br>
+                        175<br>
+                        180<br>
+
+                        300 min<br>
+                        240 min<br>
+                        340 min<br>
+                        330 min<br>
+                    </div>
+                    <div class="column25 shade5 padding16">
+                        <h3 class="shade15 padding8H margin8B">Knots</h3>
+                        96<br>
+                        211<br>
+                        391<br>
+                        391<br>
+                        139 (85°)<br>
+                        139<br>
+
+                        300<br>
+                        87<br>
+                        82<br>
+
+                        78<br>
+                        65<br>
+
+                        87<br>
+                        152<br>
+                        156<br>
+
+                        260 min<br>
+                        206 min<br>
+                        295 min<br>
+                        286 min<br>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIVE DATA -->
+            <div id="appPage3" class="hidden">
+                <div class="row" style="font-size: 80%;">
+                    <div class="column25 shade5 margin16R padding16" style="height: 512px;">
+                        <h3 class="center shade15 margin8B">Speed (mph)</h3>
+                        <div class="row">
+                            <div class="column75">
+                                Indicated<br>
+                                True<br>
+                                Ground<br>
+                            </div>
+                            <div id="dataSpeed" class="column25 right">
+                            </div>
+                        </div>
+
+                        <h3 class="center shade15 margin8V">Altitude (ft)</h3>
+                        <div class="row">
+                            <div class="column75">
+                                Indicated<br>
+                                Radar<br>
+                            </div>
+                            <div id="dataAltitude" class="column25 right">
+                            </div>
+                        </div>
+
+                        <h3 class="center shade15 margin8V">Heading</h3>
+                        <div class="row">
+                            <div class="column75">
+                                Magnetic<br>
+                                True<br>
+                                Track Magnetic<br>
+                                Track True<br>
+                            </div>
+                            <div id="dataHeading" class="column25 right">
+                            </div>
+                        </div>
+
+                        <h3 class="center shade15 margin8V">Weather</h3>
+                        <div class="row">
+                            <div class="column75">
+                                Wind dir<br>
+                                Wind speed (kts)<br>
+                                Temperature (°C)<br>
+                                Baro MSL (InHg)<br>
+                            </div>
+                            <div id="dataWeather" class="column25 right">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column25 shade5 margin16R padding16">
+                        <h3 class="center shade15 margin8B">Engine</h3>
+                        <div class="row">
+                            <div class="column75">
+                                RPM<br>
+                                MP<br>
+                                Boost<br>
+                            </div>
+                            <div id="dataEngines" class="column25 right">
+                            </div>
+                        </div>
+
+                        <h3 class="center shade15 margin8V">Propeller</h3>
+                        <div class="row">
+                            <div class="column75">
+                                Pitch<br>
+                            </div>
+                            <div id="dataPropellers" class="column25 right">
+                            </div>
+                        </div>
+
+                        <h3 class="center shade15 margin8V">Pressure (Psi)</h3>
+                        <div class="row">
+                            <div class="column75">
+                                Oil<br>
+                                Fuel<br>
+                            </div>
+                            <div id="dataPressure" class="column25 right">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column25 shade5 margin16R padding16">
+                        <h3 class="center shade15 margin8B">Configuration</h3>
+                        <div class="row">
+                            <div class="column75">
+                                L Gear<br>
+                                R Gear<br>
+                                L Flaps<br>
+                                R Flaps<br>
+                                Elev.Trim %<br>
+                                Rudd.Trim %<br>
+                                Parking Brake<br>
+                                Door<br>
+                                Canopy<br>
+                            </div>
+                            <div id="dataCfg" class="column25 right">
+                            </div>
+                        </div>
+
+                        <h3 class="center shade15 margin8V">Temperature (°C)</h3>
+                        <div class="row">
+                            <div class="column75">
+                                Oil<br>
+                                Radiator<br>
+                            </div>
+                            <div id="dataTemperature" class="column25 right">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column25 shade5 padding16">
+                        <h3 class="center shade15 margin8B">Tanks (US gal)</h3>
+                        <div class="row">
+                            <div class="column75">
+                                Total<br>
+                                Main<br>
+                                Drop<br>
+                            </div>
+                            <div id="dataTanks" class="column25 right">
+                            </div>
+                        </div>
+
+                        <h3 class="center shade15 margin8V">Range</h3>
+                        <div class="row">
+                            <div class="column75">
+                                Flow (gph)<br>
+                                NM<br>
+                                M<br>
+                                Km<br>
+                                Time<br>
+                            </div>
+                            <div id="dataRange" class="column25 right">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STATS -->
+            <div id="appPage4" class="hidden">
+                <div id="stat1" style="position: absolute; left: 32px; top: 128px;"></div>
+                <div id="stat2" style="position: absolute; left: 364px; top: 128px;"></div>
+                <div id="stat3" style="position: absolute; left: 696px; top: 128px;"></div>
+                <div id="stat4" style="position: absolute; left: 32px; top: 400px;"></div>
+                <div id="stat5" style="position: absolute; left: 364px; top: 400px;"></div>
+                <div id="stat6" style="position: absolute; left: 696px; top: 400px;"></div>
+            </div>
+            
+            <!-- LOADOUT -->
+            <div id="appPage5" class="loadoutBackground hidden">
+                <div id="loadoutTotal" style="position: absolute; left: 464px; top: 192px;"></div>
+                <div id="loadoutMain" style="position: absolute; left: 464px; top: 80px;"></div>
+                <div id="loadoutDrop" style="position: absolute; left: 464px; top: 304px;"></div>
+                <div id="oxygenSupply" style="position: absolute; left: 690px; top: 192px;"></div>
+                <div id="loadoutButtons" class="hidden">
+                    <div id="loadoutButtonShort" class="button" style="position: absolute; left: 192px; top: 440px;">Short Range</div>
+                    <div id="loadoutButtonMedium" class="button" style="position: absolute; left: 416px; top: 440px;">Medium Range</div>
+                    <div id="loadoutButtonLong" class="button" style="position: absolute; left: 640px; top: 440px;">Long Range</div>
+                </div>
+                <div class="center" style="position: absolute; left: 0; top: 512px; width: 1024px; font-size: 100%;">
+                    External slipper tank drag (drop tank) will decrease max speed by about 50mph.<br>
+                    Selecting any loadout will also topup the oxygen supply.
+                </div>
+            </div>
+
+            <!-- AUTO PILOT -->
+            <div id="appPage6" class="contentBlack hidden">
+                <div class="apDisplay apDisplayBlack" style="left: 136px; top: 48px;">88888</div>
+                <div id="apDivHdgAct" class="apDisplay" style="left: 136px; top: 48px;"></div>
+                <div class="apDisplayLine" style="left: 418px; top: 88px;"></div>
+                <div class="apLabel" style="left: 362px; top: 48px;">&nbsp; CURRENT &nbsp;</div>
+                <div class="apDisplayLine" style="left: 566px; top: 88px;"></div>
+                <div class="apDisplay apDisplayBlack" style="left: 648px; top: 48px;">88888</div>
+                <div id="apDivAltAct" class="apDisplay" style="left: 648px; top: 48px;"></div>
+
+                <div class="apDisplay apDisplayBlack" style="left: 136px; top: 144px;">88888</div>
+                <div id="apDivHdgTrg" class="apDisplay" style="left: 136px; top: 144px;"></div>
+                <div class="apDisplayLine" style="left: 418px; top: 184px;"></div>
+                <div class="apLabel" style="left: 362px; top: 144px;">&nbsp; SET &nbsp;</div>
+                <div class="apDisplayLine" style="left: 566px; top: 184px;"></div>
+                <div class="apDisplay apDisplayBlack" style="left: 648px; top: 144px;">88888</div>
+                <div id="apDivAltTrg" class="apDisplay" style="left: 648px; top: 144px;"></div>
+
+                <div class="apButtonDummy" style="left: 216px; top: 256px;"></div>
+                <div id="apDivLeft" class="apButton" style="left: 100px; top: 352px;"><i class="fas fa-chevron-left"></i></div>
+                <div id="apDivHdg" class="apButton apButtonLed" style="left: 196px; top: 352px;">HDG</div>
+                <div id="apDivRight" class="apButton" style="left: 332px; top: 352px;"><i class="fas fa-chevron-right"></i></div>
+                <div class="apButtonDummy" style="left: 216px; top: 446px;"></div>
+
+                <div class="apButtonDummy" style="left: 612px; top: 352px;"></div>
+                <div id="apDivUp" class="apButton" style="left: 728px; top: 256px;"><i class="fas fa-chevron-up"></i></div>
+                <div id="apDivAlt" class="apButton apButtonLed" style="left: 708px; top: 352px;">ALT</div>
+                <div id="apDivDown" class="apButton" style="left: 728px; top: 446px;"><i class="fas fa-chevron-down"></i></div>
+                <div class="apButtonDummy" style="left: 844px; top: 352px;"></div>
+
+                <div id="apDivLvl" class="apButton apButtonLed" style="left: 452px; top: 352px;">LVL</div>
+
+                <div id="apDivStatus" class="apLabelQuartz" style="left: 362px; top: 256px;"></div>
+
+                <div id="apDivPower" class="apButton apButtonLed" style="left: 452px; top: 448px; font-size: 250%;"><i class="fas fa-power-off"></i></div>
+
+                <div class="apLabel" style="left: 106px; top: -4px; font-size: 80%;">MAGNETIC HEADING</div>
+                <div class="apLabel" style="left: 618px; top: -4px; font-size: 80%;">ALTITUDE IN FEET</div>
+                <div class="apLabel" style="left: 362px; top: 512px; font-size: 80%;">FlyingIron Autopilot FFC500</div>
+            </div>
+
+            <!-- SETTINGS -->
+            <div id="appPage7" class="hidden">
+                <div class="row">
+                    <div class="column50 shade5 margin16R padding16" style="height: 512px;">
+                        <h3 class="shade15 padding8H">Cockpit Configuration</h3>
+                        <div>
+                            <label class="toggle"><input id="settingsToggleGunsight" type="checkbox"><span class="toggleKnob"></span></label>
+                            Gunsight or GPS toggle
+                        </div>
+                        <div>
+                            <label class="toggle"><input id="settingsToggleYoke" type="checkbox"><span class="toggleKnob"></span></label>
+                            Control Column
+                        </div>
+                        <div id="settingsGroundServices">
+                            <h3 class="shade15 margin16T padding8H">Ground Services</h3>
+                            <div>
+                                <label class="toggle"><input id="settingsTogglePushback" type="checkbox"><span class="toggleKnob"></span></label>
+                                Pushback
+                            </div>
+                        </div>
+                        <div id="settingsRadioPresets">
+                            <h3 class="shade15 margin16T padding8H">Radio Presets (click to store active)</h3>
+                            <div class="row padding16">
+                                <div class="column50">
+                                    <div id="settingsRadioButtonA" class="button" style="height: 48px;">A</div>
+                                    <div id="settingsRadioButtonB" class="button" style="height: 48px;">B</div>
+                                </div>
+                                <div class="column50 margin16L">
+                                    <div id="settingsRadioButtonC" class="button" style="height: 48px;">C</div>
+                                    <div id="settingsRadioButtonD" class="button" style="height: 48px;">D</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column50 shade5 padding16" style="height: 512px;">
+                        <h3 class="shade15 padding8H">Realism Settings</h3>
+                        <div>
+                            <label class="toggle"><input id="settingsToggleEngineDamage" type="checkbox"><span class="toggleKnob"></span></label>
+                            Engine Damage
+                        </div>
+                        <div class="hidden">
+                            <label class="toggle"><input id="settingsToggleHypoxia" type="checkbox"><span class="toggleKnob"></span></label>
+                            Hypoxia
+                        </div>
+                        <h3 class="shade15 margin16T padding8H">Tablet Preferences</h3>
+                        <div class="verticalAlign margin16V">
+                            <label id="settingsBrightnessDec" style="color: #2a3141; font-size: 150%;"><i class="fas fa-2x fa-minus-circle"></i></label>
+                            <svg id="settingsBrightnessSvg" class="margin16L" width="87" height="50"></svg>
+                            <label id="settingsBrightnessInc" class="margin16H" style="color: #2a3141; font-size: 150%;"><i class="fas fa-2x fa-plus-circle"></i></label>
+                            Brightness
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="footer">
+            <div id="appButton1" class="appButton">
+                <i class="fas fa-check-square fa-4x"></i><br>
+                CHECKLISTS
+            </div>
+            <div id="appButton2" class="appButton">
+                <i class="fas fa-tachometer-alt fa-4x"></i><br>
+                V-SPEEDS
+            </div>
+            <div id="appButton3" class="appButton">
+                <i class="fas fa-plane fa-4x"></i><br>
+                LIVE DATA
+            </div>
+            <div id="appButton4" class="appButton">
+                <i class="fas fa-chart-line fa-4x"></i><br>
+                STATS
+            </div>
+            <div id="appButton5" class="appButton">
+                <i class="fas fa-gas-pump fa-4x"></i><br>
+                LOADOUT
+            </div>
+            <div id="appButton6" class="appButton">
+                <i class="fas fa-user-secret fa-4x"></i><br>
+                AUTO PILOT
+            </div>
+            <div id="appButton7" class="appButton">
+                <i class="fas fa-cog fa-4x"></i><br>
+                SETTINGS
+            </div>
+        </div>
+
+    </div>
+</script>
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/JPLogistics/Tablet/tablet.js?da"></script>
+
+<!--<head>

@@ -1,0 +1,467 @@
+/* Fonts */
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("/Pages/VCockpit/Instruments/JPLogistics/Tablet/fonts/RobotoMono-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Teko-SemiBold";
+  src: url("/Pages/VCockpit/Instruments/JPLogistics/Tablet/fonts/Teko-SemiBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quartz";
+  src: url("/Pages/VCockpit/Instruments/Shared/Fonts/Quartz.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Digital";
+  src: url("/Pages/VCockpit/Instruments/Shared/Fonts/digital.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Common */
+
+body {
+  font-family: "Roboto-Bold";
+  font-size: 115%;
+  background-color: #888;
+  margin: 0;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+h1, h2, h3 {
+  font-family: "Teko-SemiBold";
+  color: #2a3141;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0 0 16px 0;
+}
+
+h2 {
+  font-size: 32px;
+  margin: 0 0 16px 0;
+}
+
+h3 {
+  font-size: 28px;
+  margin: 0;
+  padding: 2px 0 0 0;
+}
+
+#tablet {
+  background-color: #fffdf4;
+  color: #1a1a1a;
+  width: 1024px;
+  height: 768px;
+}
+
+#header {
+  background-color: #2a3141;
+  width: auto;
+  height: 96px;
+  padding-top: 16px;
+  text-align: center;
+}
+
+#content {
+  width: auto;
+  padding: 32px;
+  background-image: url("/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/background.jpg");
+  background-color: #fffdf4;
+  height: 576px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contentBlack {
+  position: fixed;
+  top: 96px;
+  left: 0;
+  background-color: black;
+  width: 1024px;
+  height: 576px;
+}
+
+.screenBlack {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 1024px;
+  height: 768px;
+  padding-top: 334px;
+  z-index: 10;
+}
+
+.screenBrightness {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 1024px;
+  height: 768px;
+  padding-top: 334px;
+  opacity: 0;
+  z-index: 5;
+}
+
+.home {
+  position: fixed;
+  top: 96px;
+  left: 0;
+  width: 1024px;
+  height: 576px;
+}
+
+#footer {
+  position: fixed;
+  top: 672px;
+  left: 0;
+  background-color: #2a3141;
+  width: 1024px;
+  height: 96px;
+  text-align: center;
+}
+
+.appButton {
+  display: inline-block;
+  color: #fffdf4;
+  width: 100px;
+  height: 80px;
+  margin: 10px 8px 0 8px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 80%;
+}
+
+.appButton:hover {
+  color: #f5ab30;
+  transition: 2s;
+}
+
+.center {
+  text-align: center;
+}
+
+.verticalAlign {
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.hidden {
+  display: none;
+}
+
+.row {
+  display: flex;
+}
+
+.column25 {
+  flex: 25%;
+}
+
+.column33 {
+  flex: 33%;
+}
+
+.column40 {
+  flex: 40%;
+}
+
+.column50 {
+  flex: 50%;
+}
+
+.column60 {
+  flex: 50%;
+}
+
+.column75 {
+  flex: 75%;
+}
+
+.margin8 {
+  margin: 8px;
+}
+
+.margin8H {
+  margin: 0 8px;
+}
+
+.margin8V {
+  margin: 8px 0;
+}
+
+.margin8B {
+  margin-bottom: 8px;
+}
+
+.margin16 {
+  margin: 16px;
+}
+
+.margin16H {
+  margin: 0 16px;
+}
+
+.margin16V {
+  margin: 16px 0;
+}
+
+.margin16T {
+  margin-top: 16px;
+}
+
+.margin16R {
+  margin-right: 16px;
+}
+
+.margin16B {
+  margin-bottom: 16px;
+}
+
+.margin16L {
+  margin-left: 16px;
+}
+
+.padding8 {
+  padding: 8px;
+}
+
+.padding16 {
+  padding: 16px;
+}
+
+.padding8H {
+  padding: 0 8px;
+}
+
+.padding16H {
+  padding: 0 16px;
+}
+
+.padding8V {
+  padding: 8px 0;
+}
+
+.padding16V {
+  padding: 16px 0;
+}
+
+.shade5 {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.shade10 {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.shade15 {
+  background-color: rgba(0, 0, 0, 0.18);
+}
+
+.lineheight150 {
+  line-height: 150%;
+}
+
+.lineheight175 {
+  line-height: 175%;
+}
+
+.lineheight200 {
+  line-height: 200%;
+}
+
+/* Loadout */
+
+.loadoutBackground {
+  position: fixed;
+  top: 96px;
+  left: 0;
+  background-image: url("/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/loadout.png");
+  width: 1024px;
+  height: 576px;
+}
+
+/* Autopilot */
+
+.apButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: #242424;
+  color: #aaa;
+  text-transform: uppercase;
+  font-size: 250%;
+  border-radius: 50%;
+}
+
+.apButton:hover {
+  background-color: #161616;
+  color: #eee;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.apButtonLed {
+  width: 120px;
+  height: 80px;
+  border-bottom: solid #333 8px;
+  border-radius: 0;
+  font-size: 200%;
+}
+
+.apButtonDummy {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: #030303;
+  border-radius: 50%;
+  border: solid 8px #090909;
+}
+
+.apDisplay {
+  font-family: "Digital";
+  position: absolute;
+  text-align: right;
+  padding: 8px 32px;
+  width: 240px;
+  height: 80px;
+  color: #00ff00;
+  text-transform: uppercase;
+  font-size: 400%;
+  border: solid 2px #555;
+}
+
+.apDisplayBlack {
+  background-color: #080808;
+  color: #141414;
+}
+
+.apDisplayLine {
+  position: absolute;
+  width: 40px;
+  height: 0;
+  border-top: solid 2px #444;
+}
+
+.apLabel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 300px;
+  height: 80px;
+  color: #555;
+  font-size: 100%;
+}
+
+.apLabelQuartz {
+  font-family: "Quartz";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 300px;
+  height: 80px;
+  color: #0ff;
+  text-transform: uppercase;
+  font-size: 200%;
+}
+
+/* Themed Button */
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 192px;
+  height: 56px;
+  margin: 0 0 16px 0;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #565656;
+  color: #fffdf4;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: #9b2f25;
+  cursor: pointer;
+  transition: .3s;
+}
+
+/* Custom Toggle */
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 16px 0;
+  padding: 4px;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleKnob {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #999;
+  transition: .2s;
+  border-radius: 34px;
+}
+
+.toggleKnob:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fffdf4;
+  transition: .2s;
+  border-radius: 50%;
+}
+
+input:checked+.toggleKnob {
+  background-color: #2a3141;
+}
+
+input:focus+.toggleKnob {
+  box-shadow: 0 0 1px #2a3141;
+}
+
+input:checked+.toggleKnob:before {
+  transform: translateX(26px);
+}
