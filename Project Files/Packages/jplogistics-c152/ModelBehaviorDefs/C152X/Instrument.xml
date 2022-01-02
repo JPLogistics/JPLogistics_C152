@@ -54,17 +54,17 @@
   </Component>
 </Template>
 
-<Template Name="JPL_EFB_Screens_Template">
+<Template Name="JPL_iPad_Screens_Template">
   <Parameters Type="Default">
     <ID>1</ID>
   </Parameters>
   <UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
-    <TEMPLATE_TO_CALL>JPL_EFB_Screens_SubTemplate</TEMPLATE_TO_CALL>
+    <TEMPLATE_TO_CALL>JPL_iPad_Screens_SubTemplate</TEMPLATE_TO_CALL>
   </UseTemplate>
 </Template>
-<Template Name="JPL_EFB_Screens_SubTemplate">
+<Template Name="JPL_iPad_Screens_SubTemplate">
   <DefaultTemplateParameters>
-    <NODE_ID>SCREEN_EFB</NODE_ID>
+    <NODE_ID>iPadScreen</NODE_ID>
   </DefaultTemplateParameters>
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <UseTemplate Name="ASOBO_GT_Emissive_Gauge">
