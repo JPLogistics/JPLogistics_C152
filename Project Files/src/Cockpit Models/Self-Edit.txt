@@ -1,5 +1,21 @@
-"extensionsUsed": [ "ASOBO_normal_map_convention", "ASOBO_tags", "ASOBO_material_invisible", "ASOBO_material_glass", "ASOBO_material_blend_gbuffer", "ASOBO_material_detail_map", "ASOBO_material_shadow_options", "ASOBO_material_draw_order", "ASOBO_material_environment_occluder", "ASOBO_material_kitty_glass", "MSFT_texture_dds", "ASOBO_asset_optimized" ],
+"extensionsUsed": [
+    "ASOBO_normal_map_convention",
+    "ASOBO_material_invisible",
+    "ASOBO_material_detail_map",
+    "ASOBO_material_blend_gbuffer",
+    "ASOBO_material_draw_order",
+    "ASOBO_material_day_night_switch",
+    "ASOBO_material_shadow_options",
+    "ASOBO_material_fresnel_fade",
+    "ASOBO_tags",
+    "ASOBO_material_environment_occluder",
+    "ASOBO_material_kitty_glass",
+    "MSFT_texture_dds",
+    "ASOBO_asset_optimized"
+  ],
   "extensionsRequired": [ "MSFT_texture_dds" ],
+
+
 
 {
       "name": "WINDSHIELD",
@@ -10,7 +26,7 @@
         "baseColorFactor": [ 1.0, 1.0, 1.0, 0.01 ],
         "metallicFactor": 0.0,
         "roughnessFactor": 0.0,
-        "metallicRoughnessTexture": { "index": 99 }
+        "metallicRoughnessTexture": { "index": 49 }
       }
       "extensions": {
         "ASOBO_material_detail_map": {
