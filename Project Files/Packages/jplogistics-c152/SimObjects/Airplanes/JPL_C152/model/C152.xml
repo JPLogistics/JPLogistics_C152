@@ -193,7 +193,7 @@
 					<FX_GUID>{E9883850-53DE-439C-9313-40E38D8F5199}</FX_GUID>
 					<FX_NAME>FX_EXHAUST2</FX_NAME>
 			</OverrideTemplateParameters>
-			<Component ID="FX_EXHAUST2" Node="CenterLeg.001">
+			<Component ID="FX_EXHAUST2" Node="Exhaust">
 				<UseTemplate Name="ASOBO_GT_FX">
 				</UseTemplate>
 			</Component>
