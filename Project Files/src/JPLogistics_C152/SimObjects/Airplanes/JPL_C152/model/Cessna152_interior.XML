@@ -218,7 +218,9 @@
     <Animation guid="8dc50d73-0682-4b7d-be62-a973e46c5e29" name="iPadAction" type="standard" typeParam="Autoplay"/>
 	<Animation guid="1184b217-5902-4b36-8521-e322e8caef90" name="PilotSeatAnim" type="standard" typeParam="Autoplay"/>
 	<Animation guid="23943e76-d1fc-4dd4-b72c-02ad245e17f9" name="CoPilotSeatAnim" type="standard" typeParam="Autoplay"/>
-
+	<Animation guid="f540d106-3883-4903-918a-831fe31bc169" name="INSTRUMENT_Needle_EGT_Set" type="standard" typeParam="Autoplay"/>
+	<Animation guid="66dcc456-b0ad-4be2-92b0-3d30a5bf73c4" name="INSTRUMENT_Needle_EGT" type="standard" typeParam="Autoplay"/>
+	<Animation guid="def779a0-cec4-4288-8f46-c29a9c68bd75" name="INSTRUMENT_Knob_EGT" type="standard" typeParam="Autoplay"/>
     <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank and the 20 in the formula is a scaling factor for the amount of yaw induced variation in the tank indication. The first value is the current tank quantity in liters. 	The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
     <Macro Name="FuelTankSensorAdjustmentLeftTank">
       1 (A:FUEL LEFT QUANTITY, gallons) (A:FUEL TANK LEFT MAIN CAPACITY, gallons) / - 2 * (A:TURN COORDINATOR BALL, scaler) * -
@@ -711,16 +713,16 @@
 				<DONT_APPEND_ID>True</DONT_APPEND_ID>
 			</UseTemplate>
 			
-			<!--
+			
 			<UseTemplate Name="JPL152_INSTRUMENT_Needle_EGT_Template">
-				<NEEDLE_ANIM_NAME>INSTRUMENT_Needle_Ammeter</NEEDLE_ANIM_NAME>
-				<NEEDLE_NODE_ID>INSTRUMENT_Needle_Ammeter</NEEDLE_NODE_ID>
-				<PART_ID>INSTRUMENT_Needle_Ammeter</PART_ID>
+				<NEEDLE_ANIM_NAME>INSTRUMENT_Needle_EGT</NEEDLE_ANIM_NAME>
+				<NEEDLE_NODE_ID>INSTRUMENT_Needle_EGT</NEEDLE_NODE_ID>
+				<PART_ID>INSTRUMENT_Needle_EGT</PART_ID>
 				<MIN_VALUE>1400</MIN_VALUE>
 				<MAX_VALUE>1700</MAX_VALUE>
 				<ANIM_WRAP>False</ANIM_WRAP>
 			</UseTemplate>
-			-->
+			
 			
 			<UseTemplate Name="ASOBO_SAFETY_Indicator_LowVolt_Template">
 				<FAILURE>(A:CIRCUIT ON:29, Bool)</FAILURE>

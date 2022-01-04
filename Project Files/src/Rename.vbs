@@ -1,6 +1,6 @@
 Set objFso = CreateObject("Scripting.FileSystemObject")
 
-Set Folder = objFSO.GetFolder("C:\Users\joshu\Documents\GitHub\JPLogistics_C152\Project Files\src\Converted-IGNORE")
+Set Folder = objFSO.GetFolder("D:\MSFS\JPLogistics_C152\Project Files\src\Build Images\Converting - Ignore")
 
 For Each File In Folder.Files
 
