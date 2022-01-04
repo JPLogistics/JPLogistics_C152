@@ -300,9 +300,23 @@
 			<Range LowerBound="1" />
 		</Requires>
 	</Sound>
+	
+	
+<!--window stop-->
+	<Sound WwiseEvent="custom_sound_03" WwiseData="false" FileName="windowstop" Continuous="False" LocalVar="JPL_WINDOW_PILOT" Units="percent" Panning="-9000">
+    	<Requires LocalVar="JPL_WINDOW_PILOT" Units="BOOLEAN" >
+			<Range UpperBound="3159" />
+		</Requires>
+		<Requires LocalVar="JPL_WINDOW_HANDLE_PILOT" Units="BOOLEAN" >
+			<Range UpperBound="0" />
+		</Requires>
+	</Sound>
 <!--window close-->
-	<Sound WwiseEvent="custom_sound_03" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_HANDLE_PILOT" Units="percent" Panning="-9000">
+	<Sound WwiseEvent="custom_sound_03" WwiseData="false" FileName="windowlock" Continuous="False" LocalVar="JPL_WINDOW_HANDLE_PILOT" Units="percent" Panning="-9000">
     	<Requires LocalVar="JPL_WINDOW_HANDLE_PILOT" Units="BOOLEAN" >
+			<Range UpperBound="0" />
+		</Requires>
+    	<Requires LocalVar="JPL_WINDOW_PILOT" Units="BOOLEAN" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
@@ -312,7 +326,9 @@
 			<Range LowerBound="1" />
 		</Requires>
 	</Sound>
-	
+
+
+
 <!--###COPILOT###-->
 <!--door close-->
 	<Sound WwiseEvent="custom_sound_05" WwiseData="false" FileName="doorclose" Continuous="False" LocalVar="JPL_DOOR_COPILOT" Units="percent" Panning="9000">
@@ -325,10 +341,22 @@
     	<Requires LocalVar="JPL_DOOR_COPILOT" Units="BOOLEAN" >
 			<Range LowerBound="1" />
 		</Requires>
-	</Sound>	
+	</Sound>
+<!--window stop-->
+	<Sound WwiseEvent="custom_sound_03" WwiseData="false" FileName="windowstop" Continuous="False" LocalVar="JPL_WINDOW_COPILOT" Units="percent" Panning="9000">
+    	<Requires LocalVar="JPL_WINDOW_COPILOT" Units="BOOLEAN" >
+			<Range UpperBound="3159" />
+		</Requires>
+		<Requires LocalVar="JPL_WINDOW_HANDLE_COPILOT" Units="BOOLEAN" >
+			<Range UpperBound="0" />
+		</Requires>
+	</Sound>
 <!--window close-->
-	<Sound WwiseEvent="custom_sound_07" WwiseData="false" FileName="windowclose" Continuous="False" LocalVar="JPL_WINDOW_HANDLE_COPILOT" Units="percent" Panning="9000">
+	<Sound WwiseEvent="custom_sound_07" WwiseData="false" FileName="windowlock" Continuous="False" LocalVar="JPL_WINDOW_HANDLE_COPILOT" Units="percent" Panning="9000">
     	<Requires LocalVar="JPL_WINDOW_HANDLE_COPILOT" Units="BOOLEAN" >
+			<Range UpperBound="0" />
+		</Requires>
+    	<Requires LocalVar="JPL_WINDOW_COPILOT" Units="BOOLEAN" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>

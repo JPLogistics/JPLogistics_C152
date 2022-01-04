@@ -770,12 +770,13 @@
       </UseTemplate>
 		
 		<!-- ##########PANEL LIGHTS THIS IS BOTTOM KNOB AND DOME LT SWITCH ON DASH ###########-->
+		<!--
 		<UseTemplate Name="ASOBO_LIGHTING_Knob_Potentiometer_Template">
 			<NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
 			<ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
 			<POTENTIOMETER>5</POTENTIOMETER>
-			<!--<NO_AUTHORITY_OVER_SWITCH_STATE/>-->
-			<!--<INIT_VALUE>50</INIT_VALUE> ############## NO LONGER VALID, SET IN *.flt ########## -->
+			<!--<NO_AUTHORITY_OVER_SWITCH_STATE/>--
+			<!--<INIT_VALUE>50</INIT_VALUE> ############## NO LONGER VALID, SET IN *.flt ########## --
 			<LOWER_LIMIT>5</LOWER_LIMIT>
 			<CIRCUIT_ID>11</CIRCUIT_ID>
 			<TT_DESCRIPTION_ID></TT_DESCRIPTION_ID>

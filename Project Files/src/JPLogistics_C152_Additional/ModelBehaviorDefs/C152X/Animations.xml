@@ -57,16 +57,24 @@
       <CURSOR>Grab</CURSOR>
       <NO_ARROWS/>
       <DRAG_CODE>
-	  (L:JPL_WINDOW_HANDLE_#ID#, position 16k) 1 == if{
+	  (L:JPL_WINDOW_HANDLE_#ID#) 1 == if{
         16384 (M:DragPercent) *
         16384 min 0 max (&gt;L:JPL_WINDOW_#ID#, position 16k)
 	  }
+	  
+	  (L:JPL_WINDOW_HANDLE_#ID#) 0 == 
+	  (L:JPL_WINDOW_#ID#, position 16k) 3158 &gt; and if{
+        16384 (M:DragPercent) *
+        16384 min 3159 max (&gt;L:JPL_WINDOW_#ID#, position 16k)
+	  }
+	  
       </DRAG_CODE>
-      <ANIM_CODE>(L:JPL_WINDOW_HANDLE_#ID#, position 16k) 1 == if{ (L:JPL_WINDOW_#ID#, position 16k) 16384 / 100 * }</ANIM_CODE>
+      <ANIM_CODE>(L:JPL_WINDOW_#ID#, position 16k) 16384 / 100 *</ANIM_CODE>
       <ANIM_NAME>#ID#_Window</ANIM_NAME>
       <DRAG_ANIM_NAME>#ID#_Window</DRAG_ANIM_NAME>
-      <POSITIVE_AXIS_CODE>(L:JPL_WINDOW_HANDLE_#ID#, position 16k) 1 == if{ (L:JPL_WINDOW_#ID#, position 16k) #SCROLL_INCREMENT# + 16384 min (&gt;L:JPL_WINDOW_#ID#, position 16k) }</POSITIVE_AXIS_CODE>
-      <NEGATIVE_AXIS_CODE>(L:JPL_WINDOW_HANDLE_#ID#, position 16k) 1 == if{ (L:JPL_WINDOW_#ID#, position 16k) #SCROLL_INCREMENT# - 0 max (&gt;L:JPL_WINDOW_#ID#, position 16k) }</NEGATIVE_AXIS_CODE>
+      <!--<POSITIVE_AXIS_CODE>(L:JPL_WINDOW_HANDLE_#ID#, position 16k) 1 == if{ (L:JPL_WINDOW_#ID#, position 16k) #SCROLL_INCREMENT# + 16384 min (&gt;L:JPL_WINDOW_#ID#, position 16k) } </POSITIVE_AXIS_CODE>
+      <NEGATIVE_AXIS_CODE>(L:JPL_WINDOW_HANDLE_#ID#, position 16k) 1 == if{ (L:JPL_WINDOW_#ID#, position 16k) #SCROLL_INCREMENT# - 0 max (&gt;L:JPL_WINDOW_#ID#, position 16k) } els{ (L:JPL_WINDOW_#ID#, position 16k) #SCROLL_INCREMENT# - 3159 max (&gt;L:JPL_WINDOW_#ID#, position 16k) }</NEGATIVE_AXIS_CODE>
+	  -->
     </UseTemplate>
   </Component>
 </Template>
@@ -75,33 +83,26 @@
   <DefaultTemplateParameters>
     <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
 	<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
-	<TOOLTIP_TITLE>(L:JPL_WINDOW_HANDLE_#ID#, position 16k) 1 == if{ 'Lock Window' } els{ 'Unlock Window' }</TOOLTIP_TITLE>
+	<TOOLTIP_TITLE>(L:JPL_WINDOW_HANDLE_#ID#) 1 == if{ 'Lock Window' } els{ 'Unlock Window' }</TOOLTIP_TITLE>
   </DefaultTemplateParameters>
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
       <LEFT_LEAVE_CODE/>
-      <LEFT_SINGLE_CODE>(L:JPL_WINDOW_#ID#, position 16k) 0 == if{ (L:JPL_WINDOW_HANDLE_#ID#, position 16k) ! (&gt;L:JPL_WINDOW_HANDLE_#ID#, position 16k) }</LEFT_SINGLE_CODE>
+      <LEFT_SINGLE_CODE>
+		(L:JPL_WINDOW_#ID#, position 16k) 0 == if{ (L:JPL_WINDOW_HANDLE_#ID#) ! (&gt;L:JPL_WINDOW_HANDLE_#ID#) }
+		
+		(L:JPL_WINDOW_#ID#, position 16k) 3159 &gt;= if{ (L:JPL_WINDOW_HANDLE_#ID#) ! (&gt;L:JPL_WINDOW_HANDLE_#ID#) }
+	  </LEFT_SINGLE_CODE>
     </UseTemplate>
     <UseTemplate Name="ASOBO_GT_Anim_Code">
       <ANIM_NAME>#ID#_Window_Handle</ANIM_NAME>
       <ANIM_LENGTH>20</ANIM_LENGTH>
-      <ANIM_LAG>10</ANIM_LAG>
+      <ANIM_LAG>50</ANIM_LAG>
       <ANIM_CODE>
         (* Default is current needle position *)
-        (L:JPL_WINDOW_HANDLE_#ID#, position 16k) 10 *
+        (L:JPL_WINDOW_HANDLE_#ID#) 20 *
       </ANIM_CODE>
     </UseTemplate>
-	<!--
-    <UseTemplate Name="ASOBO_GT_Anim_Code">
-      <ANIM_NAME>#ID#_Window</ANIM_NAME>
-      <ANIM_LENGTH>22</ANIM_LENGTH>
-      <ANIM_LAG>22</ANIM_LAG>
-      <ANIM_CODE>
-        (* Default is current needle position *)
-        (L:JPL_WINDOW_#ID#) 22 *
-      </ANIM_CODE>
-    </UseTemplate>
-	-->
   </Component>
   <!--
       <Component ID="Window_Blowout" Node="#ID#_Window">
