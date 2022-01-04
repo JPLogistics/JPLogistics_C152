@@ -81,7 +81,7 @@ html {
 
 @font-face {
     font-family: "DME";
-    src: url("/Pages/VCockpit/Instruments/JPLogistics/Fonts/DME.TTF") format("truetype");
+    src: url("./Fonts/DME.TTF") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -230,3 +230,8 @@ efb-element1 {
     }
 
 /*# sourceMappingURL=KX155A.css.map */
+
+@media (max-width: 1078px){
+}
+.efb {
+}

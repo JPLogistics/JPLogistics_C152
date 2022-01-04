@@ -10,6 +10,7 @@
 	<Entry Path="texture\TACHOMETER_ALBD.PNG" Timestamp="13285561939"/>
 	<Entry Path="texture.N2577E\thumbnail.JPG" Timestamp="13285180953"/>
 	<Entry Path="texture\WARNINGLIGHTS_ALBD.PNG" Timestamp="13285561939"/>
+	<Entry Path="sound\windowlock.wav" Timestamp="13285747908"/>
 	<Entry Path="texture.N2577E\CESSNA_152_COCKPIT_SEAT_ALBD.PNG" Timestamp="13285180952"/>
 	<Entry Path="sound\sse.wav" Timestamp="13285180944"/>
 	<Entry Path="texture.BlueM2\CESSNA_152_COCKPIT_SIDE_SHELL_ALBD.PNG" Timestamp="13285180949"/>
@@ -55,6 +56,7 @@
 	<Entry Path="texture\CESSNA_152_COCKPIT_DETAILS_NORM.PNG" Timestamp="13285561939"/>
 	<Entry Path="texture\CESSNA_152_COCKPIT_DOOR_SHELL_ALBD.PNG" Timestamp="13285561940"/>
 	<Entry Path="texture.BlueM2\CESSNA_152_COCKPIT_INPUTS_ALBD.PNG" Timestamp="13285180948"/>
+	<Entry Path="sound\windowstop.wav" Timestamp="13285747908"/>
 	<Entry Path="texture\CESSNA_152_COCKPIT_INPUTS_ALBD.PNG" Timestamp="13285561939"/>
 	<Entry Path="texture\ADF_AS87_DECAL_ALBD.PNG" Timestamp="13285561940"/>
 	<Entry Path="texture\DME_SCREEN_COMP.PNG" Timestamp="13285561939"/>
@@ -104,7 +106,6 @@
 	<Entry Path="texture\COMNAV_AS155_SCREEN_EMIS.PNG" Timestamp="13285561939"/>
 	<Entry Path="texture\HEADING_DV20_NORM.PNG" Timestamp="13285561939"/>
 	<Entry Path="sound\dooropen.wav" Timestamp="13285180944"/>
-	<Entry Path="sound\windowopen.wav" Timestamp="13285180944"/>
 	<Entry Path="texture.BlueM\CESSA152_AIRFRAME_FUSELAGE_ALBD.PNG" Timestamp="13285180944"/>
 	<Entry Path="texture\CESSA152_AIRFRAME_WHEEL_STATIC_ALBD.PNG" Timestamp="13285633791"/>
 	<Entry Path="texture\TURNCOORDINATOR_C172_COMP.PNG" Timestamp="13285561939"/>
@@ -112,7 +113,7 @@
 	<Entry Path="texture\GENERIC_PROPELER_SIDE_BLURED.PNG" Timestamp="13285633791"/>
 	<Entry Path="texture.BlueM2\C172SP_AIRFRAME_RIVETS_ALBD_PNG.PNG" Timestamp="13285180944"/>
 	<Entry Path="texture.BlueM\CESSNA_152_COCKPIT_SIDE_SHELL_ALBD.PNG" Timestamp="13285180944"/>
-	<Entry Path="sound\sound.xml" Timestamp="13285180944"/>
+	<Entry Path="sound\sound.xml" Timestamp="13285747908"/>
 	<Entry Path="texture\ATTITUDEINDICATOR_C172_ALBD.PNG" Timestamp="13285561939"/>
 	<Entry Path="ai.cfg" Timestamp="13285180943"/>
 	<Entry Path="texture.BlueM\thumbnail.JPG" Timestamp="13285180944"/>
@@ -177,7 +178,6 @@
 	<Entry Path="texture.N2577E\texture.CFG" Timestamp="13285180953"/>
 	<Entry Path="texture.BlueM\C172SP_AIRFRAME_TAILLANDING_ALBD.PNG" Timestamp="13285180944"/>
 	<Entry Path="texture\CESSA152_AIRFRAME_LANDING_COMP.PNG" Timestamp="13285633791"/>
-	<Entry Path="sound\windowclose.wav" Timestamp="13285180944"/>
 	<Entry Path="texture\CESSNA_152_COCKPIT_SIDE_SHELL_COMP.PNG" Timestamp="13285561939"/>
 	<Entry Path="texture\TACHOMETER_COMP.PNG" Timestamp="13285561939"/>
 	<Entry Path="soundai\Asobo_C152_AI.PC.PCK" Timestamp="13285180944"/>

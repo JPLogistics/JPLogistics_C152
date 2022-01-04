@@ -25,7 +25,6 @@
         "ASOBO_asset_optimized"
       ],
       "extensionsRequired": [ "MSFT_texture_dds" ],
-    
     "scene" : 0,
     "scenes" : [
         {
@@ -778,8 +777,8 @@
                 0.5102118253707886
             ],
             "translation" : [
-                0,
-                0,
+                0.009999999776482582,
+                -0.010000022128224373,
                 -0.014999999664723873
             ]
         },

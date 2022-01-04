@@ -46,7 +46,30 @@
     </UseTemplate>
   </Component>
 </Template> 
-
+<Template Name="JPL_Seats">
+	<DefaultTemplateParameters>
+	  <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
+	  <SCROLL_INCREMENT>701</SCROLL_INCREMENT>
+	</DefaultTemplateParameters>
+	<Component ID="#NODE_ID#" Node="#NODE_ID#">
+	  <UseTemplate Name="ASOBO_GT_Lever_DraggingWheelLeftDrag_Axis">
+		<CURSOR>Grab</CURSOR>
+		<NO_ARROWS/>
+		<DRAG_CODE>
+		  16384 (M:DragPercent) *
+		  16384 min 0 max (&gt;L:JPL152_#ID#_Seat)
+		</DRAG_CODE>
+		<ANIM_CODE>(L:JPL152_#ID#_Seat, position 16k) 16384 / 100 *</ANIM_CODE>
+		<ANIM_NAME>#ID#SeatAnim</ANIM_NAME>
+		<DRAG_ANIM_NAME>#ID#SeatAnim</DRAG_ANIM_NAME>
+		<POSITIVE_AXIS_CODE>(L:JPL152_#ID#_Seat, position 16k) #SCROLL_INCREMENT# + 16384 min (&gt;L:JPL152_#ID#_Seat)</POSITIVE_AXIS_CODE>
+		<NEGATIVE_AXIS_CODE>(L:JPL152_#ID#_Seat, position 16k) #SCROLL_INCREMENT# - 0 max (&gt;L:JPL152_#ID#_Seat)</NEGATIVE_AXIS_CODE>
+		<TOOLTIPID>#ID#'s Seat</TOOLTIPID>
+		<WWISE_EVENT_1>cabin_heat_lever_on</WWISE_EVENT_1>
+		<WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2> 
+	  </UseTemplate>
+	</Component>
+  </Template> 
 <Template Name="JPL_Window">
   <DefaultTemplateParameters>
     <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>

@@ -4,6 +4,7 @@
 	<Entry Path="texture.black\CESSA152_AIRFRAME_PROP_STATIC_ALBD.PNG" Timestamp="13285262750"/>
 	<Entry Path="aircraft.cfg" Timestamp="13285599446"/>
 	<Entry Path="panel\PANEL.CFG" Timestamp="13285632214"/>
+	<Entry Path="sound\windowlock.wav" Timestamp="13285747908"/>
 	<Entry Path="sound\sse.wav" Timestamp="13285180944"/>
 	<Entry Path="texture.blue\CESSA152_AIRFRAME_FUSELAGE_ALBD.PNG" Timestamp="13285262750"/>
 	<Entry Path="sound\Asobo_C152.PC.PCK" Timestamp="13285180944"/>
@@ -20,6 +21,7 @@
 	<Entry Path="texture.black\thumbnail_small.JPG" Timestamp="13285262750"/>
 	<Entry Path="texture\CESSA152_AIRFRAME_PROP_SLOW_NORM.PNG" Timestamp="13285633701"/>
 	<Entry Path="model\model.CFG" Timestamp="13285599102"/>
+	<Entry Path="sound\windowstop.wav" Timestamp="13285747908"/>
 	<Entry Path="sound\sound.cfg" Timestamp="13285180944"/>
 	<Entry Path="texture.black\CESSA152_AIRFRAME_PROP_SLOW_ALBD.PNG" Timestamp="13285262750"/>
 	<Entry Path="texture.black\CESSA152_AIRFRAME_FUSELAGE_ALBD.PNG" Timestamp="13285262750"/>
@@ -37,12 +39,11 @@
 	<Entry Path="texture\CESSA152_AIRFRAME_FUSELAGE_NORM.PNG" Timestamp="13285633701"/>
 	<Entry Path="texture.black\texture.CFG" Timestamp="13285600812"/>
 	<Entry Path="sound\dooropen.wav" Timestamp="13285180944"/>
-	<Entry Path="sound\windowopen.wav" Timestamp="13285180944"/>
 	<Entry Path="texture\CESSA152_AIRFRAME_WHEEL_STATIC_ALBD.PNG" Timestamp="13285633701"/>
 	<Entry Path="texture\GENERIC_PROPELER_SIDE_BLURED.PNG" Timestamp="13285633701"/>
 	<Entry Path="texture.blue\CESSA152_AIRFRAME_PROP_SLOW_ALBD.PNG" Timestamp="13285262750"/>
 	<Entry Path="gameplay.cfg" Timestamp="13285180933"/>
-	<Entry Path="sound\sound.xml" Timestamp="13285180944"/>
+	<Entry Path="sound\sound.xml" Timestamp="13285747908"/>
 	<Entry Path="ai.cfg" Timestamp="13285262736"/>
 	<Entry Path="texture\TAIL152_AIRFRAME_LANDING_GEARS_ALBD.PNG" Timestamp="13285633701"/>
 	<Entry Path="model\C152_LOD00.gltf" Timestamp="13285633982"/>
@@ -73,7 +74,6 @@
 	<Entry Path="texture\CESSA152_AIRFRAME_DECALS_ALBD.PNG" Timestamp="13285633701"/>
 	<Entry Path="texture\CESSA152_AIRFRAME_FUSELAGE_COMP.PNG" Timestamp="13285633701"/>
 	<Entry Path="texture\CESSA152_AIRFRAME_LANDING_COMP.PNG" Timestamp="13285633701"/>
-	<Entry Path="sound\windowclose.wav" Timestamp="13285180944"/>
 	<Entry Path="Notice.txt" Timestamp="13285262737"/>
 	<Entry Path="soundai\Asobo_C152_AI.PC.PCK" Timestamp="13285262741"/>
 	<Entry Path="cameras.cfg" Timestamp="13285262736"/>

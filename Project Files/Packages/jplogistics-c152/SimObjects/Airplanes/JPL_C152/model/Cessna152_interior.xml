@@ -216,6 +216,8 @@
     <Animation guid="28c7bc8e-db07-45e8-a250-45971673c7b8" name="INSTRUMENT_Needle_Heading_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="28c7bc8e-db07-45e8-a250-45971673c7b2" name="ADF_Knob_Frequency_KHz_1_Push" type="standard" typeParam="Autoplay"/>
     <Animation guid="8dc50d73-0682-4b7d-be62-a973e46c5e29" name="iPadAction" type="standard" typeParam="Autoplay"/>
+	<Animation guid="1184b217-5902-4b36-8521-e322e8caef90" name="PilotSeatAnim" type="standard" typeParam="Autoplay"/>
+	<Animation guid="23943e76-d1fc-4dd4-b72c-02ad245e17f9" name="CoPilotSeatAnim" type="standard" typeParam="Autoplay"/>
 
     <!-- The calculations generate a fuel tank level indication variation based on current yaw acceleration and the current tank level.  It will generate a greater variation for an empty tank vs a full tank and the 20 in the formula is a scaling factor for the amount of yaw induced variation in the tank indication. The first value is the current tank quantity in liters. 	The fuel tank sensors are on the inboard side of each tank so the effect will be opposite on the left and right tanks-->
     <Macro Name="FuelTankSensorAdjustmentLeftTank">
@@ -769,14 +771,14 @@
         <TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_BEACON_ACTION_SET</TT_DESCRIPTION_ID>
       </UseTemplate>
 		
-		<!-- ##########PANEL LIGHTS THIS IS BOTTOM KNOB AND DOME LT SWITCH ON DASH ###########-->
-		<!--
-		<UseTemplate Name="ASOBO_LIGHTING_Knob_Potentiometer_Template">
+		<!-- ##########PANEL LIGHTS THIS IS BOTTOM KNOB AND DOME LT SWITCH ON DASH ########### -->
+		
+		<!-- <UseTemplate Name="ASOBO_LIGHTING_Knob_Potentiometer_Template">
 			<NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
 			<ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
 			<POTENTIOMETER>5</POTENTIOMETER>
-			<!--<NO_AUTHORITY_OVER_SWITCH_STATE/>--
-			<!--<INIT_VALUE>50</INIT_VALUE> ############## NO LONGER VALID, SET IN *.flt ########## --
+			<NO_AUTHORITY_OVER_SWITCH_STATE/>
+			<INIT_VALUE>50</INIT_VALUE> ############## NO LONGER VALID, SET IN *.flt ##########
 			<LOWER_LIMIT>5</LOWER_LIMIT>
 			<CIRCUIT_ID>11</CIRCUIT_ID>
 			<TT_DESCRIPTION_ID></TT_DESCRIPTION_ID>
@@ -784,7 +786,8 @@
 			<ANIMTIP_0>Panel Lights (%((A:LIGHT POTENTIOMETER:5, Percent))%!d!%)</ANIMTIP_0>
 			<ANIMTIP_1>Panel Lights (%((A:LIGHT POTENTIOMETER:5, Percent))%!d!%)</ANIMTIP_1>
 			<WWISE_EVENT>navcom_audio_volume_knob</WWISE_EVENT>
-		</UseTemplate>-->
+		</UseTemplate> -->
+
 		<UseTemplate Name="JPL152_Light_Potentiometers">
 			<NODE_ID>LIGHTING_Knob_Panel</NODE_ID>
 			<ANIM_NAME>LIGHTING_Knob_Panel</ANIM_NAME>
@@ -1382,6 +1385,11 @@
         <NODE_ID>Sun_visors_Pilot</NODE_ID>
         <ID>Pilot</ID>
       </UseTemplate>
+
+	  <UseTemplate Name="JPL_Seats">
+        <NODE_ID>PilotSeatUpper</NODE_ID>
+        <ID>Pilot</ID>
+      </UseTemplate>
 	  
 	  <UseTemplate Name="JPL_Window">
         <NODE_ID>Pilot_Window</NODE_ID>
@@ -1400,6 +1408,10 @@
     <Component ID="CoPilot_Side_Interaction">
       <UseTemplate Name="JPL_Sun_Visors">
         <NODE_ID>Sun_visors_CoPilot</NODE_ID>
+        <ID>CoPilot</ID>
+      </UseTemplate>
+	  <UseTemplate Name="JPL_Seats">
+        <NODE_ID>CoPilotSeatUpper</NODE_ID>
         <ID>CoPilot</ID>
       </UseTemplate>
 	  
