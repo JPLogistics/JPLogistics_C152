@@ -718,7 +718,7 @@
 				<NEEDLE_ANIM_NAME>INSTRUMENT_Needle_EGT</NEEDLE_ANIM_NAME>
 				<NEEDLE_NODE_ID>INSTRUMENT_Needle_EGT</NEEDLE_NODE_ID>
 				<PART_ID>INSTRUMENT_Needle_EGT</PART_ID>
-				<MIN_VALUE>1400</MIN_VALUE>
+				<MIN_VALUE>1000</MIN_VALUE>
 				<MAX_VALUE>1700</MAX_VALUE>
 				<ANIM_WRAP>False</ANIM_WRAP>
 			</UseTemplate>
@@ -1193,50 +1193,34 @@
 			<CIRCUIT_ID></CIRCUIT_ID>
 		</UseTemplate>
     </Component>
-    <Component ID="Pilots_Visibility">
-      <Component ID="PILOT_0" Node="PILOT_0">
-        <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>
-		    (L:C152_PilotsState, Bool) == 
-			(A:PAYLOAD STATION WEIGHT:1, Pounds) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 1 == and
-			(A:CAMERA STATE, Enum) 2 != (L:JPL_DOOR_PILOT) 0 == and or
-			(A:PAYLOAD STATION WEIGHT:1, pounds) 20 &gt; and
-		</VISIBILITY_CODE>
-        </UseTemplate>
-      </Component>
-      <Component ID="PILOT_1" Node="PILOT_1">
-        <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>
-			(L:C152_CoPilotsState, Bool) 1 == 
-			if {	(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == 
-					(A:CAMERA STATE, Enum) 2 != and 
-					(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == or
-					(A:CAMERA STATE, Enum) 2 != 
-					(A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &gt; and or
-				}
-		  </VISIBILITY_CODE>
-        </UseTemplate>
-      </Component>
-	<!--
-      <Component ID="PILOT_0" Node="PILOT_0">
-        <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>(L:C152_PilotsState, Bool) == (A:PAYLOAD STATION WEIGHT:1, Pounds) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 1 == and (A:CAMERA STATE, Enum) 2 != or (A:PAYLOAD STATION WEIGHT:1, pounds) 20 &gt; and</VISIBILITY_CODE>
-        </UseTemplate>
-      </Component>
-      <Component ID="PILOT_1" Node="PILOT_1">
-        <UseTemplate Name="ASOBO_GT_Visibility_Code">
-          <VISIBILITY_CODE>
-			(L:C152_CoPilotsState, Bool) 1 == 
-			if {	(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == 
-					(A:CAMERA STATE, Enum) 2 != and 
-					(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == or
-					(A:CAMERA STATE, Enum) 2 != 
-					(A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &gt; and or
-				}
-		  </VISIBILITY_CODE>
-        </UseTemplate>
-      </Component>
-	  -->  
+	<Component ID="Pilots_Visibility">
+		<Component ID="PILOT_0" Node="PILOT_0">
+			<UseTemplate Name="ASOBO_GT_Visibility_Code">
+				<VISIBILITY_CODE>
+					(L:C152_PilotsState, Bool) == 
+					(A:PAYLOAD STATION WEIGHT:1, Pounds) 20 &gt; (L:XMLVAR_AUDIO_EXT_SEL, Bool) 1 == and
+					(A:CAMERA STATE, Enum) 2 != (L:JPL_DOOR_PILOT) 0 == and or
+					(A:PAYLOAD STATION WEIGHT:1, pounds) 20 &gt; and
+				</VISIBILITY_CODE>
+			</UseTemplate>
+		</Component>
+		<Component ID="PILOT_1" Node="PILOT_1">
+			<UseTemplate Name="ASOBO_GT_Visibility_Code">
+				<VISIBILITY_CODE>
+					(L:C152_CoPilotsState, Bool) 1 == 
+					if {	(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == 
+							(A:CAMERA STATE, Enum) 2 != and 
+							(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == or
+							(A:CAMERA STATE, Enum) 2 != 
+							(A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &gt; and or
+					}
+				</VISIBILITY_CODE>
+			</UseTemplate>
+		</Component>
+	</Component>
+
+	  
+	  <!-- to remove after container tested more
       <Component ID="AUTOPILOT_Frame_1" Node="AUTOPILOT_Frame_1">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
           <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
@@ -1312,8 +1296,86 @@
           <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
         </UseTemplate>
       </Component>	  
+		-->
+		
+		
+	  <Component ID="CONTAINER_Autopilot_AS140_1" Node="CONTAINER_Autopilot_AS140_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+	  <Component ID="CONTAINER_ORIG_HSI" Node="CONTAINER_ORIG_HSI">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 0 } els{ 1 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>	  
 
-    </Component>
+	  <Component ID="INSTRUMENT_Heading_1.001" Node="INSTRUMENT_Heading_1.001">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+	  <Component ID="INSTRUMENT_Heading_Highlight_1.001" Node="INSTRUMENT_Heading_Highlight_1.001">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+	  <Component ID="INSTRUMENT_HeadingIndicator_Knob_Compass_1" Node="INSTRUMENT_HeadingIndicator_Knob_Compass_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+	  <Component ID="INSTRUMENT_HeadingIndicator_Knob_Compass_OnlyVisual_1" Node="INSTRUMENT_HeadingIndicator_Knob_Compass_OnlyVisual_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+	  <Component ID="INSTRUMENT_HeadingIndicator_Knob_Heading_1" Node="INSTRUMENT_HeadingIndicator_Knob_Heading_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+	  <Component ID="INSTRUMENT_HeadingIndicator_Knob_Heading_OnlyVisual_1" Node="INSTRUMENT_HeadingIndicator_Knob_Heading_OnlyVisual_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+	  <Component ID="INSTRUMENT_Needle_Heading_1" Node="INSTRUMENT_Needle_Heading_1">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+	  <Component ID="INSTRUMENT_Needle_Heading_Cylinder_1.001" Node="INSTRUMENT_Needle_Heading_Cylinder_1.001">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_APVIZ) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+
+	  
+	  
+	  <Component ID="INSTRUMENT_EGT" Node="INSTRUMENT_EGT">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_CLOCKEGT) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+	  <Component ID="INSTRUMENT_Needle_EGT_Set" Node="INSTRUMENT_Needle_EGT_Set">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_CLOCKEGT) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+	  <Component ID="INSTRUMENT_Needle_EGT" Node="INSTRUMENT_Needle_EGT">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_CLOCKEGT) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+	  
+	  <Component ID="CONTAINER_Clock" Node="CONTAINER_Clock">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_CLOCKEGT) 1 == if{ 0 } els{ 1 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
+	  
+    
     <Component ID="Baggage_Visibility">
       <Component ID="MailSmall" Node="MailSmall">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
@@ -1353,6 +1415,7 @@
       </Component>
 		<!--##############-->
 	</Component>
+	
     <Component ID="TUTO_Level" Node="TUTO_Level">
       <UseTemplate Name="ASOBO_GT_Visibility_Code">
         <ONCE>True</ONCE>
