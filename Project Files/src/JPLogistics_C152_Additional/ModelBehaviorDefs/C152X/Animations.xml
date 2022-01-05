@@ -20,7 +20,7 @@
 		</ANIM_CODE>
 	  </UseTemplate>
 	</Component>
-  </Template>
+</Template>
 
 <Template Name="JPL_Sun_Visors">
   <DefaultTemplateParameters>
@@ -46,6 +46,7 @@
     </UseTemplate>
   </Component>
 </Template> 
+
 <Template Name="JPL_Seats">
 	<DefaultTemplateParameters>
 	  <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
@@ -69,7 +70,8 @@
 		<WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2> 
 	  </UseTemplate>
 	</Component>
-  </Template> 
+</Template> 
+
 <Template Name="JPL_Window">
   <DefaultTemplateParameters>
     <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
