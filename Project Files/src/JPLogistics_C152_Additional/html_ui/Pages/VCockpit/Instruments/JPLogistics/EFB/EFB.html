@@ -1,37 +1,63 @@
 ﻿<link rel="stylesheet" href="EFB.css" />
-<script type="text/html">
-    <div id="Mainframe">
-        <div id="Electricity" state="off">
-            <div id="WelcomeScreen" state="off">
-                <div id="Welcome">JPLogistics DME System</div>
-                <div id="WelcomeLow">Starting...</div>
+<script type="text/html" id="EFB">
+    <div id="tablet">
+        <div id="header">
+            <!-- <img src="/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/logo.png"width="25%"> -->
+            <div>Testing EFB Function</div>
+        </div>
+        <div id="content">
+            <!-- Tablet Stowed -->
+            <div id="appPage0" class="hidden">
             </div>
-            <div id="LowBScreen" state="off">
-                <div id="LowBattery">Battery low!</div>
+            <!-- Systems -->
+            <div id="appPage1" class="center" style="text-align: center">
+                <div>SYSTEMS</div>
+                <div id="aircraft-svg"></div>
             </div>
-            <div id="NormalScreen" state="off">
-                <div class="Align" id="Nav1Distance">-- NM</div>
-                <div class="Align" id="Nav1TimeA">
-                    <div id="Nav1Time">--.--</div>
-                    <div id="Nav1Time2">Mins</div>
+            <!-- Near Airports -->
+            <div id="appPage2" class="hidden">
+                <div class="align" id="NearestAirports">
+                    <div class="align" id="NearestAirportsICAO1">----</div>
+                    <div class="align" id="NearestAirportsICAO2">----</div>
+                    <div class="align" id="NearestAirportsICAO3">----</div>
+                    <div class="align" id="NearestAirportsICAO4">----</div>
+                    <div class="align" id="NearestAirportsICAO5">----</div>
+                    <div class="align" id="NearestAirportsICAO6">----</div>
+                    <div class="align" id="NearestAirportsICAO7">----</div>
+                    <div class="align" id="NearestAirportsICAO8">----</div>
+                    <div class="align" id="NearestAirportsICAO9">----</div>
+                    <div class="align" id="NearestAirportsICAO10">----</div>
                 </div>
-                <div class="Align" id="NavActiveFreq">
-                    <div id="Nav1Freq">---.---</div>
-                    <div id="Nav2Freq">---.---</div>
+                <div class="align" id="NearestAirportsDistance">
+                    <div class="align" id="NearestAirportsDistance1">--NM</div>
+                    <div class="align" id="NearestAirportsDistance2">--NM</div>
+                    <div class="align" id="NearestAirportsDistance3">--NM</div>
+                    <div class="align" id="NearestAirportsDistance4">--NM</div>
+                    <div class="align" id="NearestAirportsDistance5">--NM</div>
+                    <div class="align" id="NearestAirportsDistance6">--NM</div>
+                    <div class="align" id="NearestAirportsDistance7">--NM</div>
+                    <div class="align" id="NearestAirportsDistance8">--NM</div>
+                    <div class="align" id="NearestAirportsDistance9">--NM</div>
+                    <div class="align" id="NearestAirportsDistance10">--NM</div>
                 </div>
-                <div class="Align" id="Nav2TimeA">
-                    <div id="Nav2Time">--.--</div>
-                    <div id="Nav2Time2">Mins</div>
-                </div>
-                <div class="Align" id="Nav2Distance">-- NM</div>
             </div>
         </div>
+        <div id="footer">
+            <ul class="flex">
+                <li class="flex-1 mr-2">
+                    <a class="text-center block border h-100px border-blue-500 rounded py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white" href="#">Active Item</a>
+                </li>
+                <li class="flex-1 mr-2">
+                    <a class="text-center block border h-100px border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-2 px-4" href="#">Nav Item</a>
+                </li>
+                <li class="text-center flex-1">
+                    <a class="block py-2 px-4 h-100px text-gray-400 cursor-not-allowed" href="#">Disabled Item</a>
+                </li>
+            </ul>
+        </div>
+        <div id="debug" class="hidden"></div>
     </div>
 </script>
 <script type="text/html" import-script="/JS/dataStorage.js"></script>
-<script type="text/javascript" src="/JS/debug.js"></script>
-<script type="text/javascript" src="/JS/common.js"></script>
-<script type="text/javascript" src="/JS/Types.js"></script>
-<script type="text/javascript" src="/JS/coherent.js"></script>
-<script src="http://localhost:9222/scripts/launcher.js" data-origin="debugger"></script>
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/JPLogistics/EFB/EFB.js"></script>

@@ -32,9 +32,9 @@
   </Instrument>
   <Instrument>
     <Name>EFB</Name>
-    <Electric>
+    <!-- <Electric>
       <Simvar name="CIRCUIT ON:36" unit="Boolean"/>
-    </Electric>
+    </Electric> -->
   </Instrument>
   <Instrument>
     <!--ADF-->

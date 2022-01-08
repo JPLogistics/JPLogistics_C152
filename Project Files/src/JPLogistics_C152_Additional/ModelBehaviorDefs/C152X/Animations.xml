@@ -1,4 +1,4 @@
-
+<!-- 
 <Template Name="JPL_iPad">
 	<DefaultTemplateParameters>
 	  <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
@@ -8,19 +8,44 @@
 	<Component ID="#NODE_ID#" Node="#NODE_ID#">
 	  <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
 		<LEFT_LEAVE_CODE/>
-		<LEFT_SINGLE_CODE>(L:JPL_iPad) ! (&gt;L:JPL_iPad#)</LEFT_SINGLE_CODE>
+		<LEFT_SINGLE_CODE>(L:JPL_iPad) ! (&gt;L:JPL_iPad)</LEFT_SINGLE_CODE>
 	  </UseTemplate>
 	  <UseTemplate Name="ASOBO_GT_Anim_Code">
 		<ANIM_NAME>iPadAction</ANIM_NAME>
 		<ANIM_LENGTH>100</ANIM_LENGTH>
-		<ANIM_LAG>30</ANIM_LAG>
+		<ANIM_LAG>50</ANIM_LAG>
 		<ANIM_CODE>
 		  (* Default is current needle position *)
 		  (L:JPL_iPad) 100 *
 		</ANIM_CODE>
 	  </UseTemplate>
 	</Component>
-</Template>
+</Template> -->
+
+<Template Name="JPL_iPad">
+	<DefaultTemplateParameters>
+	  <USE_TRAJECTORY_DRAG_MODE>False</USE_TRAJECTORY_DRAG_MODE>
+	  <SCROLL_INCREMENT>701</SCROLL_INCREMENT>
+	</DefaultTemplateParameters>
+	<Component ID="#NODE_ID#" Node="#NODE_ID#">
+	  <UseTemplate Name="ASOBO_GT_Lever_DraggingWheelLeftDrag_Axis">
+		<CURSOR>Grab</CURSOR>
+		<NO_ARROWS/>
+		<DRAG_CODE>
+		  16384 (M:DragPercent) *
+		  16384 min 0 max (&gt;L:JPL_iPad)
+		</DRAG_CODE>
+		<ANIM_CODE>(L:JPL_iPad, position 16k) 16384 / 100 *</ANIM_CODE>
+		<ANIM_NAME>iPadAction</ANIM_NAME>
+		<DRAG_ANIM_NAME>iPadAction</DRAG_ANIM_NAME>
+		<POSITIVE_AXIS_CODE>(L:JPL_iPad, position 16k) #SCROLL_INCREMENT# + 16384 min (&gt;L:JPL_iPad)</POSITIVE_AXIS_CODE>
+		<NEGATIVE_AXIS_CODE>(L:JPL_iPad, position 16k) #SCROLL_INCREMENT# - 0 max (&gt;L:JPL_iPad)</NEGATIVE_AXIS_CODE>
+		<TOOLTIPID>iPad Temp Drag</TOOLTIPID>
+		<WWISE_EVENT_1>cabin_heat_lever_on</WWISE_EVENT_1>
+		<WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2> 
+	  </UseTemplate>
+	</Component>
+  </Template> 
 
 <Template Name="JPL_Sun_Visors">
   <DefaultTemplateParameters>

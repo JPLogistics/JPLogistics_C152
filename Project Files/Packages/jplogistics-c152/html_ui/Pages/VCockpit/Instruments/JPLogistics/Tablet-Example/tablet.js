@@ -415,8 +415,7 @@ class tablet_class extends BaseInstrument {
         super.disconnectedCallback();
     }
 
-    onInteractionEvent(_args) {
-    }
+    onInteractionEvent(_args) {}
 
     Update() {
         this.update_tablet();
@@ -716,13 +715,13 @@ class tablet_class extends BaseInstrument {
                 }
                 this.settingsRadioSelected = "A";
             }
-            if (SimVar.GetSimVarValue("L:RADIO_InputB", "Bool")  && this.settingsRadioSelected != "B") {
+            if (SimVar.GetSimVarValue("L:RADIO_InputB", "Bool") && this.settingsRadioSelected != "B") {
                 if (this.settingsRadioChannelB != "") {
                     SimVar.SetSimVarValue("K:COM_RADIO_SET", "Frequency BCD16", parseInt(this.settingsRadioChannelB));
                 }
                 this.settingsRadioSelected = "B";
             }
-            if (SimVar.GetSimVarValue("L:RADIO_InputC", "Bool")  && this.settingsRadioSelected != "C") {
+            if (SimVar.GetSimVarValue("L:RADIO_InputC", "Bool") && this.settingsRadioSelected != "C") {
                 if (this.settingsRadioChannelC != "") {
                     SimVar.SetSimVarValue("K:COM_RADIO_SET", "Frequency BCD16", parseInt(this.settingsRadioChannelC));
                 }
