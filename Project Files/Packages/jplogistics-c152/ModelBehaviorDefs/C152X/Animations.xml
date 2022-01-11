@@ -1,4 +1,4 @@
-<!-- 
+
 <Template Name="JPL_iPad">
 	<DefaultTemplateParameters>
 	  <CLICKZONE_NODE_ID>#NODE_ID#</CLICKZONE_NODE_ID>
@@ -20,9 +20,9 @@
 		</ANIM_CODE>
 	  </UseTemplate>
 	</Component>
-</Template> -->
+</Template>
 
-<Template Name="JPL_iPad">
+<!-- <Template Name="JPL_iPad">
 	<DefaultTemplateParameters>
 	  <USE_TRAJECTORY_DRAG_MODE>False</USE_TRAJECTORY_DRAG_MODE>
 	  <SCROLL_INCREMENT>701</SCROLL_INCREMENT>
@@ -45,7 +45,7 @@
 		<WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2> 
 	  </UseTemplate>
 	</Component>
-  </Template> 
+  </Template>  -->
 
 <Template Name="JPL_Sun_Visors">
   <DefaultTemplateParameters>

@@ -65,7 +65,7 @@ efb-element #debug {
     /* background-image: url("/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/background.jpg"); */
     background-color: #ffffff;
     top: 200px;
-    height: 1088px;
+    height: 1238px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -135,6 +135,51 @@ efb-element #debug {
 
 .title {
     font-size: medium;
+}
+
+.tab-button {
+    padding: 6px 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background: #f0f0f0;
+    margin-bottom: -1px;
+    margin-right: -1px;
+}
+
+.tab-button:hover {
+    background: #e0e0e0;
+}
+
+.tab-button.active {
+    background: #e0e0e0;
+}
+
+.tab {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.circle-svg {
+    height: 550px;
+    width: 550px;
+}
+
+.absolute-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle-text {
+    font-size: 72px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    fill: #333;
 }
 
 

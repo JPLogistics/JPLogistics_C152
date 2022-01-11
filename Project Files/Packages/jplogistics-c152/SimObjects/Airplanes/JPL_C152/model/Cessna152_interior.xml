@@ -1442,9 +1442,9 @@
     </Component>
     <Component ID="Pilot_Side_Interaction">
 		<UseTemplate Name="JPL_iPad">
-			<NODE_ID>iPadScreenEdge</NODE_ID>
+			<NODE_ID>iPadHelper</NODE_ID>
 			<!--If fail use iPadScreenEdge -->
-		  </UseTemplate>
+		</UseTemplate>
 
       <UseTemplate Name="JPL_Sun_Visors">
         <NODE_ID>Sun_visors_Pilot</NODE_ID>

@@ -7,10 +7,13 @@
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Fonts\QUARTZIT.TTF" Timestamp="13285180955"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\oldjs\JPL152IP - Copy (2).js" Timestamp="13285180955"/>
 	<Entry Path="Effects\LIGHT_C152_CabinBounceSmall.fx" Timestamp="13285180955"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB\Styles\tailwind.css" Timestamp="13286143408"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Radios\KX155A\KX155A - Copy.css" Timestamp="13285180955"/>
 	<Entry Path="Effects\LIGHT_C152_NavigationGreen.fx" Timestamp="13285180955"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\JPLDME.css" Timestamp="13285180955"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB\assets\chat_black.svg" Timestamp="13286403932"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\webfonts\fa-regular-400.woff2" Timestamp="13285258010"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB\assets\power_black.svg" Timestamp="13286403975"/>
 	<Entry Path="VisualEffectLibs\pbk-effects\Smoke\pbk_smoke_M.spb" Timestamp="13285180955"/>
 	<Entry Path="VisualEffectLibs\touchingcloud\touchingcloud-effect-downwash\Downwash sand.spb" Timestamp="13285180955"/>
 	<Entry Path="Effects\texture\FX_ulm02.PNG.dds" Timestamp="13285180955"/>
@@ -45,6 +48,7 @@
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Autopilots\KAP140\KAP140.html" Timestamp="13285180955"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\JPLDME.js" Timestamp="13285180955"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\webfonts\fa-regular-400.eot" Timestamp="13285258010"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB\assets\tools_black.svg" Timestamp="13286403795"/>
 	<Entry Path="VisualEffectLibs\pbk-effects\Smoke\pbk_smoke_L.spb" Timestamp="13285180955"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\css\regular.min.css" Timestamp="13285258010"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\webfonts\fa-solid-900.woff2" Timestamp="13285258011"/>
@@ -66,21 +70,22 @@
 	<Entry Path="ModelBehaviorDefs\C152X\EngineTroubles.xml" Timestamp="13285180955"/>
 	<Entry Path="Effects\texture\fx_ulm02.png.DDS.FLAGS" Timestamp="13285180955"/>
 	<Entry Path="Effects\texture\FX_ulm03.PNG.DDS.json" Timestamp="13285180955"/>
-	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB\EFB.html" Timestamp="13286073804"/>
-	<Entry Path="ModelBehaviorDefs\C152X\Animations.xml" Timestamp="13286066132"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB\EFB.html" Timestamp="13286407064"/>
+	<Entry Path="ModelBehaviorDefs\C152X\Animations.xml" Timestamp="13286224053"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Radios\KR87\KR87.html" Timestamp="13285180955"/>
 	<Entry Path="VisualEffectLibs\touchingcloud\effect-wingtip-vortex\Wingtip_Vortex.spb" Timestamp="13285180955"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\JPLDME.html" Timestamp="13285180955"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\css\solid.min.css" Timestamp="13285258010"/>
 	<Entry Path="Effects\texture\fx_ulm01.png.DDS.FLAGS" Timestamp="13285180955"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB\Styles\EFB.css" Timestamp="13286407055"/>
 	<Entry Path="Effects\texture\fx_ulm04.png.DDS.FLAGS" Timestamp="13285180955"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB\assets\unread_chat_black.svg" Timestamp="13286403951"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\css\v4-shims.min.css" Timestamp="13285258010"/>
 	<Entry Path="Effects\texture\FX_ulm04.PNG.DDS.json" Timestamp="13285180955"/>
 	<Entry Path="Effects\LIGHT_C152_vLanding.fx" Timestamp="13285180955"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\webfonts\fa-brands-400.woff2" Timestamp="13285258010"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\css\v4-shims.css" Timestamp="13285258010"/>
 	<Entry Path="VisualEffectLibs\touchingcloud\touchingcloud-effect-downwash\Downwash.spb" Timestamp="13285180955"/>
-	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB\EFB.css" Timestamp="13286073717"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Autopilots\KAP140\KAP140.css" Timestamp="13285180955"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\images\background.jpg" Timestamp="13285258011"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Autopilots\KAP140\KAP140_default.js" Timestamp="13285180955"/>
@@ -98,17 +103,20 @@
 	<Entry Path="ModelBehaviorDefs\C152X\NavComSystem.xml" Timestamp="13285180955"/>
 	<Entry Path="Effects\LIGHT_C152_StrobeDouble.fx" Timestamp="13285180955"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\webfonts\fa-regular-400.ttf" Timestamp="13285258010"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB\assets\world_black.svg" Timestamp="13286403863"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\webfonts\fa-brands-400.ttf" Timestamp="13285258010"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\css\brands.css" Timestamp="13285258010"/>
 	<Entry Path="version.txt" Timestamp="13285180955"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Radios\KX155A\KX155A.html" Timestamp="13285180955"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\webfonts\fa-brands-400.woff" Timestamp="13285258010"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\css\fontawesome.css" Timestamp="13285258010"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB\assets\settings_black.svg" Timestamp="13286403845"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\css\fontawesome.min.css" Timestamp="13285258010"/>
 	<Entry Path="ModelBehaviorDefs\C152X\JPL152_ADF.xml" Timestamp="13285180955"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\webfonts\fa-regular-400.woff" Timestamp="13285258010"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB\Scripts\vue.js" Timestamp="13286142079"/>
 	<Entry Path="Effects\LIGHT_C152_CockpitSpot.fx" Timestamp="13285180955"/>
-	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB\EFB.js" Timestamp="13286073812"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB\EFB.js" Timestamp="13286406996"/>
 	<Entry Path="ModelBehaviorDefs\C152X\toRemove\LightingOld.xml" Timestamp="13285180955"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\css\all.css" Timestamp="13285258010"/>
 	<Entry Path="VisualEffectLibs\touchingcloud\touchingcloud-effect-downwash\Downwash water.spb" Timestamp="13285180955"/>
@@ -121,6 +129,7 @@
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\fonts\fa\css\brands.min.css" Timestamp="13285258010"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\oldjs\JPL152IP - Copy.js" Timestamp="13285180955"/>
 	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\Tablet-Example\tablet.html" Timestamp="13285981560"/>
+	<Entry Path="html_ui\Pages\VCockpit\Instruments\JPLogistics\EFB\assets\scale_black.svg" Timestamp="13286403904"/>
 	<Entry Path="ModelBehaviorDefs\C152X\Subtemplates\Instrument_Subtemplates.xml" Timestamp="13285180955"/>
 	<Entry Path="VisualEffectLibs\pbk-effects\Smoke\pbk_smoke_XL.spb" Timestamp="13285180955"/>
 	<Entry Path="VisualEffectLibs\touchingcloud\effect-wingtip-vortex\Vapor_cone.spb" Timestamp="13285180955"/>
