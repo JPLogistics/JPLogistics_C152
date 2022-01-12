@@ -30,12 +30,14 @@
       <Simvar name="CIRCUIT ON:2" unit="Boolean"/>
     </Electric>
   </Instrument>
+  <!--
   <Instrument>
     <Name>EFB</Name>
-    <!-- <Electric>
+    <Electric>
       <Simvar name="CIRCUIT ON:36" unit="Boolean"/>
-    </Electric> -->
+    </Electric>
   </Instrument>
+  -->
   <Instrument>
     <!--ADF-->
     <Name>KR87</Name>

@@ -134,8 +134,9 @@ class JPL152IP extends BaseInstrument {
 	this.engcombustion = GetStoredData('JPL152IP_ENGCOMBUSTION_'+this.livery) ? GetStoredData('JPL152IP_ENGCOMBUSTION_'+this.livery) : 0;
 	this.simonground = GetStoredData('JPL152IP_SIMONGROUND_'+this.livery) ? GetStoredData('JPL152IP_SIMONGROUND_'+this.livery) : 1;
 	this.onparkingspot = GetStoredData('JPL152IP_ONPARKINGSPOT_'+this.livery) ? GetStoredData('JPL152IP_ONPARKINGSPOT_'+this.livery) : 3;
-	this.ssonoff = GetStoredData('JPL152IP_SSONOFF_'+this.livery) ? GetStoredData('JPL152IP_SSONOFF_'+this.livery) : 0;  // 0 = ON
+	this.ssonoff = GetStoredData('JPL152IP_SSONOFF_'+this.livery) ? GetStoredData('JPL152IP_SSONOFF_'+this.livery) : 1;  // 1 = ON
 	this.engmaintonoff = GetStoredData('JPL152IP_ENGMAINTONOFF_'+this.livery) ? GetStoredData('JPL152IP_ENGMAINTONOFF_'+this.livery) : 0;  // 0 = ON
+	this.ipad = GetStoredData('JPL152IP_IPAD_'+this.livery) ? GetStoredData('JPL152IP_IPAD_'+this.livery) : 0;  // 0 = STOWED
 	//this.planelatitude = GetStoredData('JPL152IP_PLANELATITUDE_'+this.livery) ? GetStoredData('JPL152IP_PLANELATITUDE_'+this.livery) : 0.518738130593484;
 	//this.planelongitude = GetStoredData('JPL152IP_PLANELONGITUDE_'+this.livery) ? GetStoredData('JPL152IP_PLANELONGITUDE_'+this.livery) : -1.48414581997703;
 	//this.planeheading = GetStoredData('JPL152IP_PLANEHEADING_'+this.livery) ? GetStoredData('JPL152IP_PLANEHEADING_'+this.livery) : 0.55412570690;
@@ -185,6 +186,7 @@ class JPL152IP extends BaseInstrument {
 	SimVar.SetSimVarValue("L:JPL152_OILREM", "number", Number(this.engoil));
 	SimVar.SetSimVarValue("L:JPL152_MAINTENANCE_TIME", "number", Number(this.engmaintenance));
 	SimVar.SetSimVarValue("L:JPL152_FOULING_TIME", "number", Number(this.plugFouling));
+	SimVar.SetSimVarValue("L:JPL_iPad", "number", Number(this.ipad));
 
 /*
 	if (GetStoredData('JPL152IP_PLANEPOSITION_'+this.livery) == 1) {
@@ -202,7 +204,7 @@ class JPL152IP extends BaseInstrument {
 	}
 */
 
-	if (GetStoredData('JPL152IP_SSONOFF_'+this.livery) == 0) { //START STATE SAVING ON/OFF
+	if (GetStoredData('JPL152IP_SSONOFF_'+this.livery) == 1) { //START STATE SAVING ON/OFF
 	
 		// if (GetStoredData('JPL152IP_PLANEPOSITION_'+this.livery) == 1) { //START PLANE POSITION ON/OFF
 	
@@ -403,10 +405,12 @@ class JPL152IP extends BaseInstrument {
 		SetStoredData('JPL152IP_ENGMAINTENANCE_'+planeId, engmaintenance.toString());
 		var plugFouling = SimVar.GetSimVarValue("L:JPL152_FOULING_TIME", "number");
 		SetStoredData('JPL152IP_PLUG_FOUL_'+planeId, plugFouling.toString());
+		var ipad = SimVar.GetSimVarValue("L:JPL_iPad", "number");
+		SetStoredData('JPL152IP_IPAD_'+planeId, ipad.toString());
 		//var planeposition = SimVar.GetSimVarValue("L:JPL152_LASTPOSITION", "number");
 		//SetStoredData('JPL152IP_PLANEPOSITION_'+planeId, planeposition.toString());
 		
-		if (GetStoredData('JPL152IP_SSONOFF_'+planeId) == 0) { //START STATE SAVING ON/OFF
+		if (GetStoredData('JPL152IP_SSONOFF_'+planeId) == 1) { //START STATE SAVING ON/OFF
 		
 			//-------------------------FUEL AND WEIGHTS
 			var leftFuel = SimVar.GetSimVarValue("FUEL TANK LEFT MAIN QUANTITY", "gallons");
@@ -665,149 +669,8 @@ class JPL152IP extends BaseInstrument {
 					SimVar.SetSimVarValue("L:JPL152_OILREM", "number", 6.8);
 			}
 
-			//optional flight start states for efb
 
-			//cold and dark
-			if (SimVar.GetSimVarValue("L:JPL152_CAD", "bool") == 1) {
-					SimVar.SetSimVarValue("ELECTRICAL MASTER BATTERY:1", "number", 0);
-					SimVar.SetSimVarValue("K:ALTERNATOR_SET", "number", 0);
-					SimVar.SetSimVarValue("GENERAL ENG THROTTLE LEVER POSITION:1", "percent", 0);
-					SimVar.SetSimVarValue("GENERAL ENG MIXTURE LEVER POSITION:1", "percent", 0);
-					SimVar.SetSimVarValue("L:XMLVAR_PUMPED_FUEL", "gallons", 0.00);
-					SimVar.SetSimVarValue("L:JPL_DOOR_PILOT", "bool", 1);
-					SimVar.SetSimVarValue("L:JPL_DOOR_COPILOT", "bool", 1);
-					if (GetStoredData('JPL152IP_PARKINGBRAKE_'+this.livery) !== 1 && SimVar.GetSimVarValue("BRAKE PARKING INDICATOR", "bool") == 0) {
-						SimVar.SetSimVarValue("K:PARKING_BRAKES", "number", 1); }
-					SimVar.SetSimVarValue("K:PITOT_HEAT_SET", "number", 0);
-					SimVar.SetSimVarValue("LIGHT NAV", "bool", 0);
-					SimVar.SetSimVarValue("LIGHT STROBE", "bool", 0);
-					SimVar.SetSimVarValue("LIGHT BEACON", "bool", 0);
-					SimVar.SetSimVarValue("LIGHT TAXI", "bool", 0);
-					SimVar.SetSimVarValue("LIGHT LANDING", "bool", 0);
-					SimVar.SetSimVarValue("LIGHT PANEL", "bool", 0);
-					SimVar.SetSimVarValue("TRANSPONDER STATE:1", "number", 0);
-					SimVar.SetSimVarValue("K:MAGNETO1_OFF", "number", 0);
-					if (SimVar.GetSimVarValue("GENERAL ENG FUEL VALVE:1", "bool") == 1) {
-							SimVar.SetSimVarValue("K:TOGGLE_FUEL_VALVE_ENG1", "number", 1); }	
-					// delay work around as anim will not go from 0-100 100-0
-					SimVar.SetSimVarValue("K:COM1_VOLUME_SET", "number", 50);
-					SimVar.SetSimVarValue("K:COM2_VOLUME_SET", "number", 50);
-					SimVar.SetSimVarValue("K:ADF_VOLUME_SET", "number", 50);
-					setTimeout(function() {
-						SimVar.SetSimVarValue("K:COM1_VOLUME_SET", "number", 0);
-						SimVar.SetSimVarValue("K:COM2_VOLUME_SET", "number", 0);
-						SimVar.SetSimVarValue("K:ADF_VOLUME_SET", "number", 0);
-					}, 500);
-				
-			}  //end cold and dark
-			
-			
-			
-			
-			//ready for flight
-			if (SimVar.GetSimVarValue("L:JPL152_RFF", "bool") == 1 && SimVar.GetSimVarValue("GENERAL ENG COMBUSTION:1", "bool") == 0) {
 
-					SimVar.SetSimVarValue("LIGHT LANDING", "bool", 0);
-					SimVar.SetSimVarValue("LIGHT PANEL", "bool", 0);
-					SimVar.SetSimVarValue("K:MAGNETO1_OFF", "number", 0);
-					
-					// delay work around as anim will not go from 0-100 100-0
-					SimVar.SetSimVarValue("K:ADF_VOLUME_SET", "number", 50);
-					setTimeout(function() {
-						SimVar.SetSimVarValue("K:ADF_VOLUME_SET", "number", 0);
-					}, 500);
-					
-					setTimeout(function() {
-					if (SimVar.GetSimVarValue("GENERAL ENG FUEL VALVE:1", "bool") == 0) {
-							SimVar.SetSimVarValue("K:TOGGLE_FUEL_VALVE_ENG1", "number", 1); }					
-					SimVar.SetSimVarValue("GENERAL ENG MIXTURE LEVER POSITION:1", "percent", 95);
-					SimVar.SetSimVarValue("A:GENERAL ENG ANTI ICE POSITION:1", "position 16k", 0);
-					}, 1000);
-					
-					setTimeout(function() {
-					SimVar.SetSimVarValue("ELECTRICAL MASTER BATTERY:1", "number", 1);
-					SimVar.SetSimVarValue("K:ALTERNATOR_SET", "number", 1);
-					}, 2000);
-					
-					setTimeout(function() {
-					SimVar.SetSimVarValue("LIGHT BEACON", "bool", 1);
-					SimVar.SetSimVarValue("GENERAL ENG THROTTLE LEVER POSITION:1", "percent", 20);
-					if (SimVar.GetSimVarValue("BRAKE PARKING INDICATOR", "bool") == 0) {
-						SimVar.SetSimVarValue("K:PARKING_BRAKES", "number", 1); }				
-					}, 3000);
-					
-					setTimeout(function() {
-					SimVar.SetSimVarValue("RECIP ENG PRIMER:1", "bool", 1);
-					}, 4000);
-					setTimeout(function() {
-					SimVar.SetSimVarValue("L:XMLVAR_PUMPED_FUEL", "gallons", 0.025);
-					}, 6000);
-					
-					setTimeout(function() {
-					SimVar.SetSimVarValue("L:JPL_DOOR_PILOT", "bool", 0);
-					SimVar.SetSimVarValue("L:JPL_DOOR_COPILOT", "bool", 0);
-					}, 7000);	
-					
-					setTimeout(function() {
-					SimVar.SetSimVarValue("L:JPL_WINDOW_PILOT", "bool", 1);
-					}, 7500);
-					
-					setTimeout(function() {
-					SimVar.SetSimVarValue("K:MAGNETO1_BOTH", "number", 0);
-					}, 8000);
-					
-					setTimeout(function() {
-					SimVar.SetSimVarValue("L:JPL152_CLEAR", "bool", 1);
-					}, 9000);
-					
-					setTimeout(function() {
-					if (SimVar.GetSimVarValue("GENERAL ENG COMBUSTION:1", "bool") == 0) {
-					SimVar.SetSimVarValue("K:MAGNETO1_START", "number", 0); }
-					}, 12200);
-					
-					setTimeout(function() {
-					SimVar.SetSimVarValue("K:FLAPS_UP", "number", 0);
-					SimVar.SetSimVarValue("L:JPL152_CLEAR", "bool", 0);
-					}, 14000);
-					
-					
-					// delay work around as anim will not go from 0-100 100-0
-					setTimeout(function() {
-					SimVar.SetSimVarValue("L:JPL152_Panel_Light", "number", 25);
-					SimVar.SetSimVarValue("L:JPL152_Radio_Light", "number", 75);
-					SimVar.SetSimVarValue("K:COM1_VOLUME_SET", "number", 50);
-					SimVar.SetSimVarValue("K:COM2_VOLUME_SET", "number", 50);
-						setTimeout(function() {
-							SimVar.SetSimVarValue("K:COM1_VOLUME_SET", "number", 100);
-							SimVar.SetSimVarValue("K:COM2_VOLUME_SET", "number", 100);
-						}, 500);				
-					}, 14700);
-					
-					setTimeout(function() {
-					SimVar.SetSimVarValue("TRANSPONDER STATE:1", "number", 1);
-					}, 15000);
-					
-					setTimeout(function() {
-					SimVar.SetSimVarValue("LIGHT NAV", "bool", 1);
-					}, 15200);
-					
-					setTimeout(function() {
-					SimVar.SetSimVarValue("LIGHT STROBE", "bool", 1);
-					}, 15500);
-					
-					setTimeout(function() {
-					SimVar.SetSimVarValue("LIGHT TAXI", "bool", 1);
-					}, 15700);
-					
-					setTimeout(function() {
-					if (SimVar.GetSimVarValue("A:AMBIENT TEMPERATURE", "celsius") < 5) {
-						SimVar.SetSimVarValue("K:PITOT_HEAT_SET", "number", 1); }
-					}, 16000);
-					
-					setTimeout(function() {
-					Simplane.setTransponderToRegion();
-					}, 17000);
-			}  //end ready for flight
   }  //end super.Update
 }
 

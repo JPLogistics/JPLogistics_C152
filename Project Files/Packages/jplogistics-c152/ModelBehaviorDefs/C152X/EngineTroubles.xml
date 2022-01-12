@@ -45,7 +45,7 @@
 
 <!-- ### TIMING MECHANISM VARIED BY THROTTLE AND MIXTURE SCALERS ### -->
 	<Update Frequency="1">
-		(L:JPL152_MAINTENANCE_ONOFF) 0 ==
+		(L:JPL152_MAINTENANCE_ONOFF) 1 ==
 		if{
 			(A:GENERAL ENG COMBUSTION:1, bool) 1 ==
 			(A:RECIP MIXTURE RATIO:1, ratio) 0.09 &gt; and
@@ -73,7 +73,7 @@
 
 <!-- ### FOULING EFFECT, SCALED BY THE TIMING MECHANISM ### -->
 	<Update Frequency="3">
-		(L:JPL152_MAINTENANCE_ONOFF) 0 ==
+		(L:JPL152_MAINTENANCE_ONOFF) 1 ==
 		if{
 			(L:JPL152_Fouling, bool) 1 ==
 			(A:GENERAL ENG RPM:1, rpm) 600 &gt; and
@@ -85,7 +85,7 @@
 
 <!-- ### EXTRA MAG DROP EFFECT WHEN FOULED ### -->
 	<Update Frequency="3">
-		(L:JPL152_MAINTENANCE_ONOFF) 0 ==
+		(L:JPL152_MAINTENANCE_ONOFF) 1 ==
 		if{
 			(L:JPL152_Fouling, bool) 1 ==
 			(A:RECIP ENG LEFT MAGNETO:1, bool) 0 == and
@@ -102,7 +102,7 @@
 
 <!-- ### FOULS THE PLUGS FROM ATTEMPTING TO START A FLOODED ENGINE ### -->	
 	<Update Frequency="1">
-		(L:JPL152_MAINTENANCE_ONOFF) 0 ==
+		(L:JPL152_MAINTENANCE_ONOFF) 1 ==
 		if{
 			(L:XMLVAR_PUMPED_FUEL, gallons) 0.03 &gt;
 			(A:GENERAL ENG STARTER ACTIVE:1, bool) 1 == and
@@ -112,7 +112,7 @@
 
 <!-- ### FOULS THE PLUGS FROM IMPROPER ENGINE SHUTDOWN ### idle suction = 4.86-->
 	<Update Frequency="1">
-		(L:JPL152_MAINTENANCE_ONOFF) 0 ==
+		(L:JPL152_MAINTENANCE_ONOFF) 1 ==
 		if{
 			<!--(A:GENERAL ENG RPM:1, rpm) 1000 &gt;-->
 			(A:GENERAL ENG COMBUSTION:1, bool) 0 ==
@@ -127,7 +127,7 @@
 		}
 	</Update>
 	<Update Frequency="0.6">
-		(L:JPL152_MAINTENANCE_ONOFF) 0 ==
+		(L:JPL152_MAINTENANCE_ONOFF) 1 ==
 		if{
 			(L:JPL152_FOULING_TIME2) 1 == if{ (L:JPL152_FOULING_TIME) 10 + (&gt;L:JPL152_FOULING_TIME)
 		}
@@ -151,7 +151,7 @@
 	
 	<!-- ### OIL COUNTDOWN ### -->
 	<Update Frequency="1">
-	(L:JPL152_MAINTENANCE_ONOFF) 0 ==
+	(L:JPL152_MAINTENANCE_ONOFF) 1 ==
 	if{
 		(A:GENERAL ENG COMBUSTION:1, bool) 1 ==
 		if{
@@ -162,7 +162,7 @@
 	
 	<!-- ### EFFECT ON OIL TEMPERATURE ### -->
 	<Update Frequency="4">
-	(L:JPL152_MAINTENANCE_ONOFF) 0 ==
+	(L:JPL152_MAINTENANCE_ONOFF) 1 ==
 	if{
 		(L:JPL152_OILREM) 6 &lt;
 		(A:GENERAL ENG COMBUSTION:1, bool) 1 == and
@@ -174,7 +174,7 @@
 	
 	<!-- ### EFFECT ON OIL PRESSURE ### -->
 	<Update Frequency="8">
-	(L:JPL152_MAINTENANCE_ONOFF) 0 ==
+	(L:JPL152_MAINTENANCE_ONOFF) 1 ==
 	if{
 		(L:JPL152_OILREM) 6 &lt;
 		(A:GENERAL ENG OIL TEMPERATURE:1, celsius) 30 &gt; and
@@ -217,7 +217,7 @@
 	-->
 <!-- ### TIMER ### -->
 	<Update Frequency="1">
-	(L:JPL152_MAINTENANCE_ONOFF) 0 ==
+	(L:JPL152_MAINTENANCE_ONOFF) 1 ==
 	if{
 		(A:GENERAL ENG COMBUSTION:1, bool) 1 ==
 		if{
@@ -227,7 +227,7 @@
 	</Update>
 <!-- ### EFFECT ### -->
 	<Update Frequency="3">
-	(L:JPL152_MAINTENANCE_ONOFF) 0 ==
+	(L:JPL152_MAINTENANCE_ONOFF) 1 ==
 	if{
 		(A:GENERAL ENG COMBUSTION:1, bool) 1 ==
 		if{

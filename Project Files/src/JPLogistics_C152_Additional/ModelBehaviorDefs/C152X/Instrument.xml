@@ -68,13 +68,13 @@
   </DefaultTemplateParameters>
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <UseTemplate Name="ASOBO_GT_Emissive_Gauge">
-      
+      <FAILURE>(L:JPL_iPad)</FAILURE>
       <Condition Check="USE_DIMMING_POTENTIOMETER">
         <True>
-          <EMISSIVE_CODE>(L:JPL152_DME_POWER, Bool) 0 &gt; (A:LIGHT POTENTIOMETER:#POTENTIOMETER#, percent over 100) * #DIMMING_FACTOR# *</EMISSIVE_CODE>
+          <EMISSIVE_CODE>(L:JPL_iPad) 0 &gt; (A:LIGHT POTENTIOMETER:#POTENTIOMETER#, percent over 100) * #DIMMING_FACTOR# *</EMISSIVE_CODE>
         </True>
         <False>
-          <EMISSIVE_CODE>(L:JPL152_DME_POWER, Bool) 0 &gt;</EMISSIVE_CODE>
+          <EMISSIVE_CODE>(L:JPL_iPad) 0 &gt;</EMISSIVE_CODE>
         </False>
       </Condition>
     </UseTemplate>

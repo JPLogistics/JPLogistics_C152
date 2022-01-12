@@ -1,6 +1,9 @@
+Include.addScript("/JS/dataStorage.js");
+
 class EFB extends BaseInstrument {
     constructor() {
         super();
+		this._isConnected = false;
     }
     get templateID() { return "EFB"; }
     get isInteractive() { return true; }
@@ -8,6 +11,7 @@ class EFB extends BaseInstrument {
     connectedCallback() {
             //# General
             super.connectedCallback();
+
             //Vars
             //Buttons
             this.navButton1 = this.getChildById("navButton1");
@@ -24,9 +28,181 @@ class EFB extends BaseInstrument {
             this.navButton6.addEventListener("click", this.navButton6Press.bind(this));
             this.navButton7 = this.getChildById("navButton7");
             this.navButton7.addEventListener("click", this.navButton7Press.bind(this));
+			
+			this.settingsToggleStateSaving = this.getChildById("settingsToggleStateSaving");
+			this.settingsToggleStateSaving.addEventListener("change", this.settingsToggleStateSavingPress.bind(this));
+			this.settingsToggleMaintenance = this.getChildById("settingsToggleMaintenance");
+			this.settingsToggleMaintenance.addEventListener("change", this.settingsToggleMaintenancePress.bind(this));
+			this.settingsToggleEGT = this.getChildById("settingsToggleEGT");
+			this.settingsToggleEGT.addEventListener("change", this.settingsToggleEGTPress.bind(this));
+			this.settingsToggleAP = this.getChildById("settingsToggleAP");
+			this.settingsToggleAP.addEventListener("change", this.settingsToggleAPPress.bind(this));
+			
+			this.stateCAD = this.getChildById("stateCAD");
+			this.stateCAD.addEventListener("mouseup", this.stateCADPress.bind(this));
+			this.stateRFF = this.getChildById("stateRFF");
+			this.stateRFF.addEventListener("mouseup", this.stateRFFPress.bind(this));
+			
+			// COMMENTED OUT BELOW IS STUFF THAT IS IN THE EXAMPLE TABLET, WAS TRYING TO GET THE BUTTONS TO START IN CORRECT POSITION...NO EFFECT
+			// NOT SURE WHAT IT'S DOING TBH.  SOME OF THE CODE FROM THE EXAMPLE HAS TO DO WITH STATE SAVING, WHICH WE DON'T NEED HERE (I THINK??)
+			// AS ITS ALL IN ANOTHER FILE FOR US.
+			
+			//let SS_On = SimVar.GetSimVarValue("L:JPL152_SSONOFF", "bool");
+			//if (SS_On != "") {
+            //SimVar.SetSimVarValue("L:JPL152_SSONOFF", "Bool", SS_On == "true");
+            //this.settingsToggleStateSaving.checked = SS_On == "true";
+			// }
 
         }
         //Button Functions
+		
+    settingsToggleStateSavingPress() {
+        SimVar.SetSimVarValue("L:JPL152_SSONOFF", "Bool", this.settingsToggleStateSaving.checked);
+    }
+    settingsToggleMaintenancePress() {
+        SimVar.SetSimVarValue("L:JPL152_MAINTENANCE_ONOFF", "Bool", this.settingsToggleMaintenance.checked);
+    }
+    settingsToggleEGTPress() {
+        SimVar.SetSimVarValue("L:JPL152_CLOCKEGT", "Bool", this.settingsToggleEGT.checked);
+    }
+    settingsToggleAPPress() {
+        SimVar.SetSimVarValue("L:JPL152_APVIZ", "Bool", this.settingsToggleAP.checked);
+    }
+    stateCADPress() {
+		SimVar.SetSimVarValue("ELECTRICAL MASTER BATTERY:1", "number", 0);
+		SimVar.SetSimVarValue("K:ALTERNATOR_SET", "number", 0);
+		SimVar.SetSimVarValue("GENERAL ENG THROTTLE LEVER POSITION:1", "percent", 0);
+		SimVar.SetSimVarValue("GENERAL ENG MIXTURE LEVER POSITION:1", "percent", 0);
+		SimVar.SetSimVarValue("L:XMLVAR_PUMPED_FUEL", "gallons", 0.00);
+		SimVar.SetSimVarValue("L:JPL_DOOR_PILOT", "bool", 1);
+		SimVar.SetSimVarValue("L:JPL_DOOR_COPILOT", "bool", 1);
+		if (GetStoredData('JPL152IP_PARKINGBRAKE_'+this.livery) !== 1 && SimVar.GetSimVarValue("BRAKE PARKING INDICATOR", "bool") == 0) {
+			SimVar.SetSimVarValue("K:PARKING_BRAKES", "number", 1); }
+		SimVar.SetSimVarValue("K:PITOT_HEAT_SET", "number", 0);
+		SimVar.SetSimVarValue("LIGHT NAV", "bool", 0);
+		SimVar.SetSimVarValue("LIGHT STROBE", "bool", 0);
+		SimVar.SetSimVarValue("LIGHT BEACON", "bool", 0);
+		SimVar.SetSimVarValue("LIGHT TAXI", "bool", 0);
+		SimVar.SetSimVarValue("LIGHT LANDING", "bool", 0);
+		SimVar.SetSimVarValue("LIGHT PANEL", "bool", 0);
+		SimVar.SetSimVarValue("TRANSPONDER STATE:1", "number", 0);
+		SimVar.SetSimVarValue("K:MAGNETO1_OFF", "number", 0);
+		if (SimVar.GetSimVarValue("GENERAL ENG FUEL VALVE:1", "bool") == 1) {
+				SimVar.SetSimVarValue("K:TOGGLE_FUEL_VALVE_ENG1", "number", 1); }	
+		// delay work around as anim will not go from 0-100 100-0
+		SimVar.SetSimVarValue("K:COM1_VOLUME_SET", "number", 50);
+		SimVar.SetSimVarValue("K:COM2_VOLUME_SET", "number", 50);
+		SimVar.SetSimVarValue("K:ADF_VOLUME_SET", "number", 50);
+		setTimeout(function() {
+			SimVar.SetSimVarValue("K:COM1_VOLUME_SET", "number", 0);
+			SimVar.SetSimVarValue("K:COM2_VOLUME_SET", "number", 0);
+			SimVar.SetSimVarValue("K:ADF_VOLUME_SET", "number", 0);
+		}, 500);		
+    } // end CAD
+	
+	stateRFFPress() {
+		SimVar.SetSimVarValue("LIGHT LANDING", "bool", 0);
+		SimVar.SetSimVarValue("LIGHT PANEL", "bool", 0);
+		SimVar.SetSimVarValue("K:MAGNETO1_OFF", "number", 0);
+
+		// delay work around as anim will not go from 0-100 100-0
+		SimVar.SetSimVarValue("K:ADF_VOLUME_SET", "number", 50);
+		setTimeout(function() {
+			SimVar.SetSimVarValue("K:ADF_VOLUME_SET", "number", 0);
+		}, 500);
+
+		setTimeout(function() {
+		if (SimVar.GetSimVarValue("GENERAL ENG FUEL VALVE:1", "bool") == 0) {
+				SimVar.SetSimVarValue("K:TOGGLE_FUEL_VALVE_ENG1", "number", 1); }					
+		SimVar.SetSimVarValue("GENERAL ENG MIXTURE LEVER POSITION:1", "percent", 95);
+		SimVar.SetSimVarValue("A:GENERAL ENG ANTI ICE POSITION:1", "position 16k", 0);
+		}, 1000);
+	
+		setTimeout(function() {
+		SimVar.SetSimVarValue("ELECTRICAL MASTER BATTERY:1", "number", 1);
+		SimVar.SetSimVarValue("K:ALTERNATOR_SET", "number", 1);
+		}, 2000);
+	
+		setTimeout(function() {
+		SimVar.SetSimVarValue("LIGHT BEACON", "bool", 1);
+		SimVar.SetSimVarValue("GENERAL ENG THROTTLE LEVER POSITION:1", "percent", 20);
+		if (SimVar.GetSimVarValue("BRAKE PARKING INDICATOR", "bool") == 0) {
+			SimVar.SetSimVarValue("K:PARKING_BRAKES", "number", 1); }				
+		}, 3000);
+		
+		setTimeout(function() {
+		SimVar.SetSimVarValue("RECIP ENG PRIMER:1", "bool", 1);
+		}, 4000);
+		setTimeout(function() {
+		SimVar.SetSimVarValue("L:XMLVAR_PUMPED_FUEL", "gallons", 0.025);
+		}, 6000);
+		
+		setTimeout(function() {
+		SimVar.SetSimVarValue("L:JPL_DOOR_PILOT", "bool", 0);
+		SimVar.SetSimVarValue("L:JPL_DOOR_COPILOT", "bool", 0);
+		}, 7000);	
+
+		setTimeout(function() {
+		SimVar.SetSimVarValue("L:JPL_WINDOW_PILOT", "bool", 1);
+		}, 7500);
+
+		setTimeout(function() {
+		SimVar.SetSimVarValue("K:MAGNETO1_BOTH", "number", 0);
+		}, 8000);
+
+		setTimeout(function() {
+		SimVar.SetSimVarValue("L:JPL152_CLEAR", "bool", 1);
+		}, 9000);
+		
+		setTimeout(function() {
+		if (SimVar.GetSimVarValue("GENERAL ENG COMBUSTION:1", "bool") == 0) {
+		SimVar.SetSimVarValue("K:MAGNETO1_START", "number", 0); }
+		}, 12200);
+		
+		setTimeout(function() {
+		SimVar.SetSimVarValue("K:FLAPS_UP", "number", 0);
+		SimVar.SetSimVarValue("L:JPL152_CLEAR", "bool", 0);
+		}, 14000);
+
+					
+		// delay work around as anim will not go from 0-100 100-0
+		setTimeout(function() {
+		SimVar.SetSimVarValue("L:JPL152_Panel_Light", "number", 25);
+		SimVar.SetSimVarValue("L:JPL152_Radio_Light", "number", 75);
+		SimVar.SetSimVarValue("K:COM1_VOLUME_SET", "number", 50);
+		SimVar.SetSimVarValue("K:COM2_VOLUME_SET", "number", 50);
+			setTimeout(function() {
+				SimVar.SetSimVarValue("K:COM1_VOLUME_SET", "number", 100);
+				SimVar.SetSimVarValue("K:COM2_VOLUME_SET", "number", 100);
+			}, 500);				
+		}, 14700);
+
+		setTimeout(function() {
+		SimVar.SetSimVarValue("TRANSPONDER STATE:1", "number", 1);
+		}, 15000);
+
+		setTimeout(function() {
+		SimVar.SetSimVarValue("LIGHT NAV", "bool", 1);
+		}, 15200);
+
+		setTimeout(function() {
+		SimVar.SetSimVarValue("LIGHT STROBE", "bool", 1);
+		}, 15500);
+					
+		setTimeout(function() {
+		SimVar.SetSimVarValue("LIGHT TAXI", "bool", 1);
+		}, 15700);
+	
+		setTimeout(function() {
+		if (SimVar.GetSimVarValue("A:AMBIENT TEMPERATURE", "celsius") < 5) {
+			SimVar.SetSimVarValue("K:PITOT_HEAT_SET", "number", 1); }
+		}, 16000);
+	
+		setTimeout(function() {
+		Simplane.setTransponderToRegion();
+		}, 17000);
+	} // end RFF
+	
     navButton1Press() {
         this.activateApp(1);
     }

@@ -387,12 +387,12 @@
 		</Requires>
     </Sound>	
 
-	<Sound WwiseEvent="custom_sound_10" WwiseData="false" FileName="sse" Continuous="False" LocalVar="JPL152_SSONOFF" Units="bool" Panning="9000">
+	<Sound WwiseEvent="custom_sound_10" WwiseData="false" FileName="ssd" Continuous="False" LocalVar="JPL152_SSONOFF" Units="bool" Panning="9000">
     	<Requires LocalVar="JPL152_SSONOFF" Units="BOOLEAN" >
 			<Range UpperBound="0" />
 		</Requires>
 	</Sound>
-	<Sound WwiseEvent="custom_sound_11" WwiseData="false" FileName="ssd" Continuous="False" LocalVar="JPL152_SSONOFF" Units="bool" Panning="9000">
+	<Sound WwiseEvent="custom_sound_11" WwiseData="false" FileName="sse" Continuous="False" LocalVar="JPL152_SSONOFF" Units="bool" Panning="9000">
     	<Requires LocalVar="JPL152_SSONOFF" Units="BOOLEAN" >
 			<Range LowerBound="1" />
 		</Requires>
