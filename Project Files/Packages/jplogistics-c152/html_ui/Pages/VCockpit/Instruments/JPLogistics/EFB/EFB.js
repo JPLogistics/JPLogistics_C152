@@ -13,6 +13,8 @@ class EFB extends BaseInstrument {
             super.connectedCallback();
 
             //Vars
+			var title = SimVar.GetSimVarValue("TITLE", "string");
+			this.livery = title.replace(/\s+/g, '_');
             //Buttons
             this.navButton1 = this.getChildById("navButton1");
             this.navButton1.addEventListener("click", this.navButton1Press.bind(this));
@@ -47,12 +49,30 @@ class EFB extends BaseInstrument {
 			// NOT SURE WHAT IT'S DOING TBH.  SOME OF THE CODE FROM THE EXAMPLE HAS TO DO WITH STATE SAVING, WHICH WE DON'T NEED HERE (I THINK??)
 			// AS ITS ALL IN ANOTHER FILE FOR US.
 			
-			//let SS_On = SimVar.GetSimVarValue("L:JPL152_SSONOFF", "bool");
-			//if (SS_On != "") {
-            //SimVar.SetSimVarValue("L:JPL152_SSONOFF", "Bool", SS_On == "true");
-            //this.settingsToggleStateSaving.checked = SS_On == "true";
-			// }
-
+			// SET INFO TO IPAD
+			if (GetStoredData('JPL152IP_SSONOFF_'+this.livery) == 1) {
+            this.settingsToggleStateSaving.checked = true;
+			} else {
+			this.settingsToggleStateSaving.checked = false;
+			}
+			
+			if (GetStoredData('JPL152IP_ENGMAINTONOFF_'+this.livery) == 1) {
+            this.settingsToggleMaintenance.checked = true;
+			} else {
+			this.settingsToggleMaintenance.checked = false;
+			}
+			
+			if (GetStoredData('JPL152IP_CLOCKEGT_'+this.livery) == 1) {
+            this.settingsToggleEGT.checked = true;
+			} else {
+			this.settingsToggleEGT.checked = false;
+			}
+			
+			if (GetStoredData('JPL152IP_APVIZ_'+this.livery) == 1) {
+            this.settingsToggleAP.checked = true;
+			} else {
+			this.settingsToggleAP.checked = false;
+			}
         }
         //Button Functions
 		

@@ -137,6 +137,7 @@ class JPL152IP extends BaseInstrument {
 	this.ssonoff = GetStoredData('JPL152IP_SSONOFF_'+this.livery) ? GetStoredData('JPL152IP_SSONOFF_'+this.livery) : 1;  // 1 = ON
 	this.engmaintonoff = GetStoredData('JPL152IP_ENGMAINTONOFF_'+this.livery) ? GetStoredData('JPL152IP_ENGMAINTONOFF_'+this.livery) : 0;  // 0 = ON
 	this.ipad = GetStoredData('JPL152IP_IPAD_'+this.livery) ? GetStoredData('JPL152IP_IPAD_'+this.livery) : 0;  // 0 = STOWED
+	this.clockegt = GetStoredData('JPL152IP_CLOCKEGT_'+this.livery) ? GetStoredData('JPL152IP_CLOCKEGT_'+this.livery) : 0;  // 0 = CLOCK
 	//this.planelatitude = GetStoredData('JPL152IP_PLANELATITUDE_'+this.livery) ? GetStoredData('JPL152IP_PLANELATITUDE_'+this.livery) : 0.518738130593484;
 	//this.planelongitude = GetStoredData('JPL152IP_PLANELONGITUDE_'+this.livery) ? GetStoredData('JPL152IP_PLANELONGITUDE_'+this.livery) : -1.48414581997703;
 	//this.planeheading = GetStoredData('JPL152IP_PLANEHEADING_'+this.livery) ? GetStoredData('JPL152IP_PLANEHEADING_'+this.livery) : 0.55412570690;
@@ -187,6 +188,7 @@ class JPL152IP extends BaseInstrument {
 	SimVar.SetSimVarValue("L:JPL152_MAINTENANCE_TIME", "number", Number(this.engmaintenance));
 	SimVar.SetSimVarValue("L:JPL152_FOULING_TIME", "number", Number(this.plugFouling));
 	SimVar.SetSimVarValue("L:JPL_iPad", "number", Number(this.ipad));
+	SimVar.SetSimVarValue("L:JPL152_CLOCKEGT", "number", Number(this.clockegt));
 
 /*
 	if (GetStoredData('JPL152IP_PLANEPOSITION_'+this.livery) == 1) {
@@ -407,6 +409,8 @@ class JPL152IP extends BaseInstrument {
 		SetStoredData('JPL152IP_PLUG_FOUL_'+planeId, plugFouling.toString());
 		var ipad = SimVar.GetSimVarValue("L:JPL_iPad", "number");
 		SetStoredData('JPL152IP_IPAD_'+planeId, ipad.toString());
+		var clockegt = SimVar.GetSimVarValue("L:JPL152_CLOCKEGT", "number");
+		SetStoredData('JPL152IP_CLOCKEGT_'+planeId, clockegt.toString());
 		//var planeposition = SimVar.GetSimVarValue("L:JPL152_LASTPOSITION", "number");
 		//SetStoredData('JPL152IP_PLANEPOSITION_'+planeId, planeposition.toString());
 		
