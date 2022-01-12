@@ -1368,6 +1368,11 @@
           <VISIBILITY_CODE>(L:JPL152_CLOCKEGT) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
         </UseTemplate>
       </Component>
+	  <Component ID="INSTRUMENT_Knob_EGT" Node="INSTRUMENT_Knob_EGT">
+        <UseTemplate Name="ASOBO_GT_Visibility_Code">
+          <VISIBILITY_CODE>(L:JPL152_CLOCKEGT) 1 == if{ 1 } els{ 0 } </VISIBILITY_CODE>
+        </UseTemplate>
+      </Component>
 	  
 	  <Component ID="CONTAINER_Clock" Node="CONTAINER_Clock">
         <UseTemplate Name="ASOBO_GT_Visibility_Code">
@@ -1579,7 +1584,7 @@
 			<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
 			<TOOLTIP_TITLE>'Autopilot'</TOOLTIP_TITLE>
 		</UseTemplate>	
-		<!--
+		
 		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>16</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
@@ -1589,6 +1594,7 @@
 			<TOOLTIP_TITLE>'inopérant'</TOOLTIP_TITLE>
 		</UseTemplate>
 		
+		<!--
 		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>15</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
@@ -1598,33 +1604,40 @@
 			<TOOLTIP_TITLE>'inopérant'</TOOLTIP_TITLE>
 		</UseTemplate>
 		-->
-		<!--
+		
 		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>14</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_2</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_2</ANIM_NAME>
-			<TOOLTIPID>%((A:BUS CONNECTION ON:14, Bool))%{if}STATE SAVING ON%{else}STATE SAVING OFF%{end}</TOOLTIPID>
+			<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
+			<TOOLTIP_TITLE>'inopérant'</TOOLTIP_TITLE>
 		</UseTemplate>
-		-->
+		
+		<!-- to remove with efb
 		<UseTemplate Name="JPL152_MAINTENANCE">
 			<NODE_ID>Breaker_RIGHT_0</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_0</ANIM_NAME>
 			<PART_ID>Breaker_RIGHT_0</PART_ID>
 			<CIRCUIT_ID></CIRCUIT_ID>
 		</UseTemplate>
+		-->
+		
 		<UseTemplate Name="JPL152_OILFILL">
 			<NODE_ID>Breaker_RIGHT_1</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_1</ANIM_NAME>
 			<PART_ID>Breaker_RIGHT_1</PART_ID>
 			<CIRCUIT_ID></CIRCUIT_ID>
 		</UseTemplate>
+		
+		<!-- to remove with efb
 		<UseTemplate Name="JPL152_SSONOFF">
 			<NODE_ID>Breaker_RIGHT_2</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_2</ANIM_NAME>
 			<PART_ID>Breaker_RIGHT_2</PART_ID>
 			<CIRCUIT_ID></CIRCUIT_ID>
-		</UseTemplate>		
+		</UseTemplate>
+		-->
 		
 		<!--
 		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">

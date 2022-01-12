@@ -127,6 +127,25 @@
             </div>
             <!-- Tools / Equipment / Maintenance -->
             <div id="appPage4" class="hidden">
+				<div class="column50 shade5 padding16" style="height: 512px;">
+                        <h3 class="shade15 padding8H">Testing Check Boxes</h3>
+                        <div>
+                            <label class="toggle"><input id="settingsToggleStateSaving" type="checkbox"><span class="toggleKnob"></span></label> State Saving
+                        </div>
+						<div>
+                            <label class="toggle"><input id="settingsToggleMaintenance" type="checkbox"><span class="toggleKnob"></span></label> Maintenance
+                        </div>
+						<div>
+                            <label class="toggle"><input id="settingsToggleEGT" type="checkbox"><span class="toggleKnob"></span></label> Show EGT
+                        </div>
+						<div>
+                            <label class="toggle"><input id="settingsToggleAP" type="checkbox"><span class="toggleKnob"></span></label> Show AP
+                        </div>
+						<div id="loadoutButtons">
+							<div id="stateCAD" class="button" style="position: absolute; left: 292px; top: 440px;">Cold and Dark</div>
+							<div id="stateRFF" class="button" style="position: absolute; left: 516px; top: 440px;">Ready For Flight</div>
+						</div>
+				</div>
             </div>
             <!-- Pilot Chat -->
             <div id="appPage5" class="hidden">
@@ -147,4 +166,5 @@
 <script type="text/html" import-script="/JS/dataStorage.js"></script>
 <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/JPLogistics/EFB/EFB.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/JPLogistics/JPL152IP.js"></script>
 <script type="text/javascript" src="/JS/debug.js"></script>
