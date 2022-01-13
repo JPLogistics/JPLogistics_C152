@@ -39,15 +39,13 @@ class EFB extends BaseInstrument {
 			this.settingsToggleEGT.addEventListener("change", this.settingsToggleEGTPress.bind(this));
 			this.settingsToggleAP = this.getChildById("settingsToggleAP");
 			this.settingsToggleAP.addEventListener("change", this.settingsToggleAPPress.bind(this));
+			this.settingsToggleCopilotViz = this.getChildById("settingsToggleCopilotViz");
+			this.settingsToggleCopilotViz.addEventListener("change", this.settingsToggleCopilotVizPress.bind(this));
 			
 			this.stateCAD = this.getChildById("stateCAD");
 			this.stateCAD.addEventListener("mouseup", this.stateCADPress.bind(this));
 			this.stateRFF = this.getChildById("stateRFF");
 			this.stateRFF.addEventListener("mouseup", this.stateRFFPress.bind(this));
-			
-			// COMMENTED OUT BELOW IS STUFF THAT IS IN THE EXAMPLE TABLET, WAS TRYING TO GET THE BUTTONS TO START IN CORRECT POSITION...NO EFFECT
-			// NOT SURE WHAT IT'S DOING TBH.  SOME OF THE CODE FROM THE EXAMPLE HAS TO DO WITH STATE SAVING, WHICH WE DON'T NEED HERE (I THINK??)
-			// AS ITS ALL IN ANOTHER FILE FOR US.
 			
 			// SET INFO TO IPAD
 			if (GetStoredData('JPL152IP_SSONOFF_'+this.livery) == 1) {
@@ -73,6 +71,12 @@ class EFB extends BaseInstrument {
 			} else {
 			this.settingsToggleAP.checked = false;
 			}
+			
+			if (GetStoredData('JPL152IP_COPILOTVIZ_'+this.livery) == 1) {
+            this.settingsToggleCopilotViz.checked = true;
+			} else {
+			this.settingsToggleCopilotViz.checked = false;
+			}
         }
         //Button Functions
 		
@@ -87,6 +91,9 @@ class EFB extends BaseInstrument {
     }
     settingsToggleAPPress() {
         SimVar.SetSimVarValue("L:JPL152_APVIZ", "Bool", this.settingsToggleAP.checked);
+    }
+    settingsToggleCopilotVizPress() {
+        SimVar.SetSimVarValue("L:C152_CoPilotsState", "Bool", this.settingsToggleCopilotViz.checked);
     }
     stateCADPress() {
 		SimVar.SetSimVarValue("ELECTRICAL MASTER BATTERY:1", "number", 0);
@@ -163,8 +170,12 @@ class EFB extends BaseInstrument {
 		}, 7000);	
 
 		setTimeout(function() {
-		SimVar.SetSimVarValue("L:JPL_WINDOW_PILOT", "bool", 1);
+		SimVar.SetSimVarValue("L:JPL_WINDOW_HANDLE_PILOT", "bool", 1);
 		}, 7500);
+		
+		setTimeout(function() {
+		SimVar.SetSimVarValue("L:JPL_WINDOW_PILOT", "position 16k", 16384);
+		}, 7700);
 
 		setTimeout(function() {
 		SimVar.SetSimVarValue("K:MAGNETO1_BOTH", "number", 0);

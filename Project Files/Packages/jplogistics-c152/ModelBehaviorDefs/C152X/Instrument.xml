@@ -79,8 +79,16 @@
       </Condition>
     </UseTemplate>
   </Component>
+  	<Update Frequency = "1">
+		(L:JPL152_APVIZ) 0 &gt;
+		(A:CIRCUIT SWITCH ON:32, Boolean) ! and if{ 32 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE) }
+	</Update>
+	<Update Frequency = "1">
+		(L:JPL152_APVIZ) 0 ==
+		(A:CIRCUIT SWITCH ON:32, Boolean) and if{ 32 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE) }
+	</Update>
 </Template>
-
+<!--
 <Template Name="JPL152_IntercomSwitch">
 	<DefaultTemplateParameters>
 		<SIMVAR_PREFIX>L</SIMVAR_PREFIX>
@@ -119,7 +127,7 @@
 		(A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Boolean) and if{ #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE) }
 	</Update>
 </Template>
-
+-->
 <Template Name="ADF_VOLUME">
 	<UseTemplate Name="ASOBO_GT_Update">
 		<UPDATE_ONCE>True</UPDATE_ONCE>
@@ -263,13 +271,13 @@
 	
 <Template Name="JPL152_INSTRUMENT_Needle_EGT_SubTemplate">
 	<DefaultTemplateParameters>
-		<KNOB_ANIM_NAME>INSTRUMENT_Knob_EGT#SUFFIX_ID#</KNOB_ANIM_NAME>
-		<KNOB_NODE_ID>INSTRUMENT_Knob_EGT#SUFFIX_ID#</KNOB_NODE_ID>
+		<KNOB_ANIM_NAME>INSTRUMENT_Knob_EGT</KNOB_ANIM_NAME>
+		<KNOB_NODE_ID>INSTRUMENT_Knob_EGT</KNOB_NODE_ID>
 		<PART_ID>INSTRUMENT_EGT</PART_ID>
 		<NEEDLE_ANIM_NAME>INSTRUMENT_Needle_EGT#SUFFIX_ID#</NEEDLE_ANIM_NAME>
 		<NEEDLE_NODE_ID>INSTRUMENT_Needle_EGT#SUFFIX_ID#</NEEDLE_NODE_ID>
-		<NEEDLE_BUG_ANIM_NAME>INSTRUMENT_Needle_Bug_EGT#SUFFIX_ID#</NEEDLE_BUG_ANIM_NAME>
-		<NEEDLE_BUG_NODE_ID>INSTRUMENT_Needle_Bug_EGT#SUFFIX_ID#</NEEDLE_BUG_NODE_ID>
+		<NEEDLE_BUG_ANIM_NAME>INSTRUMENT_Needle_EGT_Set</NEEDLE_BUG_ANIM_NAME>
+		<NEEDLE_BUG_NODE_ID>INSTRUMENT_Needle_EGT_Set</NEEDLE_BUG_NODE_ID>
 		<UNITS>Fahrenheit</UNITS>
 		<MIN_VALUE>0</MIN_VALUE>
 		<MAX_VALUE>400</MAX_VALUE>
@@ -313,6 +321,7 @@
 				<ANIM_NAME>#NEEDLE_BUG_ANIM_NAME#</ANIM_NAME>
 				<SIMVAR>ENG EXHAUST GAS TEMPERATURE GES:1</SIMVAR>
 				<UNITS>Percent</UNITS>
+				<ANIM_NEVER_FAILS>True</ANIM_NEVER_FAILS>
 				<MIN_VALUE>0</MIN_VALUE>
 				<MAX_VALUE>100</MAX_VALUE>
 				<Condition Check="FAILURE_NEEDLE">
@@ -321,7 +330,7 @@
 				<Condition Check="HIGHLIGHT_NODE_ID">
 					<PART_ID/>
 				</Condition>
-				<ANIM_WRAP>True</ANIM_WRAP>
+				<ANIM_WRAP>False</ANIM_WRAP>
 			</UseTemplate>
 			
 			<Component ID="#KNOB_NODE_ID#" Node="#KNOB_NODE_ID#">
@@ -343,6 +352,7 @@
 				</UseInputEvent>
 				<UseTemplate Name="ASOBO_GT_Knob_Infinite">
 					<ANIM_NAME>#KNOB_ANIM_NAME#</ANIM_NAME>
+					<ANIM_NEVER_FAILS>True</ANIM_NEVER_FAILS>
 					<CLOCKWISE_CODE>1 (&gt;B:INSTRUMENT_EGT_Bug_Inc)</CLOCKWISE_CODE>
 					<ANTICLOCKWISE_CODE>1 (&gt;B:INSTRUMENT_EGT_Bug_Dec)</ANTICLOCKWISE_CODE>
 					<Condition Check="HIGHLIGHT_NODE_ID">

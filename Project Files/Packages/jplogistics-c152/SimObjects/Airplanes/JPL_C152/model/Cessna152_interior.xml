@@ -718,7 +718,8 @@
 				<NEEDLE_ANIM_NAME>INSTRUMENT_Needle_EGT</NEEDLE_ANIM_NAME>
 				<NEEDLE_NODE_ID>INSTRUMENT_Needle_EGT</NEEDLE_NODE_ID>
 				<PART_ID>INSTRUMENT_Needle_EGT</PART_ID>
-				<MIN_VALUE>1000</MIN_VALUE>
+				<EGT_BUG/>True<EGT_BUG/>
+				<MIN_VALUE>1200</MIN_VALUE>
 				<MAX_VALUE>1700</MAX_VALUE>
 				<ANIM_WRAP>False</ANIM_WRAP>
 			</UseTemplate>
@@ -937,21 +938,19 @@
       </UseTemplate>
       <Component Id="NAVCOM_Sound_Push_Buttons">
 
-        <UseTemplate Name="C152X_AUDIO_Switch_Speaker_Template">
+        <UseTemplate Name="ASOBO_AUDIO_Switch_Speaker_Template">
           <NODE_ID>AUDIO_Push_SPKR</NODE_ID>
           <ANIM_NAME>AUDIO_Push_SPKR</ANIM_NAME>
 		  <EMISSIVE_CODE>
 			(A:CIRCUIT ON:11, Bool) 1 ==
-			(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 == and
+			(A:SPEAKER ACTIVE, Bool) 1 == and
 				if{ (A:LIGHT POTENTIOMETER:5, Percent) 200 / }
 			(A:CIRCUIT ON:11, Bool) 1 ==
-			(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 == and
+			(A:SPEAKER ACTIVE, Bool) 0 == and
 				if{ (A:LIGHT POTENTIOMETER:5, Percent) 2000 / }
 		  </EMISSIVE_CODE>
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
-		  <TOOLTIP_TITLE>'Toggle CoPilot'</TOOLTIP_TITLE>
-		  <TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
         </UseTemplate>	  
 	  
         <UseTemplate Name="ASOBO_NAVCOM_Switch_MARKER_Sound_Template">
@@ -960,10 +959,10 @@
 		  <EMISSIVE_CODE>
 			(A:CIRCUIT ON:11, Bool) 1 ==
 			(A:MARKER SOUND, Bool) 1 == and
-				if{ (A:LIGHT POTENTIOMETER:5, Percent) 10 / }
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 80 / }
 			(A:CIRCUIT ON:11, Bool) 1 ==
 			(A:MARKER SOUND, Bool) 0 == and
-				if{ (A:LIGHT POTENTIOMETER:5, Percent) 50 / }
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 400 / }
 		  </EMISSIVE_CODE>
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
@@ -975,10 +974,10 @@
 		  <EMISSIVE_CODE>
 			(A:CIRCUIT ON:11, Bool) 1 ==
 			(A:DME SOUND, Bool) 1 == and
-				if{ (A:LIGHT POTENTIOMETER:5, Percent) 10 / }
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 80 / }
 			(A:CIRCUIT ON:11, Bool) 1 ==
 			(A:DME SOUND, Bool) 0 == and
-				if{ (A:LIGHT POTENTIOMETER:5, Percent) 50 / }
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 400 / }
 		  </EMISSIVE_CODE>
           <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
           <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
@@ -990,10 +989,10 @@
 		  <EMISSIVE_CODE>
 			(A:CIRCUIT ON:11, Bool) 1 ==
 			(A:ADF SOUND:1, Bool) 1 == and
-				if{ (A:LIGHT POTENTIOMETER:5, Percent) 10 / }
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 80 / }
 			(A:CIRCUIT ON:11, Bool) 1 ==
 			(A:ADF SOUND:1, Bool) 0 == and
-				if{ (A:LIGHT POTENTIOMETER:5, Percent) 50 / }
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 400 / }
 		  </EMISSIVE_CODE>
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
@@ -1008,10 +1007,10 @@
 		  <EMISSIVE_CODE>
 			(A:CIRCUIT ON:11, Bool) 1 ==
 			(A:NAV SOUND:2, Bool) 1 == and
-				if{ (A:LIGHT POTENTIOMETER:5, Percent) 10 / }
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 80 / }
 			(A:CIRCUIT ON:11, Bool) 1 ==
 			(A:NAV SOUND:2, Bool) 0 == and
-				if{ (A:LIGHT POTENTIOMETER:5, Percent) 50 / }
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 400 / }
 		  </EMISSIVE_CODE>
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
@@ -1026,10 +1025,10 @@
 		  <EMISSIVE_CODE>
 			(A:CIRCUIT ON:11, Bool) 1 ==
 			(A:NAV SOUND:1, Bool) 1 == and
-				if{ (A:LIGHT POTENTIOMETER:5, Percent) 10 / }
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 80 / }
 			(A:CIRCUIT ON:11, Bool) 1 ==
 			(A:NAV SOUND:1, Bool) 0 == and
-				if{ (A:LIGHT POTENTIOMETER:5, Percent) 50 / }
+				if{ (A:LIGHT POTENTIOMETER:5, Percent) 400 / }
 		  </EMISSIVE_CODE>
 		  <WWISE_EVENT_1>NAVCOM_push_button_on</WWISE_EVENT_1>
 		  <WWISE_EVENT_2>NAVCOM_push_button_off</WWISE_EVENT_2>
@@ -1161,7 +1160,7 @@
       <UseTemplate Name="ASOBO_AUDIO_Switch_Marker_Sens_Template">
       </UseTemplate>
     </Component>
-<!--
+
 	<Component ID="AUDIO_Switch_Intercom">	
 		<UseTemplate Name="JPL152_IntercomSwitch">
 			<NODE_ID>AUDIO_Switch_Intercom</NODE_ID>
@@ -1170,8 +1169,8 @@
 			<CIRCUIT_ID></CIRCUIT_ID>
 		</UseTemplate>
 	</Component>
--->
 
+<!--
 	<Component ID="AUDIO_Switch_Intercom">	
 		<UseTemplate Name="JPL152_IntercomSwitch">
 			<MOUSEFLAGS>LeftSingle</MOUSEFLAGS>
@@ -1184,7 +1183,7 @@
 			<CIRCUIT_ID>32</CIRCUIT_ID>
 		</UseTemplate>	
 	</Component>
-
+-->
     <Component ID="ANNUNCIATOR_TEST">
 		<UseTemplate Name="JPL152_Annun_Test">
 			<NODE_ID>AUDIO_Switch_Test</NODE_ID>
@@ -1204,6 +1203,7 @@
 				</VISIBILITY_CODE>
 			</UseTemplate>
 		</Component>
+		<!--
 		<Component ID="PILOT_1" Node="PILOT_1">
 			<UseTemplate Name="ASOBO_GT_Visibility_Code">
 				<VISIBILITY_CODE>
@@ -1214,6 +1214,14 @@
 							(A:CAMERA STATE, Enum) 2 != 
 							(A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &gt; and or
 					}
+				</VISIBILITY_CODE>
+			</UseTemplate>
+		</Component>
+		-->
+		<Component ID="PILOT_1" Node="PILOT_1">
+			<UseTemplate Name="ASOBO_GT_Visibility_Code">
+				<VISIBILITY_CODE>
+					(L:C152_CoPilotsState, bool) 1 == if{ 1 } els{ 0 }
 				</VISIBILITY_CODE>
 			</UseTemplate>
 		</Component>
