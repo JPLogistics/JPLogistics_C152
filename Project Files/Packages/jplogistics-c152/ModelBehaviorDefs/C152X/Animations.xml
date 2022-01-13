@@ -82,8 +82,15 @@
 		<CURSOR>Grab</CURSOR>
 		<NO_ARROWS/>
 		<DRAG_CODE>
+		(L:C152_#ID#sState) 0 == if{
 		  16384 (M:DragPercent) *
 		  16384 min 0 max (&gt;L:JPL152_#ID#_Seat)
+		}
+		
+		(L:C152_#ID#sState) 1 == if{
+		  16384 (M:DragPercent) *
+		  5950 min 0 max (&gt;L:JPL152_#ID#_Seat)
+		}
 		</DRAG_CODE>
 		<ANIM_CODE>(L:JPL152_#ID#_Seat, position 16k) 16384 / 100 *</ANIM_CODE>
 		<ANIM_NAME>#ID#SeatAnim</ANIM_NAME>
@@ -94,6 +101,11 @@
 		<WWISE_EVENT_1>cabin_heat_lever_on</WWISE_EVENT_1>
 		<WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2> 
 	  </UseTemplate>
+	  <Update Frequency="8">
+		(L:C152_#ID#sState) 1 ==
+		(L:JPL152_#ID#_Seat, position 16k) 5950 &gt; and
+		if{ 5950 (&gt;L:JPL152_#ID#_Seat, position 16k) }
+	  </Update>
 	</Component>
 </Template> 
 
@@ -203,9 +215,13 @@
   </Component>
 </Template>
 
+<Macro Name="WindowScalerA"> (L:JPL_WINDOW_PILOT, position 16k) (L:JPL_WINDOW_COPILOT, position 16k) - 5460 / </Macro>
+<Macro Name="WindowScalerB"> (A:AIRSPEED TRUE, Knots) 30 / </Macro>
+
 <Template Name="Misc_Helpers">
+	<!--WindowSteering-->
 	<Update Frequency="3">
-		(L:JPL_WINDOW_PILOT, position 16k) (L:JPL_WINDOW_COPILOT, position 16k) - 1638.4 / (&gt;K:AILERON_TRIM_SET)
+		@WindowScalerA @WindowScalerB * (&gt;K:AILERON_TRIM_SET)
 	</Update>
 
 

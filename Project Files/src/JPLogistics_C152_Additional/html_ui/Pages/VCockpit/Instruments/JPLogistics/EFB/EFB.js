@@ -39,6 +39,8 @@ class EFB extends BaseInstrument {
 			this.settingsToggleEGT.addEventListener("change", this.settingsToggleEGTPress.bind(this));
 			this.settingsToggleAP = this.getChildById("settingsToggleAP");
 			this.settingsToggleAP.addEventListener("change", this.settingsToggleAPPress.bind(this));
+			this.settingsTogglepilotViz = this.getChildById("settingsTogglepilotViz");
+			this.settingsTogglepilotViz.addEventListener("change", this.settingsTogglepilotVizPress.bind(this));
 			this.settingsToggleCopilotViz = this.getChildById("settingsToggleCopilotViz");
 			this.settingsToggleCopilotViz.addEventListener("change", this.settingsToggleCopilotVizPress.bind(this));
 			
@@ -71,7 +73,13 @@ class EFB extends BaseInstrument {
 			} else {
 			this.settingsToggleAP.checked = false;
 			}
-			
+
+			if (GetStoredData('JPL152IP_PILOTVIZ_'+this.livery) == 1) {
+            this.settingsTogglepilotViz.checked = true;
+			} else {
+			this.settingsTogglepilotViz.checked = false;
+			}
+
 			if (GetStoredData('JPL152IP_COPILOTVIZ_'+this.livery) == 1) {
             this.settingsToggleCopilotViz.checked = true;
 			} else {
@@ -91,6 +99,9 @@ class EFB extends BaseInstrument {
     }
     settingsToggleAPPress() {
         SimVar.SetSimVarValue("L:JPL152_APVIZ", "Bool", this.settingsToggleAP.checked);
+    }
+    settingsTogglepilotVizPress() {
+        SimVar.SetSimVarValue("L:C152_PilotsState", "Bool", this.settingsTogglepilotViz.checked);
     }
     settingsToggleCopilotVizPress() {
         SimVar.SetSimVarValue("L:C152_CoPilotsState", "Bool", this.settingsToggleCopilotViz.checked);
