@@ -13,6 +13,8 @@ class EFB extends BaseInstrument {
             super.connectedCallback();
 
             //Vars
+			var title = SimVar.GetSimVarValue("TITLE", "string");
+			this.livery = title.replace(/\s+/g, '_');
             //Buttons
             this.navButton1 = this.getChildById("navButton1");
             this.navButton1.addEventListener("click", this.navButton1Press.bind(this));
@@ -37,22 +39,52 @@ class EFB extends BaseInstrument {
 			this.settingsToggleEGT.addEventListener("change", this.settingsToggleEGTPress.bind(this));
 			this.settingsToggleAP = this.getChildById("settingsToggleAP");
 			this.settingsToggleAP.addEventListener("change", this.settingsToggleAPPress.bind(this));
+			this.settingsTogglepilotViz = this.getChildById("settingsTogglepilotViz");
+			this.settingsTogglepilotViz.addEventListener("change", this.settingsTogglepilotVizPress.bind(this));
+			this.settingsToggleCopilotViz = this.getChildById("settingsToggleCopilotViz");
+			this.settingsToggleCopilotViz.addEventListener("change", this.settingsToggleCopilotVizPress.bind(this));
 			
 			this.stateCAD = this.getChildById("stateCAD");
 			this.stateCAD.addEventListener("mouseup", this.stateCADPress.bind(this));
 			this.stateRFF = this.getChildById("stateRFF");
 			this.stateRFF.addEventListener("mouseup", this.stateRFFPress.bind(this));
 			
-			// COMMENTED OUT BELOW IS STUFF THAT IS IN THE EXAMPLE TABLET, WAS TRYING TO GET THE BUTTONS TO START IN CORRECT POSITION...NO EFFECT
-			// NOT SURE WHAT IT'S DOING TBH.  SOME OF THE CODE FROM THE EXAMPLE HAS TO DO WITH STATE SAVING, WHICH WE DON'T NEED HERE (I THINK??)
-			// AS ITS ALL IN ANOTHER FILE FOR US.
+			// SET INFO TO IPAD
+			if (GetStoredData('JPL152IP_SSONOFF_'+this.livery) == 1) {
+            this.settingsToggleStateSaving.checked = true;
+			} else {
+			this.settingsToggleStateSaving.checked = false;
+			}
 			
-			//let SS_On = SimVar.GetSimVarValue("L:JPL152_SSONOFF", "bool");
-			//if (SS_On != "") {
-            //SimVar.SetSimVarValue("L:JPL152_SSONOFF", "Bool", SS_On == "true");
-            //this.settingsToggleStateSaving.checked = SS_On == "true";
-			// }
+			if (GetStoredData('JPL152IP_ENGMAINTONOFF_'+this.livery) == 1) {
+            this.settingsToggleMaintenance.checked = true;
+			} else {
+			this.settingsToggleMaintenance.checked = false;
+			}
+			
+			if (GetStoredData('JPL152IP_CLOCKEGT_'+this.livery) == 1) {
+            this.settingsToggleEGT.checked = true;
+			} else {
+			this.settingsToggleEGT.checked = false;
+			}
+			
+			if (GetStoredData('JPL152IP_APVIZ_'+this.livery) == 1) {
+            this.settingsToggleAP.checked = true;
+			} else {
+			this.settingsToggleAP.checked = false;
+			}
 
+			if (GetStoredData('JPL152IP_PILOTVIZ_'+this.livery) == 1) {
+            this.settingsTogglepilotViz.checked = true;
+			} else {
+			this.settingsTogglepilotViz.checked = false;
+			}
+
+			if (GetStoredData('JPL152IP_COPILOTVIZ_'+this.livery) == 1) {
+            this.settingsToggleCopilotViz.checked = true;
+			} else {
+			this.settingsToggleCopilotViz.checked = false;
+			}
         }
         //Button Functions
 		
@@ -67,6 +99,12 @@ class EFB extends BaseInstrument {
     }
     settingsToggleAPPress() {
         SimVar.SetSimVarValue("L:JPL152_APVIZ", "Bool", this.settingsToggleAP.checked);
+    }
+    settingsTogglepilotVizPress() {
+        SimVar.SetSimVarValue("L:C152_PilotsState", "Bool", this.settingsTogglepilotViz.checked);
+    }
+    settingsToggleCopilotVizPress() {
+        SimVar.SetSimVarValue("L:C152_CoPilotsState", "Bool", this.settingsToggleCopilotViz.checked);
     }
     stateCADPress() {
 		SimVar.SetSimVarValue("ELECTRICAL MASTER BATTERY:1", "number", 0);
@@ -143,8 +181,12 @@ class EFB extends BaseInstrument {
 		}, 7000);	
 
 		setTimeout(function() {
-		SimVar.SetSimVarValue("L:JPL_WINDOW_PILOT", "bool", 1);
+		SimVar.SetSimVarValue("L:JPL_WINDOW_HANDLE_PILOT", "bool", 1);
 		}, 7500);
+		
+		setTimeout(function() {
+		SimVar.SetSimVarValue("L:JPL_WINDOW_PILOT", "position 16k", 16384);
+		}, 7700);
 
 		setTimeout(function() {
 		SimVar.SetSimVarValue("K:MAGNETO1_BOTH", "number", 0);

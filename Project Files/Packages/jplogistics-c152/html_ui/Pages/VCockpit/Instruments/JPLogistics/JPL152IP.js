@@ -37,6 +37,7 @@ class JPL152IP extends BaseInstrument {
 	this.radioknob = GetStoredData('JPL152IP_RADIOKNOB_'+this.livery) ? GetStoredData('JPL152IP_RADIOKNOB_'+this.livery) : 75;
 	this.mapknob = GetStoredData('JPL152IP_MAPKNOB_'+this.livery) ? GetStoredData('JPL152IP_MAPKNOB_'+this.livery) : 0;
 	this.kohlsman = GetStoredData('JPL152IP_KOHLSMAN_'+this.livery) ? GetStoredData('JPL152IP_KOHLSMAN_'+this.livery) : 16288;
+	this.egtbug = GetStoredData('JPL152IP_EGTBUG_'+this.livery) ? GetStoredData('JPL152IP_EGTBUG_'+this.livery) : 22300;
 	//-----------------------------------SWITCHES
 	this.pitot = GetStoredData('JPL152IP_PITOT_'+this.livery) ? GetStoredData('JPL152IP_PITOT_'+this.livery) : 0;
 	this.nav = GetStoredData('JPL152IP_NAV_'+this.livery) ? GetStoredData('JPL152IP_NAV_'+this.livery) : 0;
@@ -96,6 +97,10 @@ class JPL152IP extends BaseInstrument {
 	this.window2 = GetStoredData('JPL152IP_WINDOW2_'+this.livery) ? GetStoredData('JPL152IP_WINDOW2_'+this.livery) : 0;
 	this.windowhandle2 = GetStoredData('JPL152IP_WINDOWHANDLE2_'+this.livery) ? GetStoredData('JPL152IP_WINDOWHANDLE2_'+this.livery) : 0;
 	this.visor2 = GetStoredData('JPL152IP_VISOR2_'+this.livery) ? GetStoredData('JPL152IP_VISOR2_'+this.livery) : 12000;
+	this.pilotviz = GetStoredData('JPL152IP_PILOTVIZ_'+this.livery) ? GetStoredData('JPL152IP_PILOTVIZ_'+this.livery) : 0;
+	this.copilotviz = GetStoredData('JPL152IP_COPILOTVIZ_'+this.livery) ? GetStoredData('JPL152IP_COPILOTVIZ_'+this.livery) : 0;
+	this.pilotseat = GetStoredData('JPL152IP_PILOTSEAT_'+this.livery) ? GetStoredData('JPL152IP_PILOTSEAT_'+this.livery) : 5950;
+	this.copilotseat = GetStoredData('JPL152IP_COPILOTSEAT_'+this.livery) ? GetStoredData('JPL152IP_COPILOTSEAT_'+this.livery) : 5950;
 	//---------------------------------------ENG MAINTENANCE
 	this.plugFouling = GetStoredData('JPL152IP_PLUG_FOUL_'+this.livery) ? GetStoredData('JPL152IP_PLUG_FOUL_'+this.livery) : 5;
 	this.engoil = GetStoredData('JPL152IP_ENGOIL_'+this.livery) ? GetStoredData('JPL152IP_ENGOIL_'+this.livery) : 7;
@@ -137,6 +142,7 @@ class JPL152IP extends BaseInstrument {
 	this.ssonoff = GetStoredData('JPL152IP_SSONOFF_'+this.livery) ? GetStoredData('JPL152IP_SSONOFF_'+this.livery) : 1;  // 1 = ON
 	this.engmaintonoff = GetStoredData('JPL152IP_ENGMAINTONOFF_'+this.livery) ? GetStoredData('JPL152IP_ENGMAINTONOFF_'+this.livery) : 0;  // 0 = ON
 	this.ipad = GetStoredData('JPL152IP_IPAD_'+this.livery) ? GetStoredData('JPL152IP_IPAD_'+this.livery) : 0;  // 0 = STOWED
+	this.clockegt = GetStoredData('JPL152IP_CLOCKEGT_'+this.livery) ? GetStoredData('JPL152IP_CLOCKEGT_'+this.livery) : 0;  // 0 = CLOCK
 	//this.planelatitude = GetStoredData('JPL152IP_PLANELATITUDE_'+this.livery) ? GetStoredData('JPL152IP_PLANELATITUDE_'+this.livery) : 0.518738130593484;
 	//this.planelongitude = GetStoredData('JPL152IP_PLANELONGITUDE_'+this.livery) ? GetStoredData('JPL152IP_PLANELONGITUDE_'+this.livery) : -1.48414581997703;
 	//this.planeheading = GetStoredData('JPL152IP_PLANEHEADING_'+this.livery) ? GetStoredData('JPL152IP_PLANEHEADING_'+this.livery) : 0.55412570690;
@@ -187,6 +193,7 @@ class JPL152IP extends BaseInstrument {
 	SimVar.SetSimVarValue("L:JPL152_MAINTENANCE_TIME", "number", Number(this.engmaintenance));
 	SimVar.SetSimVarValue("L:JPL152_FOULING_TIME", "number", Number(this.plugFouling));
 	SimVar.SetSimVarValue("L:JPL_iPad", "number", Number(this.ipad));
+	SimVar.SetSimVarValue("L:JPL152_CLOCKEGT", "number", Number(this.clockegt));
 
 /*
 	if (GetStoredData('JPL152IP_PLANEPOSITION_'+this.livery) == 1) {
@@ -232,7 +239,8 @@ class JPL152IP extends BaseInstrument {
 		SimVar.SetSimVarValue("L:JPL152_Panel_Light", "number", Number(this.panelknob));
 		SimVar.SetSimVarValue("L:JPL152_Radio_Light", "number", Number(this.radioknob));
 		SimVar.SetSimVarValue("L:JPL152_Map_Light", "number", Number(this.mapknob));
-		SimVar.SetSimVarValue("K:KOHLSMAN_SET", "number", Number(this.kohlsman));	
+		SimVar.SetSimVarValue("K:KOHLSMAN_SET", "number", Number(this.kohlsman));
+		SimVar.SetSimVarValue("K:EGT_SET", "number", Number(this.egtbug));		
 		//-------------------------------------------SWITCHES
 		SimVar.SetSimVarValue("K:PITOT_HEAT_SET", "number", Number(this.pitot));
 		SimVar.SetSimVarValue("LIGHT NAV", "bool", Number(this.nav));
@@ -280,7 +288,7 @@ class JPL152IP extends BaseInstrument {
 		SimVar.SetSimVarValue("K:RADIO_DME1_IDENT_SET", "number", Number(this.btndme)); //this looks like it could be set to dme1,dme2, or selected dme if needed
 		if (GetStoredData('JPL152IP_BTNMKR_'+this.livery) == 1 && SimVar.GetSimVarValue("MARKER SOUND", "bool") == 0) {
 				SimVar.SetSimVarValue("K:MARKER_SOUND_TOGGLE", "number", 1); }
-		SimVar.SetSimVarValue("L:XMLVAR_AUDIO_SPKR_SEL", "number", Number(this.btnspkr));
+		SimVar.SetSimVarValue("SPEAKER ACTIVE", "Bool", Number(this.btnspkr));
 		//----------------------------------------TRANSPONDER
 		SimVar.SetSimVarValue("TRANSPONDER CODE:1", "BCO16", Number(this.xpndrcode));
 		SimVar.SetSimVarValue("TRANSPONDER STATE:1", "number", Number(this.xpndrstate));
@@ -289,12 +297,16 @@ class JPL152IP extends BaseInstrument {
 		SimVar.SetSimVarValue("L:XMLVAR_YokeHidden2", "number", Number(this.yoke2));
 		SimVar.SetSimVarValue("L:JPL_DOOR_PILOT", "number", Number(this.door1));
 		SimVar.SetSimVarValue("L:JPL_WINDOW_HANDLE_PILOT", "number", Number(this.windowhandle1));
-		SimVar.SetSimVarValue("L:JPL_WINDOW_PILOT", "number", Number(this.window1));
+		SimVar.SetSimVarValue("L:JPL_WINDOW_PILOT", "position 16k", Number(this.window1));
 		SimVar.SetSimVarValue("L:JPL152_VISOR_PILOT", "position 16k", Number(this.visor1));
 		SimVar.SetSimVarValue("L:JPL_DOOR_COPILOT", "number", Number(this.door2));
 		SimVar.SetSimVarValue("L:JPL_WINDOW_HANDLE_COPILOT", "number", Number(this.windowhandle2));
-		SimVar.SetSimVarValue("L:JPL_WINDOW_COPILOT", "number", Number(this.window2));
+		SimVar.SetSimVarValue("L:JPL_WINDOW_COPILOT", "position 16k", Number(this.window2));
 		SimVar.SetSimVarValue("L:JPL152_VISOR_COPILOT", "position 16k", Number(this.visor2));
+		SimVar.SetSimVarValue("L:C152_PilotsState", "bool", Number(this.pilotviz));
+		SimVar.SetSimVarValue("L:C152_CoPilotsState", "bool", Number(this.copilotviz));
+		SimVar.SetSimVarValue("L:JPL152_Pilot_Seat", "position 16k", Number(this.pilotseat));
+		SimVar.SetSimVarValue("L:JPL152_CoPilot_Seat", "position 16k", Number(this.copilotseat));
 		//---------------------------------------LEVERS
 		SimVar.SetSimVarValue("K:ANTI_ICE_GRADUAL_SET_ENG1", "position 16k", Number(this.carbheat));
 		SimVar.SetSimVarValue("L:XMLVAR_CABIN_AIR_1_POSITION", "number", Number(this.cabair));
@@ -407,6 +419,8 @@ class JPL152IP extends BaseInstrument {
 		SetStoredData('JPL152IP_PLUG_FOUL_'+planeId, plugFouling.toString());
 		var ipad = SimVar.GetSimVarValue("L:JPL_iPad", "number");
 		SetStoredData('JPL152IP_IPAD_'+planeId, ipad.toString());
+		var clockegt = SimVar.GetSimVarValue("L:JPL152_CLOCKEGT", "number");
+		SetStoredData('JPL152IP_CLOCKEGT_'+planeId, clockegt.toString());
 		//var planeposition = SimVar.GetSimVarValue("L:JPL152_LASTPOSITION", "number");
 		//SetStoredData('JPL152IP_PLANEPOSITION_'+planeId, planeposition.toString());
 		
@@ -450,6 +464,10 @@ class JPL152IP extends BaseInstrument {
 			var kohlsman = SimVar.GetSimVarValue("KOHLSMAN SETTING MB", "millibars");
 			var result = kohlsman * 16;
 			SetStoredData('JPL152IP_KOHLSMAN_'+planeId, result.toString());
+			
+			var egtbug = SimVar.GetSimVarValue("ENG EXHAUST GAS TEMPERATURE GES:1", "Percent over 100");
+			var resultEGT = egtbug * 32767;
+			SetStoredData('JPL152IP_EGTBUG_'+planeId, resultEGT.toString());
 		
 			//----------------------------SWITCHES
 			var pitot = SimVar.GetSimVarValue("L:DEICE_Pitot_1", "number");
@@ -542,7 +560,7 @@ class JPL152IP extends BaseInstrument {
 			SetStoredData('JPL152IP_BTNDME_'+planeId, btndme.toString());
 			var btnmkr = SimVar.GetSimVarValue("MARKER SOUND", "bool");
 			SetStoredData('JPL152IP_BTNMKR_'+planeId, btnmkr.toString());
-			var btnspkr = SimVar.GetSimVarValue("L:XMLVAR_AUDIO_SPKR_SEL", "number");
+			var btnspkr = SimVar.GetSimVarValue("SPEAKER ACTIVE", "Bool");
 			SetStoredData('JPL152IP_BTNSPKR_'+planeId, btnspkr.toString());
 		
 			//--------------------------TRANSPONDER
@@ -558,7 +576,7 @@ class JPL152IP extends BaseInstrument {
 			SetStoredData('JPL152IP_YOKE2_'+planeId, yoke2.toString());
 			var door1 = SimVar.GetSimVarValue("L:JPL_DOOR_PILOT", "number");
 			SetStoredData('JPL152IP_DOOR1_'+planeId, door1.toString());
-			var window1 = SimVar.GetSimVarValue("L:JPL_WINDOW_PILOT", "number");
+			var window1 = SimVar.GetSimVarValue("L:JPL_WINDOW_PILOT", "position 16k");
 			SetStoredData('JPL152IP_WINDOW1_'+planeId, window1.toString());
 			var windowhandle1 = SimVar.GetSimVarValue("L:JPL_WINDOW_HANDLE_PILOT", "number");
 			SetStoredData('JPL152IP_WINDOWHANDLE1_'+planeId, windowhandle1.toString());
@@ -566,12 +584,21 @@ class JPL152IP extends BaseInstrument {
 			SetStoredData('JPL152IP_VISOR1_'+planeId, visor1.toString());
 			var door2 = SimVar.GetSimVarValue("L:JPL_DOOR_COPILOT", "number");
 			SetStoredData('JPL152IP_DOOR2_'+planeId, door2.toString());
-			var window2 = SimVar.GetSimVarValue("L:JPL_WINDOW_COPILOT", "number");
+			var window2 = SimVar.GetSimVarValue("L:JPL_WINDOW_COPILOT", "position 16k");
 			SetStoredData('JPL152IP_WINDOW2_'+planeId, window2.toString());
 			var windowhandle2 = SimVar.GetSimVarValue("L:JPL_WINDOW_HANDLE_COPILOT", "number");
 			SetStoredData('JPL152IP_WINDOWHANDLE2_'+planeId, windowhandle2.toString());
 			var visor2 = SimVar.GetSimVarValue("L:JPL152_VISOR_COPILOT", "position 16k");
 			SetStoredData('JPL152IP_VISOR2_'+planeId, visor2.toString());
+			var pilotviz = SimVar.GetSimVarValue("L:C152_PilotsState", "bool");
+			SetStoredData('JPL152IP_PILOTVIZ_'+planeId, pilotviz.toString());
+			var copilotviz = SimVar.GetSimVarValue("L:C152_CoPilotsState", "bool");
+			SetStoredData('JPL152IP_COPILOTVIZ_'+planeId, copilotviz.toString());
+			
+			var pilotseat = SimVar.GetSimVarValue("L:JPL152_Pilot_Seat", "position 16k");
+			SetStoredData('JPL152IP_PILOTSEAT_'+planeId, pilotseat.toString());
+			var copilotseat = SimVar.GetSimVarValue("L:JPL152_CoPilot_Seat", "position 16k");
+			SetStoredData('JPL152IP_COPILOTSEAT_'+planeId, copilotseat.toString());
 		
 			//----------------------------------LEVERS
 			var carbheat = SimVar.GetSimVarValue("A:GENERAL ENG ANTI ICE POSITION:1", "position 16k");

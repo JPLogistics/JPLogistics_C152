@@ -242,13 +242,13 @@
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/EFB/EFB.html",
-      "size": 13090,
-      "date": 132864607157110816
+      "size": 13495,
+      "date": 132865430112976836
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/EFB/EFB.js",
-      "size": 23084,
-      "date": 132864643554181179
+      "size": 24568,
+      "date": 132865430858683213
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/EFB/Fonts/DME.TTF",
@@ -268,7 +268,7 @@
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/EFB/Styles/EFB.css",
       "size": 4389,
-      "date": 132864555862749211
+      "date": 132865430199146492
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/EFB/Styles/tailwind.css",
@@ -292,8 +292,8 @@
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/JPL152IP.js",
-      "size": 48739,
-      "date": 132864581269128061
+      "size": 50931,
+      "date": 132865129743595218
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/JPL152IPdel.js",
@@ -567,8 +567,8 @@
     },
     {
       "path": "ModelBehaviorDefs/C152X/Animations.xml",
-      "size": 18610,
-      "date": 132864139775646514
+      "size": 19100,
+      "date": 132865512338291989
     },
     {
       "path": "ModelBehaviorDefs/C152X/Breakers.xml",
@@ -582,8 +582,8 @@
     },
     {
       "path": "ModelBehaviorDefs/C152X/EngineTroubles.xml",
-      "size": 9426,
-      "date": 132864549998272809
+      "size": 9382,
+      "date": 132865369744090225
     },
     {
       "path": "ModelBehaviorDefs/C152X/Index.xml",
@@ -592,8 +592,8 @@
     },
     {
       "path": "ModelBehaviorDefs/C152X/Instrument.xml",
-      "size": 11223,
-      "date": 132864648997197873
+      "size": 11584,
+      "date": 132865140983044666
     },
     {
       "path": "ModelBehaviorDefs/C152X/JPL152_ADF.xml",
@@ -607,13 +607,13 @@
     },
     {
       "path": "ModelBehaviorDefs/C152X/Lighting.xml",
-      "size": 9925,
-      "date": 132842773977772855
+      "size": 9734,
+      "date": 132865105269761833
     },
     {
       "path": "ModelBehaviorDefs/C152X/NavComSystem.xml",
-      "size": 32006,
-      "date": 132820467775565572
+      "size": 32007,
+      "date": 132865081309705899
     },
     {
       "path": "ModelBehaviorDefs/C152X/Subtemplates/Instrument_Subtemplates.xml",
@@ -677,8 +677,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/apron.flt",
-      "size": 3155,
-      "date": 132807916606492548
+      "size": 3205,
+      "date": 132865111406873541
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/cameras.cfg",
@@ -767,8 +767,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/model/Cessna152_interior.xml",
-      "size": 89335,
-      "date": 132864644725347564
+      "size": 90064,
+      "date": 132865504683800731
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/model/model.CFG",
@@ -2522,8 +2522,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/apron.flt",
-      "size": 3157,
-      "date": 132814859256859162
+      "size": 3205,
+      "date": 132865111406873541
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/cameras.cfg",
@@ -2668,7 +2668,7 @@
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/sound/sound.xml",
       "size": 31984,
-      "date": 132857231569850963
+      "date": 132864496702933786
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/sound/ssd.wav",
@@ -4747,8 +4747,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/aircraft.cfg",
-      "size": 4380,
-      "date": 132856201605145256
+      "size": 3691,
+      "date": 132865515817198271
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/Approach.flt",
@@ -4757,8 +4757,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/apron.flt",
-      "size": 3155,
-      "date": 132856201605145256
+      "size": 3205,
+      "date": 132865111406873541
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/cameras.cfg",
@@ -4898,7 +4898,7 @@
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/sound/sound.xml",
       "size": 31984,
-      "date": 132857231569850963
+      "date": 132864496702933786
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/sound/ssd.wav",

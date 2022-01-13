@@ -147,10 +147,10 @@
 				<EMISSIVE_CODE>
 					(A:CIRCUIT ON:11, Bool) 1 ==
 					(A:COM RECIEVE ALL, Bool) 1 == and
-						if{ (A:LIGHT POTENTIOMETER:5, Percent) 10 / }
+						if{ (A:LIGHT POTENTIOMETER:5, Percent) 80 / }
 					(A:CIRCUIT ON:11, Bool) 1 ==
 					(A:COM RECIEVE ALL, Bool) 0 == and
-						if{ (A:LIGHT POTENTIOMETER:5, Percent) 50 / }
+						if{ (A:LIGHT POTENTIOMETER:5, Percent) 400 / }
 				</EMISSIVE_CODE>
 			  </UseTemplate>
             </Case>
