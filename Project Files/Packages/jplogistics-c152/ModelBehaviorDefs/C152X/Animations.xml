@@ -50,7 +50,7 @@
 <Template Name="JPL_Sun_Visors">
   <DefaultTemplateParameters>
     <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
-    <SCROLL_INCREMENT>701</SCROLL_INCREMENT>
+    <SCROLL_INCREMENT>655.36</SCROLL_INCREMENT>
   </DefaultTemplateParameters>
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <UseTemplate Name="ASOBO_GT_Lever_DraggingWheelLeftDrag_Axis">
@@ -75,7 +75,7 @@
 <Template Name="JPL_Seats">
 	<DefaultTemplateParameters>
 	  <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
-	  <SCROLL_INCREMENT>701</SCROLL_INCREMENT>
+	  <SCROLL_INCREMENT>655.36</SCROLL_INCREMENT>
 	</DefaultTemplateParameters>
 	<Component ID="#NODE_ID#" Node="#NODE_ID#">
 	  <UseTemplate Name="ASOBO_GT_Lever_DraggingWheelLeftDrag_Axis">
@@ -95,7 +95,16 @@
 		<ANIM_CODE>(L:JPL152_#ID#_Seat, position 16k) 16384 / 100 *</ANIM_CODE>
 		<ANIM_NAME>#ID#SeatAnim</ANIM_NAME>
 		<DRAG_ANIM_NAME>#ID#SeatAnim</DRAG_ANIM_NAME>
-		<POSITIVE_AXIS_CODE>(L:JPL152_#ID#_Seat, position 16k) #SCROLL_INCREMENT# + 16384 min (&gt;L:JPL152_#ID#_Seat)</POSITIVE_AXIS_CODE>
+		<POSITIVE_AXIS_CODE>
+		  (L:C152_#ID#sState) 0 == if{
+			(L:JPL152_#ID#_Seat, position 16k) #SCROLL_INCREMENT# + 16384 min (&gt;L:JPL152_#ID#_Seat)
+		  }
+		  
+		  (L:C152_#ID#sState) 1 == if{
+			(L:JPL152_#ID#_Seat, position 16k) #SCROLL_INCREMENT# + 5950 min (&gt;L:JPL152_#ID#_Seat)
+		  }
+		</POSITIVE_AXIS_CODE>
+		
 		<NEGATIVE_AXIS_CODE>(L:JPL152_#ID#_Seat, position 16k) #SCROLL_INCREMENT# - 0 max (&gt;L:JPL152_#ID#_Seat)</NEGATIVE_AXIS_CODE>
 		<TOOLTIPID>#ID#'s Seat</TOOLTIPID>
 		<WWISE_EVENT_1>cabin_heat_lever_on</WWISE_EVENT_1>
@@ -112,31 +121,48 @@
 <Template Name="JPL_Window">
   <DefaultTemplateParameters>
     <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
-    <SCROLL_INCREMENT>655.36</SCROLL_INCREMENT>
+    <SCROLL_INCREMENT>1638.5</SCROLL_INCREMENT>
   </DefaultTemplateParameters>
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <UseTemplate Name="ASOBO_GT_Lever_DraggingWheelLeftDrag_Axis">
       <CURSOR>Grab</CURSOR>
       <NO_ARROWS/>
       <DRAG_CODE>
-	  (L:JPL_WINDOW_HANDLE_#ID#) 1 == if{
-        16384 (M:DragPercent) *
-        16384 min 0 max (&gt;L:JPL_WINDOW_#ID#, position 16k)
-	  }
+	    (L:JPL_WINDOW_HANDLE_#ID#) 1 == if{
+			16384 (M:DragPercent) *
+			16384 min 0 max (&gt;L:JPL_WINDOW_#ID#, position 16k)
+		}
 	  
-	  (L:JPL_WINDOW_HANDLE_#ID#) 0 == 
-	  (L:JPL_WINDOW_#ID#, position 16k) 3158 &gt; and if{
-        16384 (M:DragPercent) *
-        16384 min 3159 max (&gt;L:JPL_WINDOW_#ID#, position 16k)
-	  }
-	  
+		(L:JPL_WINDOW_HANDLE_#ID#) 0 == 
+		(L:JPL_WINDOW_#ID#, position 16k) 3158 &gt; and if{
+			16384 (M:DragPercent) *
+			16384 min 3159 max (&gt;L:JPL_WINDOW_#ID#, position 16k)
+		}
       </DRAG_CODE>
       <ANIM_CODE>(L:JPL_WINDOW_#ID#, position 16k) 16384 / 100 *</ANIM_CODE>
       <ANIM_NAME>#ID#_Window</ANIM_NAME>
       <DRAG_ANIM_NAME>#ID#_Window</DRAG_ANIM_NAME>
-      <!--<POSITIVE_AXIS_CODE>(L:JPL_WINDOW_HANDLE_#ID#, position 16k) 1 == if{ (L:JPL_WINDOW_#ID#, position 16k) #SCROLL_INCREMENT# + 16384 min (&gt;L:JPL_WINDOW_#ID#, position 16k) } </POSITIVE_AXIS_CODE>
-      <NEGATIVE_AXIS_CODE>(L:JPL_WINDOW_HANDLE_#ID#, position 16k) 1 == if{ (L:JPL_WINDOW_#ID#, position 16k) #SCROLL_INCREMENT# - 0 max (&gt;L:JPL_WINDOW_#ID#, position 16k) } els{ (L:JPL_WINDOW_#ID#, position 16k) #SCROLL_INCREMENT# - 3159 max (&gt;L:JPL_WINDOW_#ID#, position 16k) }</NEGATIVE_AXIS_CODE>
-	  -->
+      <POSITIVE_AXIS_CODE>
+		(L:JPL_WINDOW_HANDLE_#ID#) 1 == if{
+			(L:JPL_WINDOW_#ID#, position 16k) #SCROLL_INCREMENT# + 16384 min (&gt;L:JPL_WINDOW_#ID#, position 16k)
+		}
+		
+		(L:JPL_WINDOW_HANDLE_#ID#) 0 == 
+		(L:JPL_WINDOW_#ID#, position 16k) 0 &gt; and if{
+			(L:JPL_WINDOW_#ID#, position 16k) #SCROLL_INCREMENT# + 16384 min (&gt;L:JPL_WINDOW_#ID#, position 16k)
+		}
+	  </POSITIVE_AXIS_CODE>
+	  
+      <NEGATIVE_AXIS_CODE>
+	    (L:JPL_WINDOW_HANDLE_#ID#) 1 == if{
+			(L:JPL_WINDOW_#ID#, position 16k) #SCROLL_INCREMENT# - 0 max (&gt;L:JPL_WINDOW_#ID#, position 16k)
+		}
+		
+	    (L:JPL_WINDOW_HANDLE_#ID#) 0 == 
+		(L:JPL_WINDOW_#ID#, position 16k) 0 &gt; and if{
+			(L:JPL_WINDOW_#ID#, position 16k) #SCROLL_INCREMENT# - 3159 max (&gt;L:JPL_WINDOW_#ID#, position 16k)
+		}
+	  </NEGATIVE_AXIS_CODE>
     </UseTemplate>
   </Component>
 </Template>
