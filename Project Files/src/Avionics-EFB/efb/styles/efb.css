@@ -1,0 +1,162 @@
+.my-component {
+    font-size: 80px;
+}
+
+[data-theme="light"] {
+    --background: white;
+    --text-primary: black;
+    --text-secondary: grey;
+    --accent: skyblue;
+}
+
+[data-theme="dark"] {
+    --background: black;
+    --text-primary: white;
+    --text-secondary: grey;
+    --accent: darkblue;
+}
+#EFB {
+    background-color: #ffd51c;
+    color: #1a1a1a;
+    width: 2266px;
+    height: 1488px;
+}
+
+#header {
+    background: var(--accent);
+    color: var(--text-primary);
+    top: 0px;
+    width: 2266px;
+    height: 200px;
+    padding-top: 16px;
+}
+
+#efbContent {
+    width: auto;
+    padding: 32px;
+    /* background-image: url("/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/background.jpg"); */
+    background-color: var(--background);
+    top: 200px;
+    height: 1238px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--text-primary);
+}
+#efbContent .absolute-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#efbContent .svg-center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -25%);
+}
+#efbError {
+    width: auto;
+    padding: 32px;
+    position: absolute;
+    /* background-image: url("/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/background.jpg"); */
+    background-color: red;
+    top: 200px;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+}
+#efbWarning {
+    width: 2266px;
+    border-radius: 500px;
+    padding: 32px;
+    position: absolute;
+    /* background-image: url("/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/background.jpg"); */
+    background-color: yellow;
+    top: 200px;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    text-align: center;
+}
+#BootPage .circle-svg {
+    height: 550px;
+    width: 550px;
+}
+#BootPage .circle-text {
+    font-size: 72px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    fill: #333;
+}
+#BootPage .logo {
+    width: 1000px;
+}
+#BootPage textPath { 
+  font-size: 63px;
+	text-transform: uppercase;
+	letter-spacing: 20px;
+	fill: #fff;
+  background: #fff;
+}
+#textcircle {
+    fill: #fff
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 16px 0;
+    padding: 4px;
+  }
+  
+  .toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .toggleKnob {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #999;
+    transition: .2s;
+    border-radius: 34px;
+  }
+  
+  .toggleKnob:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fffdf4;
+    transition: .2s;
+    border-radius: 50%;
+  }
+  
+  input:checked+.toggleKnob {
+    background-color: #2a3141;
+  }
+  
+  input:focus+.toggleKnob {
+    box-shadow: 0 0 1px #2a3141;
+  }
+  
+  input:checked+.toggleKnob:before {
+    transform: translateX(26px);
+  }

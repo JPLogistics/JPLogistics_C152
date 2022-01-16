@@ -1,0 +1,1 @@
+{"version":3,"file":"functions.js","sourceRoot":"","sources":["../../../components/functions/functions.tsx"],"names":[],"mappings":"AAAA,MAAM,UAAU,KAAK,CAAC,KAAU,EAAE,QAAa;IAC3C,OAAO,UAAU,CAAC,KAAK,CAAC,CAAC,OAAO,CAAC,QAAQ,CAAC,CAAC;AAC/C,CAAC","sourcesContent":["export function round(value: any, decimals: any) {\r\n    return parseFloat(value).toFixed(decimals); \r\n}\r\n"]}

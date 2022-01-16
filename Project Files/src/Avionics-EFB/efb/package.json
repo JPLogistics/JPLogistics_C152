@@ -1,0 +1,26 @@
+{
+    "name": "efb",
+    "version": "0.0.1",
+    "description": "JPLogistics EFB Software",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "npx rollup -c",
+        "postbuild": "regex-replace \"class Logger\" \"class fireLogger\" \"./build/efb.js\" --filecontents && regex-replace \"const logger = new Logger\" \"const logger = new fireLogger\" \"./build/efb.js\" --filecontents && regex-replace \"const k = new Logger\" \"const k = new fireLogger\" \"./build/efb.js\" --filecontents && copyfiles --flat build/*.js efb.html ../../JPLogistics_C152_Additional/html_ui/Pages/VCockpit/Instruments/JPLogistics/EFB && copyfiles --flat build/*.js efb.html ../../../Packages/jplogistics-c152/html_ui/Pages/VCockpit/Instruments/JPLogistics/EFB && copyfiles --flat build/*.css ../../JPLogistics_C152_Additional/html_ui/Pages/VCockpit/Instruments/JPLogistics/EFB/styles && copyfiles --flat build/*.css ../../../Packages/jplogistics-c152/html_ui/Pages/VCockpit/Instruments/JPLogistics/EFB/styles",
+        "htmlbuild": "copyfiles --flat efb.html ../../JPLogistics_C152_Additional/html_ui/Pages/VCockpit/Instruments/JPLogistics/EFB"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@rollup/plugin-node-resolve": "^13.1.3",
+        "@rollup/plugin-typescript": "^8.3.0",
+        "msfssdk": "file:../msfs-avionics-mirror/src/sdk/build",
+        "rollup": "^2.64.0",
+        "rollup-plugin-import-css": "^3.0.2",
+        "typescript": "^4.5.4"
+    },
+    "dependencies": {
+        "firebase": "^9.6.3",
+        "regex-replace": "^2.3.1"
+    }
+}

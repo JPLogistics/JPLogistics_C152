@@ -1,0 +1,262 @@
+﻿@font-face {
+    font-family: "DME";
+    src: url("./Fonts/DME.TTF") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+    html body {
+        font-family: var(--font);
+        font-size: calc(var(--viewportHeightRatio) * (36px / 21.6) * var(--currentPageHeight) / 100 );
+        color: white;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    } */
+
+efb-element {
+    background-color: #121212;
+    height: 100vh;
+    width: 100vw;
+    display: inline-block;
+    overflow: hidden;
+}
+
+efb-element #debug {
+    background-color: #ff0000;
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    width: 30%;
+    height: 10%;
+    font-size: 45px;
+    color: black;
+}
+
+#tablet {
+    background-color: #fffdf4;
+    color: #1a1a1a;
+    width: 2266px;
+    height: 1488px;
+}
+
+#header {
+    background-color: #1d2946;
+    top: 0px;
+    width: 2266px;
+    height: 200px;
+    padding-top: 16px;
+    text-align: center;
+    font-size: larger;
+    color: rgb(255, 255, 255);
+}
+
+#content {
+    width: auto;
+    padding: 32px;
+    /* background-image: url("/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/background.jpg"); */
+    background-color: #ffffff;
+    top: 200px;
+    height: 1238px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+}
+
+#footer {
+    position: fixed;
+    top: 1338px;
+    left: 0;
+    background-color: #1d2946;
+    width: 2266px;
+    height: 150px;
+}
+
+.blackScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    padding-top: 334px;
+    z-index: 10;
+}
+
+.appButton {
+    display: inline-block;
+    color: #fffdf4;
+    width: 100px;
+    height: 80px;
+    margin: 10px 8px 0 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 80%;
+}
+
+.appButton:hover {
+    color: #f5ab30;
+    transition: 2s;
+}
+
+.center {
+    text-align: center;
+}
+
+.verticalAlign {
+    display: flex;
+    align-items: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.hidden {
+    display: none;
+}
+
+.row {
+    display: flex;
+}
+
+.align {
+    display: inline-block;
+}
+
+.title {
+    font-size: medium;
+}
+
+.tab-button {
+    padding: 6px 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background: #f0f0f0;
+    margin-bottom: -1px;
+    margin-right: -1px;
+}
+
+.tab-button:hover {
+    background: #e0e0e0;
+}
+
+.tab-button.active {
+    background: #e0e0e0;
+}
+
+.tab {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.circle-svg {
+    height: 550px;
+    width: 550px;
+}
+
+.absolute-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle-text {
+    font-size: 72px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    fill: #333;
+}
+
+/* Themed Button */
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 192px;
+  height: 56px;
+  margin: 0 0 16px 0;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #565656;
+  color: #fffdf4;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: #9b2f25;
+  cursor: pointer;
+  transition: .3s;
+}
+
+/* Custom Toggle */
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 16px 0;
+  padding: 4px;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleKnob {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #999;
+  transition: .2s;
+  border-radius: 34px;
+}
+
+.toggleKnob:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fffdf4;
+  transition: .2s;
+  border-radius: 50%;
+}
+
+input:checked+.toggleKnob {
+  background-color: #2a3141;
+}
+
+input:focus+.toggleKnob {
+  box-shadow: 0 0 1px #2a3141;
+}
+
+input:checked+.toggleKnob:before {
+  transform: translateX(26px);
+}
+
+
+/*# sourceMappingURL=KX155A.css.map */

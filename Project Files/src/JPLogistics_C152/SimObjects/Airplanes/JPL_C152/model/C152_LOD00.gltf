@@ -41,8 +41,8 @@
                     "export_texture_dir" : "../TEXTURE",
                     "export_xml" : 0,
                     "export_xml_file" : "model",
-                    "use_selection" : 0,
-                    "use_visible" : 1
+                    "use_selection" : 1,
+                    "use_visible" : 0
                 }
             },
             "name" : "Scene",
@@ -2932,9 +2932,6 @@
                 0
             ],
             "extensions" : {
-                "ASOBO_material_draw_order" : {
-                    "drawOrderOffset" : 1
-                },
                 "ASOBO_material_blend_gbuffer" : {
                     "enabled" : true,
                     "baseColorBlendFactor" : 1,
@@ -2947,7 +2944,7 @@
             },
             "extras" : {
                 "is_import" : 0,
-                "msfs_material_type" : 0,
+                "msfs_material_type" : 2,
                 "msfs_base_color_factor" : [
                     1,
                     1,
@@ -2960,7 +2957,7 @@
                     0
                 ],
                 "msfs_alpha_mode" : 0,
-                "msfs_draw_order" : 1,
+                "msfs_draw_order" : 0,
                 "msfs_double_sided" : 0,
                 "msfs_dont_cast_shadows" : 0,
                 "msfs_day_night_cycle" : 0,
@@ -2980,7 +2977,7 @@
                 "msfs_roughness_factor" : 1,
                 "msfs_metallic_factor" : 1,
                 "msfs_normal_scale" : 1,
-                "msfs_alpha_cutoff" : 0.10000000149011612,
+                "msfs_alpha_cutoff" : 0.5,
                 "msfs_detail_uv_scale" : 1,
                 "msfs_detail_uv_offset_u" : 0,
                 "msfs_detail_uv_offset_v" : 0,
@@ -3010,11 +3007,15 @@
                 ],
                 "msfs_fresnel_factor" : 1,
                 "msfs_fresnel_opacity_bias" : 0,
+                "msfs_base_color_texture" : {
+                    "name" : "CESSA152_AIRFRAME_DECALS_ALBD",
+                    "type" : "Image"
+                },
                 "msfs_show_colors" : 1,
                 "msfs_show_emissive_color" : 1,
                 "msfs_show_alpha_mode" : 0,
                 "msfs_show_render_options" : 1,
-                "msfs_show_day_night_cycle" : 1,
+                "msfs_show_day_night_cycle" : 0,
                 "msfs_show_pearl" : 1,
                 "msfs_show_gameplay_options" : 1,
                 "msfs_show_uv_options" : 1,
