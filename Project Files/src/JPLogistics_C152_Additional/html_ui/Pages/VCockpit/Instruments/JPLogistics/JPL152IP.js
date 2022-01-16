@@ -113,7 +113,7 @@ class JPL152IP extends BaseInstrument {
 	this.mixture = GetStoredData('JPL152IP_MIXTURE_'+this.livery) ? GetStoredData('JPL152IP_MIXTURE_'+this.livery) : 0;
 	this.parkingbrake = GetStoredData('JPL152IP_PARKINGBRAKE_'+this.livery) ? GetStoredData('JPL152IP_PARKINGBRAKE_'+this.livery) : 1;
 	//--------------------------------------BREAKERS 3-13
-	this.altbreaker = GetStoredData('JPL152IP_ALTBREAKER_'+this.livery) ? GetStoredData('JPL152IP_ALTBREAKER_'+this.livery) : 1;
+	this.altbreaker = GetStoredData('JPL152IP_ALTBREAKER_'+this.livery) ? GetStoredData('JPL152IP_ALTBREAKER_'+this.livery) : 0;
 	this.breaker3 = GetStoredData('JPL152IP_BREAKER3_'+this.livery) ? GetStoredData('JPL152IP_BREAKER3_'+this.livery) : 1;
 	this.breaker4 = GetStoredData('JPL152IP_BREAKER4_'+this.livery) ? GetStoredData('JPL152IP_BREAKER4_'+this.livery) : 1;
 	this.breaker5 = GetStoredData('JPL152IP_BREAKER5_'+this.livery) ? GetStoredData('JPL152IP_BREAKER5_'+this.livery) : 1;
@@ -314,9 +314,7 @@ class JPL152IP extends BaseInstrument {
 		if (GetStoredData('JPL152IP_PARKINGBRAKE_'+this.livery) == 1 && SimVar.GetSimVarValue("BRAKE PARKING INDICATOR", "bool") == 0) {
 				SimVar.SetSimVarValue("K:PARKING_BRAKES", "number", 0); }
 		//--------------------------------------BREAKERS 3-13
-		SimVar.SetSimVarValue("L:JPL152_ALT_BREAKER", "number", 0); //having odd effect?
-		//if (GetStoredData('JPL152IP_ALTBREAKER_'+this.livery) == 0 && SimVar.GetSimVarValue("ALTERNATOR CONNECTION ON:1", "bool") == 1) {
-		//		(SimVar.SetSimVarValue("K:ELECTRICAL_ALTERNATOR_BREAKER_TOGGLE", "number", 1) && SimVar.SetSimVarValue("L:JPL152_ALT_BREAKER", "number", 0)); }
+		SimVar.SetSimVarValue("L:JPL152_ALT_BREAKER", "number", Number(this.altbreaker));
 		SimVar.SetSimVarValue("BUS CONNECTION ON:3", "bool", Number(this.breaker3));
 		SimVar.SetSimVarValue("BUS CONNECTION ON:4", "bool", Number(this.breaker4));
 		SimVar.SetSimVarValue("BUS CONNECTION ON:5", "bool", Number(this.breaker5));
@@ -615,7 +613,7 @@ class JPL152IP extends BaseInstrument {
 			SetStoredData('JPL152IP_PARKINGBRAKE_'+planeId, parkingbrake.toString());
 			
 			//-------------------------------BREAKERS 3-13
-			var altbreaker = SimVar.GetSimVarValue("ALTERNATOR CONNECTION ON:1", "bool");
+			var altbreaker = SimVar.GetSimVarValue("L:JPL152_ALT_BREAKER", "number");
 			SetStoredData('JPL152IP_ALTBREAKER_'+planeId, altbreaker.toString());
 			var breaker3 = SimVar.GetSimVarValue("BUS CONNECTION ON:3", "bool");
 			SetStoredData('JPL152IP_BREAKER3_'+planeId, breaker3.toString());
