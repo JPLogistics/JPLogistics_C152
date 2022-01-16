@@ -1,0 +1,186 @@
+.bottom-info-panel {
+  position: absolute;
+  z-index: 2;
+  left: 0px;
+  width: 1024px;
+  height: 55px;
+  top: 679px;
+}
+
+.bip-temp-box {
+  position: absolute;
+  left: 0px;
+  width: 101px;
+  height: 55px;
+  top: 0px;
+  font-size: 18px;
+  border-right: 4px groove rgba(1, 1, 1, .4);
+  background: linear-gradient(to top, rgba(0, 0, 0, 1.0), rgb(24, 24, 24));
+}
+
+.bip-temp-box.reversionary {
+  left: 152px;
+  z-index: 20;
+}
+
+.bip-oat {
+  position: relative;
+  top: 31px;
+  left: 3px;
+  font-size: 16px;
+}
+
+.bip-oat-label {
+  font-size: 16px;
+  display: inline-block;
+  width: 35px;
+}
+
+.bip-oat-value {
+  font-size: 20px;
+  display: inline-block;
+  padding-right: 5px;
+  text-align: right;
+  width: 61px;
+}
+
+.bip-middle {
+  position: absolute;
+  left: 101px;
+  width: 721px;
+  height: 55px;
+  top: 0px;
+}
+
+.left-brg-ptr-container {
+  position: absolute;
+  left: 147px;
+  top: 0px;
+  width: 180px;
+  height: 55px;
+}
+
+.left-brg-ptr-dist {
+  position: absolute;
+  left: 33px;
+  width: 65px;
+  height: 25px;
+  top: 5px;
+  font-size: 20px;
+  text-align: right;
+  color: magenta;
+}
+
+.left-brg-ptr-crs-ident {
+  position: absolute;
+  top: 30px;
+  width: 90px;
+  height: 25px;
+  font-size: 20px;
+  text-align: right;
+}
+
+.left-brg-ptr-crs {
+  color: magenta;
+}
+
+.left-brg-ptr-ident {
+  color: white;
+  padding-left: 8px;
+}
+
+.left-brg-ptr-src {
+  position: absolute;
+  left: 117px;
+  width: 40px;
+  height: 24px;
+  top: 31px;
+  font-size: 16px;
+  text-align: right;
+  line-height: 25px;
+  color: cyan;
+}
+
+.left-brg-ptr-svg {
+  position: absolute;
+  left: 158px;
+  width: 30px;
+  height: 12px;
+  top: 40px;
+}
+
+.right-brg-ptr-container {
+  position: absolute;
+  left: 392px;
+  top: 0px;
+  width: 180px;
+  height: 55px;
+}
+
+.right-brg-ptr-svg {
+  position: absolute;
+  left: 0px;
+  width: 30px;
+  height: 12px;
+  top: 39px;
+}
+
+.right-brg-ptr-src {
+  position: absolute;
+  left: 20px;
+  width: 40px;
+  height: 25px;
+  top: 30px;
+  font-size: 16px;
+  text-align: left;
+  line-height: 25px;
+  color: cyan;
+}
+
+.right-brg-ptr-crs-ident {
+  position: absolute;
+  top: 30px;
+  left: 65px;
+  width: 90px;
+  height: 25px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.right-brg-ptr-crs {
+  color: magenta;
+}
+
+.right-brg-ptr-ident {
+  color: white;
+  padding-right: 5px;
+}
+
+
+.right-brg-ptr-dist {
+  position: absolute;
+  left: 67px;
+  width: 65px;
+  height: 25px;
+  top: 5px;
+  font-size: 20px;
+  text-align: right;
+  color: magenta;
+}
+
+.bip-time {
+  position: absolute;
+  top: 0px;
+  left: 900px;
+  width: 124px;
+  height: 55px;
+  display: grid;
+  grid-template-rows: 28px 25px;
+  grid-template-columns: 30px 85px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1.0), rgb(24, 24, 24));
+}
+
+.bip-time>div {
+  justify-self: end;
+  align-self: end;
+}

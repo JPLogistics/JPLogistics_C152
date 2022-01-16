@@ -1,0 +1,78 @@
+.navcom-title {
+    width: 20px;
+    word-wrap: break-word;
+    line-height: 16px;
+    font-size: 18px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    top: 2px;
+}
+
+.navcom-title.left {
+    left: -2px;
+}
+
+.navcom-title.right {
+    left: 21px;
+}
+
+.navcom-title-numbers {
+    width: 16px;
+    word-wrap: break-word;
+    line-height: 26px;
+    font-size: 16px;
+    display: inline-block;
+    position: relative;
+    top: -2px;
+}
+
+.navcom-title-numbers.left {
+    border-right: 4px groove rgba(1, 1, 1, .4);
+    left: -1px;
+}
+
+.navcom-title-numbers.right {
+    padding-left: 3px;
+    border-left: 4px groove rgba(1, 1, 1, .4);
+    left: 21px;
+}
+
+.navcom-frequencies {
+    position: relative;
+    top: 0px;
+    left: 30px;
+    font-size: 24px;
+    display: inline-block;
+}
+
+.navcom-frequencies.left {
+    left: 3px;
+}
+
+.navcom-frequencies.right {
+    left: 18px;
+}
+
+.navcom-frequencyelement-container {
+    position: relative;
+    margin-bottom: -3px;
+}
+
+.navcom-selector.left {
+    border: solid 1px cyan;
+    position: absolute;
+    top: 2px;
+    left: -1px;
+    width: 74px;
+    height: 24px;
+}
+
+.navcom-selector.right {
+    border: solid 1px cyan;
+    position: absolute;
+    top: 2px;
+    left: 108px;
+    width: 88px;
+    height: 24px;
+}

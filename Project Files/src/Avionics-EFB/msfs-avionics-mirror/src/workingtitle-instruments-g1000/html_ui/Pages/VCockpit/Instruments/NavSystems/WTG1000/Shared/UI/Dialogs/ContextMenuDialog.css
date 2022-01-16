@@ -1,0 +1,53 @@
+.contextmenu-dialog {
+  position: absolute;
+  padding: 5px;
+  /* right: 5px; */
+  /* bottom: 45px; */
+  border-radius: 10px;
+  border: 2px solid whitesmoke;
+  background: rgb(50, 50, 50);
+  font-family: Roboto;
+  font-size: 18px;
+  color: whitesmoke;
+  opacity: 0;
+  z-index: 12;
+}
+
+.contextmenu-background {
+  position: relative;
+  max-height: var(--context-menu-max-height, none);
+  background: black;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.contextmenu-dialog.open {
+  animation: opencontext .2s;
+  opacity: 1;
+}
+
+@keyframes opencontext {
+  from {
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: top left;
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+    transform-origin: top left;
+  }
+}
+
+.contextmenu-dialog .ui-control-list-content {
+  max-height: calc(var(--context-menu-max-height) - 10px);
+}
+
+.contextmenu-item {
+  margin-right: 10px;
+}
+.contextmenu-item + .contextmenu-item {
+  margin-top: 5px;
+}

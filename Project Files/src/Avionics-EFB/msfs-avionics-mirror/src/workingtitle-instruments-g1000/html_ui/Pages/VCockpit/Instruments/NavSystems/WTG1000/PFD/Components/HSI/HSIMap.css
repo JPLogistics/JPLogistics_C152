@@ -1,0 +1,91 @@
+.hsi-map-container {
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  height: 440px;
+  left: 7px;
+  width: 414px;
+  overflow: hidden;
+}
+
+.hsi-map-hdg-box {
+  position: absolute;
+  text-align: center;
+  line-height: 31px;
+  font-size: 30px;
+  z-index: 4;
+  top: 27px;
+  left: 134px;
+  height: 34px;
+  width: 84px;
+  background: black;
+  border-radius: 3px;
+  border: 1px solid white;
+}
+
+.hsi-map-rotating-elements {
+  position: absolute;
+  left: 0;
+  top: 71px;
+  width: 350px;
+  height: 350px;
+}
+
+.hsi-map-bearing-pointer {
+  transform-origin: 175px 175px;
+  position: absolute;
+  top: 0px;
+  height: 340px;
+  left: 0px;
+  width: 386px;
+  background: none;
+  border-style: none;
+}
+
+.hsi-map-hdg-bug {
+  transform: rotate(0deg);
+  transform-origin: 175px 175px;
+  position: absolute;
+  top: 0px;
+  height: 340px;
+  left: 0px;
+  width: 386px;
+  background: none;
+  border-style: none;
+}
+
+.pfd-hsimap {
+  position: absolute;
+  left: 0;
+  top: 71px;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  font-family: Roboto-Bold;
+  font-size: 14px;
+}
+  .pfd-hsimap .navmap-indicators-bottom-left {
+    position: absolute;
+    left: 74px;
+    bottom: 130px;
+    transform: translateX(-50%);
+  }
+    .pfd-hsimap .map-detail {
+      margin-bottom: 5px;
+    }
+  .pfd-hsimap .hsimap-indicators-bottom-center {
+    position: absolute;
+    left: 50%;
+    top: 222px;
+    height: 40px;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: min-content;
+  }
+    .pfd-hsimap .map-traffic-status {
+      align-self: end;
+    }
+    .pfd-hsimap .map-traffic-offscale {
+      align-self: start;
+    }

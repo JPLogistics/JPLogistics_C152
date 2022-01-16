@@ -1,0 +1,51 @@
+.ADFDME-adf-row1 {
+  padding-left: 5px;
+  display: grid;
+  grid-template-columns: 80px 65px 35px 65px;
+  align-items: end;
+  color: white;
+  font-size: 14px;
+}
+
+.ADFDME-adf-row2 {
+  padding-left: 75px;
+  display: grid;
+  grid-template-columns: 40px 90px 35px 40px;
+  align-items: end;
+  justify-items: end;
+  color: white;
+  padding-bottom: 5px;
+  font-size: 14px;
+}
+
+.ADFDME-active-adf {
+  color: rgb(0,255,0);
+  font-size: 20px;
+}
+
+.ADFDME-standby-adf {
+  color: whitesmoke;
+  font-size: 16px;
+}
+
+.ADFDME-dme-row1 {
+  padding-left: 5px;
+  padding-top: 5px;
+  display: grid;
+  grid-template-columns: 80px 55px 30px;
+  align-items: end;
+  font-size: 14px;
+  color: white;
+}
+
+.ADFDME-dme-select {
+  font-size: 18px;
+  color: cyan;
+}
+
+.ADFDME-ent-transfer {
+  height: 80px;
+  text-align: center;
+  color: white;
+  padding-top: 70px;
+}

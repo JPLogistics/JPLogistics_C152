@@ -1,0 +1,10 @@
+.timerref-timer-container {
+  position: absolute;
+  top: 2px;
+  left: 75px;
+  width: 80px;
+  color: cyan;
+}
+  .timerref-timer-number {
+    display: inline-block;
+  }

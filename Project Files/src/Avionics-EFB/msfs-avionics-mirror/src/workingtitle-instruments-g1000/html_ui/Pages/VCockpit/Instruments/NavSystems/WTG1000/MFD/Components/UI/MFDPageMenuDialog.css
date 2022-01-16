@@ -1,0 +1,25 @@
+.popout-dialog.mfd-pagemenu {
+  width: 364px;
+  height: auto;
+}
+
+.mfd-pagemenu-options {
+  max-height: 500px;
+}
+
+.mfd-pagemenu-list {
+  font-size: 20px;
+}
+
+.mfd-pagemenu-backmessage {
+  text-align: center;
+  margin: 24px 6px;
+}
+
+.mfd-pagemenu-listcontainer {
+  height: 100%;
+}
+
+.mfd-pagemenu-list > div + div {
+  margin-top: 0.25em;
+}

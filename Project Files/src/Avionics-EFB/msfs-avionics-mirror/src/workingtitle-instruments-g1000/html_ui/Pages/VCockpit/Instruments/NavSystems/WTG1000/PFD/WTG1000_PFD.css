@@ -1,0 +1,137 @@
+wtg1000-pfd {
+  width: 100%;
+  height: 100%;
+  font-family: Roboto;
+  overflow: hidden;
+}
+
+wtg1000-pfd #Mainframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+wtg1000-pfd #Electricity {
+  width: 100%;
+  height: 100%;
+}
+
+wtg1000-pfd #Mainframe #HorizonContainer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1024px;
+  height: 768px;
+  z-index: -6;
+  overflow: hidden;
+}
+
+wtg1000-pfd #Mainframe #InstrumentsContainer {
+  transform: rotateX(0);
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 733px;
+  z-index: 0;
+}
+
+wtg1000-pfd #Mainframe #InstrumentsContainer #NavComBox {
+  transform: rotateX(0);
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 56px;
+}
+
+wtg1000-pfd #Mainframe #InstrumentsContainer #NavComBox #Left {
+  position: relative;
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgb(4, 4, 12), rgb(24, 28, 43));
+  border: 1px solid rgb(100, 100, 100);
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 10px;
+}
+
+wtg1000-pfd #Mainframe #InstrumentsContainer #NavComBox #Left #NavComTitle {
+  position: absolute;
+  font-size: 18px;
+  margin-top: 4px;
+  height: 90%;
+  width: 15%;
+  border-right: 3px groove rgba(1, 1, 1, .4);
+}
+
+
+wtg1000-pfd #Mainframe #InstrumentsContainer #NavComBox #Right {
+  position: absolute;
+  left: 774px;
+  top: 0px;
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgb(4, 4, 12), rgb(24, 28, 43));
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(133, 133, 133);
+  border-top: none;
+  border-right: none;
+  border-bottom-left-radius: 10px;
+}
+
+wtg1000-pfd #Mainframe #InstrumentsContainer #NavComBox #NavComBoxCenter {
+  position: absolute;
+  left: 259px;
+  top: 0px;
+  width: 506px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgb(4, 4, 12), rgb(24, 28, 43));
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(133, 133, 133);
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+wtg1000-pfd td,
+wtg1000-pfd tr {
+  margin: 0px;
+  padding: 0px;
+}
+
+wtg1000-pfd #Mainframe #InstrumentsContainer #NavComBox td {
+  vertical-align: text-bottom;
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+/* POPOUT STUFF */
+.popout-dialog {
+  border-radius: 10px;
+  border: 3px solid rgb(150, 150, 150);
+  right: -320px;
+  bottom: 26px;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 1.0) 100%);
+  position: absolute;
+  width: 310px;
+  height: 220px;
+  opacity: 0;
+  transform: translate3d(0px, 0px, 0px);
+  transition: .5s cubic-bezier(.34, 1, 0, 1);
+  color: cyan;
+  font-family: Roboto;
+  font-size: 16px;
+}
+
+.popout-dialog.subview {
+  background: linear-gradient(to bottom, #1e1e1e 0%, #0a0a0a 100%);
+}
+
+.popout-dialog>h1 {
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 1px solid rgb(150, 150, 150);
+}

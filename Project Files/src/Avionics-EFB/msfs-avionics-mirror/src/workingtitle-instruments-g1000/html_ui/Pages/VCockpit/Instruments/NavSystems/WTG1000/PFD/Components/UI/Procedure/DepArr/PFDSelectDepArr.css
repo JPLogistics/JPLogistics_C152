@@ -1,0 +1,26 @@
+.slctproc-container {
+  color: whitesmoke;
+  font-size: 16px;
+  display: grid;
+  grid-template-rows: 25px 25px 25px;
+  grid-template-columns: 120px 100px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  align-items: end;
+}
+
+.slctproc-load {
+  position: absolute;
+  top: 192px;
+  right: 10px;
+  font-size: 18px;
+}
+
+.slctproc-button {
+  padding: 0px 15px 0px 15px;
+  border: 1px solid rgb(152, 159, 174);
+  border-radius: 9px;
+  background: black;
+  text-align: center;
+  color: whitesmoke;
+}

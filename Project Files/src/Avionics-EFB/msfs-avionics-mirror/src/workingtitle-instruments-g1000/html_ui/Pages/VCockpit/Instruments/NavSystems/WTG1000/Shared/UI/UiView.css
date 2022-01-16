@@ -1,0 +1,47 @@
+.popout-dialog.hr {
+  margin-left: 1px;
+  width: 302px;
+  border: 1px solid rgb(100, 100, 100);
+}
+
+.popout-dialog.open {
+  opacity: 1;
+  transform: translate3d(-320px, 0px, 0px);
+}
+
+.popout-dialog.closed {
+  opacity: 0;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.popout-dialog.quickclosed {
+  opacity: 0;
+  transition-property: none;
+}
+
+.highlight-select {
+  /* font-family: Roboto-Bold; */
+  animation: pulse 1s infinite;
+}
+
+.highlight-active {
+  background-color: var(--highlight-color);
+  color: black;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: var(--highlight-color);
+    color: black;
+  }
+
+  50% {
+    background-color: var(--highlight-color);
+    color: black;
+  }
+
+  100% {
+    background-color: none;
+    color: var(--highlight-color);
+  }
+}

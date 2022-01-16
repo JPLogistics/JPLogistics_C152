@@ -1,0 +1,99 @@
+.hsi-rose-container {
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  height: 340px;
+  left: 0px;
+  width: 386px;
+  background: none;
+  border-style: none;
+}
+
+.hsi-rose-hdg-box {
+  position: absolute;
+  text-align: center;
+  line-height: 31px;
+  font-size: 30px;
+  z-index: 4;
+  top: -3px;
+  left: 141px;
+  height: 34px;
+  width: 84px;
+  background: black;
+  border-radius: 3px;
+  border: 1px solid white;
+}
+
+.hsi-rose-rotating {
+  transform: rotate(0deg);
+  transform-origin: 184px 184px;
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  height: 368px;
+  left: 0px;
+  width: 368px;
+  background: none;
+  border-style: none;
+}
+
+.hsi-rose-brg-ptr {
+  position: absolute;
+  transform-origin: 183px 185px;
+  top: 0px;
+  height: 340px;
+  left: 0px;
+  width: 386px;
+}
+
+.hsi-rose-hdg-bug {
+  transform: rotate(0deg);
+  transform-origin: 183px 185px;
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  height: 340px;
+  left: 0px;
+  width: 386px;
+  background: none;
+  border-style: none;
+}
+
+.hsi-rose-static {
+  position: absolute;
+  z-index: 3;
+  top: 0px;
+  height: 340px;
+  left: 0px;
+  width: 386px;
+  background: none;
+}
+
+
+.hsi-rose-static .hsi-index-pointer {
+  position: absolute;
+  width: 30px;
+  height: 60px;
+  top: 27px;
+  left: 175px;
+  z-index: 4;
+}
+
+.hsi-rose-static .hsi-outer-ticks {
+  z-index: 2;
+}
+
+
+.hsi-rose-rotating .hsi-track-bug {
+  position: absolute;
+  transform-origin: 183px 185px;
+  top: 0px;
+  height: 340px;
+  left: 0px;
+  width: 386px;
+  padding-left: 12px;
+  padding-top: -5px;
+  /* I think this should be on top of the hsi-outer-ticks class, but no matter the z-index it goes under.
+     If there's ever that much of an offset form the heading set, though, your crosswind is insane.  Fix TODO. */
+  z-index: 100;
+}

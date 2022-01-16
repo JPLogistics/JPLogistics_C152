@@ -1,0 +1,31 @@
+@keyframes fma-alert-flash {
+  0% {color: black; background-color: rgb(0, 255, 0);}
+  74.9% {color: black; background-color: rgb(0, 255, 0);}
+  75% {color: rgb(0, 255, 0); background-color: transparent;}
+  99.9% {color: rgb(0, 255, 0); background-color: transparent;}
+}
+
+@keyframes fma-failed-flash {
+  0% {color: black; background-color: yellow;}
+  74.9% {color: black; background-color: yellow;}
+  75% {color: yellow; background-color: transparent;}
+  99.9% {color: yellow; background-color: transparent;}
+}
+
+.fma-slot-alert {
+  animation-name: fma-alert-flash;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  border-radius: 4px;
+  line-height: 22px;
+  margin-bottom: 3px;
+}
+
+.fma-slot-failed {
+  animation-name: fma-failed-flash;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  border-radius: 4px;
+  line-height: 22px;
+  margin-bottom: 3px;
+}

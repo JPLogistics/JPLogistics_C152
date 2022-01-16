@@ -1,0 +1,286 @@
+.altimeter {
+  transform: rotateX(0);
+  position: absolute;
+  top: 82px;
+  height: 392px;
+  left: 700px;
+  width: 108px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0), rgba(0, 0, 0, .5));
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.altimeter-middle-border {
+  position: absolute;
+  top: 30px;
+  height: 332px;
+  left: -1px;
+  width: 110px;
+  border-top: none;
+  border-image: linear-gradient( to bottom, rgba(100, 100, 100, 1), rgba(0, 0, 0, 1)) 1 100%;
+  border-width: 1px;
+  border-bottom: none;
+}
+
+.preselect-box {
+  position: absolute;
+  width: 110px;
+  left: -1px;
+  height: 8%;
+  top: 0%;
+  font-size: 12px;
+  border: 1px solid rgb(100, 100, 100);
+  border-top-right-radius: 10px;
+  background-color: black;
+  border-bottom: none;
+}
+
+.preselect-value {
+  position: absolute;
+  top: 8%;
+  right: 18%;
+  text-align: right;
+  color: cyan;
+  font-size: 24px;
+}
+
+.pressure-box {
+  position: absolute;
+  width: 110px;
+  height: 8%;
+  bottom: 0;
+  left: -1px;
+  text-align: center;
+  color: cyan;
+  font-size: 20px;
+  padding: 3px;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom-right-radius: 10px;
+  background-color: black;
+}
+
+.altitude-tick-marks, .altitude-trend-vector {
+  position: absolute;
+  left: 0;
+  top: 8%;
+  width: 100px;
+  height: 330px;
+  overflow: hidden;
+}
+
+.altitude-box {
+  position: absolute;
+  top: 146px;
+  width: 100%;
+  height: 70px;
+  border: none;
+  fill: none;
+}
+
+.altitude-metric-box, .preselect-metric-box {
+  position: absolute;
+  top: 136px;
+  right: 6px;
+  background: black;
+  width: 75px;
+  text-align: right;
+  border-radius: 4px;
+  padding-right: 4px;
+  font-size: 14px;
+}
+
+.preselect-metric-box {
+  top: 31px;
+  right: 4px;
+  color: cyan;
+  border-radius: 0;
+  width: 80px;
+}
+
+.altitude-metric-box .metric-altitude, .preselect-metric-box .metric-altitude {
+  font-size: 20px;
+}
+
+.altitude-scroller-background {
+  position: absolute;
+  top: 32px;
+  width: 17px;
+  height: 35px;
+  border: none;
+  text-align: center;
+  font-size: 32px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1.0), rgb(30, 30, 30), rgba(0, 0, 0, 1.0));
+}
+
+.no-zero .zero-digit {
+  fill: none;
+}
+
+.show-below-msl {
+  fill: none;
+}
+
+.below-msl .show-below-msl {
+  fill: white;
+}
+
+.below-msl .show-above-msl {
+  fill: none;
+}
+
+.trans-msl .top.show-above-msl, .trans-msl .bottom.show-below-msl {
+  fill: white;
+}
+
+.trans-msl .top.show-below-msl, .trans-msl .bottom.show-above-msl {
+  fill: none;
+}
+
+.alt-ten-thousands-scroller {
+  position: absolute;
+  left: 16px;
+}
+
+.alt-thousands-scroller {
+  position: absolute;
+  left: 34px;
+}
+
+.alt-hundreds-scroller {
+  position: absolute;
+  left: 52px;
+}
+
+.alt-tens-scroller {
+  position: absolute;
+  z-index: 10;
+  top: 17px;
+  left: 70px;
+  width: 29px;
+  height: 66px;
+}
+
+.alt-tens-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 95%);
+}
+
+.preselect-bug {
+  position: absolute;
+  top: 146px;
+}
+
+.minimums-bug {
+  position: absolute;
+  top: 146px;
+}
+
+.minimums-bug.hidden {
+  visibility: hidden;
+}
+
+.preselect-bug {
+  visibility: visible;
+}
+
+.preselect-tens {
+  font-size: 20px;
+}
+
+.preselect-tens.hidden-preselect-tens {
+  visibility: hidden;
+}
+
+.preselect-hundreds-small {
+  font-size: 20px;
+}
+
+.alt-indicator-vnav-target {
+  position: absolute;
+  font-size: 20px;
+  color: magenta;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 0 4px 0 4px;
+  border-radius: 4px;
+  left: 110px;
+  top: 0px;
+}
+
+.alt-indicator-vnav-target.hidden {
+  display: none;
+}
+
+.thousand-flash {
+  animation: thousand-flash 1s 5 forwards;
+}
+
+@keyframes thousand-flash {
+  0% {
+    background-color: black;
+    color: cyan;
+    fill: cyan;
+    font-family: Roboto-bold;
+  }
+  50% {
+    background-color: black;
+    color: cyan;
+    fill: cyan;
+  }
+  100% {
+    background-color: cyan;
+    color: black;
+    fill: black;
+    font-family: Roboto-bold;
+  }
+}
+
+.two-hundo-flash {
+  animation: two-hundo-pulse 1s 5 backwards;
+}
+
+@keyframes two-hundo-pulse {
+  0% {
+    fill: cyan;
+    color: cyan;
+    background-color: black;
+  }
+  50% {
+    fill: cyan;
+    color: cyan;
+    background-color: black;
+  }
+  100% {
+    fill: black;
+    color: black;
+    background-color: black;
+    font-family: Roboto-bold;
+  }
+}
+
+.yellow-flash {
+  animation: yellow-pulse 1s 5 backwards;
+  fill: yellow;
+  color: yellow;
+}
+
+@keyframes yellow-pulse {
+  0% {
+    fill: yellow;
+    color: yellow;
+    background-color: black;
+  }
+  50% {
+    fill: yellow;
+    color: yellow;
+    background-color: black;
+  }
+  100% {
+    fill: black;
+    color: black;
+    background-color: black;
+    font-family: Roboto-bold;
+  }
+}

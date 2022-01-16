@@ -1,0 +1,42 @@
+.mfd-nearest-airport-runways {
+  font-size: 20px;
+  color: white;
+  height: 76px;
+}
+
+.mfd-nearest-airport-runways > div {
+  height: 28px;
+  padding: 2px 0 2px 0;
+}
+
+.mfd-nearest-airport-runways-selector > svg > path {
+  fill: rgb(0,255,0);
+}
+
+.mfd-nearest-airport-runways-selector > svg > path.disabled {
+  fill: rgb(50,50,50);
+}
+
+.mfd-nearest-airport-runways-selector {
+  width: 40%;
+}
+
+.mfd-nearest-airport-runways-surface {
+  width: 60%;
+  text-align: right;
+}
+
+.mfd-nearest-airport-runways-name,
+.mfd-nearest-airport-runways-selector,
+.mfd-nearest-airport-runways-surface {
+  display: inline-block;
+}
+
+.mfd-nearest-airport-runways-name {
+  color: cyan;
+  margin: 0 4px 0 4px;
+}
+
+.mfd-nearest-airport-runways-dimensions {
+  padding-left: 10px;
+}

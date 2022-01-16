@@ -1,0 +1,22 @@
+.alerts-container {
+  display: block;
+  padding: 4px;
+  font-weight: lighter;
+  height: 180px;
+}
+
+.alerts-container .ui-control-list {
+  height: 180px;
+}
+
+.alerts-message {
+  color: rgb(180, 180, 180);
+  font-size: 16px;
+  line-height: 26px;
+  overflow: hidden;
+  text-overflow: clip;
+  height: 56px;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid gray;
+}

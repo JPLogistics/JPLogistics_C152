@@ -1,0 +1,60 @@
+.attitude-container {
+  position: absolute;
+  top: 73px;
+  height: 315px;
+  left: 253px;
+  width: 414px;
+  background: none;
+  overflow: hidden;
+}
+
+.turn-coordinator {
+  position: absolute;
+  top: 38px;
+  height: 20px;
+  left: 192px;
+  width: 30px;
+  background: none;
+}
+
+.attitude-bank,
+.attitude-inner-bank {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  height: 315px;
+  left: 0px;
+  width: 414px;
+  background: none;
+  overflow: visible;
+  transform-origin: 207px 204px;
+}
+
+.attitude-cutout {
+  overflow: hidden;
+  margin-top: -255px;
+  margin-left: 28px;
+  height: 249px;
+  width: 357px;
+  transform-origin: 179px 144px;
+}
+
+.attitude-pitchlines {
+  overflow: visible;
+  position: absolute;
+  top: 45%;
+  left: -7%;
+  height: 120%;
+  width: 120%;
+}
+
+.attitude-inner-bank {
+  transform-origin: 179px 144px;
+}
+
+.ahrs-align-msg {
+  position: absolute;
+  font-size: 26px;
+  top: 150px;
+  left: 24px;
+}

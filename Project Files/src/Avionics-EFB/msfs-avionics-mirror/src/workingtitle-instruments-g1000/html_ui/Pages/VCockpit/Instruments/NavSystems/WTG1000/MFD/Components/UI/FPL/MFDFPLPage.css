@@ -1,0 +1,55 @@
+.mfd-fplmap {
+  left: 0;
+  top: 0;
+  width: 440px;
+  height: 734px;
+  font-size: 16px;
+  font-family: Roboto-Bold;
+}
+
+.mfd-fplmap .minicompass-layer {
+  position: absolute;
+  left: 5px;
+  top: 80px;
+}
+
+.mfd-fplmap .map-crosshair {
+  --map-crosshair-size: 10px;
+}
+
+.mfd-fplmap .map-pointer {
+  --map-pointer-size: 25px;
+}
+
+.mfd-fplmap .map-pointerinfolayer-box {
+  position: absolute;
+  left: 90px;
+  top: 56px;
+}
+  .mfd-fplmap .map-pointerinfolayer-box-dis {
+    width: 90px;
+  }
+  .mfd-fplmap .map-pointerinfolayer-box-brg {
+    width: 75px;
+  }
+
+.mfd-fplmap .navmap-indicators-top-left {
+  position: absolute;
+  left: 0px;
+  top: 56px;
+}
+
+.mfd-fplmap .navmap-indicators-bottom-left {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+  .mfd-fplmap .map-detail {
+    font-size: 14px;
+  }
+
+.mfd-fplmap .navmap-indicators-bottom-right {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}

@@ -1,0 +1,38 @@
+#cas .annunciations {
+  position: absolute;
+  top: 390px;
+  right: 2px;
+  width: 148px;
+  height: auto;
+  background-color: black;
+  border: 1px solid rgb(100,100,100);
+  font-size: 16px;
+  display: none;
+}
+
+#cas>div {
+  margin: 2px 0px 0px 2px;
+  display: none;
+}
+
+.annunciations-divider {
+  position: relative;
+  width: 90%;
+  height: 0px;
+  border-bottom: 1px solid rgb(100, 100, 100);
+  left: 5%;
+  display: none;
+}
+
+
+.annunciation.warning {
+  color: red;
+}
+
+.annunciation.caution {
+  color: yellow;
+}
+
+.annunciation.advisory, .annunciation.safeop {
+  color: green;
+}

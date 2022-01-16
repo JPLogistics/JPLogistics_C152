@@ -1,0 +1,47 @@
+.xpdr-container {
+  position: absolute;
+  left: 715px;
+  width: 185px;
+  height: 55px;
+  top: 0px;
+  font-size: 18px;
+  display: grid;
+  grid-template-columns: 60px 53px 53px;
+  padding-bottom: 2px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1.0), rgb(24, 24, 24));
+}
+
+.xpdr-container>div {
+  align-self: end;
+}
+
+.highlight-white {
+  background-color: white;
+  color: rgb(44, 44, 44);
+}
+
+.highlight-green {
+  background-color: rgb(0, 255, 0);
+  color: rgb(44, 44, 44);
+}
+
+
+
+/* .highlight {
+  font-family: Roboto-Bold;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {background-color: cyan;
+    color: black;
+  }
+  50% {
+    background-color: cyan;
+    color: black;
+  }
+  100% {
+    background-color: none;
+    color: cyan
+  }
+} */

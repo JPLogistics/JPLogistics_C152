@@ -1,0 +1,18 @@
+.map-range-display {
+  padding: 0px 2px;
+  color: cyan;
+  background: black;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+}
+.map-range-display[auto-override='true'] {
+  color: black;
+  background: cyan;
+  border: 1px solid black;
+}
+  .map-range-display-auto {
+    font-size: 0.75em;
+  }
+  .map-range-display[auto='true'] .map-range-display-auto {
+    display: block;
+  }

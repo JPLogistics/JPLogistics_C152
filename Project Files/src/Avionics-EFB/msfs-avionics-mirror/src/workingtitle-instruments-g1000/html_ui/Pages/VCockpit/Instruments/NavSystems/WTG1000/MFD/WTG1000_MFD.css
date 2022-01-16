@@ -1,0 +1,203 @@
+wtg1000-mfd {
+  width: 100%;
+  height: 100%;
+  font-family: Roboto;
+  overflow: hidden;
+}
+
+wtg1000-mfd #Mainframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+wtg1000-mfd #Mainframe #InstrumentsContainer {
+  position: absolute;
+  transform: rotateX(0);
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 733px;
+  z-index: 0;
+}
+
+wtg1000-mfd #Electricity {
+  width: 100%;
+  height: 100%;
+}
+
+wtg1000-mfd #Mainframe #NavComBox {
+  transform: rotateX(0);
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 56px;
+  z-index: 9;
+}
+
+wtg1000-mfd #Mainframe #NavComBox #Left {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 254px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgb(4, 4, 12), rgb(24, 28, 43));
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(133, 133, 133);
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom-right-radius: 10px;
+}
+
+wtg1000-mfd #Mainframe #NavComBox #Right {
+  position: absolute;
+  left: 770px;
+  top: 0px;
+  width: 254px;
+  height: 100%;
+  padding-left: 4px;
+  background: linear-gradient(to bottom, rgb(4, 4, 12), rgb(24, 28, 43));
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(133, 133, 133);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom-left-radius: 10px;
+}
+
+wtg1000-mfd #Mainframe #EngineContainer {
+  transform: rotateX(0);
+  position: absolute;
+  background: black;
+  top: 57px;
+  left: 0px;
+  width: 148px;
+  height: 679px;
+  z-index: 0;
+}
+
+wtg1000-mfd #Mainframe #SoftKeys {
+  position: absolute;
+  z-index: 5;
+  background-color: #1a1d21;
+  display: flex;
+  width: 100%;
+  height: 34px;
+  left: 0px;
+  top: 734px;
+  font-size: calc(2.2 * 1vh * var(--bodyHeightScale));
+  text-align: center;
+}
+
+wtg1000-mfd #Mainframe #SoftKeys .SoftKey {
+  border-right: 0.2vh solid #000;
+  border-left: 0.2vh solid #ddd;
+  border-top: 0.3vh solid #fff;
+  width: 8.333%;
+}
+
+wtg1000-mfd #Mainframe #SoftKeys .SoftKey[state=White] {
+  color: #1a1d21;
+  background-color: #b0bacd;
+
+  border-right-color: transparent;
+  border-left-color: rgba(0, 0, 0, 0.6);
+}
+
+.mfd-page {
+  position: absolute;
+  top: 0px;
+  left: 149px;
+  width: 876px;
+  height: 734px;
+  overflow: hidden;
+}
+
+/* POPOUT STUFF */
+
+.popout-dialog {
+  position: absolute;
+  top: 56px;
+  right: -320px;
+  border-radius: 10px;
+  border: 4px solid rgb(150, 150, 150);
+  background-color: rgb(50, 50, 50);
+  width: 320px;
+  height: 678px;
+  font-family: Roboto;
+  font-size: 18px;
+  padding: 2px 5px;
+}
+
+.popout-dialog>h1 {
+  font-size: 16px;
+  text-align: center;
+  margin: 10px;
+}
+
+.popout-dialog.msgdialog {
+  top: 50%;
+  height: auto;
+  transform: translateY(-50%);
+}
+
+.popout-dialog.mfd-pageselect {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 1px);
+  width: 260px;
+  height: auto;
+  border-width: 1px;
+  border-radius: 0;
+  font-size: 16px;
+  transform: translate3d(0px, 0px, 0px);
+  transition-property: opacity, transform;
+  transition: 1s cubic-bezier(.34, 1, 0, 1);
+}
+.popout-dialog.mfd-pageselect.open {
+  opacity: 1;
+  transform: translate3d(0px, -100%, 0px);
+}
+
+.mfd-dark-background {
+  position: absolute;
+  top: 48px;
+  width: 298px;
+  height: 100%;
+  right: 0px;
+  background: rgb(50, 50, 50);
+  font-size: 16px;
+}
+
+.mfd-dark-background.wide {
+  width: 436px;
+}
+
+.mfd-dark-background.open {
+  display: unset;
+}
+
+.mfd-dark-background.closed {
+  display: none;
+}
+
+.mfd-dark-background.quickclosed {
+  display: none;
+}
+
+.mfd-action-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-data-bar {
+  position: absolute;
+  left: 254px;
+  top: 0px;
+  width: 516px;
+  height: 100%;
+}

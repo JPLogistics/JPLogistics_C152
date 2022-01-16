@@ -1,0 +1,25 @@
+{
+  "name": "workingtitle-instruments-g1000",
+  "version": "0.10.1",
+  "description": "Working Title MSFS G1000NXi",
+  "main": "index.ts",
+  "scripts": {
+    "build:ts": "tsc --outDir ./build/html_ui/Pages/VCockpit/Instruments/NavSystems/WTG1000/",
+    "build": "npm run build:ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://workingtitlesim@dev.azure.com/workingtitlesim/KittyHawk/_git/ProjectGolf"
+  },
+  "author": "Working Title Simulations, LLC",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@types/geodesy": "^2.2.2",
+    "geodesy": "^2.2.1",
+    "msfssdk": "file:../sdk/build",
+    "msfstypes": "file:../msfstypes",
+    "rollup-plugin-import-css": "^2.0.1",
+    "typescript": "~4.4.4"
+  }
+}

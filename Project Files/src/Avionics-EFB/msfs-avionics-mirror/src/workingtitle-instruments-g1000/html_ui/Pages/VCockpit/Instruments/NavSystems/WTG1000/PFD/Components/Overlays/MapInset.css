@@ -1,0 +1,84 @@
+.map-inset {
+  position: absolute;
+  left: 0px;
+  z-index: 2;
+  bottom: 30px;
+  width: 242px;
+  height: 230px;
+  background: black;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid rgb(100,100,100);
+  overflow: hidden;
+}
+
+.map-inset.reversionary {
+  left: unset;
+  right: 0px;
+  width: 312px;
+}
+
+  .pfd-insetmap {
+    left: 0;
+    top: 0;
+    width: 242px;
+    height: 230px;
+    font-size: 16px;
+    font-family: Roboto-Bold;
+  }
+
+  .pfd-insetmap .minicompass-layer {
+    position: absolute;
+    left: 3px;
+    top: 50px;
+    font-size: 10px;
+  }
+
+  .pfd-insetmap .map-crosshair {
+    --map-crosshair-size: 10px;
+  }
+
+  .pfd-insetmap .map-pointer {
+    --map-pointer-size: 25px;
+  }
+
+  .pfd-insetmap .map-pointerinfolayer-box {
+    position: absolute;
+    left: 50px;
+    top: 0px;
+  }
+
+  .pfd-insetmap .navmap-indicators-top-left {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 50px;
+    display: grid;
+    grid-template-rows: 20px 30px;
+    grid-template-columns: auto;
+    justify-items: start;
+    align-items: start;
+  }
+    .pfd-insetmap .navmap-indicators-top-left .map-range-display {
+      align-self: center;
+    }
+
+  .pfd-insetmap .navmap-indicators-bottom-left {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+  }
+
+  .pfd-insetmap .navmap-indicators-bottom-right {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+  }
+
+  .pfd-insetmap .navmap-indicators-center {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 70px);
+    width: 140px;
+  }

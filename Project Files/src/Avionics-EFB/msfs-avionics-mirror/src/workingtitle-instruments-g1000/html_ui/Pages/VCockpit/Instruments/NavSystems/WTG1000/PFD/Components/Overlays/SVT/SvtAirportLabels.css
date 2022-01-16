@@ -1,0 +1,14 @@
+.svt-airport-labels-container {
+  position: absolute;
+  left: -15%;
+  top: -23%;
+  width: 120%;
+  height: 120%;
+  overflow: hidden;
+}
+
+.svt-airport-label {
+  position: absolute;
+  top: 43%;
+  left: 47%;
+}

@@ -1,0 +1,15 @@
+.turn-rate-indicator-rose {
+  position: absolute;
+  top: 14px;
+  left: 111px;
+  width: 147px;
+  height: 40px;
+}
+
+.turn-rate-indicator-hsimap {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 147px;
+  height: 40px;
+}

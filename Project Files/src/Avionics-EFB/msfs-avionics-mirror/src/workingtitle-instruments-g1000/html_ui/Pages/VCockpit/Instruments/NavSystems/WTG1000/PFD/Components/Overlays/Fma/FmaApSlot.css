@@ -1,0 +1,16 @@
+@keyframes fma-ap-alert-flash {
+  0% {color: black; background-color: rgb(225, 225, 0);}
+  74.9% {color: black; background-color: rgb(225, 225, 0);}
+  75% {color: white; background-color: transparent;}
+  99.9% {color: white; background-color: transparent;}
+}
+
+.fma-ap-alert {
+  animation-name: fma-ap-alert-flash;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  display: inline-block;
+  border-radius: 4px;
+  line-height: 22px;
+  padding: 0 2px 0 2px;
+}

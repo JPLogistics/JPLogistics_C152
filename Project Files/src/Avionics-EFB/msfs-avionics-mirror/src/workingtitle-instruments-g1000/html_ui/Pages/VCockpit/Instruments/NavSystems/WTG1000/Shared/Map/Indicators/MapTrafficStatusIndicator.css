@@ -1,0 +1,30 @@
+.map-traffic-status {
+  padding: 0.2em;
+  background-color: black;
+  border: solid 1px whitesmoke;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  color: white;
+}
+  .traffic-status-alt {
+    margin-right: 0.5em;
+  }
+  .traffic-status-symbol {
+    width: 1.8em;
+    height: 1.2em;
+    fill: white;
+  }
+    .traffic-status-disabledcross {
+      fill: transparent;
+    }
+    .traffic-status-disabledcross-outline {
+      stroke-width: 20;
+      stroke: black;
+    }
+    .traffic-status-disabledcross-stroke {
+      stroke-width: 15;
+      stroke: white;
+    }
+      

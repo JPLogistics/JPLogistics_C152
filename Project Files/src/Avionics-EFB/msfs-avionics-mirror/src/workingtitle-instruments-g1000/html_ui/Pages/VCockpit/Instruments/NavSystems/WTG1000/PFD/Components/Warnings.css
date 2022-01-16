@@ -1,0 +1,67 @@
+@keyframes RedWarning {
+  0%, 45% {
+    background-color: red;
+    color: white;
+  }
+  55%, 100% {
+    background-color: white;
+    color: red;
+  }
+}
+
+@keyframes YellowWarning {
+  0%, 45% {
+    background-color: yellow;
+    color: black;
+  }
+  55%, 100% {
+    background-color: black;
+    color: yellow;
+  }
+}
+
+@keyframes WhiteWarning {
+  0%, 45% {
+    background-color: White;
+    color: black;
+  }
+  55%, 100% {
+    background-color: black;
+    color: white;
+  }
+}
+
+.warnings-display {
+  font-family: Roboto-Bold;
+  position: absolute;
+  top: 58px;
+  height: auto;
+  left: 530px;
+  font-size: 14px;
+  padding: 2px;
+  display: none;
+  width: auto;
+  white-space: nowrap;
+  border-radius: 3px;
+}
+
+.warnings-display.red {
+  animation: RedWarning 1s 5;
+  background-color: red;
+  color: white;
+  display: inline-block;
+}
+
+.warnings-display.yellow {
+  animation: YellowWarning 1s 5;
+  background-color: yellow;
+  color: black;
+  display: inline-block;
+}
+
+.warnings-display.white {
+  animation: WhiteWarning 1s 5;
+  background-color: white;
+  color: black;
+  display: inline-block;
+}

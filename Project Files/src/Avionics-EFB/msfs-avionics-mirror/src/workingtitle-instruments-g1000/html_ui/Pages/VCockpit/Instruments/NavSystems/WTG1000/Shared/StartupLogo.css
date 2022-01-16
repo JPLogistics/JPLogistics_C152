@@ -1,0 +1,38 @@
+.startup-logo {
+  padding: 300px 200px 0px 200px;
+}
+
+.startup-confirm-screen {
+  display: flex;
+  opacity: 1.0;
+  transition: opacity 2s ease-in-out;
+}
+
+.startup-confirm-screen.hidden {
+  opacity: 0.0;
+  display: flex !important;
+}
+
+.startup-confirm-screen > div {
+  flex: 1;
+  font-size: 20px;
+}
+
+.startup-confirm-screen-left {
+  padding: 300px 0px 0px 40px;
+}
+
+.startup-confirm-screen-right {
+  padding: 200px 0px 0px 200px;
+  line-height: 32px;
+}
+
+.startup-confirm-screen-right  svg {
+  margin-right: 4px;
+  vertical-align: text-bottom;
+}
+
+.startup-confirmation {
+  position: absolute;
+  bottom: 0px;
+}

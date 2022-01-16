@@ -1,0 +1,93 @@
+.wind-overlay {
+  position: absolute;
+  left: 245px;
+  bottom: 239px;
+  width: 83px;
+  height: 53px;
+  padding-top: 6px;
+  text-align: center;
+  background: rgba(0,0,0,.5);
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.opt1 {
+  position: absolute;
+}
+
+.left-xwind-arrow {
+  position: absolute;
+  top: 0px;
+}
+
+.right-xwind-arrow {
+  position: absolute;
+  top: 0px;
+}
+
+.headwind-arrow {
+  position: absolute;
+  top: 0px;
+}
+
+.tailwind-arrow {
+  position: absolute;
+  top: 0px;
+}
+
+.crosswind-value {
+  position: absolute;
+  left: 34px;
+  top: 1px;
+  width: 40px;
+  text-align: left;
+}
+
+.headwind-value {
+  position: absolute;
+  top: 24px;
+  width: 34px;
+  text-align: center;
+}
+
+.opt2 {
+  position: absolute;
+}
+.opt3 {
+  position: absolute;
+}
+
+.arrow-rotate {
+  position: absolute;
+  transform: rotate3d(0, 0, 1, 0deg);
+  transform-origin: 50% 50%;
+  top: 9px;
+  left: 18px;
+  width: 10px;
+  height: 21px;
+}
+
+.wind-speed-solo {
+  position: absolute;
+  text-align: left;
+  top: 10px;
+  left: 40px;
+}
+
+.wind-direction {
+  position: absolute;
+  text-align: left;
+  top: 2px;
+  left: 40px;
+}
+
+.wind-speed {
+  position: absolute;
+  text-align: left;
+  top: 24px;
+  left: 40px;
+}
+
+.disabled {
+  display: none;
+}

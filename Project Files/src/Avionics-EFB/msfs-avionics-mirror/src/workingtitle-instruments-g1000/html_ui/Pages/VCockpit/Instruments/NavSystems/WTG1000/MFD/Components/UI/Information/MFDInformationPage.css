@@ -1,0 +1,40 @@
+.mfd-infomap {
+  left: 0;
+  top: 0;
+  width: 578px;
+  height: 734px;
+  font-size: 16px;
+  font-family: Roboto-Bold;
+}
+
+.mfd-infomap .minicompass-layer {
+  position: absolute;
+  left: 5px;
+  top: 80px;
+}
+
+.mfd-infomap .map-crosshair {
+  --map-crosshair-size: 10px;
+}
+
+.mfd-infomap .map-pointer {
+  --map-pointer-size: 25px;
+}
+
+.mfd-infomap .map-pointerinfolayer-box {
+  position: absolute;
+  left: 90px;
+  top: 56px;
+}
+  .mfd-infomap .map-pointerinfolayer-box-dis {
+    width: 90px;
+  }
+  .mfd-infomap .map-pointerinfolayer-box-brg {
+    width: 75px;
+  }
+
+.mfd-infomap .map-orientation {
+  position: absolute;
+  left: 0px;
+  top: 56px;
+}

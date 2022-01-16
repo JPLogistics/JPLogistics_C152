@@ -1,0 +1,62 @@
+.mfd-nearest-facility > div, .mfd-nearest-facility > img {
+  display: inline-block;
+}
+
+.mfd-nearest-facility > img {
+  vertical-align: middle;
+}
+
+.mfd-nearest-facility-icao {
+  color: cyan;
+  width: 74px;
+}
+
+.mfd-nearest-facility-icon {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  width: 28px;
+  height: 28px;
+  object-fit: none;
+  object-position: 0 0;
+}
+
+.mfd-nearest-airports .mfd-nearest-facility-list {
+  height: 140px;
+}
+
+.mfd-nearest-intersections .mfd-nearest-facility-list,
+.mfd-nearest-ndbs .mfd-nearest-facility-list {
+  height: 336px;
+}
+
+.mfd-nearest-facility-arrow {
+  fill: white;
+  width: 20px;
+}
+
+.mfd-nearest-facility-bearing {
+  width: 44px;
+  margin-right: 6px;
+  text-align: right;
+}
+
+.mfd-nearest-facility-distance {
+  width: 74px;
+  text-align: right;
+}
+
+.mfd-nearest-facility {
+  height: 28px;
+  padding: 2px 0 2px 0;
+  color: white;
+  font-size: 20px;
+}
+
+.mfd-nearest-facility-distance-units {
+  font-size: .75em;
+}
+
+div.groupbox-container.hidden-element {
+  visibility: visible;
+  color: black;
+}
