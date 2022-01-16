@@ -186,35 +186,12 @@
 
 <!-- ### TESTING SECTION TO SEE WHAT HAPPENING ### -->
 	<Update Frequency="1">
-		
-		 
-		@MaintenanceScaler1 (&gt;L:JPL152_scalertestBL)
-		 
+	 
 		@MaintenanceScaler6 (&gt;L:JPL152_scalertestBR)
 	</Update>	
 
 <!-- ########### GENERAL ENGINE WEAR ########### -->
-	<!--
-    when...
-		always...but slow
-		
-		increase with...
-			high rpm
-			fouling = 1
-			low oil
-			not warmed up enough / if oil temp is < X and rpm is > Y ????
-			
-	how long does it take?
-		RW is 2400 hrs for an overhaul...to much for a sim??? 500?
-		1,800,000s = 500hrs
-		18000s = 5 hrs
-		3600s = 1 hr
-		max MP drop of 4 = max time "L:JPL152_MAINTENANCE_TIME" / 4 ... @500hrs this / by 450000   @ 5min for testing this is 75
-			(L:JPL152_MAINTENANCE_TIME) 1800000 &lt;  and   (L:JPL152_MAINTENANCE_TIME) 450000 /
-			(L:JPL152_MAINTENANCE_TIME) 300 &lt;  and   (L:JPL152_MAINTENANCE_TIME) 75 /  <--- this is for a 5min testing window
-		<Macro Name="MaintenanceScaler"> 300 / X to = 4</Macro>
-		<Macro Name="MaintenanceScaler"> 1,800,000 / X to = 4</Macro> ???
-	-->
+
 <!-- ### TIMER ### -->
 	<Update Frequency="1">
 	(L:JPL152_MAINTENANCE_ONOFF) 1 ==
@@ -237,21 +214,3 @@
 	</Update>
 
 </Template>
-
-<!--
-(A:GENERAL ENG OIL PRESSURE:1, psf) 1000 - (&gt;A:GENERAL ENG OIL PRESSURE:1, psf)
-
-30 hrs = 108000  .1/hr  
-
-0.00027777777 1 qt per hour
-0.000027777777 1 qt per 10 hours
-
-GENERAL ENG OIL PRESSURE:1  psf  will drop the pressure, needs to update
-GENERAL ENG OIL TEMPERATURE:1 celsius  can mess with, needs to update
-
-3 = right tank
-2 = left tank
-1 = both tanks
-
-(A:TURN COORDINATOR BALL, scaler)  right ball positive to .5 = left turn; left ball neg to .5 =  right turn
--->

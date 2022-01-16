@@ -1,11 +1,11 @@
 <Template Name = "DME_Switch_Template">
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <Update>
-      (L:JPL152_DME_POWER) 0 == (A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Bool) == 1 and
+      (L:JPL152_DME_POWER) 0 == (A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Bool) 1 == and
       if{
       #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
       }
-      (L:JPL152_DME_POWER) 1 == (A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Bool) == 0 and
+      (L:JPL152_DME_POWER) 1 == (A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Bool) 0 == and
       if{
       #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
       }
@@ -88,46 +88,7 @@
 		(A:CIRCUIT SWITCH ON:32, Boolean) and if{ 32 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE) }
 	</Update>
 </Template>
-<!--
-<Template Name="JPL152_IntercomSwitch">
-	<DefaultTemplateParameters>
-		<SIMVAR_PREFIX>L</SIMVAR_PREFIX>
-		<ANIM_LENGTH>20</ANIM_LENGTH>
-		<WWISE_EVENT_1>audio_switch_intercom</WWISE_EVENT_1>
-		<WWISE_EVENT_2>audio_switch_intercom</WWISE_EVENT_2>
-	</DefaultTemplateParameters>
-	<Component ID="#NODE_ID#" Node="#NODE_ID#">
-		<MouseRect>
-			<MOUSEFLAGS>#MOUSEFLAGS#</MOUSEFLAGS>
-			<Cursor>#CURSOR#</Cursor>
-			<TOOLTIPID>#TOOLTIPID#</TOOLTIPID>
-			<CallbackCode>
-				<Code>
-					(A:SIM ON GROUND, bool) 1 ==
-					if{
-					(M:Event) 'LeftSingle' scmi 0 == if{
-					(#SIMVAR_PREFIX#:#SIMVAR#,bool) ! (&gt;#SIMVAR_PREFIX#:#SIMVAR#,bool)
-					}
-					}
-				</Code>
-			</CallbackCode>
-		</MouseRect>
-	</Component>
-			
-	<UseTemplate Name="ASOBO_GT_Anim_Code">
-		<ANIM_CODE>(#SIMVAR_PREFIX#:#SIMVAR#,bool) #ANIM_LENGTH# *</ANIM_CODE>
-	</UseTemplate>
-	<UseTemplate Name = "ASOBO_GT_AnimTriggers_2SoundEvents"/>
-	<Update Frequency = "1">
-		(L:JPL152_APVIZ) 0 &gt;
-		(A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Boolean) ! and if{ #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE) }
-	</Update>
-	<Update Frequency = "1">
-		(L:JPL152_APVIZ) 0 ==
-		(A:CIRCUIT SWITCH ON:#CIRCUIT_ID#, Boolean) and if{ #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE) }
-	</Update>
-</Template>
--->
+
 <Template Name="ADF_VOLUME">
 	<UseTemplate Name="ASOBO_GT_Update">
 		<UPDATE_ONCE>True</UPDATE_ONCE>
@@ -260,14 +221,14 @@
 </Template>	
 -->
 
-	<Template Name="JPL152_INSTRUMENT_Needle_EGT_Template">
-		<Parameters Type="Default">
-			<ID>1</ID>
-		</Parameters>
-		<UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
-			<TEMPLATE_TO_CALL>JPL152_INSTRUMENT_Needle_EGT_SubTemplate</TEMPLATE_TO_CALL>
-		</UseTemplate>
-	</Template>
+<Template Name="JPL152_INSTRUMENT_Needle_EGT_Template">
+	<Parameters Type="Default">
+		<ID>1</ID>
+	</Parameters>
+	<UseTemplate Name="ASOBO_GT_Helper_Suffix_ID_Appender">
+		<TEMPLATE_TO_CALL>JPL152_INSTRUMENT_Needle_EGT_SubTemplate</TEMPLATE_TO_CALL>
+	</UseTemplate>
+</Template>
 	
 <Template Name="JPL152_INSTRUMENT_Needle_EGT_SubTemplate">
 	<DefaultTemplateParameters>
