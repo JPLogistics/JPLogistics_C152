@@ -910,7 +910,7 @@
       <UseTemplate Name="C152X_NAVCOM_Simple_Radio_Template">
         <ID>1</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
-		<EMISSIVE_CODE>(A:COM VOLUME:1,Percent) 0 &gt; if{ (A:LIGHT POTENTIOMETER:6, Percent) 1000 / } </EMISSIVE_CODE>
+		<EMISSIVE_CODE>(A:COM VOLUME:1,Percent) 0 &gt; (A:CIRCUIT ON:23, Bool) 1 == and if{ (A:LIGHT POTENTIOMETER:6, Percent) 1000 / } </EMISSIVE_CODE>
         <NAV_CIRCUIT>22</NAV_CIRCUIT>
 		<COM_CIRCUIT>23</COM_CIRCUIT>
         <UseTemplate Name="COM1_VOLUME">
@@ -921,7 +921,7 @@
       <UseTemplate Name="C152X_NAVCOM_Simple_Radio_Template">
         <ID>2</ID>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
-		<EMISSIVE_CODE>(A:COM VOLUME:2,Percent) 0 &gt; if{ (A:LIGHT POTENTIOMETER:6, Percent) 1000 / } </EMISSIVE_CODE>
+		<EMISSIVE_CODE>(A:COM VOLUME:2,Percent) 0 &gt; (A:CIRCUIT ON:25, Bool) 1 == and if{ (A:LIGHT POTENTIOMETER:6, Percent) 1000 / } </EMISSIVE_CODE>
         <NAV_CIRCUIT>24</NAV_CIRCUIT>
         <COM_CIRCUIT>25</COM_CIRCUIT>
         <UseTemplate Name="COM2_VOLUME">
@@ -932,7 +932,7 @@
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
         <ID>1</ID>
         <NODE_ID>NavCom1_Screen</NODE_ID>
-        <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
+		<FAILURE>(A:CIRCUIT ON:23, Bool)</FAILURE>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
 		<USE_DIMMING_POTENTIOMETER/>
 		<POTENTIOMETER>6</POTENTIOMETER>
@@ -940,7 +940,7 @@
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
         <ID>2</ID>
         <NODE_ID>NavCom2_Screen</NODE_ID>
-        <!--<NAVCOM_CONTROLS_PANEL_LIGHT_STATE/>-->
+        <FAILURE>(A:CIRCUIT ON:25, Bool)</FAILURE>
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
         <USE_DIMMING_POTENTIOMETER/>
         <POTENTIOMETER>6</POTENTIOMETER>
