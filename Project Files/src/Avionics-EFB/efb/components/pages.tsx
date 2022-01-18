@@ -10,41 +10,23 @@ export class Pages extends DisplayComponent<any> {
   public render(): VNode {
     return (
       <div id="pages">
-        <div
-          id="BootPage"
-          class="absolute-center"
-          data-theme={efbThemeSettings.theme}
-        >
-          <svg
-            id="logo"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 2300 1000"
-          >
-            <title>Visit Site Link</title>
-            <defs>
-              <path
-                d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"
-                id="textcircle"
-              >
-                <animateTransform
-                  attributeName="transform"
-                  begin="0s"
-                  dur="30s"
-                  type="rotate"
-                  from="0 250 250"
-                  to="360 250 250"
-                  repeatCount="indefinite"
-                />
-              </path>
-            </defs>
-            <text dy="70" textLength="1220">
-              <textPath xlink:href="#textcircle">
-                Visit site • visit site •
-              </textPath>
-            </text>
-          </svg>
-          <div>CAN YOU SEE ME?</div>
+        <div id="BootPage"> {/*data-theme={efbThemeSettings.theme}> */}
+          <div class="absolute-center">
+          <div id="circle">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+    <defs>
+        <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "/>
+    </defs>
+    <circle cx="150" cy="100" r="75" fill="none"/>
+    <g>
+        <use xlink:href="#circlePath" fill="none"/>
+        <text fill="#fff">
+            <textPath xlink:href="#circlePath">Text rotating around a circle path with SVG!</textPath>
+        </text>
+    </g>
+</svg>
+</div>
+          </div>
         </div>
         <div id="HomePage" class="hidden" data-theme={efbThemeSettings.theme}>
           <div class="grid grid-cols-3 gap-4 absolute-center">
@@ -210,13 +192,16 @@ export class Pages extends DisplayComponent<any> {
             </div>
           </div>
         </div>
-        <div
-          id="MaintenancePage"
+        <div id="PayloadPage"
           class="hidden"
           data-theme={efbThemeSettings.theme}
         >
-          <div class="absolute-center">Testing</div>
           <div class="svg-center" id="aircraft-svg"></div>
+        </div>
+        <div id="MapPage"
+          class="hidden"
+        >
+          <div id="map"></div>
         </div>
         <div
           id="SettingsPage"

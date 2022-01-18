@@ -1,4 +1,5 @@
 import { FSComponent, } from "msfssdk";
+import { Loader } from "@googlemaps/js-api-loader";
 import { initializeApp, setLogLevel } from "firebase/app";
 import { getFirestore, doc, getDoc, getDocFromCache, } from "firebase/firestore";
 import { efbSettings, efbThemeSettings } from "./components/functions/settings";
@@ -19,6 +20,11 @@ setLogLevel("silent");
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 console.log("Got here - 1");
+const loader1 = new Loader({
+    apiKey: "AIzaSyAVyRSMwRRdJQNTiuewVeGwi5j550OxqGc",
+    version: "weekly",
+});
+let map;
 class EFB extends BaseInstrument {
     constructor() {
         super(...arguments);
@@ -42,8 +48,8 @@ class EFB extends BaseInstrument {
         // SimVar.SetSimVarValue("L:EFB_Theme", "string", "light")
         // .then(() => efbThemeSettings.theme = SimVar.GetSimVarValue("L:EFB_Theme", "string") && console.log(efbThemeSettings.theme));;
         // ;
-        FSComponent.render(FSComponent.buildComponent(Headers, null), document.getElementById("efbHeader"));
         FSComponent.render(FSComponent.buildComponent(Pages, null), document.getElementById("efbContent"));
+        FSComponent.render(FSComponent.buildComponent(Headers, null), document.getElementById("efbHeader"));
         FSComponent.render(FSComponent.buildComponent(Warning, null), document.getElementById("efbWarning"));
         FSComponent.render(FSComponent.buildComponent(Error, null), document.getElementById("efbError"));
         console.log("Got here... 1.6");
@@ -81,10 +87,13 @@ class EFB extends BaseInstrument {
         // SET INFO TO IPAD
         if (SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + this.livery, 'bool') == 1) {
             this.settingsToggleStateSaving.checked = true;
+            console.log(SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + this.livery, 'bool'));
         }
-        else {
-            this.settingsToggleStateSaving.checked = false;
-        }
+        // if ((await SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + this.livery, 'bool')) == 1) {
+        //   this.settingsToggleStateSaving.checked = true;
+        // } else {
+        //   this.settingsToggleStateSaving.checked = false;
+        // }
         if (SimVar.GetSimVarValue("JPL152IP_ENGMAINTONOFF_" + this.livery, 'bool') == 1) {
             this.settingsToggleMaintenance.checked = true;
         }
@@ -138,19 +147,19 @@ class EFB extends BaseInstrument {
         this.setScreen("Home");
     }
     navButton2Press() {
-        this.setScreen("Maintenance");
+        this.setScreen("Payload");
     }
     navButton3Press() {
         this.setScreen("Map");
     }
     navButton4Press() {
-        this.setScreen("Settings");
+        this.setScreen("Maintenance");
     }
     navButton5Press() {
-        this.setScreen("5");
+        this.setScreen("Chat");
     }
     navButton6Press() {
-        this.setScreen("6");
+        this.setScreen("Settings");
     }
     navButton7Press() {
         this.setScreen("stowed");
@@ -168,9 +177,11 @@ class EFB extends BaseInstrument {
             else if (this.appSelected == "Home") {
                 debugVar = "Home Screen";
             }
-            else if (this.appSelected == "Maintenance") {
-                debugVar = "Maintenance Screen";
+            else if (this.appSelected == "Payload") {
+                debugVar = "Payload Screen";
                 this.drawAircraftFuel("aircraft-svg");
+            }
+            else if (this.appSelected == "Map") {
             }
         }
         catch (e) {
@@ -229,13 +240,6 @@ class EFB extends BaseInstrument {
                     console.log("Document data:", data["C152"]);
                     console.log("Got here - Init - Fetched Data... Valid?");
                     efbSettings.latestVersion = data["C152"];
-                    if (efbSettings.currentVersion != efbSettings.latestVersion) {
-                        document.getElementById("outdatedVersion").innerHTML =
-                            "UPDATE: C152 Version " +
-                                efbSettings.latestVersion +
-                                ", is available! \n Please update to ensure the best experience!";
-                        document.getElementById("efbWarning").classList.remove("hidden");
-                    }
                 }
                 else {
                     // doc.data() will be undefined in this case
@@ -255,12 +259,26 @@ class EFB extends BaseInstrument {
                     document.getElementById("test").innerHTML = "Failed";
                 }
             }
-            console.log("Got here - Init - Finally - Eveyrhing good?");
+            console.log("Got here - Init - Finally - Everything good?");
+            console.log(SimVar.GetSimVarValue("PLANE LATITUDE", 'degrees'));
+            loader1.load().then(() => {
+                map = new google.maps.Map(document.getElementById("map"), {
+                    center: { lat: SimVar.GetSimVarValue("PLANE LATITUDE", 'degrees'), lng: SimVar.GetSimVarValue("PLANE LONGITUDE", 'degrees') },
+                    zoom: 8,
+                });
+            });
             // document.getElementById("header")!.classList.remove("hidden");
             setTimeout(() => {
                 this.tablet_init_complete = true;
+                if (efbSettings.currentVersion != efbSettings.latestVersion) {
+                    document.getElementById("outdatedVersion").innerHTML =
+                        "UPDATE: C152 Version " +
+                            efbSettings.latestVersion +
+                            ", is available! \n Please update to ensure the best experience!";
+                    document.getElementById("efbWarning").classList.remove("hidden");
+                }
                 this.setScreen("Home");
-            }, 5000);
+            }, 500);
         }
     }
     drawAircraftFuel(id) {

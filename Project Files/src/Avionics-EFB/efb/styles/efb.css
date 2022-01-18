@@ -31,6 +31,8 @@
     padding-top: 16px;
 }
 
+
+
 #efbContent {
     width: auto;
     padding: 32px;
@@ -56,6 +58,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-25%, -25%);
+}
+.svg-center{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-25%, -25%);
 }
 #efbError {
     width: auto;
@@ -159,4 +168,62 @@
   
   input:checked+.toggleKnob:before {
     transform: translateX(26px);
+  }
+
+  #circle { position: relative; width: 100%; padding-bottom: 100%; overflow: hidden; }
+
+#circle text { font-family: 'Helvetica Neue', Arial; font-size: 16px; font-weight: bold; }
+
+#circle svg { position: absolute; left: 0; top: 0; width: 100%; height: 540px;
+
+  -webkit-animation-name: rotate;
+     -moz-animation-name: rotate;
+      -ms-animation-name: rotate;
+       -o-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-duration: 5s;
+     -moz-animation-duration: 5s;
+      -ms-animation-duration: 5s;
+       -o-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+       -o-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+       -o-animation-timing-function: linear;
+          animation-timing-function: linear;
+
+}
+
+@-webkit-keyframes rotate {
+    from { -webkit-transform: rotate(360deg); }
+    to { -webkit-transform: rotate(0); }
+}
+@-moz-keyframes rotate {
+    from { -moz-transform: rotate(360deg); }
+    to { -moz-transform: rotate(0); }
+}
+@-ms-keyframes rotate {
+    from { -ms-transform: rotate(360deg); }
+    to { -ms-transform: rotate(0); }
+}
+@-o-keyframes rotate {
+    from { -o-transform: rotate(360deg); }
+    to { -o-transform: rotate(0); }
+}
+@keyframes rotate {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0); }
+}
+
+#map {
+    position: absolute;
+    top: 200;
+    bottom: 0;
+    height:1238px;
+    width: 100%;
   }

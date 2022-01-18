@@ -4123,6 +4123,318 @@ var VNavAltCaptureType;
     VNavAltCaptureType[VNavAltCaptureType["VNAV"] = 2] = "VNAV";
 })(VNavAltCaptureType || (VNavAltCaptureType = {}));
 
+// do not edit .js files directly - edit src/index.jst
+
+
+
+var fastDeepEqual = function equal(a, b) {
+  if (a === b) return true;
+
+  if (a && b && typeof a == 'object' && typeof b == 'object') {
+    if (a.constructor !== b.constructor) return false;
+
+    var length, i, keys;
+    if (Array.isArray(a)) {
+      length = a.length;
+      if (length != b.length) return false;
+      for (i = length; i-- !== 0;)
+        if (!equal(a[i], b[i])) return false;
+      return true;
+    }
+
+
+
+    if (a.constructor === RegExp) return a.source === b.source && a.flags === b.flags;
+    if (a.valueOf !== Object.prototype.valueOf) return a.valueOf() === b.valueOf();
+    if (a.toString !== Object.prototype.toString) return a.toString() === b.toString();
+
+    keys = Object.keys(a);
+    length = keys.length;
+    if (length !== Object.keys(b).length) return false;
+
+    for (i = length; i-- !== 0;)
+      if (!Object.prototype.hasOwnProperty.call(b, keys[i])) return false;
+
+    for (i = length; i-- !== 0;) {
+      var key = keys[i];
+
+      if (!equal(a[key], b[key])) return false;
+    }
+
+    return true;
+  }
+
+  // true if both NaN, false otherwise
+  return a!==a && b!==b;
+};
+
+/**
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at.
+ *
+ *      Http://www.apache.org/licenses/LICENSE-2.0.
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+const DEFAULT_ID = "__googleMapsScriptId";
+/**
+ * The status of the [[Loader]].
+ */
+var LoaderStatus;
+(function (LoaderStatus) {
+    LoaderStatus[LoaderStatus["INITIALIZED"] = 0] = "INITIALIZED";
+    LoaderStatus[LoaderStatus["LOADING"] = 1] = "LOADING";
+    LoaderStatus[LoaderStatus["SUCCESS"] = 2] = "SUCCESS";
+    LoaderStatus[LoaderStatus["FAILURE"] = 3] = "FAILURE";
+})(LoaderStatus || (LoaderStatus = {}));
+/**
+ * [[Loader]] makes it easier to add Google Maps JavaScript API to your application
+ * dynamically using
+ * [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
+ * It works by dynamically creating and appending a script node to the the
+ * document head and wrapping the callback function so as to return a promise.
+ *
+ * ```
+ * const loader = new Loader({
+ *   apiKey: "",
+ *   version: "weekly",
+ *   libraries: ["places"]
+ * });
+ *
+ * loader.load().then((google) => {
+ *   const map = new google.maps.Map(...)
+ * })
+ * ```
+ */
+class Loader {
+    /**
+     * Creates an instance of Loader using [[LoaderOptions]]. No defaults are set
+     * using this library, instead the defaults are set by the Google Maps
+     * JavaScript API server.
+     *
+     * ```
+     * const loader = Loader({apiKey, version: 'weekly', libraries: ['places']});
+     * ```
+     */
+    constructor({ apiKey, channel, client, id = DEFAULT_ID, libraries = [], language, region, version, mapIds, nonce, retries = 3, url = "https://maps.googleapis.com/maps/api/js", }) {
+        this.CALLBACK = "__googleMapsCallback";
+        this.callbacks = [];
+        this.done = false;
+        this.loading = false;
+        this.errors = [];
+        this.version = version;
+        this.apiKey = apiKey;
+        this.channel = channel;
+        this.client = client;
+        this.id = id || DEFAULT_ID; // Do not allow empty string
+        this.libraries = libraries;
+        this.language = language;
+        this.region = region;
+        this.mapIds = mapIds;
+        this.nonce = nonce;
+        this.retries = retries;
+        this.url = url;
+        if (Loader.instance) {
+            if (!fastDeepEqual(this.options, Loader.instance.options)) {
+                throw new Error(`Loader must not be called again with different options. ${JSON.stringify(this.options)} !== ${JSON.stringify(Loader.instance.options)}`);
+            }
+            return Loader.instance;
+        }
+        Loader.instance = this;
+    }
+    get options() {
+        return {
+            version: this.version,
+            apiKey: this.apiKey,
+            channel: this.channel,
+            client: this.client,
+            id: this.id,
+            libraries: this.libraries,
+            language: this.language,
+            region: this.region,
+            mapIds: this.mapIds,
+            nonce: this.nonce,
+            url: this.url,
+        };
+    }
+    get status() {
+        if (this.errors.length) {
+            return LoaderStatus.FAILURE;
+        }
+        if (this.done) {
+            return LoaderStatus.SUCCESS;
+        }
+        if (this.loading) {
+            return LoaderStatus.LOADING;
+        }
+        return LoaderStatus.INITIALIZED;
+    }
+    get failed() {
+        return this.done && !this.loading && this.errors.length >= this.retries + 1;
+    }
+    /**
+     * CreateUrl returns the Google Maps JavaScript API script url given the [[LoaderOptions]].
+     *
+     * @ignore
+     */
+    createUrl() {
+        let url = this.url;
+        url += `?callback=${this.CALLBACK}`;
+        if (this.apiKey) {
+            url += `&key=${this.apiKey}`;
+        }
+        if (this.channel) {
+            url += `&channel=${this.channel}`;
+        }
+        if (this.client) {
+            url += `&client=${this.client}`;
+        }
+        if (this.libraries.length > 0) {
+            url += `&libraries=${this.libraries.join(",")}`;
+        }
+        if (this.language) {
+            url += `&language=${this.language}`;
+        }
+        if (this.region) {
+            url += `&region=${this.region}`;
+        }
+        if (this.version) {
+            url += `&v=${this.version}`;
+        }
+        if (this.mapIds) {
+            url += `&map_ids=${this.mapIds.join(",")}`;
+        }
+        return url;
+    }
+    deleteScript() {
+        const script = document.getElementById(this.id);
+        if (script) {
+            script.remove();
+        }
+    }
+    /**
+     * Load the Google Maps JavaScript API script and return a Promise.
+     */
+    load() {
+        return this.loadPromise();
+    }
+    /**
+     * Load the Google Maps JavaScript API script and return a Promise.
+     *
+     * @ignore
+     */
+    loadPromise() {
+        return new Promise((resolve, reject) => {
+            this.loadCallback((err) => {
+                if (!err) {
+                    resolve(window.google);
+                }
+                else {
+                    reject(err.error);
+                }
+            });
+        });
+    }
+    /**
+     * Load the Google Maps JavaScript API script with a callback.
+     */
+    loadCallback(fn) {
+        this.callbacks.push(fn);
+        this.execute();
+    }
+    /**
+     * Set the script on document.
+     */
+    setScript() {
+        if (document.getElementById(this.id)) {
+            // TODO wrap onerror callback for cases where the script was loaded elsewhere
+            this.callback();
+            return;
+        }
+        const url = this.createUrl();
+        const script = document.createElement("script");
+        script.id = this.id;
+        script.type = "text/javascript";
+        script.src = url;
+        script.onerror = this.loadErrorCallback.bind(this);
+        script.defer = true;
+        script.async = true;
+        if (this.nonce) {
+            script.nonce = this.nonce;
+        }
+        document.head.appendChild(script);
+    }
+    /**
+     * Reset the loader state.
+     */
+    reset() {
+        this.deleteScript();
+        this.done = false;
+        this.loading = false;
+        this.errors = [];
+        this.onerrorEvent = null;
+    }
+    resetIfRetryingFailed() {
+        if (this.failed) {
+            this.reset();
+        }
+    }
+    loadErrorCallback(e) {
+        this.errors.push(e);
+        if (this.errors.length <= this.retries) {
+            const delay = this.errors.length * Math.pow(2, this.errors.length);
+            console.log(`Failed to load Google Maps script, retrying in ${delay} ms.`);
+            setTimeout(() => {
+                this.deleteScript();
+                this.setScript();
+            }, delay);
+        }
+        else {
+            this.onerrorEvent = e;
+            this.callback();
+        }
+    }
+    setCallback() {
+        window.__googleMapsCallback = this.callback.bind(this);
+    }
+    callback() {
+        this.done = true;
+        this.loading = false;
+        this.callbacks.forEach((cb) => {
+            cb(this.onerrorEvent);
+        });
+        this.callbacks = [];
+    }
+    execute() {
+        this.resetIfRetryingFailed();
+        if (this.done) {
+            this.callback();
+        }
+        else {
+            // short circuit and warn if google.maps is already loaded
+            if (window.google && window.google.maps && window.google.maps.version) {
+                console.warn("Google Maps already loaded outside @googlemaps/js-api-loader." +
+                    "This may result in undesirable behavior as options and script parameters may not match.");
+                this.callback();
+                return;
+            }
+            if (this.loading) ;
+            else {
+                this.loading = true;
+                this.setCallback();
+                this.setScript();
+            }
+        }
+    }
+}
+
 /**
  * @license
  * Copyright 2017 Google LLC
@@ -15961,15 +16273,18 @@ function round(value, decimals) {
 class Pages extends DisplayComponent {
     render() {
         return (FSComponent.buildComponent("div", { id: "pages" },
-            FSComponent.buildComponent("div", { id: "BootPage", class: "absolute-center", "data-theme": efbThemeSettings.theme },
-                FSComponent.buildComponent("svg", { id: "logo", xmlns: "http://www.w3.org/2000/svg", "xmlns:xlink": "http://www.w3.org/1999/xlink", viewBox: "0 0 2300 1000" },
-                    FSComponent.buildComponent("title", null, "Visit Site Link"),
-                    FSComponent.buildComponent("defs", null,
-                        FSComponent.buildComponent("path", { d: "M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250", id: "textcircle" },
-                            FSComponent.buildComponent("animateTransform", { attributeName: "transform", begin: "0s", dur: "30s", type: "rotate", from: "0 250 250", to: "360 250 250", repeatCount: "indefinite" }))),
-                    FSComponent.buildComponent("text", { dy: "70", textLength: "1220" },
-                        FSComponent.buildComponent("textPath", { "xlink:href": "#textcircle" }, "Visit site \u2022 visit site \u2022"))),
-                FSComponent.buildComponent("div", null, "CAN YOU SEE ME?")),
+            FSComponent.buildComponent("div", { id: "BootPage" },
+                " ",
+                FSComponent.buildComponent("div", { class: "absolute-center" },
+                    FSComponent.buildComponent("div", { id: "circle" },
+                        FSComponent.buildComponent("svg", { version: "1.1", xmlns: "http://www.w3.org/2000/svg", "xmlns:xlink": "http://www.w3.org/1999/xlink", x: "0px", y: "0px", width: "300px", height: "300px", viewBox: "0 0 300 300", "enable-background": "new 0 0 300 300", "xml:space": "preserve" },
+                            FSComponent.buildComponent("defs", null,
+                                FSComponent.buildComponent("path", { id: "circlePath", d: " M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " })),
+                            FSComponent.buildComponent("circle", { cx: "150", cy: "100", r: "75", fill: "none" }),
+                            FSComponent.buildComponent("g", null,
+                                FSComponent.buildComponent("use", { "xlink:href": "#circlePath", fill: "none" }),
+                                FSComponent.buildComponent("text", { fill: "#fff" },
+                                    FSComponent.buildComponent("textPath", { "xlink:href": "#circlePath" }, "Text rotating around a circle path with SVG!"))))))),
             FSComponent.buildComponent("div", { id: "HomePage", class: "hidden", "data-theme": efbThemeSettings.theme },
                 FSComponent.buildComponent("div", { class: "grid grid-cols-3 gap-4 absolute-center" },
                     FSComponent.buildComponent("div", null,
@@ -16008,9 +16323,10 @@ class Pages extends DisplayComponent {
                             FSComponent.buildComponent("svg", { xmlns: "http://www.w3.org/2000/svg", height: "360px", viewBox: "0 0 24 24", width: "360px", fill: "#000000" },
                                 FSComponent.buildComponent("path", { d: "M0 0h24v24H0V0z", fill: "none" }),
                                 FSComponent.buildComponent("path", { d: "M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0\r\n                            3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z" })))))),
-            FSComponent.buildComponent("div", { id: "MaintenancePage", class: "hidden", "data-theme": efbThemeSettings.theme },
-                FSComponent.buildComponent("div", { class: "absolute-center" }, "Testing"),
+            FSComponent.buildComponent("div", { id: "PayloadPage", class: "hidden", "data-theme": efbThemeSettings.theme },
                 FSComponent.buildComponent("div", { class: "svg-center", id: "aircraft-svg" })),
+            FSComponent.buildComponent("div", { id: "MapPage", class: "hidden" },
+                FSComponent.buildComponent("div", { id: "map" })),
             FSComponent.buildComponent("div", { id: "SettingsPage", class: "hidden", "data-theme": efbThemeSettings.theme },
                 FSComponent.buildComponent("div", { class: "column50 shade5 padding16", style: "height: 512px;" },
                     FSComponent.buildComponent("h3", { class: "shade15 padding8H" }, "Testing Check Boxes"),
@@ -16090,6 +16406,10 @@ setLogLevel("silent");
 const app = initializeApp(firebaseConfig);
 const db = Ba(app);
 console.log("Got here - 1");
+const loader1 = new Loader({
+    apiKey: "AIzaSyAVyRSMwRRdJQNTiuewVeGwi5j550OxqGc",
+    version: "weekly",
+});
 class EFB extends BaseInstrument {
     constructor() {
         super(...arguments);
@@ -16113,8 +16433,8 @@ class EFB extends BaseInstrument {
         // SimVar.SetSimVarValue("L:EFB_Theme", "string", "light")
         // .then(() => efbThemeSettings.theme = SimVar.GetSimVarValue("L:EFB_Theme", "string") && console.log(efbThemeSettings.theme));;
         // ;
-        FSComponent.render(FSComponent.buildComponent(Headers$1, null), document.getElementById("efbHeader"));
         FSComponent.render(FSComponent.buildComponent(Pages, null), document.getElementById("efbContent"));
+        FSComponent.render(FSComponent.buildComponent(Headers$1, null), document.getElementById("efbHeader"));
         FSComponent.render(FSComponent.buildComponent(Warning, null), document.getElementById("efbWarning"));
         FSComponent.render(FSComponent.buildComponent(Error$1, null), document.getElementById("efbError"));
         console.log("Got here... 1.6");
@@ -16152,10 +16472,13 @@ class EFB extends BaseInstrument {
         // SET INFO TO IPAD
         if (SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + this.livery, 'bool') == 1) {
             this.settingsToggleStateSaving.checked = true;
+            console.log(SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + this.livery, 'bool'));
         }
-        else {
-            this.settingsToggleStateSaving.checked = false;
-        }
+        // if ((await SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + this.livery, 'bool')) == 1) {
+        //   this.settingsToggleStateSaving.checked = true;
+        // } else {
+        //   this.settingsToggleStateSaving.checked = false;
+        // }
         if (SimVar.GetSimVarValue("JPL152IP_ENGMAINTONOFF_" + this.livery, 'bool') == 1) {
             this.settingsToggleMaintenance.checked = true;
         }
@@ -16209,19 +16532,19 @@ class EFB extends BaseInstrument {
         this.setScreen("Home");
     }
     navButton2Press() {
-        this.setScreen("Maintenance");
+        this.setScreen("Payload");
     }
     navButton3Press() {
         this.setScreen("Map");
     }
     navButton4Press() {
-        this.setScreen("Settings");
+        this.setScreen("Maintenance");
     }
     navButton5Press() {
-        this.setScreen("5");
+        this.setScreen("Chat");
     }
     navButton6Press() {
-        this.setScreen("6");
+        this.setScreen("Settings");
     }
     navButton7Press() {
         this.setScreen("stowed");
@@ -16239,9 +16562,11 @@ class EFB extends BaseInstrument {
             else if (this.appSelected == "Home") {
                 debugVar = "Home Screen";
             }
-            else if (this.appSelected == "Maintenance") {
-                debugVar = "Maintenance Screen";
+            else if (this.appSelected == "Payload") {
+                debugVar = "Payload Screen";
                 this.drawAircraftFuel("aircraft-svg");
+            }
+            else if (this.appSelected == "Map") {
             }
         }
         catch (e) {
@@ -16300,13 +16625,6 @@ class EFB extends BaseInstrument {
                     console.log("Document data:", data["C152"]);
                     console.log("Got here - Init - Fetched Data... Valid?");
                     efbSettings.latestVersion = data["C152"];
-                    if (efbSettings.currentVersion != efbSettings.latestVersion) {
-                        document.getElementById("outdatedVersion").innerHTML =
-                            "UPDATE: C152 Version " +
-                                efbSettings.latestVersion +
-                                ", is available! \n Please update to ensure the best experience!";
-                        document.getElementById("efbWarning").classList.remove("hidden");
-                    }
                 }
                 else {
                     // doc.data() will be undefined in this case
@@ -16326,12 +16644,26 @@ class EFB extends BaseInstrument {
                     document.getElementById("test").innerHTML = "Failed";
                 }
             }
-            console.log("Got here - Init - Finally - Eveyrhing good?");
+            console.log("Got here - Init - Finally - Everything good?");
+            console.log(SimVar.GetSimVarValue("PLANE LATITUDE", 'degrees'));
+            loader1.load().then(() => {
+                new google.maps.Map(document.getElementById("map"), {
+                    center: { lat: SimVar.GetSimVarValue("PLANE LATITUDE", 'degrees'), lng: SimVar.GetSimVarValue("PLANE LONGITUDE", 'degrees') },
+                    zoom: 8,
+                });
+            });
             // document.getElementById("header")!.classList.remove("hidden");
             setTimeout(() => {
                 this.tablet_init_complete = true;
+                if (efbSettings.currentVersion != efbSettings.latestVersion) {
+                    document.getElementById("outdatedVersion").innerHTML =
+                        "UPDATE: C152 Version " +
+                            efbSettings.latestVersion +
+                            ", is available! \n Please update to ensure the best experience!";
+                    document.getElementById("efbWarning").classList.remove("hidden");
+                }
                 this.setScreen("Home");
-            }, 5000);
+            }, 500);
         }
     }
     drawAircraftFuel(id) {
