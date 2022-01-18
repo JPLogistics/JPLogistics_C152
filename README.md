@@ -6,6 +6,9 @@
 
 <a href="https://www.buymeacoffee.com/n95jpl" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="30%"></img></a>
 
+
+![Updates](https://videos.visualsource.net/c6cb4997a50f40b032d86e71d4ed943f.mp4)
+
 # OVER 43'000 DOWNLOADS!
 
 # JPLogistics MSFS_C152 :small_airplane:
