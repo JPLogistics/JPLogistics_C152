@@ -1,5 +1,4 @@
 var efbThemeSettings = {
-  theme: "light",
   colorBG: "white",
   colorText: "black",
   colorHeader: "blue",

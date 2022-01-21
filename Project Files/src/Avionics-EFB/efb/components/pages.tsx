@@ -10,25 +10,43 @@ export class Pages extends DisplayComponent<any> {
   public render(): VNode {
     return (
       <div id="pages">
-        <div id="BootPage"> {/*data-theme={efbThemeSettings.theme}> */}
+        <div id="BootPage">
+          {" "}
+          {/*> */}
           <div class="absolute-center">
-          <div id="circle">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-    <defs>
-        <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "/>
-    </defs>
-    <circle cx="150" cy="100" r="75" fill="none"/>
-    <g>
-        <use xlink:href="#circlePath" fill="none"/>
-        <text fill="#fff">
-            <textPath xlink:href="#circlePath">Text rotating around a circle path with SVG!</textPath>
-        </text>
-    </g>
-</svg>
-</div>
+            <div id="circle">
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                width="300px"
+                height="300px"
+                viewBox="0 0 300 300"
+                enable-background="new 0 0 300 300"
+                xml:space="preserve"
+              >
+                <defs>
+                  <path
+                    id="circlePath"
+                    d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
+                  />
+                </defs>
+                <circle cx="150" cy="100" r="75" fill="none" />
+                <g>
+                  <use xlink:href="#circlePath" fill="none" />
+                  <text fill="#fff">
+                    <textPath xlink:href="#circlePath">
+                      Text rotating around a circle path with SVG!
+                    </textPath>
+                  </text>
+                </g>
+              </svg>
+            </div>
           </div>
         </div>
-        <div id="HomePage" class="hidden" data-theme={efbThemeSettings.theme}>
+        <div id="HomePage" class="hidden" >
           <div class="grid grid-cols-3 gap-4 absolute-center">
             <div>
               {/*
@@ -192,21 +210,20 @@ export class Pages extends DisplayComponent<any> {
             </div>
           </div>
         </div>
-        <div id="PayloadPage"
+        <div
+          id="PayloadPage"
           class="hidden"
-          data-theme={efbThemeSettings.theme}
+          
         >
           <div class="svg-center" id="aircraft-svg"></div>
         </div>
-        <div id="MapPage"
-          class="hidden"
-        >
-          <div id="map"></div>
+        <div id="MapPage" class="hidden">
+          <div class="map-center" id="map"></div>
         </div>
         <div
           id="SettingsPage"
           class="hidden"
-          data-theme={efbThemeSettings.theme}
+          
         >
           <div class="column50 shade5 padding16" style="height: 512px;">
             <h3 class="shade15 padding8H">Testing Check Boxes</h3>
@@ -279,8 +296,8 @@ export class Headers extends DisplayComponent<any> {
     return (
       <div id="Header">
         <div
-          id="navButton1"
-          class="rounded-lg bg-blue-500 hover:bg-blue-400 transition-colors rounded-[8px] px-[4px] py-[4px] text-white focus:ring-2 ring-blue-500"
+          id="navButton1" style="width:200px;float:left"
+          class="rounded-lg  hover:bg-blue-400 transition-colors rounded-[8px] px-[4px] py-[4px] text-white focus:ring-2 ring-blue-500"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -293,7 +310,8 @@ export class Headers extends DisplayComponent<any> {
             <path d="M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
           </svg>
         </div>
-        <div id="appPageTitle" class="absolute-center">
+        <div
+          id="appPageTitle" style="width:600px;float:left">
           JPLogistics EFB V0.0.1
         </div>
       </div>
@@ -313,6 +331,6 @@ export class Warning extends DisplayComponent<any> {
 }
 export class Error extends DisplayComponent<any> {
   public render(): VNode {
-    return <div class="absolute-center">Oops... somethings went wrong!</div>;
+    return <div class="absolute-center rounded-full">Oops... somethings went wrong!</div>;
   }
 }

@@ -2,11 +2,13 @@ import { FSComponent, } from "msfssdk";
 import { Loader } from "@googlemaps/js-api-loader";
 import { initializeApp, setLogLevel } from "firebase/app";
 import { getFirestore, doc, getDoc, getDocFromCache, } from "firebase/firestore";
-import { efbSettings, efbThemeSettings } from "./components/functions/settings";
+import { efbSettings } from "./components/functions/settings";
 import { round } from "./components/functions/functions";
 import { Headers, Error, Pages, Warning } from "./components/pages";
 import "./styles/efb.css";
 import "./styles/tailwind.css";
+import { updateAircraftVar } from "./components/functions/functions";
+import { aircraft } from "./components/functions/aircraft";
 const firebaseConfig = {
     apiKey: "AIzaSyAHyxydnYVu2B3svGQMrfOtcBPAxqSjVyk",
     authDomain: "jplogistics-msfs.firebaseapp.com",
@@ -32,6 +34,7 @@ class EFB extends BaseInstrument {
         this.appCount = 7;
         this.appSelected = "Boot";
         this.appPrevious = "Boot";
+        this.frame = 0;
     }
     get templateID() {
         console.log("Here....1.2");
@@ -41,13 +44,10 @@ class EFB extends BaseInstrument {
         return true;
     }
     async connectedCallback() {
+        this.frame = 0;
+        updateAircraftVar(true);
         console.log("Got here... 1.5");
         super.connectedCallback();
-        var title = SimVar.GetSimVarValue("TITLE", "string");
-        this.livery = title.replace(/\s+/g, '_');
-        // SimVar.SetSimVarValue("L:EFB_Theme", "string", "light")
-        // .then(() => efbThemeSettings.theme = SimVar.GetSimVarValue("L:EFB_Theme", "string") && console.log(efbThemeSettings.theme));;
-        // ;
         FSComponent.render(FSComponent.buildComponent(Pages, null), document.getElementById("efbContent"));
         FSComponent.render(FSComponent.buildComponent(Headers, null), document.getElementById("efbHeader"));
         FSComponent.render(FSComponent.buildComponent(Warning, null), document.getElementById("efbWarning"));
@@ -85,40 +85,40 @@ class EFB extends BaseInstrument {
         this.stateRFF = this.getChildById("stateRFF");
         this.stateRFF.addEventListener("mouseup", this.stateRFFPress.bind(this));
         // SET INFO TO IPAD
-        if (SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + this.livery, 'bool') == 1) {
+        if (SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + aircraft.details.livery, "bool") == 1) {
             this.settingsToggleStateSaving.checked = true;
-            console.log(SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + this.livery, 'bool'));
+            console.log(SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + aircraft.details.livery, "bool"));
         }
-        // if ((await SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + this.livery, 'bool')) == 1) {
+        // if ((await SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + aircraft.details.livery, 'bool')) == 1) {
         //   this.settingsToggleStateSaving.checked = true;
         // } else {
         //   this.settingsToggleStateSaving.checked = false;
         // }
-        if (SimVar.GetSimVarValue("JPL152IP_ENGMAINTONOFF_" + this.livery, 'bool') == 1) {
+        if (SimVar.GetSimVarValue("JPL152IP_ENGMAINTONOFF_" + aircraft.details.livery, "bool") == 1) {
             this.settingsToggleMaintenance.checked = true;
         }
         else {
             this.settingsToggleMaintenance.checked = false;
         }
-        if (SimVar.GetSimVarValue("JPL152IP_CLOCKEGT_" + this.livery, 'bool') == 1) {
+        if (aircraft.equipment.egt) {
             this.settingsToggleEGT.checked = true;
         }
         else {
             this.settingsToggleEGT.checked = false;
         }
-        if (SimVar.GetSimVarValue("JPL152IP_APVIZ_" + this.livery, 'bool') == 1) {
+        if (SimVar.GetSimVarValue("JPL152IP_APVIZ_" + aircraft.details.livery, "bool") == 1) {
             this.settingsToggleAP.checked = true;
         }
         else {
             this.settingsToggleAP.checked = false;
         }
-        if (SimVar.GetSimVarValue("JPL152IP_PILOTVIZ_" + this.livery, 'bool') == 1) {
+        if (SimVar.GetSimVarValue("JPL152IP_PILOTVIZ_" + aircraft.details.livery, "bool") == 1) {
             this.settingsTogglepilotViz.checked = true;
         }
         else {
             this.settingsTogglepilotViz.checked = false;
         }
-        if (SimVar.GetSimVarValue("JPL152IP_COPILOTVIZ_" + this.livery, 'bool') == 1) {
+        if (SimVar.GetSimVarValue("JPL152IP_COPILOTVIZ_" + aircraft.details.livery, "bool") == 1) {
             this.settingsToggleCopilotViz.checked = true;
         }
         else {
@@ -151,6 +151,10 @@ class EFB extends BaseInstrument {
     }
     navButton3Press() {
         this.setScreen("Map");
+        map.setCenter({
+            lat: aircraft.location.lat,
+            lng: aircraft.location.long,
+        });
     }
     navButton4Press() {
         this.setScreen("Maintenance");
@@ -168,9 +172,17 @@ class EFB extends BaseInstrument {
         super.disconnectedCallback();
     }
     Update() {
+        this.frame++;
         super.Update();
         var debugVar = "";
         try {
+            debugVar = "Set Aircraft Vars";
+            if (this.frame % 5 == 0) {
+                updateAircraftVar(true);
+            }
+            debugVar = "Upload Aircraft Vars";
+            if (this.frame % 60 == 0) {
+            }
             if (this.appSelected == "Boot") {
                 debugVar = "Boot Screen";
             }
@@ -182,6 +194,9 @@ class EFB extends BaseInstrument {
                 this.drawAircraftFuel("aircraft-svg");
             }
             else if (this.appSelected == "Map") {
+                if (this.frame % 30 == 0) {
+                    this.mapMarkersAircraft();
+                }
             }
         }
         catch (e) {
@@ -228,8 +243,7 @@ class EFB extends BaseInstrument {
         console.log("Got here - Init - Start of Tablet Init");
         if (this.tablet_init_complete == false) {
             // App
-            SimVar.SetSimVarValue("L:EFB_Theme", "string", "light");
-            efbThemeSettings.theme = SimVar.GetSimVarValue("L:EFB_Theme", "string");
+            //SimVar.SetSimVarValue("L:EFB_Theme", "string", "light");
             const docRef = doc(db, "JPL-Data", "Versions");
             console.log("Got here - Init - Set Simvar & Doc");
             try {
@@ -260,10 +274,14 @@ class EFB extends BaseInstrument {
                 }
             }
             console.log("Got here - Init - Finally - Everything good?");
-            console.log(SimVar.GetSimVarValue("PLANE LATITUDE", 'degrees'));
+            var UUID = Date.now().toString() + Math.floor(Math.random() * 1000).toString();
+            console.log(UUID);
             loader1.load().then(() => {
                 map = new google.maps.Map(document.getElementById("map"), {
-                    center: { lat: SimVar.GetSimVarValue("PLANE LATITUDE", 'degrees'), lng: SimVar.GetSimVarValue("PLANE LONGITUDE", 'degrees') },
+                    center: {
+                        lat: SimVar.GetSimVarValue("PLANE LATITUDE", "degrees"),
+                        lng: SimVar.GetSimVarValue("PLANE LONGITUDE", "degrees"),
+                    },
                     zoom: 8,
                 });
             });
@@ -280,6 +298,22 @@ class EFB extends BaseInstrument {
                 this.setScreen("Home");
             }, 500);
         }
+    }
+    mapMarkersAircraft() {
+        var marker = new google.maps.Marker({
+            position: {
+                lat: aircraft.location.lat,
+                lng: aircraft.location.long,
+            },
+            icon: "./assets/plane_black.svg",
+            title: "My Aircraft!!",
+        });
+        marker.setIcon({
+            path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+            scale: 6,
+            rotation: aircraft.location.heading,
+        });
+        marker.setMap(map);
     }
     drawAircraftFuel(id) {
         const width = 36;

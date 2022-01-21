@@ -1,20 +1,13 @@
 .my-component {
     font-size: 80px;
 }
-
-[data-theme="light"] {
-    --background: white;
-    --text-primary: black;
-    --text-secondary: grey;
-    --accent: skyblue;
+:root {
+  --background: black;
+  --text-primary: white;
+  --text-secondary: grey;
+  --accent: darkblue;
 }
 
-[data-theme="dark"] {
-    --background: black;
-    --text-primary: white;
-    --text-secondary: grey;
-    --accent: darkblue;
-}
 #EFB {
     background-color: #ffd51c;
     color: #1a1a1a;
@@ -22,7 +15,7 @@
     height: 1488px;
 }
 
-#header {
+#Header {
     background: var(--accent);
     color: var(--text-primary);
     top: 0px;
@@ -39,7 +32,7 @@
     /* background-image: url("/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/background.jpg"); */
     background-color: var(--background);
     top: 200px;
-    height: 1238px;
+    height: 1288px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -51,6 +44,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.map-center {
+  margin: 0;
+  position: absolute;
+  top: 200px;
+  left: 0px;
 }
 #efbContent .svg-center{
     margin: 0;
@@ -67,17 +66,19 @@
   transform: translate(-25%, -25%);
 }
 #efbError {
-    width: auto;
-    padding: 32px;
-    position: absolute;
-    /* background-image: url("/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/background.jpg"); */
-    background-color: red;
-    top: 200px;
-    height: auto;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: black;
+  width: 2266px;
+  border-radius: 500px;
+  padding: 32px;
+  position: absolute;
+  /* background-image: url("/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/background.jpg"); */
+  background-color: red;
+  top: 200px;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  text-align: center;
 }
 #efbWarning {
     width: 2266px;
@@ -224,6 +225,6 @@
     position: absolute;
     top: 200;
     bottom: 0;
-    height:1238px;
-    width: 100%;
+    height:1288px;
+    width: 2266px;
   }

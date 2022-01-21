@@ -1,5 +1,4 @@
 import { FSComponent, DisplayComponent, } from "msfssdk";
-import { efbThemeSettings } from "./functions/settings";
 export class Pages extends DisplayComponent {
     render() {
         return (FSComponent.buildComponent("div", { id: "pages" },
@@ -15,7 +14,7 @@ export class Pages extends DisplayComponent {
                                 FSComponent.buildComponent("use", { "xlink:href": "#circlePath", fill: "none" }),
                                 FSComponent.buildComponent("text", { fill: "#fff" },
                                     FSComponent.buildComponent("textPath", { "xlink:href": "#circlePath" }, "Text rotating around a circle path with SVG!"))))))),
-            FSComponent.buildComponent("div", { id: "HomePage", class: "hidden", "data-theme": efbThemeSettings.theme },
+            FSComponent.buildComponent("div", { id: "HomePage", class: "hidden" },
                 FSComponent.buildComponent("div", { class: "grid grid-cols-3 gap-4 absolute-center" },
                     FSComponent.buildComponent("div", null,
                         FSComponent.buildComponent("button", { id: "navButton2", class: "rounded-lg bg-blue-500 hover:bg-blue-400 transition-colors rounded-[8px] px-[15px] py-[4px] text-white focus:ring-2 ring-blue-500" },
@@ -53,11 +52,11 @@ export class Pages extends DisplayComponent {
                             FSComponent.buildComponent("svg", { xmlns: "http://www.w3.org/2000/svg", height: "360px", viewBox: "0 0 24 24", width: "360px", fill: "#000000" },
                                 FSComponent.buildComponent("path", { d: "M0 0h24v24H0V0z", fill: "none" }),
                                 FSComponent.buildComponent("path", { d: "M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0\r\n                            3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z" })))))),
-            FSComponent.buildComponent("div", { id: "PayloadPage", class: "hidden", "data-theme": efbThemeSettings.theme },
+            FSComponent.buildComponent("div", { id: "PayloadPage", class: "hidden" },
                 FSComponent.buildComponent("div", { class: "svg-center", id: "aircraft-svg" })),
             FSComponent.buildComponent("div", { id: "MapPage", class: "hidden" },
-                FSComponent.buildComponent("div", { id: "map" })),
-            FSComponent.buildComponent("div", { id: "SettingsPage", class: "hidden", "data-theme": efbThemeSettings.theme },
+                FSComponent.buildComponent("div", { class: "map-center", id: "map" })),
+            FSComponent.buildComponent("div", { id: "SettingsPage", class: "hidden" },
                 FSComponent.buildComponent("div", { class: "column50 shade5 padding16", style: "height: 512px;" },
                     FSComponent.buildComponent("h3", { class: "shade15 padding8H" }, "Testing Check Boxes"),
                     FSComponent.buildComponent("div", null,
@@ -104,11 +103,11 @@ export class Pages extends DisplayComponent {
 export class Headers extends DisplayComponent {
     render() {
         return (FSComponent.buildComponent("div", { id: "Header" },
-            FSComponent.buildComponent("div", { id: "navButton1", class: "rounded-lg bg-blue-500 hover:bg-blue-400 transition-colors rounded-[8px] px-[4px] py-[4px] text-white focus:ring-2 ring-blue-500" },
+            FSComponent.buildComponent("div", { id: "navButton1", style: "width:200px;float:left", class: "rounded-lg  hover:bg-blue-400 transition-colors rounded-[8px] px-[4px] py-[4px] text-white focus:ring-2 ring-blue-500" },
                 FSComponent.buildComponent("svg", { xmlns: "http://www.w3.org/2000/svg", height: "192px", viewBox: "0 0 24 24", width: "192px", fill: "#ffffff" },
                     FSComponent.buildComponent("path", { d: " M0 0h24v24H0V0z", fill: "none" }),
                     FSComponent.buildComponent("path", { d: "M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" }))),
-            FSComponent.buildComponent("div", { id: "appPageTitle", class: "absolute-center" }, "JPLogistics EFB V0.0.1")));
+            FSComponent.buildComponent("div", { id: "appPageTitle", style: "width:600px;float:left" }, "JPLogistics EFB V0.0.1")));
     }
 }
 export class Warning extends DisplayComponent {
@@ -119,7 +118,7 @@ export class Warning extends DisplayComponent {
 }
 export class Error extends DisplayComponent {
     render() {
-        return FSComponent.buildComponent("div", { class: "absolute-center" }, "Oops... somethings went wrong!");
+        return FSComponent.buildComponent("div", { class: "absolute-center rounded-full" }, "Oops... somethings went wrong!");
     }
 }
 //# sourceMappingURL=pages.js.map
