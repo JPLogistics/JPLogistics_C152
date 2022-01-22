@@ -17,11 +17,10 @@ import {
   getDocFromCache,
 } from "firebase/firestore";
 import { efbSettings, efbThemeSettings } from "./components/functions/settings";
-import { round } from "./components/functions/functions";
+import { round, uploadAircraftVar, updateAircraftVar} from "./components/functions/functions";
 import { Headers, Error, Pages, Warning } from "./components/pages";
 import "./styles/efb.css";
 import "./styles/tailwind.css";
-import { updateAircraftVar } from "./components/functions/functions";
 import { aircraft } from "./components/functions/aircraft";
 const firebaseConfig = {
   apiKey: "AIzaSyAHyxydnYVu2B3svGQMrfOtcBPAxqSjVyk",
@@ -78,9 +77,10 @@ class EFB extends BaseInstrument {
 
   public async connectedCallback() {
     this.frame = 0;
-    updateAircraftVar(true);
-    console.log("Got here... 1.5");
     super.connectedCallback();
+    await updateAircraftVar(true)
+    console.log("Got here... 1.5");
+    
     FSComponent.render(<Pages />, document.getElementById("efbContent"));
     FSComponent.render(<Headers />, document.getElementById("efbHeader"));
     FSComponent.render(<Warning />, document.getElementById("efbWarning"));
@@ -145,18 +145,10 @@ class EFB extends BaseInstrument {
 
     // SET INFO TO IPAD
     if (
-      SimVar.GetSimVarValue(
-        "JPL152IP_SSONOFF_" + aircraft.details.livery,
-        "bool"
-      ) == 1
+      aircraft.stateSaving
     ) {
       this.settingsToggleStateSaving.checked = true;
-      console.log(
-        SimVar.GetSimVarValue(
-          "JPL152IP_SSONOFF_" + aircraft.details.livery,
-          "bool"
-        )
-      );
+      console.log("State-saving showing as ENABLED!")
     }
 
     // if ((await SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + aircraft.details.livery, 'bool')) == 1) {
@@ -166,14 +158,13 @@ class EFB extends BaseInstrument {
     // }
 
     if (
-      SimVar.GetSimVarValue(
-        "JPL152IP_ENGMAINTONOFF_" + aircraft.details.livery,
-        "bool"
-      ) == 1
+      aircraft.maintenance.enabled
     ) {
       this.settingsToggleMaintenance.checked = true;
+      console.log("Aircraft Maintenance is ENABLED!");
     } else {
       this.settingsToggleMaintenance.checked = false;
+      console.log("Aircraft Maintenance is DISABLED!");
     }
 
     if (
@@ -185,14 +176,13 @@ class EFB extends BaseInstrument {
     }
 
     if (
-      SimVar.GetSimVarValue(
-        "JPL152IP_APVIZ_" + aircraft.details.livery,
-        "bool"
-      ) == 1
+      aircraft.equipment.ap
     ) {
       this.settingsToggleAP.checked = true;
+      console.log("Cockpit: AP is ENABLED!");
     } else {
       this.settingsToggleAP.checked = false;
+      console.log("Cockpit: AP is DSIABLED!");
     }
 
     if (
@@ -298,6 +288,7 @@ class EFB extends BaseInstrument {
       }
       debugVar = "Upload Aircraft Vars";
       if (this.frame % 60 == 0) {
+        uploadAircraftVar();
       }
       if (this.appSelected == "Boot") {
         debugVar = "Boot Screen";
@@ -390,10 +381,10 @@ class EFB extends BaseInstrument {
           document.getElementById("map") as HTMLElement,
           {
             center: {
-              lat: SimVar.GetSimVarValue("PLANE LATITUDE", "degrees"),
-              lng: SimVar.GetSimVarValue("PLANE LONGITUDE", "degrees"),
+              lat: aircraft.location.lat,
+              lng: aircraft.location.long
             },
-            zoom: 8,
+            zoom: 12,
           }
         );
       });
@@ -401,7 +392,7 @@ class EFB extends BaseInstrument {
       setTimeout(() => {
         this.tablet_init_complete = true;
         if (efbSettings.currentVersion != efbSettings.latestVersion) {
-          document.getElementById("outdatedVersion")!.innerHTML =
+          document.getElementById("warningText")!.innerHTML =
             "UPDATE: C152 Version " +
             efbSettings.latestVersion +
             ", is available! \n Please update to ensure the best experience!";
@@ -411,14 +402,20 @@ class EFB extends BaseInstrument {
       }, 500);
     }
   }
-
+  aircraftSVGmy = {
+    path: "M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z",
+    strokeColor: "#F00",
+    fillColor: "#F00",
+    fillOpacity: 1,
+    rotation: aircraft.location.heading
+  }
   mapMarkersAircraft() {
     var marker = new google.maps.Marker({
       position: {
         lat: aircraft.location.lat,
         lng: aircraft.location.long,
       },
-      icon: "./assets/plane_black.svg",
+      icon: this.aircraftSVGmy,
       title: "My Aircraft!!",
     });
     marker.setIcon({
@@ -437,22 +434,10 @@ class EFB extends BaseInstrument {
 
     let colorLabelForeground = "fffdf4";
     let colorLabelBackground = "565656";
-    let lGallons = SimVar.GetSimVarValue(
-      "A:FUEL TANK LEFT MAIN QUANTITY",
-      "Gallons"
-    );
-    let lCapacity = SimVar.GetSimVarValue(
-      "A:FUEL TANK LEFT MAIN CAPACITY",
-      "Gallons"
-    );
-    let rGallons = SimVar.GetSimVarValue(
-      "A:FUEL TANK RIGHT MAIN QUANTITY",
-      "Gallons"
-    );
-    let rCapacity = SimVar.GetSimVarValue(
-      "A:FUEL TANK RIGHT MAIN CAPACITY",
-      "Gallons"
-    );
+    let lGallons = aircraft.fuel.leftTank.Quantity;
+    let lCapacity = aircraft.fuel.leftTank.Capacity;
+    let rGallons = aircraft.fuel.rightTank.Quantity;
+    let rCapacity = aircraft.fuel.rightTank.Capacity;
     const lfilledHeight = (barHeight - 4) * (lGallons / lCapacity);
     const rfilledHeight = (barHeight - 4) * (rGallons / rCapacity);
     let svg = `

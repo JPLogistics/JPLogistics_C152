@@ -3,13 +3,17 @@ import { aircraft } from "./aircraft";
 export function round(value: any, decimals: any) {
   return parseFloat(value).toFixed(decimals);
 }
+export function uploadAircraftVar(){
 
-export function updateAircraftVar(initialize: Boolean) {
-  if (initialize) {
+}
+export async function updateAircraftVar(initialize: Boolean) {
+  if (initialize) { 
     aircraft.details.livery = SimVar.GetSimVarValue("TITLE", "string").replace(
       /\s+/g,
       "_"
     );
+    aircraft.stateSaving = SimVar.GetSimVarValue(
+      "JPL152IP_SSONOFF_" + aircraft.details.livery, "bool");
     aircraft.details.reg = SimVar.GetSimVarValue("", "string");
     aircraft.details.model = SimVar.GetSimVarValue("", "string");
     aircraft.fuel.leftTank.Capacity = SimVar.GetSimVarValue(
@@ -36,5 +40,5 @@ export function updateAircraftVar(initialize: Boolean) {
   aircraft.location.lat = SimVar.GetSimVarValue("PLANE LATITUDE", "degrees");
   aircraft.location.long = SimVar.GetSimVarValue("PLANE LONGITUDE", "degrees");
   aircraft.location.heading = SimVar.GetSimVarValue("PLANE HEADING", "degrees");
-  return "Done";
+  return true;
 }

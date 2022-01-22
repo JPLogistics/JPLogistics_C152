@@ -113,12 +113,16 @@ export class Headers extends DisplayComponent {
 export class Warning extends DisplayComponent {
     render() {
         return (FSComponent.buildComponent("div", { id: "outdatedVersion" },
-            FSComponent.buildComponent("div", { class: "absolute-center rounded-full" }, "OUTDATED: A newer version of this aircraft is availiable!")));
+            FSComponent.buildComponent("div", { class: "absolute-center rounded-full" },
+                FSComponent.buildComponent("div", { id: "Close Button", class: "hover:bg-yellow-400 rounded-[8px] px-[4px] py-[4px]", style: "inline-block" },
+                    FSComponent.buildComponent("svg", { xmlns: "http://www.w3.org/2000/svg", width: "100", height: "100", viewBox: "0 0 24 24", fill: "#000000" },
+                        FSComponent.buildComponent("path", { d: "M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" }))),
+                FSComponent.buildComponent("span", { id: "warningText", style: "inline-block" }, "OUTDATED: A newer version of this aircraft is availiable!"))));
     }
 }
 export class Error extends DisplayComponent {
     render() {
-        return FSComponent.buildComponent("div", { class: "absolute-center rounded-full" }, "Oops... somethings went wrong!");
+        return (FSComponent.buildComponent("div", { class: "absolute-center rounded-full" }, "Oops... somethings went wrong!"));
     }
 }
 //# sourceMappingURL=pages.js.map

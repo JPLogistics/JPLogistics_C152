@@ -46,7 +46,7 @@ export class Pages extends DisplayComponent<any> {
             </div>
           </div>
         </div>
-        <div id="HomePage" class="hidden" >
+        <div id="HomePage" class="hidden">
           <div class="grid grid-cols-3 gap-4 absolute-center">
             <div>
               {/*
@@ -210,21 +210,13 @@ export class Pages extends DisplayComponent<any> {
             </div>
           </div>
         </div>
-        <div
-          id="PayloadPage"
-          class="hidden"
-          
-        >
+        <div id="PayloadPage" class="hidden">
           <div class="svg-center" id="aircraft-svg"></div>
         </div>
         <div id="MapPage" class="hidden">
           <div class="map-center" id="map"></div>
         </div>
-        <div
-          id="SettingsPage"
-          class="hidden"
-          
-        >
+        <div id="SettingsPage" class="hidden">
           <div class="column50 shade5 padding16" style="height: 512px;">
             <h3 class="shade15 padding8H">Testing Check Boxes</h3>
             <div>
@@ -296,7 +288,8 @@ export class Headers extends DisplayComponent<any> {
     return (
       <div id="Header">
         <div
-          id="navButton1" style="width:200px;float:left"
+          id="navButton1"
+          style="width:200px;float:left"
           class="rounded-lg  hover:bg-blue-400 transition-colors rounded-[8px] px-[4px] py-[4px] text-white focus:ring-2 ring-blue-500"
         >
           <svg
@@ -310,8 +303,7 @@ export class Headers extends DisplayComponent<any> {
             <path d="M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
           </svg>
         </div>
-        <div
-          id="appPageTitle" style="width:600px;float:left">
+        <div id="appPageTitle" style="width:600px;float:left">
           JPLogistics EFB V0.0.1
         </div>
       </div>
@@ -323,7 +315,19 @@ export class Warning extends DisplayComponent<any> {
     return (
       <div id="outdatedVersion">
         <div class="absolute-center rounded-full">
-          OUTDATED: A newer version of this aircraft is availiable!
+          <div id="Close Button" class="hover:bg-yellow-400 rounded-[8px] px-[4px] py-[4px]" style="inline-block">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="100"
+              height="100"
+              viewBox="0 0 24 24"
+              fill="#000000"
+            >
+              <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
+            </svg>
+          </div>
+          <span id="warningText" style="inline-block">
+          OUTDATED: A newer version of this aircraft is availiable!</span>
         </div>
       </div>
     );
@@ -331,6 +335,10 @@ export class Warning extends DisplayComponent<any> {
 }
 export class Error extends DisplayComponent<any> {
   public render(): VNode {
-    return <div class="absolute-center rounded-full">Oops... somethings went wrong!</div>;
+    return (
+      <div class="absolute-center rounded-full">
+        Oops... somethings went wrong!
+      </div>
+    );
   }
 }
