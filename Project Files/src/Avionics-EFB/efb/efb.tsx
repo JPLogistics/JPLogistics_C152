@@ -4,6 +4,8 @@ import {
   VNode,
   ComponentProps,
   SimVarDefinition,
+  Subscribable,
+  Subject,
 } from "msfssdk";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { Loader } from "@googlemaps/js-api-loader";
@@ -16,7 +18,7 @@ import {
   getDoc,
   getDocFromCache,
 } from "firebase/firestore";
-import { efbSettings, efbThemeSettings } from "./components/functions/settings";
+import { efbSettings} from "./components/functions/settings";
 import { round, uploadAircraftVar, updateAircraftVar} from "./components/functions/functions";
 import { Headers, Error, Pages, Warning } from "./components/pages";
 import "./styles/efb.css";
@@ -43,6 +45,9 @@ const loader1 = new Loader({
 });
 let map: google.maps.Map;
 
+export interface PageProps extends ComponentProps {
+  aircraftSettings: Subscribable<object>;
+}
 class EFB extends BaseInstrument {
   tablet_init_complete = false;
   appCount = 7;
@@ -55,6 +60,7 @@ class EFB extends BaseInstrument {
   navButton5: any;
   navButton6: any;
   navButton7: any;
+
   settingsToggleStateSaving: any;
   settingsToggleMaintenance: any;
   settingsToggleEGT: any;
@@ -65,7 +71,6 @@ class EFB extends BaseInstrument {
   stateCADPress: any;
   stateRFF: any;
   stateRFFPress: any;
-  livery: string | undefined;
   frame = 0;
   get templateID(): string {
     console.log("Here....1.2");
@@ -74,14 +79,15 @@ class EFB extends BaseInstrument {
   get isInteractive() {
     return true;
   }
-
+  aircraft = Subject.create<object>(aircraft);
+  aircraftSettings = Subject.create<object>(aircraft.settings);
   public async connectedCallback() {
     this.frame = 0;
     super.connectedCallback();
     await updateAircraftVar(true)
     console.log("Got here... 1.5");
-    
-    FSComponent.render(<Pages />, document.getElementById("efbContent"));
+    this.aircraftSettings.sub(val => console.log("Aircraft Settings Triggered"));
+    FSComponent.render(<Pages aircraftSettings={this.aircraftSettings}/>, document.getElementById("efbContent"));
     FSComponent.render(<Headers />, document.getElementById("efbHeader"));
     FSComponent.render(<Warning />, document.getElementById("efbWarning"));
     FSComponent.render(<Error />, document.getElementById("efbError"));
@@ -105,7 +111,7 @@ class EFB extends BaseInstrument {
       "settingsToggleStateSaving"
     );
     this.settingsToggleStateSaving.addEventListener(
-      "change",
+      "click",
       this.settingsToggleStateSavingPress.bind(this)
     );
     this.settingsToggleMaintenance = this.getChildById(
@@ -144,10 +150,10 @@ class EFB extends BaseInstrument {
     this.stateRFF.addEventListener("mouseup", this.stateRFFPress.bind(this));
 
     // SET INFO TO IPAD
+    
     if (
-      aircraft.stateSaving
+      aircraft.settings.stateSaving
     ) {
-      this.settingsToggleStateSaving.checked = true;
       console.log("State-saving showing as ENABLED!")
     }
 
@@ -158,7 +164,7 @@ class EFB extends BaseInstrument {
     // }
 
     if (
-      aircraft.maintenance.enabled
+      aircraft.settings.maintenance.enabled
     ) {
       this.settingsToggleMaintenance.checked = true;
       console.log("Aircraft Maintenance is ENABLED!");
@@ -168,7 +174,7 @@ class EFB extends BaseInstrument {
     }
 
     if (
-      aircraft.equipment.egt
+      aircraft.settings.equipment.egt
     ) {
       this.settingsToggleEGT.checked = true;
     } else {
@@ -176,7 +182,7 @@ class EFB extends BaseInstrument {
     }
 
     if (
-      aircraft.equipment.ap
+      aircraft.settings.equipment.ap
     ) {
       this.settingsToggleAP.checked = true;
       console.log("Cockpit: AP is ENABLED!");
@@ -211,7 +217,7 @@ class EFB extends BaseInstrument {
     SimVar.SetSimVarValue(
       "L:JPL152_SSONOFF",
       "Bool",
-      this.settingsToggleStateSaving.checked
+      aircraft.settings.stateSaving ? false : true
     );
   }
   settingsToggleMaintenancePress() {
@@ -220,6 +226,7 @@ class EFB extends BaseInstrument {
       "Bool",
       this.settingsToggleMaintenance.checked
     );
+    aircraft.settings.stateSaving ? false : true
   }
   settingsToggleEGTPress() {
     SimVar.SetSimVarValue(
@@ -294,6 +301,10 @@ class EFB extends BaseInstrument {
         debugVar = "Boot Screen";
       } else if (this.appSelected == "Home") {
         debugVar = "Home Screen";
+      } 
+      else if (this.appSelected == "Settings") {
+        debugVar = "Settings Screen";
+        this.aircraftSettings.sub(val => ((this.getChildById("settingsToggleStateSaving").innerHTML("State Savinggg: " && aircraft.settings.stateSaving ? "ON" : "OFF"))))
       } else if (this.appSelected == "Payload") {
         debugVar = "Payload Screen";
         this.drawAircraftFuel("aircraft-svg");
@@ -418,11 +429,6 @@ class EFB extends BaseInstrument {
       icon: this.aircraftSVGmy,
       title: "My Aircraft!!",
     });
-    marker.setIcon({
-      path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-      scale: 6,
-      rotation: aircraft.location.heading,
-    })
     marker.setMap(map);
   }
 

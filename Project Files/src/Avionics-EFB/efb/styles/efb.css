@@ -2,12 +2,24 @@
     font-size: 80px;
 }
 :root {
-  --background: black;
+  --background: #000000;
   --text-primary: white;
   --text-secondary: grey;
-  --accent: darkblue;
+  --accent: #ff0000;
+}
+[data-theme='light'] {
+  --background: #fff;
+  --text-primary: #121416d8;
+  --link-color: #543fd7;
+  --accent: #add8e6;
 }
 
+[data-theme='dark'] {
+  --background: #212a2e;
+  --text-primary: #F7F8F8;
+  --link-color: #828fff;
+  --accent: #00008b;
+}
 #EFB {
     background-color: #ffd51c;
     color: #1a1a1a;

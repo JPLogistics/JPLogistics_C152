@@ -1,9 +1,9 @@
 import { FSComponent, DisplayComponent, } from "msfssdk";
+// import { efbThemeSettings } from "./functions/settings";
 export class Pages extends DisplayComponent {
     render() {
         return (FSComponent.buildComponent("div", { id: "pages" },
             FSComponent.buildComponent("div", { id: "BootPage" },
-                " ",
                 FSComponent.buildComponent("div", { class: "absolute-center" },
                     FSComponent.buildComponent("div", { id: "circle" },
                         FSComponent.buildComponent("svg", { version: "1.1", xmlns: "http://www.w3.org/2000/svg", "xmlns:xlink": "http://www.w3.org/1999/xlink", x: "0px", y: "0px", width: "300px", height: "300px", viewBox: "0 0 300 300", "enable-background": "new 0 0 300 300", "xml:space": "preserve" },
@@ -57,8 +57,9 @@ export class Pages extends DisplayComponent {
             FSComponent.buildComponent("div", { id: "MapPage", class: "hidden" },
                 FSComponent.buildComponent("div", { class: "map-center", id: "map" })),
             FSComponent.buildComponent("div", { id: "SettingsPage", class: "hidden" },
-                FSComponent.buildComponent("div", { class: "column50 shade5 padding16", style: "height: 512px;" },
-                    FSComponent.buildComponent("h3", { class: "shade15 padding8H" }, "Testing Check Boxes"),
+                FSComponent.buildComponent("div", { class: "grid grid-cols-4 gap-4 absolute-center" },
+                    FSComponent.buildComponent("div", null,
+                        FSComponent.buildComponent("button", { id: "settingsToggleStateSaving", height: "350px", width: "350px", class: "rounded-lg bg-blue-500 hover:bg-blue-400 transition-colors rounded-[8px] px-[15px] py-[4px] text-white focus:ring-2 ring-blue-500" })),
                     FSComponent.buildComponent("div", null,
                         FSComponent.buildComponent("label", { class: "toggle" },
                             FSComponent.buildComponent("input", { id: "settingsToggleStateSaving", type: "checkbox" }),
@@ -114,7 +115,7 @@ export class Warning extends DisplayComponent {
     render() {
         return (FSComponent.buildComponent("div", { id: "outdatedVersion" },
             FSComponent.buildComponent("div", { class: "absolute-center rounded-full" },
-                FSComponent.buildComponent("div", { id: "Close Button", class: "hover:bg-yellow-400 rounded-[8px] px-[4px] py-[4px]", style: "inline-block" },
+                FSComponent.buildComponent("div", { width: "120px", id: "Close Button", class: "hover:bg-yellow-400 rounded-[8px] px-[4px] py-[4px]", style: "inline-block" },
                     FSComponent.buildComponent("svg", { xmlns: "http://www.w3.org/2000/svg", width: "100", height: "100", viewBox: "0 0 24 24", fill: "#000000" },
                         FSComponent.buildComponent("path", { d: "M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" }))),
                 FSComponent.buildComponent("span", { id: "warningText", style: "inline-block" }, "OUTDATED: A newer version of this aircraft is availiable!"))));

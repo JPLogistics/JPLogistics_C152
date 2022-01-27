@@ -12,7 +12,7 @@ export async function updateAircraftVar(initialize: Boolean) {
       /\s+/g,
       "_"
     );
-    aircraft.stateSaving = SimVar.GetSimVarValue(
+    aircraft.settings.stateSaving = SimVar.GetSimVarValue(
       "JPL152IP_SSONOFF_" + aircraft.details.livery, "bool");
     aircraft.details.reg = SimVar.GetSimVarValue("", "string");
     aircraft.details.model = SimVar.GetSimVarValue("", "string");
@@ -24,7 +24,7 @@ export async function updateAircraftVar(initialize: Boolean) {
       "A:FUEL TANK RIGHT MAIN CAPACITY",
       "Gallons"
     );
-    aircraft.equipment.egt = SimVar.GetSimVarValue(
+    aircraft.settings.equipment.egt = SimVar.GetSimVarValue(
         "JPL152IP_CLOCKEGT_" + aircraft.details.livery,
         "bool"
       );

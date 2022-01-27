@@ -16253,15 +16253,19 @@ class fh extends oh {
     registerVersion(D, "3.4.3", "esm2017");
 }();
 
+// var efbThemeSettings = {
+//   colorBG: "white",
+//   colorText: "black",
+//   colorHeader: "blue",
+// };
 var efbSettings = {
     internet: true,
     signedIn: false,
-    currentVersion: "",
+    currentVersion: '',
     latestVersion: '',
 };
 
 var aircraft = {
-    stateSaving: true,
     details: {
         livery: "",
         reg: "",
@@ -16293,18 +16297,21 @@ var aircraft = {
         altitude: 0,
         speed: 0,
     },
-    maintenance: {
-        enabled: true,
-        oilRemaining: 0,
-        timeSinceService: 0,
-        sparkFoulTime: 0,
-    },
-    equipment: {
-        ap: true,
-        egt: true,
-        copilot: true,
-        pilot: false,
-        dme: true
+    settings: {
+        stateSaving: false,
+        maintenance: {
+            enabled: true,
+            oilRemaining: 0,
+            timeSinceService: 0,
+            sparkFoulTime: 0,
+        },
+        equipment: {
+            ap: true,
+            egt: true,
+            copilot: true,
+            pilot: false,
+            dme: true,
+        },
     },
 };
 
@@ -16316,12 +16323,12 @@ function uploadAircraftVar() {
 async function updateAircraftVar(initialize) {
     if (initialize) {
         aircraft.details.livery = SimVar.GetSimVarValue("TITLE", "string").replace(/\s+/g, "_");
-        aircraft.stateSaving = SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + aircraft.details.livery, "bool");
+        aircraft.settings.stateSaving = SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + aircraft.details.livery, "bool");
         aircraft.details.reg = SimVar.GetSimVarValue("", "string");
         aircraft.details.model = SimVar.GetSimVarValue("", "string");
         aircraft.fuel.leftTank.Capacity = SimVar.GetSimVarValue("A:FUEL TANK LEFT MAIN CAPACITY", "Gallons");
         aircraft.fuel.rightTank.Capacity = SimVar.GetSimVarValue("A:FUEL TANK RIGHT MAIN CAPACITY", "Gallons");
-        aircraft.equipment.egt = SimVar.GetSimVarValue("JPL152IP_CLOCKEGT_" + aircraft.details.livery, "bool");
+        aircraft.settings.equipment.egt = SimVar.GetSimVarValue("JPL152IP_CLOCKEGT_" + aircraft.details.livery, "bool");
     }
     aircraft.fuel.leftTank.Quantity = SimVar.GetSimVarValue("A:FUEL TANK LEFT MAIN QUANTITY", "Gallons");
     aircraft.fuel.rightTank.Quantity = SimVar.GetSimVarValue("A:FUEL TANK RIGHT MAIN QUANTITY", "Gallons");
@@ -16331,11 +16338,11 @@ async function updateAircraftVar(initialize) {
     return true;
 }
 
+// import { efbThemeSettings } from "./functions/settings";
 class Pages extends DisplayComponent {
     render() {
         return (FSComponent.buildComponent("div", { id: "pages" },
             FSComponent.buildComponent("div", { id: "BootPage" },
-                " ",
                 FSComponent.buildComponent("div", { class: "absolute-center" },
                     FSComponent.buildComponent("div", { id: "circle" },
                         FSComponent.buildComponent("svg", { version: "1.1", xmlns: "http://www.w3.org/2000/svg", "xmlns:xlink": "http://www.w3.org/1999/xlink", x: "0px", y: "0px", width: "300px", height: "300px", viewBox: "0 0 300 300", "enable-background": "new 0 0 300 300", "xml:space": "preserve" },
@@ -16389,8 +16396,9 @@ class Pages extends DisplayComponent {
             FSComponent.buildComponent("div", { id: "MapPage", class: "hidden" },
                 FSComponent.buildComponent("div", { class: "map-center", id: "map" })),
             FSComponent.buildComponent("div", { id: "SettingsPage", class: "hidden" },
-                FSComponent.buildComponent("div", { class: "column50 shade5 padding16", style: "height: 512px;" },
-                    FSComponent.buildComponent("h3", { class: "shade15 padding8H" }, "Testing Check Boxes"),
+                FSComponent.buildComponent("div", { class: "grid grid-cols-4 gap-4 absolute-center" },
+                    FSComponent.buildComponent("div", null,
+                        FSComponent.buildComponent("button", { id: "settingsToggleStateSaving", height: "350px", width: "350px", class: "rounded-lg bg-blue-500 hover:bg-blue-400 transition-colors rounded-[8px] px-[15px] py-[4px] text-white focus:ring-2 ring-blue-500" })),
                     FSComponent.buildComponent("div", null,
                         FSComponent.buildComponent("label", { class: "toggle" },
                             FSComponent.buildComponent("input", { id: "settingsToggleStateSaving", type: "checkbox" }),
@@ -16446,7 +16454,7 @@ class Warning extends DisplayComponent {
     render() {
         return (FSComponent.buildComponent("div", { id: "outdatedVersion" },
             FSComponent.buildComponent("div", { class: "absolute-center rounded-full" },
-                FSComponent.buildComponent("div", { id: "Close Button", class: "hover:bg-yellow-400 rounded-[8px] px-[4px] py-[4px]", style: "inline-block" },
+                FSComponent.buildComponent("div", { width: "120px", id: "Close Button", class: "hover:bg-yellow-400 rounded-[8px] px-[4px] py-[4px]", style: "inline-block" },
                     FSComponent.buildComponent("svg", { xmlns: "http://www.w3.org/2000/svg", width: "100", height: "100", viewBox: "0 0 24 24", fill: "#000000" },
                         FSComponent.buildComponent("path", { d: "M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" }))),
                 FSComponent.buildComponent("span", { id: "warningText", style: "inline-block" }, "OUTDATED: A newer version of this aircraft is availiable!"))));
@@ -16484,6 +16492,8 @@ class EFB extends BaseInstrument {
         this.appSelected = "Boot";
         this.appPrevious = "Boot";
         this.frame = 0;
+        this.aircraft = Subject.create(aircraft);
+        this.aircraftSettings = Subject.create(aircraft.settings);
         this.aircraftSVGmy = {
             path: "M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z",
             strokeColor: "#F00",
@@ -16504,7 +16514,8 @@ class EFB extends BaseInstrument {
         super.connectedCallback();
         await updateAircraftVar(true);
         console.log("Got here... 1.5");
-        FSComponent.render(FSComponent.buildComponent(Pages, null), document.getElementById("efbContent"));
+        this.aircraftSettings.sub(val => console.log("Aircraft Settings Triggered"));
+        FSComponent.render(FSComponent.buildComponent(Pages, { aircraftSettings: this.aircraftSettings }), document.getElementById("efbContent"));
         FSComponent.render(FSComponent.buildComponent(Headers$1, null), document.getElementById("efbHeader"));
         FSComponent.render(FSComponent.buildComponent(Warning, null), document.getElementById("efbWarning"));
         FSComponent.render(FSComponent.buildComponent(Error$1, null), document.getElementById("efbError"));
@@ -16525,7 +16536,7 @@ class EFB extends BaseInstrument {
         this.navButton7 = this.getChildById("navButton7");
         this.navButton7.addEventListener("click", this.navButton7Press.bind(this));
         this.settingsToggleStateSaving = this.getChildById("settingsToggleStateSaving");
-        this.settingsToggleStateSaving.addEventListener("change", this.settingsToggleStateSavingPress.bind(this));
+        this.settingsToggleStateSaving.addEventListener("click", this.settingsToggleStateSavingPress.bind(this));
         this.settingsToggleMaintenance = this.getChildById("settingsToggleMaintenance");
         this.settingsToggleMaintenance.addEventListener("change", this.settingsToggleMaintenancePress.bind(this));
         this.settingsToggleEGT = this.getChildById("settingsToggleEGT");
@@ -16541,8 +16552,7 @@ class EFB extends BaseInstrument {
         this.stateRFF = this.getChildById("stateRFF");
         this.stateRFF.addEventListener("mouseup", this.stateRFFPress.bind(this));
         // SET INFO TO IPAD
-        if (aircraft.stateSaving) {
-            this.settingsToggleStateSaving.checked = true;
+        if (aircraft.settings.stateSaving) {
             console.log("State-saving showing as ENABLED!");
         }
         // if ((await SimVar.GetSimVarValue("JPL152IP_SSONOFF_" + aircraft.details.livery, 'bool')) == 1) {
@@ -16550,19 +16560,27 @@ class EFB extends BaseInstrument {
         // } else {
         //   this.settingsToggleStateSaving.checked = false;
         // }
-        {
+        if (aircraft.settings.maintenance.enabled) {
             this.settingsToggleMaintenance.checked = true;
             console.log("Aircraft Maintenance is ENABLED!");
         }
-        if (aircraft.equipment.egt) {
+        else {
+            this.settingsToggleMaintenance.checked = false;
+            console.log("Aircraft Maintenance is DISABLED!");
+        }
+        if (aircraft.settings.equipment.egt) {
             this.settingsToggleEGT.checked = true;
         }
         else {
             this.settingsToggleEGT.checked = false;
         }
-        {
+        if (aircraft.settings.equipment.ap) {
             this.settingsToggleAP.checked = true;
             console.log("Cockpit: AP is ENABLED!");
+        }
+        else {
+            this.settingsToggleAP.checked = false;
+            console.log("Cockpit: AP is DSIABLED!");
         }
         if (SimVar.GetSimVarValue("JPL152IP_PILOTVIZ_" + aircraft.details.livery, "bool") == 1) {
             this.settingsTogglepilotViz.checked = true;
@@ -16578,10 +16596,11 @@ class EFB extends BaseInstrument {
         }
     }
     settingsToggleStateSavingPress() {
-        SimVar.SetSimVarValue("L:JPL152_SSONOFF", "Bool", this.settingsToggleStateSaving.checked);
+        SimVar.SetSimVarValue("L:JPL152_SSONOFF", "Bool", aircraft.settings.stateSaving ? false : true);
     }
     settingsToggleMaintenancePress() {
         SimVar.SetSimVarValue("L:JPL152_MAINTENANCE_ONOFF", "Bool", this.settingsToggleMaintenance.checked);
+        aircraft.settings.stateSaving ? false : true;
     }
     settingsToggleEGTPress() {
         SimVar.SetSimVarValue("L:JPL152_CLOCKEGT", "Bool", this.settingsToggleEGT.checked);
@@ -16641,6 +16660,10 @@ class EFB extends BaseInstrument {
             }
             else if (this.appSelected == "Home") {
                 debugVar = "Home Screen";
+            }
+            else if (this.appSelected == "Settings") {
+                debugVar = "Settings Screen";
+                this.aircraftSettings.sub(val => ((this.getChildById("settingsToggleStateSaving").innerHTML("State Savinggg: " && aircraft.settings.stateSaving ? "ON" : "OFF"))));
             }
             else if (this.appSelected == "Payload") {
                 debugVar = "Payload Screen";
@@ -16760,11 +16783,6 @@ class EFB extends BaseInstrument {
             },
             icon: this.aircraftSVGmy,
             title: "My Aircraft!!",
-        });
-        marker.setIcon({
-            path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-            scale: 6,
-            rotation: aircraft.location.heading,
         });
         marker.setMap(map);
     }

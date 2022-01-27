@@ -1,18 +1,21 @@
 import {
   FSComponent,
   DisplayComponent,
+  ComponentProps,
   VNode,
   CircleInterceptBuilder,
 } from "msfssdk";
-import { efbThemeSettings } from "./functions/settings";
+import { PageProps } from "../efb";
+import { aircraft } from "./functions/aircraft";
+import { efbSettings } from "./functions/settings";
+// import { efbThemeSettings } from "./functions/settings";
 
-export class Pages extends DisplayComponent<any> {
+
+export class Pages extends DisplayComponent<PageProps> {
   public render(): VNode {
     return (
-      <div id="pages">
+      <div id="pages" >
         <div id="BootPage">
-          {" "}
-          {/*> */}
           <div class="absolute-center">
             <div id="circle">
               <svg
@@ -217,8 +220,17 @@ export class Pages extends DisplayComponent<any> {
           <div class="map-center" id="map"></div>
         </div>
         <div id="SettingsPage" class="hidden">
-          <div class="column50 shade5 padding16" style="height: 512px;">
-            <h3 class="shade15 padding8H">Testing Check Boxes</h3>
+        <div class="grid grid-cols-4 gap-4 absolute-center">
+            <div>
+              {/*
+          <!-- Payload -->
+          */}
+              <button
+                id="settingsToggleStateSaving" height="350px" width="350px"
+                class="rounded-lg bg-blue-500 hover:bg-blue-400 transition-colors rounded-[8px] px-[15px] py-[4px] text-white focus:ring-2 ring-blue-500"
+              >
+              </button>
+            </div>
             <div>
               <label class="toggle">
                 <input id="settingsToggleStateSaving" type="checkbox" />
@@ -315,7 +327,7 @@ export class Warning extends DisplayComponent<any> {
     return (
       <div id="outdatedVersion">
         <div class="absolute-center rounded-full">
-          <div id="Close Button" class="hover:bg-yellow-400 rounded-[8px] px-[4px] py-[4px]" style="inline-block">
+          <div width="120px" id="Close Button" class="hover:bg-yellow-400 rounded-[8px] px-[4px] py-[4px]" style="inline-block">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="100"

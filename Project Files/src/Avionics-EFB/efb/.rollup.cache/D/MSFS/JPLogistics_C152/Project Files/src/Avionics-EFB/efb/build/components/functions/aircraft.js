@@ -1,5 +1,4 @@
 export var aircraft = {
-    stateSaving: true,
     details: {
         livery: "",
         reg: "",
@@ -31,18 +30,21 @@ export var aircraft = {
         altitude: 0,
         speed: 0,
     },
-    maintenance: {
-        enabled: true,
-        oilRemaining: 0,
-        timeSinceService: 0,
-        sparkFoulTime: 0,
-    },
-    equipment: {
-        ap: true,
-        egt: true,
-        copilot: true,
-        pilot: false,
-        dme: true
+    settings: {
+        stateSaving: false,
+        maintenance: {
+            enabled: true,
+            oilRemaining: 0,
+            timeSinceService: 0,
+            sparkFoulTime: 0,
+        },
+        equipment: {
+            ap: true,
+            egt: true,
+            copilot: true,
+            pilot: false,
+            dme: true,
+        },
     },
 };
 //# sourceMappingURL=aircraft.js.map
