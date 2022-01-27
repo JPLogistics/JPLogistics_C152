@@ -64,6 +64,10 @@ class KR87 extends BaseInstrument {
     Update() {
         super.Update();
         if (this.isElectricityAvailable()) {
+			// MOD GSD    If BFO Mode    then slave ADF Dial to Compass
+			if (this.BfoMode == true){
+			SimVar.SetSimVarValue("K:ADF_CARD_SET", "degrees", SimVar.GetSimVarValue("Plane heading degrees gyro","degrees"));
+			}
             if (this.chronoStarted) {
                 this.chronoValue += this.deltaTime / 1000;
             }

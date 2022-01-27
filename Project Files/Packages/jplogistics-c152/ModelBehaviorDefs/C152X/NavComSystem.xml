@@ -118,7 +118,7 @@
             (* Lvar state *)
             (&gt;K:COM_RECEIVE_ALL_TOGGLE)
           </LEFT_SINGLE_CODE>
-          <ANIM_CODE>(A:COM RECIEVE ALL, Bool) 100 *</ANIM_CODE>
+          <ANIM_CODE>(A:COM RECEIVE ALL, Bool) 100 *</ANIM_CODE>
           <WWISE_EVENT_1>navcom_audio_push_on</WWISE_EVENT_1>
           <NORMALIZED_TIME_1>0.1</NORMALIZED_TIME_1>
           <WWISE_EVENT_2>navcom_audio_push_off</WWISE_EVENT_2>
@@ -146,10 +146,10 @@
 			  <UseTemplate Name="ASOBO_GT_Emissive_Gauge">
 				<EMISSIVE_CODE>
 					(A:CIRCUIT ON:11, Bool) 1 ==
-					(A:COM RECIEVE ALL, Bool) 1 == and
+					(A:COM RECEIVE ALL, Bool) 1 == and
 						if{ (A:LIGHT POTENTIOMETER:5, Percent) 80 / }
 					(A:CIRCUIT ON:11, Bool) 1 ==
-					(A:COM RECIEVE ALL, Bool) 0 == and
+					(A:COM RECEIVE ALL, Bool) 0 == and
 						if{ (A:LIGHT POTENTIOMETER:5, Percent) 400 / }
 				</EMISSIVE_CODE>
 			  </UseTemplate>
