@@ -19,9 +19,9 @@
 			<NO_SIMVAR_LIGHT/>
 			<EMISSIVE_CODE>1</EMISSIVE_CODE>
 			<ANIM_NEVER_FAILS/>
-			<NO_TEXT_EMISSIVE>True</NO_TEXT_EMISSIVE>
+			<NO_TEXT_EMISSIVE>False</NO_TEXT_EMISSIVE>
 			<NO_INDICATOR>True</NO_INDICATOR>
-			<BUTTON_EMISSIVE>True</BUTTON_EMISSIVE>
+			<BUTTON_EMISSIVE>False</BUTTON_EMISSIVE>
 			<KEY_PREFIX>KAP140</KEY_PREFIX>
 			<WWISE_EVENT_1>transponder_push_button_on</WWISE_EVENT_1>
 			<WWISE_EVENT_2>transponder_push_button_off</WWISE_EVENT_2>
@@ -86,6 +86,12 @@
 			</AddParams>
 		</EditableTemplateParameters>
 		<!-- AP -->
+		<Component ID="AUTOPILOT_Frame_1" Node="AUTOPILOT_Frame_1">
+			<UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+				<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool) 1 == (A:LIGHT POTENTIOMETER:6, Percent) 1000 /</EMISSIVE_CODE>
+			</UseTemplate>
+		</Component>
+		<!-- AP MASTER -->
 		<Component ID="#AP_NODE_ID#" Node="#AP_NODE_ID#">
 			<Parameters Type="Override">
 				<BTN_ID>AP</BTN_ID>
@@ -107,7 +113,9 @@
 				<TOOLTIP_ENTRY_0>#INPUT_EVENT_ID_SOURCE#_#BTN_ID#</TOOLTIP_ENTRY_0>
 				<PART_ID>AUTOPILOT_Push_Autopilot</PART_ID>
 			</UseTemplate>
-			<!-- TODO:enable VS on AP MASTER activation -->
+			<UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+				<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool) 1 == (A:LIGHT POTENTIOMETER:6, Percent) 1000 /</EMISSIVE_CODE>
+			</UseTemplate>
 		</Component>
 		<!-- HDG -->
 		<Component ID="#HDG_NODE_ID#" Node="#HDG_NODE_ID#">
@@ -127,6 +135,9 @@
 				<LEFT_SINGLE_CODE>(&gt;B:#INPUT_EVENT_ID_SOURCE#_#BTN_ID#_Push)</LEFT_SINGLE_CODE>
 				<TOOLTIP_TITLE>@TT_Package.AUTOPILOT_PUSH_HEADING_TITLE</TOOLTIP_TITLE>
 				<TOOLTIP_ENTRY_0>#INPUT_EVENT_ID_SOURCE#_#BTN_ID#</TOOLTIP_ENTRY_0>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+				<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool) 1 == (A:LIGHT POTENTIOMETER:6, Percent) 1000 /</EMISSIVE_CODE>
 			</UseTemplate>
 		</Component>
 		<!-- NAV -->
@@ -148,6 +159,9 @@
 				<TOOLTIP_TITLE>@TT_Package.AUTOPILOT_PUSH_NAVIGATION_TITLE</TOOLTIP_TITLE>
 				<TOOLTIP_ENTRY_0>#INPUT_EVENT_ID_SOURCE#_#BTN_ID#</TOOLTIP_ENTRY_0>
 			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+				<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool) 1 == (A:LIGHT POTENTIOMETER:6, Percent) 1000 /</EMISSIVE_CODE>
+			</UseTemplate>
 		</Component>
 		<!-- APR -->
 		<Component ID="#APR_NODE_ID#" Node="#APR_NODE_ID#">
@@ -167,6 +181,9 @@
 				<LEFT_SINGLE_CODE>(&gt;B:#INPUT_EVENT_ID_SOURCE#_#BTN_ID#_Push)</LEFT_SINGLE_CODE>
 				<TOOLTIP_TITLE>@TT_Package.AUTOPILOT_PUSH_APPROACH_TITLE</TOOLTIP_TITLE>
 				<TOOLTIP_ENTRY_0>#INPUT_EVENT_ID_SOURCE#_#BTN_ID#</TOOLTIP_ENTRY_0>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+				<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool) 1 == (A:LIGHT POTENTIOMETER:6, Percent) 1000 /</EMISSIVE_CODE>
 			</UseTemplate>
 		</Component>
 		<!-- REV -->
@@ -188,6 +205,9 @@
 				<TOOLTIP_TITLE>@TT_Package.AUTOPILOT_PUSH_BACKCOURSE_TITLE</TOOLTIP_TITLE>
 				<TOOLTIP_ENTRY_0>#INPUT_EVENT_ID_SOURCE#_#BTN_ID#</TOOLTIP_ENTRY_0>
 			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+				<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool) 1 == (A:LIGHT POTENTIOMETER:6, Percent) 1000 /</EMISSIVE_CODE>
+			</UseTemplate>
 		</Component>
 		<!-- ALT -->
 		<Component ID="#ALT_NODE_ID#" Node="#ALT_NODE_ID#">
@@ -207,6 +227,9 @@
 				<LEFT_SINGLE_CODE>(&gt;B:#INPUT_EVENT_ID_SOURCE#_#BTN_ID#_Push)</LEFT_SINGLE_CODE>
 				<TOOLTIP_TITLE>@TT_Package.AUTOPILOT_PUSH_ALTITUDE_TITLE</TOOLTIP_TITLE>
 				<TOOLTIP_ENTRY_0>#INPUT_EVENT_ID_SOURCE#_#BTN_ID#</TOOLTIP_ENTRY_0>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+				<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool) 1 == (A:LIGHT POTENTIOMETER:6, Percent) 1000 /</EMISSIVE_CODE>
 			</UseTemplate>
 		</Component>
 		<!-- UP -->
@@ -229,6 +252,9 @@
 				<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
 				<TOOLTIP_ENTRY_0>#INPUT_EVENT_ID_SOURCE#_#BTN_ID#</TOOLTIP_ENTRY_0>
 			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+				<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool) 1 == (A:LIGHT POTENTIOMETER:6, Percent) 1000 /</EMISSIVE_CODE>
+			</UseTemplate>
 		</Component>
 		<!-- DN -->
 		<Component ID="#DN_NODE_ID#" Node="#DN_NODE_ID#">
@@ -249,6 +275,9 @@
 				<TOOLTIP_TITLE>'DECREASE VS'</TOOLTIP_TITLE>
 				<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
 				<TOOLTIP_ENTRY_0>#INPUT_EVENT_ID_SOURCE#_#BTN_ID#</TOOLTIP_ENTRY_0>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+				<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool) 1 == (A:LIGHT POTENTIOMETER:6, Percent) 1000 /</EMISSIVE_CODE>
 			</UseTemplate>
 		</Component>
 		<!-- BARO -->
@@ -274,7 +303,7 @@
 				<BINDING_DEC_0>Release</BINDING_DEC_0>
 				<BINDING_DEC_0_PARAM_0>0</BINDING_DEC_0_PARAM_0>
 				<SIMVAR_TO_WATCH_0>AUTOPILOT FLIGHT LEVEL CHANGE</SIMVAR_TO_WATCH_0>
-				<TT_DESCRIPTION_ID>@TT_Package.AUTOPILOT_PUSH_BARO_ACTION_SET</TT_DESCRIPTION_ID>
+				<TT_DESCRIPTION_ID>@TT_Package.AUTOPILOT_PUSH_BARO_ACTION</TT_DESCRIPTION_ID>
 				<GET_STATE_EXTERNAL>(A:AUTOPILOT FLIGHT LEVEL CHANGE, Bool) sp0</GET_STATE_EXTERNAL>
 			</UseInputEvent>
 			<UseTemplate Name = "ASOBO_GT_Push_Button_Timed">
@@ -285,6 +314,9 @@
 				<LEFT_SINGLE_CODE>(&gt;B:#INPUT_EVENT_ID_SOURCE#_#BTN_ID#_Push)</LEFT_SINGLE_CODE>
 				<SHORT_CLICK_CODE>(&gt;B:#INPUT_EVENT_ID_SOURCE#_#BTN_ID#_Release)</SHORT_CLICK_CODE>
 				<LONG_CLICK_CODE>(&gt;B:#INPUT_EVENT_ID_SOURCE#_#BTN_ID#_Release)</LONG_CLICK_CODE>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+				<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool) 1 == (A:LIGHT POTENTIOMETER:6, Percent) 1000 /</EMISSIVE_CODE>
 			</UseTemplate>
 		</Component>
 		<!-- ARM -->
@@ -306,6 +338,9 @@
 				<TOOLTIP_TITLE>'ALT ARM'</TOOLTIP_TITLE>
 				<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
 				<TOOLTIP_ENTRY_0>#INPUT_EVENT_ID_SOURCE#_#BTN_ID#</TOOLTIP_ENTRY_0>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Emissive_Gauge">
+				<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool) 1 == (A:LIGHT POTENTIOMETER:6, Percent) 1000 /</EMISSIVE_CODE>
 			</UseTemplate>
 		</Component>
 		<!-- Knob have different functions based on context -->
