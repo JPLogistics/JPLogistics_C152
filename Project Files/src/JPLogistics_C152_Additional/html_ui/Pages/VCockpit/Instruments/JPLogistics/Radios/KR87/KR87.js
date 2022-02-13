@@ -7,7 +7,9 @@ class KR87 extends BaseInstrument {
         this.chronoStarted = false;
         this.chronoValue = 0;
     }
-    get templateID() { return "KR87"; }
+    get templateID() {
+        return "KR87";
+    }
     connectedCallback() {
         super.connectedCallback();
         this.ANTAnnunciator = this.getChildById("ANTModeAnnunc");
@@ -18,6 +20,7 @@ class KR87 extends BaseInstrument {
         this.FltAnnunciator = this.getChildById("FLTModeAnnunc");
         this.EtAnnunciator = this.getChildById("ETModeAnnunc");
         this.RightDisplay = this.getChildById("RightDisplay");
+		this.Ident = this.getChildById("Ident");
     }
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -26,35 +29,27 @@ class KR87 extends BaseInstrument {
         if (this.isElectricityAvailable()) {
             if (_args[0] == "adf_AntAdf") {
                 this.AntMode = !this.AntMode;
-            }
-            else if (_args[0] == "adf_bfo") {
+            } else if (_args[0] == "adf_bfo") {
                 this.BfoMode = !this.BfoMode;
-            }
-            else if (_args[0] == "adf_frqTransfert") {
+            } else if (_args[0] == "adf_frqTransfert") {
                 if (this.RightDisplayMode != 0) {
                     this.RightDisplayMode = 0;
-                }
-                else {
+                } else {
                     SimVar.SetSimVarValue("K:ADF1_RADIO_SWAP", "Boolean", 0);
                 }
-            }
-            else if (_args[0] == "adf_FltEt") {
+            } else if (_args[0] == "adf_FltEt") {
                 if (this.RightDisplayMode == 1) {
                     this.RightDisplayMode = 2;
-                }
-                else {
+                } else {
                     this.RightDisplayMode = 1;
                 }
-            }
-            else if (_args[0] == "adf_SetRst") {
+            } else if (_args[0] == "adf_SetRst") {
                 if (this.RightDisplayMode == 2) {
                     if (this.chronoStarted) {
                         this.chronoStarted = false;
-                    }
-                    else if (this.chronoValue > 0) {
+                    } else if (this.chronoValue > 0) {
                         this.chronoValue = 0;
-                    }
-                    else {
+                    } else {
                         this.chronoStarted = true;
                     }
                 }
@@ -64,73 +59,103 @@ class KR87 extends BaseInstrument {
     Update() {
         super.Update();
         if (this.isElectricityAvailable()) {
+			
+			//PM Modif: End World4Fly Mod integration (Wrong radial and Rounded DME) and check for LOC or VOR
+			
 			// MOD GSD    If BFO Mode    then slave ADF Dial to Compass
-			if (this.BfoMode == true){
-			SimVar.SetSimVarValue("K:ADF_CARD_SET", "degrees", SimVar.GetSimVarValue("Plane heading degrees gyro","degrees"));
-			}
+			// if (this.BfoMode == true){
+			// SimVar.SetSimVarValue("K:ADF_CARD_SET", "degrees", SimVar.GetSimVarValue("Plane heading degrees gyro","degrees"));
+			// }
+			// ---------------------------------------------
+			
+			
+			
             if (this.chronoStarted) {
                 this.chronoValue += this.deltaTime / 1000;
             }
             if (this.AntMode == false) {
-                diffAndSetText(this.ADFAnnunciator, "ADF");
-                diffAndSetText(this.ANTAnnunciator, "");
+                this.ADFAnnunciator.textContent = "ADF";
+                this.ANTAnnunciator.textContent = "";
+				SimVar.SetSimVarValue("L:XMLVAR_ADF_MODE_SEL", "number", 2);
+            } else {
+                this.ADFAnnunciator.textContent = "";
+                this.ANTAnnunciator.textContent = "ANT";
+				SimVar.SetSimVarValue("L:XMLVAR_ADF_MODE_SEL", "number", 3);
             }
-            else {
-                diffAndSetText(this.ADFAnnunciator, "");
-                diffAndSetText(this.ANTAnnunciator, "ANT");
-            }
-            diffAndSetText(this.InUseFrequency, this.getActiveFrequency());
+            this.InUseFrequency.textContent = this.getActiveFrequency();
+			this.Ident.textContent = this.getIdent();
             if (this.BfoMode == true) {
-                diffAndSetText(this.BfoModeAnnunciator, "BFO");
-            }
-            else {
-                diffAndSetText(this.BfoModeAnnunciator, "");
+                this.BfoModeAnnunciator.textContent = "BFO";
+            } else {
+                this.BfoModeAnnunciator.textContent = "";
             }
             if (this.RightDisplayMode == 0) {
-                diffAndSetText(this.RightDisplay, this.getStbyFrequency());
-                diffAndSetText(this.StbyFreqAnnunciator, "FRQ");
-                diffAndSetText(this.FltAnnunciator, "");
-                diffAndSetText(this.EtAnnunciator, "");
+                this.RightDisplay.textContent = this.getStbyFrequency();
+                this.StbyFreqAnnunciator.textContent = "FRQ";
+                this.FltAnnunciator.textContent = "";
+                this.EtAnnunciator.textContent = "";
+            } else if (this.RightDisplayMode == 1) {
+                this.RightDisplay.textContent = this.getFlightTime();
+                this.StbyFreqAnnunciator.textContent = "";
+                this.FltAnnunciator.textContent = "FLT";
+                this.EtAnnunciator.textContent = "";
+            } else if (this.RightDisplayMode == 2) {
+                this.RightDisplay.textContent = this.getChronoTime();
+                this.StbyFreqAnnunciator.textContent = "";
+                this.FltAnnunciator.textContent = "";
+                this.EtAnnunciator.textContent = "ET";
             }
-            else if (this.RightDisplayMode == 1) {
-                diffAndSetText(this.RightDisplay, this.getFlightTime());
-                diffAndSetText(this.StbyFreqAnnunciator, "");
-                diffAndSetText(this.FltAnnunciator, "FLT");
-                diffAndSetText(this.EtAnnunciator, "");
-            }
-            else if (this.RightDisplayMode == 2) {
-                diffAndSetText(this.RightDisplay, this.getChronoTime());
-                diffAndSetText(this.StbyFreqAnnunciator, "");
-                diffAndSetText(this.FltAnnunciator, "");
-                diffAndSetText(this.EtAnnunciator, "ET");
-            }
+        } else {
+            this.ADFAnnunciator.textContent = "";
+            this.ANTAnnunciator.textContent = "";
+            this.InUseFrequency.textContent = "";
+            this.BfoModeAnnunciator.textContent = "";
+            this.RightDisplay.textContent = "";
+            this.StbyFreqAnnunciator.textContent = "";
+            this.FltAnnunciator.textContent = "";
+            this.EtAnnunciator.textContent = "";
         }
-        else {
-            diffAndSetText(this.ADFAnnunciator, "");
-            diffAndSetText(this.ANTAnnunciator, "");
-            diffAndSetText(this.InUseFrequency, "");
-            diffAndSetText(this.BfoModeAnnunciator, "");
-            diffAndSetText(this.RightDisplay, "");
-            diffAndSetText(this.StbyFreqAnnunciator, "");
-            diffAndSetText(this.FltAnnunciator, "");
-            diffAndSetText(this.EtAnnunciator, "");
-        }
-    }	
+    }
     frequency1DigitsFormat(_num) {
         var freq = Math.round(_num * 100 - 0.1) / 100;
         return fastToFixed(freq, 1);
-    }	
+    }
+    frequency0DigitsFormat(_num) {
+        var freq = Math.round(_num * 100 - 0.1) / 100;
+        return fastToFixed(freq, 0);
+    }
+	getIdent() {
+		var value = SimVar.GetSimVarValue("ADF IDENT:1", "string");
+		if (SimVar.GetSimVarValue("ADF SIGNAL:1", "number") > 1) {
+			if (value) {
+				return value + '';
+			}
+		}
+        return "";
+	}
     getActiveFrequency() {
         var value = SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz");
         if (value) {
-            return this.frequency1DigitsFormat(SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz"));
+            return this.frequency0DigitsFormat(SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz"));
         }
         return "";
     }
+	/*
+    getActiveFrequency() {
+        var value = SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz");
+        if (value) {
+			return value2 + " " + this.frequency0DigitsFormat(SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz"));
+            } else {
+                return this.frequency0DigitsFormat(SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz"));
+            }
+        }
+        return "";
+    }
+	*/
     getStbyFrequency() {
         var value = SimVar.GetSimVarValue("ADF STANDBY FREQUENCY:1", "KHz");
         if (value) {
-            return this.frequency1DigitsFormat(SimVar.GetSimVarValue("ADF STANDBY FREQUENCY:1", "KHz"));
+            return this.frequency0DigitsFormat(SimVar.GetSimVarValue("ADF STANDBY FREQUENCY:1", "KHz"));
         }
         return "";
     }
@@ -138,7 +163,7 @@ class KR87 extends BaseInstrument {
         var value = SimVar.GetGameVarValue("FLIGHT DURATION", "seconds");
         if (value) {
             var time = Utils.SecondsToDisplayTime(value, true, false, false);
-            return time + '';
+            return time.toString();
         }
         return "";
     }
@@ -156,8 +181,7 @@ class KR87 extends BaseInstrument {
             if (seconds < 10)
                 time += "0";
             time += seconds;
-        }
-        else {
+        } else {
             if (hours < 10)
                 time += "0";
             time += hours;
@@ -166,7 +190,7 @@ class KR87 extends BaseInstrument {
                 time += "0";
             time += minutes;
         }
-        return time + '';
+        return time.toString();
     }
 }
 registerInstrument("kr87-element", KR87);

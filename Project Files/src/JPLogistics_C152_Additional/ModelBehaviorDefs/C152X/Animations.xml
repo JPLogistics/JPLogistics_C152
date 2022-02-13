@@ -82,15 +82,14 @@
 		<CURSOR>Grab</CURSOR>
 		<NO_ARROWS/>
 		<DRAG_CODE>
-		(L:C152_#ID#sState) 0 == if{
-		  16384 (M:DragPercent) *
-		  16384 min 0 max (&gt;L:JPL152_#ID#_Seat)
-		}
-		
-		(L:C152_#ID#sState) 1 == if{
-		  16384 (M:DragPercent) *
-		  5950 min 0 max (&gt;L:JPL152_#ID#_Seat)
-		}
+		  (L:C152_#ID#sState) 0 == if{
+		    16384 (M:DragPercent) *
+		    16384 min 0 max (&gt;L:JPL152_#ID#_Seat)
+		  }
+		  (L:C152_#ID#sState) 1 == if{
+		    16384 (M:DragPercent) *
+		    5950 min 0 max (&gt;L:JPL152_#ID#_Seat)
+		  }
 		</DRAG_CODE>
 		<ANIM_CODE>(L:JPL152_#ID#_Seat, position 16k) 16384 / 100 *</ANIM_CODE>
 		<ANIM_NAME>#ID#SeatAnim</ANIM_NAME>
@@ -99,12 +98,10 @@
 		  (L:C152_#ID#sState) 0 == if{
 			(L:JPL152_#ID#_Seat, position 16k) #SCROLL_INCREMENT# + 16384 min (&gt;L:JPL152_#ID#_Seat)
 		  }
-		  
 		  (L:C152_#ID#sState) 1 == if{
 			(L:JPL152_#ID#_Seat, position 16k) #SCROLL_INCREMENT# + 5950 min (&gt;L:JPL152_#ID#_Seat)
 		  }
 		</POSITIVE_AXIS_CODE>
-		
 		<NEGATIVE_AXIS_CODE>(L:JPL152_#ID#_Seat, position 16k) #SCROLL_INCREMENT# - 0 max (&gt;L:JPL152_#ID#_Seat)</NEGATIVE_AXIS_CODE>
 		<TOOLTIPID>#ID#'s Seat</TOOLTIPID>
 		<WWISE_EVENT_1>cabin_heat_lever_on</WWISE_EVENT_1>
@@ -280,17 +277,17 @@
 		}
 	</Update>
 
-	<!-- ### COPILOT WEIGHT/FOR WEPT ### 
+	<!-- ### COPILOT WEIGHT/FOR WEPT ### -->
 	<Update Frequency="2">
-		(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 1 ==
+		(L:C152_CoPilotsState, bool) 1 ==
 		if{
 			170 (&gt;A:PAYLOAD STATION WEIGHT:2, pounds)
 		}	
-		(L:XMLVAR_AUDIO_SPKR_SEL, Bool) 0 ==
+		(L:C152_CoPilotsState, bool) 0 ==
 		if{
 			0 (&gt;A:PAYLOAD STATION WEIGHT:2, pounds)
 		}
-	</Update>-->
+	</Update>
 	
 	<!--### FUEL INBALANCE ###-->
 	<Update Frequency="3">
@@ -305,12 +302,9 @@
 	</Update>	
 	
 <!-- ### CUSTOM RANDOMIZED MAG DROP EFFECT ### -->
-	<UseTemplate Name="ASOBO_GT_Update">
-		<UPDATE_ONCE>True</UPDATE_ONCE>
-		<UPDATE_CODE>
-			rand (&gt;O:JPL152_RANDOM_MAG)
-		</UPDATE_CODE>	
-	</UseTemplate>
+	<Update Once="True">
+		rand (&gt;O:JPL152_RANDOM_MAG)
+	</Update>
 	<Update Frequency="3">
 		(A:RECIP ENG LEFT MAGNETO:1, bool) 0 ==
 		if{
@@ -322,13 +316,10 @@
 		}
 	</Update>
 	
-	<UseTemplate Name="ASOBO_GT_Update">
-		<UPDATE_ONCE>True</UPDATE_ONCE>
-		<UPDATE_CODE>
-			0 (&gt;A:CIRCUIT SWITCH ON:42, bool)
-			0 (&gt;A:CIRCUIT SWITCH ON:43, bool)
-		</UPDATE_CODE>	
-	</UseTemplate>	
+	<Update Once="True">
+		0 (&gt;A:CIRCUIT SWITCH ON:42, bool)
+		0 (&gt;A:CIRCUIT SWITCH ON:43, bool)
+	</Update>	
 	<Update Frequency="3">
 		(A:PILOT TRANSMITTING, bool) 1 ==
 		(A:COPILOT TRANSMITTING, bool) 1 == or
@@ -342,6 +333,27 @@
 		(A:COM TRANSMIT:2, bool) 1 == and
 		if{ 1 (&gt;A:CIRCUIT SWITCH ON:43, bool) }
 		els{ 0 (&gt;A:CIRCUIT SWITCH ON:43, bool) }
+	</Update>
+
+<!-- ### SMOOTHER DIMMING ### -->
+	<Update Once="True">
+		180 (&gt;L:JPL152_TOD, enum)
+	</Update>
+	<Update Frequency="45">
+		(E:TIME OF DAY, enum) 3 == (L:JPL152_TOD, enum) 50 &gt; and if{
+			(L:JPL152_TOD, enum) 5 - (&gt;L:JPL152_TOD, enum)
+		}
+		(E:TIME OF DAY, enum) 1 == (L:JPL152_TOD, enum) 300 &lt; and if{
+			(L:JPL152_TOD, enum) 5 + (&gt;L:JPL152_TOD, enum)
+		}		
+		(E:TIME OF DAY, enum) 0 == (E:TIME OF DAY, enum) 2 == or if{
+			(L:JPL152_TOD, enum) 120 &gt; if{
+				(L:JPL152_TOD, enum) 5 - (&gt;L:JPL152_TOD, enum)
+			}
+			(L:JPL152_TOD, enum) 120 &lt; if{
+				(L:JPL152_TOD, enum) 5 + (&gt;L:JPL152_TOD, enum)
+			}
+		}
 	</Update>
 </Template>
 

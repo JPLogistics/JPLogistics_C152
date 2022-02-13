@@ -105,26 +105,36 @@ kap140-element #RightBlock {
   width: 32%;
 }
 kap140-element #RightBlock #Alert {
+  letter-spacing: 2px;
   font-size: 18px;
+  margin-left: 2%;
 }
 kap140-element #RightBlock #Fpm {
-  margin-left: 14%;
+  letter-spacing: 2px;
+  margin-left: 19%;
 }
 kap140-element #RightBlock #Ft {
+  letter-spacing: 2px;
   margin-left: 6%;
 }
 kap140-element #RightBlock #InHg {
-  margin-left: 36%;
+  letter-spacing: 2px;
+  margin-left: 17%;
+}
+kap140-element #RightBlock #Hpa {
+  letter-spacing: 2px;
+  margin-left: 19%;
+  width: 32%
 }
 kap140-element #RightBlock #Fpm, kap140-element #RightBlock #Ft, kap140-element #RightBlock #Hpa, kap140-element #RightBlock #InHg {
   visibility: hidden;
-  font-size: 20px;
+  font-size: 18px;
 }
 kap140-element #RightBlock[state=FPM] #Fpm, kap140-element #RightBlock[state=FT] #Ft, kap140-element #RightBlock[state=HPA] #Hpa, kap140-element #RightBlock[state=INHG] #InHg, kap140-element #RightBlock[state=ALL] #Fpm, kap140-element #RightBlock[state=ALL] #Ft, kap140-element #RightBlock[state=ALL] #Hpa, kap140-element #RightBlock[state=ALL] #InHg {
   visibility: visible;
 }
 kap140-element #RightDisplayTop {
-  padding-right: 40px;
+  margin-left: -43%;
   margin-bottom: 5%;
 }
 kap140-element #PTDisplay {
@@ -139,15 +149,17 @@ kap140-element #PTDisplay {
   font-weight: bold;
 }
 kap140-element .Display3Char {
+  letter-spacing: 9px;
   font-size: 45px;
   text-align: right;
   width: 70%;
   height: 42px;
 }
 kap140-element .Display6Char {
+  letter-spacing: 9px;
   font-size: 45px;
   text-align: right;
-  width: 120%;
+  width: 140%;
   height: 42px;
 }
 kap140-element .Align {

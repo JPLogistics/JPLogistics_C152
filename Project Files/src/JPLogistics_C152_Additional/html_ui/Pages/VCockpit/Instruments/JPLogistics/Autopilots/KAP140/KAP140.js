@@ -9,7 +9,8 @@ class KAP140 extends BaseInstrument {
         this.bAvionicsPowerOn = false;
         this.iTestingStep = -1;
         this.fCurrentStepDuration = 0.0;
-        this.tTestingStepsTime = [2000, 1200, 3200, 4000, 3200];
+        // this.tTestingStepsTime = [2000, 1200, 3200, 4000, 3200];
+		this.tTestingStepsTime = [500, 300, 800, 1000, 800];
         this.BaroMode = 0;
         // Whether altitude preselect has been armed.
         this.AltitudeArmed = false;
@@ -246,11 +247,11 @@ class KAP140 extends BaseInstrument {
                         switch (_args[0]) {
                             case "KAP140_Knob_Inner_INC":
                             case "KAP140_Knob_Outer_INC":
-                                SimVar.SetSimVarValue("K:KOHLSMAN_INC", "number", 2);
+                                // SimVar.SetSimVarValue("K:KOHLSMAN_INC", "number", 2);
                                 break;
                             case "KAP140_Knob_Outer_DEC":
                             case "KAP140_Knob_Inner_DEC":
-                                SimVar.SetSimVarValue("K:KOHLSMAN_DEC", "number", 2);
+                                // SimVar.SetSimVarValue("K:KOHLSMAN_DEC", "number", 2);
                                 break;
                         }
                     }
@@ -592,10 +593,10 @@ class KAP140 extends BaseInstrument {
         return (fastToFixed(SimVar.GetSimVarValue("AUTOPILOT VERTICAL HOLD VAR", "feet/minute"), 0)).replace(/\d+(?=(\d{3}))/, '$&,');
     }
     getBaroHPa() {
-        return (fastToFixed(SimVar.GetSimVarValue("KOHLSMAN SETTING MB:2", "Millibars"), 0)).replace(/\d+(?=(\d{3}))/, '$&,');
+        return (fastToFixed(SimVar.GetSimVarValue("KOHLSMAN SETTING MB:1", "Millibars"), 0)).replace(/\d+(?=(\d{3}))/, '$&,');
     }
     getBaroInHg() {
-        return fastToFixed(SimVar.GetSimVarValue("KOHLSMAN SETTING HG:2", "inHg"), 3);
+        return fastToFixed(SimVar.GetSimVarValue("KOHLSMAN SETTING HG:1", "inHg"), 2);
     }
     getAltitudeDifference() {
         return Math.abs(SimVar.GetSimVarValue("INDICATED ALTITUDE:2", "feet") - SimVar.GetSimVarValue("AUTOPILOT ALTITUDE LOCK VAR", "feet"));

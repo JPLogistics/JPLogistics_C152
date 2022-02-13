@@ -86,12 +86,6 @@
 			</AddParams>
 		</EditableTemplateParameters>
 		<!-- AP -->
-		<Component ID="AUTOPILOT_Frame_1" Node="AUTOPILOT_Frame_1">
-			<UseTemplate Name="ASOBO_GT_Emissive_Gauge">
-				<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool) 1 == (A:LIGHT POTENTIOMETER:6, Percent) 1000 /</EMISSIVE_CODE>
-			</UseTemplate>
-		</Component>
-		<!-- AP MASTER -->
 		<Component ID="#AP_NODE_ID#" Node="#AP_NODE_ID#">
 			<Parameters Type="Override">
 				<BTN_ID>AP</BTN_ID>
@@ -361,7 +355,7 @@
 				<WWISE_EVENT>navcom_frequency_inner_knob</WWISE_EVENT>
 				<TOOLTIP_TITLE>@TT_Package.AUTOPILOT_KNOB_ALTITUDESELECTED_TITLE</TOOLTIP_TITLE>
 				<TOOLTIP_ENTRY_0>#INPUT_EVENT_ID_SOURCE#_#KNOB_ID#</TOOLTIP_ENTRY_0>
-				<COUNT>36</COUNT>
+				<COUNT>20</COUNT>
 			</UseTemplate>
 		</Component>
 		<Component ID="#KNOB_1000_NODE_ID#" Node="#KNOB_1000_NODE_ID#">
@@ -381,7 +375,7 @@
 				<WWISE_EVENT>navcom_frequency_outer_knob</WWISE_EVENT>
 				<TOOLTIP_TITLE>@TT_Package.AUTOPILOT_KNOB_ALTITUDESELECTED_TITLE</TOOLTIP_TITLE>
 				<TOOLTIP_ENTRY_0>#INPUT_EVENT_ID_SOURCE#_#KNOB_ID#</TOOLTIP_ENTRY_0>
-				<COUNT>36</COUNT>
+				<COUNT>20</COUNT>
 			</UseTemplate>
 		</Component>
 	</Template>
