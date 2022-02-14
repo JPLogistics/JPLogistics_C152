@@ -71,7 +71,9 @@ class JPL152IP extends BaseInstrument {
 	this.adfvol = GetStoredData('JPL152IP_ADFVOL_'+this.livery) ? GetStoredData('JPL152IP_ADFVOL_'+this.livery) : 0;
 	this.adfact = GetStoredData('JPL152IP_ADFACT_'+this.livery) ? GetStoredData('JPL152IP_ADFACT_'+this.livery) : 104700; //must be set to hz
 	this.adfstby = GetStoredData('JPL152IP_ADFSTBY_'+this.livery) ? GetStoredData('JPL152IP_ADFSTBY_'+this.livery) : 104700; //must be set to hz
-	this.adfcard = GetStoredData('JPL152IP_ADFCARD_'+this.livery) ? GetStoredData('JPL152IP_ADFCARD_'+this.livery) : 322;
+	this.adfcard = GetStoredData('JPL152IP_ADFCARD_'+this.livery) ? GetStoredData('JPL152IP_ADFCARD_'+this.livery) : 0;
+	this.adfneedle = GetStoredData('JPL152IP_ADFNEEDLE_'+this.livery) ? GetStoredData('JPL152IP_ADFNEEDLE_'+this.livery) : 4;
+	this.adfpush = GetStoredData('JPL152IP_ADFPUSH_'+this.livery) ? GetStoredData('JPL152IP_ADFNEEDLE_'+this.livery) : 1;
 	//-----------------------------------AUDIO BUTTONS
 	this.pilottrans = GetStoredData('JPL152IP_PILOTTRANS_'+this.livery) ? GetStoredData('JPL152IP_PILOTTRANS_'+this.livery) : 0;
 	this.btncom1 = GetStoredData('JPL152IP_BTNCOM1_'+this.livery) ? GetStoredData('JPL152IP_BTNCOM1_'+this.livery) : 1;
@@ -276,7 +278,9 @@ class JPL152IP extends BaseInstrument {
 		SimVar.SetSimVarValue("K:ADF_VOLUME_SET", "number", Number(this.adfvol));
 		SimVar.SetSimVarValue("A:ADF ACTIVE FREQUENCY:1", "KHz", Number(this.adfact)); //HALF WORKING, ACTIVE FREQUENCY WONT TAKE??? WORK IN ARROW, PROBABLE ERROR IS ADF.JS
 		SimVar.SetSimVarValue("A:ADF STANDBY FREQUENCY:1", "KHz", Number(this.adfstby));
-		SimVar.SetSimVarValue("B:INSTRUMENT_ADF_Set", "degrees", Number(this.adfcard));
+		SimVar.SetSimVarValue("L:XMLVAR_ADF_CARD_VARIANCE", "number", Number(this.adfcard));
+		SimVar.SetSimVarValue("L:XMLVAR_ADF_NEEDLE_POSITION", "number", Number(this.adfneedle));
+		SimVar.SetSimVarValue("L:XMLVAR_ADF_Frequency_10_Khz", "number", Number(this.adfpush));
 		//---------------------------------------AUDIO BUTTONS
 		SimVar.SetSimVarValue("COM RECEIVE:1", "bool", Number(this.btncom1));
 		SimVar.SetSimVarValue("COM RECEIVE:2", "bool", Number(this.btncom2));
@@ -536,8 +540,12 @@ class JPL152IP extends BaseInstrument {
 			SetStoredData('JPL152IP_ADFACT_'+planeId, adfact.toString());
 			var adfstby = SimVar.GetSimVarValue("A:ADF STANDBY FREQUENCY:1", "KHz");
 			SetStoredData('JPL152IP_ADFSTBY_'+planeId, adfstby.toString());
-			var adfcard = SimVar.GetSimVarValue("ADF CARD", "degrees");
-			SetStoredData('JPL152IP_ADFCARD_'+planeId, adfcard.toString());	
+			var adfcard = SimVar.GetSimVarValue("L:XMLVAR_ADF_CARD_VARIANCE", "number");
+			SetStoredData('JPL152IP_ADFCARD_'+planeId, adfcard.toString());
+			var adfneedle = SimVar.GetSimVarValue("L:XMLVAR_ADF_NEEDLE_POSITION", "number");
+			SetStoredData('JPL152IP_ADFNEEDLE_'+planeId, adfneedle.toString());
+			var adfpush = SimVar.GetSimVarValue("L:XMLVAR_ADF_Frequency_10_Khz", "number");
+			SetStoredData('JPL152IP_ADFPUSH_'+planeId, adfpush.toString());
 		
 			//---------------------AUDIO BUTTONS
 			var btncom1 = SimVar.GetSimVarValue("COM RECEIVE:1", "bool");

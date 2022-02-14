@@ -1,0 +1,78 @@
+﻿<link rel="stylesheet" href="AS330.css" />
+
+<script type="text/html" id="AS330">
+    <div id="Mainframe">
+        <div id="PageContainer" state="Startup">
+            <div id="Startup" class="Page">
+                <span class="Big">Garmin GTX330ES</span><br />
+                &copy; Garmin Ltd or subs<br />
+                Self Test In Progress
+            </div>
+            <div id="Main" class="Page">
+                <div id="leftInfos">
+                    <div id="ident">IDENT</div>
+                    <div id="mode">ALT</div>
+                    <div id="r">
+                        <svg height="80%" viewBox="0 0 10 10">
+                            <circle fill="#b8d239" cx="5" cy="5" r="5"/>
+                            <text x="5" y="8" text-anchor="middle" font-family="Transponder-Pixel" font-size="8" fill="#181818">R</text>
+                        </svg>
+                    </div>
+                </div>
+                <div id="code">
+                    <div id="d1" class="digit">5</div>
+                    <div id="d2" class="digit">4</div>
+                    <div id="d3" class="digit">7</div>
+                    <div id="d4" class="digit">5</div>
+                </div>
+                <div id="rightInfos">
+                    <div id="FlightId" class="subPage">
+                        <div class="title">FLIGHT ID</div>
+                        <div class="value" id="FlightIdValue"></div>
+                    </div>
+                    <div id="PressAlt" class="subPage">
+                        <div class="title">PRESSURE ALT</div>
+                        <div class="value">FL <span id="PressAltValue"></span></div>
+                    </div>
+                    <div id="FlightTime" class="subPage">
+                        <div class="title">FLIGHT TIME</div>
+                        <div class="value" id="FlightTimeValue">00:00:00</div>
+                    </div>
+                    <div id="AltMonitor" class="subPage">
+
+                    </div>
+                    <div id="OATDALT" class="subPage">
+                        <div class="top">
+                            <div class="left">OAT</div>
+                            <div class="right"><span id="OATValue">0</span>°<span class="little">C</span></div>
+                        </div>
+                        <div class="bot">
+                            <div class="left">DALT</div>
+                            <div class="right"><span id="DALTValue">13386</span><div class="unit">f<br/>t</div></div>
+                        </div>
+                    </div>
+                    <div id="CountUpTimer" class="subPage">
+                        <div class="title">COUNT UP</div>
+                        <div class="value" id="CountUpValue">00:00:00</div>
+                    </div>
+                    <div id="CountDownTimer" class="subPage">
+                        <div class="title">COUNT DOWN</div>
+                        <div class="value" id="CountDownValue">00:00:00</div>
+                    </div>
+                    <div id="Contrast" class="subPage">
+
+                    </div>
+                    <div id="Display" class="subPage">
+
+                    </div>
+                    <div id="ADSB" class="subPage">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/JPLogistics/Transponders/AS330/AS330.js">
+</script>

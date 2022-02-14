@@ -10,7 +10,7 @@
       #CIRCUIT_ID# (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
       }
     </Update>
-      <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Leave_Code">
+      <UseTemplate Name="ASOBO_GT_Interaction_LeftSingle_Code">
         <LEFT_SINGLE_CODE>
           (L:JPL152_DME_POWER) ! (&gt;L:JPL152_DME_POWER)
         </LEFT_SINGLE_CODE>
@@ -41,13 +41,12 @@
   </DefaultTemplateParameters>
   <Component ID="#NODE_ID#" Node="#NODE_ID#">
     <UseTemplate Name="ASOBO_GT_Emissive_Gauge">
-      
       <Condition Check="USE_DIMMING_POTENTIOMETER">
         <True>
           <EMISSIVE_CODE>(L:JPL152_DME_POWER, Bool) 0 &gt; (A:LIGHT POTENTIOMETER:#POTENTIOMETER#, percent over 100) * #DIMMING_FACTOR# *</EMISSIVE_CODE>
         </True>
         <False>
-          <EMISSIVE_CODE>(L:JPL152_DME_POWER, Bool) 0 &gt;</EMISSIVE_CODE>
+          <EMISSIVE_CODE>(L:JPL152_DME_POWER, Bool) 0 &gt; (L:JPL152_TOD, enum) 300 / *</EMISSIVE_CODE>
         </False>
       </Condition>
     </UseTemplate>
@@ -87,139 +86,49 @@
 		(L:JPL152_APVIZ) 0 ==
 		(A:CIRCUIT SWITCH ON:32, Boolean) and if{ 32 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE) }
 	</Update>
+	
+	<UseTemplate Name="ASOBO_GT_Update">
+		<UPDATE_ONCE>True</UPDATE_ONCE>
+		<UPDATE_CODE>
+			0 (&gt;L:JPL152_RANDOM_BREAKER2)
+		</UPDATE_CODE>
+	</UseTemplate>	
 </Template>
 
 <Template Name="ADF_VOLUME">
-	<UseTemplate Name="ASOBO_GT_Update">
-		<UPDATE_ONCE>True</UPDATE_ONCE>
-		<UPDATE_CODE>
-		(L:JPL152_ADFVOL, bool) 1 &gt;=
-		if{
+	<Update Once="True">
+		(L:JPL152_ADFVOL, bool) 1 &gt;= if{
 			100 (&gt;K:ADF_VOLUME_SET)
 		}
-		(L:JPL152_ADFVOL, Bool) 0 &lt;=
-		if{
+		(L:JPL152_ADFVOL, Bool) 0 &lt;= if{
 			0 (&gt;K:ADF_VOLUME_SET)
 		}
-		</UPDATE_CODE>
-	</UseTemplate>
+	</Update>
 </Template>
 
 <Template Name="COM1_VOLUME">
-	<UseTemplate Name="ASOBO_GT_Update">
-		<UPDATE_ONCE>True</UPDATE_ONCE>
-		<UPDATE_CODE>
-		(L:JPL152_COM1VOL, bool) 1 ==
-		if{
+	<Update Once="True">
+		(L:JPL152_COM1VOL, bool) 1 == if{
 			50 (&gt;K:COM1_VOLUME_SET)
 		}
-		(L:JPL152_COM1VOL, Bool) 0 ==
-		if{
+		(L:JPL152_COM1VOL, Bool) 0 == if{
 			0 (&gt;K:COM1_VOLUME_SET)
 		}
-		</UPDATE_CODE>	
-	</UseTemplate>
+	</Update>
 </Template>	
 
 <Template Name="COM2_VOLUME">
-	<UseTemplate Name="ASOBO_GT_Update">
-		<UPDATE_ONCE>True</UPDATE_ONCE>
-		<UPDATE_CODE>
-		(L:JPL152_COM2VOL, bool) 1 ==
-		if{
+	<Update Once="True">
+		(L:JPL152_COM2VOL, bool) 1 == if{
 			75 (&gt;K:COM2_VOLUME_SET)
 			25 (&gt;K:ELECTRICAL_CIRCUIT_ON)
 		}	
-		(L:JPL152_COM2VOL, Bool) 0 ==
-		if{
+		(L:JPL152_COM2VOL, Bool) 0 == if{
 			0 (&gt;K:COM2_VOLUME_SET)
 			25 (&gt;K:ELECTRICAL_CIRCUIT_OFF)
 		}
-		</UPDATE_CODE>	
-	</UseTemplate>
+	</Update>
 </Template>	
-<!--
-<Template Name="ComVolume_Helper">
-	<Update Frequency = "3">
-		(A:COM VOLUME:1, Percent) 0 &gt;
-		(A:CIRCUIT SWITCH ON:23, Boolean) ! and if{
-			23 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-		}
-	</Update>
-	<Update Frequency = "3">
-		(A:COM VOLUME:1, Percent) 0 ==
-		(A:CIRCUIT SWITCH ON:23, Boolean) and if{
-			23 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-		}
-	</Update>
-	<Update Frequency = "3">
-		(A:COM VOLUME:2, Percent) 0 &gt;
-		(A:CIRCUIT SWITCH ON:25, Boolean) ! and if{
-			25 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-		}
-	</Update>
-	<Update Frequency = "3">
-		(A:COM VOLUME:2, Percent) 0 ==
-		(A:CIRCUIT SWITCH ON:25, Boolean) and if{
-			25 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
-		}
-	</Update>
-</Template>
--->
-<!--
-<Template Name="COM1_VOLUME">
-	<UseTemplate Name="ASOBO_GT_Update">
-		<UPDATE_ONCE>True</UPDATE_ONCE>
-		<UPDATE_CODE>
-		(L:152X_COM1VOL, bool) 1 &gt;=
-		if{
-			100 (&gt;K:COM1_VOLUME_SET)
-			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_ON)
-		}
-		(L:152X_COM1VOL, Bool) 0 &lt;=
-		if{
-			0 (&gt;K:COM1_VOLUME_SET)
-			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
-		}
-		</UPDATE_CODE>	
-	</UseTemplate>
-  <UseTemplate Name="ASOBO_GT_Update">
-    <Update Frequency="5">
-      (A:COM VOLUME:1,Percent) 1 &gt;= if{
-        #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_ON)
-      } els{
-        #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
-      }
-    </Update>
-  </UseTemplate>
-</Template>	
-<Template Name="COM2_VOLUME">
-	<UseTemplate Name="ASOBO_GT_Update">
-		<UPDATE_ONCE>True</UPDATE_ONCE>
-		<UPDATE_CODE>
-		(L:152X_COM2VOL, bool) 1 &gt;=
-		if{
-			100 (&gt;K:COM2_VOLUME_SET)
-			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_ON)
-		}	
-		(L:152X_COM2VOL, Bool) 0 &lt;=
-		if{
-			0 (&gt;K:COM2_VOLUME_SET)
-			#COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
-		}
-		</UPDATE_CODE>	
-	</UseTemplate>
-  <UseTemplate Name="ASOBO_GT_Update">
-    <Update Frequency="5">
-      (A:COM VOLUME:2,Percent) 1 &gt;= if{
-      #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_ON)
-      } els{
-      #COM_CIRCUIT# (&gt;K:ELECTRICAL_CIRCUIT_OFF)
-      }
-    </Update>
-  </UseTemplate>
-</Template>	
--->
 
 <Template Name="JPL152_INSTRUMENT_Needle_EGT_Template">
 	<Parameters Type="Default">
@@ -323,8 +232,7 @@
 			</Component>
 		</Condition>
 		<Condition Check="HIGHLIGHT_NODE_ID">
-			<UseTemplate Name="ASOBO_GT_Highlight_Template">
-			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Highlight_Template"/>
 		</Condition>
 	</Component>
 </Template>

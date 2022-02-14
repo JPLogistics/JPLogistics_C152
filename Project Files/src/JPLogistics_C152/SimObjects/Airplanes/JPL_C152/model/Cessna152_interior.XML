@@ -214,7 +214,7 @@
     <Animation guid="c0ad7956-91f3-4419-abd3-7c113fd3aa28" name="INSTRUMENT_HeadingIndicator_Knob_Heading_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="ba0639b8-7920-4543-b332-a6ad6e7b463f" name="INSTRUMENT_Needle_Heading_Cylinder_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="28c7bc8e-db07-45e8-a250-45971673c7b8" name="INSTRUMENT_Needle_Heading_1" type="standard" typeParam="Autoplay"/>
-    <Animation guid="28c7bc8e-db07-45e8-a250-45971673c7b2" name="ADF_Knob_Frequency_KHz_1_Push" type="standard" typeParam="Autoplay"/>
+    <Animation guid="28c7bc8e-db07-45e8-a250-45971673c7b2" name="ADF_Knob_Frequency_KHz_Push_1" type="standard" typeParam="Autoplay"/>
     <Animation guid="8dc50d73-0682-4b7d-be62-a973e46c5e29" name="iPadAction" type="standard" typeParam="Autoplay"/>
 	<Animation guid="1184b217-5902-4b36-8521-e322e8caef90" name="PilotSeatAnim" type="standard" typeParam="Autoplay"/>
 	<Animation guid="23943e76-d1fc-4dd4-b72c-02ad245e17f9" name="CoPilotSeatAnim" type="standard" typeParam="Autoplay"/>
@@ -278,19 +278,14 @@
         <ANIMTIP_3>TT:COCKPIT.TOOLTIPS.MAGNETO_START_SWITCH_BOTH</ANIMTIP_3>
         <ANIMTIP_4>TT:COCKPIT.TOOLTIPS.MAGNETO_START_SWITCH_START</ANIMTIP_4>
       </UseTemplate>
-      <UseTemplate Name="ASOBO_ELECTRICAL_Switch_Alternator_Template">
-      </UseTemplate>
+      <UseTemplate Name="ASOBO_ELECTRICAL_Switch_Alternator_Template"/>
       <UseTemplate Name="ASOBO_ELECTRICAL_Switch_Battery_Master_Template">
         <!-- This battery switch also controls avionics -->
-        <ON_TOGGLE_MASTER_BATTERY>
-          #SYNC_AVIONICS_TO_BATTERY_STATE#
-        </ON_TOGGLE_MASTER_BATTERY>
+        <ON_TOGGLE_MASTER_BATTERY>#SYNC_AVIONICS_TO_BATTERY_STATE#</ON_TOGGLE_MASTER_BATTERY>
       </UseTemplate>
       <UseTemplate Name="ASOBO_GT_Update">
         <FREQUENCY>5</FREQUENCY>
-        <UPDATE_CODE>
-          #SYNC_AVIONICS_TO_BATTERY_STATE#
-        </UPDATE_CODE>
+        <UPDATE_CODE>#SYNC_AVIONICS_TO_BATTERY_STATE#</UPDATE_CODE>
       </UseTemplate>
 	  <UseInputEvent ID="PROCEDURE">
 	    <PROCEDURE_ID>AUTOSTART</PROCEDURE_ID>
@@ -312,9 +307,7 @@
 				}
 			}
 		  </ON_AUTOSTART>
-		  <ON_AUTOSTOP>
-			(&gt;K:ENGINE_AUTO_SHUTDOWN)
-		  </ON_AUTOSTOP>
+		  <ON_AUTOSTOP>(&gt;K:ENGINE_AUTO_SHUTDOWN)</ON_AUTOSTOP>
 	  </UseInputEvent>
     </Component>
 
@@ -466,6 +459,8 @@
 	<Component ID="KAP_140_screen">
 		<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
 			<NODE_ID>AS140_Screen</NODE_ID>
+			<EMISSIVE_CODE>(L:JPL152_TOD, enum) 300 /</EMISSIVE_CODE>
+			<!--
 			<EMISSIVE_CODE>(A:CIRCUIT ON:32, Bool)</EMISSIVE_CODE>   
 			<FAILURE>(A:CIRCUIT ON:32, Bool)</FAILURE>
 			<DIMMING_FACTOR>1</DIMMING_FACTOR>
@@ -473,12 +468,13 @@
 			<POTENTIOMETER>6</POTENTIOMETER>
 			<EMISSIVE_POTENTIOMETER>6</EMISSIVE_POTENTIOMETER>
 			<BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
+			-->
 		</UseTemplate>
     </Component>
     <Component ID="AS330">
       <UseTemplate Name="ASOBO_AS330_Template">
         <DONT_APPEND_ID>False</DONT_APPEND_ID>
-        <POTENTIOMETER>6</POTENTIOMETER>
+        <!--<POTENTIOMETER>6</POTENTIOMETER>-->
 		<DIMMING_FACTOR>1</DIMMING_FACTOR>
 		<USE_DIMMING_POTENTIOMETER/>
 		<FAILURE>(A:TRANSPONDER STATE:1, Enum) 0 &gt;</FAILURE>
@@ -492,22 +488,21 @@
 		</Update>
     </Component>
     <Component ID="ADF_KR87">
-      <UseTemplate Name="JPL152_ADF_AS87_Template">
+      <UseTemplate Name="JPL152_INSTRUMENT_ADF_Template">
         <EMISSIVE_POTENTIOMETER>6</EMISSIVE_POTENTIOMETER>
         <CIRCUIT_ADF>37</CIRCUIT_ADF>
         <BUTTON_EMISSIVE_FACTOR>0.2</BUTTON_EMISSIVE_FACTOR>
 		<DIMMING_FACTOR>1</DIMMING_FACTOR>
 		<USE_DIMMING_POTENTIOMETER/>
-		<POTENTIOMETER>6</POTENTIOMETER>
+		<!--<POTENTIOMETER>6</POTENTIOMETER>-->
       </UseTemplate>
     </Component>
     <Component ID="INSTRUMENTS">
-		<UseTemplate Name="ASOBO_INSTRUMENT_Needle_ADF_Template">
+		<UseTemplate Name="JPL152_INSTRUMENT_Needle_ADF_Template">
 			<ANIM_LAG>150</ANIM_LAG>
 			<ADF_KNOB/>
 			<TOOLTIP_ADF_TITLE>(A:ADF CARD, degrees) 'ADF Bearing (%d°)' (F:Format)</TOOLTIP_ADF_TITLE>
 			<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
-			<TOOLTIPID>ADF Bearing (%((A:ADF CARD, degrees))%!d!°%)</TOOLTIPID>
 		</UseTemplate>
 
 		<UseTemplate Name="ASOBO_PRESSURIZATION_Needle_Suction_Template">
@@ -597,7 +592,7 @@
 		<UseTemplate Name="ASOBO_GT_Helper_Non_Linear_Animation_Code">
 			<ANIM_NAME>INSTRUMENT_Needle_VerticalSpeed_1</ANIM_NAME>
 			<NODE_ID>INSTRUMENT_Needle_VerticalSpeed_1</NODE_ID>
-			<PART_ID>INSTRUMENT_Needle_VerticalSpeed</PART_ID>
+			<!--<PART_ID>INSTRUMENT_Needle_VerticalSpeed</PART_ID>-->
 			<ANIM_LENGTH>100</ANIM_LENGTH>
 			<SELECTION>(A:VERTICAL SPEED, feet per minute)</SELECTION>
 			<MIN_DISPLAYABLE>-2000</MIN_DISPLAYABLE>
@@ -844,7 +839,7 @@
 			<KNOB_POSITION_VAR>JPL152_Radio_Light</KNOB_POSITION_VAR>
 			<SIMVAR>A:LIGHT POTENTIOMETER:6, Percent</SIMVAR>
 			<POTENTIOMETER>6</POTENTIOMETER>
-			<INIT_VALUE>75</INIT_VALUE>
+			<INIT_VALUE>0</INIT_VALUE>
 			<WWISE_EVENT>navcom_audio_volume_knob</WWISE_EVENT>
 			<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
 			<TOOLTIP_TITLE>(A:LIGHT POTENTIOMETER:6, Percent) 'Radio Lights (%d)' (F:FORMAT)</TOOLTIP_TITLE>
@@ -855,6 +850,7 @@
 			<NODE_ID>LIGHTING_Switch_Cabin</NODE_ID>
 			<ANIM_NAME>LIGHTING_Switch_Cabin</ANIM_NAME>
 			<CIRCUIT_ID>15</CIRCUIT_ID>
+			<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_CABIN_ACTION_SET</TT_DESCRIPTION_ID>
 			<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
 			<TOOLTIP_TITLE>'Dome Light'</TOOLTIP_TITLE>
 		</UseTemplate>		
@@ -934,17 +930,23 @@
         <ID>1</ID>
         <NODE_ID>NavCom1_Screen</NODE_ID>
 		<FAILURE>(A:CIRCUIT ON:23, Bool)</FAILURE>
+		<!--
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
 		<USE_DIMMING_POTENTIOMETER/>
 		<POTENTIOMETER>6</POTENTIOMETER>
+		-->
+		<ADD_EMISSIVE_CODE>(L:JPL152_TOD, enum) 300 /</ADD_EMISSIVE_CODE>
       </UseTemplate>
       <UseTemplate Name="ASOBO_NAVCOM_Screens_Template">
         <ID>2</ID>
         <NODE_ID>NavCom2_Screen</NODE_ID>
         <FAILURE>(A:CIRCUIT ON:25, Bool)</FAILURE>
+		<!--
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
-        <USE_DIMMING_POTENTIOMETER/>
-        <POTENTIOMETER>6</POTENTIOMETER>
+		<USE_DIMMING_POTENTIOMETER/>
+		<POTENTIOMETER>6</POTENTIOMETER>
+		-->
+		<ADD_EMISSIVE_CODE>(L:JPL152_TOD, enum) 300 /</ADD_EMISSIVE_CODE>
       </UseTemplate>
       <Component Id="NAVCOM_Sound_Push_Buttons">
 
@@ -1122,16 +1124,20 @@
       <UseTemplate Name="JPL152_DME_Screens_Template">
         <ID>1</ID>
         <NODE_ID>DME_Screen</NODE_ID>
+		<!--
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
 		<USE_DIMMING_POTENTIOMETER/>
 		<POTENTIOMETER>6</POTENTIOMETER>
+		-->
       </UseTemplate>
       <UseTemplate Name="JPL_iPad_Screens_Template">
         <ID>1</ID>
         <NODE_ID>iPadScreen</NODE_ID>
+		<!--
         <DIMMING_FACTOR>1</DIMMING_FACTOR>
 		<USE_DIMMING_POTENTIOMETER/>
 		<POTENTIOMETER>6</POTENTIOMETER>
+		-->
       </UseTemplate>
     </Component>
     <Component ID="AUDIO_TOP_PANEL">
@@ -1233,14 +1239,23 @@
 		<Component ID="PILOT_0" Node="PILOT_0">
 			<UseTemplate Name="ASOBO_GT_Visibility_Code">
 				<VISIBILITY_CODE>
-					(L:C152_PilotsState, bool) 1 == if{ 1 } els{ 0 }
+					(L:C152_PilotsState, Bool) 1 ==
+					(A:PAYLOAD STATION WEIGHT:1, Pounds) 20 &gt; (L:C152_PilotsState, Bool) 1 == and
+					(A:CAMERA STATE, Enum) 2 != (L:JPL_DOOR_PILOT) 0 == and or
+					(A:PAYLOAD STATION WEIGHT:1, pounds) 20 &gt; and
 				</VISIBILITY_CODE>
 			</UseTemplate>
 		</Component>
 		<Component ID="PILOT_1" Node="PILOT_1">
 			<UseTemplate Name="ASOBO_GT_Visibility_Code">
+				<Update Once="True">
+					0 (&gt;A:PAYLOAD STATION WEIGHT:2, Pounds)
+				</Update>
 				<VISIBILITY_CODE>
-					(L:C152_CoPilotsState, bool) 1 == if{ 1 } els{ 0 }
+					(L:C152_CoPilotsState, Bool) 1 ==
+					(A:PAYLOAD STATION WEIGHT:2, Pounds) 20 &gt; (L:C152_CoPilotsState, Bool) 1 == and
+					(A:CAMERA STATE, Enum) 2 != (L:JPL_DOOR_COPILOT) 0 == and or
+					(A:PAYLOAD STATION WEIGHT:2, pounds) 20 &gt; and
 				</VISIBILITY_CODE>
 			</UseTemplate>
 		</Component>
