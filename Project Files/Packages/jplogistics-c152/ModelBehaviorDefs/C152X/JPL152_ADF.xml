@@ -97,14 +97,14 @@
 				<TT_DESCRIPTION_ID>@TT_Package.ADF_KNOB_FREQUENCY_PARAM_KHZ_ACTION</TT_DESCRIPTION_ID>
 				<TT_DESCRIPTION_INDEX>100</TT_DESCRIPTION_INDEX>
 				<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
-				<TOOLTIP_TITLE>(A:ADF STANDBY FREQUENCY:1, khz) 'ADF FREQ (%3.1f)' (F:Format)</TOOLTIP_TITLE>
+				<TOOLTIP_TITLE>(A:ADF ACTIVE FREQUENCY:2, khz) 'ADF FREQ (%3.1f)' (F:Format)</TOOLTIP_TITLE>
 				<KNOB_ID>ADF_Freq_100_Khz</KNOB_ID>
 				<ANIM_NAME>#ANIM_NAME_100_KHZ#</ANIM_NAME>
 				<NODE_ID>#NODE_ID_100_KHZ#</NODE_ID>
 				<FORMAT_VALUE>'%d' @sprintf</FORMAT_VALUE>
-				<GET_TT_VALUE_STATE>(A:ADF STANDBY FREQUENCY:#ID#, Khz) s0 100 / int 10 % l0 1000 / int 10 % 10 * +</GET_TT_VALUE_STATE>
-				<EVENT_CW>(&gt;K:ADF_100_INC)</EVENT_CW>
-				<EVENT_CCW>(&gt;K:ADF_100_DEC)</EVENT_CCW>
+				<GET_TT_VALUE_STATE>(A:ADF ACTIVE FREQUENCY:2, Khz) s0 100 / int 10 % l0 1000 / int 10 % 10 * +</GET_TT_VALUE_STATE>
+				<EVENT_CW>(&gt;K:ADF2_100_INC)</EVENT_CW>
+				<EVENT_CCW>(&gt;K:ADF2_100_DEC)</EVENT_CCW>
 				<IS_INFINITE>True</IS_INFINITE>
 			</UseTemplate>
 			<Component ID="#NODE_ID_1_10_KHZ#" Node="#NODE_ID_1_10_KHZ#">
@@ -146,10 +146,10 @@
 					<ANIM_NAME_PULL>#ANIM_NAME_1_10_KHZ_PUSH#</ANIM_NAME_PULL>
 					<TT_DESCRIPTION_ID>@TT_Package.ADF_KNOB_FREQUENCY_1_10_KHZ_ACTION</TT_DESCRIPTION_ID>
 					<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
-					<TOOLTIP_TITLE>(A:ADF STANDBY FREQUENCY:1, khz) 'ADF FREQ (%3.1f)' (F:Format)</TOOLTIP_TITLE>
-					<EVENT_CW>(#VAR_TYPE#:#VAR_NAME#) if{ (&gt;K:ADF_10_INC) } els{ (&gt;K:ADF_1_INC) }</EVENT_CW>
-					<EVENT_CCW>(#VAR_TYPE#:#VAR_NAME#) if{ (&gt;K:ADF_10_DEC) } els{ (&gt;K:ADF_1_DEC) }</EVENT_CCW>
-					<GET_TT_VALUE_STATE>(A:ADF STANDBY FREQUENCY:#ID#, Khz) sp0 (#VAR_TYPE#:#VAR_NAME#) if{ l0 10 / int 10 % } els{ l0 int 10 % }</GET_TT_VALUE_STATE>
+					<TOOLTIP_TITLE>(A:ADF ACTIVE FREQUENCY:2, khz) 'ADF FREQ (%3.1f)' (F:Format)</TOOLTIP_TITLE>
+					<EVENT_CW>(#VAR_TYPE#:#VAR_NAME#) if{ (&gt;K:ADF2_10_INC) } els{ (&gt;K:ADF2_1_INC) }</EVENT_CW>
+					<EVENT_CCW>(#VAR_TYPE#:#VAR_NAME#) if{ (&gt;K:ADF2_10_DEC) } els{ (&gt;K:ADF2_1_DEC) }</EVENT_CCW>
+					<GET_TT_VALUE_STATE>(A:ADF ACTIVE FREQUENCY:2, Khz) sp0 (#VAR_TYPE#:#VAR_NAME#) if{ l0 10 / int 10 % } els{ l0 int 10 % }</GET_TT_VALUE_STATE>
 					<EXTRA_INTERACTION>_LeftSingle</EXTRA_INTERACTION>
 					<IS_INFINITE>True</IS_INFINITE>
 					<COUNT>36</COUNT>
@@ -180,7 +180,8 @@
 	<Template Name="JPL152_ADF_Knob_Volume_Template">
 		<Parameters Type="Default">
 			<WWISE_EVENT>navcom_volume_knob</WWISE_EVENT>	
-			<COUNT>50</COUNT>
+			<COUNT>25</COUNT>
+			<ANIM_LAG>200</ANIM_LAG>
 			<THRESHOLD_INPUT>0.000025</THRESHOLD_INPUT>
 			<THRESHOLD_MOUSE>0.0025</THRESHOLD_MOUSE>
 		</Parameters>
@@ -344,24 +345,13 @@
 					<PART_ID/>
 				</Condition>
 			</UseTemplate>
-			<Update Frequency="10">
-				rand rand neg + 20 * (&gt;O:JPL152_ADF_DEVIATION)
-			</Update>
+			<Update Frequency="10">rand rand neg + 20 * (&gt;O:JPL152_ADF_DEVIATION)</Update>
 			<Update Frequency="10">
 				(A:ADF SIGNAL:1, enum) 1000 &lt; if{
 					1250 (A:ADF SIGNAL:1, enum) - 60 / (&gt;O:JPL152_ADF_FALLOFF)
 					rand rand neg + (O:JPL152_ADF_FALLOFF) * (&gt;O:JPL152_ADF_DEVIATION2)
 				}
 			</Update>
-	<!--###########################################################################################-->
-			<!--
-			<Update Frequency="0.5">
-				(A:ADF SIGNAL:1, enum) 0 == if{
-					(&gt;K:ADF1_RADIO_TENTHS_INC)
-				}
-			</Update>
-			-->
-	<!--###########################################################################################-->
 		</Component>
 		<Condition Check="ADF_KNOB">
 			<Component ID="#KNOB_NODE_ID#" Node="#KNOB_NODE_ID#">

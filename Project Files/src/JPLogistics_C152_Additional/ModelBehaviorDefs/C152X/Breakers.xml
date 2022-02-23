@@ -109,8 +109,9 @@
 			}
 		-->
 		<!--(O:JPL152_RANDOM_BREAKER) 0.14 &gt; (O:JPL152_RANDOM_BREAKER) 0.15 &lt; and (L:JPL152_RANDOM_BREAKER2) ! and-->
+
+	<Update Once="True">0 (&gt;L:JPL152_RANDOM_BREAKER2)</Update>
 	<Update Frequency="1">rand (&gt;L:JPL152_RANDOM_BREAKER)</Update>
-	<!--14525 14526-->
 	<Update Frequency="1">
 		(A:ELECTRICAL MASTER BATTERY:1) if{
 			0.145255 0.145256 (L:JPL152_RANDOM_BREAKER) rng (L:JPL152_RANDOM_BREAKER2) ! and

@@ -76,19 +76,7 @@ TailhookState=0
 FoldingWingsHandle=False
 FoldingWingsState=0, 0
 
-[LocalVars.0]
-;Note these settings may override standard config settings
-;-------------------------------------------- 
-JPL152_COM1VOL=0   ;0=OFF, 1=FULL
-JPL152_COM2VOL=0   ;0=OFF, 1=FULL
-JPL152_ADFVOL=0
-JPL152_DME_POWER=0
-JPL_DOOR_PILOT=1
-JPL_DOOR_COPILOT=1
-;XMLVAR_AUDIO_SPKR_SEL=1
-;JPL152_APVIZ=1	;0=AP OFF, 1=AP ON
-JPL152_Pilot_Seat=5950
-JPL152_CoPilot_Seat=5950
+
 
 [Gauges.0]
 KollsmanSetting=29.921342849731445313
@@ -163,3 +151,16 @@ AileronTrimPct=0
 AileronTrimDisabled=False
 ElevatorTrimDisabled=False
 RudderTrimDisabled=False
+
+[LocalVars.0]
+;Note these settings may override standard config settings
+;-------------------------------------------- 
+JPL152_COM1VOL=0
+JPL152_COM2VOL=0
+JPL152_ADFVOL=0
+JPL152_DME_POWER=0
+;JPL_DOOR_PILOT=1
+;JPL_DOOR_COPILOT=1
+JPL152_APVIZ=1	;0=AP OFF, 1=AP ON
+JPL152_Pilot_Seat=5950
+JPL152_CoPilot_Seat=5950

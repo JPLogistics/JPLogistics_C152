@@ -40,6 +40,7 @@ AvionicsSwitch=True
 [Engine Parameters.1.0]
 ThrottleLeverPct=0.0
 PropellerLeverPct=1
+MixtureLeverPct=0.95
 Pct Engine RPM=0.32811646340229250196
 MaxReachedEngineRPM=3903.5488821170947631
 LeftMagneto=True
@@ -75,14 +76,12 @@ FoldingWingsState=0, 0
 [LocalVars.0]
 ;Note these settings may override standard config settings
 ;-------------------------------------------- 
-XMLVAR_AUDIO_SPKR_SEL=1
-XMLVAR_ADF_Mode=2   ; 0, 1, 2, 3
 JPL152_ADFVOL=1    ;0=OFF, 1=FULL
-JPL152_COM1VOL=1   ;0=OFF, 1=FULL
-JPL152_COM2VOL=1   ;0=OFF, 1=FULL
 JPL152_DME_POWER=1
-XMLVAR_PUMPED_FUEL=0.02
+XMLVAR_PUMPED_FUEL=0.025
 JPL152_APVIZ=1	;0=AP OFF, 1=AP ON
+JPL152_Pilot_Seat=5950
+JPL152_CoPilot_Seat=5950
 
 
 [Gauges.0]
@@ -154,6 +153,7 @@ ParkingBrake=000.00
 
 RudderTrimPct=0
 AileronTrimPct=0
+ElevatorTrim=10.0 ; not working
 AileronTrimDisabled=False
 ElevatorTrimDisabled=False
 RudderTrimDisabled=False

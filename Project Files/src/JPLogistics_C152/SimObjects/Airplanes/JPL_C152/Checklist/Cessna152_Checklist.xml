@@ -35,7 +35,7 @@
 					<!-- Carburetor Heat - - COLD. -->
 					<ForceCamera name="Instruments02"/>
 				</Checkpoint>
-				<Checkpoint ReferenceId="JPL_PRIME_AS_REQUIRED">
+				<Checkpoint ReferenceId="PRIME_AS_REQUIRED">
 					<!-- XXXXXXXXXXXXXXXX Prime - - AS REQUIRED (up to strokes none if engine is warm). -->
 					<ForceCamera name="Instruments04"/>
 				</Checkpoint>

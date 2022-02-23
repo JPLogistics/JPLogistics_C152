@@ -20,16 +20,11 @@
     <Component ID="C152X_Custom_Behavior">
       <UseTemplate Name="Fuel_Primer_Logic"></UseTemplate>
       <UseTemplate Name="Engine_Start_Logic"></UseTemplate>
-	  <UseTemplate Name="ADF_VOLUME"></UseTemplate>
-	  <UseTemplate Name="COM1_VOLUME"></UseTemplate>
-	  <UseTemplate Name="COM2_VOLUME"></UseTemplate>
-	  <!--<UseTemplate Name="ComVolume_Helper"></UseTemplate>-->
 	  <UseTemplate Name="Misc_Helpers"></UseTemplate>
 	  <!--<UseTemplate Name="PanelLight"></UseTemplate>-->
 	  <UseTemplate Name="Engine_Maintenance"></UseTemplate>
 	  <UseTemplate Name="Breaker_Trip"/>
     </Component>
-    <!--End of C152X Modification -->
 
     <Animation guid="6815b49e-2689-4838-b4c3-10a3d1f52f23" name="Pilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
     <Animation guid="8a7e0878-e875-47b2-8ab4-b467cee95dfa" name="CoPilot_Door_Exterior" type="standard" typeParam="Autoplay"/>
@@ -343,6 +338,7 @@
         <NODE_ID>FUEL_Switch_Cutoff_1</NODE_ID>
 		<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
 		<TOOLTIP_TITLE>(A:GENERAL ENG FUEL VALVE:1, bool) 0 == if{ 'Fuel Valve Closed' } els{ 'Fuel Valve Open' }</TOOLTIP_TITLE>
+		<HIGHLIGHT_NODE_ID>FUEL_Switch_Cutoff_1</HIGHLIGHT_NODE_ID>
       </UseTemplate>
       <CameraTitle>Checklist_FuelValve</CameraTitle>
     </Component>
@@ -392,7 +388,6 @@
         <NO_PART_ID_ON_ANIM_NODE>True</NO_PART_ID_ON_ANIM_NODE>
         <USE_BRAKE>True</USE_BRAKE>
       </UseTemplate>
-	  <!--
 		<UseTemplate Name="ASOBO_GT_Highlight_Template">
 			<HIGHLIGHT_NODE_ID>HANDLING_RudderPedals_1_1</HIGHLIGHT_NODE_ID>
 			<PART_ID>HANDLING_RudderPedals_1_1_Highlight</PART_ID>
@@ -407,7 +402,6 @@
 			<HIGHLIGHT_NODE_ID>HANDLING_RudderPedals_2_1</HIGHLIGHT_NODE_ID>
 			<PART_ID>HANDLING_RudderPedals_2_1_Highlight</PART_ID>
 		</UseTemplate>
-		-->
       <UseTemplate Name="ASOBO_HANDLING_Lever_Flaps_Continuous_Template">
         <USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
         <INVERT_INTERACTION/>
@@ -420,8 +414,7 @@
 		<TOOLTIP_FLAPS_TITLE>(A:TRAILING EDGE FLAPS LEFT ANGLE, degrees) 'Flaps (%d)' (F:Format)</TOOLTIP_TITLE>
       </UseTemplate>
 
-      <UseTemplate Name="ASOBO_HANDLING_Indicator_Flaps_Template">
-      </UseTemplate>
+      <UseTemplate Name="ASOBO_HANDLING_Indicator_Flaps_Template"/>
 
       <UseTemplate Name="ASOBO_HANDLING_Wheel_ElevatorTrim_Template">
         <HIGHLIGHT_NODE_ID>HANDLING_Wheel_ElevatorTrim_Visual</HIGHLIGHT_NODE_ID>
@@ -431,8 +424,7 @@
 		<TOOLTIP_ELEVATOR_TRIM_TITLE>(A:ELEVATOR TRIM POSITION, degrees) 'Elevator Trim (%1.1f)' (F:Format)</TOOLTIP_TITLE>
       </UseTemplate>
 
-      <UseTemplate Name="ASOBO_HANDLING_Indicator_ElevatorTrim_Template">
-      </UseTemplate>
+      <UseTemplate Name="ASOBO_HANDLING_Indicator_ElevatorTrim_Template"/>
 
       <UseTemplate Name="ASOBO_LANDING_GEAR_Switch_ParkingBrake_Template">
         <ANIM_DELAY>0.2</ANIM_DELAY>
@@ -477,15 +469,18 @@
         <!--<POTENTIOMETER>6</POTENTIOMETER>-->
 		<DIMMING_FACTOR>1</DIMMING_FACTOR>
 		<USE_DIMMING_POTENTIOMETER/>
-		<FAILURE>(A:TRANSPONDER STATE:1, Enum) 0 &gt;</FAILURE>
+		<FAILURE>(A:CIRCUIT ON:20, bool)</FAILURE>
 		<EMISSIVE_POTENTIOMETER>6</EMISSIVE_POTENTIOMETER>
       </UseTemplate>
+	  <!--
 		<Update>
-			(A:CIRCUIT ON:20, bool) 1 &lt;
-			if{
-			0 (&gt;A:TRANSPONDER STATE:1, Enum)
+			(A:TRANSPONDER STATE:1, Enum) 0 == if{
+				0 (&gt;A:CIRCUIT SWITCH ON:20, bool)
+			} els{
+				1 (&gt;A:CIRCUIT SWITCH ON:20, bool)
 			}
-		</Update>
+
+		</Update>-->
     </Component>
     <Component ID="ADF_KR87">
       <UseTemplate Name="JPL152_INSTRUMENT_ADF_Template">
@@ -531,11 +526,9 @@
 			<DELTA_VARS_SCOPE>L</DELTA_VARS_SCOPE>
 		</UseTemplate>
 
-
 		<UseTemplate Name="ASOBO_GT_Highlight_Template">
 			<HIGHLIGHT_NODE_ID>INSTRUMENT_Needle_Clock_Hours</HIGHLIGHT_NODE_ID>
 		</UseTemplate>
-
 
 		<UseTemplate Name="ASOBO_INSTRUMENT_Altimeter_Template">
 			<MIN_VALUE_STRIP>27.9</MIN_VALUE_STRIP>
@@ -603,11 +596,13 @@
 			<REF_VALUE_1>-1000</REF_VALUE_1>
 			<ANIM_VALUE_2>35.5</ANIM_VALUE_2>
 			<REF_VALUE_2>-500</REF_VALUE_2>
+			
 			<ANIM_VALUE_3>50</ANIM_VALUE_3>
 			<REF_VALUE_3>0</REF_VALUE_3>
-			<ANIM_VALUE_4>64.5</ANIM_VALUE_4>
+			
+			<ANIM_VALUE_4>64.0</ANIM_VALUE_4>
 			<REF_VALUE_4>500</REF_VALUE_4>
-			<ANIM_VALUE_5>76</ANIM_VALUE_5>
+			<ANIM_VALUE_5>74.5</ANIM_VALUE_5>
 			<REF_VALUE_5>1000</REF_VALUE_5>
 			<ANIM_VALUE_6>100</ANIM_VALUE_6>
 			<REF_VALUE_6>2000</REF_VALUE_6>
@@ -1487,9 +1482,13 @@
         <VISIBILITY_CODE>0</VISIBILITY_CODE>
       </UseTemplate>
     </Component>
+	
+	<Component ID="iPadCase" Node="iPadScreen">
+		<UseTemplate Name="ASOBO_GT_Interaction_NoInteraction"/>
+	</Component>
     <Component ID="Pilot_Side_Interaction">
 		<UseTemplate Name="JPL_iPad">
-			<NODE_ID>iPadHelper</NODE_ID>
+			<NODE_ID>iPadScreenEdge</NODE_ID>
 			<!--If fail use iPadScreenEdge -->
 		</UseTemplate>
 
@@ -1615,7 +1614,7 @@
 			<NODE_ID>Breaker_RADIO_3</NODE_ID>
 			<ANIM_NAME>Breaker_RADIO_3</ANIM_NAME>
 			<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
-			<TOOLTIP_TITLE>'ADF, DME, XPNDR'</TOOLTIP_TITLE>
+			<TOOLTIP_TITLE>'TRANSPONDER'</TOOLTIP_TITLE>
 		</UseTemplate>
 		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>13</BUS_INDEX>
@@ -1623,18 +1622,24 @@
 			<NODE_ID>Breaker_RADIO_4</NODE_ID>
 			<ANIM_NAME>Breaker_RADIO_4</ANIM_NAME>
 			<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
-			<TOOLTIP_TITLE>'Autopilot'</TOOLTIP_TITLE>
+			<TOOLTIP_TITLE>'ADF'</TOOLTIP_TITLE>
 		</UseTemplate>	
 		
 		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX>16</BUS_INDEX>
-			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
+			<BUS_INDEX>-1</BUS_INDEX>
+			<BATTERY_BUS_INDEX>-1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_0</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_0</ANIM_NAME>
 			<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
 			<TOOLTIP_TITLE>'inopérant'</TOOLTIP_TITLE>
 		</UseTemplate>
 		
+		<UseTemplate Name="JPL152_OILFILL">
+			<NODE_ID>Breaker_RIGHT_1</NODE_ID>
+			<ANIM_NAME>Breaker_RIGHT_1</ANIM_NAME>
+			<PART_ID>Breaker_RIGHT_1</PART_ID>
+			<CIRCUIT_ID></CIRCUIT_ID>
+		</UseTemplate>
 		<!--
 		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>15</BUS_INDEX>
@@ -1647,46 +1652,28 @@
 		-->
 		
 		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
-			<BUS_INDEX>14</BUS_INDEX>
+			<BUS_INDEX>16</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_2</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_2</ANIM_NAME>
 			<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
-			<TOOLTIP_TITLE>'inopérant'</TOOLTIP_TITLE>
+			<TOOLTIP_TITLE>'DME'</TOOLTIP_TITLE>
 		</UseTemplate>
-		
-		<!-- to remove with efb
-		<UseTemplate Name="JPL152_MAINTENANCE">
-			<NODE_ID>Breaker_RIGHT_0</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_0</ANIM_NAME>
-			<PART_ID>Breaker_RIGHT_0</PART_ID>
-			<CIRCUIT_ID></CIRCUIT_ID>
-		</UseTemplate>
-		-->
-		
-		<UseTemplate Name="JPL152_OILFILL">
-			<NODE_ID>Breaker_RIGHT_1</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_1</ANIM_NAME>
-			<PART_ID>Breaker_RIGHT_1</PART_ID>
-			<CIRCUIT_ID></CIRCUIT_ID>
-		</UseTemplate>
-		
-		<!-- to remove with efb
-		<UseTemplate Name="JPL152_SSONOFF">
-			<NODE_ID>Breaker_RIGHT_2</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_2</ANIM_NAME>
-			<PART_ID>Breaker_RIGHT_2</PART_ID>
-			<CIRCUIT_ID></CIRCUIT_ID>
-		</UseTemplate>
-		-->
-		
-		
+
 		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
 			<BUS_INDEX>17</BUS_INDEX>
 			<BATTERY_BUS_INDEX>1</BATTERY_BUS_INDEX>
 			<NODE_ID>Breaker_RIGHT_3</NODE_ID>
 			<ANIM_NAME>Breaker_RIGHT_3</ANIM_NAME>
-			<TOOLTIPID>inopérant</TOOLTIPID>
+			<TOOLTIP_TITLE_IS_DYNAMIC>True</TOOLTIP_TITLE_IS_DYNAMIC>
+			<TOOLTIP_TITLE>'AP'</TOOLTIP_TITLE>
+		</UseTemplate>
+
+		<UseTemplate Name="JPL152_BATTERY_CHARGE">
+			<NODE_ID>Breaker_RIGHT_4</NODE_ID>
+			<ANIM_NAME>Breaker_RIGHT_4</ANIM_NAME>
+			<PART_ID>Breaker_RIGHT_4</PART_ID>
+			<CIRCUIT_ID></CIRCUIT_ID>
 		</UseTemplate>
 		<!--
 		<UseTemplate Name="JPL152_ELECTRICAL_Switch_Breaker_Template">
@@ -1697,26 +1684,7 @@
 			<TOOLTIPID>inopérant</TOOLTIPID>
 		</UseTemplate>
 		-->
-		<!-- bottom left, ready for flight 
-		<UseTemplate Name="JPL152_RFF">
-			<NODE_ID>Breaker_RIGHT_3</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_3</ANIM_NAME>
-			<PART_ID>Breaker_RIGHT_3</PART_ID>
-			<CIRCUIT_ID></CIRCUIT_ID>
-		</UseTemplate>-->
-		<!-- bottom right, cold and dark 
-		<UseTemplate Name="JPL152_CAD">
-			<NODE_ID>Breaker_RIGHT_4</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_4</ANIM_NAME>
-			<PART_ID>Breaker_RIGHT_4</PART_ID>
-			<CIRCUIT_ID></CIRCUIT_ID>
-		</UseTemplate>-->
-		<UseTemplate Name="JPL152_BATTERY_CHARGE">
-			<NODE_ID>Breaker_RIGHT_4</NODE_ID>
-			<ANIM_NAME>Breaker_RIGHT_4</ANIM_NAME>
-			<PART_ID>Breaker_RIGHT_4</PART_ID>
-			<CIRCUIT_ID></CIRCUIT_ID>
-		</UseTemplate>
+
 		<!--
 		<UseTemplate Name="JPL152_LASTPOSITION">
 			<NODE_ID>Breaker_RIGHT_4</NODE_ID>
