@@ -1,6 +1,3 @@
-[SimVarForSpawningInTheAir.0]
-IAS=110
-FlapsDegree=0042.00
 
 [Avionics.0]
 Comm1Active=122.800
@@ -33,10 +30,11 @@ AudioAdf2Listen=False
 AvionicsSwitch=True
 
 [Engine Parameters.1.0]
-ThrottleLeverPct=0.6
+ThrottleLeverPct=0.35
 PropellerLeverPct=0.99993896484375
+MixtureLeverPct=1.0
 Pct Engine RPM=0.6
-MaxReachedEngineRPM=3903.5488821170947631
+MaxReachedEngineRPM=2550
 LeftMagneto=True
 RightMagneto=True
 GeneratorSwitch=True
@@ -74,14 +72,11 @@ FoldingWingsState=0, 0
 [LocalVars.0]
 ;Note these settings may override standard config settings
 ;-------------------------------------------- 
-XMLVAR_AUDIO_SPKR_SEL=1
-XMLVAR_ADF_Mode=2   ; 0, 1, 2, 3
 JPL152_ADFVOL=1    ;0=OFF, 1=FULL
-JPL152_COM1VOL=1   ;0=OFF, 1=FULL
-JPL152_COM2VOL=1   ;0=OFF, 1=FULL
 XMLVAR_PUMPED_FUEL=0.02
 JPL152_APVIZ=1	;0=AP OFF, 1=AP ON
-
+JPL152_Pilot_Seat=5950
+JPL152_CoPilot_Seat=5950
 
 [Gauges.0]
 KollsmanSetting=29.921342849731445313
@@ -152,6 +147,7 @@ RightBrake=000.00
 ParkingBrake=000.00
 RudderTrimPct=0
 AileronTrimPct=0
+ElevatorTrim=1.0
 AileronTrimDisabled=False
 ElevatorTrimDisabled=False
 RudderTrimDisabled=False

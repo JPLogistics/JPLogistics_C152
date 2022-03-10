@@ -277,8 +277,8 @@
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/JPL152IP.js",
-      "size": 51391,
-      "date": 132892516780893301
+      "size": 51290,
+      "date": 132900815732439640
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/JPL152IPdel.js",
@@ -347,8 +347,8 @@
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/Radios/KR87/KR87.js",
-      "size": 7446,
-      "date": 132892549307668552
+      "size": 8594,
+      "date": 132900011746804951
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/Radios/KX155A/KX155A - Copy.css",
@@ -567,8 +567,8 @@
     },
     {
       "path": "html_ui/Pages/VCockpit/Instruments/JPLogistics/Transponders/AS330/AS330.js",
-      "size": 21844,
-      "date": 132892042717997473
+      "size": 22042,
+      "date": 132894702445784682
     },
     {
       "path": "it-IT.locPak",
@@ -582,13 +582,13 @@
     },
     {
       "path": "ModelBehaviorDefs/C152X/Animations.xml",
-      "size": 18654,
-      "date": 132892053350036820
+      "size": 19805,
+      "date": 132895690435514954
     },
     {
       "path": "ModelBehaviorDefs/C152X/Breakers.xml",
-      "size": 10477,
-      "date": 132890849715903047
+      "size": 10522,
+      "date": 132894605967937693
     },
     {
       "path": "ModelBehaviorDefs/C152X/EngineStart.xml",
@@ -607,13 +607,13 @@
     },
     {
       "path": "ModelBehaviorDefs/C152X/Instrument.xml",
-      "size": 8028,
-      "date": 132892055144913652
+      "size": 6802,
+      "date": 132894604911816067
     },
     {
       "path": "ModelBehaviorDefs/C152X/JPL152_ADF.xml",
-      "size": 17121,
-      "date": 132892496153216830
+      "size": 16793,
+      "date": 132900016410312542
     },
     {
       "path": "ModelBehaviorDefs/C152X/JPL152_KAP140.xml",
@@ -628,7 +628,7 @@
     {
       "path": "ModelBehaviorDefs/C152X/NavComSystem.xml",
       "size": 31996,
-      "date": 132879685515905071
+      "date": 132894558301787477
     },
     {
       "path": "ModelBehaviorDefs/C152X/Subtemplates/Instrument_Subtemplates.xml",
@@ -687,23 +687,33 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/Approach.flt",
-      "size": 3092,
-      "date": 132888695128445533
+      "size": 2988,
+      "date": 132894567953365378
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/apron.flt",
-      "size": 3160,
-      "date": 132888695030383661
+      "size": 3105,
+      "date": 132894558566442672
     },
     {
-      "path": "SimObjects/Airplanes/JPL_C152/cameras.cfg",
+      "path": "SimObjects/Airplanes/JPL_C152/cameras - Copy.cfg",
       "size": 20457,
       "date": 132723729025296920
     },
     {
+      "path": "SimObjects/Airplanes/JPL_C152/cameras.cfg",
+      "size": 21457,
+      "date": 132893602289141946
+    },
+    {
+      "path": "SimObjects/Airplanes/JPL_C152/camerasnew.cfg",
+      "size": 20452,
+      "date": 132893568770555114
+    },
+    {
       "path": "SimObjects/Airplanes/JPL_C152/Checklist/Cessna152_Checklist.xml",
-      "size": 7079,
-      "date": 132786656536741812
+      "size": 7075,
+      "date": 132893642521106266
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/Checklist/Library.xml",
@@ -712,8 +722,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/Climb.flt",
-      "size": 3107,
-      "date": 132888694875428118
+      "size": 3026,
+      "date": 132894521266508063
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/cockpit.cfg",
@@ -722,18 +732,28 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/Cruise.flt",
-      "size": 3098,
-      "date": 132888694820132878
+      "size": 2979,
+      "date": 132894530756233524
+    },
+    {
+      "path": "SimObjects/Airplanes/JPL_C152/eng_fltm_bak/engines.cfg",
+      "size": 8928,
+      "date": 132895216312656402
+    },
+    {
+      "path": "SimObjects/Airplanes/JPL_C152/eng_fltm_bak/flight_model.cfg",
+      "size": 12514,
+      "date": 132895215979625658
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/engines.cfg",
       "size": 8928,
-      "date": 132805788096598177
+      "date": 132900845741586792
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/Final.flt",
-      "size": 3106,
-      "date": 132888694762146205
+      "size": 2987,
+      "date": 132894576771930542
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/flight_model - Copy.cfg",
@@ -742,8 +762,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/flight_model.cfg",
-      "size": 12189,
-      "date": 132891803216043347
+      "size": 12514,
+      "date": 132900845468492247
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/GAMEPLAY.CFG",
@@ -752,8 +772,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/hangar.flt",
-      "size": 2788,
-      "date": 132807915373346990
+      "size": 2838,
+      "date": 132894521236193926
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/model/C152.xml",
@@ -763,27 +783,27 @@
     {
       "path": "SimObjects/Airplanes/JPL_C152/model/C152_cockpit_LOD00.bin",
       "size": 22310454,
-      "date": 132891896815062963
+      "date": 132900820030951902
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/model/C152_cockpit_LOD00.gltf",
-      "size": 777027,
-      "date": 132891896815112580
+      "size": 777013,
+      "date": 132900820030996556
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/model/C152_LOD00.bin",
       "size": 11555158,
-      "date": 132890478781919351
+      "date": 132900779036658789
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/model/C152_LOD00.gltf",
       "size": 117150,
-      "date": 132890478781929272
+      "date": 132900779036668710
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/model/Cessna152_interior.xml",
-      "size": 90858,
-      "date": 132892501929008552
+      "size": 89857,
+      "date": 132895709033816045
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/model/model.CFG",
@@ -812,8 +832,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/runway.FLT",
-      "size": 3074,
-      "date": 132888694591148545
+      "size": 3051,
+      "date": 132894581065895834
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/sound/ap_disengage_sound.wav",
@@ -853,7 +873,7 @@
     {
       "path": "SimObjects/Airplanes/JPL_C152/sound/sound.xml",
       "size": 31984,
-      "date": 132866757095468962
+      "date": 132894806039018849
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/sound/ssd.wav",
@@ -892,8 +912,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/systems.cfg",
-      "size": 17229,
-      "date": 132892549483530688
+      "size": 17290,
+      "date": 132900018673357028
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/target_performance.cfg",
@@ -902,148 +922,148 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/taxi.flt",
-      "size": 3071,
-      "date": 132888694531223744
+      "size": 3011,
+      "date": 132894530008715090
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_DECALS_ALBD.PNG.DDS",
       "size": 5592560,
-      "date": 132890478795978642
+      "date": 132900779050319497
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_DECALS_ALBD.PNG.DDS.json",
       "size": 119,
-      "date": 132890478795953842
+      "date": 132900779050289733
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_FUSELAGE_ALBD.PNG.DDS",
       "size": 11184952,
-      "date": 132890478816606201
+      "date": 132900779070342290
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_FUSELAGE_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478816561560
+      "date": 132900779070287729
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_FUSELAGE_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478797293038
+      "date": 132900779051499970
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_FUSELAGE_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478797278160
+      "date": 132900779051485091
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_PROP_BLURRED_ALBD.PNG.DDS",
       "size": 5592560,
-      "date": 132890478804439338
+      "date": 132900779058577801
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_PROP_BLURRED_ALBD.PNG.DDS.json",
       "size": 119,
-      "date": 132890478804409582
+      "date": 132900779058552998
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_PROP_BLURRED_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478800111686
+      "date": 132900779054235805
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_PROP_BLURRED_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478800096804
+      "date": 132900779054220925
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_PROP_SLOW_ALBD.PNG.DDS",
       "size": 5592560,
-      "date": 132890478792427285
+      "date": 132900779046872301
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_PROP_SLOW_ALBD.PNG.DDS.json",
       "size": 119,
-      "date": 132890478792402487
+      "date": 132900779046842542
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_PROP_STATIC_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478787942653
+      "date": 132900779042519139
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_PROP_STATIC_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478787927777
+      "date": 132900779042504261
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_TAIL_ALBD.PNG.DDS",
       "size": 11184952,
-      "date": 132890478831342338
+      "date": 132900779084537776
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_TAIL_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478831173699
+      "date": 132900779084488176
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_TAIL_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478832552577
+      "date": 132900779085762895
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_TAIL_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478832537697
+      "date": 132900779085748013
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_WINGS_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478819884755
+      "date": 132900779073447241
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_WINGS_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478819869875
+      "date": 132900779073432363
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_WINGS_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478783389312
+      "date": 132900779038015175
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSA152_AIRFRAME_WINGS_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478783374431
+      "date": 132900779037995333
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSNA_152_COCKPIT_MAIN_PANEL_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478842621366
+      "date": 132900779095266231
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSNA_152_COCKPIT_MAIN_PANEL_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478842606482
+      "date": 132900779095251352
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSNA_152_COCKPIT_SEAT_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478835860892
+      "date": 132900779088877769
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSNA_152_COCKPIT_SEAT_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478835841052
+      "date": 132900779088862888
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSNA_152_COCKPIT_SIDE_SHELL_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478839233689
+      "date": 132900779092062080
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/CESSNA_152_COCKPIT_SIDE_SHELL_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478839218809
+      "date": 132900779092047200
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture.BlueM/texture.CFG",
@@ -1058,1302 +1078,1302 @@
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ADF_AS87_DECAL_ALBD.PNG.DDS",
       "size": 349680,
-      "date": 132890478527019447
+      "date": 132900778772688816
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ADF_AS87_DECAL_ALBD.PNG.DDS.json",
       "size": 119,
-      "date": 132890478527014485
+      "date": 132900778772683858
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ADF_AS87_DECAL_EMIS.PNG.DDS",
       "size": 174904,
-      "date": 132890478540421491
+      "date": 132900778786308181
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ADF_AS87_DECAL_EMIS.PNG.DDS.json",
       "size": 102,
-      "date": 132890478540416530
+      "date": 132900778786303221
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ADF_AS87_SCREEN_ALBD.PNG.DDS",
       "size": 22024,
-      "date": 132890478593881681
+      "date": 132900778840911903
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ADF_AS87_SCREEN_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478593881681
+      "date": 132900778840906945
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ADF_AS87_SCREEN_COMP.PNG.DDS",
       "size": 5640,
-      "date": 132890478527173206
+      "date": 132900778773750256
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ADF_AS87_SCREEN_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478527168243
+      "date": 132900778773745298
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ADF_AS87_SCREEN_EMIS.PNG.DDS",
       "size": 22024,
-      "date": 132890478635154852
+      "date": 132900778882148844
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ADF_AS87_SCREEN_EMIS.PNG.DDS.json",
       "size": 102,
-      "date": 132890478635149894
+      "date": 132900778882148844
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ADF_ONEKNOB_NORM.PNG.DDS",
       "size": 2796344,
-      "date": 132890478611086288
+      "date": 132900778858070680
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ADF_ONEKNOB_NORM.PNG.DDS.json",
       "size": 166,
-      "date": 132890478611071409
+      "date": 132900778858055795
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ALTIMETER_MB_INHG_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478511768741
+      "date": 132900778758176024
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ALTIMETER_MB_INHG_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478511753859
+      "date": 132900778758156179
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ALTIMETER_MB_INHG_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478613293476
+      "date": 132900778860353119
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ALTIMETER_MB_INHG_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478613278596
+      "date": 132900778860338239
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ALTIMETER_MB_INHG_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478554088978
+      "date": 132900778799969887
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ALTIMETER_MB_INHG_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478554059218
+      "date": 132900778799940127
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AS140_DECAL_ALBD.PNG.DDS",
       "size": 349680,
-      "date": 132890478613665475
+      "date": 132900778860710238
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AS140_DECAL_ALBD.PNG.DDS.json",
       "size": 119,
-      "date": 132890478613660516
+      "date": 132900778860705278
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AS140_DECAL_EMIS.PNG.DDS",
       "size": 174904,
-      "date": 132890478579141451
+      "date": 132900778825317837
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AS140_DECAL_EMIS.PNG.DDS.json",
       "size": 102,
-      "date": 132890478579136490
+      "date": 132900778825312880
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AS140_RADIO_ADF_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478667963964
+      "date": 132900778914576184
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AS140_RADIO_ADF_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478667949086
+      "date": 132900778914566262
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AS140_RADIO_ADF_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478717788608
+      "date": 132900778963268850
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AS140_RADIO_ADF_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478717773728
+      "date": 132900778963249010
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AS140_RADIO_ADF_EMIS.PNG.DDS",
       "size": 2796344,
-      "date": 132890478641947677
+      "date": 132900778889271650
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AS140_RADIO_ADF_EMIS.PNG.DDS.json",
       "size": 102,
-      "date": 132890478641927840
+      "date": 132900778889251810
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AS140_RADIO_ADF_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478724949969
+      "date": 132900778970104555
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AS140_RADIO_ADF_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478724925169
+      "date": 132900778970074794
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ATTITUDEINDICATOR_C172_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478736278594
+      "date": 132900778981051248
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ATTITUDEINDICATOR_C172_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478736263712
+      "date": 132900778981036367
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ATTITUDEINDICATOR_C172_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478637305350
+      "date": 132900778884255701
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ATTITUDEINDICATOR_C172_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478637290470
+      "date": 132900778884245782
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ATTITUDEINDICATOR_C172_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478685293079
+      "date": 132900778931675394
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ATTITUDEINDICATOR_C172_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478685258359
+      "date": 132900778931650593
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AUTOPILOT_AS140_SCREEN_ALBD.PNG.DDS",
       "size": 43848,
-      "date": 132890478543880474
+      "date": 132900778790366524
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AUTOPILOT_AS140_SCREEN_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478543875514
+      "date": 132900778790361565
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AUTOPILOT_AS140_SCREEN_EMIS.PNG.DDS",
       "size": 43848,
-      "date": 132890478527128565
+      "date": 132900778773194736
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/AUTOPILOT_AS140_SCREEN_EMIS.PNG.DDS.json",
       "size": 102,
-      "date": 132890478527123604
+      "date": 132900778773189777
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CDI_1_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478552447547
+      "date": 132900778798323634
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CDI_1_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478552437622
+      "date": 132900778798308752
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CDI_1_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478549193792
+      "date": 132900778795055000
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CDI_1_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478549173946
+      "date": 132900778795040120
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CDI_1_EMIS.PNG.DDS",
       "size": 699192,
-      "date": 132890478595369679
+      "date": 132900778842419738
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CDI_1_EMIS.PNG.DDS.json",
       "size": 102,
-      "date": 132890478595364717
+      "date": 132900778842414779
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CDI_1_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478518368963
+      "date": 132900778764764775
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CDI_1_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478518344158
+      "date": 132900778764739976
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_DECALS_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478767045374
+      "date": 132900779010901441
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_DECALS_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478767030495
+      "date": 132900779010881594
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_FUSELAGE_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478773412964
+      "date": 132900779026798329
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_FUSELAGE_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478773393124
+      "date": 132900779026788406
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_FUSELAGE_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478768473851
+      "date": 132900779012280311
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_FUSELAGE_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478768458972
+      "date": 132900779012265435
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_FUSELAGE_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478450300455
+      "date": 132900778695544077
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_FUSELAGE_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478450270695
+      "date": 132900778695519276
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_LANDING_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478467315629
+      "date": 132900778712859775
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_LANDING_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478467295789
+      "date": 132900778712844896
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_LANDING_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478460247640
+      "date": 132900778705380111
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_LANDING_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478460217880
+      "date": 132900778705350353
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_LIGHT_ALBD.PNG.DDS",
       "size": 43832,
-      "date": 132890478467424749
+      "date": 132900778712973855
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_LIGHT_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478467419790
+      "date": 132900778712973855
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_LIGHT_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478493896605
+      "date": 132900778740705933
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_LIGHT_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478493881724
+      "date": 132900778740691053
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_LIGHT_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478482503000
+      "date": 132900778728690362
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_LIGHT_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478482473240
+      "date": 132900778728660602
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_PROP_BLURRED_ALBD.PNG.DDS",
       "size": 5592560,
-      "date": 132890478456877407
+      "date": 132900778702006941
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_PROP_BLURRED_ALBD.PNG.DDS.json",
       "size": 119,
-      "date": 132890478456842686
+      "date": 132900778701982142
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_PROP_BLURRED_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478452820132
+      "date": 132900778698048873
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_PROP_BLURRED_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478452805249
+      "date": 132900778698038954
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_PROP_BLURRED_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478446350123
+      "date": 132900778691845674
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_PROP_BLURRED_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478446315404
+      "date": 132900778691820871
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_PROP_SLOW_ALBD.PNG.DDS",
       "size": 5592560,
-      "date": 132890478763806499
+      "date": 132900779007543525
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_PROP_SLOW_ALBD.PNG.DDS.json",
       "size": 119,
-      "date": 132890478763781699
+      "date": 132900779007518727
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_PROP_SLOW_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478464681873
+      "date": 132900778709844103
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_PROP_SLOW_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478464652113
+      "date": 132900778709814342
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_PROP_STATIC_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478759140066
+      "date": 132900779003142933
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_PROP_STATIC_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478759125185
+      "date": 132900779003128059
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_PROP_STATIC_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478458181883
+      "date": 132900778703296542
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_PROP_STATIC_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478458147162
+      "date": 132900778703271738
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_RIVETS_ALBD.PNG.DDS",
       "size": 5592560,
-      "date": 132890478488909713
+      "date": 132900778736009544
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_RIVETS_ALBD.PNG.DDS.json",
       "size": 119,
-      "date": 132890478488879953
+      "date": 132900778735984745
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_RIVETS_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478472813199
+      "date": 132900778718727131
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_RIVETS_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478472793358
+      "date": 132900778718712253
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_RIVETS_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478478412424
+      "date": 132900778724480718
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_RIVETS_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478478382664
+      "date": 132900778724450959
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_TAIL_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478745713365
+      "date": 132900778990132885
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_TAIL_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478745693524
+      "date": 132900778990113043
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_TAIL_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478774811684
+      "date": 132900779028152405
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_TAIL_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478774796803
+      "date": 132900779028137524
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_TAIL_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478483926518
+      "date": 132900778730193240
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_TAIL_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478483901719
+      "date": 132900778730163481
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_WHEEL_BLURRED_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478476662155
+      "date": 132900778722814164
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_WHEEL_BLURRED_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478476642315
+      "date": 132900778722794321
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_WHEEL_BLURRED_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478491153725
+      "date": 132900778738012659
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_WHEEL_BLURRED_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478491128926
+      "date": 132900778737987857
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_WHEEL_STATIC_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478463575794
+      "date": 132900778708752903
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_WHEEL_STATIC_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478463560916
+      "date": 132900778708738024
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_WHEEL_STATIC_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478448658693
+      "date": 132900778694125523
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_WHEEL_STATIC_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478448628933
+      "date": 132900778694095759
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_WINGS_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478741025305
+      "date": 132900778985822756
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_WINGS_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478741005467
+      "date": 132900778985807877
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_WINGS_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478737716990
+      "date": 132900778982549164
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_WINGS_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478737702112
+      "date": 132900778982534285
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_WINGS_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478451580132
+      "date": 132900778696818794
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSA152_AIRFRAME_WINGS_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478451545411
+      "date": 132900778696789033
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DECALS2_ALBD.PNG.DDS",
       "size": 699192,
-      "date": 132890478694754423
+      "date": 132900778941312157
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DECALS2_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478694749463
+      "date": 132900778941307195
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DECALS_ALBD.PNG.DDS",
       "size": 5592560,
-      "date": 132890478566756592
+      "date": 132900778812702455
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DECALS_ALBD.PNG.DDS.json",
       "size": 119,
-      "date": 132890478566726831
+      "date": 132900778812677655
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DECALS_EMIS.PNG.DDS",
       "size": 2796344,
-      "date": 132890478606438774
+      "date": 132900778853348767
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DECALS_EMIS.PNG.DDS.json",
       "size": 102,
-      "date": 132890478606394133
+      "date": 132900778853333887
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DETAILS_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478533874154
+      "date": 132900778779781602
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DETAILS_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478533859275
+      "date": 132900778779766722
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DETAILS_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478580629448
+      "date": 132900778827368459
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DETAILS_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478580614568
+      "date": 132900778827353579
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DETAILS_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478601915262
+      "date": 132900778848889735
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DETAILS_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478601885502
+      "date": 132900778848864937
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DOOR_SHELL_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478609593330
+      "date": 132900778856597557
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DOOR_SHELL_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478609578451
+      "date": 132900778856582680
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DOOR_SHELL_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478519762716
+      "date": 132900778766133733
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DOOR_SHELL_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478519747836
+      "date": 132900778766118852
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DOOR_SHELL_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478529623444
+      "date": 132900778775525932
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_DOOR_SHELL_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478529593680
+      "date": 132900778775501130
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_FLOOR_SHELL_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478618940637
+      "date": 132900778865931284
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_FLOOR_SHELL_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478618925757
+      "date": 132900778865916407
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_FLOOR_SHELL_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478516035874
+      "date": 132900778762425211
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_FLOOR_SHELL_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478516016033
+      "date": 132900778762410327
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_FLOOR_SHELL_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478547656193
+      "date": 132900778793527326
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_FLOOR_SHELL_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478547621469
+      "date": 132900778793502529
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_GAUGES_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478562077744
+      "date": 132900778808112839
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_GAUGES_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478562062861
+      "date": 132900778808097955
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_GAUGES_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478540133810
+      "date": 132900778786020502
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_GAUGES_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478540118932
+      "date": 132900778786005623
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_GAUGES_EMIS.PNG.DDS",
       "size": 2796344,
-      "date": 132890478599858477
+      "date": 132900778846849013
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_GAUGES_EMIS.PNG.DDS.json",
       "size": 102,
-      "date": 132890478599838630
+      "date": 132900778846834131
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478628203002
+      "date": 132900778875235328
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478628188122
+      "date": 132900778875225411
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478495979176
+      "date": 132900778742775752
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478495959335
+      "date": 132900778742760872
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478538660693
+      "date": 132900778784577148
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_GLARE_SHIELD_PEDESTAL_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478538630935
+      "date": 132900778784547385
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_INPUTS_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478716394850
+      "date": 132900778961889974
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_INPUTS_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478716375010
+      "date": 132900778961875093
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_INPUTS_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478683904281
+      "date": 132900778930306438
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_INPUTS_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478683889401
+      "date": 132900778930291559
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_INPUTS_EMIS.PNG.DDS",
       "size": 174904,
-      "date": 132890478732211398
+      "date": 132900778977222137
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_INPUTS_EMIS.PNG.DDS.json",
       "size": 102,
-      "date": 132890478732206438
+      "date": 132900778977217177
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_INPUTS_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478650884564
+      "date": 132900778897496113
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_INPUTS_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478650854800
+      "date": 132900778897471310
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_LIGHTS_EMIS.PNG.DDS",
       "size": 43832,
-      "date": 132890478572859693
+      "date": 132900778818589409
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_LIGHTS_EMIS.PNG.DDS.json",
       "size": 102,
-      "date": 132890478572859693
+      "date": 132900778818589409
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_MAIN_PANEL_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478755876389
+      "date": 132900778999913980
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_MAIN_PANEL_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478755856551
+      "date": 132900778999899098
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_MAIN_PANEL_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478596842795
+      "date": 132900778843853176
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_MAIN_PANEL_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478596822956
+      "date": 132900778843838296
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_MAIN_PANEL_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478578858732
+      "date": 132900778825030158
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_MAIN_PANEL_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478578828971
+      "date": 132900778825000399
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_PEDALS_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478622214233
+      "date": 132900778869135439
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_PEDALS_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478622199352
+      "date": 132900778869125519
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_PEDALS_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478508648906
+      "date": 132900778755130586
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_PEDALS_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478508629066
+      "date": 132900778755115710
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_PEDALS_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478542407355
+      "date": 132900778788853727
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_PEDALS_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478542377596
+      "date": 132900778788823968
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_SEAT_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478748986960
+      "date": 132900778993371754
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_SEAT_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478748972080
+      "date": 132900778993351915
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_SEAT_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478635075492
+      "date": 132900778882074443
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_SEAT_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478635060613
+      "date": 132900778882059562
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_SEAT_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478575704501
+      "date": 132900778821472507
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_SEAT_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478575679703
+      "date": 132900778821447703
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_SIDE_SHELL_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478752558155
+      "date": 132900778996640392
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_SIDE_SHELL_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478752548235
+      "date": 132900778996625507
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_SIDE_SHELL_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478615662082
+      "date": 132900778862667615
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_SIDE_SHELL_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478615647201
+      "date": 132900778862652733
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_SIDE_SHELL_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478557200272
+      "date": 132900778803086664
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_SIDE_SHELL_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478557170511
+      "date": 132900778803061860
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_TOP_SHELL_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478693613625
+      "date": 132900778940077118
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_TOP_SHELL_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478693598745
+      "date": 132900778940062237
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_TOP_SHELL_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478687349753
+      "date": 132900778933716976
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_TOP_SHELL_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478687339832
+      "date": 132900778933702096
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_TOP_SHELL_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478639184962
+      "date": 132900778886489097
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_TOP_SHELL_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478639155201
+      "date": 132900778886464297
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_YOKE_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478731928682
+      "date": 132900778976929498
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_YOKE_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478731913801
+      "date": 132900778976914616
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_YOKE_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478644208151
+      "date": 132900778890873731
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_YOKE_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478644193273
+      "date": 132900778890858846
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_YOKE_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478689249262
+      "date": 132900778935565690
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/CESSNA_152_COCKPIT_YOKE_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478689219502
+      "date": 132900778935535930
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/COMNAV_AS155_SCREEN_ALBD.PNG.DDS",
       "size": 87560,
-      "date": 132890478611279729
+      "date": 132900778858422835
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/COMNAV_AS155_SCREEN_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478611274768
+      "date": 132900778858417874
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/COMNAV_AS155_SCREEN_COMP.PNG.DDS",
       "size": 5640,
-      "date": 132890478502720975
+      "date": 132900778749456362
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/COMNAV_AS155_SCREEN_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478502716021
+      "date": 132900778749456362
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/COMNAV_AS155_SCREEN_EMIS.PNG.DDS",
       "size": 87560,
-      "date": 132890478576835380
+      "date": 132900778822638100
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/COMNAV_AS155_SCREEN_EMIS.PNG.DDS.json",
       "size": 102,
-      "date": 132890478576835380
+      "date": 132900778822633142
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/DME_ALBD.PNG.DDS",
       "size": 5592560,
-      "date": 132890478572755534
+      "date": 132900778818480290
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/DME_ALBD.PNG.DDS.json",
       "size": 119,
-      "date": 132890478572725770
+      "date": 132900778818455489
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/DME_COMP.PNG.DDS",
       "size": 699192,
-      "date": 132890478536993989
+      "date": 132900778782241755
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/DME_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478536319432
+      "date": 132900778782236796
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/DME_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478498044762
+      "date": 132900778744820186
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/DME_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478498014999
+      "date": 132900778744790426
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/DME_SCREEN_ALBD.PNG.DDS",
       "size": 87560,
-      "date": 132890478642106398
+      "date": 132900778889435330
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/DME_SCREEN_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478642101437
+      "date": 132900778889430371
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/DME_SCREEN_COMP.PNG.DDS",
       "size": 5640,
-      "date": 132890478732935557
+      "date": 132900778977966135
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/DME_SCREEN_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478732930597
+      "date": 132900778977966135
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/DME_SCREEN_EMIS.PNG.DDS",
       "size": 87560,
-      "date": 132890478681513565
+      "date": 132900778927796682
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/DME_SCREEN_EMIS.PNG.DDS.json",
       "size": 102,
-      "date": 132890478681508605
+      "date": 132900778927791722
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/EGT4.PNG.DDS",
       "size": 481200,
-      "date": 132890478425491926
+      "date": 132900778663868357
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/EGT4.PNG.DDS.json",
       "size": 119,
-      "date": 132890478425482006
+      "date": 132900778663863398
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ENVELLOPE NRM.PNG.DDS",
       "size": 22369776,
-      "date": 132890478633716454
+      "date": 132900778880750125
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ENVELLOPE NRM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478633622215
+      "date": 132900778880645967
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ENVELLOPE.PNG.DDS",
       "size": 11184952,
-      "date": 132890478681290365
+      "date": 132900778927633004
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/ENVELLOPE.PNG.DDS.json",
       "size": 102,
-      "date": 132890478681240766
+      "date": 132900778927583403
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/FRAGILBOX NRM.PNG.DDS",
       "size": 22369776,
-      "date": 132890478712893095
+      "date": 132900778958502303
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/FRAGILBOX NRM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478712788937
+      "date": 132900778958403104
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/FRAGILBOX.PNG.DDS",
       "size": 11184952,
-      "date": 132890478593762641
+      "date": 132900778840827582
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/FRAGILBOX.PNG.DDS.json",
       "size": 102,
-      "date": 132890478593713039
+      "date": 132900778840777983
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/FROST_ALBD.PNG.DDS",
       "size": 5592560,
-      "date": 132890478471503760
+      "date": 132900778717407778
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/FROST_ALBD.PNG.DDS.json",
       "size": 119,
-      "date": 132890478471439282
+      "date": 132900778717382975
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/FROST_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478492795482
+      "date": 132900778739609776
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/FROST_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478492775643
+      "date": 132900778739594894
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/FROST_DETAIL_COMP.PNG.DDS",
       "size": 699192,
-      "date": 132890478465078673
+      "date": 132900778710235941
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/FROST_DETAIL_COMP.PNG.DDS.json",
       "size": 134,
-      "date": 132890478465068753
+      "date": 132900778710226020
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/FROST_DETAIL_NORM.PNG.DDS",
       "size": 1398256,
-      "date": 132890478453717890
+      "date": 132900778698797828
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/FROST_DETAIL_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478453549250
+      "date": 132900778698787909
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/FROST_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478481530841
+      "date": 132900778727743008
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/FROST_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478481501084
+      "date": 132900778727718212
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/GENERIC_PROPELER_SIDE_BLURED.PNG.DDS",
       "size": 43920,
-      "date": 132890478465663953
+      "date": 132900778711218018
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/GENERIC_PROPELER_SIDE_BLURED.PNG.DDS.json",
       "size": 119,
-      "date": 132890478465654031
+      "date": 132900778711218018
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/GENNIELIGHRGH.PNG.DDS",
       "size": 11184952,
-      "date": 132890478526181205
+      "date": 132900778772326746
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/GENNIELIGHRGH.PNG.DDS.json",
       "size": 166,
-      "date": 132890478526091927
+      "date": 132900778772267219
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/GENNIELIGHT.PNG.DDS",
       "size": 11184952,
-      "date": 132890478664735010
+      "date": 132900778911362109
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/GENNIELIGHT.PNG.DDS.json",
       "size": 102,
-      "date": 132890478664685410
+      "date": 132900778911297629
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/GENNIELIGHTNRM.PNG.DDS",
       "size": 22369776,
-      "date": 132890478502666415
+      "date": 132900778749406761
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/GENNIELIGHTNRM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478502562253
+      "date": 132900778749292680
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/GLASS_COMP.PNG.DDS",
       "size": 699192,
-      "date": 132890478473353839
+      "date": 132900778719366971
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/GLASS_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478473343919
+      "date": 132900778719357050
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/GLASS_DETAILMAP01.PNG.DDS",
       "size": 5592560,
-      "date": 132890478485750197
+      "date": 132900778732874833
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/GLASS_DETAILMAP01.PNG.DDS.json",
       "size": 151,
-      "date": 132890478485720437
+      "date": 132900778732850034
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/GLASS_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478479369704
+      "date": 132900778725586797
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/GLASS_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478479344902
+      "date": 132900778725561995
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/HEADING_C172_ALBD.PNG.DDS",
       "size": 699192,
-      "date": 132890478427381684
+      "date": 132900778665976351
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/HEADING_C172_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478427371762
+      "date": 132900778665971391
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/HEADING_C172_NORM.PNG.DDS",
       "size": 1398256,
-      "date": 132890478426538483
+      "date": 132900778664850434
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/HEADING_C172_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478425903604
+      "date": 132900778664840514
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/HEADING_DV20_ALBD.PNG.DDS",
       "size": 699192,
-      "date": 132890478555110737
+      "date": 132900778801021408
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/HEADING_DV20_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478555105775
+      "date": 132900778801011487
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/HEADING_DV20_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478543771354
+      "date": 132900778790192926
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/HEADING_DV20_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478543751515
+      "date": 132900778790178046
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/HEADING_DV20_NORM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478512969059
+      "date": 132900778759376341
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/HEADING_DV20_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478512944257
+      "date": 132900778759341616
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/MAGNETICCOMPASS_ALBD.PNG.DDS",
       "size": 174992,
-      "date": 132890478651078000
+      "date": 132900778897699472
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/MAGNETICCOMPASS_ALBD.PNG.DDS.json",
       "size": 119,
-      "date": 132890478651073040
+      "date": 132900778897694513
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/MULTIPARCEL NRM.PNG.DDS",
       "size": 22369776,
-      "date": 132890478722737813
+      "date": 132900778968013995
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/MULTIPARCEL NRM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478722633653
+      "date": 132900778967914795
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/MULTIPARCEL.PNG.DDS",
       "size": 11184952,
-      "date": 132890478708852400
+      "date": 132900778954651203
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/MULTIPARCEL.PNG.DDS.json",
       "size": 102,
-      "date": 132890478708797843
+      "date": 132900778954591685
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TACHOMETER_ALBD.PNG.DDS",
       "size": 699192,
-      "date": 132890478530744400
+      "date": 132900778776666728
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TACHOMETER_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478530734479
+      "date": 132900778776661770
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TACHOMETER_COMP.PNG.DDS",
       "size": 699192,
-      "date": 132890478576165782
+      "date": 132900778822013144
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TACHOMETER_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478576160823
+      "date": 132900778822008182
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/thumbnail.JPG",
@@ -2363,162 +2383,162 @@
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TOEBARBLUE.PNG.DDS",
       "size": 2796344,
-      "date": 132890478648052408
+      "date": 132900778894758198
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TOEBARBLUE.PNG.DDS.json",
       "size": 102,
-      "date": 132890478648037523
+      "date": 132900778894738359
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TOEBARBLUENRM.PNG.DDS",
       "size": 5592560,
-      "date": 132890478536001990
+      "date": 132900778781914398
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TOEBARBLUENRM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478535972233
+      "date": 132900778781889595
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TRANSPONDER_AS_330_ALBD.PNG.DDS",
       "size": 699208,
-      "date": 132890478534940554
+      "date": 132900778780857918
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TRANSPONDER_AS_330_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478534930632
+      "date": 132900778780852957
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TRANSPONDER_AS_330_COMP.PNG.DDS",
       "size": 699208,
-      "date": 132890478581026248
+      "date": 132900778827760298
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TRANSPONDER_AS_330_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478581021289
+      "date": 132900778827755341
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TRANSPONDER_AS_330_EMIS.PNG.DDS",
       "size": 312,
-      "date": 132890478506316971
+      "date": 132900778753558270
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TRANSPONDER_AS_330_EMIS.PNG.DDS.json",
       "size": 102,
-      "date": 132890478506312008
+      "date": 132900778753558270
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TRANSPONDER_AS_330_NORM.PNG.DDS",
       "size": 1398288,
-      "date": 132890478602500542
+      "date": 132900778849484936
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TRANSPONDER_AS_330_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478602490619
+      "date": 132900778849479974
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TRANSPONDER_AS_330_SCREEN_ALBD.PNG.DDS",
       "size": 11064,
-      "date": 132890478566816112
+      "date": 132900778812761974
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TRANSPONDER_AS_330_SCREEN_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478566811154
+      "date": 132900778812761974
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TRANSPONDER_DECAL_AS_330_ALBD.PNG.DDS",
       "size": 349680,
-      "date": 132890478728615405
+      "date": 132900778973695585
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TRANSPONDER_DECAL_AS_330_ALBD.PNG.DDS.json",
       "size": 119,
-      "date": 132890478728615405
+      "date": 132900778973695585
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TRANSPONDER_DECAL_AS_330_EMIS.PNG.DDS",
       "size": 240,
-      "date": 132890478694794104
+      "date": 132900778941351836
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TRANSPONDER_DECAL_AS_330_EMIS.PNG.DDS.json",
       "size": 119,
-      "date": 132890478694794104
+      "date": 132900778941346878
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TURNCOORDINATOR_C172_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478506262412
+      "date": 132900778752596033
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TURNCOORDINATOR_C172_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478506247528
+      "date": 132900778752581154
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TURNCOORDINATOR_C172_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478623707189
+      "date": 132900778870588714
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/TURNCOORDINATOR_C172_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478623697268
+      "date": 132900778870573835
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/VERTICALSPEED_DR400_ALBD.PNG.DDS",
       "size": 2796344,
-      "date": 132890478728273166
+      "date": 132900778973353345
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/VERTICALSPEED_DR400_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478728258285
+      "date": 132900778973338465
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/VERTICALSPEED_DR400_COMP.PNG.DDS",
       "size": 2796344,
-      "date": 132890478649565202
+      "date": 132900778896186676
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/VERTICALSPEED_DR400_COMP.PNG.DDS.json",
       "size": 166,
-      "date": 132890478649550323
+      "date": 132900778896171796
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/WARNINGLIGHTS_ALBD.PNG.DDS",
       "size": 87528,
-      "date": 132890478644396630
+      "date": 132900778891067166
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/WARNINGLIGHTS_ALBD.PNG.DDS.json",
       "size": 102,
-      "date": 132890478644391671
+      "date": 132900778891062206
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/WARNINGLIGHTS_EMIS.PNG.DDS",
       "size": 87528,
-      "date": 132890478682322045
+      "date": 132900778928813481
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/WARNINGLIGHTS_EMIS.PNG.DDS.json",
       "size": 102,
-      "date": 132890478682322045
+      "date": 132900778928808520
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/WARNINGLIGHTS_NORM.PNG.DDS",
       "size": 43856,
-      "date": 132890478689303822
+      "date": 132900778935625210
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152/texture/WARNINGLIGHTS_NORM.PNG.DDS.json",
       "size": 160,
-      "date": 132890478689298863
+      "date": 132900778935625210
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/ai.cfg",
@@ -2532,13 +2552,13 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/Approach.flt",
-      "size": 3137,
-      "date": 132791854363701799
+      "size": 2988,
+      "date": 132894567953365378
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/apron.flt",
-      "size": 3205,
-      "date": 132865111406873541
+      "size": 3105,
+      "date": 132894558566442672
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/cameras.cfg",
@@ -2557,8 +2577,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/Climb.flt",
-      "size": 3152,
-      "date": 132791854391666509
+      "size": 3026,
+      "date": 132894521266508063
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/cockpit.cfg",
@@ -2567,8 +2587,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/Cruise.flt",
-      "size": 3143,
-      "date": 132791854398779141
+      "size": 2979,
+      "date": 132894530756233524
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/engines.cfg",
@@ -2577,8 +2597,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/Final.flt",
-      "size": 3151,
-      "date": 132791854406374633
+      "size": 2987,
+      "date": 132894576771930542
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/flight_model.cfg",
@@ -2592,8 +2612,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/hangar.flt",
-      "size": 2788,
-      "date": 132807915373346990
+      "size": 2838,
+      "date": 132894521236193926
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/model/C152.xml",
@@ -2627,8 +2647,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/panel.noreg/panel.cfg",
-      "size": 2106,
-      "date": 132877545249092371
+      "size": 2282,
+      "date": 132900755182920721
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/panel/PANEL.CFG",
@@ -2642,8 +2662,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/runway.FLT",
-      "size": 3119,
-      "date": 132807916910737256
+      "size": 3051,
+      "date": 132894581065895834
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/sound/ap_disengage_sound.wav",
@@ -2722,8 +2742,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/systems.cfg",
-      "size": 17204,
-      "date": 132844622524910646
+      "size": 17290,
+      "date": 132900018673357028
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/target_performance.cfg",
@@ -2732,8 +2752,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/taxi.flt",
-      "size": 3116,
-      "date": 132791854384717561
+      "size": 3011,
+      "date": 132894530008715090
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Fairing/texture.BlueM2/C172SP_AIRFRAME_TAILLANDING_ALBD.PNG.DDS",
@@ -4767,13 +4787,13 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/Approach.flt",
-      "size": 3137,
-      "date": 132856201593780488
+      "size": 2988,
+      "date": 132894567953365378
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/apron.flt",
-      "size": 3205,
-      "date": 132865111406873541
+      "size": 3105,
+      "date": 132894558566442672
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/cameras.cfg",
@@ -4797,8 +4817,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/Climb.flt",
-      "size": 3152,
-      "date": 132856201593785464
+      "size": 3026,
+      "date": 132894521266508063
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/cockpit.cfg",
@@ -4807,8 +4827,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/Cruise.flt",
-      "size": 3143,
-      "date": 132856201593785464
+      "size": 2979,
+      "date": 132894530756233524
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/engines.cfg",
@@ -4817,8 +4837,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/Final.flt",
-      "size": 3151,
-      "date": 132856201593790424
+      "size": 2987,
+      "date": 132894576771930542
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/flight_model.cfg",
@@ -4832,8 +4852,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/hangar.flt",
-      "size": 2788,
-      "date": 132856201605155178
+      "size": 2838,
+      "date": 132894521236193926
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/model/C152.xml",
@@ -4862,8 +4882,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/panel/PANEL.CFG",
-      "size": 1958,
-      "date": 132868457388197013
+      "size": 2303,
+      "date": 132900779968614627
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/panel/panel.xml",
@@ -4872,8 +4892,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/runway.FLT",
-      "size": 3119,
-      "date": 132856201605447821
+      "size": 3051,
+      "date": 132894581065895834
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/sound/ap_disengage_sound.wav",
@@ -4952,8 +4972,8 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/systems.cfg",
-      "size": 17204,
-      "date": 132856201608921596
+      "size": 17290,
+      "date": 132900018673357028
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/target_performance.cfg",
@@ -4962,8 +4982,18 @@
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/taxi.flt",
-      "size": 3116,
-      "date": 132856201608926556
+      "size": 3011,
+      "date": 132894530008715090
+    },
+    {
+      "path": "SimObjects/Airplanes/JPL_C152_Taildragger/texture.black/CESSA152_AIRFRAME_DECALS_ALBD.PNG.DDS",
+      "size": 5592560,
+      "date": 132900777802845549
+    },
+    {
+      "path": "SimObjects/Airplanes/JPL_C152_Taildragger/texture.black/CESSA152_AIRFRAME_DECALS_ALBD.PNG.DDS.json",
+      "size": 119,
+      "date": 132900777802781068
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/texture.black/CESSA152_AIRFRAME_FUSELAGE_ALBD.PNG.DDS",
@@ -5018,7 +5048,7 @@
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/texture.black/texture.CFG",
       "size": 70,
-      "date": 132856201608926556
+      "date": 132900778546186255
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/texture.black/thumbnail.JPG",
@@ -5029,6 +5059,16 @@
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/texture.black/thumbnail_small.JPG",
       "size": 35738,
       "date": 132855673478021102
+    },
+    {
+      "path": "SimObjects/Airplanes/JPL_C152_Taildragger/texture.blue/CESSA152_AIRFRAME_DECALS_ALBD.PNG.DDS",
+      "size": 5592560,
+      "date": 132900777799353716
+    },
+    {
+      "path": "SimObjects/Airplanes/JPL_C152_Taildragger/texture.blue/CESSA152_AIRFRAME_DECALS_ALBD.PNG.DDS.json",
+      "size": 119,
+      "date": 132900777799294199
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/texture.blue/CESSA152_AIRFRAME_FUSELAGE_ALBD.PNG.DDS",
@@ -5083,7 +5123,7 @@
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/texture.blue/texture.CFG",
       "size": 68,
-      "date": 132856201608931515
+      "date": 132900778516205707
     },
     {
       "path": "SimObjects/Airplanes/JPL_C152_Taildragger/texture.blue/thumbnail.JPG",

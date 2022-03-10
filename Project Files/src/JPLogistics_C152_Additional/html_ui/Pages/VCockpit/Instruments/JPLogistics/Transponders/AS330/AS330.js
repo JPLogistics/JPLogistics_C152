@@ -61,6 +61,7 @@ class AS330 extends BaseInstrument {
                     for (let i = 0; i < this.pages.length; i++) {
                         this.pages[i].onShutDown();
                     }
+					// SimVar.SetSimVarValue("CIRCUIT SWITCH ON:20", "bool", 0);
                     break;
                 case "STBY":
                     SimVar.SetSimVarValue("TRANSPONDER STATE:1", "number", 1);
@@ -213,6 +214,7 @@ class AS330 extends BaseInstrument {
                 }
             }
             else {
+				// SimVar.SetSimVarValue("CIRCUIT SWITCH ON:20", "bool", 0);
                 diffAndSetAttribute(this.pageContainer, "state", "Off");
                 this.isOn = false;
                 this.isInitializing = false;
@@ -224,6 +226,7 @@ class AS330 extends BaseInstrument {
             }
         }
         else {
+			// SimVar.SetSimVarValue("CIRCUIT SWITCH ON:20", "bool", 1);
             if (this.isElectricityAvailable()) {
                 this.isOn = true;
                 this.isInitializing = true;

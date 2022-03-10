@@ -77,58 +77,8 @@
         </False>
       </Condition>
     </UseTemplate>
-  </Component>
-  	<Update Frequency = "1">
-		(L:JPL152_APVIZ) 0 &gt;
-		(A:CIRCUIT SWITCH ON:32, Boolean) ! and if{ 32 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE) }
-	</Update>
-	<Update Frequency = "1">
-		(L:JPL152_APVIZ) 0 ==
-		(A:CIRCUIT SWITCH ON:32, Boolean) and if{ 32 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE) }
-	</Update>
-	
-	<UseTemplate Name="ASOBO_GT_Update">
-		<UPDATE_ONCE>True</UPDATE_ONCE>
-		<UPDATE_CODE>
-			0 (&gt;L:JPL152_RANDOM_BREAKER2)
-		</UPDATE_CODE>
-	</UseTemplate>	
+  </Component>	
 </Template>
-
-<Template Name="ADF_VOLUME">
-	<Update Once="True">
-		(L:JPL152_ADFVOL, bool) 1 &gt;= if{
-			100 (&gt;K:ADF_VOLUME_SET)
-		}
-		(L:JPL152_ADFVOL, Bool) 0 &lt;= if{
-			0 (&gt;K:ADF_VOLUME_SET)
-		}
-	</Update>
-</Template>
-
-<Template Name="COM1_VOLUME">
-	<Update Once="True">
-		(L:JPL152_COM1VOL, bool) 1 == if{
-			50 (&gt;K:COM1_VOLUME_SET)
-		}
-		(L:JPL152_COM1VOL, Bool) 0 == if{
-			0 (&gt;K:COM1_VOLUME_SET)
-		}
-	</Update>
-</Template>	
-
-<Template Name="COM2_VOLUME">
-	<Update Once="True">
-		(L:JPL152_COM2VOL, bool) 1 == if{
-			75 (&gt;K:COM2_VOLUME_SET)
-			25 (&gt;K:ELECTRICAL_CIRCUIT_ON)
-		}	
-		(L:JPL152_COM2VOL, Bool) 0 == if{
-			0 (&gt;K:COM2_VOLUME_SET)
-			25 (&gt;K:ELECTRICAL_CIRCUIT_OFF)
-		}
-	</Update>
-</Template>	
 
 <Template Name="JPL152_INSTRUMENT_Needle_EGT_Template">
 	<Parameters Type="Default">

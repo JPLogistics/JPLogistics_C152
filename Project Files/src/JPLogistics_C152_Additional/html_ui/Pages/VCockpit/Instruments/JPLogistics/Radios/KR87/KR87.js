@@ -6,6 +6,14 @@ class KR87 extends BaseInstrument {
         this.RightDisplayMode = 0;
         this.chronoStarted = false;
         this.chronoValue = 0;
+		// mod for intercept
+        this.handleKeyIntercepted = (key) => {
+            switch (key) {
+            case 'ADF1_RADIO_SWAP':
+                this.onADFswap(1);
+                break;
+            }
+        };
     }
     get templateID() {
         return "KR87";
@@ -21,6 +29,28 @@ class KR87 extends BaseInstrument {
         this.EtAnnunciator = this.getChildById("ETModeAnnunc");
         this.RightDisplay = this.getChildById("RightDisplay");
 		this.Ident = this.getChildById("Ident");
+		// mod for intercept
+        this.keyListener = RegisterViewListener('JS_LISTENER_KEYEVENT', () => {
+            this.setupKeyIntercepts();
+            Coherent.on('keyIntercepted', this.handleKeyIntercepted);
+        });
+    } // END CONNECTED CALLBACK
+	
+	// mod for intercept
+    setupKeyIntercepts() {
+        Coherent.call('INTERCEPT_KEY_EVENT', 'ADF1_RADIO_SWAP', 0);
+    }
+	// mod for intercept
+    onADFswap(index) {
+		clearInterval(this.timer);
+		SimVar.SetSimVarValue("K:ADF_COMPLETE_SET", "number", Number(this.adfActive2));
+		SimVar.SetSimVarValue("K:ADF2_COMPLETE_SET", "number", Number(this.adfActive1));
+		this.timer = window.setInterval(adfCount, 2200);
+		function adfCount() {
+			if (SimVar.GetSimVarValue("ADF SIGNAL:1", "number") == 0 && SimVar.GetSimVarValue("CIRCUIT ON:37", "bool") == 1) {
+				SimVar.SetSimVarValue("K:ADF1_RADIO_TENTHS_INC", "number", 0);
+			}
+		}
     }
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -35,7 +65,15 @@ class KR87 extends BaseInstrument {
                 if (this.RightDisplayMode != 0) {
                     this.RightDisplayMode = 0;
                 } else {
-                    SimVar.SetSimVarValue("K:ADF1_RADIO_SWAP", "Boolean", 0);
+					clearInterval(this.timer);
+					SimVar.SetSimVarValue("K:ADF_COMPLETE_SET", "number", Number(this.adfActive2));
+					SimVar.SetSimVarValue("K:ADF2_COMPLETE_SET", "number", Number(this.adfActive1));
+					this.timer = window.setInterval(adfCount, 2200);
+					function adfCount() {
+						if (SimVar.GetSimVarValue("ADF SIGNAL:1", "number") == 0 && SimVar.GetSimVarValue("CIRCUIT ON:37", "bool") == 1) {
+							SimVar.SetSimVarValue("K:ADF1_RADIO_TENTHS_INC", "number", 0);
+						}
+					}
                 }
             } else if (_args[0] == "adf_FltEt") {
                 if (this.RightDisplayMode == 1) {
@@ -59,17 +97,12 @@ class KR87 extends BaseInstrument {
     Update() {
         super.Update();
         if (this.isElectricityAvailable()) {
-			
-			//PM Modif: End World4Fly Mod integration (Wrong radial and Rounded DME) and check for LOC or VOR
-			
-			// MOD GSD    If BFO Mode    then slave ADF Dial to Compass
-			// if (this.BfoMode == true){
-			// SimVar.SetSimVarValue("K:ADF_CARD_SET", "degrees", SimVar.GetSimVarValue("Plane heading degrees gyro","degrees"));
-			// }
-			// ---------------------------------------------
-			
-			
-			
+
+			SimVar.SetSimVarValue("L:ADF1_TEMP", "KHz", Math.floor(SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz")));
+			SimVar.SetSimVarValue("L:ADF2_TEMP", "KHz", Math.floor(SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:2", "KHz")));
+			this.adfActive1 = SimVar.GetSimVarValue("L:ADF1_TEMP", "Frequency ADF BCD32");
+			this.adfActive2 = SimVar.GetSimVarValue("L:ADF2_TEMP", "Frequency ADF BCD32");
+
             if (this.chronoStarted) {
                 this.chronoValue += this.deltaTime / 1000;
             }
@@ -116,14 +149,16 @@ class KR87 extends BaseInstrument {
             this.EtAnnunciator.textContent = "";
         }
     }
+	/*
     frequency1DigitsFormat(_num) {
         var freq = Math.round(_num * 100 - 0.1) / 100;
         return fastToFixed(freq, 1);
     }
     frequency0DigitsFormat(_num) {
-        var freq = Math.round(_num * 100 - 0.1) / 100;
+        var freq = Math.trunc(_num * 100 - 0.1) / 100;
         return fastToFixed(freq, 0);
     }
+	*/
 	getIdent() {
 		var value = SimVar.GetSimVarValue("ADF IDENT:1", "string");
 		if (SimVar.GetSimVarValue("ADF SIGNAL:1", "number") > 1) {
@@ -133,29 +168,18 @@ class KR87 extends BaseInstrument {
 		}
         return "";
 	}
+	// return Math.floor(SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz"));
     getActiveFrequency() {
         var value = SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz");
         if (value) {
-            return this.frequency0DigitsFormat(SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz"));
+            return Math.floor(SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz"));
         }
         return "";
     }
-	/*
-    getActiveFrequency() {
-        var value = SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz");
-        if (value) {
-			return value2 + " " + this.frequency0DigitsFormat(SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz"));
-            } else {
-                return this.frequency0DigitsFormat(SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:1", "KHz"));
-            }
-        }
-        return "";
-    }
-	*/
     getStbyFrequency() {
-        var value = SimVar.GetSimVarValue("ADF STANDBY FREQUENCY:1", "KHz");
+        var value = SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:2", "KHz");
         if (value) {
-            return this.frequency0DigitsFormat(SimVar.GetSimVarValue("ADF STANDBY FREQUENCY:1", "KHz"));
+            return Math.floor(SimVar.GetSimVarValue("ADF ACTIVE FREQUENCY:2", "KHz"));
         }
         return "";
     }

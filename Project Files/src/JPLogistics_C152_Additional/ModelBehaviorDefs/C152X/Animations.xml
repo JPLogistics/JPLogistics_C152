@@ -316,6 +316,7 @@
 		}
 	</Update>
 	
+	<!-- ### COM TRANSMIT XTRA POWER USAGE ### -->
 	<Update Once="True">
 		0 (&gt;A:CIRCUIT SWITCH ON:42, bool)
 		0 (&gt;A:CIRCUIT SWITCH ON:43, bool)
@@ -355,6 +356,48 @@
 			}
 		}
 	</Update>
+
+<!-- ### VOLUME HELPERS ### -->
+	<Update Once="True">
+		(L:JPL152_ADFVOL) 0 == if{
+			0 (&gt;K:ADF_VOLUME_SET)
+		}
+		(L:JPL152_ADFVOL) 1 == if{
+			100 (&gt;K:ADF_VOLUME_SET)
+		}
+	</Update>
+	<Update Once="True">
+		(L:JPL152_COM1VOL) 0 == if{
+			50 (&gt;K:COM1_VOLUME_SET)
+			0 (&gt;K:COM1_VOLUME_SET)
+		}
+	</Update>
+	<Update Once="True">
+		(L:JPL152_COM2VOL) 0 == if{
+			50 (&gt;K:COM2_VOLUME_SET)
+			0 (&gt;K:COM2_VOLUME_SET)
+		}
+	</Update>
+
+	<!-- ### CUTS AP CIRCUIT WHEN HIDDEN ### -->
+  	<Update Frequency = "1">
+		(L:JPL152_APVIZ) 0 &gt;
+		(A:CIRCUIT SWITCH ON:32, Boolean) ! and if{ 32 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE) }
+	</Update>
+	<Update Frequency = "1">
+		(L:JPL152_APVIZ) 0 ==
+		(A:CIRCUIT SWITCH ON:32, Boolean) and if{ 32 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE) }
+	</Update>
+<!--
+  	<Update Frequency = "1">
+		(A:TRANSPONDER STATE:1, Enum) 0 == (A:CIRCUIT ON:20, bool) and if{
+			20 (&gt;K:ELECTRICAL_CIRCUIT_TOGGLE)
+		}
+		(A:TRANSPONDER STATE:1, Enum) 0 != (A:CIRCUIT ON:20, bool) ! and if{
+			1 (&gt;A:CIRCUIT SWITCH ON:20, bool)
+		}
+	</Update>
+	-->
 </Template>
 
 	<!--################# CABIN HEAT LEVER ###################-->
