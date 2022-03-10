@@ -21,6 +21,14 @@
 
 Continued work on this project is with a large thanks to our donators! Without this kind gesture finding time is slightly more difficult, but every donation means extra time I can set aside to update/upgrade and improve this mod!
 
+## Continuing development!
+Work is continuing on the mod at a decent pace, those within the Discord or who pay attention to the _Developer Branch_ will see massive file changes!
+We have big things coming and will be jumping straight forward to V2.0.0!
+There is currently no announced release date, although please be assured we won't keep you waiting forever!
+It will be worth the wait!
+Join the [Discord Server](https://discord.gg/Arj3jnBmk5) and you might see some sneaky development shots!
+I must say though, please do not attempt to use the _Development Branch_ for everyday use (Unless you want to help us of course!), it is in a very dynamic state with some... interesting bugs we are working through!
+
 ## V1.0.0 - BETA TEST 9
 ### SU6 Update!
 	- NAVCOM and ADF functionality restored.
