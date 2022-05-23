@@ -1,8 +1,0 @@
-.ui-control-list > div {
-  height: 100%;
-  overflow-y: scroll;
-}
-
-.ui-control-list > div::-webkit-scrollbar {
-  display: none;
-}

@@ -1,8 +1,0 @@
-.latlon-coord {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-}
-  .latlon-num {
-    white-space: nowrap;
-  }

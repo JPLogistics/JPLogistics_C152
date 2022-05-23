@@ -1,8 +1,0 @@
-.mfd-page.open {
-  display: block;
-}
-
-.mfd-page.closed,
-.mfd-page.quickclosed {
-  display: none;
-}
