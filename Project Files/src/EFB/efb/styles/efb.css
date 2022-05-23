@@ -1,0 +1,242 @@
+.my-component {
+    font-size: 80px;
+}
+:root {
+  --background: #000000;
+  --text-primary: white;
+  --text-secondary: grey;
+  --accent: #ff0000;
+}
+[data-theme='light'] {
+  --background: #fff;
+  --text-primary: #121416d8;
+  --link-color: #543fd7;
+  --accent: #add8e6;
+}
+
+[data-theme='dark'] {
+  --background: #212a2e;
+  --text-primary: #F7F8F8;
+  --link-color: #828fff;
+  --accent: #00008b;
+}
+#EFB {
+    background-color: #ffd51c;
+    color: #1a1a1a;
+    width: 2266px;
+    height: 1488px;
+}
+
+#Header {
+    background: var(--accent);
+    color: var(--text-primary);
+    top: 0px;
+    width: 2266px;
+    height: 200px;
+    padding-top: 16px;
+}
+
+
+
+#efbContent {
+    width: auto;
+    padding: 32px;
+    /* background-image: url("/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/background.jpg"); */
+    background-color: var(--background);
+    top: 200px;
+    height: 1288px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--text-primary);
+}
+#efbContent .absolute-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.map-center {
+  margin: 0;
+  position: absolute;
+  top: 200px;
+  left: 0px;
+}
+#efbContent .svg-center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -25%);
+}
+.svg-center{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-25%, -25%);
+}
+#efbError {
+  width: 2266px;
+  border-radius: 500px;
+  padding: 32px;
+  position: absolute;
+  /* background-image: url("/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/background.jpg"); */
+  background-color: red;
+  top: 200px;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  text-align: center;
+}
+#efbWarning {
+    width: 2266px;
+    border-radius: 500px;
+    padding: 32px;
+    position: absolute;
+    /* background-image: url("/Pages/VCockpit/Instruments/JPLogistics/Tablet/images/background.jpg"); */
+    background-color: yellow;
+    top: 200px;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    text-align: center;
+}
+#BootPage .circle-svg {
+    height: 550px;
+    width: 550px;
+}
+#BootPage .circle-text {
+    font-size: 72px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    fill: #333;
+}
+#BootPage .logo {
+    width: 1000px;
+}
+#BootPage textPath { 
+  font-size: 63px;
+	text-transform: uppercase;
+	letter-spacing: 20px;
+	fill: #fff;
+  background: #fff;
+}
+#textcircle {
+    fill: #fff
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 16px 0;
+    padding: 4px;
+  }
+  
+  .toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .toggleKnob {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #999;
+    transition: .2s;
+    border-radius: 34px;
+  }
+  
+  .toggleKnob:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fffdf4;
+    transition: .2s;
+    border-radius: 50%;
+  }
+  
+  input:checked+.toggleKnob {
+    background-color: #2a3141;
+  }
+  
+  input:focus+.toggleKnob {
+    box-shadow: 0 0 1px #2a3141;
+  }
+  
+  input:checked+.toggleKnob:before {
+    transform: translateX(26px);
+  }
+
+  #circle { position: relative; width: 100%; padding-bottom: 100%; overflow: hidden; }
+
+#circle text { font-family: 'Helvetica Neue', Arial; font-size: 16px; font-weight: bold; }
+
+#circle svg { position: absolute; left: 0; top: 0; width: 100%; height: 540px;
+
+  -webkit-animation-name: rotate;
+     -moz-animation-name: rotate;
+      -ms-animation-name: rotate;
+       -o-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-duration: 5s;
+     -moz-animation-duration: 5s;
+      -ms-animation-duration: 5s;
+       -o-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+       -o-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+       -o-animation-timing-function: linear;
+          animation-timing-function: linear;
+
+}
+
+@-webkit-keyframes rotate {
+    from { -webkit-transform: rotate(360deg); }
+    to { -webkit-transform: rotate(0); }
+}
+@-moz-keyframes rotate {
+    from { -moz-transform: rotate(360deg); }
+    to { -moz-transform: rotate(0); }
+}
+@-ms-keyframes rotate {
+    from { -ms-transform: rotate(360deg); }
+    to { -ms-transform: rotate(0); }
+}
+@-o-keyframes rotate {
+    from { -o-transform: rotate(360deg); }
+    to { -o-transform: rotate(0); }
+}
+@keyframes rotate {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0); }
+}
+
+#map {
+    position: absolute;
+    top: 200;
+    bottom: 0;
+    height:1288px;
+    width: 2266px;
+  }
