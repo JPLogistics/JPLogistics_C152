@@ -1,0 +1,17 @@
+{
+  "name": "garminsdk",
+  "version": "1.0.0",
+  "description": "Common files for the Garmin series of avionics systems",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "garminsdk": "file:build",
+    "msfssdk": "file:../sdk/build",
+    "msfstypes": "file:../msfstypes",
+    "typescript": "~4.5.5"
+  }
+}

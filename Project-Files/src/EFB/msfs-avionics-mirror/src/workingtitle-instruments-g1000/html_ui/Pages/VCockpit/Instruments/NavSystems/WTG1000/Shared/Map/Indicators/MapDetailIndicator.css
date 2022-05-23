@@ -1,0 +1,54 @@
+.map-detail {
+  position: relative;
+  padding: 2px;
+  background-color: black;
+  border: solid 1px whitesmoke;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  color: whitesmoke;
+  --map-detail-icon-width: 14px;
+  --map-detail-icon-height: 40px;
+}
+.map-detail.detail-4 {
+  display: none;
+}
+  .map-detail-icon {
+    position: relative;
+    width: var(--map-detail-icon-width);
+    height: var(--map-detail-icon-height);
+    --map-detail-block-height: calc((var(--map-detail-icon-height) - 4px) / 3);
+  }
+    .map-detail-block {
+      height: var(--map-detail-block-height);
+      width: 100%;
+      background: linear-gradient(to bottom, rgb(70, 70, 70), rgb(40, 40, 40));
+    }
+    .map-detail-top {
+      position: absolute;
+      bottom: calc(var(--map-detail-block-height) * 2 + 4px);
+    }
+    .map-detail-middle {
+      position: absolute;
+      bottom: calc(var(--map-detail-block-height) + 2px);
+    }
+    .map-detail-bottom {
+      position: absolute;
+      bottom: 0;
+    }
+    .map-detail.detail-3 .map-detail-middle,
+    .map-detail.detail-3 .map-detail-bottom,
+    .map-detail.detail-2 .map-detail-bottom {
+      background: cyan;
+    }
+    .map-detail-clip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: var(--map-detail-icon-height) 0 0 calc(var(--map-detail-icon-width) * 0.75);
+      border-color: transparent transparent transparent #000000;
+    }

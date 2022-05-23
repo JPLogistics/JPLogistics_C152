@@ -1,0 +1,76 @@
+#HSI {
+  position: absolute;
+  z-index: 2;
+  top: 387px;
+  height: 340px;
+  left: 277px;
+  width: 386px;
+  background: none;
+  border-style: none;
+}
+
+.hdgcrs-container {
+  position: absolute;
+  text-align: center;
+  line-height: 26px;
+  font-size: 14px;
+  top: 26px;
+  height: 26px;
+  width: 84px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.hdg-box {
+  left: 6px;
+}
+
+.dtk-box {
+  left: 276px;
+}
+
+.mins-temp-comp-container {
+  position: absolute;
+  text-align: center;
+  line-height: 26px;
+  font-size: 14px;
+  left: 315px;
+  top: 61px;
+  height: 26px;
+  width: 100px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.mins-temp-comp-upper-text {
+  position: absolute;
+  left: 5px;
+  top: -5px;
+}
+
+.mins-temp-comp-lower-text {
+  position: absolute;
+  left: 5px;
+  top: 6px;
+}
+
+.mins-temp-comp-value {
+  position: absolute;
+  text-align: right;
+  right: 2px;
+  top: 1px;
+}
+
+.hsi-gps-msg {
+  font-size: 18px;
+  position: absolute;
+  top: 100px;
+  right: -34px;
+  border-radius: 4px;
+  background-color: yellow;
+  color: black;
+  width: 86px;
+  padding: 2px 4px 2px 4px;
+  text-align: center;
+}

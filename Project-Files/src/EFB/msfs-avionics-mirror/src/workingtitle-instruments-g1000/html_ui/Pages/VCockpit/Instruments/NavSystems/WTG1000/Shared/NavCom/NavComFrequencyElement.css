@@ -1,0 +1,33 @@
+.navcom-frequencyelement-container {
+  position: relative;
+  margin-bottom: -3px;
+}
+
+.navcom-selector {
+  border: solid 1px cyan;
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  width: 72px;
+  height: 24px;
+}
+
+.navcom-ident {
+  position: absolute;
+  top: 7px;
+  right: -42px;
+  font-size: 16px;
+}
+
+.navcom-green {
+  color: #00ff00;
+}
+
+/** Failed States **/
+.failed-instr .navcom-frequencyelement-content {
+  visibility: hidden;
+}
+
+.failed-instr .navcom-arrows {
+  visibility: hidden !important;
+}

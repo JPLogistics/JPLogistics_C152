@@ -1,0 +1,14 @@
+.map-crosshair {
+  width: var(--map-crosshair-size);
+  height: var(--map-crosshair-size);
+}
+
+.map-crosshair-stroke {
+  stroke-width: var(--map-crosshair-stroke-width, 10px);
+  stroke: var(--map-crosshair-stroke-color, white);
+}
+
+.map-crosshair-outline {
+  stroke-width: calc(var(--map-crosshair-stroke-width, 10px) + 2 * var(--map-crosshair-outline-width, 10px));
+  stroke: var(--map-crosshair-outline-color, black);
+}

@@ -1,0 +1,11 @@
+.digit-input {
+  color: cyan;
+}
+
+.digit-input.input-disabled {
+  color: whitesmoke;
+}
+
+.digit-input.highlight-active {
+  color: black;
+}

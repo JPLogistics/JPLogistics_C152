@@ -1,0 +1,101 @@
+.hsi-map-coursedev-objects {
+  position: absolute;
+  overflow: hidden;
+  left: 85px;
+  width: 183px;
+  height: 23px;
+}
+
+.hsi-map-coursedev-objects-boxstyle {
+  border: 1px solid gray;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hsi-map-deviation {
+  position: absolute;
+  overflow: clip;
+  left: 82.5px;
+  top: 2px;
+  width: 18px;
+  height: 18px;
+}
+
+.hsi-map-triangle-deviation {
+  transform-origin: 9px 9px;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  overflow: clip;
+}
+
+.hsi-map-diamond-deviation {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  overflow: clip;
+}
+
+.hsi-map-coursedev-nosignal-text {
+  position: absolute;
+  overflow: hidden;
+  left: 85px;
+  width: 183px;
+  height: 23px;
+  text-align: center;
+  line-height: 24px;
+  font-size: 18px;
+  color: whitesmoke;
+}
+
+.hsi-map-nav-src {
+  position: absolute;
+  text-align: center;
+  line-height: 24px;
+  font-size: 18px;
+  color: magenta;
+  top: 0px;
+  left: 30px;
+  height: 23px;
+  width: 53px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.hsi-map-nav-sensitivity {
+  position: absolute;
+  text-align: center;
+  line-height: 24px;
+  font-size: 18px;
+  color: magenta;
+  top: 0px;
+  left: 270px;
+  height: 23px;
+  width: 84px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.hsi-map-nav-susp {
+  position: absolute;
+  text-align: center;
+  line-height: 24px;
+  font-size: 18px;
+  color: magenta;
+  top: 28px;
+  left: 354px;
+  height: 23px;
+  width: 58px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+
+.hsi-map-gps-xtrack {
+  position: absolute;
+  text-align: center;
+  color: magenta;
+  font-size: 18px;
+  width: 50px;
+  left: 150px;
+  display: none;
+}

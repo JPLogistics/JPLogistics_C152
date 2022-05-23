@@ -1,0 +1,20 @@
+.mfd-mapsettings-row {
+  margin: 0.5em 0;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: var(--mfd-mapsettings-row-title-width) min-content 1fr;
+  align-items: center;
+  white-space: nowrap;
+}
+  .mfd-mapsettings-row-title {
+    font-size: 0.85em;
+  }
+
+.mfd-mapsettings-row-leftcontrol {
+  justify-self: start;
+  margin-left: 2px;
+}
+.mfd-mapsettings-row-rightcontrol {
+  justify-self: end;
+  margin-right: 2px;
+}

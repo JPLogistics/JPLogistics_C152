@@ -1,0 +1,13 @@
+.mfd-airport-information .groupbox .mfd-nearest-airport-frequencies {
+  height: 280px;
+}
+
+.mfd-airport-information-elevation {
+  text-align: right;
+}
+
+.mfd-airport-information-elevation,
+.mfd-airport-information-location {
+  width: 50%;
+  display: inline-block;
+}

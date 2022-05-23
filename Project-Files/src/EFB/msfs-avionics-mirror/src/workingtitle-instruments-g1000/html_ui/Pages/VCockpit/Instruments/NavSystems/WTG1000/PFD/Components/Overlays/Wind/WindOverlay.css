@@ -1,0 +1,22 @@
+.wind-overlay {
+  position: absolute;
+  left: 245px;
+  bottom: 239px;
+  width: 83px;
+  height: 53px;
+  padding-top: 6px;
+  text-align: center;
+  background: rgba(0, 0, 0, .5);
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.arrow-rotate {
+  position: absolute;
+  transform: rotate3d(0, 0, 1, 0deg);
+  transform-origin: 50% 50%;
+  top: 9px;
+  left: 18px;
+  width: 10px;
+  height: 21px;
+}

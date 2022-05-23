@@ -1,0 +1,32 @@
+.wpt-dup-listitem {
+  position: relative;
+  width: 100%;
+  height: 1.5em;
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 20% 15% 65%;
+  align-items: center;
+}
+  .wpt-dup-listitem-type {
+    text-align: left;
+    color: whitesmoke;
+  }
+  .wpt-dup-listitem-icon {
+    justify-self: center;
+  }
+  .wpt-dup-listitem-region-container {
+    position: relative;
+    color: cyan;
+    align-self: stretch;
+  }
+    .wpt-dup-listitem-region {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+      padding: 0 0.1em;
+      text-align: right;
+      white-space: nowrap;
+      overflow: hidden;
+    }

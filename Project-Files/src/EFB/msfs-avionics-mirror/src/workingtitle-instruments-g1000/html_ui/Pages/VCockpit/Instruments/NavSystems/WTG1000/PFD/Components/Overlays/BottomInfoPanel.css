@@ -1,0 +1,246 @@
+.bottom-info-panel {
+  position: absolute;
+  z-index: 2;
+  left: 0px;
+  width: 1024px;
+  height: 55px;
+  top: 679px;
+}
+
+.bip-temp-box {
+  position: absolute;
+  left: 0px;
+  width: 101px;
+  height: 55px;
+  top: 0px;
+  font-size: 18px;
+  border-right: 4px groove rgba(1, 1, 1, .4);
+  background: linear-gradient(to top, rgba(0, 0, 0, 1.0), rgb(24, 24, 24));
+}
+
+.bip-temp-box.reversionary {
+  left: 152px;
+  z-index: 20;
+}
+
+.bip-oat {
+  position: relative;
+  top: 31px;
+  left: 3px;
+  font-size: 16px;
+}
+
+.bip-oat-label {
+  font-size: 16px;
+  display: inline-block;
+  width: 35px;
+}
+
+.bip-oat-value {
+  font-size: 20px;
+  display: inline-block;
+  padding-right: 5px;
+  text-align: right;
+  width: 61px;
+}
+
+.bip-middle {
+  position: absolute;
+  left: 101px;
+  width: 721px;
+  height: 55px;
+  top: 0px;
+}
+
+.left-brg-ptr-container {
+  position: absolute;
+  right: 400px;
+  top: 0px;
+  height: 55px;
+}
+
+.left-brg-ptr-dist {
+  position: absolute;
+  right: 70px;
+  width: 65px;
+  height: 25px;
+  top: 5px;
+  font-size: 20px;
+  text-align: right;
+  color: magenta;
+}
+
+.left-brg-ptr-crs-ident {
+  margin-top: 30px;
+  right: 0px;
+  height: 25px;
+  font-size: 20px;
+  text-align: right;
+}
+
+.left-brg-ptr-crs-ident>div {
+  display: inline-block;
+}
+
+.left-brg-ptr-crs {
+  color: magenta;
+  padding-right: 5px;
+}
+
+.left-brg-ptr-ident {
+  color: white;
+  padding-right: 5px;
+  ;
+}
+
+.left-brg-ptr-src {
+  font-size: 16px;
+  line-height: 25px;
+  color: cyan;
+}
+
+.left-brg-ptr-svg {
+  height: 12px;
+}
+
+.right-brg-ptr-container {
+  position: absolute;
+  left: 398px;
+  top: 0px;
+  height: 55px;
+}
+
+.right-brg-ptr-dist {
+  position: absolute;
+  left: 69px;
+  width: 65px;
+  height: 25px;
+  top: 5px;
+  font-size: 20px;
+  text-align: left;
+  color: magenta;
+}
+
+.right-brg-ptr-crs-ident {
+  margin-top: 30px;
+  height: 25px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.right-brg-ptr-crs-ident>div {
+  display: inline-block;
+}
+
+.right-brg-ptr-svg {
+  height: 12px;
+}
+
+.right-brg-ptr-src {
+  height: 25px;
+  font-size: 16px;
+  text-align: left;
+  line-height: 25px;
+  color: cyan;
+}
+
+.right-brg-ptr-ident {
+  color: white;
+  padding-left: 5px;
+}
+
+.right-brg-ptr-crs {
+  color: magenta;
+  padding-left: 5px;
+}
+
+.bip-time {
+  position: absolute;
+  top: 0px;
+  left: 900px;
+  width: 124px;
+  height: 55px;
+  display: grid;
+  grid-template-rows: 28px 25px;
+  grid-template-columns: 30px 85px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1.0), rgb(24, 24, 24));
+  justify-items: end;
+  align-items: end;
+}
+
+.bip-time-label {
+  justify-self: start;
+}
+
+.bip-time .time-suffix {
+  display: none;
+}
+
+.utc-time-display {
+  width: 76px;
+  overflow: hidden;
+  transform: rotateX(0);
+  position: absolute;
+  top: 55%;
+  left: 32%;
+}
+
+/* Fail States */
+.left-brg-ptr-dist-failed {
+  left: -63px !important;
+  top: 5px !important;
+  width: 55px !important;
+  height: 19px !important;
+}
+
+.left-brg-ptr-dir-failed {
+  top: 30px !important;
+  left: -100px !important;
+  width: 40px !important;
+  height: 19px !important;
+}
+
+.left-brg-ptr-ident-failed {
+  top: 30px !important;
+  left: -55px !important;
+  width: 50px !important;
+  height: 19px !important;
+}
+
+.right-brg-ptr-dist-failed {
+  top: 5px !important;
+  left: 67px !important;
+  width: 55px !important;
+  height: 19px !important;
+}
+
+.right-brg-ptr-ident-failed {
+  top: 30px !important;
+  left: 64px !important;
+  width: 50px !important;
+  height: 19px !important;
+}
+
+.right-brg-ptr-dir-failed {
+  top: 30px !important;
+  left: 119px !important;
+  width: 40px !important;
+  height: 19px !important;
+}
+
+.bip-oat-value .failed-box {
+  position: absolute;
+  width: 50px !important;
+  height: 19px !important;
+  left: 45px !important;
+}
+
+.failed-instr .bip-oat-nud,
+.failed-instr .left-brg-ptr-crs,
+.failed-instr .left-brg-ptr-ident,
+.failed-instr .left-brg-ptr-dist,
+.failed-instr .right-brg-ptr-crs,
+.failed-instr .right-brg-ptr-ident,
+.failed-instr .right-brg-ptr-dist {
+  display: none;
+}

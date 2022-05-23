@@ -1,0 +1,63 @@
+.mfd-fpl-vnav {
+  height: 24px;
+  color: whitesmoke;
+  font-size: 16px;
+  padding: 6px 0 0 0;
+}
+
+.mfd-fpl-vnav > div {
+  display: inline-block;
+}
+
+.mfd-fpl-vnav .small {
+  font-size: 0.67em;
+}
+
+.mfd-fpl-vnav .supplied-value {
+  color: cyan;
+}
+
+.mfd-fpl-vnav label {
+  color: var(--title-gray);
+  display: inline-block;
+}
+
+.mfd-fpl-vnav-wpt {
+  width: 200px;
+}
+
+.mfd-fpl-vnav-value {
+  display: inline-block;
+}
+.mfd-fpl-vnav-wpt > span,
+.mfd-fpl-vnav-value {
+  float: right;
+  margin-right: 10px;
+}
+
+.mfd-fpl-vnav-wpt > label {
+  width: 54px;
+}
+
+.mfd-fpl-vnav-tgtalt {
+  width: 90px;
+}
+
+.mfd-fpl-vnav-tod > label {
+  width: 44px;
+}
+
+.mfd-fpl-vnav-tgtvs > label,
+.mfd-fpl-vnav-vsreq > label {
+  width: 94px;
+}
+
+.mfd-fpl-vnav-tgtvs,
+.mfd-fpl-vnav-vsreq {
+  width: 210px;
+}
+
+.mfd-fpl-vnav-fpa > label,
+.mfd-fpl-vnav-vdev > label {
+  width: 104px;
+}

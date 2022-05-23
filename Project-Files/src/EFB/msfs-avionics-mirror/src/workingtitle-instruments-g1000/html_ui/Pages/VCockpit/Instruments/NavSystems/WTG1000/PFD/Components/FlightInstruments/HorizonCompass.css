@@ -1,0 +1,9 @@
+.horizon-line {
+  position: absolute;
+  left: -30%;
+  top: 0;
+  height: 100%;
+  width: 160%;
+  overflow: hidden;
+  transform: rotateX(0);
+}

@@ -1,0 +1,15 @@
+.DME-window {
+  position: absolute;
+  height: 90px;
+  width: 65px;
+  left: 242px;
+  bottom: 56px;
+  background: rgba(0,0,0,.5);
+  border-radius: 5px;
+  font-size: 18px;
+  padding-left: 3px
+}
+
+.DME-window-hsi-map {
+  left: 216px;
+}

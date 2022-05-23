@@ -1,0 +1,40 @@
+.wind-overlay-opt1 {
+  position: absolute;
+}
+
+.wind-overlay-opt1-arrow {
+  position: absolute;
+  top: 0px;
+  display: none;
+}
+
+.wind-overlay-opt1.left-xwind .left-xwind-arrow {
+  display: block;
+}
+
+.wind-overlay-opt1.right-xwind .right-xwind-arrow {
+  display: block;
+}
+
+.wind-overlay-opt1.headwind .headwind-arrow {
+  display: block;
+}
+
+.wind-overlay-opt1.tailwind .tailwind-arrow {
+  display: block;
+}
+
+.crosswind-value {
+  position: absolute;
+  left: 34px;
+  top: 1px;
+  width: 40px;
+  text-align: left;
+}
+
+.headwind-value {
+  position: absolute;
+  top: 24px;
+  width: 34px;
+  text-align: center;
+}

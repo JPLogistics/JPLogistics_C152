@@ -1,0 +1,34 @@
+.mfd-procmap {
+  left: 0;
+  top: 0;
+  width: 578px;
+  height: 734px;
+  font-size: 16px;
+  font-family: Roboto-Bold;
+}
+
+  .mfd-procmap .minicompass-layer {
+    position: absolute;
+    left: 5px;
+    top: 80px;
+  }
+
+  .mfd-procmap .map-crosshair {
+    --map-crosshair-size: 10px;
+  }
+
+  .mfd-procmap .map-pointer {
+    --map-pointer-size: 25px;
+  }
+
+  .mfd-procmap .map-pointerinfolayer-box {
+    position: absolute;
+    left: 90px;
+    top: 56px;
+  }
+    .mfd-procmap .map-pointerinfolayer-box-dis {
+      width: 90px;
+    }
+    .mfd-procmap .map-pointerinfolayer-box-brg {
+      width: 75px;
+    }

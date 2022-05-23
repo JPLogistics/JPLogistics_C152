@@ -1,0 +1,71 @@
+.softkey-tab {
+  position: relative;
+  background: linear-gradient(to top, #000 40%, #202020);
+  flex: 1;
+  border: 1px solid #3f3f3f;
+  border-bottom: none;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  padding-top: 6px;
+  text-shadow: 0 0 black;
+  overflow: hidden;
+  --value-color: cyan;
+}
+
+.softkey-tab.text-disabled{
+  --value-color: rgb(18, 95, 95);
+}
+
+.softkey-tab.highlighted {
+  background: rgb(160, 160, 160);
+  color: black;
+}
+
+.softkey-tab.pressed {
+  background: linear-gradient(to top, #091429 60%, #1b303f 80%, #36576e);
+}
+
+.softkey-tab-label {
+  white-space: nowrap;
+}
+
+.softkey-tab-label.text-value {
+  float: left;
+  margin-left: 4px;
+}
+
+.softkey-tab-value {
+  color: var(--value-color);
+  float: right;
+  margin-right: 4px;
+}
+
+.softkey-tab-borders {
+  border-width: 1px;
+  border-image: linear-gradient( to bottom, #3f3f3f 0%, #080808 50%) 1 100%;
+  position: absolute;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: 100%;
+}
+
+.softkey-tab-indicator {
+  width: 30px;
+  height: 4px;
+  background: -webkit-linear-gradient(90deg, rgb(28, 28, 28) 0%, rgb(100, 100, 100) 50%, rgb(28, 28, 28) 100%);
+  border-radius: 2px;
+  margin: 3px auto 0 auto;
+  display: none;
+}
+
+.softkey-tab-indicator.shown {
+  display: block;
+}
+
+.softkey-tab-indicator.indicating {
+  background: -webkit-linear-gradient(90deg, rgb(0, 28, 0) 0%, rgb(0, 255, 0) 50%, rgb(0, 28, 0) 100%);
+}
+
+.softkey-tab-indicator.indicating-dim {
+  background: -webkit-linear-gradient(90deg, rgb(0, 28, 0) 0%, rgb(0, 55, 0) 50%, rgb(0, 28, 0) 100%);
+}

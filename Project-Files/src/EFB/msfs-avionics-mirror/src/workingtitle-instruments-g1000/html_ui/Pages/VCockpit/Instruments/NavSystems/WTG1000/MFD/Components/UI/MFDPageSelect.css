@@ -1,0 +1,53 @@
+.popout-dialog.mfd-pageselect {
+  padding: 0;
+  color: var(--title-gray);
+  background-color: black;
+}
+  .mfd-pageselect .highlight-select {
+    animation: none;
+    color: var(--highlight-color);
+  }
+
+  .mfd-pageselect-group {
+    padding: 5px;
+  }
+
+  .mfd-pageselect-tabs {
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    border-top: 1px solid var(--border-gray);
+  }
+    .mfd-pageselect-tabs > div {
+      position: relative;
+      padding: 4px 0.3em;
+      border-top: 1px solid transparent;
+      transform: translateY(-1px);
+    }
+    .mfd-pageselect .active-tab {
+      color: var(--highlight-color);
+      border-top-color: black;
+    }
+    .mfd-pageselect .active-tab::before {
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: 0;
+      width: 0;
+      height: 100%;
+      border-left: 1px solid var(--border-gray);
+      transform: rotate(-10deg);
+      transform-origin: 0 0;
+    }
+    .mfd-pageselect .active-tab::after {
+      content: '';
+      position: absolute;
+      right: -1px;
+      top: 0;
+      width: 0;
+      height: 100%;
+      border-right: 1px solid var(--border-gray);
+      transform: rotate(10deg);
+      transform-origin: 0 0;
+    }

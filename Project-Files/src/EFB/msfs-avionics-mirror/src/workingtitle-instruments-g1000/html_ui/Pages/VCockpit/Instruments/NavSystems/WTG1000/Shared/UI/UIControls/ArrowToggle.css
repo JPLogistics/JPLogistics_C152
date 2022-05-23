@@ -1,0 +1,18 @@
+.arrow-toggle-container {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  flex-direction: row-reverse;
+}
+
+.arrow-toggle-container svg {
+  height: var(--arrow-toggle-arrow-height, 0.75em);
+  transform-origin: 50% 50%;
+  transform: scale(var(--arrow-toggle-arrow-scale, 0.85));
+}
+
+.arrow-toggle-value {
+  color: var(--arrow-toggle-value-color, cyan);
+  margin-left: 4px;
+  margin-right: 4px;
+}

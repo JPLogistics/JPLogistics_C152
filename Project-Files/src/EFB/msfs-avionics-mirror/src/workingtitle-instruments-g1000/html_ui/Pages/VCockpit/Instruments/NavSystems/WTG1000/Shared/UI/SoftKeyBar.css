@@ -1,0 +1,12 @@
+.softkeys-container {
+  position: absolute;
+  z-index: 5;
+  background-color: #000000;
+  display: flex;
+  width: 100%;
+  height: 34px;
+  left: 0px;
+  top: 734px;
+  font-size: calc( 2.2 * 1vh * var(--bodyHeightScale));
+  text-align: center; 
+}

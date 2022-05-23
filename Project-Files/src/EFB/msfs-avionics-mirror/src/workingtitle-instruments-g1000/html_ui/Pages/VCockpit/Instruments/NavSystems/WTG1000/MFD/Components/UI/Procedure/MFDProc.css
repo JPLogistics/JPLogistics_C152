@@ -1,0 +1,40 @@
+.proc-menu-container {
+  padding: 2px 0px 0px 5px;
+  font-size: 18px;
+}
+
+.mfd-proc-options-box {
+  color: cyan;
+}
+
+.mfd-proc-options-list > div + div {
+  margin-top: 0.25em;
+}
+
+.mfd-bottom-menu-prompt {
+  position: absolute;
+  left: 45px;
+  width: 70%;
+  bottom: 20px;
+  text-align: center;
+  font-size: 18px;
+  overflow-wrap: break-word;
+}
+
+.select-proc-background {
+  position: absolute;
+  top: 48px;
+  width: 280px;
+  height: 100%;
+  right: 0px;
+  background: rgb(40,40,40);
+  font-size: 20px;
+}
+
+.mfd-sequence-box {
+  min-height: 100px;
+}
+
+.mfd-proc-loaded>div {
+  margin-bottom: 10px;
+}

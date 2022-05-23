@@ -1,0 +1,31 @@
+.pfd-setup-inline {
+  display: inline-block;
+}
+
+.pfd-setup-inline>.inactive-dim {
+  color: whitesmoke;
+}
+
+.pfd-setup-row {
+  padding-bottom: 5px;
+}
+
+.pfd-setup-mode-toggle {
+  width: 45%;
+  text-align: center;
+}
+
+.pfd-setup-item-block {
+  width: 55%;
+  font-size: 18px;
+}
+
+.pfd-setup-mode-switch {
+  width: 50%;
+  text-align: center;
+}
+
+.pfd-setup-number-input {
+  width: 50%;
+  text-align: right;
+}

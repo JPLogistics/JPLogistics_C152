@@ -1,0 +1,96 @@
+.mfd-wptinfo {
+  font-size: 20px;
+}
+  .mfd-wptinfo-map-box .groupbox-container {
+    padding: 0;
+  }
+  .mfd-wptinfo-map-box .groupbox-content {
+    overflow: hidden;
+  }
+  .mfd-wptinfo .waypoint-map {
+    position: relative;
+    width: 290px;
+    height: 300px;
+    transform: rotateX(0deg);
+    overflow: hidden;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Roboto-Bold';
+  }
+    .mfd-wptinfo .map-orientation {
+      position: absolute;
+      left: 2px;
+      top: 10px;
+    }
+    .mfd-wptinfo .minicompass-layer {
+      position: absolute;
+      left: 2px;
+      top: 30px;
+    }
+    .mfd-wptinfo .map-crosshair {
+      --map-crosshair-size: 10px;
+    }
+    .mfd-wptinfo .map-pointer {
+      --map-pointer-size: 25px;
+    }
+    .mfd-wptinfo .map-pointerinfolayer-box {
+      position: absolute;
+      left: 90px;
+      top: 0px;
+    }
+      .mfd-wptinfo .map-pointerinfolayer-box-dis {
+        width: 90px;
+      }
+      .mfd-wptinfo .map-pointerinfolayer-box-brg {
+        width: 70px;
+      }
+
+  .mfd-wptinfo-loc {
+    position: relative;
+    height: 100px;
+    color: whitesmoke;
+    overflow: hidden;
+  }
+    .mfd-wptinfo-loc-field {
+      position: absolute;
+      display: grid;
+      grid-template-rows: 100%;
+      grid-template-columns: 35px 1fr;
+      align-items: end;
+    }
+      .mfd-wptinfo-loc-title {
+        font-size: 0.75em;
+        color: var(--title-gray);
+      }
+    .mfd-wptinfo-loc-bearing {
+      left: 0;
+      top: 33%;
+      width: 50%;
+      transform: translateY(-50%);
+    }
+    .mfd-wptinfo-loc-distance {
+      left: 0;
+      top: 67%;
+      width: 50%;
+      transform: translateY(-50%);
+    }
+    .mfd-wptinfo-loc-region {
+      position: absolute;
+      left: 50%;
+      top: 25%;
+      transform: translateY(-50%);
+      white-space: nowrap;
+    }
+    .mfd-wptinfo-loc-latlon {
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      width: 50%;
+    }
+
+  .mfd-wptinfo-bottom-prompt {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+  }

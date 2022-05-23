@@ -1,0 +1,11 @@
+.local-offset-input-disabled {
+  display: none;
+}
+
+.local-offset-input-utc .local-offset-input-input {
+  display: none;
+}
+
+.local-offset-input-utc .local-offset-input-disabled {
+  display: block;
+}

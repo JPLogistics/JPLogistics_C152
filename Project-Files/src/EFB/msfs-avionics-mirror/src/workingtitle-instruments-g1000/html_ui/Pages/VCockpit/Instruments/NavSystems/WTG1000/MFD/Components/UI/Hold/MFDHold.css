@@ -1,0 +1,68 @@
+.mfd-hold {
+  color: #ccc;
+  font-size: 16px;
+}
+
+.mfd-hold-gridcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  color: #ccc;
+  align-items: baseline;
+}
+
+.mfd-hold-gridcontainer > div {
+  flex-basis: 50%;
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+}
+
+.mfd-hold-gridcontainer > div:nth-child(2),
+.mfd-hold-gridcontainer > div:nth-child(4) {
+  text-align: right;
+}
+
+.mfd-hold-course,
+.mfd-hold-inbound,
+.mfd-hold-time,
+.mfd-hold-distance,
+.mfd-hold-direction {
+  display: inline-block;
+  font-size: 18px;
+  color: cyan;
+}
+
+.mfd-hold-load {
+  width: 60px;
+  position: absolute;
+  bottom: 8px;
+  left: 126px;
+  margin: 0 auto 0 auto;
+}
+
+.mfd-hold-map-box .groupbox-container {
+  padding: 0;
+}
+.mfd-hold-map-box .groupbox-content {
+  overflow: hidden;
+}
+.mfd-hold .waypoint-map {
+  position: relative;
+  width: 290px;
+  height: 300px;
+  transform: rotateX(0deg);
+  overflow: hidden;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: 'Roboto-Bold';
+}
+  .mfd-hold .waypoint-map .map-orientation {
+    position: absolute;
+    left: 2px;
+    top: 10px;
+  }
+  .mfd-hold .waypoint-map .minicompass-layer {
+    position: absolute;
+    left: 2px;
+    top: 30px;
+  }

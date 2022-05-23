@@ -1,0 +1,13 @@
+.mfd-nearest-vor-frequency {
+  color: white;
+  height: 38px;
+  font-size: 20px;
+}
+
+.mfd-nearest-vor-frequency-number {
+  width: 30%;
+  text-align: center;
+  font-size: .9em;
+  border-radius: 14px;
+  border: 1px solid gray;
+}

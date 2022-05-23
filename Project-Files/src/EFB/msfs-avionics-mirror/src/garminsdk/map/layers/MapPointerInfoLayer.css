@@ -1,0 +1,25 @@
+.map-pointerinfolayer-box {
+  position: relative;
+  padding: 0 2px;
+  background-color: black;
+  border: solid 1px whitesmoke;
+  border-radius: 5px;
+  color: cyan;
+  display: flex;
+  flex-flow: row nowrap;
+  transform: rotateX(0deg);
+}
+
+.map-pointerinfolayer-box-column + .map-pointerinfolayer-box-column {
+  margin-left: 0.25em;
+}
+
+.map-pointerinfolayer-box-title {
+  color: whitesmoke;
+  float: left;
+}
+
+.map-pointerinfolayer-box-title-value {
+  float: right;
+  text-align: right;
+}

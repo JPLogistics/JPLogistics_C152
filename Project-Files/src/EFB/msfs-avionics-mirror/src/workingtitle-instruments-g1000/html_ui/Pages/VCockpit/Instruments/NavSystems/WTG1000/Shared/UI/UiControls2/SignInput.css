@@ -1,0 +1,11 @@
+.sign-input {
+  color: cyan;
+}
+
+.sign-input.input-disabled {
+  color: whitesmoke;
+}
+
+.sign-input.highlight-active {
+  color: black;
+}

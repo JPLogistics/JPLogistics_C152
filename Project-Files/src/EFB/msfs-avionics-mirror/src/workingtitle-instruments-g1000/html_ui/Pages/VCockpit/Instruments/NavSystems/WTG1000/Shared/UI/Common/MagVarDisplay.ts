@@ -1,0 +1,1 @@
+export * from 'garminsdk/components/common/MagVarDisplay';

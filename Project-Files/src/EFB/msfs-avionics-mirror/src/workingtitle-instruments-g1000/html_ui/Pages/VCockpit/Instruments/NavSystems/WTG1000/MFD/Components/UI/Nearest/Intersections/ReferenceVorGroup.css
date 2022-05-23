@@ -1,0 +1,35 @@
+.mfd-nearest-intersection-vor {
+  color: white;
+  height: 76px;
+  font-size: 20px;
+}
+
+.mfd-nearest-intersection-vor > div {
+  height: 28px;
+}
+
+.mfd-nearest-intersection-vor-name {
+  display: inline-block;
+  width: 30%;
+}
+
+.mfd-nearest-intersection-vor-icon {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+}
+
+.mfd-nearest-intersection-vor-frequency {
+  display: inline-block;
+  margin-left: 10%;
+}
+
+.mfd-nearest-intersection-vor-bearing {
+  display: inline-block;
+  padding-left: 10px;
+  width: 30%;
+}
+
+.mfd-nearest-intersection-vor-distance {
+  display: inline-block;
+}

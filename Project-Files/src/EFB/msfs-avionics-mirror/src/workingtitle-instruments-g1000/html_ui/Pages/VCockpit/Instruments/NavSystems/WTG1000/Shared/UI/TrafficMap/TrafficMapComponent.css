@@ -1,0 +1,16 @@
+.traffic-map {
+  position: absolute;
+  overflow: hidden;
+  transform: rotateX(0deg);
+}
+  .trafficmap-indicators-top-right {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    overflow: hidden;
+    transform: rotateX(0deg);
+  }
+  .traffic-map .map-traffic-standby {
+    transform: rotateX(0deg);
+    overflow: hidden;
+  }

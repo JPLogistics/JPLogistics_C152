@@ -1,0 +1,17 @@
+.wind-overlay-opt3 {
+  position: absolute;
+}
+
+.wind-direction {
+  position: absolute;
+  text-align: left;
+  top: 2px;
+  left: 40px;
+}
+
+.wind-speed {
+  position: absolute;
+  text-align: left;
+  top: 24px;
+  left: 40px;
+}

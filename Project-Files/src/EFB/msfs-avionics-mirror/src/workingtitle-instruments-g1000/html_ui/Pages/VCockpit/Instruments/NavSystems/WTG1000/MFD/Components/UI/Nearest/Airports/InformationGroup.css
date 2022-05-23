@@ -1,0 +1,30 @@
+.mfd-nearest-airport-info {
+  font-size: 20px;
+  height: 76px;
+  color: white;
+}
+
+.mfd-nearest-airport-info-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mfd-nearest-airport-info-location {
+  display: inline-block;
+  width: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mfd-nearest-airport-info-elevation {
+  display: inline-block;
+  width: 30%;
+  text-align: right;
+}
+
+.mfd-nearest-airport-info > div {
+  padding: 2px 0 2px 0;
+  height: 28px;
+}

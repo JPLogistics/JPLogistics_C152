@@ -1,0 +1,45 @@
+.map-terrainscale {
+  position: relative;
+}
+
+.map-terrainscale.terrain-abs .terrainscale-abs {
+  display: flex;
+}
+
+.map-terrainscale.terrain-rel .terrainscale-rel {
+  display: flex;
+}
+
+.map-terrainscale-scale {
+  display: none;
+  position: relative;
+  width: 100%;
+  border: solid 2px white;
+  border-radius: 5px;
+  overflow: hidden;
+  flex-flow: column nowrap;
+  align-items: stretch;
+}
+    .map-terrainscale-color {
+      position: relative;
+      height: var(--terrainscale-box-height, 1.4em);
+      border: solid 1px black;
+    }
+      .map-terrainscale-label {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        transform: translateY(-50%);
+        text-align: center;
+        color: white;
+        text-shadow: 0 0 3px black;
+      }
+.map-terrainscale-unit {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.67em;
+  text-shadow: 0 0 3px black;
+}

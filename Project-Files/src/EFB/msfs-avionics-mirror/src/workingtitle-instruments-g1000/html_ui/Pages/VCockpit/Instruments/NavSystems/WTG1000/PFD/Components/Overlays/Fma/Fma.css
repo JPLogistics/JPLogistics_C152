@@ -1,0 +1,162 @@
+.lateral-active-mode {
+  color: rgb(0, 255, 0);
+  font-size: 24px;
+}
+
+.lateral-armed-mode {
+  color: whitesmoke;
+  font-size: 20px;
+}
+
+.modeValue {
+  color: rgb(0, 255, 0);
+  font-size: 20px;
+}
+
+.activeVerticalMode {
+  font-size: 24px;
+  margin-bottom: -2px;
+}
+
+
+.verticalModeValue {
+  font-size: 20px;
+  justify-content: flex-end;
+}
+
+.verticalModeUnits {
+  font-size: 14px;
+  margin-bottom: 1px;
+}
+
+.verticalModeArrow {
+  transform: rotateX(0);
+}
+
+.fma-ap-vertical-modes {
+  position: absolute;
+  top: 28px;
+  left: 238px;
+  width: 268px;
+  height: 28px;
+  grid-template-columns: 8fr 2fr 6fr 3fr 7fr 7fr;
+  grid-auto-rows: 26px;
+  display: grid;
+  grid-gap: 1px;
+  color: rgb(0, 255, 0);
+  font-size: 24px;
+  padding-left: 4px;
+  padding-right: 2px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.fma-ap-vertical-modes>div {
+  display: flex;
+  align-items: flex-end;
+}
+
+.fma-ap-vertical-modes>div.right {
+  justify-content: flex-end;
+  color: whitesmoke;
+  font-size: 18px;
+}
+
+#CenterBarTopLeft {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 284px;
+  height: 28px;
+  border-style: solid;
+  border-width: 1.5px;
+  border-bottom-width: 2px;
+  border-color: rgb(133, 133, 133);
+  border-left: none;
+  border-top: none;
+  text-align: center;
+}
+
+#CenterBarTopLeft>span {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+#CenterBarTopRight {
+  position: relative;
+  top: 0px;
+  left: 284px;
+  width: 221px;
+  height: 28px;
+  color: rgb(170, 170, 170);
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: rgb(133, 133, 133);
+}
+
+.smallText {
+  font-size: 14px;
+}
+
+.dataField {
+  font-size: 20px;
+  text-align: right;
+  color: magenta;
+}
+
+.FixDist {
+  position: absolute;
+  top: 8px;
+  left: 1px;
+}
+
+.FixDistValue {
+  top: 3px;
+  position: absolute;
+  left: 30px;
+  text-align: left;
+  width: 90px;
+}
+
+.FixBrg {
+  position: absolute;
+  top: 8px;
+  left: 130px;
+}
+
+.FixBrgValue {
+  top: 3px;
+  position: absolute;
+  left: 165px;
+}
+
+#CenterBarBottomLeft {
+  position: absolute;
+  top: 28px;
+  width: 124px;
+  height: 28px;
+  color: rgb(0, 255, 0);
+  font-size: 24px;
+  display: grid;
+  grid-template-columns: 50px 50px;
+  line-height: 28px;
+  padding-left: 10px;
+  border-right-style: solid;
+  border-right-width: 1.5px;
+  border-right-color: rgb(133, 133, 133);
+}
+
+#CenterBarBottomMiddle {
+  position: absolute;
+  top: 28px;
+  left: 124px;
+  width: 114px;
+  height: 28px;
+  text-align: center;
+  color: rgb(0, 255, 0);
+  font-size: 24px;
+  padding-bottom: 2px;
+  border-right-style: solid;
+  border-right-width: 1.5px;
+  border-right-color: rgb(133, 133, 133);
+}

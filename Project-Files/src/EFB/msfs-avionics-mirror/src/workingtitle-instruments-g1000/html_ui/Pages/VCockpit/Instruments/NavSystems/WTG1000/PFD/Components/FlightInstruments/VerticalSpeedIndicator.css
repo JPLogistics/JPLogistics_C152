@@ -1,0 +1,55 @@
+.vsi-container {
+  transform: rotateX(0);
+  position: absolute;
+  top: 132px;
+  height: 296px;
+  left: 808px;
+  width: 48px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, .25) 0%, rgba(0, 0, 0, 0) 37%, rgba(0, 0, 0, 0) 63%, rgba(0, 0, 0, .25) 100%);
+}
+
+.vsi-pointer {
+  position: absolute;
+  top: 137px;
+  width: 66px;
+  height: 22px;
+  transform: rotateX(0);
+}
+
+.vsi-selected-vs {
+  position: absolute;
+  left: 1px;
+  top: -25px;
+  width: 80px;
+  text-align: center;
+  background-color: rgb(0, 19, 65);
+  border-radius: 5px;
+  font-size: 20px;
+  color: cyan;
+}
+
+.vsi-selected-vs-bug {
+  position: absolute;
+  top: 139px;
+  width: 10px;
+  height: 18px;
+}
+
+/** Failed States **/
+.failed-instr .vsi-pointer {
+  display: none;
+}
+
+.failed-instr .vsi-selected-vs-bug {
+  display: none;
+}
+
+.failed-instr .vsi-selected-vs {
+  display: none;
+}
+
+.failed-instr .vsi-tape-numbers {
+  display: none;
+}
