@@ -6,16 +6,16 @@
                 "tangent_space_convention" : "DirectX"
             }
         },
-        "generator" : "Khronos glTF Blender I/O v3.3.0 and Asobo Studio MSFS Blender I/O v1.1.6",
+        "generator" : "Khronos glTF Blender I/O v3.3.2 and Asobo Studio MSFS Blender I/O v1.1.6",
         "version" : "2.0"
     },
     "extensionsUsed" : [
         "ASOBO_normal_map_convention",
         "ASOBO_material_invisible",
         "ASOBO_tags",
-        "ASOBO_material_blend_gbuffer",
         "ASOBO_material_draw_order",
         "ASOBO_material_detail_map",
+        "ASOBO_material_blend_gbuffer",
         "ASOBO_material_day_night_switch",
         "ASOBO_material_shadow_options",
         "ASOBO_material_fresnel_fade",
@@ -4514,15 +4514,6 @@
         {
             "alphaMode" : "BLEND",
             "extensions" : {
-                "ASOBO_material_blend_gbuffer" : {
-                    "enabled" : true,
-                    "baseColorBlendFactor" : 1,
-                    "metallicBlendFactor" : 1,
-                    "roughnessBlendFactor" : 1,
-                    "normalBlendFactor" : 1,
-                    "emissiveBlendFactor" : 1,
-                    "occlusionBlendFactor" : 1
-                },
                 "ASOBO_material_draw_order" : {
                     "drawOrderOffset" : 2
                 },
@@ -4649,6 +4640,7 @@
             }
         },
         {
+            "alphaMode" : "BLEND",
             "extensions" : {
                 "ASOBO_material_draw_order" : {
                     "drawOrderOffset" : 1

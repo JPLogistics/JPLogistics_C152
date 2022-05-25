@@ -3958,15 +3958,6 @@
         {
             "alphaMode" : "BLEND",
             "extensions" : {
-                "ASOBO_material_blend_gbuffer" : {
-                    "enabled" : true,
-                    "baseColorBlendFactor" : 1,
-                    "metallicBlendFactor" : 1,
-                    "roughnessBlendFactor" : 1,
-                    "normalBlendFactor" : 1,
-                    "emissiveBlendFactor" : 1,
-                    "occlusionBlendFactor" : 1
-                },
                 "ASOBO_material_draw_order" : {
                     "drawOrderOffset" : 2
                 },
@@ -3979,9 +3970,6 @@
                     },
                     "blendThreshold" : 0.10000000149011612
                 }
-            },
-            "extras" : {
-                "ASOBO_material_code" : "GeoDecalFrosted"
             },
             "name" : "FROST",
             "normalTexture" : {
@@ -4203,10 +4191,10 @@
             "extensions" : {
                 "ASOBO_material_detail_map" : {
                     "detailColorTexture" : {
-                        "index" : 6
+                        "index" : 34
                     },
                     "detailNormalTexture" : {
-                        "index" : 34,
+                        "index" : 35,
                         "scale" : 0.25
                     },
                     "UVScale" : 5.21999979019165,
@@ -4229,10 +4217,10 @@
             },
             "name" : "Windshield",
             "normalTexture" : {
-                "index" : 35
+                "index" : 36
             },
             "occlusionTexture" : {
-                "index" : 36
+                "index" : 37
             },
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
@@ -4242,11 +4230,11 @@
                     0.10000000149011612
                 ],
                 "baseColorTexture" : {
-                    "index" : 37
+                    "index" : 38
                 },
                 "metallicFactor" : 0,
                 "metallicRoughnessTexture" : {
-                    "index" : 36
+                    "index" : 37
                 },
                 "roughnessFactor" : 0
             }
@@ -4254,39 +4242,39 @@
         {
             "name" : "landing_gear",
             "normalTexture" : {
-                "index" : 38
+                "index" : 39
             },
             "occlusionTexture" : {
-                "index" : 39
+                "index" : 40
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 40
+                    "index" : 41
                 },
                 "metallicRoughnessTexture" : {
-                    "index" : 39
+                    "index" : 40
                 }
             }
         },
         {
             "name" : "wheel_static",
             "normalTexture" : {
-                "index" : 41
+                "index" : 42
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 42
+                    "index" : 43
                 }
             }
         },
         {
             "name" : "wheel_blurred",
             "normalTexture" : {
-                "index" : 43
+                "index" : 44
             },
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 44
+                    "index" : 45
                 }
             }
         }
@@ -5318,11 +5306,11 @@
         },
         {
             "sampler" : 0,
-            "source" : 5
+            "source" : 34
         },
         {
             "sampler" : 0,
-            "source" : 34
+            "source" : 5
         },
         {
             "sampler" : 0,
@@ -5359,6 +5347,10 @@
         {
             "sampler" : 0,
             "source" : 43
+        },
+        {
+            "sampler" : 0,
+            "source" : 44
         }
     ],
     "images" : [
@@ -5531,6 +5523,11 @@
             "mimeType" : "image/png",
             "name" : "CESSA152_AIRFRAME_LANDING_ALBD",
             "uri" : "CESSA152_AIRFRAME_LANDING_ALBD.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "GLASS_DETAILMAP01",
+            "uri" : "GLASS_DETAILMAP01.png"
         },
         {
             "mimeType" : "image/png",
