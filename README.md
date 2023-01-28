@@ -1,3 +1,10 @@
+#DO NOT DOWNLOAD FROM GITHUB
+#V2 RELEASED ON FLIGHTSIM.to
+![Download](https://flightsim.to/file/2246/jplogistics-c152-enhancement-mod)
+
+
+
+#OLD README
 ![C152](https://img.shields.io/badge/Aircraft-Cessna%20152-blue) ![Game](https://img.shields.io/badge/Software-Microsoft%20Flight%20Simulator-blue)
 
 ![Version](https://img.shields.io/badge/Version-V1.0.0%20BETA9-blue)
